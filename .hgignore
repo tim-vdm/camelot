@@ -3,5 +3,5 @@ syntax: glob
 *.pyc
 .DS_Store
 .nose
-src/logs/
+src/vfinance_ws/ws/logs/
 
