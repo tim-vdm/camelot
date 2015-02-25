@@ -1,0 +1,5 @@
+flask
+gunicorn
+sphinx
+sphinxcontrib-httpdomain
+sphinx-rtd-theme
