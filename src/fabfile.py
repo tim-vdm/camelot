@@ -17,6 +17,30 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger('v-finance-web-service.fabric')
 
 
+def install_dependencies():
+    raise NotImplementedError()
+
+
+def install_v_finance_web_service():
+    raise NotImplementedError()
+
+
+def restart_service():
+    raise NotImplementedError()
+
+
+def start_service():
+    raise NotImplementedError()
+
+
+def stop_service():
+    raise NotImplementedError()
+
+
+def get_log_file(filename=''):
+    raise NotImplementedError()
+
+
 def run_tests(tests='', with_debugger=None):
     if with_debugger is not None:
         os.environ['DEBUGGER'] = with_debugger
