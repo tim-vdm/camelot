@@ -17,6 +17,7 @@ bp = Blueprint('api_v01', __name__)
 
 
 @bp.route('/calculate_proposal', methods=['POST'])
+@log_to_file
 @check_minimal_requirements
 def calculate_proposal():
     """

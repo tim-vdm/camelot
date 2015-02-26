@@ -6,6 +6,7 @@ from decorator import decorator
 from flask import json
 from flask import jsonify
 from flask import request
+import flask.wrappers
 
 import werkzeug.exceptions
 
@@ -31,7 +32,14 @@ def log_to_file(function):
         with open(logfile, 'w') as outfile:
             try:
                 result = function(*args, **kwargs)
-                dump['response'] = result
+                if isinstance(result, flask.wrappers.Response):
+                    dump['response'] = result.data
+                elif isinstance(result, tuple):
+                    dump['response'] = result[0].data
+                else:
+                    # from nose.tools import set_trace
+                    # set_trace()
+                    dump['response'] = result
                 return result
             except werkzeug.exceptions.BadRequest, ex:
                 dump['exception'] = ex.message
