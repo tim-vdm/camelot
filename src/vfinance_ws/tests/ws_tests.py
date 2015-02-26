@@ -144,14 +144,13 @@ class WsTestCase(unittest.TestCase):
             "premium_schedule__1__product_id": 67,
             "premium_schedule__2__product_id": None,
             "premium_schedules_coverage_level_type": "fixed_amount",
-            "premium_schedules_coverage_limit": "0.05",
+            "premium_schedules_coverage_limit": "20000",
             "premium_schedules_payment_duration": 10,
             "premium_schedules_period_type": "single",
-            "premium_schedules_premium_rate_1": "0.0005",
-            "origin": 10,
+            "premium_schedules_premium_rate_1": "20",
+            "origin": "BIA:10",
         }
 
-        print json.dumps(DOCUMENT)
         response = self.post_json('create_agreement_code', data=DOCUMENT)
         self.assertEqual(response.status_code, 200)
 
@@ -176,11 +175,11 @@ class WsTestCase(unittest.TestCase):
             "premium_schedule__1__product_id": 67,
             "premium_schedule__2__product_id": None,
             "premium_schedules_coverage_level_type": "fixed_amount",
-            "premium_schedules_coverage_limit": "0.05",
+            "premium_schedules_coverage_limit": "20000",
             "premium_schedules_payment_duration": 10,
             "premium_schedules_period_type": "single",
-            "premium_schedules_premium_rate_1": "0.0005",
-            "origin": 10,
+            "premium_schedules_premium_rate_1": "20",
+            "origin": "BIA:10",
             "insured_party__1__nationality_code": "qwertyuio",
         }
         response = self.post_json('create_agreement_code', data=DOCUMENT)
