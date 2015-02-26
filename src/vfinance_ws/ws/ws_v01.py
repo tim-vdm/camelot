@@ -272,8 +272,9 @@ def modify_proposal():
             "message": "Web service not implemented"
         }
     """
-    abort(501)
-
+    return jsonify({
+        'message': "Web service not implemented"
+    }), 501
 
 @bp.route('/cancel_proposal', methods=['POST'])
 def cancel_proposal():
@@ -294,8 +295,9 @@ def cancel_proposal():
             "message": "Web service not implemented"
         }
     """
-    abort(501)
-
+    return jsonify({
+        'message': "Web service not implemented"
+    }), 501
 
 @bp.route('/proposal_to_managed', methods=['POST'])
 def proposal_to_managed():
@@ -316,8 +318,9 @@ def proposal_to_managed():
             "message": "Web service not implemented"
         }
     """
-    abort(501)
-
+    return jsonify({
+        'message': "Web service not implemented"
+    }), 501
 
 @bp.route('/get_proposal_pdf', methods=['POST'])
 def get_proposal_pdf():
@@ -338,4 +341,6 @@ def get_proposal_pdf():
             "message": "Web service not implemented"
         }
     """
-    abort(501)
+    return jsonify({
+        'message': "Web service not implemented"
+    }), 501
