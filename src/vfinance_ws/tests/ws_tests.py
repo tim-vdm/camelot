@@ -14,7 +14,7 @@ class WsTestCase(unittest.TestCase):
 
     def post_json(self, endpoint, headers=None, data=None):
         with self.app.test_request_context():
-            url = url_for('api_prototype.%s' % endpoint)
+            url = url_for('api_v01.%s' % endpoint)
 
         h = {'content-type': 'application/json'}
 
@@ -31,7 +31,7 @@ class WsTestCase(unittest.TestCase):
     # @unittest.skip('refactoring')
     def test_001_calculate_proposal_bad_content_type(self):
         with self.app.test_request_context():
-            url = url_for('api_prototype.calculate_proposal')
+            url = url_for('api_v01.calculate_proposal')
 
         response = self.client.post(url)
         self.assertEqual(response.status_code, 400)

@@ -10,7 +10,7 @@ from .utils import is_json_body
 
 from api import v01
 
-bp = Blueprint('api_prototype', __name__)
+bp = Blueprint('api_v01', __name__)
 
 
 @bp.route('/calculate_proposal', methods=['POST'])
