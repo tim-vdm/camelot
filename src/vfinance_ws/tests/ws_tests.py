@@ -127,6 +127,10 @@ class WsTestCase(unittest.TestCase):
 
         response = self.post_json('calculate_proposal', data=DOCUMENT)
 
+        self.assertEqual(response.status_code, 400)
+        content = json.loads(response.data)
+        self.assertIn('agreement_date/day', content)
+
     def test_020_create_agreement_code(self):
         DOCUMENT = {
             "agent_official_number_fsma": "128Char",
