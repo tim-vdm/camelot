@@ -45,10 +45,6 @@ def validate_document(document, schema, fields_date=None):
     try:
         validated_document = validator(document)
     except voluptuous.MultipleInvalid as ex:
-        # from nose.tools import set_trace
-        # set_trace()
-        # import pdb
-        # pdb.set_trace()
         for error in ex.errors:
             if isinstance(error, voluptuous.RequiredFieldInvalid):
                 errors[error.path[0].schema] = {
@@ -123,6 +119,7 @@ CREATE_AGREEMENT_CODE_SCHEMA.update({
     Optional('pledge_reference'): Any(IsNone, Length(max=30)),
 })
 
+
 def validation_calculate_proposal(document):
     FIELDS_DATE = (
         ['agreement_date'],
@@ -130,7 +127,12 @@ def validation_calculate_proposal(document):
         ['insured_party__1__birthdate'],
     )
 
-    return validate_document(document, CALCULATE_PROPOSAL_SCHEMA, FIELDS_DATE)
+    return validate_document(
+        document,
+        CALCULATE_PROPOSAL_SCHEMA,
+        FIELDS_DATE
+    )
+
 
 def validation_create_agreement_code(document):
     FIELDS_DATE = (
@@ -139,7 +141,11 @@ def validation_create_agreement_code(document):
         ['insured_party__1__birthdate'],
     )
 
-    return validate_document(document, CREATE_AGREEMENT_CODE_SCHEMA, FIELDS_DATE)
+    return validate_document(
+        document,
+        CREATE_AGREEMENT_CODE_SCHEMA,
+        FIELDS_DATE
+    )
 
 
 if __name__ == '__maine__':
