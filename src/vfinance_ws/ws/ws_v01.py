@@ -1,5 +1,8 @@
 from __future__ import absolute_import
 
+import hashlib
+import datetime
+
 from flask import Blueprint
 from flask import abort
 from flask import jsonify
@@ -178,11 +181,7 @@ def calculate_proposal():
     if errors:
         return jsonify(errors), 400
 
-    amount = v01.calculate_proposal(proposal)
-    return jsonify({
-        'premium_schedule__1__amount': amount,
-        'premium_schedule__2__amount': None
-    })
+    return jsonify(v01.calculate_proposal(proposal))
 
 
 @bp.route('/create_agreement_code', methods=['POST'])
@@ -212,17 +211,32 @@ def create_agreement_code():
         Date: Mon, 23 Feb 2015 15:26:04 GMT
         Server: Werkzeug/0.10.1 Python/2.7.8+
 
+
         {
-            "code": "000/0000/00000"
+            "code": "000/0000/00000",
+            "premium_schedule__1__amount": "1.0",
+            "premium_schedule__2__amount": null,
+            "signature": "50ad3f36f09b227c7b8e647cf8e35497"
         }
+
 
     :status 200: OK
     :reqheader Content-Type: Must be `application/json`
 
     """
-    return jsonify({
-        'code': v01.create_agreement_code()
-    })
+    json_document = is_json_body()
+
+    # Check the json
+
+    from .validation_message import validation_create_agreement_code
+
+    proposal, errors = validation_create_agreement_code(json_document)
+
+    if errors:
+        return jsonify(errors), 400
+
+
+    return jsonify(v01.create_agreement_code(proposal))
 
 
 @bp.route('/create_proposal', methods=['POST'])
