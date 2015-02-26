@@ -114,9 +114,9 @@ CREATE_AGREEMENT_CODE_SCHEMA.update({
     Optional('insured_party__1__city_code'): Length(max=10),
     Optional('insured_party__1__city_name'): Length(max=40),
     Optional('insured_party__1__country_code'): Length(max=2),
-    Optional('pledge_name'): Any(IsNone, Length(max=30)),
-    Optional('pledge_tax_id'): Any(IsNone, Length(max=20)),
-    Optional('pledge_reference'): Any(IsNone, Length(max=30)),
+    Optional('pledgee_name'): Any(IsNone, Length(max=30)),
+    Optional('pledgee_tax_id'): Any(IsNone, Length(max=20)),
+    Optional('pledgee_reference'): Any(IsNone, Length(max=30)),
 })
 
 

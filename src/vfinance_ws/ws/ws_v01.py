@@ -239,14 +239,14 @@ def create_agreement_code():
             "insured_party__1__nationality_code": "BE",
             "insured_party__1__social_security_number": "012345678901",
             "insured_party__1__passport_number": "111-2222222-33",
-            "insured_party__1__dangerous_hobby": "",
+            "insured_party__1__dangerous_hobby": null,
             "insured_party__1__street_1": "Street",
             "insured_party__1__city_code": "1234",
             "insured_party__1__city_name": "Brussels",
             "insured_party__1__country_code": "BE",
-            "pledge_name": "Krefimaa",
-            "pledge_tax_id": "BE 0456.249.396",
-            "pledge_reference": "KREF12345",
+            "pledgee_name": "Krefimaa",
+            "pledgee_tax_id": "BE 0456.249.396",
+            "pledgee_reference": "KREF12345",
         }
 
     .. sourcecode:: http
