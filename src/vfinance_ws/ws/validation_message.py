@@ -4,7 +4,7 @@ import voluptuous
 import json
 import datetime
 
-from voluptuous import Required, Coerce, Length
+from voluptuous import Required, Coerce, Length, Optional, Any
 from decimal import Decimal
 
 
@@ -103,6 +103,24 @@ CALCULATE_PROPOSAL_SCHEMA = {
     Required("premium_schedules_premium_rate_1"): Coerce(Decimal),
 }
 
+CREATE_AGREEMENT_CODE_SCHEMA = dict(CALCULATE_PROPOSAL_SCHEMA)
+CREATE_AGREEMENT_CODE_SCHEMA.update({
+    Required("origin"): int,
+    Optional('insured_party__1__last_name'): Length(max=30),
+    Optional('insured_party__1__first_name'): Length(max=30),
+    Optional('insured_party__1__language'): Length(max=5),
+    Optional('insured_party__1__nationality_code'): Length(max=2),
+    Optional('insured_party__1__social_security_number'): Length(max=12),
+    Optional('insured_party__1__passport_number'): Length(max=20),
+    Optional('insured_party__1__dangerous_hobby'): Any(Length(max=20), IsNone),
+    Optional('insured_party__1__street_1'): Length(max=128),
+    Optional('insured_party__1__city_code'): Length(max=10),
+    Optional('insured_party__1__city_name'): Length(max=40),
+    Optional('insured_party__1__country_code'): Length(max=2),
+    Optional('pledge_name'): Any(IsNone, Length(max=30)),
+    Optional('pledge_tax_id'): Any(IsNone, Length(max=20)),
+    Optional('pledge_reference'): Any(IsNone, Length(max=30)),
+})
 
 def validation_calculate_proposal(document):
     FIELDS_DATE = (
@@ -112,6 +130,16 @@ def validation_calculate_proposal(document):
     )
 
     return validate_document(document, CALCULATE_PROPOSAL_SCHEMA, FIELDS_DATE)
+
+def validation_create_agreement_code(document):
+    FIELDS_DATE = (
+        ['agreement_date'],
+        ['from_date'],
+        ['insured_party__1__birthdate'],
+    )
+
+    return validate_document(document, CREATE_AGREEMENT_CODE_SCHEMA, FIELDS_DATE)
+
 
 if __name__ == '__maine__':
     with open('calculate_proposal.json') as jsonfile:

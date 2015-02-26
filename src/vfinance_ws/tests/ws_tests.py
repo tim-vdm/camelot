@@ -128,10 +128,66 @@ class WsTestCase(unittest.TestCase):
         response = self.post_json('calculate_proposal', data=DOCUMENT)
 
     def test_020_create_agreement_code(self):
-        response = self.post_json('create_agreement_code')
+        DOCUMENT = {
+            "agent_official_number_fsma": "128Char",
+            "agreement_date": {"month": 2, "year": 2015, "day": 28},
+            "duration": 10,
+            "from_date": {"month": 2, "year": 2015, "day": 26},
+            "insured_party__1__birthdate": {
+                "month": 2,
+                "year": 2015,
+                "day": 26
+            },
+            "insured_party__1__sex": "M",
+            "package_id": 10,
+            "premium_schedule__1__premium_fee_1": "2.00",
+            "premium_schedule__1__product_id": 67,
+            "premium_schedule__2__product_id": None,
+            "premium_schedules_coverage_level_type": "fixed_amount",
+            "premium_schedules_coverage_limit": "0.05",
+            "premium_schedules_payment_duration": 10,
+            "premium_schedules_period_type": "single",
+            "premium_schedules_premium_rate_1": "0.0005",
+            "origin": 10,
+        }
+
+        response = self.post_json('create_agreement_code', data=DOCUMENT)
         self.assertEqual(response.status_code, 200)
+
         content = json.loads(response.data)
+
         self.assertEqual(content['code'], '000/0000/00000')
+
+    def test_021_create_agreement_code_wrong_values(self):
+        DOCUMENT = {
+            "agent_official_number_fsma": "128Char",
+            "agreement_date": {"month": 2, "year": 2015, "day": 28},
+            "duration": 10,
+            "from_date": {"month": 2, "year": 2015, "day": 26},
+            "insured_party__1__birthdate": {
+                "month": 2,
+                "year": 2015,
+                "day": 26
+            },
+            "insured_party__1__sex": "M",
+            "package_id": 10,
+            "premium_schedule__1__premium_fee_1": "2.00",
+            "premium_schedule__1__product_id": 67,
+            "premium_schedule__2__product_id": None,
+            "premium_schedules_coverage_level_type": "fixed_amount",
+            "premium_schedules_coverage_limit": "0.05",
+            "premium_schedules_payment_duration": 10,
+            "premium_schedules_period_type": "single",
+            "premium_schedules_premium_rate_1": "0.0005",
+            "origin": 10,
+            "insured_party__1__nationality_code": "qwertyuio",
+        }
+        response = self.post_json('create_agreement_code', data=DOCUMENT)
+        self.assertEqual(response.status_code, 400)
+        content = json.loads(response.data)
+
+        self.assertIn('insured_party__1__nationality_code', content)
+
 
     def test_030_create_proposal(self):
         response = self.post_json('create_proposal')
