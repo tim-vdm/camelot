@@ -1,14 +1,9 @@
 from __future__ import absolute_import
 
-import hashlib
-import datetime
-
 from flask import Blueprint
-from flask import abort
 from flask import jsonify
-from flask import Response
 
-from .decorators import to_json, log_to_file, check_minimal_requirements
+from .decorators import log_to_file, check_minimal_requirements
 from .utils import is_json_body
 
 from api import v01
@@ -157,7 +152,8 @@ def calculate_proposal():
             }
         }
 
-    If there is a extra key in the json document, the server will return this kind of message
+    If there is a extra key in the json document, the server will return
+    this kind of message.
 
     .. sourcecode:: http
 
@@ -211,7 +207,7 @@ def create_agreement_code():
         {
             "agent_official_number_fsma": "128Char",
             "agreement_date": {
-                "day": 28, 
+                "day": 28,
                 "month": 2,
                 "year": 2015
             },
@@ -284,7 +280,6 @@ def create_agreement_code():
     if errors:
         return jsonify(errors), 400
 
-
     return jsonify(v01.create_agreement_code(proposal))
 
 
@@ -339,6 +334,7 @@ def modify_proposal():
         'message': "Web service not implemented"
     }), 501
 
+
 @bp.route('/cancel_proposal', methods=['POST'])
 def cancel_proposal():
     """
@@ -362,6 +358,7 @@ def cancel_proposal():
         'message': "Web service not implemented"
     }), 501
 
+
 @bp.route('/proposal_to_managed', methods=['POST'])
 def proposal_to_managed():
     """
@@ -384,6 +381,7 @@ def proposal_to_managed():
     return jsonify({
         'message': "Web service not implemented"
     }), 501
+
 
 @bp.route('/get_proposal_pdf', methods=['POST'])
 def get_proposal_pdf():
