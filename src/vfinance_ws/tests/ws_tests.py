@@ -151,6 +151,7 @@ class WsTestCase(unittest.TestCase):
             "origin": 10,
         }
 
+        print json.dumps(DOCUMENT)
         response = self.post_json('create_agreement_code', data=DOCUMENT)
         self.assertEqual(response.status_code, 200)
 

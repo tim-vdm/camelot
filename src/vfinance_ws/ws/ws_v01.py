@@ -46,7 +46,11 @@ def calculate_proposal():
                 "day": 29
             },
             "duration": 10,
-            "from_date": {"month": 2, "year": 2015, "day": 26},
+            "from_date": {
+                "month": 2,
+                "year": 2015,
+                "day": 26
+            },
             "insured_party__1__birthdate": {
                 "month": 2,
                 "year": 2015,
@@ -58,10 +62,10 @@ def calculate_proposal():
             "premium_schedule__1__product_id": 67,
             "premium_schedule__2__product_id": null,
             "premium_schedules_coverage_level_type": "fixed_amount",
-            "premium_schedules_coverage_limit": "0.05",
+            "premium_schedules_coverage_limit": "5000",
             "premium_schedules_payment_duration": 10,
             "premium_schedules_period_type": "single",
-            "premium_schedules_premium_rate_1": "0.0005"
+            "premium_schedules_premium_rate_1": "20"
         }
 
     .. sourcecode:: http
@@ -203,6 +207,51 @@ def create_agreement_code():
         Host: localhost:19021
         User-Agent: HTTPie/0.9.1
 
+        {
+            "agent_official_number_fsma": "128Char",
+            "agreement_date": {
+                "day": 28, 
+                "month": 2,
+                "year": 2015
+            },
+            "duration": 10,
+            "from_date": {
+                "day": 26,
+                "month": 2,
+                "year": 2015
+            },
+            "insured_party__1__birthdate": {
+                "day": 26,
+                "month": 2,
+                "year": 2015
+            },
+            "insured_party__1__sex": "M",
+            "package_id": 10,
+            "premium_schedule__1__premium_fee_1": "2.00",
+            "premium_schedule__1__product_id": 67,
+            "premium_schedule__2__product_id": null,
+            "premium_schedules_coverage_level_type": "fixed_amount",
+            "premium_schedules_coverage_limit": "5000",
+            "premium_schedules_payment_duration": 10,
+            "premium_schedules_period_type": "single",
+            "premium_schedules_premium_rate_1": "20",
+            "origin": "BIA:10",
+            "insured_party__1__last_name": "Lastname",
+            "insured_party__1__first_name": "Firstname",
+            "insured_party__1__language": "nl_BE",
+            "insured_party__1__nationality_code": "BE",
+            "insured_party__1__social_security_number": "012345678901",
+            "insured_party__1__passport_number": "111-2222222-33",
+            "insured_party__1__dangerous_hobby": "",
+            "insured_party__1__street_1": "Street",
+            "insured_party__1__city_code": "1234",
+            "insured_party__1__city_name": "Brussels",
+            "insured_party__1__country_code": "BE",
+            "pledge_name": "Krefimaa",
+            "pledge_tax_id": "BE 0456.249.396",
+            "pledge_reference": "KREF12345",
+        }
+
     .. sourcecode:: http
 
         HTTP/1.0 200 OK
@@ -210,7 +259,6 @@ def create_agreement_code():
         Content-Type: application/json
         Date: Mon, 23 Feb 2015 15:26:04 GMT
         Server: Werkzeug/0.10.1 Python/2.7.8+
-
 
         {
             "code": "000/0000/00000",
