@@ -78,7 +78,7 @@ def validate_document(document, schema, fields_date=None):
 
 DATE_SCHEMA = {
     Required("month"): voluptuous.Range(min=1, max=12),
-    Required("year"): voluptuous.Range(min=2000, max=2400),
+    Required("year"): voluptuous.Range(min=1900, max=2400),
     Required("day"): voluptuous.Range(min=1, max=31),
 }
 
@@ -86,7 +86,8 @@ DATE_SCHEMA = {
 CALCULATE_PROPOSAL_SCHEMA = {
     Required("agent_official_number_fsma"): Length(max=128),
     Required("agreement_date"): DATE_SCHEMA,
-    Required("duration"): voluptuous.Range(min=1, max=10),
+    Required("duration"): int,
+    # voluptuous.Range(min=1, max=10),
     Required("from_date"): DATE_SCHEMA,
     Required("insured_party__1__birthdate"): DATE_SCHEMA,
     Required("insured_party__1__sex"): voluptuous.Any("M", "F"),
