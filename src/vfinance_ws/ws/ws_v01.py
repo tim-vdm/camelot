@@ -2,18 +2,18 @@ from __future__ import absolute_import
 
 from flask import Blueprint
 from flask import abort
-
-bp = Blueprint('api_prototype', __name__)
+from flask import jsonify
+from flask import Response
 
 from .decorators import to_json, log_to_file, check_minimal_requirements
 from .utils import is_json_body
 
 from api import v01
 
+bp = Blueprint('api_prototype', __name__)
+
 
 @bp.route('/calculate_proposal', methods=['POST'])
-@to_json
-@log_to_file
 @check_minimal_requirements
 def calculate_proposal():
     """
@@ -36,6 +36,29 @@ def calculate_proposal():
         User-Agent: HTTPie/0.9.1
 
         {
+            "agent_official_number_fsma": "128Char",
+            "agreement_date": {
+                "month": 2,
+                "year": 2015,
+                "day": 29
+            },
+            "duration": 10,
+            "from_date": {"month": 2, "year": 2015, "day": 26},
+            "insured_party__1__birthdate": {
+                "month": 2,
+                "year": 2015,
+                "day": 26
+            },
+            "insured_party__1__sex": "M",
+            "package_id": 10,
+            "premium_schedule__1__premium_fee_1": "2.00",
+            "premium_schedule__1__product_id": 67,
+            "premium_schedule__2__product_id": null,
+            "premium_schedules_coverage_level_type": "fixed_amount",
+            "premium_schedules_coverage_limit": "0.05",
+            "premium_schedules_payment_duration": 10,
+            "premium_schedules_period_type": "single",
+            "premium_schedules_premium_rate_1": "0.0005"
         }
 
     .. sourcecode:: http
@@ -47,27 +70,126 @@ def calculate_proposal():
         Server: Werkzeug/0.10.1 Python/2.7.8+
 
         {
-            "amount": "1.0"
+            "premium_schedule__1__amount": "1.0",
+            "premium_schedule__2__amount": null
+        }
+
+
+    .. sourcecode:: http
+
+        HTTP/1.0 400 BAD REQUEST
+        Content-Length: 1057
+        Content-Type: application/json
+        Date: Thu, 26 Feb 2015 09:40:32 GMT
+        Server: Werkzeug/0.10.1 Python/2.7.8+
+
+        {
+            "agent_official_number_fsma": {
+                "message": "Required"
+            },
+            "agreement_date": {
+                "message": "Required"
+            },
+            "duration": {
+                "message": "Required"
+            },
+            "from_date": {
+                "message": "Required"
+            },
+            "insured_party__1__birthdate": {
+                "message": "Required"
+            },
+            "insured_party__1__sex": {
+                "message": "Required"
+            },
+            "package_id": {
+                "message": "Required"
+            },
+            "premium_schedule__1__premium_fee_1": {
+                "message": "Required"
+            },
+            "premium_schedule__1__product_id": {
+                "message": "Required"
+            },
+            "premium_schedule__2__product_id": {
+                "message": "Required"
+            },
+            "premium_schedules_coverage_level_type": {
+                "message": "Required"
+            },
+            "premium_schedules_coverage_limit": {
+                "message": "Required"
+            },
+            "premium_schedules_payment_duration": {
+                "message": "Required"
+            },
+            "premium_schedules_period_type": {
+                "message": "Required"
+            },
+            "premium_schedules_premium_rate_1": {
+                "message": "Required"
+            }
+        }
+
+    If there is an error in the values of the json document, the server will
+    return a message with the path of the variable.
+
+    .. sourcecode:: http
+
+        HTTP/1.0 400 BAD REQUEST
+        Content-Length: 98
+        Content-Type: application/json
+        Date: Thu, 26 Feb 2015 09:40:32 GMT
+        Server: Werkzeug/0.10.1 Python/2.7.8+
+
+        {
+            "agreement_date/day": {
+                "message": "day is out of range for month",
+                "value": 29
+            }
+        }
+
+    If there is a extra key in the json document, the server will return this kind of message
+
+    .. sourcecode:: http
+
+        HTTP/1.0 400 BAD REQUEST
+        Content-Length: 1057
+        Content-Type: application/json
+        Date: Thu, 26 Feb 2015 09:40:32 GMT
+        Server: Werkzeug/0.10.1 Python/2.7.8+
+
+        {
+            "name": {
+                "message": "extra keys not allowed",
+                "value": "value"
+            }
         }
 
     """
-    message = is_json_body()
+    json_document = is_json_body()
+
     # Check the json
 
-    amount = v01.calculate_proposal(message)
-    return {'amount': amount}
+    from .validation_message import validation_calculate_proposal
+
+    proposal, errors = validation_calculate_proposal(json_document)
+
+    if errors:
+        return jsonify(errors), 400
+
+    amount = v01.calculate_proposal(proposal)
+    return jsonify({
+        'premium_schedule__1__amount': amount,
+        'premium_schedule__2__amount': None
+    })
 
 
 @bp.route('/create_agreement_code', methods=['POST'])
-@to_json
-@log_to_file
+# @check_minimal_requirements
 def create_agreement_code():
     """
     :synopsis: Create an Agreement Code
-
-    .. sourcecode:: bash
-
-        > http --verbose -j POST "http://staging-patronale-life.mgx.io/api/v0.1/create_agreement_code" "Content-Type: application/json"
 
     **Not Yet Implemented**
 
@@ -98,20 +220,15 @@ def create_agreement_code():
     :reqheader Content-Type: Must be `application/json`
 
     """
-
-    return {
+    return jsonify({
         'code': v01.create_agreement_code()
-    }
+    })
 
 
 @bp.route('/create_proposal', methods=['POST'])
 def create_proposal():
     """
     :synopsis: Create a proposal
-
-    .. sourcecode:: bash
-
-        > http --verbose -j POST "http://staging-patronale-life.mgx.io/api/v0.1/create_proposal" "Content-Type: application/json"
 
     **Not Yet Implemented**
 
@@ -131,7 +248,9 @@ def create_proposal():
     :reqheader Content-Type: Must be :mimetype:`application/json`
 
     """
-    abort(501)
+    return jsonify({
+        'message': "Web service not implemented"
+    }), 501
 
 
 @bp.route('/modify_proposal', methods=['POST'])

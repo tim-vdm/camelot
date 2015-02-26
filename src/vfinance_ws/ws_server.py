@@ -1,14 +1,10 @@
 #!/usr/bin/env python
 from __future__ import absolute_import
 import sys
+from flask import Flask
+from flask import jsonify
 
 sys.path.insert(0, '.')
-
-from flask import Flask
-from flask import request
-from flask import abort
-from flask import jsonify
-import pprint
 
 
 def bad_request(error):
@@ -16,10 +12,12 @@ def bad_request(error):
     response.status_code = error.status_code
     return response
 
+
 def not_implemented(error):
     response = jsonify({'message': 'Web service not implemented'})
     response.status_code = 501
     return response
+
 
 def create_app():
     app = Flask(__name__)

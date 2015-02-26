@@ -4,4 +4,5 @@ syntax: glob
 .DS_Store
 .nose
 src/vfinance_ws/ws/logs/
+docs/build/
 

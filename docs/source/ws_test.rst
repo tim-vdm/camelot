@@ -8,7 +8,7 @@ The `/request` web service will return all the information from your request, th
 Test your HTTP request
 ----------------------
 
-.. autoflask:: ws:create_app()
+.. autoflask:: ws_server:create_app()
     :endpoints: api_test.debug_request
 
 Your HTTP request is compliant
@@ -18,6 +18,6 @@ The `/is_compliant` web service will check if your request is compliant with the
 
 
 
-.. autoflask:: ws:create_app()
+.. autoflask:: ws_server:create_app()
     :endpoints: api_test.is_compliant
 

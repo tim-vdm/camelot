@@ -20,11 +20,6 @@ def debug_request():
     """
     :synopsis: Show the content of your HTTP request
 
-    .. sourcecode:: bash
-
-        > http --verbose -j POST "http://staging-patronale-life.mgx.io/api/test/request" "Content-Type: application/json"
-
-
     **Example request**
 
     .. sourcecode:: http
@@ -84,11 +79,8 @@ def debug_request():
 @bp.route('/is_compliant', methods=['POST'])
 def is_compliant():
     """
-    :synopsis: Inform if you respect the minimal requirements for the web services.
-
-    .. sourcecode:: bash
-
-        > http --verbose -j POST "http://staging-patronale-life.mgx.io/api/test/is_compliant"
+    :synopsis: Inform if you respect the minimal requirements
+               for the web services.
 
     .. sourcecode:: http
 

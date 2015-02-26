@@ -1,5 +1,6 @@
 flask
 gunicorn
+voluptuous
 sphinx
 sphinxcontrib-httpdomain
 sphinx-rtd-theme
