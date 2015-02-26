@@ -105,7 +105,7 @@ CALCULATE_PROPOSAL_SCHEMA = {
 
 CREATE_AGREEMENT_CODE_SCHEMA = dict(CALCULATE_PROPOSAL_SCHEMA)
 CREATE_AGREEMENT_CODE_SCHEMA.update({
-    Required("origin"): int,
+    Required("origin"): Length(max=32),
     Optional('insured_party__1__last_name'): Length(max=30),
     Optional('insured_party__1__first_name'): Length(max=30),
     Optional('insured_party__1__language'): Length(max=5),
