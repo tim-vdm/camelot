@@ -62,7 +62,11 @@ class WsTestCase(unittest.TestCase):
     def test_010_calculate_proposal(self):
         DOCUMENT = {
             "agent_official_number_fsma": "128Char",
-            "agreement_date": {"month": 3, "year": 2015, "day": 2},
+            "agreement_date": {
+                "month": 3,
+                "year": 2015,
+                "day": 2
+            },
             "duration": 10,
             "from_date": {"month": 3, "year": 2015, "day": 1},
             "insured_party__1__birthdate": {
