@@ -3,6 +3,8 @@ import datetime
 import hashlib
 
 from sqlalchemy.engine import create_engine
+from sqlalchemy import orm
+
 from camelot.core.conf import settings
 from camelot.core.orm import Session
 from camelot.core.sql import metadata
@@ -17,7 +19,8 @@ def calculate_proposal(proposal):
 
     settings.append(SettingsProxy(None))
 
-    db_filename = '/home/stephane/vfinance_26022015/src/packages.db'
+    # db_filename = '/home/stephane/vfinance_26022015/src/packages.db'
+    db_filename = '/home/www/staging-patronale-life.mgx.io/src-preprod/src/packages.db'
 
     engine = create_engine('sqlite:///'+db_filename)
 
@@ -72,6 +75,8 @@ def calculate_proposal(proposal):
         proposal['premium_schedules_period_type']
 
     facade.update_premium()
+
+    orm.object_session(facade).flush()
 
     amount1 = str(facade.premium_schedule__1__amount)
     amount2 = str(facade.premium_schedule__2__amount) \
