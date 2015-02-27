@@ -65,7 +65,7 @@ def check_minimal_requirements(function):
         if not request.content_type:
             raise BadContentType('Content-Type is not setted')
 
-        if request.content_type != 'application/json':
+        if 'application/json' not in request.content_type:
             raise BadContentType("Content-Type is not 'application/json'")
 
         try:
