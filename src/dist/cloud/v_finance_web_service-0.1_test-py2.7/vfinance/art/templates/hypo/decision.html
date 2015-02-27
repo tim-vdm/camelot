@@ -1,0 +1,92 @@
+{% extends 'hypo/vfinance_hypo_base.html' %}
+{% import "macros/html.html" as macros with context %}
+
+{% block content %}
+
+{{ macros.hypo_header(_('application')|capitalize,
+                      beslissing.datum|date,
+                      beslissing.full_number,
+                      recipient=recipient)}}
+
+<table width="100%">
+    {{macros.tr(beslissing.wettelijk_kader,
+                label=_('Wettelijk kader'), 
+                class='odd')}}
+    {{macros.tr(_(state_guarantee|replace('_', ' ')),
+                label=_('Gewestwaarborg'), 
+                class='even')}}
+</table>            
+
+{% for goedgekeurd_bedrag in beslissing.goedgekeurd_bedrag %}
+    <h3>Goedgekeurd Bedrag {{ loop.index }}</h3>
+    {% include 'includes/approved_amount_table.html' %}
+{% endfor %}
+
+<div style="page-break-after: always;">&nbsp;</div>
+
+{% for nodige_schuldsaldo in nodige_schuldsaldos %}
+    {% if loop.first %}<h3>Nodige schuldsaldo verzekering</h3>{% endif %}
+    <table id="nodige-schuldsaldo-verzekering" width="100%" cellspacing="0">
+        <tr class="odd"><td class="label">Natuurlijke persoon</td><td>{{nodige_schuldsaldo.natuurlijke_persoon}}</td></tr>
+        <tr><td class="label">Dekkingsgraad (%)</td><td>{{nodige_schuldsaldo.dekkingsgraad_schuldsaldo}}</td></tr>
+        <tr class="odd"><td class="label">Voorzien</td><td>{% if nodige_schuldsaldo.schuldsaldo_voorzien %}Ja{% else %}Nee{% endif %}</td></tr>
+    </table>
+{% endfor %}
+
+<table width="100%">
+    <tr>
+        <td width="50%" style="vertical-align:top">
+            <h3>Terugbetalingscapaciteit</h3>
+            <table id="terugbetalingscapaciteit" width="100%" cellspacing="0">
+                <tr class="odd"><td class="label" width="50%">Inkomsten</td><td align="right">€ {{beslissing.totaal_inkomsten|currency}}</td></tr>
+                <tr><td class="label">Lasten</td><td align="right">€ {{beslissing.totaal_lasten|currency}}</td></tr>
+                <tr class="odd"><td class="label">Maandlast lopend_krediet</td><td align="right">€ {{beslissing.maandlast_lopend_krediet|currency}}</td></tr>
+                <tr><td class="label">Levensonderhoud</td><td align="right">€ {{beslissing.levensonderhoud|currency}}</td></tr>
+                <tr class="odd"><td class="label">Correctie levensonderhoud</td><td align="right">€ {{beslissing.correctie_levensonderhoud|currency}}</td></tr>
+                <tr><td class="label">Terugbetalingscapaciteit</td><td align="right">€ {{beslissing.terugbetalingscapaciteit|currency}}</td></tr>
+                <tr class="odd"><td class="label">Maandelijkse Aflossing</td><td align="right">€ {{beslissing.maandelijkse_voorgestelde_aflossing|currency}}</td></tr>
+                <tr><td class="label">Terugbetalingsratio</td><td align="right">{{beslissing.voorgestelde_terugbetalingsratio|currency}}</td></tr>
+            </table>
+        </td>
+        <td width="50%" style="vertical-align:top">
+            <h3>Waarborgen</h3>
+            <table id="waarborgen" width="100%" cellspacing="0">
+                <tr class="odd"><td class="label">Gedwongen verkoop</td><td align="right">€ {{beslissing.gedwongen_verkoop|currency}}</td></tr>
+                <tr><td class="label">Vrijwillige verkoop</td><td align="right">€ {{beslissing.vrijwillige_verkoop|currency}}</td></tr>
+                <tr class="odd"><td class="label">Bestaande inschrijvingen</td><td align="right">€ {{beslissing.bestaande_inschrijvingen|currency}}</td></tr>
+                <tr><td class="label">Saldo bestaande inschrijvingen</td><td align="right">€ {{beslissing.saldo_bestaande_inschrijvingen|currency}}</td></tr>
+                <tr class="odd"><td class="label">Waarborg bijkomend waarde</td><td align="right">€ {{beslissing.waarborg_bijkomend_waarde|currency}}</td></tr>
+                <tr><td class="label">Waarborgen</td><td align="right">€ {{beslissing.waarborgen|currency}}</td></tr>
+                <tr class="odd"><td class="label">Goedgekeurd totaal</td><td align="right">€ {{beslissing.goedgekeurd_totaal|currency}}</td></tr>
+                <tr><td class="label">Quotiteit</td><td align="right">{{beslissing.quotiteit|currency}}</td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+        
+<h3>Dossierkosten</h3>
+<table width="100%">
+    <tr>
+        <td>
+            <table id="dossierkosten" width="100%" cellspacing="0">
+                <tr class="odd"><td class="label" width="50%">Voorgesteld</td><td align="right">€ {{beslissing.voorgestelde_dossierkosten|currency}}</td></tr>
+                <tr><td class="label">Correctie</td><td align="right">€ {{beslissing.correctie_dossierkosten|currency}}</td></tr>
+                <tr class="odd"><td class="label">Goedgekeurd</td><td align="right">€ {{beslissing.goedgekeurde_dossierkosten|currency}}</td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+          
+<h3>Beslissing</h3>
+<table>
+    <tr>
+        <td>Beslissing:</td>
+        <td>{{ beslissing.state|replace('_', ' ') }}</td>
+    </tr>
+    <tr>
+        <td>Opmerking :</td>
+        <td>{% if opmerkingen == 'None' %}Geen{% else %}{{ opmerkingen }}{% endif %}</td>
+    </tr>
+</table>
+    {% block footer %}{% endblock %}
+{% endblock %}

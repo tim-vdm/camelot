@@ -1,0 +1,23 @@
+{% import "macros/html.html" as macros %}
+<h3>Customer</h3>
+Name : {{customer.name}}<br/>
+Account : {{customer.full_account_number}}
+
+{% set rows = [['Book', 'Document', 'Document Date', 'Amount', 'Open amount']] %}
+{% set total_open_amount = 0 %}
+{% for entry in customer.last_entries %}
+    {% do rows.append([entry.book,
+                       entry.document,
+                       entry.doc_date,
+                       (entry.amount * -1)|currency,
+                       (entry.open_amount * -1)|currency
+                       ]) %}
+{% endfor %}
+
+{% if rows|length > 1 %}
+    {{macros.table(rows,
+                   first_row_header=true,
+                   checkbox=false,
+                   color_cycle=false,
+                   alignments=['', '', 'right', 'right', 'right'])}} <br />
+{% endif %}

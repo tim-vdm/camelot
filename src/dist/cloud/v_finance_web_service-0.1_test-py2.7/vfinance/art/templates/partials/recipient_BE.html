@@ -1,0 +1,14 @@
+{{ recipient.addressees|join(', ', attribute='full_name') }}<br>
+{% if recipient.custom_addres %}
+    {{ recipient.custom_address }}<br>
+{% else %}
+    {{ recipient.street1 }}<br>
+    {% if recipient.street2 %}{{ recipient.street2 }}<br>{% endif %}
+      {% if recipient.country_code -%}
+        {{recipient.country_code }} - 
+      {% endif %}
+      {%- if recipient.city_code -%}
+        {{ recipient.city_code }} 
+      {%- endif %}
+      {{ recipient.city }}
+{% endif %}

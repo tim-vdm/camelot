@@ -1,0 +1,42 @@
+{% extends "base/account_movements_nl_BE.xml" %}
+{# 
+
+doc_version
+
+    Document source code identifier
+    Please increment last number with every commit (or better per production server update)  
+#}
+{% block template_type %}AM.21.nl_BE{% endblock %}
+
+{% block coverpage_extra %}
+<w:p>
+  <w:pPr>
+    <w:pStyle w:val="Broodtekst"/>
+    <w:jc w:val="both"/>
+    <w:rPr>
+      <w:lang w:val="nl-BE"/>
+    </w:rPr>
+  </w:pPr>
+  <w:r w:rsidRPr="00A23615">
+    <w:rPr>
+      <w:color w:val="auto"/>
+      <w:sz w:val="20"/>
+      <w:szCs w:val="20"/>
+      <w:lang w:val="nl-BE"/>
+    </w:rPr>
+    <w:t>
+      {% set free_pct_2_set = [] %}
+      {% for premium_schedule_state in premium_schedule_states %}
+        {% if premium_schedule_state.premium_data.premium_schedule.product.id in [33, 34, 35, 36] -%}
+          {% set free_pct_2_feature = premium_schedule_state.premium_data.premium_schedule.get_applied_feature_at(options.from_document_date, premium_schedule_state.premium_data.premium_schedule.valid_from_date, premium_schedule_state.premium_data.premium_schedule.amount, 'free_pct_2') %}
+          Het totale rendement in {{options.from_document_date.year}} bestaat uit de rentewaarborg + winstdeelname voor {{options.from_document_date.year}}. Indien de rentewaarborg op de betreffende premie lager is dan {{free_pct_2_feature.value|decimal}}%, zal het verschil als winstdeelname aan uw contract worden toegekend. Indien de rentewaarborg op de betreffende premie hoger is dan {{free_pct_2_feature.value|decimal}}% wordt er geen winstdeelname toegekend. De rentewaarborgen die van toepassing zijn op uw contract worden op de volgende pagina opgesomd.<w:br/><w:br/>Ter informatie: Op de toegekende winstdeelname zal voor {{options.thru_document_date.year}} een intrestvoet van {{premium_schedule_state.premium_data.premium_schedule.get_applied_feature_at(options.from_document_date, premium_schedule_state.premium_data.premium_schedule.valid_from_date, premium_schedule_state.premium_data.premium_schedule.amount, 'interest_rate').value|decimal}}% van toepassing zijn.<w:br/>
+          {% do free_pct_2_set.append(1) %}
+        {%- endif %}
+      {%- endfor %}
+      {% if not free_pct_2_set %}
+        Over {{options.from_document_date.year}} werd bovenop de gewaarborgde intrestvoet geen bijkomende winstdeelname toegekend.
+      {% endif %}
+    </w:t>
+  </w:r>
+</w:p>
+{% endblock %}

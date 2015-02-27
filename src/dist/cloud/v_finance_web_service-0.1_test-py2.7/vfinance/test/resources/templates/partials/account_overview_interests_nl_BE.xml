@@ -1,0 +1,147 @@
+<w:tbl>
+  <w:tblPr>
+    <w:tblW w:w="5000" w:type="pct"/>
+    <w:jc w:val="center"/>
+    <w:tblBorders>
+      <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+      <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+      <w:bottom w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+      <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+      <w:insideH w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+      <w:insideV w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+    </w:tblBorders>
+  </w:tblPr>
+  <w:tr>
+    <w:trPr>
+      <w:cantSplit/>
+      <w:jc w:val="center"/>
+    </w:trPr>
+    <w:tc>
+      <w:tcPr>
+        <w:tcBorders>
+          <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+        </w:tcBorders>
+        <w:shd w:val="clear" w:color="auto" w:fill="auto"/>
+        <w:vAlign w:val="center"/>
+      </w:tcPr>
+      <w:p>
+        {{ _('from date')|capitalize|run_container(style=style_small+'<w:b/>') }} 
+    		{{ ' '|run_container(style=style_small) }}
+    		{{ _('premium')|run_container(style=style_small+'<w:b/>') }}
+      </w:p>
+    </w:tc>
+    <w:tc>
+      <w:tcPr>
+        <w:tcW w:w="3000" w:type="pct"/>
+        <w:tcBorders>
+          <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+        </w:tcBorders>
+        <w:shd w:val="clear" w:color="auto" w:fill="auto"/>
+        <w:vAlign w:val="center"/>
+      </w:tcPr>
+      <w:p>
+        <w:pPr>
+          <w:keepNext/>
+          <w:widowControl w:val="0"/>
+        </w:pPr>
+        {{ _('overview')|capitalize|run_container(style=style_small+'<w:b/>') }} 
+    		{{ ' '|run_container(style=style_small) }}
+    		{{ _('interests')|run_container(style=style_small+'<w:b/>') }}		
+      </w:p>
+    </w:tc>
+    <w:tc>
+      <w:tcPr>
+        <w:tcBorders>
+          <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+        </w:tcBorders>
+        <w:shd w:val="clear" w:color="auto" w:fill="auto"/>
+        <w:vAlign w:val="center"/>
+      </w:tcPr>
+      <w:p>
+        <w:pPr>
+          <w:keepNext/>
+          <w:widowControl w:val="0"/>
+          <w:jc w:val="right"/>
+         </w:pPr>
+        {{ _('net capital')|capitalize|run_container(style=style_small+'<w:b/>') }} 
+    		{{ ' '|run_container(style=style_small) }}
+    		{{ _('EUR')|run_container(style=style_small+'<w:b/>') }}
+       </w:p>
+     </w:tc>
+  </w:tr>
+{% for movement in premium_schedule_state.movements %}            
+  <w:tr>
+    <w:trPr>
+      <w:cantSplit/>
+      <w:jc w:val="center"/>
+    </w:trPr>
+    <w:tc>
+      <w:tcPr>
+        <w:tcBorders>
+          <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+        </w:tcBorders>
+        <w:shd w:val="clear" w:color="auto" w:fill="auto"/>
+        <w:vAlign w:val="center"/>
+      </w:tcPr>
+      <w:p>
+        <w:pPr>
+          <w:keepNext/>
+          <w:widowControl w:val="0"/>
+          <w:jc w:val="center"/>
+        </w:pPr>
+        {{ movement.doc_date|date|run_container(debug=debug, style=style_small) }}
+      </w:p>
+    </w:tc>
+    <w:tc>
+      <w:tcPr>
+        <w:tcBorders>
+          <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+        </w:tcBorders>
+        <w:shd w:val="clear" w:color="auto" w:fill="auto"/>
+        <w:vAlign w:val="center"/>
+      </w:tcPr>
+      <w:p>
+        <w:pPr>
+          <w:keepNext/>
+          <w:widowControl w:val="0"/>
+        </w:pPr>
+        {{ _(movement.movement_type|replace('_', ' '))|capitalize|run_container(debug=debug, style=style_small+'<w:i/>')}}
+        {% if movement.movement_type == 'profit_attribution' %}
+          {{ ' *'|run_container(style=style_small) }}
+        {% endif %}
+      </w:p>
+    {% for feature in movement.features %}
+      <w:p>
+		    {% include 'partials/account_features_BE.xml' %}
+      </w:p>
+    {% endfor %}
+    </w:tc>
+	<w:tc>
+	  <w:tcPr>
+	    <w:tcBorders>
+	      <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+	    </w:tcBorders>
+	    <w:shd w:val="clear" w:color="auto" w:fill="auto"/>
+	    <w:vAlign w:val="center"/>
+	  </w:tcPr>
+	  <w:p>
+	    <w:pPr>
+	      <w:keepNext/>
+	      <w:widowControl w:val="0"/>
+	      <w:jc w:val="right"/>
+	    </w:pPr>
+	    {{ movement.amount|currency|run_container(debug=debug, style=style_small) }}
+	  </w:p>
+	</w:tc>
+  </w:tr>
+{% endfor %}
+</w:tbl>
+{% if premium_schedule_state.profit_sharing  %}
+<w:p>
+  <w:pPr>
+    <w:spacing w:after="240"/>
+    <w:jc w:val="both"/>
+  </w:pPr>
+  {{ '* De winstdeelname wordt toegekend onder voorbehoud van goedkeuring door de Algemene Vergadering van Patronale Life NV en de NBB. Het percentage van de winstdeelname varieert jaarlijks en de rendementen uit het verleden bieden geen garantie voor de toekomst.'|run_container(style=style_small+'<w:i/>') }}
+</w:p>
+{% endif %}

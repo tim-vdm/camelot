@@ -1,0 +1,45 @@
+{% extends 'hypo/vfinance_hypo_base.html' %}
+{% import "macros/html.html" as macros with context %}
+
+{% block html_head %}
+<style type="text/css">
+h3, h4, p {
+    margin-bottom:0;
+}
+h3, p {
+    margin: 0
+}
+</style>
+{% endblock %}
+
+{% block content %}
+{{ macros.hypo_header(_('Dossier')|capitalize,
+                      datum, 
+                      full_number, 
+                      additional_header_lines=['O.Ref.: %s'|format(id)],
+                      recipient=recipient) }}
+<h3>AANGETEKEND</h3>
+<p>Geachte Client,</p>
+<br>
+<p>Wij hebben vastgesteld dat u ondanks onze vorige aanmaning, u de verschuldigde sommen met betrekking tot de toegestane lening PD {{nummer_dossier}}, nog steeds niet voldaan hebt. Wij herinneren er u nogmaals aan dat elke verschuldigde maandelijkse betaling binnen de {{aantal_dagen}} dagen op onze rekening dient gecrediteerd te worden. Het niet vervullen van deze verplichting kan de onderstaande gevolgen hebben :</p>
+<h4>1. Nalatigheidsintresten</h4>
+<p>Bij wanbetaling na {{aantal_dagen_wanbetaling}} dagen wordt de rentevoet met {{intrest_a|percentage}}% verhoogd voor deze vervaldag. Daarnaast wordt er eveneens op het kapitaalsbestanddeel van deze vervaldag een verhoogde rente toegepast.</p>
+<h4>2. Mededeling wanbetaling aan de Nationale Bank van België</h4>
+<p>Bij niet tijdige betaling zijn wij wettelijk gehouden om deze wanbetaling mee te delen aan de Nationale Bank van België. Dit wordt gedaan 30 dagen na datum van onze eerste aanmaningsbrief.</p>
+<h4>3. Opeisbaarheid krediet</h4>
+<p>Daarnaast hebben wij de mogelijkheid om het krediet onmiddellijk opeisbaar te stellen.</p>
+<h4>4. Blijvende wanbetaling</h4>
+<p>Indien u uw verplichtingen niet naleeft, hebben wij het recht om het gehypothekeerde onroerend goed te doen verkopen, overeenkomstig artikel 1560 en volgende van het Gerechtelijk Wetboek.  Daarnaast hebben wij het recht om het uitvoerend beslag van alle andere goederen te vervolgen, hetzij voor, hetzij gelijktijdig met de verkoop van het gehypothekeerde onroerend goed, om ons in te dekken voor de bedragen verschuldigd krachtens onze hypothecaire akte.</p>
+<h4>5. Kosten</h4>
+<p>Alle kosten met betrekking tot deze procedure alsook deze van dit aangetekend schrijven zijn volledig ten uwen laste.</p>
+<h4>6. Afrekening</h4>
+<p>In bijlage vindt u de afrekening met betrekking tot deze vervaldag.  Mogen wij u met aandrang vragen om dit bedrag binnen de 10 dagen over te schrijven op ons rekeningnummer {{ bankaccount }}, zodanig dat wij niet gedwongen zijn om verdere maatregelen te nemen.</p>
+<br>
+<p>Inmiddels verblijven wij,</p>
+<p>Met de meeste hoogachting.</p>
+<br>
+<br>
+<div>{{ signee_name }}</div>
+<div><img src="{{ 'images/signature_erik_laenen.png'|custom_image }}" alt=""></div>
+<div>{{ signee_function }}</div>
+{% endblock %}

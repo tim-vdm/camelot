@@ -1,0 +1,40 @@
+{% extends 'hypo/vfinance_hypo_base.html' %}
+{% import "macros/html.html" as macros with context %}
+
+{% block html_head %}
+<style type="text/css">
+h4 {
+    margin-bottom:0;
+}
+h3 {
+    margin:0;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+{{ macros.hypo_header(_('Dossier')|capitalize,
+                      datum, 
+                      full_number, 
+                      additional_header_lines=['O.Ref.: %s'|format(id)],
+                      recipient=recipient) }}
+<h3>AANGETEKENDE INGEBREKESTELLING</h3>
+<div>Geachte Client, </div>
+
+
+<p>Wij stellen vast dat, ondanks de verschillende aanmaningen die wij u hebben gestuurd, u de verschuldigde sommen waarvan u de afrekening in bijlage vindt met betrekking tot de toegestane lening nog steeds niet betaald hebt. </p>
+<p>Bijgevolg zien ons verplicht u formeel in gebreke te stellen en manen u formeel aan de achterstellige bedragen die vermeld staan in bijgevoegde afrekening binnen 8 dagen te betalen op onze rekening n° {{bankaccount}}. Indien het volledig bedrag van de achterstallen niet binnen 8 dagen zijn betaald, zullen wij genoodzaakt zijn om het u toegestane krediet onmiddellijk opeisbaar te stellen en gebruik te maken van ons recht om het gehypothekeerde onroerend goed te doen verkopen, overeenkomstig artikel 1560 en volgende van het Gerechtelijk Wetboek.</p>
+<p>Daarnaast hebben wij eveneens het recht om het uitvoerend beslag van alle andere goederen te vervolgen, hetzij voor, hetzij gelijktijdig met de verkoop van het gehypothekeerde onroerend goed, om ons in te dekken voor de bedragen verschuldigd krachtens onze hypothecaire akte.</p>
+<p>Wij melden u tevens dat indien de achterstallen verbonden aan dit dossier gelateerd aan dit schrijven  binnen de aangegeven termijn niet is aangezuiverd, wij ambtshalve uw wanbetaling zullen aangeven aan de Centrale voor Kredieten aan Particulieren, Nationale Bank van België Berlaimontlaan 14, 1000 Brussel.</p>
+<p>U kunt gratis inzage krijgen van alle meldingen die onder uw naam zijn gedaan in het bestand van de Centrale voor Kredieten aan Particulieren op basis van uw identiteit, door een getekend schrijven te richten, vergezeld van uw fotokopie (recto/verso) van uw identiteits bewijs aan de Nationale Bank van België, Centrale voor Kredieten aan Particulieren, Berlaimontlaan 14, 1000 Brussel.</p>
+<p>Indien u gegevens wenst te laten verbeteren, dient u zich te richten aan uw kredietverstrekker vergezeld met de nodige stukken die uw aanvraag staven. Indien geen akkoord wordt gevonden kunt u een gemotiveerde klacht richten aan de Commissie voor de bescherming van de Persoonlijke levenssfeer  Hoogstraat 139 1000 Brussel. Uw aanvraag dient persoonlijk te worden ingediend, geen enkele volmacht is aanvaard, behalve in het kader van de uitvoering van een kredietovereenkomst aan een door u aangestelde advocaat of Notaris. Er zal geen gevolg worden gegeven aan aanvragen die niet conform de wettelijke procedures zijn ingediend.</p>
+<p>Wij hopen dan ook dat wij ten spoedigste uw betaling ontvangen zodat wij niet gedwongen zullen worden om deze maatregelen te nemen.</p>
+<p>
+    Inmiddels verblijven wij,<br>
+    Met de meeste hoogachting,
+</p>
+<div>{{ signee_name }}</div>
+<div><img src="{{ signee_signature_image|custom_image }}" alt=""></div>
+<div>{{ signee_function }}</div>
+
+{% endblock %}

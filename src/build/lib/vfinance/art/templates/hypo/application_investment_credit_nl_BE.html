@@ -1,0 +1,254 @@
+{% import "macros/html.html" as macros %}
+{% extends 'hypo/vfinance_hypo_base.html' %}
+
+{% block html_head %}
+<style type="text/css">
+.boxlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+contractnummer | eventueel nog iets | datum | Ingegeven door: _________________________
+<hr>
+<table width="100%" border="1">
+    <tr>
+        <th>Vereiste documenten</th>
+        <th>Voor beslissing</th>
+        <th>Tijdens afhandeling dossier</th>
+    </tr>
+    <tr>
+        <td>Ondertekende aanvraag</td>
+        <td align="center">&#9746;</td>
+        <td align="center">&#9744;</td>
+    </tr>
+    <tr>
+        <td>
+            Aandeelhoudersstructuur
+            <ul>
+                <li>Identificatieformulier economisch rechthebbenden</li>
+                <li>Publicatie Belgisch Staatsblad m.b.t. benoeming bestuurders</li>
+                <li>Copie statuten</li>
+            </ul>
+        </td>
+        <td align="center">
+            <br>
+            <ul class="boxlist">
+                <li>&#9746;</li>
+                <li>&#9746;</li>
+                <li>&#9746;</li>
+            </ul>
+        </td>
+        <td align="center">
+            <br>
+            <ul class="boxlist">
+                <li>&#9744;</li>
+                <li>&#9744;</li>
+                <li>&#9744;</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Voor aandeelhouders > 25%:
+            <ul>
+                <li>Kopie identiteitskaart (recto verso)</li>
+                <li>
+                    Inkomsten loontrekkenden
+                    <ul>
+                        <li>Loonfiches laatste drie maanden</li>
+                    </ul>
+                </li>
+                <li>
+                    Inkomsten zelfstandigen
+                    <ul>
+                        <li>Aanslagbiljetten laatste drie jaar</li>
+                    </ul>
+                </li>
+                <li>
+                    Andere inkomsten
+                    <ul>
+                        <li>Bewijs</li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+        <td align="center">
+            <br>
+            <ul class="boxlist">
+                <li>&#9746;</li>
+                <li>
+                    <br>
+                    <ul class="boxlist">
+                        <li>&nbsp;</li>
+                    </ul>
+                </li>
+                <li>
+                    &#9746;
+                    <ul class="boxlist">
+                        <li>&nbsp;</li>
+                    </ul>
+                </li>
+                <li>
+                    &#9746;
+                    <ul class="boxlist">
+                        <li>&nbsp;</li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+        <td align="center">
+            <br>
+            <ul class="boxlist">
+                <li>&#9744;</li>
+                <li>
+                    <br>
+                    <ul class="boxlist">
+                        <li>&nbsp;</li>
+                    </ul>
+                </li>
+                <li>
+                    &#9744;
+                    <ul class="boxlist">
+                        <li>&nbsp;</li>
+                    </ul>
+                </li>
+                <li>
+                    &#9744;
+                    <ul class="boxlist">
+                        <li>&nbsp;</li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Jaarverslagen laatste drie jaar</td>
+        <td align="center">&#9746;</td>
+        <td align="center">&#9744;</td>
+    </tr>
+    <tr>
+        <td>Jaarrekeningen laatste drie jaar</td>
+        <td align="center">&#9746;</td>
+        <td align="center">&#9744;</td>
+    </tr>
+    <tr>
+        <td>Financieel plan (indien nieuwe onderneming)</td>
+        <td align="center">&#9746;</td>
+        <td align="center">&#9744;</td>
+    </tr>
+    {% if true %}
+    <tr>
+        <td>
+            Doel: Aankoop
+            <ul>
+                <li>Compromis</li>
+                <li>Schattingsverslag door een door Patronale Life erkende schatter</li>
+            </ul>
+        </td>
+        <td align="center">
+            <br>
+            <ul class="boxlist">
+                <li>&#9746;</li>
+                <li>&#9746;</li>
+            </ul>
+        </td>
+        <td align="center">
+            <br>
+            <ul class="boxlist">
+                <li>&#9744;</li>
+                <li>&#9744;</li>
+            </ul>
+        </td>
+    </tr>
+    {% endif %}
+    {% if true %}
+    <tr>
+        <td>
+            Doel: Herfinanciering
+            <ul>
+                <li>Eigendomsakte</li>
+                <li>Schattingsverslag door een door Patronale Life erkende schatter</li>
+                <li>Kopie lopend contract</li>
+                <li>Basisattest</li>
+                <li>Afrekening</li>
+            </ul>
+        </td>
+        <td align="center">
+            <br>
+            <ul class="boxlist">
+                <li>&#9746;</li>
+                <li>&#9746;</li>
+                <li>&#9746;</li>
+                <li>&#9746;</li>
+                <li>&#9746;</li>
+            </ul>
+        </td>
+        <td align="center">
+            <br>
+            <ul class="boxlist">
+                <li>&#9744;</li>
+                <li>&#9744;</li>
+                <li>&#9744;</li>
+                <li>&#9744;</li>
+                <li>&#9744;</li>
+            </ul>
+        </td>
+    </tr>
+    {% endif %}
+    {% if true %}
+    <tr>
+        <td>
+            Doel: Nieuwbouw/Werken aan bestaand pand
+            <ul>
+                <li>Eigendomsakte (of compromis indien grond tegelijkertijd aangekocht wordt)</li>
+                <li>Schattingsverslag door een door Patronale Life erkende schatter</li>
+                <li>Plannen &amp; bestek architect</li>
+            </ul>
+        </td>
+        <td align="center">
+            <br>
+            <ul class="boxlist">
+                <li>&#9746;</li>
+                <li>&#9746;</li>
+                <li>&#9746;</li>
+            </ul>
+        </td>
+        <td align="center">
+            <br>
+            <ul class="boxlist">
+                <li>&#9744;</li>
+                <li>&#9744;</li>
+                <li>&#9744;</li>
+            </ul>
+        </td>
+    </tr>
+    {% endif %}
+    <tr>
+        <td>
+            Verzekeringen
+            <ul>
+                <li>Schuldsaldoverzekering + afstand van rechten aan Patronale Life</li>
+                <li>Brandverzekeringsvoorstel (Polis) + afstand van rechten aan Patronale Life</li>
+            </ul>
+        </td>
+        <td align="center">
+            <br>
+            <ul class="boxlist">
+                <li>&#9744;</li>
+                <li>&#9744;</li>
+            </ul>
+        </td>
+        <td align="center">
+            <br>
+            <ul class="boxlist">
+                <li>&#9746;</li>
+                <li>&#9746;</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+{% endblock %}

@@ -1,0 +1,512 @@
+{% extends "base/base_template.xml" %}
+{% block document_type %}{{_('account state')|capitalize}}{% endblock %}
+{% block template_type %}AS.BASE.NL{% endblock %}
+{% block body %}
+<w:p/>
+<w:p/>
+{% include 'partials/recipient_BE.xml' %}
+<w:p/>
+<w:p/>
+<w:p>
+	<w:pPr>
+   		<w:spacing w:before="120" w:after="120" w:line="240" w:lineRule="auto"/>
+   		<w:jc w:val="center"/>
+		<w:pBdr>
+     		<w:top w:val="single" w:sz="4" w:space="1" w:color="auto"/>
+   		</w:pBdr>
+ 	</w:pPr>
+ 	{{ _('account state')|capitalize|run_container(style='<w:b/><w:bCs/><w:sz w:val="32"/><w:szCs w:val="32"/><w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>')}}
+ 	{{ ' '|run_container(style='<w:b/><w:bCs/><w:sz w:val="32"/><w:szCs w:val="32"/><w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>')}}
+ 	{{ _(account.package.name)|run_container(style='<w:b/><w:bCs/><w:sz w:val="32"/><w:szCs w:val="32"/><w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>')}}
+</w:p>
+<w:p>
+	<w:pPr>
+   		<w:spacing w:before="120" w:after="120" w:line="240" w:lineRule="auto"/>
+   		<w:jc w:val="center"/>
+		<w:pBdr>
+     		<w:bottom w:val="single" w:sz="4" w:space="1" w:color="auto"/>
+   		</w:pBdr>
+ 	</w:pPr>
+ 	{{ _('contractnumber')|capitalize|run_container(style='<w:b/><w:bCs/><w:sz w:val="32"/><w:szCs w:val="32"/><w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>')}}
+ 	{{ ' '|run_container(style='<w:b/><w:bCs/><w:sz w:val="32"/><w:szCs w:val="32"/><w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>')}}
+ 	{% if contractnumber is defined -%}
+ 	 	{{ contractnumber|run_container(style='<w:b/><w:bCs/><w:sz w:val="32"/><w:szCs w:val="32"/><w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>')}}
+ 	{%- else -%}
+ 	 	{{ full_account_number|run_container(style='<w:b/><w:bCs/><w:sz w:val="32"/><w:szCs w:val="32"/><w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>')}}
+ 	{%- endif %}
+</w:p>
+<w:p/>
+<w:tbl>
+  <w:tblPr>
+  	<w:tblW w:w="5000" w:type="pct"/>
+  </w:tblPr>
+  <w:tr>
+    <w:tc>
+      <w:tcPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="33436F"/>
+        <w:gridSpan w:val="10"/>
+      </w:tcPr>
+	  <w:p>
+		<w:pPr>
+            <w:spacing w:before="60" w:after="60" w:line="240" w:lineRule="auto"/>
+		</w:pPr>
+    	{{_('subscribers')|run_container(style=style_sectionheader)}}
+	  </w:p>
+	</w:tc>
+  </w:tr>
+  <w:tr>
+    <w:tc>
+      <w:tcPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="F3F3F3"/>
+		<w:tcW w:w="800" w:type="pct"/>
+      </w:tcPr>
+      <w:p/>
+    </w:tc>
+    <w:tc>
+      <w:tcPr>
+        <w:vAlign w:val="center"/>
+      </w:tcPr>
+      <w:p>
+		{% if subscribers.1 %}
+			{{_('first')|capitalize|run_container(style=style_normal+'<w:b/>')}}
+		{% else %}
+			{{_('only')|capitalize|run_container(style=style_normal+'<w:b/>')}}
+		{% endif %}
+		{{' '|run_container(style=style_normal)}}
+		{{_('subscriber')|capitalize|run_container(style=style_normal+'<w:b/>')}}
+      </w:p>
+    </w:tc>
+    <w:tc>
+      <w:tcPr>
+        <w:vAlign w:val="center"/>
+      </w:tcPr>
+      <w:p>
+		{% if subscribers.1 %}
+			{{_('second')|capitalize|run_container(style=style_normal+'<w:b/>')}}
+			{{' '|run_container(style=style_normal)}}
+			{{_('subscriber')|capitalize|run_container(style=style_normal+'<w:b/>')}}
+		{% endif %}
+      </w:p>
+    </w:tc>
+  </w:tr>
+  <w:tr>
+    <w:trPr>
+      <w:trHeight w:hRule="exact" w:val="170"/>
+    </w:trPr>
+    <w:tc>
+      <w:tcPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="F3F3F3"/>
+      </w:tcPr>
+      <w:p/>
+    </w:tc>
+    <w:tc>
+	  <w:tcPr>
+		<w:gridSpan w:val="2"/>
+	  </w:tcPr>
+      <w:p/>
+    </w:tc>
+  </w:tr>
+  <w:tr>
+    <w:tc>
+      <w:tcPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="F3F3F3"/>
+      </w:tcPr>
+      <w:p>
+		{{_('title')|capitalize|run_container(style=style_normal)}}
+        {{':'|run_container(style=style_normal)}}
+      </w:p>
+    </w:tc>
+    <w:tc>
+      <w:tcPr>
+        <w:vAlign w:val="center"/>
+      </w:tcPr>
+      <w:p>
+		{{_(subscribers.0.titel)|run_container(style=style_normal)}}
+      </w:p>
+    </w:tc>
+    <w:tc>
+      <w:tcPr>
+        <w:vAlign w:val="center"/>
+      </w:tcPr>
+      <w:p>
+        {% if subscribers.1 %}
+			{{_(subscribers.1.titel)|run_container(style=style_normal)}}
+		{% endif %}
+      </w:p>
+    </w:tc>
+  </w:tr>
+  <w:tr>
+    <w:tc>
+      <w:tcPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="F3F3F3"/>
+      </w:tcPr>
+      <w:p>
+		{{_('name')|capitalize|run_container(style=style_normal)}}
+        {{':'|run_container(style=style_normal)}}
+      </w:p>
+    </w:tc>
+    <w:tc>
+      <w:tcPr>
+        <w:vAlign w:val="center"/>
+      </w:tcPr>
+      <w:p>
+		{{subscribers.0.last_name|run_container(style=style_normal)}}
+      </w:p>
+    </w:tc>
+    <w:tc>
+      <w:tcPr>
+        <w:vAlign w:val="center"/>
+      </w:tcPr>
+      <w:p>
+        {% if subscribers.1 %}
+			{{subscribers.1.last_name|run_container(style=style_normal)}}
+		{% endif %}
+      </w:p>
+    </w:tc>
+  </w:tr>
+  <w:tr>
+    <w:tc>
+      <w:tcPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="F3F3F3"/>
+      </w:tcPr>
+      <w:p>
+		{{_('firstname')|capitalize|run_container(style=style_normal)}}
+        {{':'|run_container(style=style_normal)}}
+      </w:p>
+    </w:tc>
+    <w:tc>
+      <w:tcPr>
+        <w:vAlign w:val="center"/>
+      </w:tcPr>
+      <w:p>
+		{{subscribers.0.first_name|run_container(style=style_normal)}}
+      </w:p>
+    </w:tc>
+    <w:tc>
+      <w:tcPr>
+        <w:vAlign w:val="center"/>
+      </w:tcPr>
+      <w:p>
+        {% if subscribers.1 %}
+			{{subscribers.1.first_name|run_container(style=style_normal)}}
+		{% endif %}
+      </w:p>
+    </w:tc>
+  </w:tr>
+</w:tbl>
+{% block value_overview -%}
+{# LEAVE THIS HERE >>> #}
+{%- set fonttag = fonttag -%}
+{%- set style_tiny = style_tiny -%}
+{%- set style_small = style_small -%}
+{%- set style_normal = style_normal -%}
+{%- set style_big = style_big -%}
+{%- set style_huge = style_huge -%}
+{%- set style_sectionheader = style_sectionheader -%}
+{# 
+  <<< LEAVE THIS HERE 
+  if removed, these variable can't be used in the subsequent includes, oh and they need to be insode the block too 
+  probably because the branch templates do not contain these blocks at all
+#}
+<w:tbl>
+  <w:tblPr>
+    <w:tblW w:w="5000" w:type="pct"/>
+    <w:jc w:val="center"/>
+  </w:tblPr>
+  <w:tr>
+    <w:tblPrEx>
+      <w:jc w:val="left"/>
+    </w:tblPrEx>
+    <w:tc>
+      <w:tcPr>
+        <w:gridSpan w:val="9"/>
+        <w:tcBorders>
+          <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+          <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+          <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+        </w:tcBorders>
+        <w:shd w:val="clear" w:color="auto" w:fill="33436F"/>
+      </w:tcPr>
+      <w:p w:rsidR="00BD09FF" w:rsidRPr="00FB42B5" w:rsidRDefault="00B85A32" w:rsidP="00BD09FF">
+        <w:pPr>
+          <w:pStyle w:val="pasParagraphHeading1"/>
+          <w:rPr>
+            <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+            <w:lang w:val="nl-BE"/>
+          </w:rPr>
+        </w:pPr>
+        <w:r>
+          <w:rPr>
+            <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+            <w:lang w:val="nl-BE"/>
+          </w:rPr>
+          <w:t xml:space="preserve">{{_('account state')|capitalize}} {{_('on')}} {{value_overview_date|date}}: EUR </w:t>
+        </w:r>
+    {% if thru_value %}
+      {{ thru_value|currency|run_container(debug=debug, style=fonttag) }}
+    {% else %}
+      {{ '0,00'|run_container(debug=debug, style=fonttag) }}
+    {% endif %}
+      </w:p>
+    </w:tc>
+  </w:tr>
+</w:tbl>
+<w:p/>
+{% set va_intro_show = [] %}
+{% set va_unit_linked_intro_show = [] %}
+{% for premium_schedule_state in premium_schedule_states %}
+  {% if premium_schedule_state.premium_data.premium_schedule.product.unit_linked %}
+    {% if not va_unit_linked_intro_show %}
+      <w:p>
+        <w:pPr>
+          <w:spacing w:after="240"/>
+          <w:jc w:val="both"/>
+        </w:pPr>
+        {{ 'Hieronder kunt u een overzicht vinden van de fondsen waarin u bent belegd (Tak 23).'|run_container(style=style_normal) }}
+      </w:p>
+      {% do va_unit_linked_intro_show.append(1) %}
+    {% endif %}
+    {% include 'partials/account_value_overview_BE.xml' %}
+  {% else %}
+    {% if not va_intro_show %}
+      <w:p>
+        <w:pPr>
+          <w:spacing w:after="240"/>
+          <w:jc w:val="both"/>
+        </w:pPr>
+        {{ 'Hieronder kunt u een overzicht vinden van de individuele stortingen die u gedaan heeft binnen uw Contract. Bij elke storting is de aanvangsdatum vermeld en het netto-kapitaal waarop de toegekende intrest van toepassing is, alsook de periode waarvoor deze intrest gewaarborgd is.'|run_container(style=style_normal) }}
+      </w:p>
+      {% do va_intro_show.append(1) %}
+    {% endif %}
+    {% include 'partials/account_value_overview_BE.xml' %}
+    {% include 'partials/account_overview_interests_nl_BE.xml' %}
+  {% endif %}
+  {% if not loop.last %}<w:p/>{% endif %}
+{% endfor %}
+{% endblock %}
+<w:p w:rsidR="00235441" w:rsidRPr="00FB42B5" w:rsidRDefault="00235441">
+  <w:pPr>
+    <w:pStyle w:val="sesDefault"/>
+    <w:rPr>
+      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+      <w:sz w:val="2"/>
+      <w:szCs w:val="2"/>
+      <w:lang w:val="nl-BE"/>
+    </w:rPr>
+    {% if premium_schedule_states|length > 1 -%}
+    <w:pageBreakBefore w:val="on"/>
+    {%- else -%}
+    <w:keepNext/>
+    {%- endif %}
+  </w:pPr>
+</w:p>
+<w:tbl>
+  <w:tr>
+    <w:trPr>
+      <w:cantSplit/>
+    </w:trPr>
+    <w:tc>
+      <w:tcPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="33436F"/>
+      </w:tcPr>
+      <w:p w:rsidR="00235441" w:rsidRPr="00FC14D3" w:rsidRDefault="003A6D7D">
+        <w:pPr>
+          <w:pStyle w:val="pasParagraphHeading1"/>
+          <w:rPr>
+            <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+            <w:lang w:val="nl-BE"/>
+          </w:rPr>
+        </w:pPr>
+        <w:r>
+          <w:rPr>
+            <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+            <w:lang w:val="nl-BE"/>
+          </w:rPr>
+          <w:t>{{_('additional information')|capitalize}}</w:t>
+        </w:r>
+      </w:p>
+    </w:tc>
+  </w:tr>
+  <w:tr w:rsidR="00B414B9" w:rsidRPr="006C6123" w:rsidTr="00ED5055">
+    <w:trPr>
+      <w:cantSplit/>
+    </w:trPr>
+    <w:tc>
+      <w:p/>
+      <w:p>
+        <w:pPr>
+          <w:keepNext/>
+          <w:jc w:val="both"/>
+        </w:pPr>
+		{{ 'Inzake de andere kenmerken van dit Contract, wordt verwezen naar het Persoonlijk Certificaat, het Beheersreglement, de Financiële Infofiche en de Algemene Voorwaarden. Het Beheersreglement, de Algemene Voorwaarden en de Financiële Infofiche zijn op eenvoudige aanvraag verkrijgbaar bij Patronale Life NV of kunnen geconsulteerd worden op www.patronale-life.be.'|run_container(style=style_normal) }}
+      </w:p>
+      <w:p>
+{% for item in additional_information %}
+        {% for line in item %}{{line|run_container(debug=debug, style=style_normal)}}<w:br/>{% endfor %}
+{% endfor %}
+      </w:p>
+    </w:tc>
+  </w:tr>
+</w:tbl>
+<w:p w:rsidR="0020205D" w:rsidRPr="0020205D" w:rsidRDefault="0020205D" w:rsidP="00697691">
+  <w:pPr>
+    <w:pStyle w:val="pasDefault"/>
+    <w:keepNext/>
+    <w:jc w:val="left"/>
+    <w:rPr>
+      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+      <w:b/>
+      <w:sz w:val="10"/>
+      <w:szCs w:val="10"/>
+      <w:lang w:val="nl-BE"/>
+    </w:rPr>
+  </w:pPr>
+</w:p>
+<w:p w:rsidR="00697691" w:rsidRPr="00B414B9" w:rsidRDefault="00697691" w:rsidP="0026228F">
+  <w:pPr>
+    <w:pStyle w:val="pasDefault"/>
+    <w:keepNext/>
+    <w:tabs>
+      <w:tab w:val="left" w:pos="6970"/>
+    </w:tabs>
+    <w:jc w:val="left"/>
+    <w:rPr>
+      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+      <w:b/>
+      <w:lang w:val="nl-BE"/>
+    </w:rPr>
+  </w:pPr>
+  <w:r w:rsidRPr="00B414B9">
+    <w:rPr>
+      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+      <w:b/>
+      <w:lang w:val="nl-BE"/>
+    </w:rPr>
+    <w:t xml:space="preserve">{{_('signature of the insurer')|capitalize}}</w:t>
+  </w:r>
+  <w:r w:rsidR="0026228F">
+    <w:rPr>
+      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+      <w:b/>
+      <w:lang w:val="nl-BE"/>
+    </w:rPr>
+    <w:tab/>
+  </w:r>
+</w:p>
+<w:p w:rsidR="00697691" w:rsidRDefault="003A6D7D" w:rsidP="00697691">
+  <w:pPr>
+    <w:pStyle w:val="pasDefault"/>
+    <w:keepNext/>
+    <w:jc w:val="left"/>
+    <w:rPr>
+      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+      <w:b/>
+      <w:lang w:val="nl-BE"/>
+    </w:rPr>
+  </w:pPr>
+  <w:r>
+    <w:rPr>
+      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+      <w:b/>
+      <w:noProof/>
+      <w:lang w:val="nl-NL" w:eastAsia="nl-NL"/>
+    </w:rPr>
+    <w:drawing>
+      <wp:anchor distT="0" distB="0" distL="114300" distR="114300" simplePos="0" relativeHeight="251664384" behindDoc="0" locked="0" layoutInCell="0" allowOverlap="0">
+        <wp:simplePos x="0" y="0"/>
+        <wp:positionH relativeFrom="column">
+          <wp:posOffset>292735</wp:posOffset>
+        </wp:positionH>
+        <wp:positionV relativeFrom="paragraph">
+          <wp:posOffset>91440</wp:posOffset>
+        </wp:positionV>
+        <wp:extent cx="1430020" cy="377190"/>
+        <wp:effectExtent l="19050" t="0" r="0" b="0"/>
+        <wp:wrapNone/>
+        <wp:docPr id="2" name="Picture 2"/>
+        <wp:cNvGraphicFramePr>
+          <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+        </wp:cNvGraphicFramePr>
+        <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+            <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+              <pic:nvPicPr>
+                <pic:cNvPr id="0" name="Picture 2"/>
+                <pic:cNvPicPr>
+                  <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+                </pic:cNvPicPr>
+              </pic:nvPicPr>
+              <pic:blipFill>
+                <a:blip r:embed="rId9"/>
+                <a:srcRect/>
+                <a:stretch>
+                  <a:fillRect/>
+                </a:stretch>
+              </pic:blipFill>
+              <pic:spPr bwMode="auto">
+                <a:xfrm>
+                  <a:off x="0" y="0"/>
+                  <a:ext cx="1430020" cy="377190"/>
+                </a:xfrm>
+                <a:prstGeom prst="rect">
+                  <a:avLst/>
+                </a:prstGeom>
+                <a:noFill/>
+              </pic:spPr>
+            </pic:pic>
+          </a:graphicData>
+        </a:graphic>
+      </wp:anchor>
+    </w:drawing>
+  </w:r>
+</w:p>
+<w:p w:rsidR="00697691" w:rsidRPr="00B414B9" w:rsidRDefault="00B32C2B" w:rsidP="00697691">
+  <w:pPr>
+    <w:pStyle w:val="pasDefault"/>
+    <w:keepNext/>
+    <w:jc w:val="left"/>
+    <w:rPr>
+      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+      <w:b/>
+      <w:lang w:val="nl-BE"/>
+    </w:rPr>
+  </w:pPr>
+  <w:r w:rsidR="00697691">
+    <w:rPr>
+      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+      <w:b/>
+      <w:lang w:val="nl-BE"/>
+    </w:rPr>
+    <w:t xml:space="preserve"><w:br/><w:br/>Filip Moeykens</w:t>
+  </w:r>
+</w:p>
+<w:p w:rsidR="00235441" w:rsidRPr="00A04D0E" w:rsidRDefault="00B32C2B" w:rsidP="00A04D0E">
+  <w:pPr>
+    <w:pStyle w:val="pasDefault"/>
+    <w:keepNext/>
+    <w:jc w:val="left"/>
+    <w:rPr>
+      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+      <w:b/>
+      <w:lang w:val="nl-BE"/>
+    </w:rPr>
+  </w:pPr>
+  <w:r w:rsidR="00697691" w:rsidRPr="00B414B9">
+    <w:rPr>
+      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+      <w:b/>
+      <w:lang w:val="nl-BE"/>
+    </w:rPr>
+    <w:t xml:space="preserve">{{_('managing director')|capitalize}}</w:t>
+  </w:r>
+</w:p>
+<w:sectPr w:rsidR="00235441" w:rsidRPr="00A04D0E" w:rsidSect="00FA6FE4">
+  <w:headerReference w:type="default" r:id="rId10"/>
+  <w:footerReference w:type="default" r:id="rId11"/>
+  <w:pgSz w:w="11907" w:h="16840"/>
+  <w:pgMar w:top="1672" w:right="850" w:bottom="851" w:left="850" w:header="709" w:footer="541" w:gutter="0"/>
+  <w:cols w:space="708"/>
+  <w:noEndnote/>
+  <w:docGrid w:linePitch="360"/>
+</w:sectPr>
+{% endblock %}

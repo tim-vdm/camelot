@@ -1,0 +1,238 @@
+{% import "macros/html.html" as macros %}
+
+{% set internal_document = true %}
+
+{% extends "vfinance_base.html" %}
+
+{% block html_head %}
+<style type="text/css">
+td {
+    vertical-align:top;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+{{ agreement.package.name }} | {{ agreement.code }} | {{ agreement.from_date|date }} | Ingegeven door: _________________________
+<hr>
+
+{% set items_collection = [] %}
+{% for person_data in persons_data %}
+    {% set translated_role_descriptions = [] %}
+    {% for rt, rank in person_data.role_types %}
+        {% do translated_role_descriptions.append('%se %s'|format(rank, _(rt|replace('_', ' ')))) %}
+    {% endfor %}
+    {% if person_data.natuurlijke_persoon %}
+        {% do items_collection.append((person_data.natuurlijke_persoon.full_name, [('Rollen', translated_role_descriptions|join(', ')),
+                                                                                   ('Title', _(person_data.natuurlijke_persoon.titel)),
+                                                                                   ('Achternaam', person_data.natuurlijke_persoon.last_name),
+                                                                                   ('Voornaam', person_data.natuurlijke_persoon.first_name),
+                                                                                   ('Geboortedatum', person_data.natuurlijke_persoon.geboortedatum|date),
+                                                                                   ('Adres', person_data.natuurlijke_persoon.straat),
+                                                                                   ('Plaats', person_data.natuurlijke_persoon.gemeente),
+                                                                                   ('Postcode', person_data.natuurlijke_persoon.postcode),
+                                                                                   ('Land', person_data.natuurlijke_persoon.land),
+                                                                                   ('Burgerlijke', civil_states[person_data.natuurlijke_persoon.burgerlijke_staat]|capitalize),
+                                                                                   ('Geboorteplaats', person_data.natuurlijke_persoon.geboorteplaats),
+                                                                                   ('Taal', person_data.natuurlijke_persoon.taal)])) %}
+    {% elif person_data.rechtspersoon %}
+        {% do items_collection.append((person_data.rechtspersoon.full_name, [('Rollen', translated_role_descriptions|join(', ')),
+                                                                             ('Naam', person_data.rechtspersoon.name),
+                                                                             ('Vertegenwoordiger', person_data.rechtspersoon.vertegenwoordiger.name),
+                                                                             ('Juridische vorm', person_data.rechtspersoon.juridische_vorm),
+                                                                             ('Ondernemingsnummer', person_data.rechtspersoon.ondernemingsnummer),
+                                                                             ('Zetel', '%s, %s-%s %s'|format(person_data.rechtspersoon.straat, 
+                                                                                                             person_data.rechtspersoon.land.code,
+                                                                                                             person_data.rechtspersoon.postcode, 
+                                                                                                             person_data.rechtspersoon.gemeente))])) %}
+    {% endif %}
+{% endfor %}
+
+{{ macros.checklists(items_collection, date=false) }}
+<br>
+{% set items = [] %}
+{% for setting in agreement.get_applied_functional_settings_at(agreement.from_date, 'mail_condition') %}
+    {% set setting_string = setting.described_by|replace('_', ' ')|capitalize %} 
+    {% if setting.described_by == 'mail_to_custom_address' %}
+        {% set setting_string = setting_string + ': {0}'.format(setting.clause) %} 
+    {% endif %}
+    {% do items.append(('Correspondentie', setting_string)) %}
+{% endfor %}
+{% if (subscribers.0.rechtspersoon and subscribers.0.rechtspersoon.no_commercial_mailings) or (subscribers.0.natuurlijke_persoon and subscribers.0.natuurlijke_persoon.no_commercial_mailings) %}
+    {% do items.append(('Comm. info VN 1', 'Nee')) %}
+{% else %}
+    {% do items.append(('Comm. info VN 1', 'Ja')) %}
+{% endif %}
+{% if subscribers.1 %}
+    {% if (subscribers.1.rechtspersoon and subscribers.1.rechtspersoon.no_commercial_mailings) or (subscribers.1.natuurlijke_persoon and subscribers.1.natuurlijke_persoon.no_commercial_mailings) %}
+        {% do items.append(('Comm. info VN 2', 'Nee')) %}
+    {% else %}
+        {% do items.append(('Comm. info VN 2', 'Ja')) %}
+    {% endif %}
+{% endif %}
+{% if agreement.account %}
+    {# only add unique products to item list to be displayed #}
+    {% set unique_products = [] %}
+    {% for premium_schedule in agreement.account.premium_schedules %}
+        {% if loop.first %}
+            {% set key = '%s %s'|format(agreement.account.package, agreement.account.id) %}
+        {% else %}
+            {% set key = ' ' %}
+        {% endif %}
+        {% if premium_schedule.product not in unique_products %}
+            {% do items.append((key, '%s %s'|format(premium_schedule.product, premium_schedule.full_account_number))) %}
+            {% do unique_products.append(premium_schedule.product) %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+{{ macros.checklist(items, date=false) }}
+
+{% set items = [] %}
+{% for premium_schedule in agreement.invested_amounts %}
+    {% set ps_string = '{0}-{1} '.format(premium_schedule.product.name, premium_schedule.period_type) %}
+    {% if premium_schedule.duration == 2400 %}
+        {% set duration = 'levenslang' %}
+    {% else %}
+        {% set duration = premium_schedule.duration %}
+    {% endif %}
+    {% do items.append( ('{0} {1}'.format(ps_string, duration), premium_schedule.amount|currency) ) %}
+{% endfor %}
+{{ macros.checklist(items, title="Premieschema's", date=false) }}
+
+{% set items_collection = [] %}
+{% for premium_schedule in agreement.invested_amounts %}
+    {% set ps = '{0}-{1}: {2}€'.format(premium_schedule.product.name, premium_schedule.period_type, premium_schedule.amount|currency) %}
+    {% if premium_schedule.fund_distribution %}
+        {% set items = [] %}
+        {% for fund_distribution in premium_schedule.fund_distribution %}
+            {% set fund = '{0} ({1}%)'.format(fund_distribution.fund.name, fund_distribution.target_percentage|percentage) %}
+            {% set distribution = '{0} €'.format((premium_schedule.amount*fund_distribution.target_percentage/100)|currency) %}
+            {% do items.append((fund, distribution)) %}        
+        {% endfor %}
+        {% do items_collection.append((ps, items)) %}
+    {% endif %}
+{% endfor %}
+{% if items_collection %}
+    {{ macros.checklists(items_collection, title="Verdeling", date=false) }}
+{% endif %}
+
+{% if agreement.direct_debit_mandates|length %}
+    {% set items = [] %}
+    {% for mandate in agreement.direct_debit_mandates %}
+        {% do items.append('%s - %s - %s - %s - %s - %s - %s'|format(mandate.date|date,
+                                                                     mandate.described_by,
+                                                                     mandate.identification,
+                                                                     mandate.iban,
+                                                                     mandate.from_date|date,
+                                                                     mandate.thru_date|date,
+                                                                     mandate.modification_of)) %}
+    {% endfor %}
+    {{ macros.checklist_no_values(items, title="Incasso", date=false) }}
+{% endif %}
+
+{% if agreement.related_entries|length %}
+    {% set items = [] %}
+    {% for entry in agreement.related_entries %}
+        {% set l = 'book date: {0}, venice doc: {1}'.format(entry.book_date|date, entry.venice_doc) %}
+        {% set v = 'amount: {0} €, remark: {1}'.format(entry.amount|currency, entry.remark) %}
+        {% do items.append((l, v)) %}
+    {% endfor %}
+    {{ macros.checklist(items, title="Stortingen", date=false) }}
+{% endif %}
+
+<hr>
+{% set items = [] %}
+{% for invested_amount in agreement.invested_amounts %}
+    {% if invested_amount.duration == 2400 %}
+        {% set duration_string = 'Levenslang' %}
+    {% else %}
+        {% set duration_string = '{0} maanden'.format(invested_amount.duration) %}
+    {% endif %}
+    {% do items.append(('Looptijd {0}-{1}'.format(invested_amount.product.name, invested_amount.period_type), duration_string)) %}
+{% endfor %}
+
+{% for invested_amount in agreement.invested_amounts %}
+    {% do items.append(('Waarborg {0}-{1}'.format(invested_amount.product.name, invested_amount.period_type), invested_amount.agreed_coverages|join(', '))) %}
+{% endfor %}
+
+{% for setting in agreement.agreed_functional_settings %}
+    {% if setting.described_by == 'exit_at_first_decease' %}
+        {% do items.append(('Uitkering', 'Overlijden eerste van de verzekerden')) %}
+    {% endif %}
+    {% if setting.described_by == 'exit_at_last_decease' %}
+        {% do items.append(('Uitkering', 'Overlijden langstlevende verzekerde')) %}
+    {% endif %}
+{% endfor %}
+
+
+
+{%- if beneficiary_clauses -%}
+  {%- for clause in beneficiary_clauses -%}
+    {% do items.append(('Begunstigingsclausule', clause|join)) %}
+  {%- endfor -%}
+{%- else -%}
+    {% do items.append(('Begunstigingsclausule', _('not applicable')|capitalize)) %}
+{%- endif -%}
+
+{%- if other_clauses -%}
+    {%- for clause in other_clauses -%}
+        {%- for line in clause if line|trim -%}
+            {% do items.append(('Andere bepaling', line|trim)) %}
+        {%- endfor -%}
+    {%- endfor -%}
+{%- else -%}
+    {% do items.append(('Andere bepaling', _('not applicable')|capitalize)) %}
+{%- endif -%}
+<!-- misschien best alle broker niveaus tonen hier -->
+{% do items.append(('Broker relation', agreement.broker_relation or 'N/A')) %}
+{{ macros.checklist(items, date=false) }}
+
+{% for pss in premium_schedule_summaries %}
+    {% set items = [] %}
+    {% for feature in pss.features|sort(attribute='described_by') %}
+        {% if not (feature.described_by == 'premium_taxation_physical_person' and 'rp' in subscriber_types) %}
+            {% if not (feature.described_by == 'premium_taxation_legal_person' and not 'rp' in subscriber_types) %}
+                {% do items.append((feature.described_by|replace('_', ' '), feature|display_feature_value)) %}  
+            {% endif %}
+        {% endif %}                    
+    {% endfor %}
+    {{ macros.checklist(items, title='{0}-{1}'.format(pss.premium_schedule.product.name, pss.premium_schedule.period_type),date=false) }}
+{% endfor %}
+
+{% set items_collection = [] %}
+{% for financial_agreement_premium_schedule in agreement.invested_amounts %}
+    {% set items = [] %}
+    {% for cd in financial_agreement_premium_schedule.commission_distribution|sort(attribute='described_by')|sort(attribute='recipient') if cd.distribution != 0 %}
+        {% set descr = cd.described_by|replace('_', ' ') %}
+        {% if 'rate' in descr %}
+            {% set v = '{0} pct'.format(cd.distribution|percentage) %}
+        {% elif 'fee' in descr %}
+            {% set v = '{0} EUR'.format(cd.distribution|currency) %}
+        {% else %}
+            {% set v = cd.distribution %}
+        {% endif %}
+        {% do items.append(('{0} ({1})'.format(descr, cd.recipient), '{0} ({1})'.format(v, cd.comment))) %}
+    {% endfor %}
+    {% if items %}
+        {% do items_collection.append(('{0}-{1}'.format(financial_agreement_premium_schedule.product.name, financial_agreement_premium_schedule.period_type), items)) %}
+    {% endif %}
+{% endfor %}
+{% if items_collection %}
+    {{ macros.checklists(items_collection, title='Commission distribution',date=false) }}
+{% endif %}
+<hr>
+{{ macros.checklist_no_values(['ID kaart aanwezig', 'Voorstel correct getekend', 'Infofiche/vertr. rapport'], date=false) }}
+<hr>
+<table width="100%">
+    <tr>
+        <td>&#x25fb; ____________________________</td>
+        <td>Controle door: ________________</td>
+    </tr>
+    <tr>
+        <td>&#x25fb; ____________________________</td>
+        <td>Controle op: __________________</td>
+    </tr>
+</table>
+<br>
+<table width="100%" border="1"><tr><td><br><br><br><br><br><br></td></tr></table>
+{% endblock %}

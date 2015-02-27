@@ -1,0 +1,534 @@
+{% if premium_schedule_state.premium_data.premium_schedule.product.unit_linked %}
+    <w:tbl>
+      <w:tblPr>
+        <w:jc w:val="center"/>
+        <w:tblBorders>
+          <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+          <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+          <w:bottom w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+          <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+          <w:insideH w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+          <w:insideV w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+        </w:tblBorders>
+        <w:tblW w:w="5000" w:type="pct"/>
+      </w:tblPr>
+      <w:tr>
+        <w:trPr>
+          <w:trHeight w:val="300" />
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1750" w:type="pct"/>
+            <w:shd w:val="clear" w:color="auto" w:fill="DBE5F1" w:themeFill="accent1" w:themeFillTint="33"/>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{ _(premium_schedule_state.premium_data.product_name)|run_container(debug=debug, style=style_normal+'<w:b/>') }}
+            {{ ' - %s : %s / %s'|format(_('reference'),
+                                         premium_schedule_state.premium_data.premium_schedule.account_suffix,
+                                         premium_schedule_state.premium_data.premium_schedule.rank)|run_container(debug=debug, style=style_normal+'<w:b/>') }}
+            <w:br/>
+            {{_('fund')|capitalize|run_container(style=style_normal+'<w:b/>')}}
+            {{' ('|run_container(style=style_normal)}}
+            {{_('risk class')|capitalize|run_container(style=style_normal+'<w:b/>')}}
+            {{'(*))'|run_container(style=style_normal)}}
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1000" w:type="pct"/>
+            <w:shd w:val="clear" w:color="auto" w:fill="DBE5F1" w:themeFill="accent1" w:themeFillTint="33"/>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{_('date')|capitalize|run_container(style=style_normal+'<w:b/>')}} 
+            {{' '|run_container(style=style_small)}}        
+            {{_('NAV')|run_container(style=style_normal+'<w:b/>')}}
+            {{'(**)'|run_container(style=style_normal+'<w:b/>')}}
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="750" w:type="pct"/>
+            <w:shd w:val="clear" w:color="auto" w:fill="DBE5F1" w:themeFill="accent1" w:themeFillTint="33"/>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{_('NAV')|run_container(style=style_normal+'<w:b/>')}}
+            {{'(**) EUR'|run_container(style=style_normal+'<w:b/>')}}
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1000" w:type="pct"/>
+            <w:shd w:val="clear" w:color="auto" w:fill="DBE5F1" w:themeFill="accent1" w:themeFillTint="33"/>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{_('units')|capitalize|run_container(style=style_normal+'<w:b/>')}}
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="500" w:type="pct"/>
+            <w:shd w:val="clear" w:color="auto" w:fill="DBE5F1" w:themeFill="accent1" w:themeFillTint="33"/>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{_('value')|capitalize|run_container(style=style_normal+'<w:b/>')}}
+            {% if premium_schedule_state.premium_data.coverages %}{{'(***)'|run_container(style=style_small)}}{% endif %}
+            {{' '|run_container(style=style_small)}}
+            {{_('EUR')|run_container(style=style_normal+'<w:b/>')}}
+          </w:p>
+        </w:tc>
+      </w:tr>
+    {% for fund_data in premium_schedule_state.funds_data %}
+      <w:tr>
+        <w:trPr>
+          <w:trHeight w:val="200" />
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{ fund_data.name|run_container(debug=debug, style=style_small) }}
+            {{' ('|run_container(style=style_normal)}}
+            {{_(fund_data.risk_type|lower)|capitalize|run_container(style=style_normal)}}
+            {{')'|run_container(style=style_normal)}}
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{ fund_data.doc_date|date|run_container(debug=debug, style=style_small) }}
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{ fund_data.niw|currency|run_container(debug=debug, style=style_small) }}
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{ fund_data.quantity|decimal(precision=6)|run_container(debug=debug, style=style_small) }}
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            <w:pPr>
+                <w:jc w:val="right"/>
+            </w:pPr>
+            {{ fund_data.amount|currency|run_container(debug=debug, style=style_small) }}
+          </w:p>
+        </w:tc>
+      </w:tr>
+    {% endfor %}
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:gridSpan w:val="5"/>
+            <w:tcBorders>
+               <w:left w:val="nil"/>
+               <w:right w:val="nil"/>
+            </w:tcBorders>
+          </w:tcPr>
+          <w:p/>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:vAlign w:val="center"/>
+            <w:gridSpan w:val="4"/>
+            <w:tcBorders>
+               <w:top w:val="nil"/>
+               <w:insideH w:val="nil"/>
+               <w:insideV w:val="nil"/>
+               <w:tl2br w:val="nil"/>
+               <w:tr2bl w:val="nil"/>
+                <w:bottom w:val="nil"/>
+            </w:tcBorders>
+          </w:tcPr>
+          <w:p>
+            <w:pPr>
+                <w:jc w:val="right"/>
+            </w:pPr>
+            {{_('value')|capitalize|run_container(style=style_small+'<w:b/>')}}
+            {{' ('|run_container(style=style_small+'<w:b/>')}}
+            {{_('NAV')|run_container(style=style_small+'<w:b/>')}}
+            {{' x '|run_container(style=style_small+'<w:b/>')}}
+            {{_('units')|run_container(style=style_small+'<w:b/>')}}
+            {{')'|run_container(style=style_small+'<w:b/>')}}
+            {{':'|run_container(style=style_small+'<w:b/>')}}
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:vAlign w:val="center"/>
+            <w:tcBorders>
+               <w:top w:val="nil"/>
+               <w:insideH w:val="nil"/>
+               <w:insideV w:val="nil"/>
+               <w:tl2br w:val="nil"/>
+               <w:tr2bl w:val="nil"/>
+                <w:bottom w:val="nil"/>
+            </w:tcBorders>
+          </w:tcPr>
+          <w:p>
+            <w:pPr>
+                <w:jc w:val="right"/>
+            </w:pPr>
+            {{(premium_schedule_state.invested)|currency|run_container(debug=debug, style=style_small)}}
+          </w:p>
+        </w:tc>
+      </w:tr>
+    {% if premium_schedule_state.uninvested %}
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:vAlign w:val="center"/>
+            <w:gridSpan w:val="4"/>
+            <w:tcBorders>
+               <w:top w:val="nil"/>
+               <w:bottom w:val="nil"/>
+               <w:insideH w:val="nil"/>
+               <w:insideV w:val="nil"/>
+               <w:tl2br w:val="nil"/>
+               <w:tr2bl w:val="nil"/>
+            </w:tcBorders>
+          </w:tcPr>
+          <w:p>
+            <w:pPr>
+                <w:jc w:val="right"/>
+            </w:pPr>
+            {{_('uninvested amount')|capitalize|run_container(style=style_small+'<w:b/>')}}
+            {{'(****)'|run_container(style=style_small+'<w:b/>')}}        
+            {{':'|run_container(style=style_small+'<w:b/>')}}
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:vAlign w:val="center"/>
+            <w:tcBorders>
+               <w:top w:val="nil"/>
+               <w:bottom w:val="nil"/>
+               <w:insideH w:val="nil"/>
+               <w:insideV w:val="nil"/>
+               <w:tl2br w:val="nil"/>
+               <w:tr2bl w:val="nil"/>
+            </w:tcBorders>
+          </w:tcPr>
+          <w:p>
+            <w:pPr>
+                <w:jc w:val="right"/>
+            </w:pPr>
+            {{premium_schedule_state.uninvested|currency|run_container(debug=debug, style=style_small)}}
+          </w:p>
+        </w:tc>
+      </w:tr>
+    {% endif %}
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:vAlign w:val="center"/>
+            <w:gridSpan w:val="4"/>
+            <w:tcBorders>
+               <w:top w:val="nil"/>
+               <w:insideH w:val="nil"/>
+               <w:insideV w:val="nil"/>
+               <w:tl2br w:val="nil"/>
+               <w:tr2bl w:val="nil"/>
+            </w:tcBorders>
+          </w:tcPr>
+          <w:p>
+            <w:pPr>
+                <w:jc w:val="right"/>
+            </w:pPr>
+            {{_('total')|capitalize|run_container(style=style_small+'<w:b/>')}}
+            {{':'|run_container(style=style_small+'<w:b/>')}}
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:vAlign w:val="center"/>
+            <w:tcBorders>
+               <w:top w:val="nil"/>
+               <w:insideH w:val="nil"/>
+               <w:insideV w:val="nil"/>
+               <w:tl2br w:val="nil"/>
+               <w:tr2bl w:val="nil"/>
+            </w:tcBorders>
+          </w:tcPr>
+          <w:p>
+            <w:pPr>
+                <w:jc w:val="right"/>
+            </w:pPr>
+            {{premium_schedule_state.thru_value|currency|run_container(debug=debug, style=style_small)}}
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p>
+        {{'(*)  '|run_container(style=style_tiny)}}
+        {{_('The risk class indicates, on a scale from 0 (lowest) to 6 (highest), the financial risk borne by the subscriber.')|run_container(style=style_tiny)}}
+    </w:p>
+    <w:p>
+        {{'(**) '|run_container(style=style_tiny)}}
+        {{_('Net Asset Value')|run_container(style=style_tiny)}}
+    </w:p>
+    {% if premium_schedule_state.uninvested %}
+    <w:p>
+        {{'(****) '|run_container(style=style_tiny)}}
+        {{_('In the case of a (additional, optional) deposit before the actual NAV(**) date, the net premium will already be granted to your contract (in EUR). When the actual NAV(**) date is known, the premium will be invested in the mentioned funds according to the distribution specified on signup or on the additional deposit form, and the units will be granted to your contract. In the case of (periodic) withdrawels, the withdrawel will happen on the last day of the month/quarter or on the date of the transaction (redemption, switch) already in EUR, but the actual settlement in units can only take place once the actual NAV(**) date is known.')|run_container(style=style_tiny)}}
+    </w:p>
+    {% endif %}
+    <w:p/>
+{% else %}{# not unit_linked #}
+    <w:tbl>
+      <w:tblPr>
+      <w:tblW w:w="5000" w:type="pct"/>
+        <w:jc w:val="center"/>
+        <w:tblBorders>
+          <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+          <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+          <w:bottom w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+          <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+          <w:insideH w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+          <w:insideV w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+        </w:tblBorders>
+      </w:tblPr>
+      <w:tr>
+        <w:trPr>
+          <w:cantSplit/>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            </w:tcBorders>
+            <w:shd w:val="clear" w:color="auto" w:fill="DBE5F1" w:themeFill="accent1" w:themeFillTint="33"/>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{ _(premium_schedule_state.premium_data.product_name)|run_container(debug=debug, style=style_normal+'<w:b/>') }}
+            {{ ' - %s : %s / %s'|format(_('reference'),
+                                        premium_schedule_state.premium_data.premium_schedule.account_suffix,
+                                        premium_schedule_state.premium_data.premium_schedule.rank)|run_container(debug=debug, style=style_normal+'<w:b/>') }}
+          </w:p>
+        </w:tc>
+    {% if premium_schedule_state.capital %}
+        <w:tc>
+          <w:tcPr>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            </w:tcBorders>
+            <w:shd w:val="clear" w:color="auto" w:fill="DBE5F1" w:themeFill="accent1" w:themeFillTint="33"/>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{ _('net capital')|capitalize|run_container(style=style_normal+'<w:b/>') }}
+              {{ ' '|run_container(style=style_normal+'<w:b/>') }}
+              {{ _('EUR')|run_container(debug=debug, style=style_normal+'<w:b/>') }}
+          </w:p>
+        </w:tc>
+    {% endif %}
+        <w:tc>
+          <w:tcPr>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            </w:tcBorders>
+            <w:shd w:val="clear" w:color="auto" w:fill="DBE5F1" w:themeFill="accent1" w:themeFillTint="33"/>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{ _('interest')|capitalize|run_container(style=style_normal+'<w:b/>') }}
+              {{ ' '|run_container(style=style_normal+'<w:b/>') }}
+              {{ _('EUR')|run_container(debug=debug, style=style_normal+'<w:b/>') }}
+          </w:p>
+        </w:tc>
+    {% if premium_schedule_state.additional_interest %}
+      <w:tc>
+          <w:tcPr>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            </w:tcBorders>
+            <w:shd w:val="clear" w:color="auto" w:fill="DBE5F1" w:themeFill="accent1" w:themeFillTint="33"/>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+              {{ _('additional interest')|capitalize|run_container(style=style_normal+'<w:b/>') }}
+              {{ ' '|run_container(style=style_normal+'<w:b/>') }}
+              {{ _('EUR')|run_container(debug=debug, style=style_normal+'<w:b/>') }} 
+          </w:p>
+        </w:tc>
+    {% endif %}
+    {% if premium_schedule_state.profit_sharing %}
+        <w:tc>
+          <w:tcPr>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            </w:tcBorders>
+            <w:shd w:val="clear" w:color="auto" w:fill="DBE5F1" w:themeFill="accent1" w:themeFillTint="33"/>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+              {{ _('profit sharing')|capitalize|run_container(style=style_normal+'<w:b/>') }}
+              {{ ' '|run_container(style=style_normal+'<w:b/>') }}
+              {{ _('EUR')|run_container(style=style_normal+'<w:b/>') }}
+          </w:p>
+        </w:tc>
+    {% endif %}
+        <w:tc>
+          <w:tcPr>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            </w:tcBorders>
+            <w:shd w:val="clear" w:color="auto" w:fill="DBE5F1" w:themeFill="accent1" w:themeFillTint="33"/>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{ _('total')|capitalize|run_container(style=style_normal+'<w:b/>') }}
+            {% if premium_schedule_state.premium_data.coverages %}{{'(***)'|run_container(style=style_small)}}{% endif %}
+            {{ ' '|run_container(style=style_normal+'<w:b/>') }}
+            {{ _('EUR')|run_container(debug=debug, style=style_normal+'<w:b/>') }}
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:trPr>
+          <w:cantSplit/>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            </w:tcBorders>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            {{ premium_schedule_state.premium_data.premium_schedule.agreement_code|join('/')|run_container(debug=debug, style=style_small)}}
+            {{ ' - '|run_container(style=style_small) }}
+            {{ premium_schedule_state.premium_data.premium_schedule.premium_amount|currency|run_container(debug=debug, style=style_small)}}
+            {{ ' - '|run_container(style=style_small) }}
+            {{ _(premium_schedule_state.premium_data.premium_schedule.period_type)|run_container(debug=debug, style=style_small)}}
+          </w:p>
+        </w:tc>
+    {% if premium_schedule_state.capital %}
+        <w:tc>
+          <w:tcPr>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            </w:tcBorders>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            <w:pPr>
+              <w:keepNext/>
+              <w:jc w:val="right"/>
+            </w:pPr>
+              {{premium_schedule_state.capital|currency|run_container(debug=debug, style=style_small)}}
+          </w:p>
+        </w:tc>
+    {% endif %}
+        <w:tc>
+          <w:tcPr>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            </w:tcBorders>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            <w:pPr>
+              <w:keepNext/>
+              <w:jc w:val="right"/>
+            </w:pPr>
+            {{premium_schedule_state.interest|currency|run_container(debug=debug, style=style_small)}}
+          </w:p>
+        </w:tc>
+    {% if premium_schedule_state.additional_interest %}
+        <w:tc>
+          <w:tcPr>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            </w:tcBorders>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            <w:pPr>
+              <w:keepNext/>
+              <w:jc w:val="right"/>
+            </w:pPr>
+          {{ premium_schedule_state.additional_interest|currency|run_container(debug=debug, style=style_small)}}
+          </w:p>
+        </w:tc>
+    {% endif %}
+    {% if premium_schedule_state.profit_sharing %}
+        <w:tc>
+          <w:tcPr>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            </w:tcBorders>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            <w:pPr>
+              <w:keepNext/>
+              <w:jc w:val="right"/>
+            </w:pPr>
+              {{premium_schedule_state.profit_sharing|currency|run_container(debug=debug, style=style_small)}}
+          </w:p>
+        </w:tc>
+    {% endif %}
+        <w:tc>
+          <w:tcPr>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            </w:tcBorders>
+            <w:vAlign w:val="center"/>
+          </w:tcPr>
+          <w:p>
+            <w:pPr>
+              <w:keepNext/>
+              <w:jc w:val="right"/>
+            </w:pPr>
+            {{premium_schedule_state.value|currency|run_container(debug=debug, style=style_small)}}
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+{% endif %}
+{% if premium_schedule_state.premium_data.coverages %}
+<w:p>
+    {{'(***) '|run_container(style=style_tiny)}}
+    {{ _('With this Contract you have signed an additional insurance coverage. The due risk premium for this additional insurance is deducted monthly from your capital reserve.')|run_container(style=style_tiny) }}
+</w:p>
+{% endif %}
+<w:p/>

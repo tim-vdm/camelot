@@ -1,0 +1,28 @@
+<h2>{{product.name}} Summary</h2>
+
+<h3>Accounts</h3>
+
+<table>
+   <tr><th>Account Type</th><th>Account Number</th></tr>
+   {% for account in product.available_accounts %}
+      <tr><td>{{account.described_by}}</td><td>{{account.number}}</td></tr>
+   {% endfor %}
+</table>
+
+<h3>Bookings</h3>
+
+{% for booking in bookings %}
+
+<h4>{{booking.id}} {{booking.name}}</h4>
+<table width="100%">
+   <tr><td>Account</td><td>Description</td><td align="right">Debit</td><td align="right">Credit</td></tr>
+   {% for line in booking.lines %}
+      {% if line.debet %}
+          <tr><td>DT {{line.get_account_number(product)}}</td><td>{{line.account_type}}</td><td align="right">{{line.sample_amount}}</td><td></td></tr>
+      {% else %}
+          <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;CT {{line.get_account_number(product)}}</td><td>{{line.account_type}}</td><td></td><td align="right">{{line.sample_amount}}</td></tr>
+      {% endif %}
+   {% endfor %}  
+</table>
+
+{% endfor %}

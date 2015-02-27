@@ -1,0 +1,96 @@
+{% extends 'hypo/vfinance_hypo_base.html' %}
+{% import "macros/html.html" as macros with context %}
+{% set title = 'Attestation de Paiement %s'|format(jaar) %}
+
+{% block logo %}
+<img src="{{ 'images/company_logo.png'|custom_image }}">
+{% endblock %}
+
+{% block content %}
+{{ macros.hypo_header('Dossier',
+                      datum_attest|date,
+                      dossier.full_number,
+                      recipient=recipient) }}
+
+{% if dossier.wettelijk_kader == 'wet4892' %}
+    <p>
+    Délivrée conformément à l'article 6³, 2°, de l'arrêté royal d'exécution
+    du Code des impôts sur les revenus 1992 en vue de l'octroi d'une réduction d'impôt
+    pour les amortissement en capital d'un emprunt hypothécaire
+    </p>
+{% endif %}
+<br>
+<table width="100%" cellspacing="0">
+    <tr class="odd">
+        <td class="label">1. Identité et adresse de l'emprunteur</td>
+        <td align="right">
+            {{name2}}<br>
+            {{straat2}}<br>
+            {{postcode2}} {{gemeente2}}</td>
+    </tr>
+    {{ macros.tr( '%s'|format(nummer),
+                  label='2. Référence du contrat', 
+                  class='even') }}
+    {{ macros.tr( '%s'|format(aktedatum|date),
+                  label='3. Date du contrat', 
+                  class='odd') }}
+    {{ macros.tr( '%s'|format(einddatum|date),
+                  label='4. Date d\'échéance finale prévue', 
+                  class='even') }}
+    <tr>
+        <td colspan="2" class="label">&nbsp;&nbsp;&nbsp;Situation au {{'%s'|format(begin_jaar|date)}}</td>
+    </tr>                  
+    <tr>
+        <td class="label">&nbsp;&nbsp;&nbsp;à partir du</td>
+        <td align="right">{{'%s'|format(wijzigingsdatum|date)}}</td>
+    </tr>                  
+    {{ macros.tr( '',
+                  label='5. Montant initial de l\'emprunt', 
+                  class='odd') }}
+    <tr>
+        <td class="label">&nbsp;&nbsp;&nbsp;a. Total</td>
+        <td align="right">{{'€ %s'|format(origineel_bedrag|currency or '0,00')}}</td>
+    </tr>                  
+    <tr>
+        <td class="label">&nbsp;&nbsp;&nbsp;b. Garanti par une inscription hypothécaire</td>
+        <td align="right">&nbsp;</td>
+    </tr>                  
+    {{ macros.tr( '',
+                  label='6. Montant payés en %s'|format(jaar2), 
+                  class='odd') }}
+    <tr>
+        <td class="label">&nbsp;&nbsp;&nbsp;a. Amortissements en capital autres que ceux visés sous b</td>
+        <td align="right">{{'€ %s'|format(betaald_kapitaal|currency or '0,00')}}</td>
+    </tr>                  
+    <tr>
+        <td class="label">&nbsp;&nbsp;&nbsp;b. Remboursement anticipé intégral de l'emprunt</td>
+        <td align="right">{{'€ %s'|format(terugbetaald_kapitaal|currency or '0,00')}}</td>
+    </tr>                  
+    <tr>
+        <td class="label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date de remboursement</td>
+        <td align="right">{{'%s'|format(terugbetalingsdatum|date)}}</td>
+    </tr>                  
+    <tr>
+        <td class="label">&nbsp;&nbsp;&nbsp;c. Intérêts</td>
+        <td align="right">{{'€ %s'|format(betaalde_intrest|currency or '0,00')}}</td>
+    </tr>                  
+    {{ macros.tr( '€ %s'|format(openstaand_kapitaal|currency or '0,00'),
+                  label='7. Solde réel du capital de l\'emprunt au %s'|format(einde_jaar|date), 
+                  class='odd') }}
+</table>
+
+{% if dossier.wettelijk_kader == 'wet4892' %}
+    <p>
+    {{ company_name }} certifie que le contrat d'emprunt réunit les conditions prévues
+    par les articles 145(1), 3°, et 145(5) du Code des impôts sur les revenus 1992. 
+    </p>
+{% endif %}
+<br>
+<br>
+<br>    
+<div>Bruxelles, le {{datum_attest|date}}.</div>
+<br>
+<img src="{{ 'images/handtekening_filip.png'|custom_image }}" width="120" height="30" alt=""><br>
+<div>Filip MOEYKENS</div>
+<div>Président Comité de Direction</div>
+{% endblock %}

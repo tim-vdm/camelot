@@ -1,0 +1,77 @@
+{% from 'templates_revision.html' import templates_revision %}
+
+{% macro loan_type_of_payments(loan_type) -%}
+    {%- if loan_type=='fixed_payment' -%}
+        Annuïtair dalende overlijdensrisicoverzekering
+    {%- elif loan_type=='bullet' -%}
+        Gelijkblijvende overlijdensrisicoverzekering
+    {%- elif loan_type=='fixed_capital_payment' -%}
+        Lineair dalende overlijdensrisicoverzekering
+    {% else %}
+        {{ loan_type|replace('_', ' ')|translate|capitalize }}
+    {% endif %}
+{%- endmacro %}
+
+{% macro pageheader(first=false) %}
+<table{% if not first %} style="page-break-before:always"{% endif %} width="100%">
+    <tr>
+        <td>
+            {% block logo %}<img class="company-logo" alt="" src="{{ 'images/company_logo_small_print.png'|custom_image }}" width="100" height="30">{% endblock %}</td>
+        <td width="75%">
+            <div class="company-header"{% block company_header_override %}{% endblock %}>
+                <br>
+                Patronale Life NV | Acceptatieafdeling | Postbus 260 | 3440 AG Woerden | info@patronale-life.nl<br>
+                Belgische Levensverzekeringsmaatschappij toegelaten onder code FSMA 1642 (KB 18 juni 2001, BS 29 juni 2001)<br>
+                Ondernemingsnummer BE 0403.288.089 | Geregistreerd bij de De Nederlandsche Bank (05 september 2012) - {% block template_type %}{% endblock %}.{{templates_revision()}} {% block printed_at %}{{now|datetime}}{% endblock %}
+            </div>
+            <br>
+            {% block pageheader_subtitle %}{% endblock %}
+        </td>
+    </tr>
+</table>
+<br>
+{% endmacro %}
+
+<html>
+    <head>
+        <title>PATRONALE OVERLIJDENSRISICOVERZEKERING</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style type="text/css">
+        html {
+            font-family: Courier, serif;
+        }
+        body {
+            font-size: 8px;
+            text-align: justify;
+        }
+        .company-header, .proposal-header {
+            font-size: 5px;
+        }
+        .company-header, .company-header a {
+            color: #999;
+        }
+        .proposal-header {
+            color: #33436F;
+        }
+        .h1, .h2, .h3, .h4 {
+            color: #33436F;
+            font-weight: bold;
+        }
+        .h2 {
+            font-size: 11px;
+        }
+        .h3 {
+            font-size: 10px;
+        }
+        .h4 {
+            font-size: 9px;
+        }
+        </style>
+        {% block html_head %}{% endblock %}
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+        <br>
+        {% block additional_content %}{% endblock %}
+    </body>
+</html>

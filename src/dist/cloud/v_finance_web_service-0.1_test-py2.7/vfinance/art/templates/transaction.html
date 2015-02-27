@@ -1,0 +1,83 @@
+{% import "macros/html.html" as macros %}
+{% extends 'vfinance_base_internal.html' %}
+
+{% block content %}
+
+<div>
+    {{transaction.transaction_type|replace('_', ' ')|translate}} |
+    Contract: {{transaction.get_financial_accounts()|join(', ', attribute='id')}} |
+    {{transaction.agreement_code}} |
+    TransactieID: {{transaction.id}}
+</div>
+<div>
+    Ingegeven door: ________________
+</div>
+<hr>
+<div>
+    From Date: {{transaction.from_date}} |
+    Thru Date: {{transaction.thru_date}}
+</div>
+<div>
+    Agreement Date: {{transaction.agreement_date}} |
+    Completion Date: {{transaction.completion_date}}
+</div>
+<hr>
+<div>
+    {% for subscriber in subscribers %}
+        Subscriber {{ loop.index }}: {{subscriber.name}}
+        {% if not loop.last %}
+        |
+        {% endif %}
+    {% endfor %}
+</div>
+<hr>
+
+{% set transaction_funds_out_rows = [['Fund', 'Date', 'Amount', 'Quantity']] %}
+{% set transaction_funds_in_rows = [['Fund', 'Date', 'Amount', 'Quantity']] %}
+{% for entry in security_out_entries %}
+    {% do transaction_funds_out_rows.append([entry.security,
+                                             entry.doc_date,
+                                             entry.amount|currency,
+                                             entry.quantity
+                                             ]) %}
+{% endfor %}
+{% for entry in security_in_entries %}
+    {% do transaction_funds_in_rows.append([entry.security,
+                                            entry.doc_date,
+                                            entry.amount|currency,
+                                            entry.quantity
+                                            ]) %}
+{% endfor %}
+{% if transaction_funds_out_rows|length > 1 %}
+  {{ macros.table(transaction_funds_out_rows, title='Afkoop/switch-out', first_row_header=true, checkbox=false, color_cycle=false) }}
+{% endif %}
+{% if transaction_funds_in_rows|length > 1 %}
+  {{ macros.table(transaction_funds_in_rows, title='Switch-in', first_row_header=true, checkbox=false, color_cycle=false) }}
+{% endif %}
+
+{% set breakdown_in_rows = [['Description', 'Reference', 'Amount']] %}
+{% for payment in payments %}
+    {% do breakdown_in_rows.append([payment.settlement_type,
+                                    '',
+                                    payment.amount|currency
+                                    ]) %}
+{% endfor %}
+{% for settlement in settlements %}
+    {% do breakdown_in_rows.append([settlement_type,
+                                    settlement.origin_doc_date,
+                                    settlement.amount|currency
+                                    ]) %}
+{% endfor %}
+{% for revenue in transaction_revenues %}
+    {% do breakdown_in_rows.append([revenue.revenue_type,
+                                    '',
+                                    revenue.amount|currency
+                                    ]) %}
+{% endfor %}
+{% if breakdown_in_rows|length > 1 %}
+    {{ macros.table(breakdown_in_rows, title='Breakdown', first_row_header=true, checkbox=false, color_cycle=false ) }}
+{% endif %}
+
+<p>Transaction total : {{transaction_total|currency }}<p/>
+<p>Transfered to customer : {{customer_attribution|currency }}<p/>
+{% endblock %}

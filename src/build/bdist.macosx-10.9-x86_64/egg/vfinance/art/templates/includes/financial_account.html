@@ -1,0 +1,30 @@
+{% import "macros/html.html" as macros %}
+<div>Thru book date: {{thru_book_date|format_date}}</div><br/>
+<div>From document date: {{from_document_date|format_date}}</div><br/>
+<h2>Account {{account.package.name}} {{account.id}}</h2>
+
+{% include 'includes/customer.html' %}
+
+{% set premiums_rows = [['Book', 'Document', 'Document Date', 'Account', 'Amount']] %}
+{% for entry in premiums %}
+    {% do premiums_rows.append([entry.book,
+                                entry.document,
+                                entry.doc_date,
+                                entry.account,
+                                (entry.amount * -1)|currency
+                                ]) %}
+{% endfor %}
+
+{% if premiums_rows|length > 1 %}
+    {{macros.table(premiums_rows,
+                   title='Premiums',
+                   first_row_header=true,
+                   checkbox=false,
+                   color_cycle=false)}}
+{% endif %}
+
+{% for premium_schedule, rank, account_data, fund_distribution in premium_schedules %}
+    {% include 'includes/premium_schedule.html' %}
+{% endfor %}
+
+<br/> <b>Total : {{ total | currency }} </b> <br/>

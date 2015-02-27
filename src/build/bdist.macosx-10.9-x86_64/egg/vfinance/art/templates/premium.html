@@ -1,0 +1,28 @@
+{% extends 'vfinance_base.html' %}
+{% block content %}
+<h3>Premium Schedule Features</h3>
+<table width="100%">
+{% for id, described_by, value, result, reason in premium_features %}
+    <tr class="{{ loop.cycle('odd', 'even') }}">
+      <td align="right">{{id}}</td>
+      <td align="right">{{_(described_by|replace('_', ' '))}}</td>
+      <td align="right">{{value}}</td>
+      <td align="right">{{result}}</td>
+      <td align="right">{{reason}}</td>
+    </tr>      
+{% endfor %}
+</table>
+
+<h3>Product Features</h3>
+<table width="100%">
+{% for id, described_by, value, result, reason in product_features %}
+    <tr class="{{ loop.cycle('odd', 'even') }}">
+      <td align="right">{{id}}</td>
+      <td align="right">{{_(described_by|replace('_', ' '))}}</td>
+      <td align="right">{{value}}</td>
+      <td align="right">{{result}}</td>
+      <td align="right">{{reason}}</td>
+    </tr>      
+{% endfor %}
+</table>
+{% endblock %}

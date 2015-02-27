@@ -1,0 +1,101 @@
+<w:tbl>
+  <w:tblPr>
+    <w:tblW w:w="5000" w:type="pct"/>
+  </w:tblPr>
+  <w:tr>
+    <w:tc>
+      <w:tcPr>
+        <w:tcW w:w="3000" w:type="pct" />
+      </w:tcPr>
+      <w:p/>
+    </w:tc>
+    <w:tc>
+      <w:p>
+        <w:pPr>
+          <w:keepNext/>
+        </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>  
+            </w:rPr>
+            <w:t>
+              {%- for addressee in recipient.addressees -%}
+                {% if addressee.organization %}
+                    {{addressee.organization}} {{addresee.organization_type}}
+                {%- elif addressee.first_name and addressee.last_name -%}
+                    {%- if addressee.title %}{{ _(addressee.title) }} {% endif -%}
+                    {{ addressee.first_name }} {% if addressee.middle_name %}{{ addressee.middle_name }} {% endif %}{{ addressee.last_name }} 
+                    {%- if addressee.suffix %} {{ addressee.suffix }}{% endif -%}
+                {% endif -%}
+                {% if not loop.last %}, {% endif %}
+              {% endfor %}</w:t>
+          </w:r>
+      </w:p>
+      {% if recipient.custom_address %}
+        <w:p>
+          <w:pPr>
+            <w:keepNext/>
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>  
+            </w:rPr>
+            <w:t>{{ recipient.custom_address }}</w:t>
+          </w:r>
+        </w:p>
+      {% else %}
+          <w:p>
+            <w:pPr>
+              <w:keepNext/>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>  
+              </w:rPr>
+              <w:t>{{ recipient.street1 }}</w:t>
+            </w:r>
+          </w:p>
+          {% if recipient.street2 %}
+          <w:p>
+            <w:pPr>
+              <w:keepNext/>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>  
+              </w:rPr>
+              <w:t>{{ recipient.street2 }}</w:t>
+            </w:r>
+          </w:p>
+          {% endif %}
+          <w:p>
+            <w:pPr>
+              <w:keepNext/>
+            </w:pPr>
+            {% if recipient.country_code -%}
+              <w:r>
+                <w:rPr>
+                  <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>  
+                </w:rPr>
+                <w:t xml:space="preserve">{{recipient.country_code }} - </w:t>
+              </w:r>
+            {%- endif %}
+            {%- if recipient.city_code -%}
+              <w:r>
+                <w:rPr>
+                  <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>  
+                </w:rPr>
+                <w:t xml:space="preserve">{{ recipient.city_code }} </w:t>
+              </w:r>
+            {%- endif -%}
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>  
+              </w:rPr>
+              <w:t>{{ recipient.city }}</w:t>
+            </w:r>
+          </w:p>
+        {% endif %}
+    </w:tc>
+  </w:tr>
+</w:tbl>

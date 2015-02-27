@@ -1,0 +1,1032 @@
+# coding=UTF-8
+# Dutch translations for V-Finance.
+# Copyright (C) 2011 Vortex
+# This file is distributed under the same license as the V-Finance project.
+# FIRST AUTHOR <jeroen@shore.be>, 2011.
+
+#
+# reference: http://financieel.infonu.nl/diversen/10606-woordenschat-bank-post-verzekeringen.html
+#
+
+#
+# ==============
+# VF APPLICATION
+# ==============
+#
+
+# Products
+msgid "Fork Rekening"
+msgstr "Fork Rekening"
+
+msgid "Fork Huurwaarborg"
+msgstr "Fork Huurwaarborg"
+
+msgid "Fork Rekening Corporate"
+msgstr "Fork Rekening Corporate"
+
+#
+# ============
+# VF TEMPLATES
+# ============
+#
+
+msgctxt "country"
+msgid "Belgium"
+msgstr "België"
+msgctxt "nationality"
+msgid "Belgium"
+msgstr "Belg"
+
+msgctxt "country"
+msgid "France"
+msgstr "Frankrijk"
+msgctxt "nationality"
+msgid "France"
+msgstr "Frans"
+
+msgctxt "country"
+msgid "The Netherlands"
+msgstr "Nederland"
+msgctxt "nationality"
+msgid "The Netherlands"
+msgstr "Nederlands"
+
+msgctxt "country"
+msgid "Luxembourg"
+msgstr "Luxemburg"
+msgctxt "nationality"
+msgid "Luxembourg"
+msgstr "Luxemburgs"
+
+msgctxt "country"
+msgid "Luxemburg"
+msgstr "Luxemburg"
+msgctxt "nationality"
+msgid "Luxemburg"
+msgstr "Luxemburgs"
+
+msgctxt "country"
+msgid "Germany"
+msgstr "Duitsland"
+msgctxt "nationality"
+msgid "Germany"
+msgstr "Duits"
+
+msgctxt "country"
+msgid "Italy"
+msgstr "Italië"
+msgctxt "nationality"
+msgid "Italy"
+msgstr "Italiaans"
+
+msgctxt "country"
+msgid "Spain"
+msgstr "Spanje"
+msgctxt "nationality"
+msgid "Spain"
+msgstr "Spaans"
+
+msgctxt "country"
+msgid "United Kingdom"
+msgstr "Verenigd Koninkrijk"
+msgctxt "nationality"
+msgid "United Kingdom"
+msgstr "Brits"
+
+# 
+# GENERAL
+# 
+msgid "yes"
+msgstr "ja"
+
+msgid "no"
+msgstr "nee"
+
+msgid "on"
+msgstr "op"
+
+msgid "and"
+msgstr "en"
+
+msgid "of"
+msgstr "van"
+
+msgid "from"
+msgstr "vanaf"
+
+msgid "the"
+msgstr "het"
+
+msgid "of the"
+msgstr "van het"
+
+msgid "up to and including"
+msgstr "tot en met"
+
+msgid "once"
+msgstr "eenmalig"
+
+msgid "first"
+msgstr "eerste"
+
+msgid "second"
+msgstr "tweede"
+
+msgid "only"
+msgstr "enige"
+
+msgid "dear"
+msgstr "beste"
+
+msgid "date"
+msgstr "datum"
+
+msgid "title"
+msgstr "titel"
+
+msgid "name"
+msgstr "naam"
+
+msgid "firstname"
+msgstr "voornaam"
+
+msgid "first name"
+msgstr "voornaam"
+
+msgid "lastname"
+msgstr "achternaam"
+
+msgid "last name"
+msgstr "achternaam"
+
+msgid "date of birth"
+msgstr "geboortedatum"
+
+msgid "place of birth"
+msgstr "geboorteplaats"
+
+msgid "address"
+msgstr "adres"
+
+msgid "phone"
+msgstr "telefoon"
+
+msgid "fax"
+msgstr "fax"
+
+msgid "email"
+msgstr "e-mail"
+
+msgid "nationality"
+msgstr "nationaliteit"
+
+msgid "civil state"
+msgstr "burgerlijke staat"
+
+msgid "gender"
+msgstr "geslacht"
+
+msgid "city"
+msgstr "plaats"
+
+msgid "zipcode"
+msgstr "postcode"
+
+msgid "country"
+msgstr "land"
+
+msgid "commercial name"
+msgstr "maatschappelijke naam"
+
+msgid "representative"
+msgstr "vertegenwoordiger"
+
+msgid "intermediary"
+msgstr "tussenpersoon"
+
+msgid "legal entity type"
+msgstr "juridische vorm"
+
+msgid "vrij beroep"
+msgstr "vrij beroep"
+
+msgid "vennootschap"
+msgstr "vennootschap"
+
+msgid "eenmanszaak"
+msgstr "eenmanszaak"
+
+msgid "vat number"
+msgstr "ondernemingsnummer"
+
+msgid "headquarters"
+msgstr "maatschappelijke zetel"
+
+msgid "smoker"
+msgstr "roker"
+
+msgid "m"
+msgstr "man"
+
+msgid "v"
+msgstr "vrouw"
+
+msgid "Ms."
+msgstr "Mevr."
+
+msgid "M."
+msgstr "Dhr."
+
+msgid "male"
+msgstr "man"
+
+msgid "female"
+msgstr "vrouw"
+
+msgid "managing director"
+msgstr "voorzitter directiecomité"
+
+msgid "signature of the insurer"
+msgstr "handtekening van de verzekeraar"
+
+msgid "EUR"
+msgstr "EUR"
+
+msgid "contract"
+msgstr "contract"
+
+msgid "contractnumber"
+msgstr "contractnummer"
+
+msgid "branch"
+msgstr "tak"
+
+msgid "branch 21"
+msgstr "tak 21"
+
+msgid "branch 23"
+msgstr "tak 23"
+
+msgid "branch 26"
+msgstr "tak 26"
+
+msgid "to invest"
+msgstr "te beleggen"
+
+msgid "fund"
+msgstr "fonds"
+
+msgid "funds"
+msgstr "fondsen"
+
+msgid "total"
+msgstr "totaal"
+
+msgid "ongehuwd"
+msgstr "ongehuwd"
+
+msgid "ongehuwd samenwonend" 
+msgstr "ongehuwd samenwonend"
+
+msgid "ongehuwd wettelijk samenwonend"
+msgstr "ongehuwd wettelijk samenwonend"
+
+msgid "gehuwd" 
+msgstr "gehuwd" 
+
+msgid "gescheiden" 
+msgstr "gescheiden" 
+
+msgid "weduwe" 
+msgstr "weduwe"
+
+msgid "weduwenaar"
+msgstr "weduwenaar"
+
+msgid "weduwe(naar)" 
+msgstr "weduwe(naar)"
+
+msgid "feitelijk gescheiden" 
+msgstr "feitelijk gescheiden" 
+
+msgid "single"
+msgstr "eenmalig"
+
+msgid "monthly"
+msgstr "maandelijks"
+
+msgid "quarterly"
+msgstr "per kwartaal"
+
+msgid "yearly"
+msgstr "jaarlijks"
+
+msgid "from date"
+msgstr "aanvangsdatum"
+
+msgid "thru date"
+msgstr "einddatum"
+
+msgid "units"
+msgstr "eenheden"
+
+msgid "value"
+msgstr "waarde"
+
+msgid "subscriber"
+msgstr "verzekeringnemer"
+
+msgid "subscribers"
+msgstr "verzekeringnemers"
+
+msgid "insured party"
+msgstr "verzekerde"
+
+msgid "insured parties"
+msgstr "verzekerden"
+
+msgid "beneficiary"
+msgstr "begunstigde"
+
+msgid "beneficiaries"
+msgstr "begunstigden"
+
+msgid "additional information"
+msgstr "bijkomende inlichtingen"
+
+msgid "Belliardstreet"
+msgstr "Belliardstraat"
+
+msgid "Berlaimont avenue"
+msgstr "Berlaimontlaan"
+
+msgid "Brussels"
+msgstr "Brussel"
+
+msgid "Inc"
+msgstr "NV"
+
+msgid "insurance company"
+msgstr "Verzekeringsonderneming"
+
+msgid "Belgian life insurance company"
+msgstr "Belgische levensverzekeringsmaatschappij"
+
+msgid "admitted under code"
+msgstr "toegelaten onder code"
+
+msgid "under supervision of"
+msgstr "onder toezicht van de"
+
+msgid "National Bank of Belgium"
+msgstr "Nationale Bank van België"
+
+msgid "broker"
+msgstr "makelaar"
+
+msgid "FSMA nr."
+msgstr "FSMA nr."
+
+msgid "Post Bank"
+msgstr "Bank van De Post"
+
+# royal order
+msgid "RO"
+msgstr "KB"
+
+# Belgian official journal
+msgid "BOJ"
+msgstr "BS"
+
+msgid "issue date"
+msgstr "uitgiftedatum"
+
+msgid "reason for issue"
+msgstr "reden van uitgifte"
+
+msgid "confirmation endorsement"
+msgstr "bevestiging onderschrijving"
+
+# 
+# INVESTMENT CONFIRMATION
+# 
+msgid "investment confirmation"
+msgstr "investeringsbevestiging"
+
+# 
+# TAK XX CERTIFICATE
+# 
+msgid "personal certificate"
+msgstr "persoonlijk certificaat"
+
+msgid "start date"
+msgstr "ingangsdatum"
+
+msgid "term"
+msgstr "looptijd"
+
+msgid "year"
+msgstr "jaar"
+
+msgid "years"
+msgstr "jaren"
+
+msgid "year(s)"
+msgstr "jaar/jaren"
+
+msgid "month"
+msgstr "maand"
+
+msgid "months"
+msgstr "maanden"
+
+msgid "month(s)"
+msgstr "maand(en)"
+
+msgid "indefinite"
+msgstr "onbepaald"
+
+msgid "perpetual"
+msgstr "levenslang"
+
+# DEPRECATED
+msgid "lifelong"
+msgstr "levenslang"
+
+msgid "the contract will be ended at the"
+msgstr "het contract wordt beëindigd bij het"
+
+msgid "the contract will be ended"
+msgstr "het contract wordt beëindigd"
+
+msgid "decease of the first insured party"
+msgstr "overlijden van de eerste verzekerde"
+
+msgid "decease of the last insured party"
+msgstr "overlijden van de langstlevende verzekerde"
+
+msgid "premium"
+msgstr "premie"
+
+msgid "premiums"
+msgstr "premies"
+
+msgid "premium schedule"
+msgstr "premiereferentie"
+
+msgid "reference"
+msgstr "ref"
+
+msgid "amount of purchase"
+msgstr "koopsom"
+
+msgid "single premium"
+msgstr "eenmalige premie"
+
+msgid "periodical premium"
+msgstr "periodieke premie"
+
+msgid "additional deposits"
+msgstr "bijkomende stortingen"
+
+msgid "costs"
+msgstr "kosten"
+
+msgid "gross premium"
+msgstr "bruto premie"
+
+msgid "net premium"
+msgstr "netto premie"
+
+msgid "net capital"
+msgstr "netto kapitaal"
+
+msgid "premium tax"
+msgstr "premie taks"
+
+msgid "One-time Entry Fee"
+msgstr "Eenmalige Instap Toeslag"
+
+msgid "OEF"
+msgstr "EIT"
+
+msgid "Flat Entry Fee"
+msgstr "Forfaitaire Instap Kost"
+
+msgid "bonus allocation"
+msgstr "bonus allocatie"
+
+msgid "Spread Entry Fee"
+msgstr "Oprichtingskost (Gespreide Instaptoeslag)"
+
+msgid "investment"
+msgstr "belegging"
+
+msgid "investments"
+msgstr "beleggingen"
+
+msgid "invested amount"
+msgstr "geïnvesteerd bedrag"
+
+msgid "uninvested amount"
+msgstr "bedrag(en) nog niet omgezet in eenheden"
+
+msgid "product"
+msgstr "product"
+
+msgid "payment"
+msgstr "uitkering"
+
+msgid "capital"
+msgstr "kapitaal"
+
+msgid "interest"
+msgstr "intrest"
+
+msgid "interests"
+msgstr "intresten"
+
+msgid "overview"
+msgstr "overzicht"
+
+msgid "interest rate"
+msgstr "intrest"
+
+msgid "basic interest"
+msgstr "basisintrest"
+
+msgid "additional interest"
+msgstr "aanv. intrest"
+
+msgid "additional interest rate"
+msgstr "aanvullende intrest"
+
+msgid "The additional interest is only applicable for the concerning year. It can be revised by the company on a yearly basis."
+msgstr "De aanvullende intrest is enkel van toepassing voor het betreffende jaar. Jaarlijks kan deze herzien worden door de maatschappij."
+
+msgid "total interest"
+msgstr "totale intrest"
+
+msgid "profit sharing"
+msgstr "winstdeelname"
+
+msgid "possible profit sharing"
+msgstr "mogelijke winstdeelname"
+
+msgid "profit attribution"
+msgstr "toekenning winstdeelname"
+
+msgid "The company can allow profit sharing additionally. Profit sharing is not guaranteed and is granted at the general assembly of the company on a yearly basis."
+msgstr "Aanvullend kan de maatschappij een winstdeelname toestaan. De winstdeling is echter niet gewaarborgd en wordt jaarlijks toegekend op de algemene vergadering van de maatschappij."
+
+msgid "risk class"
+msgstr "risicoklasse"
+
+msgid "unknown"
+msgstr "onbekend"
+
+msgid "class 0"
+msgstr "klasse 0"
+
+msgid "class 1"
+msgstr "klasse 1"
+
+msgid "class 2"
+msgstr "klasse 2"
+
+msgid "class 3"
+msgstr "klasse 3"
+
+msgid "class 4"
+msgstr "klasse 4"
+
+msgid "class 5"
+msgstr "klasse 5"
+
+msgid "class 6"
+msgstr "klasse 6"
+
+msgid "By means of this personal certificat we acknowledge your insurance proposal and the amount to invest. You will receive a confirmation of investment of the units and rate at which you have invested in above mentioned funds, after the concerning rate(s) of the fund(s) is known."
+msgstr "Via dit Persoonlijk Certificaat bevestigen we de goede ontvangst van uw verzekeringsvoorstel en het te investeren kapitaal. De investeringsbevestiging van het aantal eenheden en de koers waartegen u hebt geïnvesteerd in het (de) bovenvermelde fonds(en) ontvangt u nadat de effectieve koers(en) van het (de) fonds(en) bekend is (zijn)."
+
+msgid "The management regulations and financial info sheet contain more information about the funds mentioned."
+msgstr "Het beheersreglement en de financiële infofiche bevatten meer informatie over de vermelde fondsen."
+
+msgid "percentage"
+msgstr "percentage"
+
+msgid "guarantee at decease"
+msgstr "waarborg bij overlijden"
+
+msgid "first insured party"
+msgstr "eerste van de verzekerden"
+
+msgid "last insured party"
+msgstr "langstlevende verzekerde"
+
+msgid "at the decease of the insured party"
+msgstr "bij het overlijden van de verzekerde"
+
+msgid "at the decease of one of the insured parties"
+msgstr "bij het overlijden van één van de verzekerden"
+
+msgid "at the decease of the last insured party"
+msgstr "bij het overlijden van de langstlevende verzekerde"
+
+msgid "the insured capital is the reserve"
+msgstr "het verzekerde kapitaal is de reserve"
+
+msgid "special clauses"
+msgstr "bijzondere bepalingen"
+
+msgid "not applicable"
+msgstr "niet van toepassing"
+
+msgid "additional information"
+msgstr "bijkomende inlichtingen"
+
+msgid "signature of the company"
+msgstr "handtekening van de Maatschappij"
+
+msgid "chairman executive comitee"
+msgstr "voorzitter Directiecomité"
+
+# 
+# TRANSACTION/ACCOUNT DOCUMENT
+# 
+# !!!!! Note: possible confusion in the future with sales=premie
+# Erik said this is fine (20120504-14h00)
+msgid "sales"
+msgstr "premie"
+
+msgid "quotation"
+msgstr "koers"
+
+msgid "quotation date"
+msgstr "koersdatum"
+
+msgid "account state"
+msgstr "waardeoverzicht"
+
+msgid "Net Asset Value"
+msgstr "Netto inventariswaarde"
+
+msgid "NAV"
+msgstr "NIW"
+
+msgid "The risk class indicates, on a scale from 0 (lowest) to 6 (highest), the financial risk borne by the subscriber."
+msgstr "De risicoklasse geeft, op een schaal van 0 (laagste risico) tot 6 (hoogste risico), een indicatie van het financiële risico dat volledig gedragen wordt door de verzekeringnemer."
+
+msgid "In the case of a (additional, optional) deposit before the actual NAV(**) date, the net premium will already be granted to your contract (in EUR). When the actual NAV(**) date is known, the premium will be invested in the mentioned funds according to the distribution specified on signup or on the additional deposit form, and the units will be granted to your contract. In the case of (periodic) withdrawels, the withdrawel will happen on the last day of the month/quarter or on the date of the transaction (redemption, switch) already in EUR, but the actual settlement in units can only take place once the actual NAV(**) date is known."
+msgstr "In het geval van een (bijkomende vrije) storting vóór de effectieve datum NIW(**) zal de nettopremie reeds aan uw contract worden toegekend (in EUR). Op het moment dat de effectieve datum NIW(**) gekend is, zal de premie belegd worden in de onderliggende fondsen, cfr. de verdeling opgegeven op het inteken- of bijstortingsformulier, en zullen de eenheden aan uw contract worden toegekend. In het geval van (periodieke) onttrekkingen, gebeurt de onttrekking op de laatste dag van de maand/kwartaal of op datum van de verrichting (afkoop, switch) reeds in EUR, maar de effectieve verrekening in eenheden kan pas gebeuren als de effectieve datum NIW(**) gekend is."
+
+msgid "With this Contract you have signed an additional insurance coverage. The due risk premium for this additional insurance is deducted monthly from your capital reserve."
+msgstr "U heeft een aanvullende waarborg overlijden afgesloten. De verschuldigde risicopremie voor deze aanvullende waarborg wordt maandelijks van uw reserve afgehouden. Raadpleeg uw Persoonlijk Certificaat voor meer informatie."
+
+msgid "redemption rate revenue"
+msgstr "variabele afkoopkost"
+
+msgid "redemption fee revenue"
+msgstr "vaste afkoopkost"
+
+msgid "transfer revenue"
+msgstr "fonds in- en uitstapkost"
+
+msgid "premium fee"
+msgstr "Forfaitaire Instap Kost"
+
+msgid "premium taxation physical person"
+msgstr "Premietaks"
+
+msgid "premium legal person"
+msgstr "Premietaks (rechtspersoon)"
+
+msgid "premium rate"
+msgstr "Eenmalige Instap Toeslag (EIT)"
+
+msgid "entry rate"
+msgstr "Fondsinstapkost"
+
+msgid "funded premium rate"
+msgstr "Bonus allocatie %"
+
+msgid "redemption rate"
+msgstr "Uitstapkost"
+
+msgid "exit fee"
+msgstr "Forfaitaire uitstapkost"
+
+msgid "market adjuster"
+msgstr "Conjuncturele vergoeding"
+
+msgid "fictive interest tax"
+msgstr "roerende voorheffing"
+
+msgid "effective interest tax"
+msgstr "roerende voorheffing"
+
+msgid "financed commission min reduction rate"
+msgstr "Recuperatie Gespreide instaptoeslag"
+
+msgid "financed commission max reduction rate"
+msgstr "Recuperatie Gespreide instaptoeslag"
+
+msgid "exit rate"
+msgstr "Fondsuitstapkost"
+
+msgid "switch in rate"
+msgstr "Arbitragekost % (switch in)"
+
+msgid "switch in fee"
+msgstr "Arbitragekost EUR (switch in)"
+
+msgid "switch out rate"
+msgstr "Arbitragekost % (switch out)"
+
+msgid "switch out fee"
+msgstr "Arbitragekost EUR (switch out)"
+
+msgid "switch revenue"
+msgstr "switch kost"
+
+msgid "financed commission rate"
+msgstr "Gespreide Instaptoeslag"
+
+msgid "financed commissions"
+msgstr "Gespreide instaptoeslag"
+
+msgid "financed commissions deduction"
+msgstr "Recuperatie gespreide instaptoeslag"
+
+msgid "depot movement"
+msgstr "investering"
+
+msgid "movement"
+msgstr "verrichting"
+
+msgid "switch out"
+msgstr "switch out"
+
+msgid "switch attribution"
+msgstr "switch in"
+
+msgid "financed switch"
+msgstr "switch"
+
+msgid "entry fee revenue"
+msgstr "instapkost"
+
+msgid "funded premium"
+msgstr "bonus allocatie"
+
+msgid "interest attribution"
+msgstr "intrest"
+
+msgid "premium attribution"
+msgstr "investering"
+
+msgid "premium rate revenue"
+msgstr "premie kost"
+
+msgid "taxes"
+msgstr "taks"
+
+msgid "additional interest attribution"
+msgstr "aanvullende intrest"
+
+msgid "premium fee 1 revenue"
+msgstr "vaste instapkost"
+
+msgid "premium rate 1 revenue"
+msgstr "variabele instapkost(en)"
+
+msgid "financed commissions redemption deduction"
+msgstr "recuperatie openstaand saldo gespreide instaptoeslag"
+
+msgid "redemption attribution"
+msgstr "netto afkoopwaarde"
+
+msgid "security quotation"
+msgstr "rendement"
+
+msgid "risk deduction"
+msgstr "onttrekking risicopremie"
+
+msgid "redemption"
+msgstr "bruto afkoopwaarde"
+
+msgid "annual percentage"
+msgstr "% op jaarbasis"
+
+msgid "guaranteed for %i years"
+msgstr "gewaarborgd voor %i jaar"
+
+msgid "partial redemption"
+msgstr "gedeeltelijke afkoop"
+
+msgid "full redemption"
+msgstr "volledige afkoop"
+
+msgid "decease"
+msgstr "overlijden"
+
+msgid "switch"
+msgstr "switch"
+
+
+# 
+# RENTDEPOSIT CERTIFICATE
+# 
+
+msgid "letter"
+msgstr "verhuurder"
+
+msgid "letters"
+msgstr "verhuurders"
+
+msgid "tenant"
+msgstr "huurder"
+
+msgid "tenants"
+msgstr "huurders"
+
+msgid "duplicate"
+msgstr "exemplaar"
+
+msgid "date of issue"
+msgstr "datum uitgifte"
+
+msgid "reason of issue"
+msgstr "reden uitgifte"
+
+msgid "confirmation subscription"
+msgstr "bevestiging onderschrijving"
+
+msgid "this certificate with number %s attests the establishment of a rent deposit in the form of a capitalisation contract for the this property rented to:"
+msgstr "dit certificaat met nummer %s attesteert de vestiging van een huurwaarborg onder de vorm van een kapitalisatiecontract voor het hierna vermelde onroerend goed verhuurd aan:"
+
+msgid "property for this rent deposit and letter(s)"
+msgstr "onroerend goed voor deze huurwaarborg en verhuurder(s)"
+
+msgid "general characteristics rent deposit"
+msgstr "algemene karakteristieken huurwaarborg"
+
+msgid "guaranteed gross interest"
+msgstr "gegarandeerde bruto intrest"
+
+msgid "gross received premium"
+msgstr "bruto ontvangen premie"
+
+msgid "On subscription of this agreement, the following costs will be billed. For more information, we refer to the information sheet and the management agreement of the rent deposit."
+msgstr "Bij onderschrijving van deze overeenkomst zullen volgende kosten worden aangerekend. Voor meer informatie verwijzen wij naar de informatie fiche en de beheersovereenkomst van de huurwaarborg."
+
+msgid "The General Conditions and the Financial Information Sheet are available on simple request from your Advisor, Patronale Life Ltd or can be consulted on "
+msgstr "De Algemene Voorwaarden en de Financiële Infofiche zijn op eenvoudige aanvraag verkrijgbaar bij uw Adviseur, Patronale Life NV of kunnen geconsulteerd worden op "
+
+msgid "The general conditions applicable on this agreement are those that were in place at the time the proposal, which forms the basis of this agreement, became active. Your data will be processed by Patronale Life Ltd and saved in a file to manage the insurances. If your personal data, as mentioned on this certificate, should be incorrect or out of date, we ask you to send written corrections within a reasonable term."
+msgstr "De algemene voorwaarden van toepassing op deze overeenkomst zijn degene die in voege waren op het ogenblik waarop het voorstel, dat de basis vormt voor deze overeenkomst, actief werd. Uw gegevens zullen door Patronale Life NV worden verwerkt en in een bestand worden opgeslagen met het oog op het beheer van de verzekeringen. Mochten uw persoonlijke gegevens, zoals op dit certificaat vermeldt, onjuist, of niet langer actueel zijn, vragen wij u deze, binnen redelijke termijn, schriftelijk aan ons kenbaar te maken."
+
+msgid "Before the due date of your rent deposit you will receive a document from the company where you have the choice to, in accordance with the terms and with agreement of the letter(s), to be paid out. If you choose to extend the rent deposit, the company will send you an addendum to your original contract, which will confirm the extension."
+msgstr "Voor de vervaldag van uw huurwaarborg zal u van de maatschappij een document ontvangen waar u de keuze heeft om uw huurwaarborg, conform de voorwaarden en met akkoord van de verhuurder(s), te laten uitkeren. Indien u kiest om de huurwaarborg te verlengen, bezorgt de maatschappij u een bijvoegsel aan uw originele contract die deze verlenging bevestigd."
+
+#
+# Credit insurance, loan types
+#
+msgid "coverage"
+msgstr "verzekering"
+
+msgid "fixed payment"
+msgstr "vast bedrag"
+
+msgid "bullet"
+msgstr "bulletkrediet"
+
+msgid "fixed capital payment"
+msgstr "vaste kapitaalsaflossing"
+
+msgid "market fluctuation revenue"
+msgstr "conjuncturele vergoeding"
+
+#
+# SSV proposal
+#
+msgid "premium proposal"
+msgstr "premievoorstel"
+
+msgid "credit insurance"
+msgstr "schuldsaldoverzekering"
+
+msgid "credit amount"
+msgstr "bedrag lening"
+
+msgid "estimate"
+msgstr "offerte"
+
+msgid "estimate date"
+msgstr "offertedatum"
+
+msgid "simulation"
+msgstr "simulatie"
+
+msgid "personal data"
+msgstr "persoonlijke gegevens"
+
+msgid "basic data"
+msgstr "basisgegevens"
+
+msgid "mortgage credit"
+msgstr "hypothecair krediet"
+
+msgid "credit amount"
+msgstr "kredietbedrag"
+
+msgid "yearly interest"
+msgstr "jaarlijkse intrest"
+
+msgid "duration"
+msgstr "duurtijd"
+
+msgid "loan repayment"
+msgstr "aflossing krediet"
+
+msgid "loan type"
+msgstr "type aflossing"
+
+msgid "insured percentage"
+msgstr "verzekerd percentage"
+
+msgid "insured capital"
+msgstr "verzekerd kapitaal"
+
+msgid "payment premium"
+msgstr "betaling premie"
+
+msgid "number of payments"
+msgstr "aantal betalingen"
+
+msgid "insurance period"
+msgstr "verzekeringsduur"
+
+msgid "payment period"
+msgstr "duurtijd betaling"
+
+msgid "see attached table"
+msgstr "zie bijgevoegde tabel"
+
+msgid "progress of coverage"
+msgstr "verloop van de overlijdensdekking"
+
+msgid "The insured capital at decease of the insured party decreases on a monthly basis according to the data above. The insured capital in the table below is displayed per year (12 months from starting date)."
+msgstr "Het verzekerd kapitaal bij overlijden van de verzekerde neemt maandelijks af op basis van bovenstaande gegevens. Het verzekerd kapitaal is in onderstaande tabel weergegeven per jaar (12 maanden vanaf aanvangsdatum)."
+
+msgid "This personal premium proposition is valid until 30 days after emission and is informative, on the basis of the current data and does not commit neither the candidate insured party, nor Patronale Life NV. The premium is given with reservation of acceptance of the dossier by Patronale Life NV and with reservation of potential additional premiums/exclusion. This premium proposition is based on normal health of the insured party/parties. To conclude closure of the Policy, a declaration of health needs to be completed by the Insured Party. From this declaration of health it will become apparent if a potential augmentation of the premium is owed because of a hightened medical risk. To sign this premium, Patronale needs to receive the following documents: fully completed and signed Request Form and declaration of health (referenced to on the request form); a copy of the valid identity card of the insured party/parties (with print of address data)."
+msgstr "Dit persoonlijke premievoorstel is geldig tot 30 dagen na uitgifte en wordt u ter informatie meegedeeld op basis van de huidige gegevens en verbinden noch de kandidaat-verzekerde, noch Patronale Life NV. De premie wordt meegedeeld onder voorbehoud van aanvaarding van het dossier door Patronale Life NV én onder voorbehoud van een eventuele bijpremie/uitsluiting. Dit premievoorstel is gebaseerd op een normale gezondheid van de Verzekerde(n). Om over te gaan tot het afsluiten van een Polis dient, voor het beoordelen van de gezondheidstoestand door de Maatschappij, de gezondheidsverklaring ingevuld te worden door de Verzekerde(n). Uit de gezondheidsverklaring zal blijken of een eventuele premieverhoging verschuldigd is vanwege een mogelijk verhoogd medisch risico. Om deze premie te onderschrijven dient Patronale in het bezit te komen van volgende documenten : een volledig ingevuld en ondertekend Aanvraagformulier en gezondheidsverklaring (vermeld op het aanvraagformulier); een kopie van de geldige identiteitskaart van de verzekerde(n) (inclusief afdruk adresgegevens)."
+
+msgid "This capital decreases as planned in the attached table, starting q month after starting date."
+msgstr "Dit kapitaal neemt af zoals voorzien in tabel in bijlage en voor de eerste keer 1 maand na de aanvangsdatum."
+
+msgid "amount"
+msgstr "bedrag"
+
+msgid "periodic interest"
+msgstr "periodieke rente"
+
+msgid "APR"
+msgstr "JKP"
+
+msgid "Annual Percentage Rate"
+msgstr "Jaarlijkse kostenpercentage"
+
+msgid "repayment"
+msgstr "terugbetaling"
+
+msgid "repayments"
+msgstr "terugbetalingen"
+
+msgid "repayment type"
+msgstr "type terugbetaling"
+
+msgid "delay repayments"
+msgstr "uitstel betaling"
+
+msgid "start repayments"
+msgstr "begin terugbetaling"
+
+msgid "withdrawal period"
+msgstr "opnameperiode"
+
+msgid "loan duration"
+msgstr "looptijd"
+
+# HYPOTHEKEN
+msgid "flemish region guarantee"
+msgstr "Vlaams gewest"
+
+msgid "walloon region guarantee"
+msgstr "Waals gewest"
+
+msgid "brussels capital region guarantee"
+msgstr "Brussels hoofdstedelijk gewest"
+
+msgid "application"
+msgstr "aanvraag"

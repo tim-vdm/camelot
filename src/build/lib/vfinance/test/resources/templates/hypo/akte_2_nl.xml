@@ -1,0 +1,1761 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+{% macro part( name )%}
+<w:p/>
+<w:p>
+  <w:r>
+    <w:rPr>
+      <w:b/>
+    </w:rPr>
+    <w:t>{{name}}</w:t>
+  </w:r>
+</w:p>
+<w:p/>
+<w:p/>
+{% endmacro %}
+
+{% macro title( number, name )%}
+<w:p/>
+<w:p>
+  <w:r>
+    <w:rPr>
+      <w:b/>
+    </w:rPr>
+    <w:t>{{number}} {{name}}</w:t>
+  </w:r>
+</w:p>
+<w:p/>
+{% endmacro %}
+
+{% macro huwelijkscontract( type )%}
+{% if type=='geen' %}zonder huwelijkscontract{% endif %}
+{% if type=='gescheiden' %}met scheiding van goederen{% endif %}
+{% if type=='gemeenschap' %}met gemeenschap van goederen{% endif %}
+{% if type=='scheiding_aanwinsten' %}met scheiding van goederen met gemeenschap van aanwinsten{% endif %}
+{% endmacro %}
+
+{% macro burgerlijke_staat( natuurlijke_persoon )%}
+{% if natuurlijke_persoon.burgerlijke_staat=='o' %}Ongehuwd{% endif %}
+{% if natuurlijke_persoon.burgerlijke_staat=='os' %}Ongehuwd samenwonend{% endif %}
+{% if natuurlijke_persoon.burgerlijke_staat=='ows' %}Ongehuwd wettelijk samenwonend{% endif %}
+{% if natuurlijke_persoon.burgerlijke_staat=='h' %}Gehuwd {{huwelijkcontract(natuurlijke_persoon.huwelijkscontract)}}{% endif %}
+{% if natuurlijke_persoon.burgerlijke_staat=='g' %}Gescheiden{% endif %}
+{% if natuurlijke_persoon.burgerlijke_staat=='w' %}
+{% if natuurlijke_persoon.gender=='m' %}Weduwenaar{% endif %}
+{% if natuurlijke_persoon.gender=='v' %}Weduwe{% endif %}
+{% endif %}
+{% if natuurlijke_persoon.burgerlijke_staat=='f' %}Feitelijk gescheiden{% endif %}
+{% endmacro %}
+
+{% macro terugbetaling_interval( interval )%}
+{% if interval==12 %}<w:t>per maand</w:t>{%endif%}
+{% if interval==4 %}<w:t>per trimester</w:t>{%endif%}
+{% if interval==1 %}<w:t>per jaar</w:t>{%endif%}
+{% endmacro %}
+
+{% macro terugbetaling_schema( voorschot )%}
+  {% set months={1:'januari', 2:'februari', 3:'maart', 4:'april', 5:'mei', 6:'juni', 7:'juli', 8:'augustus', 9:'september', 10:'oktober', 11:'november', 12:'december'} %}
+  <w:t xml:space="preserve">de ...e van </w:t>
+  {% if voorschot.goedgekeurd_bedrag.goedgekeurd_terugbetaling_interval==12 %}<w:t xml:space="preserve">elke maand van het jaar</w:t>{%endif%}
+  {% if voorschot.goedgekeurd_bedrag.goedgekeurd_terugbetaling_interval==4 %}<w:t>de maanden ..., ..., ... en ... van elk jaar</w:t>{%endif%}
+  {% if voorschot.goedgekeurd_bedrag.goedgekeurd_terugbetaling_interval==1 %}<w:t>de maand ... van elk jaar</w:t>{%endif%}
+{% endmacro %}
+
+{% macro person_info( dual_person )%}
+<w:p>
+  <w:r>
+    {%if dual_person.natuurlijke_persoon%}
+    <w:t><![CDATA[{{dual_person.natuurlijke_persoon.name}} - {{dual_person.natuurlijke_persoon.beroep}}]]></w:t>
+    <w:br/>
+    <w:t><![CDATA[{{dual_person.natuurlijke_persoon.address_one_line}}]]></w:t>
+    <w:br/>
+    <w:t><![CDATA[Geboortedatum : {{dual_person.natuurlijke_persoon.geboortedatum|date}}, Geboorteplaats : {{dual_person.natuurlijke_persoon.geboorteplaats}}]]></w:t>
+    <w:br/>
+    <w:t>Identiteitskaart : {{dual_person.natuurlijke_persoon.identiteitskaart_nummer}}</w:t>
+    <w:br/>
+    <w:t>Burgerlijke staat : {{burgerlijke_staat(dual_person.natuurlijke_persoon)}}</w:t>
+    {%endif%}
+  </w:r>
+  <w:r>
+    {%if dual_person.rechtspersoon%}
+    <w:t><![CDATA[{{dual_person.rechtspersoon.name}}]]></w:t>
+    <w:br/>
+    <w:t><![CDATA[{{dual_person.rechtspersoon.address_one_line}}]]></w:t>
+    {%endif%}
+  </w:r>
+</w:p>
+{% endmacro %}
+
+<w:document
+	xmlns:ve="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:o="urn:schemas-microsoft-com:office:office"
+	xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+	xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+	xmlns:v="urn:schemas-microsoft-com:vml"
+	xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+	xmlns:w10="urn:schemas-microsoft-com:office:word"
+	xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+	xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml">
+	<w:body>
+		<w:p>
+      <w:pPr>
+        <w:jc w:val="center"/>
+      </w:pPr>
+			<w:r>
+        <w:rPr>
+          <w:b/>
+          <w:u w:val="single"/>
+        </w:rPr>
+        <w:t>AKTE KREDIETOPENING MET WAARBORGVESTIGING IN HET KADER
+				</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+      <w:pPr>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:u w:val="single"/>
+        </w:rPr>
+				<w:t>VAN DE WET VAN 4 AUGUSTUS 1992</w:t>
+			</w:r>
+		</w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+				<w:t>
+          Het jaar tweeduizend en ............, op ............ .
+        </w:t>
+			</w:r>
+		</w:p>
+    <w:p>
+      <w:r>
+        <w:t xml:space="preserve">Zijn voor ons, Meester </w:t>
+        {% if hypotheek.instrumenterende_notaris %}
+        <w:t xml:space="preserve">{{hypotheek.instrumenterende_notaris.name}}</w:t>
+        {% else %}
+        <w:t xml:space="preserve">...(voornaam en naam van de notaris)...</w:t>
+        {% endif %}
+        <w:t xml:space="preserve">, Notaris met standplaats, met tussenkomst van Meester Francis MOEYKENS, Notaris te Brugge, verschenen :</w:t>
+      </w:r>
+    </w:p>
+    {{title(1, 'Volledige indentiteit van de kredietnemer(s)')}}
+    {% for aanvrager in hypotheek.aanvrager %}
+      {{person_info(aanvrager)}}
+      <w:p/>
+    {% endfor %}
+    <w:p>
+      <w:r>
+        <w:br/>
+        <w:t>
+          hierna 'kredietnemers' genoemd, zelfs indien er maar één is;
+        </w:t>
+      </w:r>
+    </w:p>
+    {{title(2, 'DE PATRONALE HYPOTHEEKMAATSCHAPPIJ')}}
+    <w:p>
+      <w:r>
+        <w:t xml:space="preserve">De PATRONALE HYPOTHEEKMAATSCHAPPIJ, Naamloze Vennootschap, </w:t>
+        <w:t xml:space="preserve">waarvan de zetel gevestigd is te Brussel, Belliardstraat 3, </w:t>
+        <w:t xml:space="preserve">opgericht bij akte verleden voor Notaris Charles GERARD, verbleven </w:t>
+        <w:t xml:space="preserve">hebbend te Anderlecht op drieëntwintig maart negentienhonderd </w:t>
+        <w:t xml:space="preserve">zesentwintig. R.P.R. Brussel, Ondernemingsnummer BE 0403.288.089.</w:t>  
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:br/>
+        <w:t>
+          hierna 'de kredietgever' genoemd, vertegenwoordigd door :
+        </w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>...( vertegenwoordiger van de Patronale )
+                            </w:t>
+			</w:r>
+		</w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+				<w:t>die zich voor haar sterk maakt;
+                            </w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:r>
+				<w:t>De comparanten sub 1. en 2. hierna ook aangeduid als de partijen
+                            </w:t>
+			</w:r>
+		</w:p>
+    {{title(3, 'hypotheekverstrekkers: + volledige identiteit hypotheekverstrekkers')}}
+    {%for hypotheeksteller in hypotheekstellers%}
+      {{person_info(hypotheeksteller)}}
+      <w:p/>
+    {%endfor%}
+    <w:p/>
+		<w:p>
+			<w:r>
+				<w:t xml:space="preserve">hierna 'derden-hypotheekgevers' genoemd, zelfs indien er maar één is;<w:br/>andere dan de kredietnemers;</w:t>
+			</w:r>
+		</w:p>
+    <w:p/>
+    <w:p>
+      <w:r>
+        <w:t>
+          Die ons verklaard hebben overeengekomen te zijn wat volgt :
+        </w:t>
+      </w:r>
+    </w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+				<w:t xml:space="preserve">Voorafgaande verklaring:</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:r>
+        <w:rPr>
+          <w:i/>
+        </w:rPr>
+        <w:t xml:space="preserve">Met toepassing van de wet van vier augustus negentienhonderd </w:t>
+        <w:t xml:space="preserve">tweeënnegentig op het hypothecair krediet en haar </w:t>
+				<w:t xml:space="preserve">uitvoeringsbesluiten heeft de kredietgever op #datum aanbod aan de </w:t>
+				<w:t xml:space="preserve">kredietnemers een kredietaanbod gedaan dat deze laatsten hebben </w:t>
+				<w:t xml:space="preserve">aanvaard. Aan genoemd kredietaanbod was een aflossingstabel </w:t>
+				<w:t xml:space="preserve">gehecht.</w:t>                
+			</w:r>
+		</w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+        <w:t xml:space="preserve">Met het oog op de vestiging van de bedongen hypotheek </w:t>
+				<w:t xml:space="preserve">verschijnen de partijen (of de partijen en de </w:t>
+				<w:t xml:space="preserve">derden-hypotheekgevers) (aan te vullen door de notaris) thans voor </w:t>
+				<w:t xml:space="preserve">de notaris. Tevens wenst de kredietgever over een uitvoerbare titel </w:t>
+				<w:t xml:space="preserve">te beschikken. Hiertoe herhalen de partijen thans alle </w:t>
+				<w:t xml:space="preserve">kredietvoorwaarden die tussen hen beide zijn overeengekomen. </w:t>
+			</w:r>
+		</w:p>
+
+    {{part("DEEL 1 : BIJZONDERE VOORWAARDEN KREDIETOPENING")}}
+
+    {{title('Artikel 1', 'Kredietopening - kredietlimiet')}}
+
+    <w:p>
+      <w:r>
+        <w:t xml:space="preserve">De kredietgever staat aan de kredietnemers een kredietopening </w:t>
+        <w:t xml:space="preserve">toe ten belope van # bedrag EUR. De kredietopening is opneembaar in </w:t>
+        <w:t xml:space="preserve">de vorm van één of meerdere voorschotten van bepaalde duur, hierna </w:t>
+        <w:t xml:space="preserve">woningkredieten genoemd.</w:t>
+      </w:r>
+    </w:p>
+
+
+    {{title('Artikel 2', 'Waarborgen')}}
+
+    {%if hypothecaire_inschrijving or hypothecair_mandaat %}
+
+    {{title('2.1', 'Vestiging hypotheek')}}
+    <w:p>
+			<w:r>
+        <w:t xml:space="preserve">De kredietnemers en/of derden-hypotheekgevers (aan te vullen </w:t>
+				<w:t xml:space="preserve">door de notaris) verlenen aan de kredietgever, die zulks aanvaardt, </w:t>
+				<w:t xml:space="preserve">hypotheek tot zekerheid van alle bedragen die aan de kredietgever </w:t>
+				<w:t xml:space="preserve">en/of haar eventuele rechtsopvolgers onder welke titel ook </w:t>
+				<w:t xml:space="preserve">verschuldigd zijn krachtens :</w:t>
+      </w:r>
+		</w:p>
+		<w:p>
+			<w:r> 
+        <w:t xml:space="preserve">1) alle kredieten, onder welke vorm ook, die de </w:t>
+				<w:t xml:space="preserve">kredietnemers, afzonderlijk of gezamenlijk, al dan niet met </w:t>
+				<w:t xml:space="preserve">anderen, thans reeds genieten of die zij nu of in de toekomst </w:t>
+				<w:t xml:space="preserve">bekomen of na rechtsopvolging onder welke titel ook zullen </w:t>
+				<w:t xml:space="preserve">voortzetten, zulks ongeacht het professioneel of privé oogmerk </w:t>
+				<w:t xml:space="preserve">waarmee zij, of hun rechtsvoorgangers, zijn opgetreden of zullen </w:t>
+				<w:t xml:space="preserve">optreden; bovendien alle hiervoor bedoelde kredieten die, na </w:t>
+				<w:t xml:space="preserve">rechtsopvolging onder welke titel ook, geheel of gedeeltelijk </w:t>
+				<w:t xml:space="preserve">zouden worden voortgezet of overgenomen door de opeenvolgende </w:t>
+				<w:t xml:space="preserve">rechtsopvolgers van de kredietnemers;</w:t>
+</w:r>
+		</w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+        <w:t xml:space="preserve">2) alle schulden van de kredietnemers of één van hen </w:t>
+				<w:t xml:space="preserve">krachtens reeds verleende of toekomstige bankdiensten, </w:t>
+				<w:t xml:space="preserve">bankverrichtingen of aansprakelijkheden van welke aard ook, alsmede </w:t>
+				<w:t xml:space="preserve">krachtens van om het even welke reeds verleende of toekomstige </w:t>
+				<w:t xml:space="preserve">persoonlijke zekerheidsstelling; alle vorderingen die de </w:t>
+				<w:t xml:space="preserve">kredietgever zou verkrijgen ingevolge cessie of subrogatie;</w:t>
+
+    
+
+
+</w:r>
+		</w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+        <w:t xml:space="preserve">3) alle kredieten en schulden van derden waartoe de </w:t>
+				<w:t xml:space="preserve">kredietnemers, samen of afzonderlijk, gehouden zijn of zouden </w:t>
+				<w:t xml:space="preserve">worden, onder meer als medekredietnemers of als borgen. </w:t>
+			</w:r>
+		</w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+        <w:t xml:space="preserve">Wanneer een krediet wordt overgedragen of met derden </w:t>
+				<w:t xml:space="preserve">wordt gemeen gemaakt, of wanneer een krediet wordt voortgezet met </w:t>
+				<w:t xml:space="preserve">de erfgenamen of rechtsopvolgers van de kredietnemers, blijven de </w:t>
+				<w:t xml:space="preserve">gestelde zekerheden onverminderd de kredietopening waarborgen. </w:t>
+			</w:r>
+		</w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+        <w:t xml:space="preserve">Voormelde hypotheek wordt gevestigd op de </w:t>
+				<w:t xml:space="preserve">hiernavolgende onroerende goederen en rechten : </w:t>
+			</w:r>
+      {%for goed in hypotheek.gehypothekeerd_goed%}
+      <w:r>
+        <w:br/>
+        <w:t>- situering van het goed: {{goed.straat}}, {{goed.postcode}} {{goed.gemeente}}.</w:t>
+      </w:r>
+      {%endfor%}
+    </w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+				<w:t>BESCHRIJVING VAN DE GOEDEREN :(door de notaris aan te vullen)</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:r>
+        <w:tab/>
+        <w:t xml:space="preserve">- aard van het goed (vb. woning, appartement, bouwgrond,..)</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:r>
+        <w:tab/>
+        <w:t xml:space="preserve">- ligging van het goed (adres)</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:r>
+        <w:tab/>
+				<w:t xml:space="preserve">-  oppervlakte</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:r>
+        <w:tab/>
+        <w:t xml:space="preserve">- kadastrale gegevens</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:r>
+        <w:tab/>
+        <w:t xml:space="preserve">- eventueel de aanpalers</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:r>
+				<w:t>OORSPRONG VAN EIGENDOM : (door de notaris aan te vullen)</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:r>
+        <w:tab/>
+				<w:t xml:space="preserve">- dertig jarig</w:t>
+			</w:r>
+		</w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+        <w:t xml:space="preserve">De hypotheekvestiging omvat eveneens al het huidig en </w:t>
+				<w:t xml:space="preserve">toekomstig toebehoren dat als onroerend of onroerend door </w:t>
+				<w:t xml:space="preserve">bestemming wordt beschouwd, en alle huidige en toekomstige </w:t>
+				<w:t xml:space="preserve">verbeteringen, zo onder meer alle opgerichte of nog op te richten </w:t>
+				<w:t xml:space="preserve">gebouwen. </w:t>
+			</w:r>
+		</w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+        <w:t xml:space="preserve">(in geval het hypotheekgoed gelegen is in het Vlaams gewest: </w:t>
+				<w:t xml:space="preserve">O- en W- Vlaanderen, Antwerpen, Limburg en Vlaams-Brabant - door </w:t>
+				<w:t xml:space="preserve">notaris aan te vullen:)</w:t>
+			</w:r>
+		</w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+				<w:t xml:space="preserve">De kredietnemers (en/of derden-hypotheekgevers) (aan te vullen door de notaris) verklaren dat de bepalingen van het Vlaams bodemsaneringsdecreet (inzonderheid de artikelen 36 t/m 40) bij de verkrijging van de hypotheekgoederen stipt werden nageleefd.  De kredietnemers verklaren dat het goed geen risicogoed is in de betekenis van het bodemsaneringsdecreet.  De instrumenterende notaris attesteert dat uit zijn opzoekingen bij de gemeente blijkt dat de gemeente geen kennis heeft dat op het goed risico-activiteiten in de zin van het bodemanseringsdecreet werden of worden uitgeoefend.</w:t>
+			</w:r>
+		</w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+        <w:t xml:space="preserve">Aangezien de hypotheek wordt gevestigd tot zekerheid </w:t>
+				<w:t xml:space="preserve">van schuldvorderingen die over een onbepaalde duur kunnen ontstaan, </w:t>
+				<w:t xml:space="preserve">is de termijn van betaling van de gewaarborgde schuldvorderingen </w:t>
+				<w:t xml:space="preserve">onbepaald. </w:t>
+			</w:r>
+		</w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+				<w:t xml:space="preserve">Iedere kredietnemer (en/of iedere derden-hypotheekgever) (aan te vullen door de notaris) heeft het recht de hypotheek op zijn goederen éénzijdig te beëindigen per aangetekende brief met ontvangstbewijs. Dit recht kan</w:t>
+			</w:r>
+			<w:r>
+        <w:t xml:space="preserve"> enkel worden uitgeoefend met inachtneming van een </w:t>
+				<w:t xml:space="preserve">opzeggingstermijn van zes maanden, te rekenen vanaf de </w:t>
+				<w:t xml:space="preserve">ontvangstmelding.</w:t>
+      </w:r>
+    </w:p>
+    <w:p/>
+    <w:p>
+      <w:r>
+        <w:t xml:space="preserve">Wanneer de hypotheek verstrekt wordt door personen die </w:t>
+		    <w:t xml:space="preserve">gehuwd zijn, en betrekking heeft op gemeenschappelijke onroerende </w:t>
+		    <w:t xml:space="preserve">goederen, zal elk van beide echtgenoten de hypotheek kunnen </w:t>
+		    <w:t xml:space="preserve">beëindigen met inachtname van voormelde formaliteit. Voor zoveel </w:t>
+		    <w:t xml:space="preserve">als nodig machtigt elk van beide echtgenoten op onherroepelijke </w:t>
+		    <w:t xml:space="preserve">wijze de andere partner om alleen de hypotheek te beëindigen. De </w:t>
+		    <w:t xml:space="preserve">ontvangst door de kredietgever van een opzegbrief van één van hen </w:t>
+		    <w:t xml:space="preserve">zal door de kredietgever dan ook beschouwd worden als een opzegging </w:t>
+		    <w:t xml:space="preserve">door beiden. </w:t>
+			</w:r>
+		</w:p>
+    <w:p/>
+		<w:p>
+			<w:r>
+        <w:t xml:space="preserve">De opzegging heeft uitsluitend uitwerking voor de toekomst en </w:t>
+				<w:t xml:space="preserve">zal tot gevolg hebben dat de hypotheek enkel nog zal strekken tot </w:t>
+				<w:t xml:space="preserve">zekerheid van gewaarborgde schuldvorderingen die bestaan bij het </w:t>
+				<w:t xml:space="preserve">verstrijken van de opzeggingstermijn, ook als die pas later </w:t>
+				<w:t xml:space="preserve">opeisbaar worden. </w:t>     
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:r>
+        <w:t xml:space="preserve">(toevoegen in geval hypotheek (mede) wordt verstrekt door een derde)</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:r>
+        <w:t xml:space="preserve">De derden-hypotheekgevers ontslaan de kredietgever van de </w:t>
+				<w:t xml:space="preserve">zorg om kennis te geven van de wijze waarop de gewaarborgde </w:t>
+				<w:t xml:space="preserve">kredieten worden gebruikt of van eventuele wijzigingen of </w:t>
+				<w:t xml:space="preserve">aanvullingen die eraan zouden worden gebracht. Zij ontzeggen zich </w:t>
+				<w:t xml:space="preserve">het recht de in waarborg gegeven onroerende goederen, of gedeelten </w:t>
+				<w:t xml:space="preserve">ervan, te vervreemden zonder de instemming van de kredietgever.  </w:t>
+				<w:t xml:space="preserve">Zolang de gewaarborgde verbintenissen niet integraal zijn </w:t>
+				<w:t xml:space="preserve">aangezuiverd, verzaken de derden-hypotheekgevers aan elke </w:t>
+				<w:t xml:space="preserve">subrogatoire of andere vordering op enige kredietnemer. </w:t>                
+			</w:r>
+		</w:p>
+    <w:p/>
+    {{title('2.2', 'Hypothecaire inschrijving')}} 
+	  {{title('2.2.1', 'Bedrag')}}
+		<w:p>
+			<w:r>
+        <w:t xml:space="preserve">De hypotheek wordt gevestigd, en inschrijving zal worden genomen, voor :</w:t>
+			</w:r>
+		</w:p>
+
+
+    <w:p>
+      <w:r>
+        <w:t xml:space="preserve">1) </w:t>
+        {%if hypothecaire_inschrijving%}
+        <w:t>een bedrag van {{hypothecaire_inschrijving|currency}} EUR in hoofdsom</w:t>
+        {%endif%}
+        {%if hypothecaire_inschrijving and hypothecair_mandaat%}
+        <w:t xml:space="preserve"> en </w:t>
+        {%endif%}
+        {%if hypothecair_mandaat%}
+        <w:t>een hypothecair mandaat met een bedrag van {{hypothecair_mandaat|currency}} EUR</w:t>
+        {%endif%}
+      </w:r>
+    </w:p>
+		<w:p>
+			<w:r>
+        <w:t xml:space="preserve">2) drie jaar intresten, waarvan de rang door de wet wordt gewaarborgd.  <w:br/></w:t>
+        <w:t xml:space="preserve">     De rentevoet wordt voor het nemen van die inschrijving geraamd op een percentage van <w:br/></w:t>
+        <w:t xml:space="preserve">     twee (2%) procent per maand.  Pro memorie.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t xml:space="preserve">3) een bedrag van bedrag {{((hypothecaire_inschrijving+hypothecair_mandaat)/10)|currency}} EUR voor toebehoren als daar zijn provisies, </w:t>
+        <w:br/>
+        <w:t xml:space="preserve">     vergoedingen, subrogatie- en inschrijvingskosten, kosten en honoraria in verband met </w:t>
+        <w:br/>
+        <w:t xml:space="preserve">     de vervolging en invordering van de schuld, kosten en honoraria van advocaten in verband met </w:t>
+        <w:br/>
+        <w:t xml:space="preserve">     de vestiging, de uitwinning, de vrijgave en het behoud van de waarborgen, de krachtens </w:t>
+        <w:br/>
+        <w:t xml:space="preserve">     de algemene voorwaarden betaalde of voorgeschoten verzekeringspremies, </w:t>
+        <w:br/>
+        <w:t xml:space="preserve">     schattings-en dossierskosten evenals de bedragen in overschrijding op </w:t>
+        <w:br/>
+        <w:t xml:space="preserve">     de hierboven vermelde hoofdsom ingevolge inboeking van vervallen intresten, </w:t>
+        <w:br/>
+        <w:t xml:space="preserve">     provisies of onbetaald gebleven handelspapier.</w:t>
+        <w:br/>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t xml:space="preserve">Totaal: {{(((hypothecaire_inschrijving+hypothecair_mandaat)*11)/10)|currency}} EUR.</w:t>
+      </w:r>
+    </w:p>
+    {{title('2.2.2', 'Rang')}}
+    <w:p>
+      <w:r>
+        <w:t xml:space="preserve">De kredietnemers en/of derden-hypotheekgevers (aan te vullen door de notaris) bevestigen dat de in hypotheek gegeven goederen en rechten vrij en zuiver zijn van alle beslagleggingen , overschrijvingen, inschrijvingen, voorrechten, kantmeldingen, volmachten tot hypotheekvestiging of lasten van welke aard ook </w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>(als er bestaande inschrijvingen mogen blijven bestaan), </w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+          <w:t xml:space="preserve">met uitzondering van : #.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>De kredietnemers (en/of derden-hypotheekgevers) (aan te vullen door de notaris) verbinden er zich toe de hypotheek zo spoedig mogelijk en uiterlijk binnen de acht dagen na ondertekening van deze akte in de bedongen rang op het hypotheekkantoor te doen inschrijven.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>De kredietnemers (en/of derden-hypotheekgevers) (aan te vullen door de notaris) zullen er zorg voor dragen, zolang de gewaarborgde verbintenissen duren, de hypotheekgoederen vrij en zuiver te houden van overschrijvingen, inschrijvingen, kantmeldingen of lasten van welke aard ook (, andere dan de in dit artikel vermelde).</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Alle kosten waartoe de akte aanleiding geeft of zal geven, vallen ten laste van de kredietnemers.  Daartoe behoren onder meer de eventuele kosten van hernieuwing en doorhaling van de hypothecaire inschrijving.</w:t>
+      </w:r>
+    </w:p>
+    {{title('2.2.3', 'Verklaring BTW')}}
+    <w:p>
+        <w:r>
+            <w:t>Partijen erkennen dat ik, Notaris, hen lezing en uitleg heb gegeven van artikel 62, § 2 en van artikel 73 van het Wetboek van de Belasting over de Toegevoegde Waarde.)
+            </w:t>
+        </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t xml:space="preserve">De kredietnemers (en/of derden-hypotheekgevers) (aan te vullen door de notaris) hebben ons verklaard (door de notaris aan te vullen)
+        </w:t>
+      </w:r>
+    </w:p>
+    
+    
+    
+    {{title('2.3', 'Andere waarborgen')}}
+    
+    {%else%}
+ 
+    {{title('2.1', 'Andere waarborgen')}}
+    
+    {%endif%}
+    
+    <w:p>
+      <w:r>
+        <w:t>Voor de andere, op bijzondere wijze bedongen waarborgen verwijzen de partijen naar het kredietaanbod.  Het feit dat deze hier niet opnieuw vermeld worden, betekent geenzins dat de kredietgever daar op enige wijze afstand van doet.
+        </w:t>
+      </w:r>
+    </w:p>
+    {{title('Artikel 3', "Bevestiging identiteit - Bekwaamheid")}}
+    <w:p>
+      <w:r>
+        <w:t>De ondergetekende notaris bevestigt overeenkomstig de hypotheekwet de naam, voornamen plaats en datum van geboorte van de partijen (natuurlijke personen).  De partijen van wie het rijksregisternummer wordt vermeld, verklaren hiervoor hun uitdrukkelijke toestemming te verlenen.  Voor de toepassing van de notariswet werd de identiteit van de comparanten nagegaan aan de hand van hun identiteitskaart/verblijfskaart.
+        </w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>De kredietnemers en in voorkomend geval de hypotheekstellers verklaren:</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>- geen verzoekschrift tot collectieve schuldenregeling te hebben ingediend;</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>- niet onder toezicht te staan van een voorlopig bewindvoerder of een gerechtelijk raadsman;</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>- geen verzoekschrift te hebben ingediend tot gerechtelijk akkoord;</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>- niet in staat van faillissement verklaard te zijn;</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>- dat hun het beheer over hun goederen niet werd ontnomen.</w:t>
+      </w:r>
+    </w:p>
+    {{title('Artikel 4', 'Woonstkeuze (in verband met de hypothecaire inschrijving)')}}
+    <w:p>
+      <w:r>
+        <w:t xml:space="preserve">(indien initiële kredietopening  én  hoofdwaarborg = hypotheek)</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Om te voldoen aan artikel 83.5 Hypotheekwet, doch alleen wat de hypothecaire inschrijving(en) betreft, doet de kredietgever woonstkeuze in haar zetel/kantoor te  #.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>(Zie bijlage lijst)
+        </w:t>
+      </w:r>
+    </w:p>
+    {% set artikel_nummer = 4 %}
+    {{title('DEEL 2', 'BIJZONDERE VOORWAARDEN WOONINGKREDIETEN')}}
+    {% for voorschot in voorschotten %}
+    {% set gb = voorschot.goedgekeurd_bedrag %}
+    {% set artikel_nummer = artikel_nummer+loop.index %}
+    {% set artikel = artikel_nummer|string %}
+    <w:p/>
+    {{title('Artikel ' + artikel, 'Woningkrediet voorschot ' + loop.index|string)}}
+    {{title(artikel + '.1', 'Bedrag van het woningkrediet.')}}
+    <w:p>
+      <w:r>
+        <w:t xml:space="preserve">De kredietgever staat in het kader van voormelde kredietopening aan </w:t>
+        <w:t xml:space="preserve">de kredietnemers een woningkrediet toe ten belope van {{gb.goedgekeurd_bedrag|currency}} EUR.</w:t>
+      </w:r>
+    </w:p>
+    {{title(artikel + '.2', 'Bestemming van het woningkrediet')}}
+    <w:p>
+      <w:r>
+        <w:t>Het woningkrediet heeft als voorwerp de financiering van :</w:t>
+      </w:r>
+      <w:r>
+        <w:tab/>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>(aan te vullen door de notaris)</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Verwerven woning</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Verbouwen woning</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Verwerven woning met bijhorende verbouwingen</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>(In geval een bouwvergunning nodig is )</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>De kredietnemers verklaren dat ter uitvoering van de werken een stedenbouwkundige vergunning vereist is.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>(In geval geen bouwvergunning nodig is )</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>De kredietnemers verklaren dat ter uitvoering van de werken geen stedenbouwkundige vergunning vereist is.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+            <w:r>
+                <w:t>De kredietnemers bevestigen dat zij het woningkrediet hoofdzakelijk zullen aanwenden buiten het kader van een eventuele zelfstandige beroepsactiviteit.
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.3', "Aanvan en einde van het woningkrediet")}}
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">Het woningkrediet begint te lopen vanaf vandaag en de betalingsverplichtingen van </w:t>
+                <w:t xml:space="preserve">de kredietnemers starten vandaag en eindigen op het ogenblik van de volledige terugbetaling </w:t>
+                <w:t xml:space="preserve">van het opgenomen kredietbedrag.  De eerste betaling dient te geschieden op datum van ... .</w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.4', 'Rentevoet van het woningkrediet')}}
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">De rentevoet van het woningkrediet  bedraagt {{gb.goedgekeurde_rente|currency}} procent </w:t>
+                {{terugbetaling_interval(gb.goedgekeurd_terugbetaling_interval)}}
+            </w:r>
+        </w:p>
+    {{title(artikel + '.5', 'Opneming van het woningkrediet')}}
+        <w:p>
+            <w:r>
+                <w:t>Het kredietbedrag is opneembaar in één keer of in schijven van minimum 5.000EUR.</w:t>
+              <w:br/>
+              <w:t>Is het kredietbedrag niet volledig opgenomen bij het verlijden van de kredietakte, dan zijn de kredietnemers vanaf dat ogenblik een reserveringspovisie verschuldigd.  Deze reserveringsprovisie bedraagt 0,25 procent per maand en wordt berekend op het niet-opgenomen gedeeldte van het credietbedrag.  De reserveringsprovisie is betaalbaar op het einde van elke maand.</w:t>
+              <w:br/>
+              <w:t>Het kredietbedrag dient alleszins volledig opgenomen te zijn binnen een termijn van 12 maanden te rekenen vanaf de aanvang van het woningkrediet.  Hebben de kredietnemers het woningkrediet niet volledig opgenomen binnen de termijn van 12 maanden, dan wordt het bedrag van het woningdrediet herleid tot het opgenomen bedrag en worden de betalingsverplichtingen van de kredietnemers herberekend met behoud van de duur van het woningkrediet.</w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.6', 'Betalingsverplichtingen van de kredietnemers')}}
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">De kredietnemers zijn rente verschuldigd, pro rata temporis berekend op het verschuldigd blijvend saldo van het opgenomen kredietbedrag en tegen de rentevoet bepaald in artikel 5.4. Bovendien zijn de kredietnemers verplicht het opgenomen kredietbedrag integraal terug te betalen.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">Met het oog op de betaling van het kredietbedrag en de rente zijn de kredietnemers verplicht aan de kredietgever de volgende bedragen te betalen :
+                </w:t>
+            </w:r>
+        </w:p>
+        {% if gb.goedgekeurd_type_aflossing=='vaste_aflossing' %}
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">{{gb.goedgekeurd_aantal_aflossingen}} gelijkblijvende betalingen, </w:t>
+                <w:t xml:space="preserve">bestaande uit kapitaal en rente, van elk {{gb.goedgekeurde_aflossing|currency}} EUR, </w:t> 
+                {{terugbetaling_schema(voorschot)}}
+                <w:t xml:space="preserve">.</w:t>
+            </w:r>
+        </w:p>
+        {% endif %}
+        {% if gb.goedgekeurd_type_aflossing=='bullet' %}
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">{{gb.goedgekeurd_aantal_aflossingen}} gelijkblijvende betalingen, </w:t>
+                <w:t xml:space="preserve">bestaande uit rente van elk {{gb.goedgekeurde_aflossing|currency}} EUR, </w:t>
+                {{terugbetaling_schema(voorschot)}}
+                <w:t xml:space="preserve">, en het saldo in kapitaal ten bedrage van {{gb.goedgekeurd_bedrag|currency}} EUR op ... .</w:t>
+            </w:r>
+        </w:p>
+        {% endif %}
+    {% endfor %}
+    {{title('DEEL 3', 'ALGEMENE BEPALINGEN VAN DE KREDIETOPENING EN DE WONINGKREDIETEN')}}
+    {% set artikel_nummer = artikel_nummer+1%}
+    {% set artikel = artikel_nummer|string %}
+    {{title(artikel + '.1', 'Totstandoming van de overeenkomst')}}
+        <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>De overeenkomst komt tot stand door de tijdige aanvaarding van het aanbod door alle kredietnemers. Zijn de kredietnemers, of één van hen, minderjarig of om een andere reden handelingsonbekwaam, dan wordt onderhavig aanbod gedaan onder de voorwaarde dat alle vereiste toestemmingen en/of machtigingen bekomen worden met het oog op het rechtsgeldig sluiten van de overeenkomst en het rechtsgeldig vestigen van de waarborgen.
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.2', 'Verplichtingen van de kredietnemers - algemeen')}}
+        <w:p>
+          <w:r>
+            <w:rPr>
+              <w:u w:val="single"/>
+            </w:rPr>
+            <w:t xml:space="preserve">{{artikel}}.2.1</w:t>
+            <w:br/>
+          </w:r>
+          <w:r>
+            <w:t xml:space="preserve">De kredietnemers verbinden zich hoofdelijk en ondeelbaar wat betreft alle rechten en verplichtingen voortspruitende uit de overeenkomst.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>Indien de kredietgever één van de kredietnemers of rechtsopvolgers onder welke titel ook ontslaat van zijn/haar verbintenissen, dan blijven de anderen in afwijking van art. 1285 B.W. voor het geheel verbonden zonder dat zulks afbreuk doet aan de rechten en plichten tussen de kredietnemers of rechtsopvolgers onderling.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+              <w:t xml:space="preserve">{{artikel}}.2.2</w:t>
+              <w:br/>
+              </w:r>
+              <w:r>
+                <w:t>De kredietnemers geven elkaar onherroepelijk volmacht om, alleen optredend, in naam van alle kredietnemers om het even welke kennisgeving met betrekking tot onderhavige overeenkomst te doen of in ontvangst te nemen, alsook om om het even welke wijziging of aanvulling overeen te komen, of om het even welke rechtshandeling te stellen. Zij zullen de kredietgever zonder uitstel op de hoogte brengen van alle wijzigingen in de aan de kredietgever verstrekte inlichtingen en zij verbinden zich ertoe eventuele persoonlijke of zakelijke zekerheidsstellers in te lichten over de voorwaarden en de totstandkoming van de overeenkomst, alsook over alle eventuele toekomstige wijzigingen of aanvullingen.
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.3', 'Wederopneembaarheid')}}
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+              <w:t xml:space="preserve">{{artikel}}.3.1</w:t>
+              <w:br/>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve">Tot de overeengekomen ontleend kapitaal is de kredietopening opneembaar door middel van één of meerdere voorschotten van bepaalde duur, in deze overeenkomst woningkredieten genoemd. Een toegestane </w:t>
+            </w:r>
+            <w:r>
+                <w:t>kredietopening dient niet noodzakelijk van in het begin integraal te worden opgenomen. Naar rata van de terugbetaling van opgenomen bedragen is de kredietopening eveneens wederopneembaar.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>In geval van overlijden van één of meerdere van de kredietnemers zal de kredietopening met de overlevende kredietnemers en de erfgenamen worden voortgezet, onverminderd het recht van de kredietgever om de kredietopening op te zeggen zoals hierna bepaald.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+              <w:t xml:space="preserve">{{artikel}}.3.2</w:t>
+              <w:br/>
+            </w:r>
+            <w:r>
+                <w:t>
+                  De kredietopening is van onbepaalde duur, onverminderd het feit dat de woningkredieten zelf van bepaalde duur zijn. Zij kan door zowel de kredietnemers als de kredietgever worden opgezegd door middel van een aangetekend schrijven en met inachtneming van een opzeggingstermijn van één maand. Bovendien heeft de kredietgever het recht de kredietopening onmiddellijk te beëindigen in geval van overlijden van (één van) de kredietnemers of in geval van vervroegde opeisbaarheid, schorsing of verbreking van één of meerdere woningkredieten.
+                </w:t>
+              </w:r>
+            </w:p>
+            <w:p>
+              <w:r>
+                <w:rPr>
+                  <w:u w:val="single"/>
+                </w:rPr>
+                <w:t xml:space="preserve">{{artikel}}.3.3</w:t>
+                <w:br/>
+              </w:r>
+              <w:r>
+                <w:t>
+                  De kredietopening is (weder)opneembaar onder de volgende voorwaarden:
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>- het woningkrediet moet een minimum bedrag hebben van 2.500 EUR;
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:t>- het woningkrediet moet kaderen buiten de eventuele zelfstandige beroepswerkzaamheid van (één van) de kredietnemers</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">- het woningkrediet moet bestemd zijn voor de verwerving of het behoud van onroerende zakelijke rechten;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>- de kredietgever en alle kredietnemers moeten persoonlijk instemmen met de bijzondere modaliteiten (bedrag, rentevoorwaarden, opname- en terugbetalingsmodaliteiten, nieuwe waarborgen) van het woningkrediet, zulks op basis van de bij de kredietgever geldende produktmodaliteiten;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>- de kredietwaardigheid van de kredietnemers alsook de waarde van de gevestigde waarborgen en van de te financieren onroerende zakelijke rechten, moeten in voldoende mate aanwezig zijn.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+              <w:t xml:space="preserve">{{artikel}}.3.4</w:t>
+              <w:br/>
+            </w:r>
+            <w:r>
+                <w:t>Met uitsluiting van de bepalingen van art {{artikel}}.3.3. , die voorrang hebben op eventueel eerder overeengekomen, afwijkende bedingen, blijven de onderscheiden woningkredieten beheerst door de contractuele voorwaarden die ter gelegenheid van het toestaan van het woningkrediet werden overeengekomen.
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.4', 'Bestemming van het woningkrediet')}}
+        <w:p>
+            <w:r>
+                <w:t>Op het eerste verzoek van de kredietgever zullen de kredietnemers aan de kredietgever inzage verlenen van de nodige administratieve en stedenbouwkundige vergunningen en/of van de onderhandse verkoopovereenkomst.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>Wanneer het woningkrediet bestemd is voor de financiering van (ver)bouw(ings)werken kan het enkel worden opgenomen naargelang de werken vorderen. De vordering van de werken zullen de kredietnemers aantonen aan de hand van hetzij facturen, hetzij een attest van de architect. Is voor de werken in kwestie een stedenbouwkundige vergunning vereist, dan kan het (daarmee overeenstemmende gedeelte van het) kredietbedrag niet worden opgenomen zolang de kredietgever niet in het bezit is gesteld van die vergunning.  Per nazicht der werken (max. 5) zal honderd euro in rekening worden gebracht.
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.5', 'Waarborgen')}}
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+                <w:t xml:space="preserve">{{artikel}}.5.1 Algemeen</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>Indien de kredietgever waarborgen heeft bedongen, mag van het woningkrediet geen gebruik worden gemaakt zolang alle waarborgen niet op afdoende wijze (d.w.z. volwaardig en onbetwistbaar) tot stand zijn gekomen en behouden worden. Een eventueel door de kredietgever toegestane afwijking op deze regel mag niet tegen haar worden uitgelegd en doet geen afbreuk aan de verplichting van de kredietnemers tot het onverwijld (doen) (her)stellen van de waarborgen. De kredietgever heeft het recht, doch niet de verplichting, om bijvoorbeeld via schatting na te gaan of de waarde van de onroerende goederen, die het voorwerp uitmaken van een hypothecaire waarborg, toereikend is.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>Alle door de kredietgever bedongen waarborgen strekken tot zekerheid van alle bestaande of toekomstige schulden van de kredietnemers, ongeacht of deze hun oorzaak vinden in onderhavige overeenkomst. Waarborgen meerdere zekerheden -persoonlijke en/of zakelijke- de kredietopening dan vullen zij elkaar aan, zo mogelijk tot de gehele aanzuivering van de schuldvordering van de kredietgever.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+                <w:t>{{artikel}}.5.2 Compensatie</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>De kredietgever staat het woningkrediet toe rekening houdend met alle tegoeden die de kredietnemers aanhouden bij de kredietgever. Zodoende komen beide partijen overeen dat de kredietgever steeds, zelfs bij of na samenloop met andere schuldeisers, het recht zal hebben haar schuldvordering op de kredietnemers te compenseren met de genoemde tegoeden.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+                <w:t>{{artikel}}.5.3 Overdracht van schuldvorderingen</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>Tot zekerheid van terugbetaling van alle aan de kredietgeefster toekomende bedragen, staan de kredietnemer af en dragen ze over aan de kredietgeefster tot beloop van de op de datum van betekening opeisbare bedragen:
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>- het voor afstand vatbare gedeelte van hun wedde, loon, werkloosheidsvergoeding, vakantiegeld, pensioen alsmede ieder ander vervangingsinkomen zoals onder meer voorzien door de ziekte- en invaliditeitswetgeving;
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>- al hun rechten betreffende te vervallen huren en pachten van al hun onroerende goederen;
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>- al de gelden hen toekomend uit hoofde van nalatenschappen;
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>- al de hen toekomende commissielonen;
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>- de opbrengst van het ten gelde maken van roerende en onroerende waarden;
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>- de tegoeden op bankdeposito's en spaardeposito's;
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>- hun rechten op vergoedingen ingevolge ongevallen;
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>- al de vorderingen die ieder van de kredietnemer tegen- over derden zou kunnen doen gelden.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>-  De kredietnemer zullen aan de kredietgeefster op haar eerste verzoek alle inlichtingen verstrekken teneinde deze overgedragen schuldvorderingen door de kredietgeefster te laten innen.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>De kredietnemer machtigen de kredietgeefster deze overdracht op hun kosten en zonder voorafgaande ingebrekestelling ter kennis te brengen van de werkgever of iedere andere gecedeerde schuldenaar.  De kredietnemer die de afrekening betwist, is niettemin onvoorwaardelijk gehouden te betalen, behoudens terugbetaling achteraf.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+                <w:t>{{artikel}}.5.4 Hypothecaire waarborgen</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">In onderhavige overeenkomst moet onder hypothecaire waarborgen begrepen worden : alle waarborgen vermeld in art. 2 van de wet op het hypothecair </w:t>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve">krediet.  Alle bedongen waarborgen moeten gevestigd zijn uiterlijk binnen de vier maanden te rekenen vanaf de datum van het kredietaanbod. </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>Een bedongen hypothecaire waarborg slaat steeds op de volle eigendom van het onroerend goed.  De kredietnemers (en/of derden-hypotheekgevers) staan ervoor in dat de eigendomstitels van die onroerende goederen geen bezwarende elementen bevatten.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>De kredietnemers (en/of derden-hypotheekgevers) zullen al hun rechten in de onroerende goederen die het voorwerp uitmaken van een hypothecaire waarborg, ongeschonden bewaren. Zulks betekent onder meer dat zij zonder instemming van de kredietgever die goederen niet mogen vervreemden, noch hypothekeren, noch bezwaren met een volmacht hypotheek of hypotheekbelofte. De kredietgever zal, in het geval van een volmacht hypotheek of een hypotheekbelofte, de uitvoering van voornoemd verbod mogen nagaan via een hypothecair onderzoek. De kosten verbonden aan zo'n onderzoek door de hypotheekbewaarder vallen ten laste van de kredietnemers a rato van maximum één onderzoek per jaar.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>De kredietnemers geven aan de kredietgever de toelating om vóór of samen met de verkoop van de in haar voordeel gehypotheceerde goederen, de uitwinning na te streven van eventuele andere onroerende goederen van de kredietnemers, zonder te moeten bewijzen dat de waarde van de gehypotheceerde goederen ontoereikend is.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>Indien de kredietgever als waarborg een hypotheek heeft bedongen, verbinden de kredietnemers er zich toe de woningkredieten notarieel en in een uitvoerbare titel te doen vaststellen.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+                <w:t xml:space="preserve">{{artikel}}.5.5 Overbruggingskrediet</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">Wordt het woningkrediet toegestaan in afwachting van de verkoop van een onroerend goed, dan verbinden de kredietnemers er zich toe aan de instrumenterende notaris een onherroepelijke opdracht te geven om de verkoopprijs rechtstreeks te betalen in handen van de kredietgever, die het bedrag zal aanwenden als vervroegde terugbetaling van het woningkrediet.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+    {{title(artikel + '.6', 'Bewijs - betalingen - kosten')}}
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+              <w:t xml:space="preserve">{{artikel}}.6.1</w:t>
+              <w:br/>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve">Het bedrag van de schuldvordering van de kredietgever wordt tegenover de kredietnemers, eventuele zekerheidsstellers en alle andere derden rechtsgeldig bewezen door een door de kredietgever echt en waarachtig verklaarde opgave.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+              <w:t xml:space="preserve">{{artikel}}.6.2</w:t>
+              <w:br/>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve">De kredietnemers dienen alle verschuldigde betalingen te verrichten op het rekeningnummer dat hen door de kredietgever zal worden meegedeeld.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>De kredietgever behoudt zich het recht voor, doch is er niet toe verplicht, gedeeltelijke betalingen te weigeren. Indien de kredietgever een gedeeltelijke betaling aanvaardt mag deze naar keuze van de kredietgever worden toegerekend op wat de kredietnemers of hun rechtsopvolgers onder welke titel ook verschuldigd zijn, zowel krachtens deze overeenkomst als krachtens eventuele andere overeenkomsten met de kredietgever. In afwijking van artikel 1908 van het Burgerlijk Wetboek zal de eventuele aanrekening van gedeeltelijke betalingen op het kapitaal geen bevrijding van de intresten doen vermoeden.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+              <w:t xml:space="preserve">{{artikel}}.6.3</w:t>
+              <w:br/>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve">Alle kosten - zoals bedoeld in artikel 11 van de wet op het hypothecair krediet- waartoe de kredietopening of haar waarborgen aanleiding geven of zullen geven, vallen ten laste van de kredietnemers. Eventueel door de kredietgever gedragen kosten zullen door de kredietnemers onmiddellijk worden vergoed. Voor de eventuele dossier- en schattingskosten verwijzen de partijen naar hetgeen hieromtrent in het kredietaanvraagformulier is overeengekomen.
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.7', 'Overdracht van de (rechten uit de) kredietopening')}}
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">De kredietgever mag de kredietopening (of haar rechten daaruit) geheel of gedeeltelijk overdragen of zij mag een derde geheel of gedeeltelijk in haar rechten plaatsen.
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.8', 'Vervroegde terugbetaling en wederbeleggingsvergoeding')}}
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+                <w:t>{{artikel}}.8.1. Bij aflossing van kapitaal of bij terugbetaling van het kapitaal op de eindvervaldag.</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">De kredietnemers mogen het verschuldigd blijvend saldo van het woningkrediet op ieder ogenblik volledig of gedeeltelijk vervroegd terugbetalen. Evenwel is méér dan één gedeeltelijke vervroegde terugbetaling per kalenderjaar verboden wanneer het bedrag van de vervroegde terugbetaling kleiner is dan tien procent van het kredietbedrag.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>In geval van een volledige of gedeeltelijke vervroegde terugbetaling zijn de kredietnemers een wederbeleggingsvergoeding verschuldigd gelijk aan drie maanden intresten berekend op het vervroegd terugbetaald bedrag en tegen de overeengekomen rentevoet. Een analoge vergoeding zijn de kredietnemers verschuldigd bij gedwongen vervroegde terugbetaling.
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.9', 'Wanbetaling')}}
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+              <w:t xml:space="preserve">{{artikel}}.9.1</w:t>
+              <w:br/>
+            </w:r>
+            <w:r>
+                <w:t>Bij niet-betaling van verschuldigde rente op haar vervaldag (of op de vervaldag van de periodieke last waarin die rente begrepen is) wordt de rentevoet voor deze vervaldag verhoogd met een half procent per jaar. Bij niet-tijdige aflossing van kapitaal op zijn vervaldag (of op de vervaldag van de periodieke last waarin dat kapitaal begrepen is) brengt deze aflossing rente op berekend aan dezelfde verhoogde rentevoet en vanaf de vervaldag tot aan de dag van betaling.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>Verwijlintresten en/of vergoedende intresten, berekend aan de rentevoet van het woningkrediet en verhoogd met een half procent per jaar, zijn voorts zonder uitstel verschuldigd in alle andere gevallen van wanbetaling, zoals onder meer bij niet-tijdige terugbetaling van een vervroegd opeisbaar woningkrediet.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>De kredietnemers zijn de in vorige alinea's bedongen rentes van rechtswege en zonder ingebrekestelling verschuldigd. Anderzijds is de kredietgever bij vertraging in de betaling van een vervaldag verplicht om aan de kredietnemers binnen de drie maanden een aangetekende brief te sturen waarin de gevolgen van de wanbetaling worden vermeld  Per aangetekend schrijven zal de reële kost worden aangerekend.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>Ook de kredietgever is jegens de kredietnemers verplicht tot betaling van verwijlrente, indien zij in gebreke blijft het kredietbedrag ter beschikking te stellen. Deze rente is te berekenen aan dezelfde rentevoet als deze die bedongen is lastens de kredietnemers.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+              <w:br/>
+              <w:t xml:space="preserve">{{artikel}}.9.2</w:t>
+              <w:br/>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve">Wanneer de kredietnemers een verschuldigd bedrag niet betalen binnen de drie maanden na de vervaldag of binnen de maand na het aangetekend schrijven, waarvan sprake in art. {{artikel}}.9.1. is de kredietgever </w:t>
+                <w:t>wettelijk verplicht de wanbetaling mede te delen aan de Nationale Bank van België. Bij die gelegenheid zullen de kredietnemers door de Nationale Bank in kennis worden gesteld van hun rechten van toegang, verbetering of verwijdering van gegevens.
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.10', 'Vervroegde opeisbaarheid, schorsing en/of verbreking van het woningkrediet')}}
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+              <w:t xml:space="preserve">{{artikel}}.10.1</w:t>
+              <w:br/>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve">Onverminderd de oorzaken van onmiddellijke eisbaarheid krachtens de wet of het gemeen recht, zal het woningkrediet van rechtswege opeisbaar zijn indien :
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:tab/>
+                <w:t>a. Het woningkrediet niet de bestemming krijgt die aan de kredietgever was medegedeeld;
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:tab/>
+                <w:t>b. De kredietnemers een toegevoegd contract niet handhaven;
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:tab/>
+                <w:t>c. De verzekerde, aangeduid in een toegevoegd contract, overlijdt;
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:tab/>
+              <w:t>d. De kredietnemers in gebreke zijn de sommen (aflossingen, rentebetalingen, ?) </w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t xml:space="preserve">    te betalen waartoe zij krachtens de overeenkomst verplicht zijn;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:tab/>
+              <w:t>e. (Eén van) de kredietnemers hun eventuele andere verbintenissen jegens</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t xml:space="preserve">    de kredietgever, al dan niet voortspruitend uit onderhavige kredietopening,</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t xml:space="preserve">    niet nakomen;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:tab/>
+              <w:t>f. (Eén van) de kredietnemers of (één van) de zekerheidsstellers, aan de kredietgever</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t xml:space="preserve">    onjuiste of onvolledige informatie hebben verstrekt, zonder dewelke de kredietgever </w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t xml:space="preserve">    niet aan dezelfde voorwaarden zou hebben gecontracteerd;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:tab/>
+              <w:t>g. De waarborgen, zoals bedongen door de kredietgever niet op afdoende wijze tot stand</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t xml:space="preserve">    komen of geheel of gedeeltelijk verloren gaan of in waarde verminderen;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:tab/>
+              <w:t>h. De kredietnemers of zekerheidsstellers ophouden eigenaar te zijn van</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t xml:space="preserve">    de in waarborg gegeven onroerende goederen of gedeelten ervan;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:tab/>
+              <w:t>i. De onroerende goederen, die het voorwerp uitmaken van een hypothecaire waarborg</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t xml:space="preserve">    of waarop het goed, voorwerp van de hypothecaire waarborg, rust, verontreinigd blijken te</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t xml:space="preserve">    zijn;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:tab/>
+              <w:t>j. Ten verzoeke van de kredietgever of van andere schuldeisers bewarend of uitvoerend</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t xml:space="preserve">    beslag op (één van) de goederen van (één van) de kredietnemers of (één van)</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t xml:space="preserve">    de zekerheidsstellers wordt gelegd;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:tab/>
+              <w:t>k. Eén van) de kredietnemers of (één van) de zekerheidstellers failliet worden verklaard of</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t xml:space="preserve">    een vordering instellen tot het bekomen van een collectieve schuldenregeling of</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t xml:space="preserve">    een individueel uitstel van betaling;</w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>Heeft de oorzaak van vervroegde opeisbaarheid betrekking op de wanbetaling van een verschuldigd bedrag, dan kan de kredietgever de vervroegde opeisbaarheid maar inroepen nadat de kredietnemers geheel of gedeeltelijk in gebreke zijn gebleven gevolg te geven aan de aanmaning van de kredietgever bij een ter post aangetekende brief. In deze aanmaning wijst de kredietgever op de gevolgen van het in gebreke blijven van de kredietnemers en stelt zij de kredietnemers in de mogelijkheid om binnen een termijn van veertien kalenderdagen, te rekenen vanaf haar verzending, de achterstand volledig aan te zuiveren.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+              <w:t xml:space="preserve">{{artikel}}.10.2</w:t>
+              <w:br/>
+            </w:r>
+            <w:r>
+                <w:t>Zolang de kredietnemers het woningkrediet niet volledig zullen hebben opgenomen, zal het van rechtswege en zonder voorafgaandelijke ingebrekestelling opeisbaar zijn in dezelfde gevallen als vermeld in art. {{artikel}}.10.1 en onverminderd de oorzaken van verbreking krachtens de wet of het gemeen recht. Ook zal het woningkrediet van rechtswege en zonder voorafgaandelijke ingebrekestelling opeisbaar zijn in geval de kredietnemers (of één van hen) een aanvraag doen tot het bekomen van een gerechtelijk akkoord.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>Ten slotte zal het woningkrediet van rechtswege en zonder ingebrekestelling opeisbaar zijn in geval:
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>-
+                </w:t>
+            </w:r>
+            <w:r>
+              <w:tab/>
+              <w:t>de hypothecaire waarborgen niet alle gevestigd zijn binnen de termijn van twee maanden</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t>zoals vermeld;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>-
+                </w:t>
+            </w:r>
+            <w:r>
+                <w:tab/>
+              <w:t xml:space="preserve">de toegevoegde contracten niet alle gesloten zijn binnen de overeengekomen termijn van</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t>twee maanden;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>-
+                </w:t>
+            </w:r>
+            <w:r>
+                <w:tab/>
+              <w:t>geen enkele kredietopname werd gedaan binnen de overeengekomen opnemingstermijn van</w:t>
+              <w:br/>
+              <w:tab/>
+              <w:t>twaalf maanden;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+          <w:r>
+            <w:t>-</w:t>
+          </w:r>
+          <w:r>
+            <w:tab/>
+              <w:t>van het overlijden van de kredietnemers of één van hen.
+              </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.11', 'Woonstkeuze')}}
+        <w:p>
+            <w:r>
+                <w:t>Voor de uitvoering van de kredietovereenkomst en de met de kredietgever gesloten zekerheidsovereenkomsten doen de kredietnemers, doch enkel wat betreft eventuele betekeningen, rechtvorderingen of vervolgingen, woonstkeuze zowel op hun hogergenoemd adres als in het in waarborg gegeven onroerend goed, onverminderd het recht voor de kredietgever om betekeningen, rechtsvorderingen en vervolgingen te doen op het aan haar laatst medegedeelde adres.</w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.12', 'Verzekeringsplicht')}}
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+                <w:t>{{artikel}}.12.1 Verzekeringsplicht - Brand
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>De kredietnemers en eventuele derden-hypotheekverstrekkers verbinden er zich toe de tot zekerheid gestelde onroerende goederen, evenals de onroerende goederen door bestemming die er zich bevinden, voor hun nieuwwaarde tegen de gebruikelijke risico's te verzekeren en deze polis aan de kredietovereenkomst te hechten. De kredietnemers machtigen bij deze de kredietgeefster zelf dergelijke verzekering af te sluiten, zo zij dit zouden verzuimen en de premies voor hun rekening te betalen. Door een bijvoegsel zal worden bedongen dat geen schadevergoeding kan worden geregeld zonder tussenkomst van de kredietgeefster en dat de polis niet zal vervallen of verbroken worden zonder dat de kredietgeefster hiervan minstens vijftien dagen op voorhand werd verwittigd.  Bij gebreke aan premiebetaling kan de kredietgeefster de verschuldigde premies zelf betalen in de plaats van de kredietnemers of de hypotheekverstrekkers.  De voorgeschoten verzekeringspremies zullen bij afzonderlijk schrijven worden geëist van de kredietnemers en in geval van wanbetaling zullen ze op de klanten rekening worden geboekt. Op de premie zullen alle intresten verschuldigd zijn die op het krediet van toepassing zijn.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+              <w:rPr>
+                <w:u w:val="single"/>
+              </w:rPr>
+                <w:t>{{artikel}}.12.2 Verzekeringsplicht - Schuldsaldo
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">Teneinde de terugbetaling te verzekeren van het verschuldigd blijvend saldo ingeval van overlijden, verplichten de kredietnemers er zich toe aan ieder overeengekomen voorschot een schuldsaldoverzekering te hechten, waarvan het beginkapitaal gelijk is aan het bedrag van het voorschot en de duur gelijk aan deze die voor het voorschot werd overeengekomen.  Bij niet-betaling van de premie overeenkomstig de algemene voorwaarden van het contract mag de kredietgever bedoelde premie voorschieten in naam van de kredietnemers tot beloop van de premie vereist om het verschuldigd blijvend saldo te verzekeren.  De voorgeschoten verzekeringspremies zullen bij afzonderlijk schrijven worden geëist van de kredietnemers en in geval van wanbetaling zullen ze op de klanten rekening worden geboekt. Op de premie zullen alle intresten verschuldigd zijn die op dat ogenblik op het krediet van toepassing zijn. In geval bij de uitbetaling taksen geheven worden op het verzekerd kapitaal, moeten de kredietnemers of hun rechthebbenden het verschil bijleggen om tot de volledige terugbetaling van het krediet te komen.  In geen geval moeten de kredietnemers het
+                </w:t>
+            </w:r>
+            <w:r>
+                <w:t>verzekeringscontract in stand houden voor een verzekerd kapitaal dat hoger is dan het verschuldigd blijvend saldo. De aanhechting van deze verzekering wordt verwezenlijkt door de aanvaarding, door de kredietgever, van de verzekeringsovereenkomst die haar voorgesteld wordt door de verzekeringnemer. Het document dat de aanvaarding regelt moet tevens de verplichtingen bevatten die de kredietnemers dragen krachtens de aanhechting.
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.13', 'Toepasselijke wetgeving en bevoegde rechtbank')}}
+        <w:p>
+            <w:r>
+                <w:t>Beide partijen verklaren het Belgisch recht, met inbegrip van de wet op het hypothecair krediet en haar uitvoeringsbesluiten, van toepassing op de kredietopening en de tussen hen gesloten zekerheidsovereenkomsten.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>De kredietnemers die bij het ontstaan van de kredietopening of op een later tijdstip hun gewone verblijfplaats in het buitenland hebben, aanvaarden de exclusieve bevoegdheid van de Belgische rechters, onverminderd het recht voor de kredietgever om beroep te doen op de rechters van het land waar één van de kredietnemers zijn woon- of verblijfplaats heeft.
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel + '.14', 'Registratie in de centrale gegevensbank')}}
+        <w:p>
+            <w:r>
+                <w:t>Deze overeenkomst maakt het voorwerp uit van registratie in de Centrale voor kredieten aan particulieren, overeenkomstig artikel 3 § 1,1° of 2° van de wet van tien augustus tweeduizend en één betreffende de Centrale voor kredieten aan particulieren.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>De doeleinden van de verwerking in de centrale; zijn overeenkomstig artikel 9 van onderhavige wet; informatie te verkrijgen over de financiële toestand en de solvabiliteit van de kredietnemer teneinde een juiste beoordeling van de kredietwaardigheid te kunnen maken en overmatige schuldenlast te voorkomen.  De gegevens zullen gemeld worden aan de Centrale voor kredieten aan particulieren.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>In geval van wanbetaling, wordt ook deze wanbetaling geregistreerd.  Wanneer een verschuldigd bedrag niet werd betaald binnen de drie maanden na zijn vervaldag of binnen één maand na een aangetekende verwittiging die de gevolgen van de wanbetaling vermeldt, deelt de kredietgever de wanbetaling mee aan de Centrale voor kredieten aan particulieren om te worden geregistreerd in haar centrale gegevensbank.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>Volgens de door de Koning vastgestelde nadere regels heeft elke kredietnemer kosteloos toegang tot de op zijn naam geregistreerde gegevens en kan hij vrij en kosteloos, de rechtzetting vragen van verkeerde gegevens. In geval van rechtzetting is de verantwoordelijk voor de verwerking ertoe gehouden deze verbetering mede te delen aan de personen die inlichtingen van hem hebben verkregen en die de geregistreerde persoon aanduidt.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>De bewaartermijnen voor deze gegevens worden eveneens door de Koning vastgesteld.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>De inlichtingen die door de Bank worden meegedeeld mogen enkel gebruikt worden in het raam van het verstrekken van of het beheer van kredieten of betalingsmiddelen, die van aard zijn het privé-vermogen van een natuurlijk persoon te bezwaren en waarvan de uitvoering op het privé-vermogen kan voortgezet worden.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>Deze inlichtingen mogen niet gebruikt worden voor commerciële prospectiedoeleinden.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>Partijen verklaren van de bepalingen van deze akte kennis te hebben na voorlezing ervan gedaan door de notaris en ze volledig te aanvaarden.
+                </w:t>
+            </w:r>
+        </w:p>
+    {% set artikel_nummer = artikel_nummer+1%}
+    {% set artikel = artikel_nummer|string %}        
+    {{title(artikel, 'Opheffing - Afrekening')}}
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">De kredietnemers zijn gerechtigd ten allen tijde een schriftelijk overzicht te vragen van de stand van hun kredietopening.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">De kredietnemers en/of hypotheekstellers kunnen na integrale terugbetaling van de sommen gedekt door de hypotheek bij huidige akte gevestigd opheffing van hun hypotheek bekomen.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve"> (artikel 9 : door notaris te kiezen, afhankelijk van de ligging van het onroerend goed waarop de hypotheek gevestigd wordt)
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>Ligging in het Vlaams Gewest :
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+    {% set artikel_nummer = artikel_nummer+1%}
+    {% set artikel = artikel_nummer|string %}       
+    {{title(artikel, 'Ruimtelijke Ordening')}}
+    {{title(artikel+'.1', 'Ondergetekende notaris verklaart, bij toepassing van art. 137 van het decreet:')}}
+        <w:p>
+            <w:r>
+              <w:t>1) dat voor het in hypotheek gegeven onroerend goed een stedenbouwkundige vergunning werd</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">    uitgereikt;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:t>2) dat de meest recente stedenbouwkundige bestemming van het in hypotheek gegeven onroerend is:</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">    (aan te vullen door de notaris);</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:t>3) dat voor het in hypotheek gegeven onroerend goed geen dagvaarding werd uitgebracht</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">    overeenkomstig de artikelen 146 en 149 tot en met 151</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">    van het decreet;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:t>4) dat op het in hypotheek gegeven onroerend goed geen wettelijk voorkooprecht rust conform art. 63</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">    van het decreet;</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:t xml:space="preserve">5) (in voorkomend geval) dat bij verkavelingsvergunning van ................. (datum) van het college</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">    van burgemeester en schepenen van ................... (naam gemeente invullen) met betrekking</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">    tot het in hypotheek gegeven onroerend goed de volgende lasten en voorwaarden opgelegd zijn:</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">    .................. .</w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+    {{title(artikel+'.2', 'Aan de onderhavige akte wordt een recent stedenbouwkundig uittreksel toegevoegt in de zin van art. 135, §1 van het decreet.')}}
+    {{title(artikel+'.3', 'Artikel 99 van het decreed luidt als volgt:')}}
+    <w:p>
+      <w:r>
+        <w:t xml:space="preserve">(Aan te vullen door notaris)</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+       <w:r>
+         <w:t xml:space="preserve"> (Toevoegen indien het krediet betrekking heeft op de financiering van werken)</w:t>
+       </w:r>
+    </w:p>
+    {{title(artikel+'.4', 'De kredietnemers (en/of derden-hypotheekgevers) (Aan te vullen door de notaris) verklaren:')}}
+        <w:p>
+            <w:r>
+                <w:t>- (ofwel) dat het krediet geen betrekking heeft op de financiering van vergunningsplichtige werken.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:t>- (ofwel) dat het krediet ten belope van het bedrag van ............................ EUR betrekking heeft op</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">   de  financiering van vergunningsplichtige werken en dat hiervoor een stedenbouwkundige</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">   vergunning werd uitgereikt door het college van burgemeester en schepenen</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">   van ( # naam gemeente invullen # ) op ( # datum #).</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+              <w:t>- (ofwel) dat het krediet ten belope van het bedrag van ............................ EUR betrekking heeft op</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">   de financiering van vergunningsplichtige werken, maar dat hiervoor nog geen stedenbouwkundige</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">   vergunning werd uitgereikt. De notaris wijst er de kredietgever op dat zij de eerste schijf van</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">   het bedrag, dat dient voor de financiering van de vergunningsplichtige werken, maar mag uitbetalen</w:t>
+              <w:br/>
+              <w:t xml:space="preserve">   nadat haar de stedenbouwkundige vergunning bezorgd is.</w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>Ligging in het Waals Gewest:
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel, 'Ruimtelijke ordening (Waals Wetboek van Ruimtelijke Ordening, Stedenbouw en Patrimonium)')}}
+        <w:p>
+            <w:r>
+                <w:t>(Zolang de nieuwe tekst van artikel 85 CWATUP NIET IN WERKING IS GETREDEN)
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel+'.1', 'Ondergetekende notaris verklaart, bij toepassing van art. 85 van het wetboek:')}}
+        <w:p>
+            <w:r>
+                <w:t>dat de stedenbouwkundige bestemming van het in hypotheek gegeven onroerend goed de volgende is: .........................................., zoals blijkt uit een stedenbouwkundig attest d.d. ............................... of een brief van de gemeente ........................................... d.d. ...........................
+                </w:t>
+            </w:r>
+        </w:p>
+    {{title(artikel+'.2', 'De kredietnemers (en/of derden-hypotheekgevers) verklaren :')}}
+        <w:p>
+            <w:r>
+                <w:t>(ofwel) dat voor het in hypotheek gegeven onroerend goed een niet-vervallen stedenbouwkundige vergunning d.d. ........................................  (datum niet ouder dan 10 jaar) werd uitgereikt door de gemeente .......................................... .
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">(ofwel) dat met betrekking tot het in hypotheek gegeven onroerend goed een geldig stedenbouwkundig attest d.d.  .....................................werd afgeleverd door de gemeente .................................... waarvan de inhoud luidt als volgt: ...........................................
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>(ofwel) dat met betrekking tot het in hypotheek gegeven onroerend goed geen stedenbouwkundige vergunning of stedenbouwkundig attest werd uitgereikt;
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>De kredietnemers (en/of derden-hypotheekgevers) verklaren voorts dat zij geen enkele verbintenis op zich hebben genomen wat betreft het stellen, of uitvoeren of in stand houden, van handelingen of werken in de zin van art. 84, ?1 en ?2, eerste alinea van het wetboek (in voorkomend geval toevoegen), andere dan deze die het voorwerp uitmaken van voormeld(e) stedenbouwkundige(e) vergunning/attest.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+          <w:r>
+            <w:rPr>
+              <w:u w:val="single"/>
+            </w:rPr>
+            <w:t>{{artikel}}.3</w:t>
+          </w:r>
+            <w:r>
+                <w:t xml:space="preserve"> De aandacht van de kredietnemers (en/of derden-hypotheekgevers) wordt er op gevestigd dat geen handelingen of werken in de zin van art. 84, §1 en art. 84, §2, eerste alinea van het wetboek mogen worden gesteld, uitgevoerd of in stand gehouden dan na het bekomen van een stedenbouwkundige vergunning.
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>Na inwerkingtreding van de nieuwe tekst van artikel 85 CWATUP zal de instrumenterende notaris op zijn verantwoordelijkheid een clausule inlassen.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>VERKLARINGEN VAN OVERDRACHT VAN LOON - VERMEERDERING VOOR KIND TEN LASTE - OVERHANDIGING VAN HET FORMULIER
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve">Wat betreft het artikel over de loonoverdracht, verklaart iedere kredietnemer en iedere medeschuldenaar en iedere borg door de notaris in kennis gesteld te zijn van het vermeerderingsmechanisme voor kind ten laste zoals bepaald in de artikelen 34 en 34bis van de wet van 12 april 1965 betreffende de bescherming van het loon der werknemers.  Zij verklaren eveneens van de notaris het aangiteformulier voor kind ten laste ontvangen te hebben, overeenstemmend met het model opgenomen in de bijlage van het ministerieel besluit van 23 november 2006, dat dit model bepaalt.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve"> (Ofwel) ondergetekende notaris verklaart al hetgeen voorafgaat aan de partijen (en de derden-hypotheekgevers) (aan te vullen door de notaris) te hebben toegelicht en tevens integraal te hebben voorgelezen.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t xml:space="preserve"> (Ofwel) ondergetekende notaris verklaart al hetgeen voorafgaat aan de partijen (en de derden-hypotheekgevers) (aan te vullen door de notaris) te hebben toegelicht en tevens voorlezing te hebben gedaan van de vermeldingen bedoeld in art. 12, eerste en tweede alinea van de notariswet, alsook van alle wijzigingen die het ontwerp van akte nog onderging na de ontvangst ervan door de partijen (en de derden-hypotheekgevers) (aan te vullen door de notaris) op (datum minstens 5 werkdagen geleden).
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>Informatie - Raadgeving - tegenstrijdige belangen - recht op keuze tweede notaris - bijstand raadsman
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>Ondergetekende notaris wijst partijen er op dat huidige akte een wederkerige overeenkomst is zodat zij tegenstrijdige belangen hebben en dat huidige akte onevenwichtige bedingen bevat of kan bevatten.  Hij wijst partijen er op dat zij steeds het recht hebben een tweede notaris te raadplegen of een raadsman (bijvoorbeeld een advocaat).
+                </w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:t>De partijen verklaren dat de notaris hen volledig heeft ingelicht over de rechten, verplichtingen en lasten die voortvloeien uit de rechtshandelingen, dewelke zij bij huidige akte hebben gesteld en dat hij hen op onpartijdige wijze raad heeft gegeven en zij verklaren dat zij zich voldoende geïnformeerd achten in het bijzonder over de tegenstrijdige belangen en onevenwichtige bedingen.
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>Waarvan akte, verleden te ... (gemeente of stad).
+                </w:t>
+            </w:r>
+        </w:p>
+    <w:p/>
+        <w:p>
+            <w:r>
+                <w:t>De partijen (en/of de derden-hypotheekgevers) (aan te vullen door de notaris)  hebben met ons, notaris, na (integrale voorlezing en toelichting, inclusief van de bijlagen), ondertekend.
+                </w:t>
+            </w:r>
+        </w:p>
+    </w:body>
+</w:document>

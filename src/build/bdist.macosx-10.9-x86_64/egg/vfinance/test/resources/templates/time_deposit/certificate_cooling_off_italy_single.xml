@@ -1,0 +1,3756 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?mso-application progid="Word.Document"?>
+<pkg:package xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage">
+  <pkg:part pkg:name="/_rels/.rels" pkg:contentType="application/vnd.openxmlformats-package.relationships+xml" pkg:padding="512">
+    <pkg:xmlData>
+      <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+        <Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/>
+        <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/>
+        <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
+      </Relationships>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/_rels/document.xml.rels" pkg:contentType="application/vnd.openxmlformats-package.relationships+xml" pkg:padding="256">
+    <pkg:xmlData>
+      <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+        <Relationship Id="rId8" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header1.xml"/>
+        <Relationship Id="rId13" Type="http://schemas.microsoft.com/office/2007/relationships/stylesWithEffects" Target="stylesWithEffects.xml"/>
+        <Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/webSettings" Target="webSettings.xml"/>
+        <Relationship Id="rId7" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="http://www.patronale-life.be" TargetMode="External"/>
+        <Relationship Id="rId12" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme" Target="theme/theme1.xml"/>
+        <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml"/>
+        <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
+        <Relationship Id="rId6" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image1.png"/>
+        <Relationship Id="rId11" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable" Target="fontTable.xml"/>
+        <Relationship Id="rId5" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/endnotes" Target="endnotes.xml"/>
+        <Relationship Id="rId10" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image2.png"/>
+        <Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footnotes" Target="footnotes.xml"/>
+        <Relationship Id="rId9" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer1.xml"/>
+      </Relationships>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/document.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml">
+    <pkg:xmlData>
+      <w:document xmlns:ve="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml">
+        <w:body>
+          <w:p w:rsidR="00BC6782" w:rsidRDefault="00F2418B" w:rsidP="003D4715">
+            <w:pPr>
+              <w:framePr w:h="1026" w:hSpace="10081" w:wrap="around" w:vAnchor="text" w:hAnchor="page" w:x="7665" w:y="-564"/>
+              <w:rPr>
+                <w:rFonts w:cs="Mangal"/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+              </w:rPr>
+              <w:pict>
+                <v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+                  <v:stroke joinstyle="miter"/>
+                  <v:formulas>
+                    <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+                    <v:f eqn="sum @0 1 0"/>
+                    <v:f eqn="sum 0 0 @1"/>
+                    <v:f eqn="prod @2 1 2"/>
+                    <v:f eqn="prod @3 21600 pixelWidth"/>
+                    <v:f eqn="prod @3 21600 pixelHeight"/>
+                    <v:f eqn="sum @0 0 1"/>
+                    <v:f eqn="prod @6 1 2"/>
+                    <v:f eqn="prod @7 21600 pixelWidth"/>
+                    <v:f eqn="sum @8 21600 0"/>
+                    <v:f eqn="prod @7 21600 pixelHeight"/>
+                    <v:f eqn="sum @10 21600 0"/>
+                  </v:formulas>
+                  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+                  <o:lock v:ext="edit" aspectratio="t"/>
+                </v:shapetype>
+                <v:shape id="Picture 4" o:spid="_x0000_i1025" type="#_x0000_t75" alt="Patronale-life-(small)-PNG.png" style="width:139.6pt;height:31.3pt;visibility:visible">
+                  <v:imagedata r:id="rId6" o:title="Patronale-life-(small)-PNG"/>
+                </v:shape>
+              </w:pict>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="003D4715" w:rsidRPr="00E37E42" w:rsidRDefault="002A0286" w:rsidP="00BD7F7C">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:ind w:right="92"/>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="002060"/>
+                <w:sz w:val="18"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00E37E42">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="-12"/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="26"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>CERTIFICATO DI ASSICURAZIONE</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="001F3CE3" w:rsidRPr="00E37E42" w:rsidRDefault="001F3CE3">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:ind w:right="595"/>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="002060"/>
+                <w:sz w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00E37E42">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="-8"/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="30"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>CONTRATTO DI ASSICURAZIONE SULLA VITA</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="005F72CF" w:rsidRPr="00E37E42" w:rsidRDefault="003D4715">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="34"/>
+              <w:ind w:right="610"/>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="2"/>
+                <w:szCs w:val="30"/>
+                <w:lang w:val="en-US"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00E37E42">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="2"/>
+                <w:szCs w:val="30"/>
+                <w:lang w:val="en-US"/>
+              </w:rPr>
+              <w:t xml:space="preserve">{{_(package_name)}} :</w:t>
+            </w:r>
+            <w:proofErr w:type="gramEnd"/>
+            <w:r w:rsidR="005F72CF" w:rsidRPr="00E37E42">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="2"/>
+                <w:szCs w:val="30"/>
+                <w:lang w:val="en-US"/>
+              </w:rPr>
+              <w:t xml:space="preserve"> N° </w:t>
+            </w:r>
+            <w:r w:rsidR="005F72CF" w:rsidRPr="00E37E42">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:spacing w:val="2"/>
+                <w:szCs w:val="30"/>
+                <w:lang w:val="en-US"/>
+              </w:rPr>
+              <w:t>{{full_account_number}}</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00A354E0" w:rsidRPr="001C5764" w:rsidRDefault="00732864" w:rsidP="00AA7D31">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="542" w:after="72" w:line="192" w:lineRule="exact"/>
+              <w:ind w:left="10" w:right="-49"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="7"/>
+                <w:w w:val="96"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Le prestazioni, previste nella Sua polizza, sono legate direttamente al valore di uno o più fondi d'investimento, secondo le modalità descritte nelle Condizioni Contrattuali e nel Prospetto d'Offerta disponibili sul nostro sito </w:t>
+            </w:r>
+            <w:hyperlink r:id="rId7" w:history="1">
+              <w:r w:rsidR="00D07A40" w:rsidRPr="001C5764">
+                <w:rPr>
+                  <w:rStyle w:val="Hyperlink"/>
+                  <w:rFonts w:ascii="News Gothic Std" w:eastAsia="Times New Roman" w:hAnsi="News Gothic Std"/>
+                  <w:spacing w:val="4"/>
+                  <w:w w:val="96"/>
+                  <w:sz w:val="16"/>
+                  <w:szCs w:val="16"/>
+                  <w:lang w:val="it-IT"/>
+                </w:rPr>
+                <w:t>www.patronale-life.be</w:t>
+              </w:r>
+            </w:hyperlink>
+            <w:r w:rsidR="00D07A40" w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="009931FA" w:rsidRPr="00A4389C" w:rsidRDefault="00A4389C" w:rsidP="00A4389C">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="240"/>
+              <w:ind w:left="11"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:caps/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="-2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00A4389C">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:caps/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="-2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+              </w:rPr>
+              <w:t>contraente, assicurato e caratteristiche</w:t>
+            </w:r>
+          </w:p>
+          <w:tbl>
+            <w:tblPr>
+              <w:tblW w:w="10040" w:type="dxa"/>
+              <w:tblInd w:w="10" w:type="dxa"/>
+              <w:tblLook w:val="04A0"/>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="2571"/>
+              <w:gridCol w:w="2449"/>
+              <w:gridCol w:w="2571"/>
+              <w:gridCol w:w="2449"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="003C2B5D" w:rsidRPr="003C2B5D" w:rsidTr="003C2B5D">
+              <w:trPr>
+                <w:trHeight w:val="238"/>
+              </w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00E37E42" w:rsidP="00A4389C">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:before="120" w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-1"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Contraente 1</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00E37E42" w:rsidP="00A4389C">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:before="120" w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="FF0000"/>
+                      <w:spacing w:val="-2"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-1"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>{{_(subscribers.0.titel)}} {{subscribers.0.first_name}} {{subscribers.0.last_name}}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00E37E42" w:rsidP="00A4389C">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:before="120" w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-1"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Contraente 2</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00BD7F7C" w:rsidP="00A4389C">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:before="120" w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:color w:val="FF0000"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                    <w:t>{{_(subscribers.1.titel)}} {{subscribers.1.first_name}} {{subscribers.1.last_name}}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="003C2B5D" w:rsidRPr="003C2B5D" w:rsidTr="003C2B5D">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00E37E42" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-6"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Data di nascita</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00E37E42" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-2"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-2"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>{{subscribers.0.geboortedatum|date}}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00E37E42" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-6"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Data di nascita</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00BD7F7C" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:ind w:left="5"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:color w:val="FF0000"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                    <w:t>{{subscribers.1.geboortedatum|date}}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="003C2B5D" w:rsidRPr="003C2B5D" w:rsidTr="003C2B5D">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00E37E42" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-6"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-1"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Assicurato 1</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00E37E42" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:ind w:left="5"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-4"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>{{insured_parties.0.first_name}} {{insured_parties.0.last_name}}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00E37E42" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:eastAsia="Times New Roman" w:hAnsi="News Gothic Std"/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="4"/>
+                      <w:w w:val="96"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-1"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Assicurato 2</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00BD7F7C" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:ind w:left="5"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-4"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-4"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>{{insured_parties.1.first_name}} {{insured_parties.1.last_name}}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="003C2B5D" w:rsidRPr="003C2B5D" w:rsidTr="003C2B5D">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00E37E42" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-4"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Data di nascita</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00E37E42" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:ind w:left="5"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-4"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>{{insured_parties.0.geboortedatum|date}}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00E37E42" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-4"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Data di nascita</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00E37E42" w:rsidRPr="003C2B5D" w:rsidRDefault="00BD7F7C" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:ind w:left="10"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>{{insured_parties.1.geboortedatum|date}}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="003C2B5D" w:rsidRPr="003C2B5D" w:rsidTr="003C2B5D">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="004F4F33" w:rsidRPr="003C2B5D" w:rsidRDefault="004F4F33" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Codice fiscale del Contraente 1</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="004F4F33" w:rsidRPr="003C2B5D" w:rsidRDefault="004F4F33" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:spacing w:val="-2"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>{{subscribers.0.tax_number}}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="004F4F33" w:rsidRPr="003C2B5D" w:rsidRDefault="004F4F33" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Codice fiscale del Contraente 2</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="004F4F33" w:rsidRPr="003C2B5D" w:rsidRDefault="00A77908" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:ind w:left="10"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                    <w:t>{{subscribers.1.tax_number}}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="003C2B5D" w:rsidRPr="003C2B5D" w:rsidTr="003C2B5D">
+              <w:trPr>
+                <w:trHeight w:val="113"/>
+              </w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00A77908" w:rsidRPr="003C2B5D" w:rsidRDefault="00A77908" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="8"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00A77908" w:rsidRPr="003C2B5D" w:rsidRDefault="00A77908" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:color w:val="FF0000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="8"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00A77908" w:rsidRPr="003C2B5D" w:rsidRDefault="00A77908" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-2"/>
+                      <w:sz w:val="8"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00A77908" w:rsidRPr="003C2B5D" w:rsidRDefault="00A77908" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:ind w:left="10"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="8"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="003C2B5D" w:rsidRPr="003C2B5D" w:rsidTr="003C2B5D">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="004F4F33" w:rsidRPr="003C2B5D" w:rsidRDefault="004F4F33" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Data di decorrenza</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="004F4F33" w:rsidRPr="003C2B5D" w:rsidRDefault="004F4F33" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:spacing w:val="-2"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>{{agreement.from_date|date}}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="004F4F33" w:rsidRPr="003C2B5D" w:rsidRDefault="004F4F33" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-2"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Durata assicurativa</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="004F4F33" w:rsidRPr="003C2B5D" w:rsidRDefault="004F4F33" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:ind w:left="10"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Vita intera</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="005C6ACD" w:rsidRPr="003C2B5D" w:rsidTr="003C2B5D">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005C6ACD" w:rsidRPr="003C2B5D" w:rsidRDefault="005C6ACD" w:rsidP="005C6ACD">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t xml:space="preserve">Premio </w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>unico</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005C6ACD" w:rsidRPr="003C2B5D" w:rsidRDefault="005C6ACD" w:rsidP="005C6ACD">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-2"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>{{ premiums_data.0.premium_schedule.premium_amount|currency }} €</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005C6ACD" w:rsidRPr="003C2B5D" w:rsidRDefault="005C6ACD" w:rsidP="002E2C6B">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-2"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Numero di proposta</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005C6ACD" w:rsidRPr="003C2B5D" w:rsidRDefault="005C6ACD" w:rsidP="00C34FBE">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:ind w:left="10"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>{{agreement.code.0}}-{{agreement.code.1}}-{{agreement.code.2}}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="005C6ACD" w:rsidRPr="003C2B5D" w:rsidTr="003C2B5D">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005C6ACD" w:rsidRPr="003C2B5D" w:rsidRDefault="005C6ACD" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Dinamica</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005C6ACD" w:rsidRPr="003C2B5D" w:rsidRDefault="005C6ACD" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-2"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>{{increase_rate}}% p.a.</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2571" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005C6ACD" w:rsidRPr="003C2B5D" w:rsidRDefault="005C6ACD" w:rsidP="0025206E">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:spacing w:val="-2"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>Tariffa</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2449" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005C6ACD" w:rsidRPr="003C2B5D" w:rsidRDefault="005C6ACD" w:rsidP="0025206E">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:spacing w:line="283" w:lineRule="exact"/>
+                    <w:ind w:left="10"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                    </w:rPr>
+                    <w:t>ISIPPA-T1</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+          </w:tbl>
+          <w:p w:rsidR="00A354E0" w:rsidRPr="001C5764" w:rsidRDefault="00A354E0" w:rsidP="00A354E0">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="542" w:after="72" w:line="192" w:lineRule="exact"/>
+              <w:ind w:right="250"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:sectPr w:rsidR="00A354E0" w:rsidRPr="001C5764" w:rsidSect="00BD7F7C">
+                <w:headerReference w:type="default" r:id="rId8"/>
+                <w:footerReference w:type="default" r:id="rId9"/>
+                <w:type w:val="continuous"/>
+                <w:pgSz w:w="11909" w:h="16834"/>
+                <w:pgMar w:top="241" w:right="1253" w:bottom="357" w:left="1066" w:header="720" w:footer="720" w:gutter="0"/>
+                <w:cols w:space="60"/>
+                <w:noEndnote/>
+              </w:sectPr>
+            </w:pPr>
+          </w:p>
+          <w:p w:rsidR="00163A87" w:rsidRPr="001C5764" w:rsidRDefault="00163A87" w:rsidP="00AA7E23">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="240"/>
+              <w:ind w:left="11"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="-2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="-2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+              </w:rPr>
+              <w:t>PRESTAZIONI</w:t>
+            </w:r>
+          </w:p>
+          <w:tbl>
+            <w:tblPr>
+              <w:tblW w:w="0" w:type="auto"/>
+              <w:tblInd w:w="14" w:type="dxa"/>
+              <w:tblLook w:val="04A0"/>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="1795"/>
+              <w:gridCol w:w="7997"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="00163A87" w:rsidRPr="003C2B5D" w:rsidTr="003C2B5D">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="1795" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00163A87" w:rsidRPr="003C2B5D" w:rsidRDefault="00163A87" w:rsidP="00A4389C">
+                  <w:pPr>
+                    <w:tabs>
+                      <w:tab w:val="left" w:pos="2002"/>
+                    </w:tabs>
+                    <w:spacing w:before="120"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="8"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-2"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+                    </w:rPr>
+                    <w:t xml:space="preserve">in caso di decesso</w:t>
+                  </w:r>
+                </w:p>
+                <w:p w:rsidR="00163A87" w:rsidRPr="003C2B5D" w:rsidRDefault="00163A87" w:rsidP="00A4389C">
+                  <w:pPr>
+                    <w:spacing w:before="120"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-2"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="7997" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00163A87" w:rsidRPr="003C2B5D" w:rsidRDefault="00163A87" w:rsidP="00A4389C">
+                  <w:pPr>
+                    <w:tabs>
+                      <w:tab w:val="left" w:pos="2002"/>
+                    </w:tabs>
+                    <w:spacing w:before="120"/>
+                    <w:jc w:val="both"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                      <w:spacing w:val="8"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+                    </w:rPr>
+<w:t>{% if exit_at_first_deceased %}
+in caso di decesso del primo dei due assicurati.
+{% endif %}
+{% if exit_at_last_deceased %}
+in caso di decesso dell'ultimo degli assicurati.
+{% endif %}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+          </w:tbl>
+          <w:p w:rsidR="001F3CE3" w:rsidRPr="001C5764" w:rsidRDefault="001F3CE3" w:rsidP="00AA7E23">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="240"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="002060"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="-2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>BENEFICIARI</w:t>
+            </w:r>
+          </w:p>
+          <w:tbl>
+            <w:tblPr>
+              <w:tblW w:w="0" w:type="auto"/>
+              <w:tblInd w:w="5" w:type="dxa"/>
+              <w:tblLook w:val="04A0"/>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="1804"/>
+              <w:gridCol w:w="7997"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="009931FA" w:rsidRPr="003C2B5D" w:rsidTr="003C2B5D">
+              <w:trPr>
+                <w:trHeight w:val="451"/>
+              </w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="1804" w:type="dxa"/>
+                  <w:vMerge w:val="restart"/>
+                </w:tcPr>
+                <w:p w:rsidR="009931FA" w:rsidRPr="003C2B5D" w:rsidRDefault="009931FA" w:rsidP="00A4389C">
+                  <w:pPr>
+                    <w:tabs>
+                      <w:tab w:val="left" w:pos="2002"/>
+                    </w:tabs>
+                    <w:spacing w:before="120"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>in caso di decesso</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="7997" w:type="dxa"/>
+                </w:tcPr>
+				<w:p w:rsidR="009931FA" w:rsidRPr="00A4389C" w:rsidRDefault="009931FA" w:rsidP="00A4389C">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:tabs>
+                      <w:tab w:val="left" w:pos="2002"/>
+                    </w:tabs>
+                    <w:spacing w:before="120"/>
+                    <w:ind w:left="6"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-1"/>
+                      <w:w w:val="106"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    {% for account_item in account_items %}<w:t>{% for account_item_line in account_item %}{{account_item_line}}<w:br/>{% endfor %}</w:t>{% endfor %}
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="009931FA" w:rsidRPr="00A4389C" w:rsidTr="003C2B5D">
+              <w:trPr>
+                <w:trHeight w:val="250"/>
+              </w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="1804" w:type="dxa"/>
+                  <w:vMerge/>
+                </w:tcPr>
+                <w:p w:rsidR="009931FA" w:rsidRPr="003C2B5D" w:rsidRDefault="009931FA" w:rsidP="00A4389C">
+                  <w:pPr>
+                    <w:tabs>
+                      <w:tab w:val="left" w:pos="2002"/>
+                    </w:tabs>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="7997" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="009931FA" w:rsidRPr="003C2B5D" w:rsidRDefault="009931FA" w:rsidP="00A4389C">
+                  <w:pPr>
+                    <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+                    <w:tabs>
+                      <w:tab w:val="left" w:pos="2002"/>
+                    </w:tabs>
+                    <w:ind w:left="6"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-1"/>
+                      <w:w w:val="106"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>In caso di decesso di uno o più beneficiari, la loro parte sarà ripartita secondo le leggi di successione vigenti.</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+          </w:tbl>
+          <w:p w:rsidR="00A102AE" w:rsidRPr="001C5764" w:rsidRDefault="00A102AE" w:rsidP="00786712">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:tabs>
+                <w:tab w:val="left" w:pos="2002"/>
+              </w:tabs>
+              <w:spacing w:before="149"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:bCs/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="-3"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:sectPr w:rsidR="00A102AE" w:rsidRPr="001C5764" w:rsidSect="00BD7F7C">
+                <w:type w:val="continuous"/>
+                <w:pgSz w:w="11909" w:h="16834"/>
+                <w:pgMar w:top="241" w:right="1251" w:bottom="360" w:left="1068" w:header="720" w:footer="720" w:gutter="0"/>
+                <w:cols w:space="60"/>
+                <w:noEndnote/>
+              </w:sectPr>
+            </w:pPr>
+          </w:p>
+          <w:p w:rsidR="00A102AE" w:rsidRPr="001C5764" w:rsidRDefault="00A102AE" w:rsidP="00AA7E23">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="240"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="-2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>STRATEGIA</w:t>
+            </w:r>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+              </w:rPr>
+              <w:t xml:space="preserve"> D'INVESTIMENTO</w:t>
+            </w:r>
+          </w:p>
+          <w:tbl>
+            <w:tblPr>
+              <w:tblW w:w="8930" w:type="dxa"/>
+              <w:tblInd w:w="392" w:type="dxa"/>
+              <w:tblLook w:val="04A0"/>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="7513"/>
+              <w:gridCol w:w="1417"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="003C2B5D" w:rsidRPr="003C2B5D" w:rsidTr="003C2B5D">
+              <w:trPr>
+                <w:trHeight w:val="384"/>
+              </w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="7513" w:type="dxa"/>
+                  <w:tcBorders>
+                    <w:bottom w:val="single" w:sz="2" w:space="0" w:color="auto"/>
+                  </w:tcBorders>
+                  <w:vAlign w:val="center"/>
+                </w:tcPr>
+                <w:p w:rsidR="00A102AE" w:rsidRPr="003C2B5D" w:rsidRDefault="00A102AE" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:widowControl/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+                    </w:rPr>
+                    <w:t>Denominazione del fondo</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="1417" w:type="dxa"/>
+                  <w:tcBorders>
+                    <w:bottom w:val="single" w:sz="2" w:space="0" w:color="auto"/>
+                  </w:tcBorders>
+                  <w:vAlign w:val="center"/>
+                </w:tcPr>
+                <w:p w:rsidR="00A102AE" w:rsidRPr="003C2B5D" w:rsidRDefault="00A102AE" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:widowControl/>
+                    <w:jc w:val="center"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:b/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                      <w:b/>
+                      <w:bCs/>
+                      <w:color w:val="000000"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+                    </w:rPr>
+                    <w:t>Percentuale</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+{% for fund in premiums_data.0.premium_schedule.fund_distribution %}
+            <w:tr w:rsidR="003C2B5D" w:rsidRPr="003C2B5D" w:rsidTr="003C2B5D">
+              <w:trPr>
+                <w:trHeight w:val="461"/>
+              </w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="7513" w:type="dxa"/>
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="2" w:space="0" w:color="auto"/>
+                  </w:tcBorders>
+                  <w:vAlign w:val="bottom"/>
+                </w:tcPr>
+                <w:p w:rsidR="009931FA" w:rsidRPr="003C2B5D" w:rsidRDefault="009931FA" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:spacing w:line="360" w:lineRule="auto"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>{{ fund.fund.name }}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="1417" w:type="dxa"/>
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="2" w:space="0" w:color="auto"/>
+                  </w:tcBorders>
+                  <w:vAlign w:val="bottom"/>
+                </w:tcPr>
+                <w:p w:rsidR="009931FA" w:rsidRPr="003C2B5D" w:rsidRDefault="009931FA" w:rsidP="003C2B5D">
+                  <w:pPr>
+                    <w:widowControl/>
+                    <w:spacing w:line="360" w:lineRule="auto"/>
+                    <w:jc w:val="center"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std" w:cs="News Gothic Std"/>
+                      <w:bCs/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT" w:eastAsia="en-US" w:bidi="ar-SA"/>
+                    </w:rPr>
+                    <w:t>{{ fund.target_percentage|currency }}</w:t>
+                  </w:r>
+                  <w:r w:rsidRPr="003C2B5D">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:spacing w:val="-3"/>
+                      <w:sz w:val="16"/>
+                      <w:szCs w:val="16"/>
+                      <w:lang w:val="it-IT"/>
+                    </w:rPr>
+                    <w:t>%</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+{% endfor %}
+          </w:tbl>
+          <w:p w:rsidR="001F3CE3" w:rsidRPr="001C5764" w:rsidRDefault="001F3CE3" w:rsidP="00AA7E23">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="240"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:b/>
+                <w:caps/>
+                <w:color w:val="002060"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:b/>
+                <w:caps/>
+                <w:color w:val="002060"/>
+                <w:spacing w:val="-3"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>Diritto di recesso dal Contratto</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="001F3CE3" w:rsidRPr="001C5764" w:rsidRDefault="001F3CE3" w:rsidP="00AA7D31">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="120" w:line="192" w:lineRule="exact"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>Il Contraente potr</w:t>
+            </w:r>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:eastAsia="Times New Roman" w:hAnsi="News Gothic Std" w:cs="Times New Roman"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>à</w:t>
+            </w:r>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:eastAsia="Times New Roman" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t xml:space="preserve"> recedere dal Contratto entro 30 giorni dal momento in cui gli </w:t>
+            </w:r>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:eastAsia="Times New Roman" w:hAnsi="News Gothic Std" w:cs="Times New Roman"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>è</w:t>
+            </w:r>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:eastAsia="Times New Roman" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t xml:space="preserve"> stato consegnato il presente Certificato di </w:t>
+            </w:r>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:eastAsia="Times New Roman" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="5"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Assicurazione. Al fine di esercitare il diritto di recesso il Contraente deve inviare, unitamente al presente Certificato di </w:t>
+            </w:r>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:eastAsia="Times New Roman" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="2"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Assicurazione, una comunicazione scritta alla Compagnia mediante lettera raccomandata A. R. con la quale dichiara di voler </w:t>
+            </w:r>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:eastAsia="Times New Roman" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="3"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>recedere dal contratto.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00AA7D31" w:rsidRPr="001C5764" w:rsidRDefault="00AA7D31">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="154"/>
+              <w:ind w:left="5"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="1"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+            </w:pPr>
+          </w:p>
+          <w:p w:rsidR="00EE5378" w:rsidRPr="001C5764" w:rsidRDefault="00EE5378">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="154"/>
+              <w:ind w:left="5"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:bCs/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="1"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:bCs/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="1"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Bruxelles, il </w:t>
+            </w:r>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:bCs/>
+                <w:spacing w:val="1"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>{{today|date}}</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00EB2DB1" w:rsidRPr="001C5764" w:rsidRDefault="00EB2DB1" w:rsidP="00EB2DB1">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="250"/>
+              <w:ind w:left="10"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="-3"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="-3"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>Patronale Life S.A.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00AA7D31" w:rsidRPr="00A77908" w:rsidRDefault="00F2418B" w:rsidP="00AA7D31">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="250"/>
+              <w:ind w:left="10"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="-3"/>
+                <w:sz w:val="12"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00F2418B">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="-3"/>
+                <w:sz w:val="12"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:pict>
+                <v:shape id="_x0000_s1026" type="#_x0000_t75" style="position:absolute;left:0;text-align:left;margin-left:-1.55pt;margin-top:10.4pt;width:112.6pt;height:29.7pt;z-index:251657728">
+                  <v:imagedata r:id="rId10" o:title=""/>
+                </v:shape>
+              </w:pict>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00AA7D31" w:rsidRPr="00A77908" w:rsidRDefault="00AA7D31" w:rsidP="00AA7D31">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="250"/>
+              <w:ind w:left="10"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="-3"/>
+                <w:sz w:val="12"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+            </w:pPr>
+          </w:p>
+          <w:p w:rsidR="00EB2DB1" w:rsidRPr="001C5764" w:rsidRDefault="00EB2DB1" w:rsidP="00AA7D31">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:spacing w:before="250"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="-3"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:color w:val="000000"/>
+                <w:spacing w:val="-3"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>Filip Moeykens</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00786712" w:rsidRPr="001C5764" w:rsidRDefault="00EB2DB1" w:rsidP="00AA7D31">
+            <w:pPr>
+              <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:spacing w:val="-1"/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="001C5764">
+              <w:rPr>
+                <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                <w:noProof/>
+                <w:sz w:val="16"/>
+                <w:szCs w:val="16"/>
+                <w:lang w:val="it-IT"/>
+              </w:rPr>
+              <w:t>Amministratore Delegato</w:t>
+            </w:r>
+            <w:bookmarkStart w:id="0" w:name="_GoBack"/>
+            <w:bookmarkEnd w:id="0"/>
+          </w:p>
+          <w:sectPr w:rsidR="00786712" w:rsidRPr="001C5764" w:rsidSect="00BD7F7C">
+            <w:type w:val="continuous"/>
+            <w:pgSz w:w="11909" w:h="16834"/>
+            <w:pgMar w:top="241" w:right="1251" w:bottom="360" w:left="1068" w:header="720" w:footer="720" w:gutter="0"/>
+            <w:cols w:space="60"/>
+            <w:noEndnote/>
+          </w:sectPr>
+        </w:body>
+      </w:document>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/footnotes.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footnotes+xml">
+    <pkg:xmlData>
+      <w:footnotes xmlns:ve="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml">
+        <w:footnote w:type="separator" w:id="-1">
+          <w:p w:rsidR="0002361B" w:rsidRDefault="0002361B" w:rsidP="003D4715">
+            <w:r>
+              <w:separator/>
+            </w:r>
+          </w:p>
+        </w:footnote>
+        <w:footnote w:type="continuationSeparator" w:id="0">
+          <w:p w:rsidR="0002361B" w:rsidRDefault="0002361B" w:rsidP="003D4715">
+            <w:r>
+              <w:continuationSeparator/>
+            </w:r>
+          </w:p>
+        </w:footnote>
+      </w:footnotes>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/header1.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml">
+    <pkg:xmlData>
+      <w:hdr xmlns:ve="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml">
+        <w:p w:rsidR="003D4715" w:rsidRPr="00E60DF7" w:rsidRDefault="003D4715" w:rsidP="002A0286">
+          <w:pPr>
+            <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/>
+            <w:ind w:right="92"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="it-IT"/>
+            </w:rPr>
+          </w:pPr>
+        </w:p>
+        <w:p w:rsidR="003D4715" w:rsidRDefault="003D4715">
+          <w:pPr>
+            <w:pStyle w:val="Header"/>
+          </w:pPr>
+        </w:p>
+      </w:hdr>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/footer1.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml">
+    <pkg:xmlData>
+      <w:ftr xmlns:ve="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml">
+        <w:p w:rsidR="003D4715" w:rsidRPr="00611C62" w:rsidRDefault="003D4715" w:rsidP="003D4715">
+          <w:pPr>
+            <w:pStyle w:val="Footer"/>
+            <w:jc w:val="center"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:sz w:val="14"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00611C62">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:sz w:val="14"/>
+            </w:rPr>
+            <w:t xml:space="preserve">Patronale Life S.A. - Rue </w:t>
+          </w:r>
+          <w:proofErr w:type="spellStart"/>
+          <w:r w:rsidRPr="00611C62">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:sz w:val="14"/>
+            </w:rPr>
+            <w:t>Belliard</w:t>
+          </w:r>
+          <w:proofErr w:type="spellEnd"/>
+          <w:r w:rsidRPr="00611C62">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:sz w:val="14"/>
+            </w:rPr>
+            <w:t xml:space="preserve"> 3 - B-1040 Bruxelles - RPR Bruxelles 0403 288 089 - CBFA n° 1642 (KB 18/06/01, BS 29/06/01)</w:t>
+          </w:r>
+        </w:p>
+        <w:p w:rsidR="003D4715" w:rsidRPr="00611C62" w:rsidRDefault="003D4715" w:rsidP="003D4715">
+          <w:pPr>
+            <w:pStyle w:val="Footer"/>
+            <w:jc w:val="center"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:sz w:val="14"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00611C62">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:sz w:val="14"/>
+            </w:rPr>
+            <w:t>Tel : +32 2 511 60 06 - Fax: +32 2 513 27 36 - info@patronale-life.be - www.patronale-life.be</w:t>
+          </w:r>
+        </w:p>
+      </w:ftr>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/endnotes.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.endnotes+xml">
+    <pkg:xmlData>
+      <w:endnotes xmlns:ve="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml">
+        <w:endnote w:type="separator" w:id="-1">
+          <w:p w:rsidR="0002361B" w:rsidRDefault="0002361B" w:rsidP="003D4715">
+            <w:r>
+              <w:separator/>
+            </w:r>
+          </w:p>
+        </w:endnote>
+        <w:endnote w:type="continuationSeparator" w:id="0">
+          <w:p w:rsidR="0002361B" w:rsidRDefault="0002361B" w:rsidP="003D4715">
+            <w:r>
+              <w:continuationSeparator/>
+            </w:r>
+          </w:p>
+        </w:endnote>
+      </w:endnotes>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/theme/theme1.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.theme+xml">
+    <pkg:xmlData>
+      <a:theme xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" name="Kantoorthema">
+        <a:themeElements>
+          <a:clrScheme name="Kantoor">
+            <a:dk1>
+              <a:sysClr val="windowText" lastClr="000000"/>
+            </a:dk1>
+            <a:lt1>
+              <a:sysClr val="window" lastClr="FFFFFF"/>
+            </a:lt1>
+            <a:dk2>
+              <a:srgbClr val="1F497D"/>
+            </a:dk2>
+            <a:lt2>
+              <a:srgbClr val="EEECE1"/>
+            </a:lt2>
+            <a:accent1>
+              <a:srgbClr val="4F81BD"/>
+            </a:accent1>
+            <a:accent2>
+              <a:srgbClr val="C0504D"/>
+            </a:accent2>
+            <a:accent3>
+              <a:srgbClr val="9BBB59"/>
+            </a:accent3>
+            <a:accent4>
+              <a:srgbClr val="8064A2"/>
+            </a:accent4>
+            <a:accent5>
+              <a:srgbClr val="4BACC6"/>
+            </a:accent5>
+            <a:accent6>
+              <a:srgbClr val="F79646"/>
+            </a:accent6>
+            <a:hlink>
+              <a:srgbClr val="0000FF"/>
+            </a:hlink>
+            <a:folHlink>
+              <a:srgbClr val="800080"/>
+            </a:folHlink>
+          </a:clrScheme>
+          <a:fontScheme name="Kantoor">
+            <a:majorFont>
+              <a:latin typeface="Cambria"/>
+              <a:ea typeface=""/>
+              <a:cs typeface=""/>
+              <a:font script="Jpan" typeface="ＭＳ ゴシック"/>
+              <a:font script="Hang" typeface="맑은 고딕"/>
+              <a:font script="Hans" typeface="宋体"/>
+              <a:font script="Hant" typeface="新細明體"/>
+              <a:font script="Arab" typeface="Times New Roman"/>
+              <a:font script="Hebr" typeface="Times New Roman"/>
+              <a:font script="Thai" typeface="Angsana New"/>
+              <a:font script="Ethi" typeface="Nyala"/>
+              <a:font script="Beng" typeface="Vrinda"/>
+              <a:font script="Gujr" typeface="Shruti"/>
+              <a:font script="Khmr" typeface="MoolBoran"/>
+              <a:font script="Knda" typeface="Tunga"/>
+              <a:font script="Guru" typeface="Raavi"/>
+              <a:font script="Cans" typeface="Euphemia"/>
+              <a:font script="Cher" typeface="Plantagenet Cherokee"/>
+              <a:font script="Yiii" typeface="Microsoft Yi Baiti"/>
+              <a:font script="Tibt" typeface="Microsoft Himalaya"/>
+              <a:font script="Thaa" typeface="MV Boli"/>
+              <a:font script="Deva" typeface="Mangal"/>
+              <a:font script="Telu" typeface="Gautami"/>
+              <a:font script="Taml" typeface="Latha"/>
+              <a:font script="Syrc" typeface="Estrangelo Edessa"/>
+              <a:font script="Orya" typeface="Kalinga"/>
+              <a:font script="Mlym" typeface="Kartika"/>
+              <a:font script="Laoo" typeface="DokChampa"/>
+              <a:font script="Sinh" typeface="Iskoola Pota"/>
+              <a:font script="Mong" typeface="Mongolian Baiti"/>
+              <a:font script="Viet" typeface="Times New Roman"/>
+              <a:font script="Uigh" typeface="Microsoft Uighur"/>
+              <a:font script="Geor" typeface="Sylfaen"/>
+            </a:majorFont>
+            <a:minorFont>
+              <a:latin typeface="Calibri"/>
+              <a:ea typeface=""/>
+              <a:cs typeface=""/>
+              <a:font script="Jpan" typeface="ＭＳ 明朝"/>
+              <a:font script="Hang" typeface="맑은 고딕"/>
+              <a:font script="Hans" typeface="宋体"/>
+              <a:font script="Hant" typeface="新細明體"/>
+              <a:font script="Arab" typeface="Arial"/>
+              <a:font script="Hebr" typeface="Arial"/>
+              <a:font script="Thai" typeface="Cordia New"/>
+              <a:font script="Ethi" typeface="Nyala"/>
+              <a:font script="Beng" typeface="Vrinda"/>
+              <a:font script="Gujr" typeface="Shruti"/>
+              <a:font script="Khmr" typeface="DaunPenh"/>
+              <a:font script="Knda" typeface="Tunga"/>
+              <a:font script="Guru" typeface="Raavi"/>
+              <a:font script="Cans" typeface="Euphemia"/>
+              <a:font script="Cher" typeface="Plantagenet Cherokee"/>
+              <a:font script="Yiii" typeface="Microsoft Yi Baiti"/>
+              <a:font script="Tibt" typeface="Microsoft Himalaya"/>
+              <a:font script="Thaa" typeface="MV Boli"/>
+              <a:font script="Deva" typeface="Mangal"/>
+              <a:font script="Telu" typeface="Gautami"/>
+              <a:font script="Taml" typeface="Latha"/>
+              <a:font script="Syrc" typeface="Estrangelo Edessa"/>
+              <a:font script="Orya" typeface="Kalinga"/>
+              <a:font script="Mlym" typeface="Kartika"/>
+              <a:font script="Laoo" typeface="DokChampa"/>
+              <a:font script="Sinh" typeface="Iskoola Pota"/>
+              <a:font script="Mong" typeface="Mongolian Baiti"/>
+              <a:font script="Viet" typeface="Arial"/>
+              <a:font script="Uigh" typeface="Microsoft Uighur"/>
+              <a:font script="Geor" typeface="Sylfaen"/>
+            </a:minorFont>
+          </a:fontScheme>
+          <a:fmtScheme name="Kantoor">
+            <a:fillStyleLst>
+              <a:solidFill>
+                <a:schemeClr val="phClr"/>
+              </a:solidFill>
+              <a:gradFill rotWithShape="1">
+                <a:gsLst>
+                  <a:gs pos="0">
+                    <a:schemeClr val="phClr">
+                      <a:tint val="50000"/>
+                      <a:satMod val="300000"/>
+                    </a:schemeClr>
+                  </a:gs>
+                  <a:gs pos="35000">
+                    <a:schemeClr val="phClr">
+                      <a:tint val="37000"/>
+                      <a:satMod val="300000"/>
+                    </a:schemeClr>
+                  </a:gs>
+                  <a:gs pos="100000">
+                    <a:schemeClr val="phClr">
+                      <a:tint val="15000"/>
+                      <a:satMod val="350000"/>
+                    </a:schemeClr>
+                  </a:gs>
+                </a:gsLst>
+                <a:lin ang="16200000" scaled="1"/>
+              </a:gradFill>
+              <a:gradFill rotWithShape="1">
+                <a:gsLst>
+                  <a:gs pos="0">
+                    <a:schemeClr val="phClr">
+                      <a:shade val="51000"/>
+                      <a:satMod val="130000"/>
+                    </a:schemeClr>
+                  </a:gs>
+                  <a:gs pos="80000">
+                    <a:schemeClr val="phClr">
+                      <a:shade val="93000"/>
+                      <a:satMod val="130000"/>
+                    </a:schemeClr>
+                  </a:gs>
+                  <a:gs pos="100000">
+                    <a:schemeClr val="phClr">
+                      <a:shade val="94000"/>
+                      <a:satMod val="135000"/>
+                    </a:schemeClr>
+                  </a:gs>
+                </a:gsLst>
+                <a:lin ang="16200000" scaled="0"/>
+              </a:gradFill>
+            </a:fillStyleLst>
+            <a:lnStyleLst>
+              <a:ln w="9525" cap="flat" cmpd="sng" algn="ctr">
+                <a:solidFill>
+                  <a:schemeClr val="phClr">
+                    <a:shade val="95000"/>
+                    <a:satMod val="105000"/>
+                  </a:schemeClr>
+                </a:solidFill>
+                <a:prstDash val="solid"/>
+              </a:ln>
+              <a:ln w="25400" cap="flat" cmpd="sng" algn="ctr">
+                <a:solidFill>
+                  <a:schemeClr val="phClr"/>
+                </a:solidFill>
+                <a:prstDash val="solid"/>
+              </a:ln>
+              <a:ln w="38100" cap="flat" cmpd="sng" algn="ctr">
+                <a:solidFill>
+                  <a:schemeClr val="phClr"/>
+                </a:solidFill>
+                <a:prstDash val="solid"/>
+              </a:ln>
+            </a:lnStyleLst>
+            <a:effectStyleLst>
+              <a:effectStyle>
+                <a:effectLst>
+                  <a:outerShdw blurRad="40000" dist="20000" dir="5400000" rotWithShape="0">
+                    <a:srgbClr val="000000">
+                      <a:alpha val="38000"/>
+                    </a:srgbClr>
+                  </a:outerShdw>
+                </a:effectLst>
+              </a:effectStyle>
+              <a:effectStyle>
+                <a:effectLst>
+                  <a:outerShdw blurRad="40000" dist="23000" dir="5400000" rotWithShape="0">
+                    <a:srgbClr val="000000">
+                      <a:alpha val="35000"/>
+                    </a:srgbClr>
+                  </a:outerShdw>
+                </a:effectLst>
+              </a:effectStyle>
+              <a:effectStyle>
+                <a:effectLst>
+                  <a:outerShdw blurRad="40000" dist="23000" dir="5400000" rotWithShape="0">
+                    <a:srgbClr val="000000">
+                      <a:alpha val="35000"/>
+                    </a:srgbClr>
+                  </a:outerShdw>
+                </a:effectLst>
+                <a:scene3d>
+                  <a:camera prst="orthographicFront">
+                    <a:rot lat="0" lon="0" rev="0"/>
+                  </a:camera>
+                  <a:lightRig rig="threePt" dir="t">
+                    <a:rot lat="0" lon="0" rev="1200000"/>
+                  </a:lightRig>
+                </a:scene3d>
+                <a:sp3d>
+                  <a:bevelT w="63500" h="25400"/>
+                </a:sp3d>
+              </a:effectStyle>
+            </a:effectStyleLst>
+            <a:bgFillStyleLst>
+              <a:solidFill>
+                <a:schemeClr val="phClr"/>
+              </a:solidFill>
+              <a:gradFill rotWithShape="1">
+                <a:gsLst>
+                  <a:gs pos="0">
+                    <a:schemeClr val="phClr">
+                      <a:tint val="40000"/>
+                      <a:satMod val="350000"/>
+                    </a:schemeClr>
+                  </a:gs>
+                  <a:gs pos="40000">
+                    <a:schemeClr val="phClr">
+                      <a:tint val="45000"/>
+                      <a:shade val="99000"/>
+                      <a:satMod val="350000"/>
+                    </a:schemeClr>
+                  </a:gs>
+                  <a:gs pos="100000">
+                    <a:schemeClr val="phClr">
+                      <a:shade val="20000"/>
+                      <a:satMod val="255000"/>
+                    </a:schemeClr>
+                  </a:gs>
+                </a:gsLst>
+                <a:path path="circle">
+                  <a:fillToRect l="50000" t="-80000" r="50000" b="180000"/>
+                </a:path>
+              </a:gradFill>
+              <a:gradFill rotWithShape="1">
+                <a:gsLst>
+                  <a:gs pos="0">
+                    <a:schemeClr val="phClr">
+                      <a:tint val="80000"/>
+                      <a:satMod val="300000"/>
+                    </a:schemeClr>
+                  </a:gs>
+                  <a:gs pos="100000">
+                    <a:schemeClr val="phClr">
+                      <a:shade val="30000"/>
+                      <a:satMod val="200000"/>
+                    </a:schemeClr>
+                  </a:gs>
+                </a:gsLst>
+                <a:path path="circle">
+                  <a:fillToRect l="50000" t="50000" r="50000" b="50000"/>
+                </a:path>
+              </a:gradFill>
+            </a:bgFillStyleLst>
+          </a:fmtScheme>
+        </a:themeElements>
+        <a:objectDefaults/>
+        <a:extraClrSchemeLst/>
+      </a:theme>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/media/image2.png" pkg:contentType="image/png" pkg:compression="store">
+    <pkg:binaryData>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
+YeHAdgAAAABJRU5ErkJggg==</pkg:binaryData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/media/image1.png" pkg:contentType="image/png" pkg:compression="store">
+    <pkg:binaryData>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
+rkJggg==</pkg:binaryData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/settings.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml">
+    <pkg:xmlData>
+      <w:settings xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main">
+        <w:zoom w:percent="120"/>
+        <w:embedSystemFonts/>
+        <w:bordersDoNotSurroundHeader/>
+        <w:bordersDoNotSurroundFooter/>
+        <w:proofState w:spelling="clean" w:grammar="clean"/>
+        <w:doNotTrackMoves/>
+        <w:defaultTabStop w:val="720"/>
+        <w:hyphenationZone w:val="425"/>
+        <w:drawingGridHorizontalSpacing w:val="120"/>
+        <w:drawingGridVerticalSpacing w:val="120"/>
+        <w:displayHorizontalDrawingGridEvery w:val="0"/>
+        <w:displayVerticalDrawingGridEvery w:val="3"/>
+        <w:doNotUseMarginsForDrawingGridOrigin/>
+        <w:doNotShadeFormData/>
+        <w:characterSpacingControl w:val="compressPunctuation"/>
+        <w:doNotValidateAgainstSchema/>
+        <w:doNotDemarcateInvalidXml/>
+        <w:footnotePr>
+          <w:footnote w:id="-1"/>
+          <w:footnote w:id="0"/>
+        </w:footnotePr>
+        <w:endnotePr>
+          <w:endnote w:id="-1"/>
+          <w:endnote w:id="0"/>
+        </w:endnotePr>
+        <w:compat>
+          <w:spaceForUL/>
+          <w:balanceSingleByteDoubleByteWidth/>
+          <w:doNotLeaveBackslashAlone/>
+          <w:ulTrailSpace/>
+          <w:doNotExpandShiftReturn/>
+          <w:footnoteLayoutLikeWW8/>
+          <w:shapeLayoutLikeWW8/>
+          <w:alignTablesRowByRow/>
+          <w:forgetLastTabAlignment/>
+          <w:adjustLineHeightInTable/>
+          <w:doNotUseHTMLParagraphAutoSpacing/>
+          <w:layoutRawTableWidth/>
+          <w:layoutTableRowsApart/>
+          <w:useWord97LineBreakRules/>
+          <w:doNotBreakWrappedTables/>
+          <w:doNotSnapToGridInCell/>
+          <w:selectFldWithFirstOrLastChar/>
+          <w:doNotWrapTextWithPunct/>
+          <w:doNotUseEastAsianBreakRules/>
+          <w:useWord2002TableStyleRules/>
+          <w:growAutofit/>
+          <w:useFELayout/>
+          <w:useNormalStyleForList/>
+          <w:doNotUseIndentAsNumberingTabStop/>
+          <w:useAltKinsokuLineBreakRules/>
+          <w:allowSpaceOfSameStyleInTable/>
+          <w:doNotSuppressIndentation/>
+          <w:doNotAutofitConstrainedTables/>
+          <w:autofitToFirstFixedWidthCell/>
+          <w:underlineTabInNumList/>
+          <w:displayHangulFixedWidth/>
+          <w:splitPgBreakAndParaMark/>
+          <w:doNotVertAlignCellWithSp/>
+          <w:doNotBreakConstrainedForcedTable/>
+          <w:doNotVertAlignInTxbx/>
+          <w:useAnsiKerningPairs/>
+          <w:cachedColBalance/>
+        </w:compat>
+        <w:rsids>
+          <w:rsidRoot w:val="00A017BA"/>
+          <w:rsid w:val="0002361B"/>
+          <w:rsid w:val="000314CB"/>
+          <w:rsid w:val="0005763B"/>
+          <w:rsid w:val="00163A87"/>
+          <w:rsid w:val="001C5764"/>
+          <w:rsid w:val="001F3CE3"/>
+          <w:rsid w:val="0020139F"/>
+          <w:rsid w:val="00221F8C"/>
+          <w:rsid w:val="002277A2"/>
+          <w:rsid w:val="0023272A"/>
+          <w:rsid w:val="00261FCD"/>
+          <w:rsid w:val="002A0286"/>
+          <w:rsid w:val="00320E2D"/>
+          <w:rsid w:val="003C2B5D"/>
+          <w:rsid w:val="003D4715"/>
+          <w:rsid w:val="003E7706"/>
+          <w:rsid w:val="0043051A"/>
+          <w:rsid w:val="0044603A"/>
+          <w:rsid w:val="004613F4"/>
+          <w:rsid w:val="004D03C8"/>
+          <w:rsid w:val="004F2147"/>
+          <w:rsid w:val="004F4F33"/>
+          <w:rsid w:val="00544367"/>
+          <w:rsid w:val="005460A0"/>
+          <w:rsid w:val="00582933"/>
+          <w:rsid w:val="005C6ACD"/>
+          <w:rsid w:val="005F72CF"/>
+          <w:rsid w:val="00603504"/>
+          <w:rsid w:val="006352CB"/>
+          <w:rsid w:val="00695876"/>
+          <w:rsid w:val="006E00C2"/>
+          <w:rsid w:val="00732864"/>
+          <w:rsid w:val="007465CE"/>
+          <w:rsid w:val="00786712"/>
+          <w:rsid w:val="009642C8"/>
+          <w:rsid w:val="00975AC8"/>
+          <w:rsid w:val="009931FA"/>
+          <w:rsid w:val="00A017BA"/>
+          <w:rsid w:val="00A102AE"/>
+          <w:rsid w:val="00A354E0"/>
+          <w:rsid w:val="00A4389C"/>
+          <w:rsid w:val="00A77908"/>
+          <w:rsid w:val="00AA7D31"/>
+          <w:rsid w:val="00AA7E23"/>
+          <w:rsid w:val="00B4390B"/>
+          <w:rsid w:val="00BC6782"/>
+          <w:rsid w:val="00BD7F7C"/>
+          <w:rsid w:val="00BF6C39"/>
+          <w:rsid w:val="00C51753"/>
+          <w:rsid w:val="00C91701"/>
+          <w:rsid w:val="00CF7F49"/>
+          <w:rsid w:val="00D07A40"/>
+          <w:rsid w:val="00DB6484"/>
+          <w:rsid w:val="00E00432"/>
+          <w:rsid w:val="00E21868"/>
+          <w:rsid w:val="00E37E42"/>
+          <w:rsid w:val="00E60DF7"/>
+          <w:rsid w:val="00E81324"/>
+          <w:rsid w:val="00EB2DB1"/>
+          <w:rsid w:val="00EE5378"/>
+          <w:rsid w:val="00F2418B"/>
+          <w:rsid w:val="00F63B87"/>
+        </w:rsids>
+        <m:mathPr>
+          <m:mathFont m:val="Cambria Math"/>
+          <m:brkBin m:val="before"/>
+          <m:brkBinSub m:val="--"/>
+          <m:smallFrac m:val="off"/>
+          <m:dispDef/>
+          <m:lMargin m:val="0"/>
+          <m:rMargin m:val="0"/>
+          <m:defJc m:val="centerGroup"/>
+          <m:wrapIndent m:val="1440"/>
+          <m:intLim m:val="subSup"/>
+          <m:naryLim m:val="undOvr"/>
+        </m:mathPr>
+        <w:uiCompat97To2003/>
+        <w:themeFontLang w:val="nl-BE"/>
+        <w:clrSchemeMapping w:bg1="light1" w:t1="dark1" w:bg2="light2" w:t2="dark2" w:accent1="accent1" w:accent2="accent2" w:accent3="accent3" w:accent4="accent4" w:accent5="accent5" w:accent6="accent6" w:hyperlink="hyperlink" w:followedHyperlink="followedHyperlink"/>
+        <w:doNotIncludeSubdocsInStats/>
+        <w:doNotAutoCompressPictures/>
+        <w:shapeDefaults>
+          <o:shapedefaults v:ext="edit" spidmax="1027"/>
+          <o:shapelayout v:ext="edit">
+            <o:idmap v:ext="edit" data="1"/>
+          </o:shapelayout>
+        </w:shapeDefaults>
+        <w:decimalSymbol w:val=","/>
+        <w:listSeparator w:val=";"/>
+      </w:settings>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/webSettings.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.webSettings+xml">
+    <pkg:xmlData>
+      <w:webSettings xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+        <w:divs>
+          <w:div w:id="984354139">
+            <w:bodyDiv w:val="1"/>
+            <w:marLeft w:val="0"/>
+            <w:marRight w:val="0"/>
+            <w:marTop w:val="0"/>
+            <w:marBottom w:val="0"/>
+            <w:divBdr>
+              <w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+              <w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+              <w:bottom w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+              <w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+            </w:divBdr>
+          </w:div>
+          <w:div w:id="1156065330">
+            <w:bodyDiv w:val="1"/>
+            <w:marLeft w:val="0"/>
+            <w:marRight w:val="0"/>
+            <w:marTop w:val="0"/>
+            <w:marBottom w:val="0"/>
+            <w:divBdr>
+              <w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+              <w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+              <w:bottom w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+              <w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+            </w:divBdr>
+          </w:div>
+          <w:div w:id="1483231605">
+            <w:bodyDiv w:val="1"/>
+            <w:marLeft w:val="0"/>
+            <w:marRight w:val="0"/>
+            <w:marTop w:val="0"/>
+            <w:marBottom w:val="0"/>
+            <w:divBdr>
+              <w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+              <w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+              <w:bottom w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+              <w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+            </w:divBdr>
+          </w:div>
+        </w:divs>
+        <w:optimizeForBrowser/>
+      </w:webSettings>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/fontTable.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.fontTable+xml">
+    <pkg:xmlData>
+      <w:fonts xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+        <w:font w:name="Calibri">
+          <w:panose1 w:val="020F0502020204030204"/>
+          <w:charset w:val="00"/>
+          <w:family w:val="swiss"/>
+          <w:pitch w:val="variable"/>
+          <w:sig w:usb0="A00002EF" w:usb1="4000207B" w:usb2="00000000" w:usb3="00000000" w:csb0="0000009F" w:csb1="00000000"/>
+        </w:font>
+        <w:font w:name="PMingLiU">
+          <w:altName w:val="Arial Unicode MS"/>
+          <w:panose1 w:val="02010601000101010101"/>
+          <w:charset w:val="88"/>
+          <w:family w:val="auto"/>
+          <w:notTrueType/>
+          <w:pitch w:val="variable"/>
+          <w:sig w:usb0="00000000" w:usb1="08080000" w:usb2="00000010" w:usb3="00000000" w:csb0="00100000" w:csb1="00000000"/>
+        </w:font>
+        <w:font w:name="Mangal">
+          <w:panose1 w:val="00000400000000000000"/>
+          <w:charset w:val="00"/>
+          <w:family w:val="auto"/>
+          <w:pitch w:val="variable"/>
+          <w:sig w:usb0="00008003" w:usb1="00000000" w:usb2="00000000" w:usb3="00000000" w:csb0="00000001" w:csb1="00000000"/>
+        </w:font>
+        <w:font w:name="Arial">
+          <w:panose1 w:val="020B0604020202020204"/>
+          <w:charset w:val="00"/>
+          <w:family w:val="swiss"/>
+          <w:pitch w:val="variable"/>
+          <w:sig w:usb0="20002A87" w:usb1="80000000" w:usb2="00000008" w:usb3="00000000" w:csb0="000001FF" w:csb1="00000000"/>
+        </w:font>
+        <w:font w:name="Times New Roman">
+          <w:panose1 w:val="02020603050405020304"/>
+          <w:charset w:val="00"/>
+          <w:family w:val="roman"/>
+          <w:pitch w:val="variable"/>
+          <w:sig w:usb0="20002A87" w:usb1="80000000" w:usb2="00000008" w:usb3="00000000" w:csb0="000001FF" w:csb1="00000000"/>
+        </w:font>
+        <w:font w:name="Tahoma">
+          <w:panose1 w:val="020B0604030504040204"/>
+          <w:charset w:val="00"/>
+          <w:family w:val="swiss"/>
+          <w:pitch w:val="variable"/>
+          <w:sig w:usb0="61002A87" w:usb1="80000000" w:usb2="00000008" w:usb3="00000000" w:csb0="000101FF" w:csb1="00000000"/>
+        </w:font>
+        <w:font w:name="News Gothic Std">
+          <w:panose1 w:val="020B0506020203020204"/>
+          <w:charset w:val="00"/>
+          <w:family w:val="swiss"/>
+          <w:notTrueType/>
+          <w:pitch w:val="variable"/>
+          <w:sig w:usb0="800000AF" w:usb1="4000204A" w:usb2="00000000" w:usb3="00000000" w:csb0="00000001" w:csb1="00000000"/>
+        </w:font>
+        <w:font w:name="Cambria">
+          <w:panose1 w:val="02040503050406030204"/>
+          <w:charset w:val="00"/>
+          <w:family w:val="roman"/>
+          <w:pitch w:val="variable"/>
+          <w:sig w:usb0="A00002EF" w:usb1="4000004B" w:usb2="00000000" w:usb3="00000000" w:csb0="0000009F" w:csb1="00000000"/>
+        </w:font>
+      </w:fonts>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/docProps/core.xml" pkg:contentType="application/vnd.openxmlformats-package.core-properties+xml" pkg:padding="256">
+    <pkg:xmlData>
+      <cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <dc:title/>
+        <dc:subject/>
+        <dc:creator>Patronale Life S.A.</dc:creator>
+        <cp:keywords/>
+        <cp:lastModifiedBy>Mario Van Dyck</cp:lastModifiedBy>
+        <cp:revision>3</cp:revision>
+        <cp:lastPrinted>2010-12-01T16:19:00Z</cp:lastPrinted>
+        <dcterms:created xsi:type="dcterms:W3CDTF">2010-12-01T16:33:00Z</dcterms:created>
+        <dcterms:modified xsi:type="dcterms:W3CDTF">2010-12-01T16:37:00Z</dcterms:modified>
+      </cp:coreProperties>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/styles.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml">
+    <pkg:xmlData>
+      <w:styles xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+        <w:docDefaults>
+          <w:rPrDefault>
+            <w:rPr>
+              <w:rFonts w:ascii="Calibri" w:eastAsia="PMingLiU" w:hAnsi="Calibri" w:cs="Mangal"/>
+              <w:lang w:val="nl-BE" w:eastAsia="nl-BE" w:bidi="ar-SA"/>
+            </w:rPr>
+          </w:rPrDefault>
+          <w:pPrDefault/>
+        </w:docDefaults>
+        <w:latentStyles w:defLockedState="0" w:defUIPriority="99" w:defSemiHidden="1" w:defUnhideWhenUsed="1" w:defQFormat="0" w:count="267">
+          <w:lsdException w:name="Normal" w:semiHidden="0" w:uiPriority="0" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="heading 1" w:semiHidden="0" w:uiPriority="9" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="heading 2" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 3" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 4" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 5" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 6" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 7" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 8" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 9" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="toc 1" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 2" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 3" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 4" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 5" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 6" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 7" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 8" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 9" w:uiPriority="39"/>
+          <w:lsdException w:name="caption" w:uiPriority="35" w:qFormat="1"/>
+          <w:lsdException w:name="Title" w:semiHidden="0" w:uiPriority="10" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Default Paragraph Font" w:uiPriority="1"/>
+          <w:lsdException w:name="Subtitle" w:semiHidden="0" w:uiPriority="11" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Strong" w:semiHidden="0" w:uiPriority="22" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Emphasis" w:semiHidden="0" w:uiPriority="20" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Table Grid" w:semiHidden="0" w:uiPriority="59" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Placeholder Text" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="No Spacing" w:semiHidden="0" w:uiPriority="1" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Light Shading" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 2" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Shading Accent 1" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List Accent 1" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid Accent 1" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1 Accent 1" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2 Accent 1" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1 Accent 1" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Revision" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="List Paragraph" w:semiHidden="0" w:uiPriority="34" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Quote" w:semiHidden="0" w:uiPriority="29" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Intense Quote" w:semiHidden="0" w:uiPriority="30" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Medium List 2 Accent 1" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1 Accent 1" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2 Accent 1" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3 Accent 1" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List Accent 1" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading Accent 1" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List Accent 1" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid Accent 1" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Shading Accent 2" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List Accent 2" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid Accent 2" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1 Accent 2" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2 Accent 2" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1 Accent 2" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 2 Accent 2" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1 Accent 2" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2 Accent 2" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3 Accent 2" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List Accent 2" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading Accent 2" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List Accent 2" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid Accent 2" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Shading Accent 3" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List Accent 3" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid Accent 3" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1 Accent 3" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2 Accent 3" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1 Accent 3" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 2 Accent 3" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1 Accent 3" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2 Accent 3" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3 Accent 3" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List Accent 3" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading Accent 3" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List Accent 3" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid Accent 3" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Shading Accent 4" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List Accent 4" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid Accent 4" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1 Accent 4" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2 Accent 4" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1 Accent 4" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 2 Accent 4" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1 Accent 4" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2 Accent 4" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3 Accent 4" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List Accent 4" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading Accent 4" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List Accent 4" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid Accent 4" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Shading Accent 5" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List Accent 5" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid Accent 5" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1 Accent 5" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2 Accent 5" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1 Accent 5" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 2 Accent 5" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1 Accent 5" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2 Accent 5" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3 Accent 5" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List Accent 5" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading Accent 5" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List Accent 5" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid Accent 5" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Shading Accent 6" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List Accent 6" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid Accent 6" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1 Accent 6" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2 Accent 6" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1 Accent 6" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 2 Accent 6" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1 Accent 6" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2 Accent 6" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3 Accent 6" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List Accent 6" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading Accent 6" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List Accent 6" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid Accent 6" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Subtle Emphasis" w:semiHidden="0" w:uiPriority="19" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Intense Emphasis" w:semiHidden="0" w:uiPriority="21" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Subtle Reference" w:semiHidden="0" w:uiPriority="31" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Intense Reference" w:semiHidden="0" w:uiPriority="32" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Book Title" w:semiHidden="0" w:uiPriority="33" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Bibliography" w:uiPriority="37"/>
+          <w:lsdException w:name="TOC Heading" w:uiPriority="39" w:qFormat="1"/>
+        </w:latentStyles>
+        <w:style w:type="paragraph" w:default="1" w:styleId="Normal">
+          <w:name w:val="Normal"/>
+          <w:qFormat/>
+          <w:rsid w:val="004613F4"/>
+          <w:pPr>
+            <w:widowControl w:val="0"/>
+            <w:autoSpaceDE w:val="0"/>
+            <w:autoSpaceDN w:val="0"/>
+            <w:adjustRightInd w:val="0"/>
+          </w:pPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+            <w:lang w:val="fr-LU" w:eastAsia="zh-TW" w:bidi="ne-IN"/>
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:default="1" w:styleId="DefaultParagraphFont">
+          <w:name w:val="Default Paragraph Font"/>
+          <w:uiPriority w:val="1"/>
+          <w:semiHidden/>
+          <w:unhideWhenUsed/>
+        </w:style>
+        <w:style w:type="table" w:default="1" w:styleId="TableNormal">
+          <w:name w:val="Normal Table"/>
+          <w:uiPriority w:val="99"/>
+          <w:semiHidden/>
+          <w:unhideWhenUsed/>
+          <w:qFormat/>
+          <w:tblPr>
+            <w:tblInd w:w="0" w:type="dxa"/>
+            <w:tblCellMar>
+              <w:top w:w="0" w:type="dxa"/>
+              <w:left w:w="108" w:type="dxa"/>
+              <w:bottom w:w="0" w:type="dxa"/>
+              <w:right w:w="108" w:type="dxa"/>
+            </w:tblCellMar>
+          </w:tblPr>
+        </w:style>
+        <w:style w:type="numbering" w:default="1" w:styleId="NoList">
+          <w:name w:val="No List"/>
+          <w:uiPriority w:val="99"/>
+          <w:semiHidden/>
+          <w:unhideWhenUsed/>
+        </w:style>
+        <w:style w:type="table" w:styleId="TableGrid">
+          <w:name w:val="Table Grid"/>
+          <w:basedOn w:val="TableNormal"/>
+          <w:uiPriority w:val="59"/>
+          <w:rsid w:val="00A102AE"/>
+          <w:tblPr>
+            <w:tblInd w:w="0" w:type="dxa"/>
+            <w:tblBorders>
+              <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:bottom w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:insideH w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+              <w:insideV w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            </w:tblBorders>
+            <w:tblCellMar>
+              <w:top w:w="0" w:type="dxa"/>
+              <w:left w:w="108" w:type="dxa"/>
+              <w:bottom w:w="0" w:type="dxa"/>
+              <w:right w:w="108" w:type="dxa"/>
+            </w:tblCellMar>
+          </w:tblPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="Hyperlink">
+          <w:name w:val="Hyperlink"/>
+          <w:basedOn w:val="DefaultParagraphFont"/>
+          <w:uiPriority w:val="99"/>
+          <w:unhideWhenUsed/>
+          <w:rsid w:val="00A354E0"/>
+          <w:rPr>
+            <w:color w:val="0000FF"/>
+            <w:u w:val="single"/>
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="FollowedHyperlink">
+          <w:name w:val="FollowedHyperlink"/>
+          <w:basedOn w:val="DefaultParagraphFont"/>
+          <w:uiPriority w:val="99"/>
+          <w:semiHidden/>
+          <w:unhideWhenUsed/>
+          <w:rsid w:val="00A354E0"/>
+          <w:rPr>
+            <w:color w:val="800080"/>
+            <w:u w:val="single"/>
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Header">
+          <w:name w:val="header"/>
+          <w:basedOn w:val="Normal"/>
+          <w:link w:val="HeaderChar"/>
+          <w:uiPriority w:val="99"/>
+          <w:semiHidden/>
+          <w:unhideWhenUsed/>
+          <w:rsid w:val="003D4715"/>
+          <w:pPr>
+            <w:tabs>
+              <w:tab w:val="center" w:pos="4536"/>
+              <w:tab w:val="right" w:pos="9072"/>
+            </w:tabs>
+          </w:pPr>
+          <w:rPr>
+            <w:szCs w:val="18"/>
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:customStyle="1" w:styleId="HeaderChar">
+          <w:name w:val="Header Char"/>
+          <w:basedOn w:val="DefaultParagraphFont"/>
+          <w:link w:val="Header"/>
+          <w:uiPriority w:val="99"/>
+          <w:semiHidden/>
+          <w:rsid w:val="003D4715"/>
+          <w:rPr>
+            <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+            <w:szCs w:val="18"/>
+            <w:lang w:val="fr-LU" w:eastAsia="zh-TW" w:bidi="ne-IN"/>
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Footer">
+          <w:name w:val="footer"/>
+          <w:basedOn w:val="Normal"/>
+          <w:link w:val="FooterChar"/>
+          <w:uiPriority w:val="99"/>
+          <w:unhideWhenUsed/>
+          <w:rsid w:val="003D4715"/>
+          <w:pPr>
+            <w:tabs>
+              <w:tab w:val="center" w:pos="4536"/>
+              <w:tab w:val="right" w:pos="9072"/>
+            </w:tabs>
+          </w:pPr>
+          <w:rPr>
+            <w:szCs w:val="18"/>
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:customStyle="1" w:styleId="FooterChar">
+          <w:name w:val="Footer Char"/>
+          <w:basedOn w:val="DefaultParagraphFont"/>
+          <w:link w:val="Footer"/>
+          <w:uiPriority w:val="99"/>
+          <w:rsid w:val="003D4715"/>
+          <w:rPr>
+            <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+            <w:szCs w:val="18"/>
+            <w:lang w:val="fr-LU" w:eastAsia="zh-TW" w:bidi="ne-IN"/>
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="BalloonText">
+          <w:name w:val="Balloon Text"/>
+          <w:basedOn w:val="Normal"/>
+          <w:link w:val="BalloonTextChar"/>
+          <w:uiPriority w:val="99"/>
+          <w:semiHidden/>
+          <w:unhideWhenUsed/>
+          <w:rsid w:val="00F63B87"/>
+          <w:rPr>
+            <w:rFonts w:ascii="Tahoma" w:hAnsi="Tahoma" w:cs="Tahoma"/>
+            <w:sz w:val="16"/>
+            <w:szCs w:val="14"/>
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:customStyle="1" w:styleId="BalloonTextChar">
+          <w:name w:val="Balloon Text Char"/>
+          <w:basedOn w:val="DefaultParagraphFont"/>
+          <w:link w:val="BalloonText"/>
+          <w:uiPriority w:val="99"/>
+          <w:semiHidden/>
+          <w:rsid w:val="00F63B87"/>
+          <w:rPr>
+            <w:rFonts w:ascii="Tahoma" w:hAnsi="Tahoma" w:cs="Tahoma"/>
+            <w:sz w:val="16"/>
+            <w:szCs w:val="14"/>
+            <w:lang w:val="fr-LU" w:eastAsia="zh-TW" w:bidi="ne-IN"/>
+          </w:rPr>
+        </w:style>
+      </w:styles>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/docProps/app.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.extended-properties+xml" pkg:padding="256">
+    <pkg:xmlData>
+      <Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">
+        <Template>Normal.dotm</Template>
+        <TotalTime>4</TotalTime>
+        <Pages>1</Pages>
+        <Words>349</Words>
+        <Characters>1924</Characters>
+        <Application>Microsoft Office Word</Application>
+        <DocSecurity>0</DocSecurity>
+        <Lines>16</Lines>
+        <Paragraphs>4</Paragraphs>
+        <ScaleCrop>false</ScaleCrop>
+        <HeadingPairs>
+          <vt:vector size="6" baseType="variant">
+            <vt:variant>
+              <vt:lpstr>Title</vt:lpstr>
+            </vt:variant>
+            <vt:variant>
+              <vt:i4>1</vt:i4>
+            </vt:variant>
+            <vt:variant>
+              <vt:lpstr>Titel</vt:lpstr>
+            </vt:variant>
+            <vt:variant>
+              <vt:i4>1</vt:i4>
+            </vt:variant>
+            <vt:variant>
+              <vt:lpstr>Titre</vt:lpstr>
+            </vt:variant>
+            <vt:variant>
+              <vt:i4>1</vt:i4>
+            </vt:variant>
+          </vt:vector>
+        </HeadingPairs>
+        <TitlesOfParts>
+          <vt:vector size="3" baseType="lpstr">
+            <vt:lpstr/>
+            <vt:lpstr/>
+            <vt:lpstr/>
+          </vt:vector>
+        </TitlesOfParts>
+        <Company/>
+        <LinksUpToDate>false</LinksUpToDate>
+        <CharactersWithSpaces>2269</CharactersWithSpaces>
+        <SharedDoc>false</SharedDoc>
+        <HyperlinksChanged>false</HyperlinksChanged>
+        <AppVersion>12.0000</AppVersion>
+      </Properties>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/stylesWithEffects.xml" pkg:contentType="application/vnd.ms-word.stylesWithEffects+xml">
+    <pkg:xmlData>
+      <w:styles xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 wp14">
+        <w:docDefaults>
+          <w:rPrDefault>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+              <w:sz w:val="22"/>
+              <w:szCs w:val="22"/>
+              <w:lang w:val="en-US" w:eastAsia="en-US" w:bidi="ar-SA"/>
+            </w:rPr>
+          </w:rPrDefault>
+          <w:pPrDefault>
+            <w:pPr>
+              <w:spacing w:after="200" w:line="276" w:lineRule="auto"/>
+            </w:pPr>
+          </w:pPrDefault>
+        </w:docDefaults>
+        <w:latentStyles w:defLockedState="0" w:defUIPriority="99" w:defSemiHidden="1" w:defUnhideWhenUsed="1" w:defQFormat="0" w:count="267">
+          <w:lsdException w:name="Normal" w:semiHidden="0" w:uiPriority="0" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="heading 1" w:semiHidden="0" w:uiPriority="9" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="heading 2" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 3" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 4" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 5" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 6" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 7" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 8" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="heading 9" w:uiPriority="9" w:qFormat="1"/>
+          <w:lsdException w:name="toc 1" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 2" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 3" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 4" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 5" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 6" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 7" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 8" w:uiPriority="39"/>
+          <w:lsdException w:name="toc 9" w:uiPriority="39"/>
+          <w:lsdException w:name="caption" w:uiPriority="35" w:qFormat="1"/>
+          <w:lsdException w:name="Title" w:semiHidden="0" w:uiPriority="10" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Default Paragraph Font" w:uiPriority="1"/>
+          <w:lsdException w:name="Subtitle" w:semiHidden="0" w:uiPriority="11" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Strong" w:semiHidden="0" w:uiPriority="22" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Emphasis" w:semiHidden="0" w:uiPriority="20" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Table Grid" w:semiHidden="0" w:uiPriority="59" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Placeholder Text" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="No Spacing" w:semiHidden="0" w:uiPriority="1" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Light Shading" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 2" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Shading Accent 1" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List Accent 1" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid Accent 1" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1 Accent 1" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2 Accent 1" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1 Accent 1" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Revision" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="List Paragraph" w:semiHidden="0" w:uiPriority="34" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Quote" w:semiHidden="0" w:uiPriority="29" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Intense Quote" w:semiHidden="0" w:uiPriority="30" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Medium List 2 Accent 1" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1 Accent 1" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2 Accent 1" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3 Accent 1" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List Accent 1" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading Accent 1" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List Accent 1" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid Accent 1" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Shading Accent 2" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List Accent 2" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid Accent 2" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1 Accent 2" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2 Accent 2" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1 Accent 2" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 2 Accent 2" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1 Accent 2" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2 Accent 2" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3 Accent 2" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List Accent 2" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading Accent 2" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List Accent 2" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid Accent 2" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Shading Accent 3" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List Accent 3" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid Accent 3" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1 Accent 3" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2 Accent 3" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1 Accent 3" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 2 Accent 3" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1 Accent 3" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2 Accent 3" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3 Accent 3" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List Accent 3" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading Accent 3" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List Accent 3" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid Accent 3" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Shading Accent 4" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List Accent 4" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid Accent 4" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1 Accent 4" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2 Accent 4" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1 Accent 4" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 2 Accent 4" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1 Accent 4" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2 Accent 4" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3 Accent 4" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List Accent 4" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading Accent 4" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List Accent 4" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid Accent 4" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Shading Accent 5" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List Accent 5" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid Accent 5" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1 Accent 5" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2 Accent 5" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1 Accent 5" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 2 Accent 5" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1 Accent 5" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2 Accent 5" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3 Accent 5" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List Accent 5" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading Accent 5" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List Accent 5" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid Accent 5" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Shading Accent 6" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light List Accent 6" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Light Grid Accent 6" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 1 Accent 6" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Shading 2 Accent 6" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 1 Accent 6" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium List 2 Accent 6" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 1 Accent 6" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 2 Accent 6" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Medium Grid 3 Accent 6" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Dark List Accent 6" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Shading Accent 6" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful List Accent 6" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Colorful Grid Accent 6" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0"/>
+          <w:lsdException w:name="Subtle Emphasis" w:semiHidden="0" w:uiPriority="19" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Intense Emphasis" w:semiHidden="0" w:uiPriority="21" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Subtle Reference" w:semiHidden="0" w:uiPriority="31" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Intense Reference" w:semiHidden="0" w:uiPriority="32" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Book Title" w:semiHidden="0" w:uiPriority="33" w:unhideWhenUsed="0" w:qFormat="1"/>
+          <w:lsdException w:name="Bibliography" w:uiPriority="37"/>
+          <w:lsdException w:name="TOC Heading" w:uiPriority="39" w:qFormat="1"/>
+        </w:latentStyles>
+        <w:style w:type="paragraph" w:default="1" w:styleId="Standaard">
+          <w:name w:val="Normal"/>
+          <w:qFormat/>
+        </w:style>
+        <w:style w:type="character" w:default="1" w:styleId="Standaardalinea-lettertype">
+          <w:name w:val="Default Paragraph Font"/>
+          <w:uiPriority w:val="1"/>
+          <w:semiHidden/>
+          <w:unhideWhenUsed/>
+        </w:style>
+        <w:style w:type="table" w:default="1" w:styleId="Standaardtabel">
+          <w:name w:val="Normal Table"/>
+          <w:uiPriority w:val="99"/>
+          <w:semiHidden/>
+          <w:unhideWhenUsed/>
+          <w:tblPr>
+            <w:tblInd w:w="0" w:type="dxa"/>
+            <w:tblCellMar>
+              <w:top w:w="0" w:type="dxa"/>
+              <w:left w:w="108" w:type="dxa"/>
+              <w:bottom w:w="0" w:type="dxa"/>
+              <w:right w:w="108" w:type="dxa"/>
+            </w:tblCellMar>
+          </w:tblPr>
+        </w:style>
+        <w:style w:type="numbering" w:default="1" w:styleId="Geenlijst">
+          <w:name w:val="No List"/>
+          <w:uiPriority w:val="99"/>
+          <w:semiHidden/>
+          <w:unhideWhenUsed/>
+        </w:style>
+      </w:styles>
+    </pkg:xmlData>
+  </pkg:part>
+</pkg:package>

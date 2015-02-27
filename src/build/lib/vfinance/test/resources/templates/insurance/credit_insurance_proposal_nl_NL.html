@@ -1,0 +1,358 @@
+{% extends 'insurance/base_nl_NL.html' %}
+
+{% block pageheader_subtitle %}<div class="proposal-header" align="right">Offerte {{ proposal.code }} | offertedatum {{ today|format_date }}</div>{% endblock %}
+
+{% if not advisor %}
+    {% set advisor = 'Assurantieadviseur' %}
+{% endif %}
+
+{% block content %}
+    {{ pageheader(first=true) }}
+    <table>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td width="50%">&nbsp;</td>
+            <td>
+                {{subscriber__1__firstname}} {{subscriber__1__middle_name}} {{subscriber__1__lastname}}<br>
+                {{subscriber__1__street}}<br>
+                {{subscriber__1__zipcode}} - {{subscriber__1__city}}<br>
+                {{subscriber__1__country}}
+            </td>
+        </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>{{ today|date }}</td>
+        </tr>
+    </table>
+    <br>
+    <p>Onderwerp: Offerte voor een {{ proposal.agreement_package }}.</p>
+    <br>
+    <p>Geachte {{ subscriber__1__gender|salutation }} {{subscriber__1__firstname}} {{subscriber__1__middle_name}} {{subscriber__1__lastname}},</p>
+    <p align="justify">
+        Tot ons genoegen doen wij u hierbij een persoonlijke offerte voor de {{ proposal.agreement_package }} toekomen. We vertrouwen erop dat u met de informatie in deze offerte tot een goede en passende beslissing komt. U heeft in overleg met uw {{advisor}} geïnventariseerd wat uw wensen en behoeften zijn. De bijgaande offerte is hierop afgestemd. Deze offerte bestaat uit de volgende onderdelen:
+    </p>
+    <ol>
+        <li>Persoonlijke Offerte</li>
+        <li>Algemene informatie over de {{ proposal.agreement_package }}</li>
+    </ol>
+    <p align="justify">
+        Indien u de overlijdensrisicoverzekering wenst af te sluiten, dan kunt u dit eenvoudigweg online doen, samen met uw {{advisor}}. Om de verzekering af te sluiten, hebben we als Maatschappij enkele medische gegevens nodig. Na de aanvraag leest u op de website welke gegevens we nodig hebben en hoe u deze aan ons kunt overhandigen.<br>
+    </p>
+    <p>
+        Mocht u nog vragen hebben, dan kunt u contact opnemen met uw {{advisor}}:<br>
+        <br>
+
+        {% if broker %}
+            {# we're in VF now #}
+            {{broker.name}}<br>
+            {{broker.street}}<br>
+            {{broker.zipcode}} {{broker.city}}<br>
+            {% if broker.phone %}<br>Tel: {{broker.phone}}{% endif %}
+            {% if broker.email %}<br>Email: {{broker.email}}{% endif %}
+            {#  no field present in VF (Rechtspersoon) yet for website
+                {% if broker.website %}<br>Website: {{broker.website}}{% endif %}
+            #}
+        {% else %}
+            {# we're in Patr NL now #}
+            {{proposal.agent_name}}<br>
+            {{proposal.agent_straat}}<br>
+            {{proposal.agent_postcode}} {{proposal.agent_gemeente}}
+            {% if proposal.agent_telefoon %}<br>Tel: {{proposal.agent_telefoon}}{% endif %}
+            {% if proposal.agent_email %}<br>Email: {{proposal.agent_email}}{% endif %}
+            {% if proposal.agent_website %}<br>Website: {{proposal.agent_website}}{% endif %}
+        {% endif %}
+        <br><br><br><br><br><br>
+        Met vriendelijke groet,<br>
+        <br>
+        <br>
+        Patronale Life NV
+        <br>
+        <br>
+    </p>
+
+    {{ pageheader() }}
+    <p class="h2">1. Persoonlijk voorstel:</p>
+    <p align="justify">
+        Deze persoonlijke Offerte is geldig tot 30 dagen na de bovenvermelde offertedatum en 
+        onder voorbehoud van acceptatie door Patronale Life NV, hierna Maatschappij. 
+        De Overlijdensrisicoverzekering komt tot stand door aflevering van de Polis.
+    </p>
+    <br>
+    <table width="100%">
+        <tr>
+            <td width="30%"><p class="h3">Persoonlijke gegevens</p></td>
+            <td width="40%"><p class="h3">Verzekeringnemer{% if two_subscribers %} 1{% endif %}</p></td>
+            <td width="40%"><p class="h3">Verzekerde{% if two_insured_parties %} 1{% endif %}</p></td>
+        </tr>
+        <tr>
+            <td>Naam</td>
+            <td>{{ subscriber__1__firstname }} {{ subscriber__1__middle_name }} {{ subscriber__1__lastname }}</td>
+            <td>{{ insured_party__1__firstname }} {{ insured_party__1__middle_name }} {{ insured_party__1__lastname }}</td>
+        </tr>
+        <tr>
+            <td>Adres</td>
+            <td>{{ subscriber__1__street }}</td>
+            <td>{{ insured_party__1__street }}</td>
+        </tr>
+        <tr>
+            <td>Postcode en woonplaats</td>
+            <td>{{ subscriber__1__zipcode }} - {{ subscriber__1__city }}</td>
+            <td>{{ insured_party__1__zipcode }} - {{ insured_party__1__city }}</td>
+        </tr>
+        <tr>
+            <td>Geboortedatum</td>
+            <td>{{ subscriber__1__birthdate|date }}</td>
+            <td>{{ insured_party__1__birthdate|date }}</td>
+        </tr>
+        <tr>
+            <td>Geslacht</td>
+            <td>{{ subscriber__1__gender|translate }}</td>
+            <td>{{ insured_party__1__gender|translate }}</td>
+        </tr>
+        <tr>
+            <td>Roker</td>
+            <td>n.v.t.</td>
+            <td>{% if insured_party__1__smoker %}Ja{% else %}Nee{% endif %}</td>
+        </tr>
+        <tr><td colspan="3">&nbsp;</td></tr>
+    {% if two_insured_parties and two_subscribers %}    
+        <tr>
+            <td>&nbsp;</td>
+            <td>{% if two_subscribers %}<p class="h3">Verzekeringnemer 2</p>{% else %}&nbsp;{% endif %}</td>
+            <td>{% if two_insured_parties %}<p class="h3">Verzekerde 2</p>{% else %}&nbsp;{% endif %}</td>
+        </tr>
+        <tr>
+            <td>Naam</td>
+            <td>{% if two_subscribers %}{{ subscriber_first_name_2 }} {{ subscriber_last_name_2 }}{% else %}&nbsp;{% endif %}</td>
+            <td>{% if two_insured_parties %}{{ first_name_2 }} {{ last_name_2 }}{% else %}&nbsp;{% endif %}</td>
+        </tr>
+        <tr>
+            <td>Geboortedatum</td>
+            <td>{% if two_subscribers %}{{ subscriber_birthdate2|date }}{% else %}&nbsp;{% endif %}</td>
+            <td>{% if two_insured_parties %}{{ birthdate2|date }}{% else %}&nbsp;{% endif %}</td>
+        </tr>
+        <tr>
+            <td>Geslacht</td>
+            <td>{% if two_subscribers %}{{ _(subscriber_gender2) }}{% else %}&nbsp;{% endif %}</td>
+            <td>{% if two_insured_parties %}{{ _(gender_2) }}{% else %}&nbsp;{% endif %}</td>
+        </tr>
+        <tr>
+            <td>Roker</td>
+            <td>&nbsp;</td>
+            <td>{% if two_insured_parties %}{{ _(smoker_2) }}{% else %}&nbsp;{% endif %}</td>
+        </tr>
+        <tr><td colspan="3">&nbsp;</td></tr>
+    {% endif %}
+        <tr>
+            <td><p class="h3">Gegevens verzekering</p></td>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Naam product</td>
+            <td colspan="2">{{ proposal.agreement_package }}</td>
+        </tr>
+        <tr>
+            <td>Offertenummer</td>
+            <td colspan="2">{{ proposal.code }}</td>
+        </tr>
+        <tr>
+            <td>Ingangsdatum</td>
+            <td colspan="2">{{ proposal.agreement_from_date|date }}</td>
+        </tr>
+        <tr>
+            <td>Einddatum</td>
+            <td colspan="2">{{ proposal.thru_date|date }}</td>
+        </tr>
+        <tr>
+            <td>Looptijd premiebetaling</td>
+            <td colspan="2">{{ proposal.premium_payment_duration|months_to_years }} </td>
+        </tr>
+        <tr>
+            <td>Looptijd lening</td>
+            <td colspan="2">{{ proposal.loan_number_of_years }} jaar</td>
+        </tr>
+        <tr>
+            <td>Verzekerd kapitaal</td>
+            <td colspan="2">€ {{ proposal.loan_amount|currency }}</td>
+        </tr>
+        {% if proposal.loan_type_of_payments %}
+            <tr>
+                <td>Soort dekking</td>
+                <td colspan="2">{{ loan_type_of_payments(proposal.loan_type_of_payments) }}</td>
+            </tr>
+        {% endif %}
+        {% if proposal.loan_interest_rate %}
+            <tr>
+                <td>Intrest lening</td>
+                <td colspan="2">
+                    {{ proposal.loan_interest_rate|currency }} %
+                </td>
+            </tr>
+        {% endif %}
+        <tr>
+            <td>Uitkering</td>
+            <td colspan="2">
+                Uitkering bij het (eerste) overlijden van de Verzekerde(n) voor de einddatum.
+            </td>
+        </tr>
+
+        <tr><td colspan="3">&nbsp;</td></tr>
+        <tr>
+            <td><p class="h3">Premie en kosten:</p></td>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Premie</td>
+            {% if proposal.premium_amount %}
+                {# we're in Patr NL now #}
+                <td colspan="2">€ {{ proposal.premium_amount|currency }}</td>
+            {% else %}
+                {# we're in VF now #}
+                <td colspan="2">€ {{ insurance_premium|currency }}</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <td>Termijnbetaling</td>
+            <td colspan="2">{{ proposal.premium_period_type|translate }}, voor {{proposal.premium_payment_duration|months_to_years}}</td>
+        </tr>
+        <tr>
+            <td>Ingangsdatum premiebetaling</td>
+            <td colspan="2">{{ proposal.agreement_from_date|date }}</td>
+        </tr>
+    </table>
+    <p>De totale Premie over de gehele looptijd van de Verzekering bedraagt € {{ (insurance_number_of_payments * insurance_premium)|currency }}</p>
+    <p align="justify">
+        De kosten voor de provisie zijn verwerkt in de termijnpremie. 
+        De doorlopende provisie die uw {{advisor}} ontvangt voor het sluiten van deze Verzekering over de totale looptijd 
+        van deze Verzekering bedraagt € 0,00.<br>
+        De Premie voor deze Verzekering is verschuldigd zolang de Verzekerde(n) in leven is/zijn, 
+        maar uiterlijk tot de einddatum van de premiebetaling. 
+        Bij beëindiging van de Verzekering vervalt deze zonder waarde.
+    </p>
+
+    <div class="h3">Medische acceptatie:</div>
+    <div align="justify">
+        Deze offerte is gebaseerd op een normale gezondheid van de Verzekerde(n). Om over te gaan tot het afsluiten van een Polis dient, voor het beoordelen van de gezondheidstoestand door de Maatschappij, de gezondheidsverklaring ingevuld te worden door de Verzekerde(n). Ook een niet-rokersverklaring dient ingevuld te worden indien verzekerde aangeeft op de gezondheidsverklaring niet te roken. Uit de gezondheidsverklaring zal blijken of een eventuele premieverhoging verschuldigd is vanwege een mogelijk verhoogd medisch risico. Indien de Verzekerde(n) meerdere Verzekeringen heeft (hebben) afgesloten of aangevraagd, bestaat afhankelijk van het verzekerd bedrag de mogelijkheid dat er aanvullende medische waarborgen worden gevraagd. 
+    </div>
+    <br>
+
+    <div class="h3">Benodigde stukken:</div>
+    <div align="justify">
+        Uw {{advisor}} zal de Verzekering digitaal voor u aanvragen. Nadat de aanvraag geaccepteerd is, ontvangt u de Polis. Uiteraard dient de Maatschappij wel in het bezit te komen van de volgende originele stukken: 
+    </div>
+    <ul>
+        <li>een getekende gezondheidsverklaring (en niet-rokersverklaring, indien van toepassing);</li>
+        <li>een kopie van een geldig identiteitsbewijs.</li>
+        <li>getekende Sepa machtiging</li>
+        <li>getekende slotverklaringen</li>
+    </ul>
+
+    {{ pageheader() }}
+    <div class="h3">Algemene voorwaarden:</div>
+    <div align="justify">
+        Wanneer u akkoord gaat met de voorwaarden van deze Verzekering, gaat u ook akkoord met de toepassing van de Algemene Voorwaarden NLNC0010912ORV. Bij ontvangst van de Polis ontvangt u eveneens de Algemene Voorwaarden die erop van toepassing zijn. U kunt deze tevens downloaden van onze website, www.patronale-life.nl, of opvragen bij uw {{advisor}}.
+    </div>
+    <br>
+    <div class="h2">2. Algemene informatie over de risicoverzekering</div>
+    <br>
+    <div class="h3">De Maatschappij:</div>
+    <div align="justify">Patronale Life NV, Belliardstraat 3, 1040 Brussel, België, www.patronale-life.nl. Patronale Life NV is ingeschreven in het registeren de De Nederlandsche Bank.De Maatschappij werkt uitsluitend samen met professionele {{advisor}}s. Relevante informatie wordt dan ook verstrekt via uw {{advisor}}, waarvan u de gegevens in de begeleidende brief bij deze offerte kunt terugvinden.</div>
+    <br>
+    <div class="h3">Verzekeringnemer:</div>
+    <div align="justify">De Verzekeringnemer bepaalt de vormgeving van de Verzekering. Zo geeft de Verzekeringnemer aan wie de Verzekerde(n) is/zijn, wie de uitkering krijgt en hoeveel de Maatschappij dient uit te keren bij overlijden van de Verzekerde(n). Indien er twee Verzekeringnemers zijn, slaat de term ‘Verzekeringnemer’, naargelang het zinsverband, gezamenlijk op beide Verzekeringnemers of afzonderlijk op elke Verzekeringnemer. In deze Offerte wordt ervan uitgegaan dat u de Verzekeringnemer zal zijn.</div>
+    <br>
+    <div class="h3">Verzekerde:</div>
+    <div align="justify">De Verzekerde is degene op wiens leven de Verzekering wordt afgesloten. De Verzekerde dient woonachtig te zijn in Nederland. Indien er twee Verzekerden zijn, slaat de term ‘Verzekerde’, naargelang het zinsverband, gezamenlijk op beide Verzekerden of afzonderlijk op elke Verzekerde.</div>
+    <br>
+    <div class="h3">Overlijdensrisicoverzekering:</div>
+    <div align="justify">De Verzekeringnemer onderschrijft de Overlijdensrisicoverzekering bij de Maatschappij. De Overlijdensrisicoverzekering is een overeenkomst tussen de Maatschappij en de Verzekeringnemer. Zodra de Maatschappij de Verzekering heeft geaccepteerd, verzendt ze de Polis en de Algemene Voorwaarden aan de {{advisor}} van de Verzekeringnemers. Lees alles aandachtig door en controleer of de gegevens op de Polis correct zijn. Mocht u nog verdere vragen hebben, kunt u contact opnemen met uw {{advisor}}, die een kopie krijgt van de Polis. U vindt de gegevens op de begeleidende brief bij deze Offerte. Verandert er iets in de persoonlijke situatie van de Verzekerde of verzekeringnemer, dan dient u dit mee te delen aan uw {{advisor}}, die u vakkundig van dienst zal zijn.</div>
+    <div align="justify">Tijdens de looptijd van de Verzekering kunt u informatie van de Maatschappij ontvangen. De Maatschappij houdt zich aan alle regels uit de Wet Bescherming Persoonsgegevens en aan alle andere privacyregelingen. Hoe de Maatschappij zich hoort te gedragen staat in de “Gedragscode verwerking Persoonsgegevens Financiële Instellingen”. De tekst van de gedragscode kunt u vinden op www.verzekeraars.nl.</p>
+    <div align="justify">De Verzekering geeft recht op een uitkering wanneer de door u aangegeven persoon, ‘de Verzekerde’, overlijdt binnen de verzekeringsduur van de Polis. De verzekerde dient woonachtig te zijn in Nederland. Bij overlijden van de Verzekerde zal het verzekerde kapitaal uitgekeerd worden aan de door u opgegeven Begunstigden. Daarna vervalt de Verzekering. Bij deze Verzekering kiest u ook de gewenste hoogte van de uitkering, het zogenaamde ‘verzekerd kapitaal’. De te betalen Premie is afhankelijk van de door u gemaakte keuzes.</div>
+    <br>
+    <div class="h3">Premie:</div>
+    <div align="justify">Bij de berekening gaat de Maatschappij uit van de gegevens die werden opgenomen in de Offerte. Als u de Verzekering aanvraagt met gewijzigde uitgangspunten, dan wijzigt de Premie.</div>
+    <br>
+    <div class="h3">Premiebetaler:</div>
+    <div align="justify">De Premiebetaler is de persoon die de Premie voor de Verzekering betaalt. Dat kan de Verzekeringnemer zijn, maar ook iemand anders. In dat geval dient dit uitdrukkelijk vermeld te worden.</div>
+    
+    {{ pageheader() }}
+    <div class="h3">{{advisor}}:</div>
+    <div align="justify">De {{advisor}} adviseert u bij het afsluiten van de Verzekering. U heeft zelf de keuze welke {{advisor}} het beste bij u past. Uw {{advisor}} moet u zo goed mogelijk adviseren over de Verzekering. Dat kan hij alleen als hij weet wat uw wensen zijn en weet wat het doel is van deze Verzekering.</div>
+    <br>
+    <div class="h3">Premiebetaling:</div>
+    <div align="justify">U dient de Premie vooraf te voldoen. De Premie kan alleen worden voldaan door middel van automatische incasso. U kunt bij het aangaan van de Verzekering aangeven in welke premietermijnen u wenst te betalen. U dient in ieder geval minstens de minimale Premie te betalen die voor deze Verzekering geldt.</div>
+    <table width="100%">
+        <tr>
+            <th align="left">Termijn</th>
+            <th align="left">Minimale premie</th>
+            <th align="left">Termijnopslag (+ een vaste vergoeding van € 1 per jaar)</th>
+        </tr>
+        <tr>
+            <td>per maand</td>
+            <td>€ 3,00</td>
+            <td>4%</td>
+        </tr>
+        <tr>
+            <td>per kwartaal</td>
+            <td>€ 10,00</td>
+            <td>3%</td>
+        </tr>
+        <tr>
+            <td>per half jaar</td>
+            <td>€ 25,00</td>
+            <td>2%</td>
+        </tr>
+        <tr>
+            <td>per jaar</td>
+            <td>€ 25,00</td>
+            <td>0%</td>
+        </tr>
+    </table>         
+    <br>
+    <div class="h3">Kosten Maatschappij:</div>
+    <div align="justify">De kosten die de verzekeraar maakt voor deze Verzekering zijn verrekend in de overeengekomen termijnpremie.</div>
+    <br>
+    <div class="h3">Premie aanpassing:</div>
+    <div align="justify">Verlaging van de Premie tijdens de looptijd van de Verzekering is mogelijk. Indien u in de toekomst minder Premie wenst te betalen, kan de Maatschappij  u een opgave toesturen van het bijhorende verlaagd verzekerde bedrag. Voor dit verzekeringsproduct geldt echter wel een minimale Premie. Indien er sprake is van een verpanding, dient de hypotheekverstrekker akkoord te gaan met de premieverlaging.
+Verhoging van de Premie tijdens de looptijd van de Verzekering is mogelijk. Indien u in de toekomst een hoger verzekerd bedrag wenst, kan de Maatschappij u een opgave toesturen van de bijbehorende verhoogde Premie. Bij een verhoging van het verzekerd bedrag dient u opnieuw medische waarborgen voor te leggen voor het beoordelen van de gezondheidstoestand.
+Als u de Verzekering voortijdig beëindigt of de betaling definitief stopzet vervalt de Verzekering zonder waarde. Wanneer de Verzekerde op de einddatum van de verzekeringsduur in leven is, dan vervalt de Verzekering eveneens zonder uitkering.</div>
+    <div align="justify">Verhoging van de Premie tijdens de looptijd van de Verzekering is mogelijk. Indien u in de toekomst een hoger verzekerd bedrag wenst, kan de Maatschappij u een opgave toesturen van de bijhorende verhoogde Premie. Bij een eventuele verhoging van het verzekerd bedrag neemt het overlijdensrisico toe. U dient dan eventueel medische waarborgen voor te leggen voor het beoordelen van de toename van het risico. Aan de hand van de toename van het risico wordt bepaald of, en onder welke voorwaarden, de verhoging van de Premie kan worden meeverzekerd.</div>
+    <div align="justify">Als u de Verzekering voortijdig beëindigt of de betaling definitief stopzet vervalt de Verzekering zonder waarde. Wanneer de Verzekerde op de einddatum van de verzekeringsduur in leven is, dan vervalt de Verzekering eveneens zonder uitkering.</div>
+    <br>
+    <div class="h3">Fiscaal:</div>
+    <div align="justify">Een Overlijdensrisicoverzekering wordt door de Belastingdienst gezien als een kapitaalverzekering. Als hoofdregel geldt dat de waarde van uw Verzekering voor de inkomstenbelasting moet worden meegeteld bij de berekening van de rendementsgrondslag voor box 3. De waarde van een kapitaalverzekering die uitsluitend uitkeert bij overlijden is vrijgesteld van vermogensheffing als:</div>
+    <ul>
+        <li>de totale waarde niet meer bedraagt dan € 6.859,00 per persoon of;</li>
+        <li>de totale waarde van alle verzekerde overlijdenskapitalen niet meer bedragen dan <br>€ 6.859,00 per persoon.</li>
+    </ul>
+    <div align="justify">De rendementsgrondslag bestaat uit de waarde van de voor Box 3 relevante bezittingen verminderd met de voor box 3 relevante schulden. Als de rendementsgrondslag meer bedraagt dan de algemene vrijstelling, bent u over het meerdere 1,2% inkomstenbelasting verschuldigd. Meer informatie met betrekking tot de fiscale aspecten kunt u ook vinden op de website van de Belastingdienst (www.belastingdienst.nl).</div>
+    
+    {{ pageheader() }}
+    <div class="h3">Niet-rokers clausule:</div>
+    <div align="justify">Indien de Verzekerde op het Aanvraagformulier aangeeft dat hij niet-roker is, dan dient hij de niet-rokersverklaring in te vullen. De niet-rokersverklaring is onderdeel van de gezondheidsverklaring. Indien de Verzekerde niet rookt, dient deze te verklaren dat hij of zij niet rookt, geen andere nicotine houdende middelen gebruikt en ook in de 24 maanden direct voorafgaand aan het sluiten van de Verzekering niet heeft gerookt en geen andere nicotine houdende middelen heeft gebruikt. De gezondheidsverklaring is onlosmakelijk verbonden met de Offerte en de verzekeringsaanvraag. 
+Indien de Verzekerde of de Mede-verzekerde gedurende de looptijd is gaan roken, dan dient de Verzekeringnemer, dan wel de (mede-)Verzekerde dit onmiddellijk schriftelijk te melden aan de Maatschappij. De Verzekering wordt vanaf de eerstvolgende premievervaldag voortgezet zonder “niet-rokerskorting”. Gedurende de looptijd van de Verzekering kan de Maatschappij  de (mede-)Verzekerde verzoeken om te verklaren dat de (mede-)Verzekerde niet met roken is begonnen. De Maatschappij  behoudt zich het recht voor om gedurende de looptijd van de Verzekering een test te laten verrichten bij de (mede-)verzekerde op de aanwezigheid van afbraakproducten van nicotine.
+Indien blijkt dat bij aanvang of gedurende de looptijd van de Verzekering de (mede-)Verzekerde een foutieve verklaring heeft afgelegd, of niet tijdig wordt gemeld dat de (mede-)Verzekerde is gaan roken, dan zal de uitkering bij mogelijk overlijden van de (mede)verzekerde met 50% worden gekort.</div>
+    <br>
+    <div class="h3">Voorlopige Dekking:</div>
+    <div align="justify">Zodra de Maatschappij in het bezit is van een getekende aanvraag treedt de voorlopige dekking in werking. Dit is van belang indien u bijkomende medische waarborgen dient voor te leggen. Op deze manier bent u verzekerd in geval van overlijden door ongeval voordat de formele acceptatie door de Maatschappij is afgerond. De voorwaarden voor de voorlopige dekking vindt u terug op www.patronale-life.nl.</div>
+    <br>
+    <div class="h3">Bedenktijd:</div>
+    <div align="justify">
+        Indien de Verzekeringnemer een Overlijdensrisicoverzekering sluit bij de Maatschappij, bestaat de mogelijkheid om de Polis binnen 30 dagen na afgifte op te zeggen. U kunt alleen van deze mogelijkheid gebruik maken als de Verzekering niet verpand is. Is de Verzekering wel verpand dan moet de pandhouder toestemming geven.
+    </div>    
+    <br>
+    <div class="h3">Klachten:</div>
+    <div align="justify">
+        Voor klachten over de Verzekering kunt u zich wenden tot uw {{advisor}}. 
+        Deze zoekt samen met u en de Maatschappij naar een oplossing. 
+        Mocht deze oplossing voor u onvoldoende zijn dan kunt u een klacht indienen bij de directie van 
+        Patronale Life NV, Belliardstraat 3, 1040 Brussel, België. 
+        Mocht de klacht niet naar uw zin worden opgelost, dan heeft u de mogelijkheid om binnen drie maanden uw klacht voor te leggen bij: 
+        Stichting Klachteninstituut Financiële Dienstverlening, Postbus 93257, 2509 AG DEN HAAG, Telefoon: 0900-3552248, E-Mail: 
+        <a href="mailto:info@kifid.nl">info@kifid.nl</a>, Website: <a href="http://www.kifid.nl">www.kifid.nl</a>
+    </div>
+{% endblock %}

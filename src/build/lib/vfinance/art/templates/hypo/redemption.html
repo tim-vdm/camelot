@@ -1,0 +1,107 @@
+{% extends 'hypo/vfinance_hypo_base.html' %}
+{% import "macros/html.html" as macros with context %}
+
+{% block content %}
+{{ macros.hypo_header(_('Dossier')|capitalize,
+                      redemption.datum|date,
+                      full_number,
+                      recipient=recipient) }}
+
+<h3>{{ _('Info')|capitalize }}</h3>
+<table width="100%" cellspacing="0">
+    {{ macros.tr( '%s'|format(redemption.goedgekeurde_rente)|percentage,
+                  label=_('Goedgekeurde rente') + ' (%)', 
+                  class='odd') }}
+    {{ macros.tr( '%s'|format(redemption.goedgekeurde_looptijd),
+                  label=_('Goedgekeurde looptijd')|capitalize + ' (' + _('maanden') + ')', 
+                  class='even') }}
+    {{ macros.tr( '%s'|format(redemption.goedgekeurd_type_aflossing|replace('_', ' ')|translate(lang=redemption.dossier.taal)),
+                  label=_('Type aflossing'), 
+                  class='odd') }}
+    {{ macros.tr( '%s'|format(redemption.goedgekeurd_terugbetaling_interval),
+                  label=_('Terugbetaling'), 
+                  class='even') }}
+</table>
+
+<h3>{{ _('interest')|capitalize }}</h3>
+
+<table width="100%" cellspacing="0">
+    {{ macros.tr( '%s'|format(redemption.euribor|percentage),
+                  label=_('Euribor (%)'), 
+                  class='odd') }}
+</table>
+
+<h3>{{ _('Te betalen')|capitalize }}</h3>
+<table width="100%" cellspacing="0">
+    {{ macros.tr( '%s'|format(redemption.datum_laatst_betaalde_vervaldag|date),
+                  label=_('Datum laatst betaalde vervaldag'), 
+                  class='odd') }}
+    {{ macros.tr( '%s'|format(redemption.datum_stopzetting|date),
+                  label=_('Datum stopzetting rekening'), 
+                  class='even') }}
+    {{ macros.tr( '€ %s'|format(redemption.openstaand_kapitaal|currency),
+                  label=_('Openstaand Kapitaal'), 
+                  class='odd') }}
+    {{ macros.tr( '€ %s'|format(redemption.wederbeleggingsvergoeding|currency),
+                  label=_('Wederbeleggingsvergoeding'), 
+                  class='even') }}
+    {{ macros.tr( '€ %s'|format(redemption.nalatigheidsintresten_a or 0.0|currency),
+                  label='%s a'|format(_('Nalatigheidsintresten')), 
+                  class='odd') }}
+    {{ macros.tr( '€ %s'|format(redemption.nalatigheidsintresten_b or 0.0|currency),
+                  label='%s b'|format(_('Nalatigheidsintresten')), 
+                  class='even') }}
+    {{ macros.tr( '€ %s'|format(redemption.onbetaalde_rente or 0.0|currency),
+                  label=_('Onbetaalde rente'), 
+                  class='odd') }}
+    {{ macros.tr( '€ %s'|format(redemption.rappelkosten|currency),
+                  label=_('Rappelkosten'), 
+                  class='even') }}
+    {{ macros.tr( '€ %s'|format(redemption.gerechtskosten|currency),
+                  label=_('Gerechtskosten'), 
+                  class='odd') }}
+    {{ macros.tr( '€ %s'|format(redemption.schadevergoeding_uitwinning|currency),
+                  label=_('Schadevergoeding uitwinning'), 
+                  class='even') }}
+    {{ macros.tr( '€ %s'|format(redemption.openstaande_betalingen|currency),
+                  label=_('Openstaande betalingen'), 
+                  class='odd') }}
+    {{ macros.tr( '€ %s'|format(redemption.te_betalen|currency),
+                  label=_('Te betalen'), 
+                  class='even') }}
+</table>
+<h3>{{ _('Dagrente')|capitalize }}</h3>
+<table width="100%" cellspacing="0">
+    {{ macros.tr( '%s'|format(redemption.dagrente_percentage|percentage),
+                  label=_('Dagrente') + ' (%)', 
+                  class='odd') }}
+    {{ macros.tr( '€ %s'|format(redemption.dagrente_bedrag|currency),
+                  label=_('Dagrente') + ' (' + _('Bedrag per dag') + ')', 
+                  class='even') }}
+    {{ macros.tr( '%s'|format(redemption.datum_terugbetaling|date),
+                  label=_('Datum van terugbetaling'), 
+                  class='odd') }}
+    {{ macros.tr( '%s'|format(redemption.aantal_dagen),
+                  label=_('Aantal dagen'), 
+                  class='even') }}
+    {{ macros.tr( '€ %s'|format(redemption.dagrente_correctie or 0.0|currency),
+                  label=_('Correctie bedrag dagrente'), 
+                  class='odd') }}    
+    {{ macros.tr( '€ %s'|format(redemption.dagrente|currency),
+                  label=_('Dagrente') +' ('+ _('Eindbedrag') +')', 
+                  class='even') }}
+</table>
+<h3>{{ _('Openstaande betalingen')|capitalize }}</h3>
+<table width="100%" cellspacing="0">
+    {{ macros.tr( '€ %s'|format(redemption.openstaande_betalingen_na_afsluiten_dossier|currency),
+                  label=_('Na afsluiten dossier'), 
+                  class='odd') }}
+</table>
+<h3>{{ _('Totaal')|capitalize }}</h3>
+<table width="100%" cellspacing="0">
+    {{ macros.tr( '€ %s'|format(redemption.totaal|currency),
+                  label=_('Te betalen'), 
+                  class='odd') }}
+</table>
+
+{% endblock %}

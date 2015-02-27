@@ -1,0 +1,1542 @@
+{% extends 'base/certificate_nl_BE.xml' %}
+{# 
+
+doc_version
+
+    Document source code identifier
+    Please increment last number with every commit (or better per production server update) 
+    
+    
+#}
+{% block template_type %}PC.SSV.nl_BE{% endblock %}
+{% set document_type = _('personal certificate')|capitalize %}
+
+{% block costs %}{% endblock %}
+{% block investments %}{% endblock %}
+{% block insured_parties_additional %}
+<w:tr w:rsidR="00FB42B5" w:rsidRPr="00FB42B5" w:rsidTr="00FB42B5">
+  <w:trPr>
+    <w:cantSplit/>
+  </w:trPr>
+  <w:tc>
+    <w:tcPr>
+      <w:tcW w:w="2127" w:type="dxa"/>
+      <w:tcBorders>
+        <w:top w:val="nil"/>
+      </w:tcBorders>
+      <w:shd w:val="clear" w:color="auto" w:fill="F3F3F3"/>
+    </w:tcPr>
+    <w:p w:rsidR="00FB42B5" w:rsidRPr="00FB42B5" w:rsidRDefault="00FB42B5" w:rsidP="00FB42B5">
+      <w:pPr>
+        <w:pStyle w:val="pasName10"/>
+        <w:keepNext/>
+        <w:rPr>
+          <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+          <w:lang w:val="nl-BE"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r w:rsidRPr="00FB42B5">
+        <w:rPr>
+          <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+          <w:lang w:val="nl-BE"/>
+        </w:rPr>
+        <w:t>{{_('smoker')|capitalize}}:</w:t>
+      </w:r>
+    </w:p>
+  </w:tc>
+  <w:tc>
+    <w:tcPr>
+      <w:tcW w:w="4040" w:type="dxa"/>
+      <w:tcBorders>
+        <w:top w:val="nil"/>
+      </w:tcBorders>
+      <w:vAlign w:val="center"/>
+    </w:tcPr>
+    <w:p w:rsidR="00FB42B5" w:rsidRPr="00FB42B5" w:rsidRDefault="00FB42B5" w:rsidP="00FB42B5">
+      <w:pPr>
+        <w:pStyle w:val="pasValue10"/>
+        <w:keepNext/>
+        <w:rPr>
+          <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+          <w:lang w:val="nl-BE"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r w:rsidRPr="00FB42B5">
+        <w:rPr>
+          <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+          <w:lang w:val="nl-BE"/>
+        </w:rPr>
+        <w:t>{% if insured_parties.0.rookgedrag %}Ja{% else %}Nee{% endif %}</w:t>
+      </w:r>
+    </w:p>
+  </w:tc>
+  <w:tc>
+    <w:tcPr>
+      <w:tcW w:w="4040" w:type="dxa"/>
+      <w:gridSpan w:val="2"/>
+      <w:tcBorders>
+        <w:top w:val="nil"/>
+      </w:tcBorders>
+      <w:vAlign w:val="center"/>
+    </w:tcPr>
+    <w:p w:rsidR="00FB42B5" w:rsidRPr="00FB42B5" w:rsidRDefault="00FB42B5" w:rsidP="00FB42B5">
+      <w:pPr>
+        <w:pStyle w:val="pasValue10"/>
+        <w:keepNext/>
+        <w:rPr>
+          <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+          <w:lang w:val="nl-BE"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r w:rsidRPr="00FB42B5">
+        <w:rPr>
+          <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+          <w:lang w:val="nl-BE"/>
+        </w:rPr>
+        <w:t>{% if insured_parties.1 %}{% if insured_parties.1.rookgedrag %}Ja{% else %}Nee{% endif %}{% endif %}</w:t>
+      </w:r>
+    </w:p>
+  </w:tc>
+</w:tr>
+{% endblock %}
+{% block premiums %}
+  <w:tbl>
+    <w:tblPr>
+      <w:tblW w:w="0" w:type="auto"/>
+      <w:tblInd w:w="108" w:type="dxa"/>
+      <w:tblLayout w:type="fixed"/>
+      <w:tblLook w:val="0000" w:firstRow="0" w:lastRow="0" w:firstColumn="0" w:lastColumn="0" w:noHBand="0" w:noVBand="0"/>
+    </w:tblPr>
+    <w:tblGrid>
+      <w:gridCol w:w="2551"/>
+      <w:gridCol w:w="2551"/>
+      <w:gridCol w:w="2551"/>
+      <w:gridCol w:w="2551"/>
+    </w:tblGrid>   
+    <w:tr w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidTr="00015788">
+      <w:trPr>
+        <w:cantSplit/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="4"/>
+          <w:tcBorders>
+            <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+            <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+          </w:tcBorders>
+          <w:shd w:val="clear" w:color="auto" w:fill="33436F"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasParagraphHeading1"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>{{title_counter.next()}}.</w:t>
+          </w:r>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:tab/>
+            <w:t>Premies</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+    <w:tr w:rsidR="00DC5D3D" w:rsidRPr="00CA28A8" w:rsidTr="00DC5D3D">
+      <w:trPr>
+        <w:cantSplit/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="4"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00DC5D3D" w:rsidRPr="00CA28A8" w:rsidRDefault="00DC5D3D" w:rsidP="00DC5D3D">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+        </w:p>
+      </w:tc>
+    </w:tr>
+    <w:tr w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidTr="00015788">
+      <w:trPr>
+        <w:cantSplit/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="4"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00273D87">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+            </w:rPr>
+          </w:pPr>
+          <w:proofErr w:type="spellStart"/>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:b/>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+            </w:rPr>
+            <w:t>Formule</w:t>
+          </w:r>
+          <w:proofErr w:type="spellEnd"/>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:b/>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+            </w:rPr>
+            <w:t xml:space="preserve">: </w:t>
+          </w:r>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:b/>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+            </w:rPr>
+            <w:t>{{ _(package_name) }} {% if insured_parties.1 %}Duo{% endif %}</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+    {%- for premium_data in premiums_data -%}
+    {%- if premiums_data|length > 1 -%}
+    <w:tr w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidTr="00015788">
+      <w:trPr>
+        <w:cantSplit/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="4"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p>
+          <w:pPr>
+            <w:pStyle w:val="pasValue51"/>
+            <w:keepNext/>
+            <w:tabs>
+              <w:tab w:val="left" w:pos="1060"/>
+            </w:tabs>
+            <w:jc w:val="left"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:shd w:val="clear" w:color="auto" w:fill="DBE5F1" w:themeFill="accent1" w:themeFillTint="33"/>  
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+              <w:b/>
+            </w:rPr>
+            <w:t xml:space="preserve">   {{ _(premium_data.product_name) }} - {{_('reference')}} : {{premium_data.premium_schedule.account_suffix}} / {{premium_data.premium_schedule.rank}}</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+    {%- endif %}
+    <w:tr w:rsidR="00DC5D3D" w:rsidRPr="00CA28A8" w:rsidTr="00DC5D3D">
+      <w:trPr>
+        <w:cantSplit/>
+        <w:trHeight w:val="284"/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="3"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00DC5D3D" w:rsidRPr="00CA28A8" w:rsidRDefault="00DC5D3D" w:rsidP="00DC5D3D">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>Premie dekking hoofdwaarborg</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00DC5D3D" w:rsidRPr="00CA28A8" w:rsidRDefault="00DC5D3D" w:rsidP="00DC5D3D">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="right"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>{{((premium_data.movements.sales.amount * -1) - premium_data.movements.taxes.amount)|currency}} EUR</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+{% if false %}{# TODO not defined yet #}
+    <w:tr w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidTr="00DC5D3D">
+      <w:trPr>
+        <w:cantSplit/>
+        <w:trHeight w:val="284"/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="3"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00DC5D3D">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>Premie dekking bijkomende waarborg</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="right"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>0,00 EUR</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+{% endif %}
+    <w:tr w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidTr="00702DBF">
+      <w:trPr>
+        <w:cantSplit/>
+        <w:trHeight w:val="284"/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="2"/>
+          <w:tcBorders>
+            <w:bottom w:val="single" w:sz="12" w:space="0" w:color="17365D" w:themeColor="text2" w:themeShade="BF"/>
+          </w:tcBorders>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>Taks</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcBorders>
+            <w:bottom w:val="single" w:sz="12" w:space="0" w:color="17365D" w:themeColor="text2" w:themeShade="BF"/>
+          </w:tcBorders>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcBorders>
+            <w:bottom w:val="single" w:sz="12" w:space="0" w:color="17365D" w:themeColor="text2" w:themeShade="BF"/>
+          </w:tcBorders>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="right"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>{{premium_data.movements.taxes.amount|currency}} EUR</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+    <w:tr w:rsidR="00015788" w:rsidRPr="00DC5D3D" w:rsidTr="00702DBF">
+      <w:trPr>
+        <w:cantSplit/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="2"/>
+          <w:tcBorders>
+            <w:top w:val="single" w:sz="12" w:space="0" w:color="17365D" w:themeColor="text2" w:themeShade="BF"/>
+          </w:tcBorders>
+          <w:shd w:val="clear" w:color="auto" w:fill="C6D9F1" w:themeFill="text2" w:themeFillTint="33"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00DC5D3D" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:b/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00DC5D3D">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:b/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>Te betalen premie</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcBorders>
+            <w:top w:val="single" w:sz="12" w:space="0" w:color="17365D" w:themeColor="text2" w:themeShade="BF"/>
+          </w:tcBorders>
+          <w:shd w:val="clear" w:color="auto" w:fill="C6D9F1" w:themeFill="text2" w:themeFillTint="33"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00DC5D3D" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:b/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcBorders>
+            <w:top w:val="single" w:sz="12" w:space="0" w:color="17365D" w:themeColor="text2" w:themeShade="BF"/>
+          </w:tcBorders>
+          <w:shd w:val="clear" w:color="auto" w:fill="C6D9F1" w:themeFill="text2" w:themeFillTint="33"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00DC5D3D" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="right"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:b/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00DC5D3D">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:b/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>{{ (premium_data.movements.sales.amount * -1)|currency }} EUR</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+    <w:tr w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidTr="00015788">
+      <w:trPr>
+        <w:cantSplit/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="3"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+        </w:p>
+      </w:tc>
+    </w:tr>
+    {% for coverage in premium_data.coverages -%}
+    <w:tr w:rsidR="00DC5D3D" w:rsidRPr="00DC5D3D" w:rsidTr="00DC5D3D">
+      <w:trPr>
+        <w:cantSplit/>
+        <w:trHeight w:val="284"/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00DC5D3D" w:rsidRPr="00CA28A8" w:rsidRDefault="00DC5D3D" w:rsidP="00DC5D3D">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>Verzekerd kapitaal bij aanvang:</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="3"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00DC5D3D" w:rsidRPr="00CA28A8" w:rsidRDefault="00DC5D3D" w:rsidP="00A07747">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>{{coverage.insured_capitals.0.insured_capital|currency}} EUR (zie bijlage: Overzicht verzekerd kapitaal overlijden)</w:t>
+          </w:r>
+          <w:r>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t xml:space="preserve"> </w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+    <w:tr w:rsidR="00702DBF" w:rsidRPr="009256EB" w:rsidTr="00702DBF">
+      <w:trPr>
+        <w:cantSplit/>
+        <w:trHeight w:val="284"/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00702DBF" w:rsidRPr="00CA28A8" w:rsidRDefault="00702DBF" w:rsidP="00702DBF">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>Reële periodieke intrestvoet:</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="3"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00702DBF" w:rsidRPr="00CA28A8" w:rsidRDefault="00702DBF" w:rsidP="00702DBF">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>{{coverage.loan.periodic_interest|percentage}}% {{_(coverage.loan.payment_interval)}} ({{coverage.loan.interest_rate|currency}}% per jaar)</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+    {%- endfor %}
+    <w:tr w:rsidR="00702DBF" w:rsidRPr="00CA28A8" w:rsidTr="00702DBF">
+      <w:trPr>
+        <w:cantSplit/>
+        <w:trHeight w:val="284"/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00702DBF" w:rsidRPr="00CA28A8" w:rsidRDefault="00702DBF" w:rsidP="00702DBF">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>Betalingsperiodiciteit:</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="3"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00702DBF" w:rsidRPr="00CA28A8" w:rsidRDefault="00702DBF" w:rsidP="00702DBF">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>{{_(premium_data.premium_schedule.period_type)}}</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+    <w:tr w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidTr="00DC5D3D">
+      <w:trPr>
+        <w:cantSplit/>
+        <w:trHeight w:val="284"/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00702DBF" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>Aantal premiebetalingen</w:t>
+          </w:r>
+          <w:r w:rsidR="00015788">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>:</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="3"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00702DBF">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>{{ premium_data.number_of_payments }}</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+    <w:tr w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidTr="00DC5D3D">
+      <w:trPr>
+        <w:cantSplit/>
+        <w:trHeight w:val="284"/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>Datum eerste betaling:</w:t>
+          </w:r>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t xml:space="preserve"> </w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="3"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>{{premium_data.premium_schedule.valid_from_date|date}}</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+    <w:tr w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidTr="00DC5D3D">
+      <w:trPr>
+        <w:cantSplit/>
+        <w:trHeight w:val="284"/>
+      </w:trPr>
+      <w:tc>
+        <w:tcPr>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:jc w:val="both"/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>Datum laatste betaling:</w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:gridSpan w:val="3"/>
+          <w:vAlign w:val="center"/>
+        </w:tcPr>
+        <w:p w:rsidR="00015788" w:rsidRPr="00CA28A8" w:rsidRDefault="00015788" w:rsidP="00015788">
+          <w:pPr>
+            <w:pStyle w:val="pasValue10"/>
+            <w:keepNext/>
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="00CA28A8">
+            <w:rPr>
+              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+              <w:lang w:val="nl-BE"/>
+            </w:rPr>
+            <w:t>
+              {%- if premium_data.premium_schedule.period_type == 'single' %}
+                {{ premium_data.premium_schedule.valid_from_date|date }}
+              {%- else -%}
+                {{ premium_data.premium_schedule.payment_thru_date|date }}
+              {%- endif -%}
+            </w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+    {%- endfor %}
+  </w:tbl>
+  <w:p>
+    <w:br/><w:br/>
+  </w:p> 
+  {% block premiums_additional %}{% endblock %}
+{% endblock %}
+
+{% block special_clauses %}
+          <w:tbl>
+            <w:tblPr>
+              <w:tblW w:w="0" w:type="auto"/>
+              <w:tblInd w:w="108" w:type="dxa"/>
+              <w:tblLayout w:type="fixed"/>
+              <w:tblLook w:val="0000" w:firstRow="0" w:lastRow="0" w:firstColumn="0" w:lastColumn="0" w:noHBand="0" w:noVBand="0"/>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="1458"/>
+              <w:gridCol w:w="1458"/>
+              <w:gridCol w:w="1458"/>
+			  <w:gridCol w:w="1458"/>
+			  <w:gridCol w:w="1458"/>
+			  <w:gridCol w:w="1458"/>
+			  <w:gridCol w:w="1458"/>
+            </w:tblGrid>
+			<w:tr w:rsidR="00235441" w:rsidRPr="00FB42B5" w:rsidTr="00233825">
+              <w:trPr>
+                <w:cantSplit/>
+              </w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="10206" w:type="dxa"/>
+                  <w:gridSpan w:val="7"/>
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+                    <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+                    <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+                  </w:tcBorders>
+                  <w:shd w:val="clear" w:color="auto" w:fill="33436F"/>
+                </w:tcPr>
+                <w:p w:rsidR="00235441" w:rsidRPr="00FB42B5" w:rsidRDefault="00B32C2B" w:rsidP="001E7EF0">
+                  <w:pPr>
+                    <w:pStyle w:val="pasParagraphHeading1"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:lang w:val="nl-BE"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:lang w:val="nl-BE"/>
+                    </w:rPr>
+                    <w:t>{{title_counter.next()}}.</w:t>
+                  </w:r>
+                  <w:r w:rsidR="00235441" w:rsidRPr="00FB42B5">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:lang w:val="nl-BE"/>
+                    </w:rPr>
+                    <w:tab/>
+                  </w:r>
+                  <w:r w:rsidR="001E7EF0" w:rsidRPr="00FB42B5">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:lang w:val="nl-BE"/>
+                    </w:rPr>
+                    <w:t>{{_('special clauses')}}</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="001E7EF0" w:rsidRPr="00FB42B5" w:rsidTr="006354C3">
+              <w:trPr>
+                <w:cantSplit/>
+                <w:trHeight w:hRule="exact" w:val="170"/>
+              </w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="10206" w:type="dxa"/>
+                  <w:gridSpan w:val="7"/>
+                </w:tcPr>
+                <w:p w:rsidR="001E7EF0" w:rsidRPr="00FB42B5" w:rsidRDefault="001E7EF0" w:rsidP="00A432FA">
+                  <w:pPr>
+                    <w:pStyle w:val="pasValue51"/>
+                    <w:keepNext/>
+                    <w:tabs>
+                      <w:tab w:val="left" w:pos="1060"/>
+                    </w:tabs>
+                    <w:jc w:val="left"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:lang w:val="nl-BE"/>
+                    </w:rPr>
+                  </w:pPr>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="001E7EF0" w:rsidRPr="002A30CF" w:rsidTr="00006633">
+              <w:trPr>
+                <w:cantSplit/>
+              </w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="10206" w:type="dxa"/>
+                  <w:gridSpan w:val="7"/>
+                </w:tcPr>
+                <w:p w:rsidR="00484808" w:rsidRPr="00484808" w:rsidRDefault="001E7EF0" w:rsidP="00F24A0D">
+                  <w:pPr>
+                    <w:pStyle w:val="pasValue51"/>
+                    <w:keepNext/>
+                    <w:tabs>
+                      <w:tab w:val="left" w:pos="1060"/>
+                    </w:tabs>
+                    <w:jc w:val="left"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:lang w:val="nl-BE"/>
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r w:rsidR="00A05BB0" w:rsidRPr="00A05BB0">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:lang w:val="nl-BE"/>
+                    </w:rPr>
+                    <w:t>Niet-Fiscale individuele levensverzekering.<w:br/>{% if special_agreed_items %}{% for agreed_item in special_agreed_items %}{% for line in agreed_item %}{{line}}<w:br/>{% endfor %}{% endfor %}{% endif %}</w:t>
+                  </w:r>
+                  <w:r w:rsidRPr="00FB42B5">
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:lang w:val="nl-BE"/>
+                    </w:rPr>
+                    <w:t xml:space="preserve"> </w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="001E7EF0" w:rsidRPr="002A30CF" w:rsidTr="00A05BB0">
+              <w:trPr>
+                <w:cantSplit/>
+                <w:trHeight w:hRule="exact" w:val="170"/>
+              </w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="10206" w:type="dxa"/>
+                  <w:gridSpan w:val="7"/>
+                </w:tcPr>
+                <w:p w:rsidR="001E7EF0" w:rsidRPr="00FB42B5" w:rsidRDefault="001E7EF0" w:rsidP="00A432FA">
+                  <w:pPr>
+                    <w:pStyle w:val="pasValue51"/>
+                    <w:keepNext/>
+                    <w:tabs>
+                      <w:tab w:val="left" w:pos="1060"/>
+                    </w:tabs>
+                    <w:jc w:val="left"/>
+                    <w:rPr>
+                      <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+                      <w:lang w:val="nl-BE"/>
+                    </w:rPr>
+                  </w:pPr>
+                </w:p>
+              </w:tc>
+            </w:tr>
+          </w:tbl>
+{% endblock %}
+{% block additional_pages %}
+  {% for premium_data in premiums_data %}{% for coverage in premium_data.coverages -%}
+  {% if coverage.loan.credit_institution %}
+	<w:p>
+	  <w:br w:type="page"/>
+	</w:p>
+	  <w:tbl>
+	    <w:tblPr>
+	      <w:tblW w:w="0" w:type="auto"/>
+	      <w:tblInd w:w="108" w:type="dxa"/>
+	      <w:tblLayout w:type="fixed"/>
+	      <w:tblLook w:val="0000"/>
+	    </w:tblPr>
+	    <w:tblGrid>
+	      <w:gridCol w:w="10207"/>
+	    </w:tblGrid>
+	    <w:tr w:rsidR="00702DBF" w:rsidRPr="009256EB" w:rsidTr="00702DBF">
+	      <w:trPr>
+	        <w:cantSplit/>
+	        <w:trHeight w:hRule="exact" w:val="397"/>
+	      </w:trPr>
+	      <w:tc>
+	        <w:tcPr>
+	          <w:tcW w:w="10207" w:type="dxa"/>
+	          <w:tcBorders>
+	            <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+	            <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+	            <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+	          </w:tcBorders>
+	          <w:shd w:val="clear" w:color="auto" w:fill="33436F"/>
+	        </w:tcPr>
+	        <w:p w:rsidR="00702DBF" w:rsidRPr="00CA28A8" w:rsidRDefault="00702DBF" w:rsidP="00B47578">
+	          <w:pPr>
+	            <w:pStyle w:val="pasParagraphHeading1"/>
+	            <w:ind w:left="0" w:firstLine="0"/>
+	            <w:jc w:val="center"/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	          <w:r>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t xml:space="preserve">Bijvoegsel Afstand van rechten </w:t>
+	          </w:r>
+	          <w:r w:rsidR="00B47578">
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t xml:space="preserve">en aanduiding van </w:t>
+	          </w:r>
+	          <w:r w:rsidR="00F261A5">
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t>begunstigde</w:t>
+	          </w:r>
+	        </w:p>
+	      </w:tc>
+	    </w:tr>
+	    <w:tr w:rsidR="00702DBF" w:rsidRPr="009256EB" w:rsidTr="00702DBF">
+	      <w:trPr>
+	        <w:cantSplit/>
+	        <w:trHeight w:hRule="exact" w:val="170"/>
+	      </w:trPr>
+	      <w:tc>
+	        <w:tcPr>
+	          <w:tcW w:w="10207" w:type="dxa"/>
+	        </w:tcPr>
+	        <w:p w:rsidR="00702DBF" w:rsidRPr="00CA28A8" w:rsidRDefault="00702DBF" w:rsidP="00702DBF">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	        </w:p>
+	      </w:tc>
+	    </w:tr>
+	    <w:tr w:rsidR="0055267B" w:rsidRPr="009256EB" w:rsidTr="0055267B">
+	      <w:trPr>
+	        <w:cantSplit/>
+	      </w:trPr>
+	      <w:tc>
+	        <w:tcPr>
+	          <w:tcW w:w="10207" w:type="dxa"/>
+	        </w:tcPr>
+	        <w:p w:rsidR="0055267B" w:rsidRDefault="0055267B" w:rsidP="0055267B">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	          <w:r>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t>De Algemene Voorwaarden en het Persoonlijk Certificaat zijn van toepassing op het huidige bijvoegsel behoudens hiernavolgende andersluidende bepalingen.</w:t>
+	          </w:r>
+	        </w:p>
+	        <w:p w:rsidR="0055267B" w:rsidRPr="00CA28A8" w:rsidRDefault="0055267B" w:rsidP="0055267B">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	        </w:p>
+	      </w:tc>
+	    </w:tr>
+	    <w:tr w:rsidR="0055267B" w:rsidRPr="009256EB" w:rsidTr="0055267B">
+	      <w:trPr>
+	        <w:cantSplit/>
+	        <w:trHeight w:hRule="exact" w:val="340"/>
+	      </w:trPr>
+	      <w:tc>
+	        <w:tcPr>
+	          <w:tcW w:w="10207" w:type="dxa"/>
+	          <w:tcBorders>
+	            <w:bottom w:val="single" w:sz="12" w:space="0" w:color="17365D" w:themeColor="text2" w:themeShade="BF"/>
+	          </w:tcBorders>
+	        </w:tcPr>
+	        <w:p w:rsidR="0055267B" w:rsidRPr="0055267B" w:rsidRDefault="0055267B" w:rsidP="0055267B">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:b/>
+	              <w:color w:val="17365D" w:themeColor="text2" w:themeShade="BF"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	          <w:r w:rsidRPr="0055267B">
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:b/>
+	              <w:color w:val="17365D" w:themeColor="text2" w:themeShade="BF"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t>Afstand van het recht tot afkoop</w:t>
+	          </w:r>
+	        </w:p>
+	      </w:tc>
+	    </w:tr>
+	    <w:tr w:rsidR="0055267B" w:rsidRPr="009256EB" w:rsidTr="0055267B">
+	      <w:trPr>
+	        <w:cantSplit/>
+	      </w:trPr>
+	      <w:tc>
+	        <w:tcPr>
+	          <w:tcW w:w="10207" w:type="dxa"/>
+	        </w:tcPr>
+	        <w:p w:rsidR="0055267B" w:rsidRDefault="0055267B" w:rsidP="0055267B">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	          <w:r>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t xml:space="preserve">Het recht tot afkoop van de hoofdverzekering en de eventuele aanvullende verzekering wordt in geval van leven van de verzekerde afgestaan aan </w:t>
+	          </w:r>
+	          <w:r w:rsidR="00AF0227" w:rsidRPr="00AF0227">
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t>{{coverage.loan.credit_institution.name}} {{coverage.loan.credit_institution.address_one_line}}</w:t>
+	          </w:r>
+	          <w:r>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t xml:space="preserve"> en dit ten belope van de hoofdsom en de interesten die de verzekeringsnemer haar verschuldigd is, krachtens het krediet ter waarborg waarvoor dit contract onderschreven werd.</w:t>
+	          </w:r>
+	        </w:p>
+	        <w:p w:rsidR="0055267B" w:rsidRPr="00CA28A8" w:rsidRDefault="0055267B" w:rsidP="0055267B">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	        </w:p>
+	      </w:tc>
+	    </w:tr>
+	    <w:tr w:rsidR="00F261A5" w:rsidRPr="009256EB" w:rsidTr="00F261A5">
+	      <w:trPr>
+	        <w:cantSplit/>
+	        <w:trHeight w:hRule="exact" w:val="340"/>
+	      </w:trPr>
+	      <w:tc>
+	        <w:tcPr>
+	          <w:tcW w:w="10207" w:type="dxa"/>
+	          <w:tcBorders>
+	            <w:bottom w:val="single" w:sz="12" w:space="0" w:color="17365D" w:themeColor="text2" w:themeShade="BF"/>
+	          </w:tcBorders>
+	        </w:tcPr>
+	        <w:p w:rsidR="00F261A5" w:rsidRPr="0055267B" w:rsidRDefault="00F261A5" w:rsidP="00F261A5">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:b/>
+	              <w:color w:val="17365D" w:themeColor="text2" w:themeShade="BF"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	          <w:r>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:b/>
+	              <w:color w:val="17365D" w:themeColor="text2" w:themeShade="BF"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t>Aanduiding van de begunstigde en aanvaarding</w:t>
+	          </w:r>
+	        </w:p>
+	      </w:tc>
+	    </w:tr>
+	    <w:tr w:rsidR="00F261A5" w:rsidRPr="009256EB" w:rsidTr="00F261A5">
+	      <w:trPr>
+	        <w:cantSplit/>
+	      </w:trPr>
+	      <w:tc>
+	        <w:tcPr>
+	          <w:tcW w:w="10207" w:type="dxa"/>
+	        </w:tcPr>
+	        <w:p w:rsidR="00F261A5" w:rsidRPr="00F261A5" w:rsidRDefault="00F261A5" w:rsidP="00F261A5">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	          <w:r>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t xml:space="preserve">In tegenstelling met de bepalingen in de rubriek ‘begunstigden’ van het persoonlijk certificaat en conform het doel van dit verzekeringscontract, verklaart de verzekeringsnemer </w:t>
+	          </w:r>
+	          <w:r w:rsidR="00AF0227" w:rsidRPr="006C1215">
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t>{{coverage.loan.credit_institution.name}}, {{coverage.loan.credit_institution.address_one_line}}</w:t>
+	          </w:r>
+	          <w:r w:rsidR="00AF0227" w:rsidRPr="0055267B">
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t xml:space="preserve"> aan te duiden als begunstigde, die deze aanvaardt, en dit ten belope van de hoofdsom en de interesten die de verzekeringsnemer haar verschuldigd is,</w:t>
+	          </w:r>
+	          <w:r>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t> krachtens het krediet ter waarborg waarvoor dit contract onderschreven werd. Dit bijvoegsel van afstand van rechten en aanduiding van begunstigde neemt aanvang op de aanvangsdatum van het hypothecair krediet waarvoor deze verzekering werd onderschreven.</w:t>
+	          </w:r>
+	        </w:p>
+	        <w:p w:rsidR="00F261A5" w:rsidRPr="00CA28A8" w:rsidRDefault="00F261A5" w:rsidP="00F261A5">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	        </w:p>
+	      </w:tc>
+	    </w:tr>
+	    <w:tr w:rsidR="00375D73" w:rsidRPr="0055267B" w:rsidTr="00375D73">
+	      <w:trPr>
+	        <w:cantSplit/>
+	        <w:trHeight w:hRule="exact" w:val="340"/>
+	      </w:trPr>
+	      <w:tc>
+	        <w:tcPr>
+	          <w:tcW w:w="10207" w:type="dxa"/>
+	          <w:tcBorders>
+	            <w:bottom w:val="single" w:sz="12" w:space="0" w:color="17365D" w:themeColor="text2" w:themeShade="BF"/>
+	          </w:tcBorders>
+	        </w:tcPr>
+	        <w:p w:rsidR="00375D73" w:rsidRPr="0055267B" w:rsidRDefault="00375D73" w:rsidP="00375D73">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:b/>
+	              <w:color w:val="17365D" w:themeColor="text2" w:themeShade="BF"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	          <w:r>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:b/>
+	              <w:color w:val="17365D" w:themeColor="text2" w:themeShade="BF"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t>Hypothecair krediet</w:t>
+	          </w:r>
+	        </w:p>
+	      </w:tc>
+	    </w:tr>
+	    <w:tr w:rsidR="00375D73" w:rsidRPr="00015788" w:rsidTr="00375D73">
+	      <w:trPr>
+	        <w:cantSplit/>
+	      </w:trPr>
+	      <w:tc>
+	        <w:tcPr>
+	          <w:tcW w:w="10207" w:type="dxa"/>
+	        </w:tcPr>
+	        <w:p w:rsidR="00375D73" w:rsidRDefault="00375D73" w:rsidP="00375D73">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	          <w:r>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t>Indien het een hypothecair krediet betreft, wordt dit contract gehecht aan de kredietaanvraag. De verzekeringsnemer bevestigt dat hij dit contract heeft aangegaan bij de aanvaardende begunstigde, met de bedoeling om, in geval van overlijden van de verzekerde gedurende de dekkingsperiode van dit contract, de terugbetaling van alle verschuldigde sommen aan de kredietmaatschappij uit hoofde van het hypothecair krediet te dekken. Dit bijvoegsel maakt integraal deel uit van het verzekeringscontract.</w:t>
+	          </w:r>
+	        </w:p>
+	        <w:p w:rsidR="00375D73" w:rsidRPr="00CA28A8" w:rsidRDefault="00375D73" w:rsidP="00375D73">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	        </w:p>
+	      </w:tc>
+	    </w:tr>
+	    <w:tr w:rsidR="00375D73" w:rsidRPr="0055267B" w:rsidTr="00375D73">
+	      <w:trPr>
+	        <w:cantSplit/>
+	        <w:trHeight w:hRule="exact" w:val="340"/>
+	      </w:trPr>
+	      <w:tc>
+	        <w:tcPr>
+	          <w:tcW w:w="10207" w:type="dxa"/>
+	          <w:tcBorders>
+	            <w:bottom w:val="single" w:sz="12" w:space="0" w:color="17365D" w:themeColor="text2" w:themeShade="BF"/>
+	          </w:tcBorders>
+	        </w:tcPr>
+	        <w:p w:rsidR="00375D73" w:rsidRPr="0055267B" w:rsidRDefault="00375D73" w:rsidP="00375D73">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:b/>
+	              <w:color w:val="17365D" w:themeColor="text2" w:themeShade="BF"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	          <w:r>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:b/>
+	              <w:color w:val="17365D" w:themeColor="text2" w:themeShade="BF"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t>Voordelen van de hoofdverzekering</w:t>
+	          </w:r>
+	        </w:p>
+	      </w:tc>
+	    </w:tr>
+	    <w:tr w:rsidR="00231848" w:rsidRPr="009256EB" w:rsidTr="00A72887">
+	      <w:trPr>
+	        <w:cantSplit/>
+	      </w:trPr>
+	      <w:tc>
+	        <w:tcPr>
+	          <w:tcW w:w="10207" w:type="dxa"/>
+	        </w:tcPr>
+	        <w:p w:rsidR="00231848" w:rsidRDefault="00231848" w:rsidP="00A72887">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	          <w:r>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	            <w:t>In geval van afkoop van het verzekeringscontract door de aanvaardende begunstigde, of bij overlijden van de verzekerde, zullen de daar uit voortvloeiende voordelen in eerste rang worden aangewend tot de volledige of gedeeltelijke terugbetaling van het saldo van het krediet dat de verzekeringsnemer heeft aangegaan.</w:t>
+	          </w:r>
+	        </w:p>
+	        <w:p w:rsidR="00231848" w:rsidRPr="00CA28A8" w:rsidRDefault="00231848" w:rsidP="00A72887">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	        </w:p>
+	      </w:tc>
+	    </w:tr>
+	    <w:tr w:rsidR="00231848" w:rsidRPr="009256EB" w:rsidTr="00A72887">
+	      <w:trPr>
+	        <w:cantSplit/>
+	      </w:trPr>
+	      <w:tc>
+	        <w:tcPr>
+	          <w:tcW w:w="10207" w:type="dxa"/>
+	        </w:tcPr>
+	        <w:p w:rsidR="00231848" w:rsidRPr="00375D73" w:rsidRDefault="00231848" w:rsidP="00273D87">
+	          <w:pPr>
+	            <w:pStyle w:val="pasDefault"/>
+	            <w:keepNext/>
+	            <w:rPr>
+	              <w:rFonts w:ascii="News Gothic Std" w:hAnsi="News Gothic Std"/>
+	              <w:lang w:val="nl-BE"/>
+	            </w:rPr>
+	          </w:pPr>
+	        </w:p>
+	      </w:tc>
+	    </w:tr>
+	    </w:tbl>
+	{% endif %}{% endfor %}{% endfor %}
+{% endblock %}

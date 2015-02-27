@@ -1,0 +1,9 @@
+{% extends "base/account_movements_nl_BE.xml" %}
+{# 
+
+doc_version
+
+    Document source code identifier
+    Please increment last number with every commit (or better per production server update)  
+#}
+{% block template_type %}AM.23.nl_BE{% endblock %}

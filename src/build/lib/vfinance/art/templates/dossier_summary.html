@@ -1,0 +1,11 @@
+{% extends 'hypo/vfinance_hypo_base.html' %}
+{% import "macros/html.html" as macros with context %}
+
+{% block content %}
+{{ macros.hypo_header(_('Dossier')|capitalize,
+                      startdate|date,
+                      full_number,
+                      name=name,
+                      recipient=recipient) }}
+{% include 'includes/customer.html' %}
+{% endblock %}

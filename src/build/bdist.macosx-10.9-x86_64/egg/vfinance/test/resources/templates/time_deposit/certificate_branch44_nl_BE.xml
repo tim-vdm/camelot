@@ -1,0 +1,16 @@
+{% extends "base/certificate_nl_BE.xml" %}
+{# 
+
+doc_version
+
+    Document source code identifier
+    Please increment last number with every commit (or better per production server update) 
+    
+    
+#}
+{% block template_type %}PC.44.nl_BE{% endblock %}
+
+{% set document_type = _('personal certificate')|capitalize %}
+{% if contractnumber != 1 %}{# for unittesting purposes #}
+  {% set contractnumber = '15000000%s'|format(account.id|rjust(4, fillchar='0')) %}
+{% endif %}
