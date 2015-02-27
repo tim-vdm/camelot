@@ -144,7 +144,6 @@ class WsTestCase(unittest.TestCase):
         document = self.create_agreement_code_document()
 
         response = self.post_json('create_agreement_code', data=document)
-        print response.data
         self.assertEqual(response.status_code, 200)
 
     # @unittest.skip("")
