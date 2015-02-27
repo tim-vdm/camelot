@@ -38,7 +38,7 @@ except ImportError:
 
 def main():
     try:
-        import pkg_resources
+        # import pkg_resources
         from tornado.wsgi import WSGIContainer
         from tornado.httpserver import HTTPServer
         from tornado.ioloop import IOLoop
@@ -50,6 +50,7 @@ def main():
         ssl_options = None
         http_server = HTTPServer(WSGIContainer(app), ssl_options=ssl_options)
         http_server.listen(int(sys.argv[1]))
+        # http_server.listen(19021)
         IOLoop.instance().start()
     except Exception, e:
         LOGGER.fatal('Could not run application', exc_info=e)

@@ -5,4 +5,6 @@ syntax: glob
 .nose
 src/vfinance_ws/ws/logs/
 docs/build/
+src/build/
+src/dist/
 

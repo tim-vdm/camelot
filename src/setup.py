@@ -65,9 +65,7 @@ extensions = ['*.doc',
               '*.rels',
               '*.bin',
               '.rels',
-              '*.dat',
-              '*.crt',
-              '*.key']
+              '*.dat']
 for extension in extensions:
     for i in range(7):
         for submodule in ['art',
@@ -98,8 +96,6 @@ setup(
                 'voluptuous'],
     entry_points={'console_scripts': ['server = vfinance_ws.tornado_run:main'],
                   "egg_info.writers": ["foo_bar.txt = setuptools.command.egg_info:write_arg"]},
-    # data_files=[(os.path.join('vfinance_ws', 'data'), ['patronale_ssl.crt',
-    #                                                    'patronale_ssl.key'])],
     package_data={'camelot': data_paths,
                   'vfinance': data_paths,
                   'vfinance_ws': data_paths,
