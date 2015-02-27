@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import datetime
 import hashlib
+import pickle
 
 from sqlalchemy.engine import create_engine
 from sqlalchemy import orm
@@ -12,25 +13,15 @@ from camelot.core.sql import metadata
 from vfinance.model.bank.settings import SettingsProxy
 from vfinance.utils import setup_model as setup_vfinance_model
 from vfinance.model.financial.package import FinancialPackage
+from vfinance.model.financial.product import FinancialProduct
 from vfinance.facade.financial_agreement import FinancialAgreementFacade
 
+# DB_FILENAME = '/home/stephane/vfinance_26022015/src/packages.db'
+DB_FILENAME = '/home/www/staging-patronale-life.mgx.io/src-preprod/src/packages.db'
 
-def calculate_proposal(proposal):
-
-    settings.append(SettingsProxy(None))
-
-    # db_filename = '/home/stephane/vfinance_26022015/src/packages.db'
-    db_filename = '/home/www/staging-patronale-life.mgx.io/src-preprod/src/packages.db'
-
-    engine = create_engine('sqlite:///'+db_filename)
-
-    metadata.bind = engine
-
-    setup_vfinance_model(update=False, templates=False)
-
-    session = Session()
-
+def fill_financial_agreement_facade(session, proposal):
     package = session.query(FinancialPackage).get(long(proposal['package_id']))
+
     if not package:
         raise Exception("This package does not exist")
 
@@ -51,9 +42,20 @@ def calculate_proposal(proposal):
     # facade.insured_party__1__sex = 'M'
 
     facade.premium_schedule__1__product = package.available_products[0].product
+    # from nose.tools import set_trace
+    # set_trace()
     # facade.premium_schedule__1__premium_fee_1 = D(100)
     facade.premium_schedule__1__premium_fee_1 = \
         proposal['premium_schedule__1__premium_fee_1']
+
+    product_2_id = proposal['premium_schedule__2__product_id']
+    if isinstance(product_2_id, (int, long)):
+        product = session.query(FinancialProduct).get(product_2_id)
+        if not product:
+            raise Exception("The premium_schedule__2__product_id does not exist")
+
+        facade.premium_schedule__2__product = product
+
 
     # facade.duration = 5*12
     facade.duration = proposal['duration']
@@ -65,8 +67,10 @@ def calculate_proposal(proposal):
     facade.premium_schedules_payment_duration = \
         proposal['premium_schedules_payment_duration']
     # facade.premium_schedules_coverage_level_type = 'fixed_amount'
-    facade.premium_schedules_coverage_level_type = \
-        proposal['premium_schedules_coverage_level_type']
+    facade.premium_schedule__1__coverage_level_type = \
+        proposal['premium_schedule__1__coverage_level_type']
+    facade.premium_schedule__2__coverage_level_type = \
+        proposal['premium_schedule__2__coverage_level_type']
     # facade.premium_schedules_premium_rate_1 = D(20)
     facade.premium_schedules_premium_rate_1 = \
         proposal['premium_schedules_premium_rate_1']
@@ -75,6 +79,24 @@ def calculate_proposal(proposal):
         proposal['premium_schedules_period_type']
 
     facade.code = "000"
+
+    return facade
+
+def calculate_proposal(proposal):
+
+    settings.append(SettingsProxy(None))
+
+    db_filename = DB_FILENAME
+
+    engine = create_engine('sqlite:///'+db_filename)
+
+    metadata.bind = engine
+
+    setup_vfinance_model(update=False, templates=False)
+
+    session = Session()
+    facade = fill_financial_agreement_facade(session, proposal)
+
     facade.update_premium()
 
     orm.object_session(facade).flush()
@@ -90,13 +112,43 @@ def calculate_proposal(proposal):
 
 
 def create_agreement_code(proposal):
-    amounts = calculate_proposal(proposal)
-    signature = hashlib.sha256(str(datetime.datetime.now())).hexdigest()[32:]
+    settings.append(SettingsProxy(None))
+
+    db_filename = DB_FILENAME
+
+    engine = create_engine('sqlite:///'+db_filename)
+
+    metadata.bind = engine
+
+    setup_vfinance_model(update=False, templates=False)
+
+    session = Session()
+
+    facade = fill_financial_agreement_facade(session, proposal)
+
+    facade.code = next_code = FinancialAgreementFacade.next_agreement_code(session)
+
+    facade.update_premium()
+
+    orm.object_session(facade).flush()
+
+    amount1 = str(facade.premium_schedule__1__amount)
+    amount2 = str(facade.premium_schedule__2__amount) \
+        if facade.premium_schedule__2__amount else None
+
+
     values = {
-        'code': "000/0000/00000",
-        'signature': signature,
+        'premium_schedule__1__amount': amount1,
+        'premium_schedule__2__amount': amount2,
+        'code': next_code,
     }
 
-    values.update(amounts)
+    use_for_signature = {
+        'proposal': proposal,
+        'values': values,
+    }
 
+    signature = hashlib.sha256(pickle.dumps(use_for_signature)).hexdigest() #[32:]
+
+    values['signature'] = signature
     return values
