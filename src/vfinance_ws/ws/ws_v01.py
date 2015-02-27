@@ -182,7 +182,10 @@ def calculate_proposal():
     if errors:
         return jsonify(errors), 400
 
-    return jsonify(v01.calculate_proposal(proposal))
+    try:
+        return jsonify(v01.calculate_proposal(proposal))
+    except Exception, ex:
+        return jsonify({'message': ex.message}), 400
 
 
 @bp.route('/create_agreement_code', methods=['POST'])
@@ -280,7 +283,10 @@ def create_agreement_code():
     if errors:
         return jsonify(errors), 400
 
-    return jsonify(v01.create_agreement_code(proposal))
+    try:
+        return jsonify(v01.create_agreement_code(proposal))
+    except Exception, ex:
+        return jsonify({'message': ex.message}), 400
 
 
 @bp.route('/create_proposal', methods=['POST'])
