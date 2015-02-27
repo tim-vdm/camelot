@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import datetime
+import decimal
 import hashlib
-import pickle
+import json
 
 from sqlalchemy.engine import create_engine
 from sqlalchemy import orm
@@ -15,6 +16,12 @@ from vfinance.utils import setup_model as setup_vfinance_model
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
 from vfinance.facade.financial_agreement import FinancialAgreementFacade
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, decimal.Decimal):
+            return str(o)
+        return super(DecimalEncoder, self).default(o)
 
 # DB_FILENAME = '/home/stephane/vfinance_26022015/src/packages.db'
 DB_FILENAME = '/home/www/staging-patronale-life.mgx.io/src-preprod/src/packages.db'
@@ -148,7 +155,12 @@ def create_agreement_code(proposal):
         'values': values,
     }
 
-    signature = hashlib.sha256(pickle.dumps(use_for_signature)).hexdigest() #[32:]
+    dump = json.dumps(
+        use_for_signature,
+        cls=DecimalEncoder
+    )
+
+    signature = hashlib.sha256(dump).hexdigest()
 
     values['signature'] = signature
     return values
