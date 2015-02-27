@@ -91,8 +91,10 @@ CALCULATE_PROPOSAL_SCHEMA = {
     Required("premium_schedule__1__premium_fee_1"): Coerce(Decimal),
     Required("premium_schedule__1__product_id"): int,
     Required("premium_schedule__2__product_id"): voluptuous.Any(IsNone, int),
-    Required("premium_schedules_coverage_level_type"):
+    Required("premium_schedule__1__coverage_level_type"):
         voluptuous.In(["fixed_amount", "decreasing_amount"]),
+    Required("premium_schedule__2__coverage_level_type"):
+        voluptuous.Any(IsNone, 'decreasing_amount'),
     Required("premium_schedules_coverage_limit"): Coerce(Decimal),
     Required("premium_schedules_payment_duration"): int,
     Required("premium_schedules_period_type"):
@@ -208,4 +210,4 @@ if __name__ == '__main__':
     validator = voluptuous.Schema(CREATE_AGREEMENT_CODE_SCHEMA)  # , extra=voluptuous.ALLOW_EXTRA)
     validated_document = validator(document)
 
-    
+
