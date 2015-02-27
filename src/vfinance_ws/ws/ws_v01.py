@@ -3,6 +3,9 @@ from __future__ import absolute_import
 from flask import Blueprint
 from flask import jsonify
 
+import camelot.core.exception
+import camelot.core.utils
+
 from .decorators import log_to_file, check_minimal_requirements
 from .utils import is_json_body
 
@@ -185,6 +188,9 @@ def calculate_proposal():
     try:
         return jsonify(v01.calculate_proposal(proposal))
     except Exception, ex:
+        if isinstance(ex, camelot.core.exception.UserException):
+            if isinstance(ex.message, camelot.core.utils.ugettext_lazy):
+                return jsonify({'message': ex.message._string_to_translate}), 400
         return jsonify({'message': ex.message}), 400
 
 
@@ -286,6 +292,9 @@ def create_agreement_code():
     try:
         return jsonify(v01.create_agreement_code(proposal))
     except Exception, ex:
+        if isinstance(ex, camelot.core.exception.UserException):
+            if isinstance(ex.message, camelot.core.utils.ugettext_lazy):
+                return jsonify({'message': ex.message._string_to_translate}), 400
         return jsonify({'message': ex.message}), 400
 
 
