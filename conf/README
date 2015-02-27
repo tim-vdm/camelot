@@ -1,0 +1,7 @@
+To produce the crt and key files needed for the nginx SSL config:
+
+$ openssl pkcs12 -nodes -in patronale.be.pfx -out outputfile.txt
+
+This output file contains the key and crt parts.
+Split them into separate files named patronale_ssl.key and patronale_ssl.key 
+in this conf directory.
