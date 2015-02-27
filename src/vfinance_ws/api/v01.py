@@ -74,6 +74,7 @@ def calculate_proposal(proposal):
     facade.premium_schedules_period_type = \
         proposal['premium_schedules_period_type']
 
+    facade.code = "000"
     facade.update_premium()
 
     orm.object_session(facade).flush()
