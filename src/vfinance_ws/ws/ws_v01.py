@@ -195,7 +195,8 @@ def calculate_proposal():
 
 
 @bp.route('/create_agreement_code', methods=['POST'])
-# @check_minimal_requirements
+@log_to_file
+@check_minimal_requirements
 def create_agreement_code():
     """
     :synopsis: Create an Agreement Code
@@ -297,6 +298,28 @@ def create_agreement_code():
                 return jsonify({'message': ex.message._string_to_translate}), 400
         return jsonify({'message': ex.message}), 400
 
+
+@bp.route('/send_agreement', methods=['POST'])
+@check_minimal_requirements
+def send_agreement():
+    # from nose.tools import set_trace
+    # set_trace()
+    json_document = is_json_body()
+    from .validation_message import validation_send_agreement
+
+    proposal, errors = validation_send_agreement(json_document)
+
+    if errors:
+        return jsonify(errors), 400
+
+    try:
+        v01.send_agreement(proposal)
+        return jsonify({})
+    except Exception, ex:
+        if isinstance(ex, camelot.core.exception.UserException):
+            if isinstance(ex.message, camelot.core.utils.ugettext_lazy):
+                return jsonify({'message': ex.message._string_to_translate}), 400
+        return jsonify({'message': ex.message}), 400 
 
 @bp.route('/create_proposal', methods=['POST'])
 def create_proposal():

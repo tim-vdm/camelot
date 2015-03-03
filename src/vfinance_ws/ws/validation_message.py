@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import voluptuous
 import json
 import datetime
@@ -86,7 +85,7 @@ CALCULATE_PROPOSAL_SCHEMA = {
     # voluptuous.Range(min=1, max=10),
     Required("from_date"): DATE_SCHEMA,
     Required("insured_party__1__birthdate"): DATE_SCHEMA,
-    Required("insured_party__1__sex"): voluptuous.Any("M", "F"),
+    Required("insured_party__1__sex"): voluptuous.In(["M", "F"]),
     Required("package_id"): int,
     Required("premium_schedule__1__premium_fee_1"): Coerce(Decimal),
     Required("premium_schedule__1__product_id"): int,
@@ -122,6 +121,14 @@ CREATE_AGREEMENT_CODE_SCHEMA.update({
     Optional('pledgee_reference'): Any(IsNone, Length(max=30)),
 })
 
+SEND_AGREEMENT_SCHEMA = dict(CREATE_AGREEMENT_CODE_SCHEMA)
+SEND_AGREEMENT_SCHEMA.update({
+    Required("signature"): Length(max=64),
+    Required("premium_schedule__1__amount"): Coerce(Decimal),
+    Required("premium_schedule__2__amount"): Any(IsNone, Coerce(Decimal)),
+    Required("code"): Length(max=32),
+})
+
 
 def validation_calculate_proposal(document):
     FIELDS_DATE = (
@@ -147,6 +154,20 @@ def validation_create_agreement_code(document):
     return validate_document(
         document,
         CREATE_AGREEMENT_CODE_SCHEMA,
+        FIELDS_DATE
+    )
+
+
+def validation_send_agreement(document):
+    FIELDS_DATE = (
+        ['agreement_date'],
+        ['from_date'],
+        ['insured_party__1__birthdate'],
+    )
+
+    return validate_document(
+        document,
+        SEND_AGREEMENT_SCHEMA,
         FIELDS_DATE
     )
 

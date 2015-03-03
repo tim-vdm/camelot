@@ -10,6 +10,7 @@ try:
 except ImportError:
     set_trace = lambda: None
 
+# @unittest.skip("Skip")
 class WsTestCase(unittest.TestCase):
     def setUp(self):
         app = create_app()
@@ -108,7 +109,7 @@ class WsTestCase(unittest.TestCase):
         response = self.post_json('calculate_proposal', data=document)
         self.assertEqual(response.status_code, 200)
 
-    def test_010_calculate_proposal_two_products(self):
+    def test_011_calculate_proposal_two_products(self):
         document = self.create_calculate_proposal_document()
         document['premium_schedule__2__product_id'] = 68
         document['premium_schedule__2__coverage_level_type'] = 'decreasing_amount'
@@ -116,7 +117,7 @@ class WsTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     # @unittest.skip("")
-    def test_011_calculate_proposal_missing_fields(self):
+    def test_012_calculate_proposal_missing_fields(self):
         DOCUMENT = {}
         response = self.post_json('calculate_proposal', data=DOCUMENT)
 
@@ -128,7 +129,7 @@ class WsTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 400)
 
     # @unittest.skip("")
-    def test_012_calculate_proposal_bad_values(self):
+    def test_013_calculate_proposal_bad_values(self):
         document = self.create_calculate_proposal_document()
         document['agreement_date']['month'] = 2
         document['agreement_date']['day'] = 29
@@ -182,6 +183,19 @@ class WsTestCase(unittest.TestCase):
     def test_070_get_proposal_pdf(self):
         response = self.post_json('get_proposal_pdf')
         self.assertEqual(response.status_code, 501)
+
+    def test_080_send_agreement(self):
+        document = self.create_agreement_code_document()
+        document.update({
+            'code': '000/0000/00000',
+            'premium_schedule__1__amount': '10.0',
+            'premium_schedule__2__amount': None,
+            'signature': 'Signature'
+        })
+        response = self.post_json('send_agreement', data=document)
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertEqual(len(content), 0)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

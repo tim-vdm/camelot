@@ -92,6 +92,7 @@ def fill_financial_agreement_facade(session, proposal):
 
     return facade
 
+
 def calculate_proposal(proposal):
 
     settings.append(SettingsProxy(None))
@@ -167,3 +168,7 @@ def create_agreement_code(proposal):
 
     values['signature'] = signature
     return values
+
+
+def send_agreement(document):
+    return None
