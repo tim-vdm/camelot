@@ -125,7 +125,7 @@ def is_compliant():
         response['message'] = "Content-Type is not 'application/json'"
     else:
         try:
-            message = request.get_json()  # NOQA
+            request.get_json()  # NOQA
             response.update({
                 'compliant': True,
                 'status_code': 200,
