@@ -1,10 +1,18 @@
 #!/usr/bin/env python
-import voluptuous
 import json
-import datetime
-
-from voluptuous import Required, Coerce, Length, Optional, Any
 from decimal import Decimal
+import datetime
+from functools import wraps
+
+import voluptuous
+from voluptuous import (
+    All,
+    Any,
+    Coerce,
+    Length,
+    Optional,
+    Required,
+)
 
 
 def IsNone(v):
@@ -79,21 +87,21 @@ DATE_SCHEMA = {
 
 
 CALCULATE_PROPOSAL_SCHEMA = {
-    Required("agent_official_number_fsma"): Length(max=128),
+    Required("agent_official_number_fsma"): All(basestring, Length(max=128)),
     Required("agreement_date"): DATE_SCHEMA,
     Required("duration"): int,
     # voluptuous.Range(min=1, max=10),
     Required("from_date"): DATE_SCHEMA,
     Required("insured_party__1__birthdate"): DATE_SCHEMA,
-    Required("insured_party__1__sex"): voluptuous.In(["M", "F"]),
+    Required("insured_party__1__sex"): voluptuous.In(["M", "F", 'm', 'f']),
     Required("package_id"): int,
     Required("premium_schedule__1__premium_fee_1"): Coerce(Decimal),
     Required("premium_schedule__1__product_id"): int,
-    Required("premium_schedule__2__product_id"): voluptuous.Any(IsNone, int),
+    Required("premium_schedule__2__product_id"): voluptuous.Any(None, int),
     Required("premium_schedule__1__coverage_level_type"):
         voluptuous.In(["fixed_amount", "decreasing_amount"]),
     Required("premium_schedule__2__coverage_level_type"):
-        voluptuous.Any(IsNone, 'decreasing_amount'),
+        voluptuous.Any(None, 'decreasing_amount'),
     Required("premium_schedules_coverage_limit"): Coerce(Decimal),
     Required("premium_schedules_payment_duration"): int,
     Required("premium_schedules_period_type"):
@@ -104,29 +112,29 @@ CALCULATE_PROPOSAL_SCHEMA = {
 CREATE_AGREEMENT_CODE_SCHEMA = dict(CALCULATE_PROPOSAL_SCHEMA)
 CREATE_AGREEMENT_CODE_SCHEMA.update({
     Required("origin"): Length(max=32),
-    Optional('insured_party__1__last_name'): Length(max=30),
-    Optional('insured_party__1__first_name'): Length(max=30),
-    Optional('insured_party__1__language'): Length(max=5),
-    Optional('insured_party__1__nationality_code'): Length(max=2),
-    Optional('insured_party__1__social_security_number'): Any(IsNone, Length(max=12)),
-    Optional('insured_party__1__passport_number'): Any(IsNone, Length(max=20)),
-    Optional('insured_party__1__dangerous_hobby'): Any(IsNone, Length(max=20)),
-    Optional('insured_party__1__dangerous_profession'): Any(IsNone, Length(max=20)),
-    Optional('insured_party__1__street_1'): Length(max=128),
-    Optional('insured_party__1__city_code'): Length(max=10),
-    Optional('insured_party__1__city_name'): Length(max=40),
-    Optional('insured_party__1__country_code'): Length(max=2),
-    Optional('pledgee_name'): Any(IsNone, Length(max=30)),
-    Optional('pledgee_tax_id'): Any(IsNone, Length(max=20)),
-    Optional('pledgee_reference'): Any(IsNone, Length(max=30)),
+    Optional('insured_party__1__last_name'): All(basestring, Length(max=30)),
+    Optional('insured_party__1__first_name'): All(basestring, Length(max=30)),
+    Optional('insured_party__1__language'): All(basestring, Length(max=5)),
+    Optional('insured_party__1__nationality_code'): All(basestring, Length(max=2)),
+    Optional('insured_party__1__social_security_number'): Any(None, Length(max=12)),
+    Optional('insured_party__1__passport_number'): Any(None, Length(max=20)),
+    Optional('insured_party__1__dangerous_hobby'): Any(None, Length(max=20)),
+    Optional('insured_party__1__dangerous_profession'): Any(None, Length(max=20)),
+    Optional('insured_party__1__street_1'): All(basestring, Length(max=128)),
+    Optional('insured_party__1__city_code'): All(basestring, Length(max=10)),
+    Optional('insured_party__1__city_name'): All(basestring, Length(max=40)),
+    Optional('insured_party__1__country_code'): All(basestring, Length(max=2)),
+    Optional('pledgee_name'): Any(None, Length(max=30)),
+    Optional('pledgee_tax_id'): Any(None, Length(max=20)),
+    Optional('pledgee_reference'): Any(None, Length(max=30)),
 })
 
 SEND_AGREEMENT_SCHEMA = dict(CREATE_AGREEMENT_CODE_SCHEMA)
 SEND_AGREEMENT_SCHEMA.update({
-    Required("signature"): Length(max=64),
+    Required("signature"): All(basestring, Length(max=64)),
     Required("premium_schedule__1__amount"): Coerce(Decimal),
-    Required("premium_schedule__2__amount"): Any(IsNone, Coerce(Decimal)),
-    Required("code"): Length(max=32),
+    Required("premium_schedule__2__amount"): Any(None, Coerce(Decimal)),
+    Required("code"): All(basestring, Length(max=32)),
 })
 
 
