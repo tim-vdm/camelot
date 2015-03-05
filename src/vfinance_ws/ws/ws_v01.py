@@ -20,22 +20,15 @@ bp = Blueprint('api_v01', __name__)
 def calculate_proposal():
     """
     :synopsis: Calculate the amount of a proposal
-    :reqheader Content-Type: application/json
+    :reqheader Content-Type: :mimetype:`application/json`
+    :resheader Content-Type: :mimetype:`application/json`
 
     :status 200:
     :status 400:
     :status 501:
 
-    .. sourcecode:: http
-
-        POST /api/v0.1/calculate_proposal HTTP/1.1
-        Accept: application/json
-        Accept-Encoding: gzip, deflate
-        Connection: keep-alive
-        Content-Length: 20
-        Content-Type:  application/json
-        Host: localhost:5000
-        User-Agent: HTTPie/0.9.1
+    .. literalinclude:: demo/post_calculate_proposal.http
+        :language: http
 
     .. literalinclude:: demo/calculate_proposal.json
         :language: json
@@ -98,16 +91,8 @@ def create_agreement_code():
     """
     :synopsis: Create an Agreement Code
 
-    .. sourcecode:: http
-
-        POST /api/v0.1/create_agreement_code HTTP/1.1
-        Accept: application/json
-        Accept-Encoding: gzip, deflate
-        Connection: keep-alive
-        Content-Length: 0
-        Content-Type:  application/json
-        Host: localhost:19021
-        User-Agent: HTTPie/0.9.1
+    .. literalinclude:: demo/post_create_agreement_code.http
+        :language: http
 
     .. literalinclude:: demo/create_agreement_code.json
         :language: json
@@ -120,7 +105,9 @@ def create_agreement_code():
 
 
     :status 200:
+    :status 400:
     :reqheader Content-Type: Must be `application/json`
+    :resheader Cotnent-Type: :mimetype:`application/json`
 
     """
     json_document = is_json_body()
@@ -146,8 +133,18 @@ def create_agreement_code():
 @bp.route('/send_agreement', methods=['POST'])
 @check_minimal_requirements
 def send_agreement():
-    # from nose.tools import set_trace
-    # set_trace()
+    """
+    :synopsis: Send an agreement
+
+    **Not Yet Implemented**
+
+    .. literalinclude:: demo/501.http
+        :language: http
+
+    :status 501:
+    :reqheader Content-Type: :mimetype:`application/json`
+    :resheader Content-Type: :mimetype:`application/json`
+    """
     json_document = is_json_body()
     from .validation_message import validation_send_agreement
 
@@ -164,25 +161,6 @@ def send_agreement():
             if isinstance(ex.message, camelot.core.utils.ugettext_lazy):
                 return jsonify({'message': ex.message._string_to_translate}), 400
         return jsonify({'message': ex.message}), 400 
-
-
-@bp.route('/create_proposal', methods=['POST'])
-def create_proposal():
-    """
-    :synopsis: Create a proposal
-
-    **Not Yet Implemented**
-
-    .. literalinclude:: demo/501.http
-        :language: http
-
-    :status 501:
-    :reqheader Content-Type: Must be :mimetype:`application/json`
-
-    """
-    return jsonify({
-        'message': "Web service not implemented"
-    }), 501
 
 
 @bp.route('/get_proposal_pdf', methods=['POST'])
