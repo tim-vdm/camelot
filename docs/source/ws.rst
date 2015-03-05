@@ -13,32 +13,17 @@ Create an Agreement Code
 .. autoflask:: ws_server:create_app()
     :endpoints: api_v01.create_agreement_code
 
+Send an Agreement
+-----------------
+
+.. autoflask:: ws_server:create_app()
+    :endpoints: api_v01.send_agreement
 
 Create a proposal
 -----------------
 
 .. autoflask:: ws_server:create_app()
     :endpoints: api_v01.create_proposal
-
-Modify a proposal
------------------
-
-.. autoflask:: ws_server:create_app()
-    :endpoints: api_v01.modify_proposal
-
-Cancel a proposal
------------------
-
-.. autoflask:: ws_server:create_app()
-    :endpoints: api_v01.cancel_proposal
-
-
-Proposal to managed
--------------------
-
-.. autoflask:: ws_server:create_app()
-    :endpoints: api_v01.proposal_to_managed
-
 
 Get a PDF report of a Proposal
 ------------------------------

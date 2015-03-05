@@ -5,7 +5,7 @@ import json
 
 import voluptuous
 
-from ..ws import validation_message
+from vfinance_ws.ws import validation_message
 
 
 DEMO_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'demo')

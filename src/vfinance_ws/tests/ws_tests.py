@@ -3,7 +3,7 @@ import unittest
 from flask import json
 from flask import url_for
 
-from ..ws_server import create_app
+from vfinance_ws.ws_server import create_app
 
 try:
     from nose.tools import set_trace

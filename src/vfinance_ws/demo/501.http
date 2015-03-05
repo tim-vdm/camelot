@@ -1,0 +1,9 @@
+HTTP/1.0 501 NOT IMPLEMENTED
+Content-Length: 46
+Content-Type: application/json
+Date: Mon, 23 Feb 2015 06:44:54 GMT
+Server: Werkzeug/0.10.1 Python/2.7.8+
+
+{
+    "message": "Web service not implemented"
+}

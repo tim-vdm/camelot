@@ -1,0 +1,47 @@
+{
+    "agent_official_number_fsma": {
+        "message": "Required"
+    },
+    "agreement_date": {
+        "message": "Required"
+    },
+    "duration": {
+        "message": "Required"
+    },
+    "from_date": {
+        "message": "Required"
+    },
+    "insured_party__1__birthdate": {
+        "message": "Required"
+    },
+    "insured_party__1__sex": {
+        "message": "Required"
+    },
+    "package_id": {
+        "message": "Required"
+    },
+    "premium_schedule__1__premium_fee_1": {
+        "message": "Required"
+    },
+    "premium_schedule__1__product_id": {
+        "message": "Required"
+    },
+    "premium_schedule__2__product_id": {
+        "message": "Required"
+    },
+    "premium_schedules_coverage_level_type": {
+        "message": "Required"
+    },
+    "premium_schedules_coverage_limit": {
+        "message": "Required"
+    },
+    "premium_schedules_payment_duration": {
+        "message": "Required"
+    },
+    "premium_schedules_period_type": {
+        "message": "Required"
+    },
+    "premium_schedules_premium_rate_1": {
+        "message": "Required"
+    }
+}
