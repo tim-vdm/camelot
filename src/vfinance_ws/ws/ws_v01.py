@@ -201,8 +201,6 @@ def create_agreement_code():
     """
     :synopsis: Create an Agreement Code
 
-    **Not Yet Implemented**
-
     .. sourcecode:: http
 
         POST /api/v0.1/create_agreement_code HTTP/1.1

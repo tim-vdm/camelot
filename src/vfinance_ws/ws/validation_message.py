@@ -116,7 +116,6 @@ def validate_document(document, schema):
     return doc, errors
 
 
-
 def validation_calculate_proposal(document):
     return validate_document(document, CALCULATE_PROPOSAL_SCHEMA)
 
