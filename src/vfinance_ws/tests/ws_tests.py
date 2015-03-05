@@ -130,26 +130,6 @@ class WsTestCase(unittest.TestCase):
         self.assertIn('insured_party__1__nationality_code', content)
 
     # @unittest.skip("")
-    def test_030_create_proposal(self):
-        response = self.post_json('create_proposal')
-        self.assertEqual(response.status_code, 501)
-
-    # @unittest.skip("")
-    def test_040_modify_proposal(self):
-        response = self.post_json('modify_proposal')
-        self.assertEqual(response.status_code, 501)
-
-    # @unittest.skip("")
-    def test_050_cancel_proposal(self):
-        response = self.post_json('cancel_proposal')
-        self.assertEqual(response.status_code, 501)
-
-    # @unittest.skip("")
-    def test_060_proposal_to_managed(self):
-        response = self.post_json('proposal_to_managed')
-        self.assertEqual(response.status_code, 501)
-
-    # @unittest.skip("")
     def test_070_get_proposal_pdf(self):
         response = self.post_json('get_proposal_pdf')
         self.assertEqual(response.status_code, 501)
