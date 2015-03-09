@@ -107,7 +107,7 @@ def install_v_finance_web_service():
             # be careful, because contract numbers are written back to this file
             api.put('../conf/packages_{0.CONFIGURATION}.db'.format(env), install_path, use_sudo=True)
         # upload nginx conf
-        api.put('../conf/nginx_{0.CONFIGURATION}.db'.format(env), '/etc/nginx/conf.d/', use_sudo=True)
+        api.put('../conf/nginx_{0.CONFIGURATION}.conf'.format(env), '/etc/nginx/conf.d/', use_sudo=True)
         # upload init conf
         contrib.files.upload_template('xvfb.conf',
                                       os.path.join('/', 'etc', 'init'),
@@ -124,7 +124,7 @@ def install_v_finance_web_service():
         for cloud_record in cloud_records:
             for filename, checksum in cloud_record.eggs:
                 api.put(os.path.join(build_dir, filename), install_path)
-        contrib.files.upload_template('init_{0.IMAGE_KEY}.conf'.format(env),
+        contrib.files.upload_template('v-finance-web-service-{0.IMAGE_KEY}.conf'.format(env),
                                       os.path.join('/', 'etc', 'init'),
                                       use_jinja=True,
                                       template_dir=os.path.join('..', 'conf'),
@@ -132,12 +132,16 @@ def install_v_finance_web_service():
                                       context=dict(cloudfile=cloudfile,
                                                    sdk_path=sdk_path,
                                                    install_path=install_path))
+        # TODO run as user, not root
+        # api.sudo('chmod +x /etc/init/v-finance-web-service-{0.IMAGE_KEY}.conf'.format(env))
+        # api.sudo('chown ec2-user:ec2-user /etc/init/v-finance-web-service-{0.IMAGE_KEY}.conf'.format(env))
         # stop/start
         try:
-            api.run('stop v-finance-web-service-{0.CONFIGURATION}'.format(env))
+            api.sudo('stop v-finance-web-service-{0.CONFIGURATION}'.format(env))
         except:
             pass
-        api.run('start v-finance-web-service-{0.CONFIGURATION}'.format(env))
+        api.sudo('start v-finance-web-service-{0.CONFIGURATION}'.format(env))
+        api.sudo('service nginx reload')
 
 
 def restart_service():
