@@ -43,7 +43,7 @@ def _get_sdk_context():
                                      context_managers.prefix('export DISPLAY=localhost:99.0 && export LD_LIBRARY_PATH={0}/lib && export PYTHONHOME={0}'.format(sdk_path)), )
 
 
-def build_test():
+def build():
     api.local('python setup.py bdist_cloud {0.CONFIGURATION}'.format(env))
 
 
@@ -56,8 +56,12 @@ def build_upload():
 
 
 def run_local():
-    with context_managers.lcd('dist/cloud'):
-        api.local('python -m cloudlaunch.main --cld-file=v-finance-web-service-{0.CONFIGURATION}.cld 8080'.format(env))
+    with context_managers.lcd('dist/cloud'), context_managers.shell_env(LOGHOME='/tmp/log-vfws.txt'), context_managers.shell_env(DB_PATH='/tmp/test.db'):
+        api.local('python -m cloudlaunch.main'
+                  ' --cld-file=v-finance-web-service-{0.CONFIGURATION}.cld'
+                  ' --cld-name=V-Finance-WS'
+                  ' --cld-branch={0.CONFIGURATION}'
+                  ' 8080'.format(env))
 
 
 def install_dependencies():
@@ -98,8 +102,10 @@ def install_v_finance_web_service():
     with _get_sdk_context():
         api.sudo('mkdir -p {0}'.format(install_path))
         api.sudo('chmod a+rwx {0}'.format(install_path))
-        # upload database
-        api.put('../conf/packages_{0.CONFIGURATION}.db'.format(env), install_path, use_sudo=True)
+        if not contrib.files.exists(os.path.join(install_path, 'packages_{0.CONFIGURATION}.db'.format(env)), use_sudo=True):
+            # upload database !!! ONLY IF NOT PRESENT YET
+            # be careful, because contract numbers are written back to this file
+            api.put('../conf/packages_{0.CONFIGURATION}.db'.format(env), install_path, use_sudo=True)
         # upload nginx conf
         api.put('../conf/nginx_{0.CONFIGURATION}.db'.format(env), '/etc/nginx/conf.d/', use_sudo=True)
         # upload init conf
@@ -126,11 +132,12 @@ def install_v_finance_web_service():
                                       context=dict(cloudfile=cloudfile,
                                                    sdk_path=sdk_path,
                                                    install_path=install_path))
+        # stop/start
         try:
-            api.sudo('stop v-finance-web-service-{0.CONFIGURATION}'.format(env))
+            api.run('stop v-finance-web-service-{0.CONFIGURATION}'.format(env))
         except:
             pass
-        api.sudo('start v-finance-web-service-{0.CONFIGURATION}'.format(env))
+        api.run('start v-finance-web-service-{0.CONFIGURATION}'.format(env))
 
 
 def restart_service():
@@ -150,7 +157,7 @@ def stop_service():
 
 def get_log_file(filename=''):
     with _get_sdk_context():
-        api.get(os.path.join('/tmp', filename), 'logs')
+        api.get(os.path.join('/tmp', 'log', env.CONFIGURATION, filename), 'logs')
 
 
 def tail_nginx_log():

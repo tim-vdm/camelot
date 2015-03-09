@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO, format=format_str)
 #
 # Configure logging in tmp folder, so everything is gone at reboot
 #
-logging_path = os.path.join('/', 'tmp', 'v-finance-web-service')
+logging_path = os.environ['LOGHOME']
 if not os.path.exists(logging_path):
     os.makedirs(logging_path)
 handler = logging.handlers.TimedRotatingFileHandler(os.path.join(logging_path,
@@ -23,6 +23,8 @@ handler = logging.handlers.TimedRotatingFileHandler(os.path.join(logging_path,
 handler.setLevel(logging.INFO)
 handler.setFormatter(logging.Formatter(format_str))
 logging.root.addHandler(handler)
+
+LOGGER.info('starting application server')
 
 #
 # use cdecimal
@@ -44,7 +46,10 @@ def main():
         from tornado.ioloop import IOLoop
 
         from ws_server import create_app
+        from ws import utils
         app = create_app()
+        next_agreement_code = utils.get_next_agreement_code()
+        LOGGER.info('app created, next agreement code will be: {}'.format(next_agreement_code))
         # ssl_options = {'certfile': pkg_resources.resource_filename('vfinance_ws', os.path.join('data', 'patronale_ssl.crt')),
         #                'keyfile': pkg_resources.resource_filename('vfinance_ws', os.path.join('data', 'patronale_ssl.key'))}
         ssl_options = None

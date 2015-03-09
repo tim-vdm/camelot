@@ -95,7 +95,8 @@ setup(
                 'polib',
                 'voluptuous'],
     entry_points={'console_scripts': ['server = vfinance_ws.tornado_run:main'],
-                  "egg_info.writers": ["foo_bar.txt = setuptools.command.egg_info:write_arg"]},
+                  # "egg_info.writers": ["foo_bar.txt = setuptools.command.egg_info:write_arg"]
+                  },
     package_data={'camelot': data_paths,
                   'vfinance': data_paths,
                   'vfinance_ws': data_paths,
