@@ -11,6 +11,7 @@
 # To win time, initial deployment is on Tornado, and Tornado only.
 # Eventually a move to nginx+appserver (gunicorn?) is needed to handle
 # multiple requests.
+# Although Tornado might do the trick https://github.com/tornadoweb/tornado/wiki/Threading-and-concurrency
 # <<<<<< IMPORTANT
 
 import os
@@ -43,20 +44,20 @@ def _get_sdk_context():
 
 
 def build_test():
-    api.local('python setup.py bdist_cloud test')
+    api.local('python setup.py bdist_cloud {0.CONFIGURATION}'.format(env))
 
 
-def build_production_upload():
+def build_upload():
     run_tests()
-    api.local('python setup.py bdist_cloud upload_cloud production')
+    api.local('python setup.py bdist_cloud upload_cloud {0.CONFIGURATION}'.format(env))
     print 'NOTE ========================================================'
-    print 'Don\'t forget: fab -c ../conf/production.conf restart_service'
+    print 'Don\'t forget: fab -c ../conf/{0.CONFIGURATION}.conf restart_service'.format(env)
     print '============================================================='
 
 
-def run_test():
+def run_local():
     with context_managers.lcd('dist/cloud'):
-        api.local('python -m cloudlaunch.main --cld-file=v-finance-web-service-test.cld 8080')
+        api.local('python -m cloudlaunch.main --cld-file=v-finance-web-service-{0.CONFIGURATION}.cld 8080'.format(env))
 
 
 def install_dependencies():
@@ -98,7 +99,9 @@ def install_v_finance_web_service():
         api.sudo('mkdir -p {0}'.format(install_path))
         api.sudo('chmod a+rwx {0}'.format(install_path))
         # upload database
-        api.put('../conf/packages.db', install_path, use_sudo=True)
+        api.put('../conf/packages_{0.CONFIGURATION}.db'.format(env), install_path, use_sudo=True)
+        # upload nginx conf
+        api.put('../conf/nginx_{0.CONFIGURATION}.db'.format(env), '/etc/nginx/conf.d/', use_sudo=True)
         # upload init conf
         contrib.files.upload_template('xvfb.conf',
                                       os.path.join('/', 'etc', 'init'),
@@ -115,7 +118,7 @@ def install_v_finance_web_service():
         for cloud_record in cloud_records:
             for filename, checksum in cloud_record.eggs:
                 api.put(os.path.join(build_dir, filename), install_path)
-        contrib.files.upload_template('v-finance-web-service.conf',
+        contrib.files.upload_template('init_{0.IMAGE_KEY}.conf'.format(env),
                                       os.path.join('/', 'etc', 'init'),
                                       use_jinja=True,
                                       template_dir=os.path.join('..', 'conf'),
@@ -124,25 +127,25 @@ def install_v_finance_web_service():
                                                    sdk_path=sdk_path,
                                                    install_path=install_path))
         try:
-            api.sudo('stop v-finance-web-service')
+            api.sudo('stop v-finance-web-service-{0.CONFIGURATION}'.format(env))
         except:
             pass
-        api.sudo('start v-finance-web-service')
+        api.sudo('start v-finance-web-service-{0.CONFIGURATION}'.format(env))
 
 
 def restart_service():
     with _get_sdk_context():
-        api.sudo('restart v-finance-web-service')
+        api.sudo('restart v-finance-web-service-{0.CONFIGURATION}'.format(env))
 
 
 def start_service():
     with _get_sdk_context():
-        api.sudo('start v-finance-web-service')
+        api.sudo('start v-finance-web-service-{0.CONFIGURATION}'.format(env))
 
 
 def stop_service():
     with _get_sdk_context():
-        api.sudo('stop v-finance-web-service')
+        api.sudo('stop v-finance-web-service-{0.CONFIGURATION}'.format(env))
 
 
 def get_log_file(filename=''):
@@ -154,7 +157,7 @@ def tail_nginx_log():
     with context_managers.settings(host_string=env.HOST_NAME,
                                    user=env.HOST_USER,
                                    key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
-        api.sudo('tail -f -n200 /var/log/nginx/error.log')
+        api.sudo('tail -f -n200 /var/log/nginx/error_{0}.log'.format(env.CONFIGURATION))
 
 
 def run_tests(tests='', with_debugger=None):
