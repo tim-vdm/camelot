@@ -6,10 +6,10 @@ from flask import jsonify
 import camelot.core.exception
 import camelot.core.utils
 
-from .decorators import log_to_file, check_minimal_requirements
-from .utils import is_json_body
+from vfinance_ws.ws.decorators import log_to_file, check_minimal_requirements
+from vfinance_ws.ws.utils import is_json_body
 
-from ..api import v01
+from vfinance_ws.api import v01
 
 bp = Blueprint('api_v01', __name__)
 
@@ -20,158 +20,48 @@ bp = Blueprint('api_v01', __name__)
 def calculate_proposal():
     """
     :synopsis: Calculate the amount of a proposal
-    :reqheader Content-Type: application/json
+    :reqheader Content-Type: :mimetype:`application/json`
+    :resheader Content-Type: :mimetype:`application/json`
 
-    :status 200: OK
-    :status 400: Bad Request
-    :status 501: Not implemented
+    :status 200:
+    :status 400:
+    :status 501:
 
-    .. sourcecode:: http
+    .. literalinclude:: demo/post_calculate_proposal.http
+        :language: http
 
-        POST /api/v0.1/calculate_proposal HTTP/1.1
-        Accept: application/json
-        Accept-Encoding: gzip, deflate
-        Connection: keep-alive
-        Content-Length: 20
-        Content-Type:  application/json
-        Host: localhost:5000
-        User-Agent: HTTPie/0.9.1
+    .. literalinclude:: demo/calculate_proposal.json
+        :language: json
 
-        {
-            "agent_official_number_fsma": "128Char",
-            "agreement_date": {
-                "month": 2,
-                "year": 2015,
-                "day": 29
-            },
-            "duration": 10,
-            "from_date": {
-                "month": 2,
-                "year": 2015,
-                "day": 26
-            },
-            "insured_party__1__birthdate": {
-                "month": 2,
-                "year": 2015,
-                "day": 26
-            },
-            "insured_party__1__sex": "M",
-            "package_id": 10,
-            "premium_schedule__1__premium_fee_1": "2.00",
-            "premium_schedule__1__product_id": 67,
-            "premium_schedule__2__product_id": null,
-            "premium_schedules_coverage_level_type": "fixed_amount",
-            "premium_schedules_coverage_limit": "5000",
-            "premium_schedules_payment_duration": 10,
-            "premium_schedules_period_type": "single",
-            "premium_schedules_premium_rate_1": "20"
-        }
+    .. literalinclude:: demo/200.http
+        :language: http
 
-    .. sourcecode:: http
+    .. literalinclude:: demo/calculate_proposal_response.json
+        :language: json
 
-        HTTP/1.0 200 OK
-        Content-Length: 19
-        Content-Type: application/json
-        Date: Mon, 23 Feb 2015 06:35:43 GMT
-        Server: Werkzeug/0.10.1 Python/2.7.8+
+    .. literalinclude:: demo/400.http
+        :language: http
 
-        {
-            "premium_schedule__1__amount": "1.0",
-            "premium_schedule__2__amount": null
-        }
-
-
-    .. sourcecode:: http
-
-        HTTP/1.0 400 BAD REQUEST
-        Content-Length: 1057
-        Content-Type: application/json
-        Date: Thu, 26 Feb 2015 09:40:32 GMT
-        Server: Werkzeug/0.10.1 Python/2.7.8+
-
-        {
-            "agent_official_number_fsma": {
-                "message": "Required"
-            },
-            "agreement_date": {
-                "message": "Required"
-            },
-            "duration": {
-                "message": "Required"
-            },
-            "from_date": {
-                "message": "Required"
-            },
-            "insured_party__1__birthdate": {
-                "message": "Required"
-            },
-            "insured_party__1__sex": {
-                "message": "Required"
-            },
-            "package_id": {
-                "message": "Required"
-            },
-            "premium_schedule__1__premium_fee_1": {
-                "message": "Required"
-            },
-            "premium_schedule__1__product_id": {
-                "message": "Required"
-            },
-            "premium_schedule__2__product_id": {
-                "message": "Required"
-            },
-            "premium_schedules_coverage_level_type": {
-                "message": "Required"
-            },
-            "premium_schedules_coverage_limit": {
-                "message": "Required"
-            },
-            "premium_schedules_payment_duration": {
-                "message": "Required"
-            },
-            "premium_schedules_period_type": {
-                "message": "Required"
-            },
-            "premium_schedules_premium_rate_1": {
-                "message": "Required"
-            }
-        }
+    .. literalinclude:: demo/bad_request_required.json
+        :language: json
 
     If there is an error in the values of the json document, the server will
     return a message with the path of the variable.
 
-    .. sourcecode:: http
+    .. literalinclude:: demo/400.http
+        :language: http
 
-        HTTP/1.0 400 BAD REQUEST
-        Content-Length: 98
-        Content-Type: application/json
-        Date: Thu, 26 Feb 2015 09:40:32 GMT
-        Server: Werkzeug/0.10.1 Python/2.7.8+
-
-        {
-            "agreement_date/day": {
-                "message": "day is out of range for month",
-                "value": 29
-            }
-        }
+    .. literalinclude:: demo/bad_request_error.json
+        :language: json
 
     If there is a extra key in the json document, the server will return
     this kind of message.
 
-    .. sourcecode:: http
+    .. literalinclude:: demo/400.http
+        :language: http
 
-        HTTP/1.0 400 BAD REQUEST
-        Content-Length: 1057
-        Content-Type: application/json
-        Date: Thu, 26 Feb 2015 09:40:32 GMT
-        Server: Werkzeug/0.10.1 Python/2.7.8+
-
-        {
-            "name": {
-                "message": "extra keys not allowed",
-                "value": "value"
-            }
-        }
+    .. literalinclude:: demo/bad_request_extra.json
+        :language: json
 
     """
     json_document = is_json_body()
@@ -195,87 +85,29 @@ def calculate_proposal():
 
 
 @bp.route('/create_agreement_code', methods=['POST'])
-# @check_minimal_requirements
+@log_to_file
+@check_minimal_requirements
 def create_agreement_code():
     """
     :synopsis: Create an Agreement Code
 
-    **Not Yet Implemented**
+    .. literalinclude:: demo/post_create_agreement_code.http
+        :language: http
 
-    .. sourcecode:: http
+    .. literalinclude:: demo/create_agreement_code.json
+        :language: json
 
-        POST /api/v0.1/create_agreement_code HTTP/1.1
-        Accept: application/json
-        Accept-Encoding: gzip, deflate
-        Connection: keep-alive
-        Content-Length: 0
-        Content-Type:  application/json
-        Host: localhost:19021
-        User-Agent: HTTPie/0.9.1
+    .. literalinclude:: demo/200.http
+        :language: http
 
-        {
-            "agent_official_number_fsma": "128Char",
-            "agreement_date": {
-                "day": 28,
-                "month": 2,
-                "year": 2015
-            },
-            "duration": 10,
-            "from_date": {
-                "day": 26,
-                "month": 2,
-                "year": 2015
-            },
-            "insured_party__1__birthdate": {
-                "day": 26,
-                "month": 2,
-                "year": 2015
-            },
-            "insured_party__1__sex": "M",
-            "package_id": 10,
-            "premium_schedule__1__premium_fee_1": "2.00",
-            "premium_schedule__1__product_id": 67,
-            "premium_schedule__2__product_id": null,
-            "premium_schedules_coverage_level_type": "fixed_amount",
-            "premium_schedules_coverage_limit": "5000",
-            "premium_schedules_payment_duration": 10,
-            "premium_schedules_period_type": "single",
-            "premium_schedules_premium_rate_1": "20",
-            "origin": "BIA:10",
-            "insured_party__1__last_name": "Lastname",
-            "insured_party__1__first_name": "Firstname",
-            "insured_party__1__language": "nl_BE",
-            "insured_party__1__nationality_code": "BE",
-            "insured_party__1__social_security_number": "012345678901",
-            "insured_party__1__passport_number": "111-2222222-33",
-            "insured_party__1__dangerous_hobby": null,
-            "insured_party__1__street_1": "Street",
-            "insured_party__1__city_code": "1234",
-            "insured_party__1__city_name": "Brussels",
-            "insured_party__1__country_code": "BE",
-            "pledgee_name": "Krefimaa",
-            "pledgee_tax_id": "BE 0456.249.396",
-            "pledgee_reference": "KREF12345",
-        }
-
-    .. sourcecode:: http
-
-        HTTP/1.0 200 OK
-        Content-Length: 36
-        Content-Type: application/json
-        Date: Mon, 23 Feb 2015 15:26:04 GMT
-        Server: Werkzeug/0.10.1 Python/2.7.8+
-
-        {
-            "code": "000/0000/00000",
-            "premium_schedule__1__amount": "1.0",
-            "premium_schedule__2__amount": null,
-            "signature": "50ad3f36f09b227c7b8e647cf8e35497"
-        }
+    .. literalinclude:: demo/create_agreement_code_response.json
+        :language: json
 
 
-    :status 200: OK
+    :status 200:
+    :status 400:
     :reqheader Content-Type: Must be `application/json`
+    :resheader Cotnent-Type: :mimetype:`application/json`
 
     """
     json_document = is_json_body()
@@ -298,104 +130,37 @@ def create_agreement_code():
         return jsonify({'message': ex.message}), 400
 
 
-@bp.route('/create_proposal', methods=['POST'])
-def create_proposal():
+@bp.route('/send_agreement', methods=['POST'])
+@check_minimal_requirements
+def send_agreement():
     """
-    :synopsis: Create a proposal
+    :synopsis: Send an agreement
 
     **Not Yet Implemented**
 
-    .. sourcecode:: http
+    .. literalinclude:: demo/501.http
+        :language: http
 
-        HTTP/1.0 501 NOT IMPLEMENTED
-        Content-Length: 46
-        Content-Type: application/json
-        Date: Mon, 23 Feb 2015 06:44:54 GMT
-        Server: Werkzeug/0.10.1 Python/2.7.8+
-
-        {
-            "message": "Web service not implemented"
-        }
-
-    :status 501: Not implemented
-    :reqheader Content-Type: Must be :mimetype:`application/json`
-
+    :status 501:
+    :reqheader Content-Type: :mimetype:`application/json`
+    :resheader Content-Type: :mimetype:`application/json`
     """
-    return jsonify({
-        'message': "Web service not implemented"
-    }), 501
+    json_document = is_json_body()
+    from .validation_message import validation_send_agreement
 
+    proposal, errors = validation_send_agreement(json_document)
 
-@bp.route('/modify_proposal', methods=['POST'])
-def modify_proposal():
-    """
-    :synopsis: Modify a proposal
+    if errors:
+        return jsonify(errors), 400
 
-    **Not Yet Implemented**
-
-    .. sourcecode:: http
-
-        HTTP/1.0 501 NOT IMPLEMENTED
-        Content-Length: 46
-        Content-Type: application/json
-        Date: Mon, 23 Feb 2015 06:44:54 GMT
-        Server: Werkzeug/0.10.1 Python/2.7.8+
-
-        {
-            "message": "Web service not implemented"
-        }
-    """
-    return jsonify({
-        'message': "Web service not implemented"
-    }), 501
-
-
-@bp.route('/cancel_proposal', methods=['POST'])
-def cancel_proposal():
-    """
-    :synopsis: Cancel a Proposal
-
-    **Not Yet Implemented**
-
-    .. sourcecode:: http
-
-        HTTP/1.0 501 NOT IMPLEMENTED
-        Content-Length: 46
-        Content-Type: application/json
-        Date: Mon, 23 Feb 2015 06:44:54 GMT
-        Server: Werkzeug/0.10.1 Python/2.7.8+
-
-        {
-            "message": "Web service not implemented"
-        }
-    """
-    return jsonify({
-        'message': "Web service not implemented"
-    }), 501
-
-
-@bp.route('/proposal_to_managed', methods=['POST'])
-def proposal_to_managed():
-    """
-    :synopsis: Proposal to managed
-
-    **Not Yet Implemented**
-
-    .. sourcecode:: http
-
-        HTTP/1.0 501 NOT IMPLEMENTED
-        Content-Length: 46
-        Content-Type: application/json
-        Date: Mon, 23 Feb 2015 06:44:54 GMT
-        Server: Werkzeug/0.10.1 Python/2.7.8+
-
-        {
-            "message": "Web service not implemented"
-        }
-    """
-    return jsonify({
-        'message': "Web service not implemented"
-    }), 501
+    try:
+        v01.send_agreement(proposal)
+        return jsonify({})
+    except Exception, ex:
+        if isinstance(ex, camelot.core.exception.UserException):
+            if isinstance(ex.message, camelot.core.utils.ugettext_lazy):
+                return jsonify({'message': ex.message._string_to_translate}), 400
+        return jsonify({'message': ex.message}), 400 
 
 
 @bp.route('/get_proposal_pdf', methods=['POST'])
@@ -405,17 +170,8 @@ def get_proposal_pdf():
 
     **Not Yet Implemented**
 
-    .. sourcecode:: http
-
-        HTTP/1.0 501 NOT IMPLEMENTED
-        Content-Length: 46
-        Content-Type: application/json
-        Date: Mon, 23 Feb 2015 06:44:54 GMT
-        Server: Werkzeug/0.10.1 Python/2.7.8+
-
-        {
-            "message": "Web service not implemented"
-        }
+    .. literalinclude:: demo/501.http
+        :language: http
     """
     return jsonify({
         'message': "Web service not implemented"

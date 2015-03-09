@@ -10,7 +10,7 @@ import flask.wrappers
 
 import werkzeug.exceptions
 
-from .exceptions import BadContentType
+from vfinance_ws.ws.exceptions import BadContentType
 
 
 def log_to_file(function):

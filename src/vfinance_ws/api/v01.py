@@ -4,6 +4,7 @@ import datetime
 import decimal
 import hashlib
 import json
+import functools
 
 from sqlalchemy.engine import create_engine
 from sqlalchemy import orm
@@ -29,8 +30,31 @@ class DecimalEncoder(json.JSONEncoder):
 # DB_FILENAME = '/Users/jeroen/Projects/v-finance-web-service/conf/packages.db'
 DB_FILENAME = os.environ['DB_PATH']  # :raises: `KeyError` when env var DB_PATH is not set
 
-def fill_financial_agreement_facade(session, proposal):
-    package = session.query(FinancialPackage).get(long(proposal['package_id']))
+
+def with_session(function):
+    @functools.wraps(function)
+    def wrapper(*args, **kwargs):
+        settings.append(SettingsProxy(None))
+
+        db_filename = DB_FILENAME
+
+        engine = create_engine('sqlite:///'+db_filename)
+
+        metadata.bind = engine
+
+        setup_vfinance_model(update=False, templates=False)
+
+        session = Session()
+        try:
+            return function(session, *args, **kwargs)
+        finally:
+            session.close()
+
+    return wrapper
+
+
+def fill_financial_agreement_facade(session, document):
+    package = session.query(FinancialPackage).get(long(document['package_id']))
 
     if not package:
         raise Exception("This package does not exist")
@@ -38,17 +62,17 @@ def fill_financial_agreement_facade(session, proposal):
     facade = FinancialAgreementFacade()
 
     # facade.agreement_date = datetime.date(2015, 3, 2)
-    facade.agreement_date = datetime.date(**proposal['agreement_date'])
+    facade.agreement_date = datetime.date(**document['agreement_date'])
     # facade.from_date = datetime.date(2015, 3, 1)
-    facade.from_date = datetime.date(**proposal['from_date'])
+    facade.from_date = datetime.date(**document['from_date'])
 
     facade.package = package
 
     facade.insured_party__1__birthdate = datetime.date(
-        **proposal['insured_party__1__birthdate']
+        **document['insured_party__1__birthdate']
     )
     # facade.insured_party__1__birthdate = datetime.date(1980, 1, 1)
-    facade.insured_party__1__sex = proposal['insured_party__1__sex']
+    facade.insured_party__1__sex = document['insured_party__1__sex']
     # facade.insured_party__1__sex = 'M'
 
     facade.premium_schedule__1__product = package.available_products[0].product
@@ -56,9 +80,9 @@ def fill_financial_agreement_facade(session, proposal):
     # set_trace()
     # facade.premium_schedule__1__premium_fee_1 = D(100)
     facade.premium_schedule__1__premium_fee_1 = \
-        proposal['premium_schedule__1__premium_fee_1']
+        document['premium_schedule__1__premium_fee_1']
 
-    product_2_id = proposal['premium_schedule__2__product_id']
+    product_2_id = document['premium_schedule__2__product_id']
     if isinstance(product_2_id, (int, long)):
         product = session.query(FinancialProduct).get(product_2_id)
         if not product:
@@ -68,44 +92,34 @@ def fill_financial_agreement_facade(session, proposal):
 
 
     # facade.duration = 5*12
-    facade.duration = proposal['duration']
+    facade.duration = document['duration']
 
     # facade.premium_schedules_coverage_limit = D('150000')
     facade.premium_schedules_coverage_limit = \
-        proposal['premium_schedules_coverage_limit']
+        document['premium_schedules_coverage_limit']
     # facade.premium_schedules_payment_duration = 5*12
     facade.premium_schedules_payment_duration = \
-        proposal['premium_schedules_payment_duration']
+        document['premium_schedules_payment_duration']
     # facade.premium_schedules_coverage_level_type = 'fixed_amount'
     facade.premium_schedule__1__coverage_level_type = \
-        proposal['premium_schedule__1__coverage_level_type']
+        document['premium_schedule__1__coverage_level_type']
     facade.premium_schedule__2__coverage_level_type = \
-        proposal['premium_schedule__2__coverage_level_type']
+        document['premium_schedule__2__coverage_level_type']
     # facade.premium_schedules_premium_rate_1 = D(20)
     facade.premium_schedules_premium_rate_1 = \
-        proposal['premium_schedules_premium_rate_1']
+        document['premium_schedules_premium_rate_1']
     # facade.premium_schedules_period_type = 'single'
     facade.premium_schedules_period_type = \
-        proposal['premium_schedules_period_type']
+        document['premium_schedules_period_type']
 
     facade.code = "000"
 
     return facade
 
-def calculate_proposal(proposal):
 
-    settings.append(SettingsProxy(None))
-
-    db_filename = DB_FILENAME
-
-    engine = create_engine('sqlite:///'+db_filename)
-
-    metadata.bind = engine
-
-    setup_vfinance_model(update=False, templates=False)
-
-    session = Session()
-    facade = fill_financial_agreement_facade(session, proposal)
+@with_session
+def calculate_proposal(session, document):
+    facade = fill_financial_agreement_facade(session, document)
 
     facade.update_premium()
 
@@ -121,20 +135,9 @@ def calculate_proposal(proposal):
     }
 
 
-def create_agreement_code(proposal):
-    settings.append(SettingsProxy(None))
-
-    db_filename = DB_FILENAME
-
-    engine = create_engine('sqlite:///'+db_filename)
-
-    metadata.bind = engine
-
-    setup_vfinance_model(update=False, templates=False)
-
-    session = Session()
-
-    facade = fill_financial_agreement_facade(session, proposal)
+@with_session
+def create_agreement_code(session, document):
+    facade = fill_financial_agreement_facade(session, document)
 
     facade.code = next_code = FinancialAgreementFacade.next_agreement_code(session)
 
@@ -154,7 +157,7 @@ def create_agreement_code(proposal):
     }
 
     use_for_signature = {
-        'proposal': proposal,
+        'proposal': document,
         'values': values,
     }
 
@@ -167,3 +170,8 @@ def create_agreement_code(proposal):
 
     values['signature'] = signature
     return values
+
+@with_session
+def send_agreement(session, document):
+
+    return None

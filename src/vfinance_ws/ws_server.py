@@ -1,10 +1,7 @@
 #!/usr/bin/env python
-from __future__ import absolute_import
 import sys
 from flask import Flask
 from flask import jsonify
-
-sys.path.insert(0, '.')
 
 
 def bad_request(error):
@@ -22,12 +19,12 @@ def not_implemented(error):
 def create_app():
     app = Flask(__name__)
 
-    from .ws import ws_v01
-    from .ws import ws_test
+    from vfinance_ws.ws import ws_v01
+    from vfinance_ws.ws import ws_test
     app.register_blueprint(ws_test.bp, url_prefix='/api/test')
     app.register_blueprint(ws_v01.bp, url_prefix='/api/v0.1')
 
-    from .ws.exceptions import BadContentType
+    from vfinance_ws.ws.exceptions import BadContentType
     app.register_error_handler(BadContentType, bad_request)
     app.register_error_handler(501, not_implemented)
 
