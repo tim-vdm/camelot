@@ -9,8 +9,10 @@ from sqlalchemy import orm
 from vfinance_ws.ws.utils import with_session
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
+from vfinance.model.insurance.credit_insurance import CalculateCreditInsurance
 from vfinance.facade.financial_agreement import FinancialAgreementFacade
 
+calculcate_credit_insurance = CalculateCreditInsurance()
 
 class DecimalEncoder(json.JSONEncoder):
     def default(self, o):
@@ -87,7 +89,9 @@ def fill_financial_agreement_facade(session, document):
 def calculate_proposal(session, document):
     facade = fill_financial_agreement_facade(session, document)
 
-    facade.update_premium()
+    for premium_schedule in facade.invested_amounts:
+        for coverage in premium_schedule.agreed_coverages:
+            premium_schedule.amount = calculcate_credit_insurance.calculate_premium(premium_schedule, coverage)
 
     orm.object_session(facade).flush()
 
@@ -107,7 +111,9 @@ def create_agreement_code(session, document):
 
     facade.code = next_code = FinancialAgreementFacade.next_agreement_code(session)
 
-    facade.update_premium()
+    for premium_schedule in facade.invested_amounts:
+        for coverage in premium_schedule.agreed_coverages:
+            premium_schedule.amount = calculcate_credit_insurance.calculate_premium(premium_schedule, coverage)
 
     orm.object_session(facade).flush()
 
