@@ -2,6 +2,7 @@
 import sys
 from flask import Flask
 from flask import jsonify
+from werkzeug.contrib.fixers import ProxyFix
 
 
 def bad_request(error):
@@ -18,6 +19,7 @@ def not_implemented(error):
 
 def create_app():
     app = Flask(__name__)
+    app.config['JSON_SORT_KEYS'] = True
 
     from vfinance_ws.ws import ws_v01
     from vfinance_ws.ws import ws_test
@@ -30,10 +32,10 @@ def create_app():
 
     return app
 
+
 if __name__ == '__main__':
     app = create_app()
 
-    from werkzeug.contrib.fixers import ProxyFix
     app.wsgi_app = ProxyFix(app.wsgi_app)
 
     app.debug = True
