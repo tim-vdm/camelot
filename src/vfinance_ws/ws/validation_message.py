@@ -92,28 +92,9 @@ SEND_AGREEMENT_SCHEMA.update({
     Required("code"): String(max=32),
 })
 
-
 def validate_document(document, schema):
     validator = Schema(schema)
-
-    doc, errors = None, {}
-
-    try:
-        doc = validator(document)
-    except MultipleInvalid as ex:
-        for error in ex.errors:
-            if isinstance(error, RequiredFieldInvalid):
-                errors[error.path[0].schema] = {
-                    u'message': 'Required',
-                }
-            else:
-                path_str = '/'.join(error.path)
-
-                errors[path_str] = {
-                    u'message': error.error_message,
-                    u'value': lookup(document, *error.path)
-                }
-    return doc, errors
+    return validator(document)
 
 
 def validation_calculate_proposal(document):

@@ -35,14 +35,9 @@ class ValidationTestCase(unittest.TestCase):
                 'day': 29
             }
         }
-        doc, errors = validation_message.validate_document(document, schema)
-
-        self.assertEqual(errors, {
-            'date/day': {
-                'message': 'day is out of range for month', 
-                'value': 29
-            }
-        })
+        with self.assertRaises(voluptuous.MultipleInvalid) as ex:
+            validation_message.validate_document(document, schema)
+        self.assertEqual(ex.exception.errors[0].msg, 'day is out of range for month')
 
 
 class DocumentValidationTestCase(unittest.TestCase):
