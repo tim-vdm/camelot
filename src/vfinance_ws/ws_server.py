@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import sys
 from flask import Flask
 from flask import jsonify
 from werkzeug.contrib.fixers import ProxyFix
