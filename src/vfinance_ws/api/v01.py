@@ -107,6 +107,20 @@ def calculate_proposal(session, document):
     }
 
 
+def to_table_html(document):
+    TD_TEMPLATE = u"<td>{0}</td>"
+    TR_TEMPLATE = u"<tr>{0}</tr>"
+    TABLE_TEMPLATE = u"<table>{0}</table>"
+
+    lines = []
+    for k, v in document.iteritems():
+        lines.append(
+            TR_TEMPLATE.format(u''.join([TD_TEMPLATE.format(k),
+                                         TD_TEMPLATE.format(unicode(v))]))
+        )
+    return TABLE_TEMPLATE.format(u''.join(lines))
+
+
 @with_session
 def create_agreement_code(session, document, logfile):
     facade = fill_financial_agreement_facade(session, document)
@@ -117,6 +131,8 @@ def create_agreement_code(session, document, logfile):
         for coverage in premium_schedule.agreed_coverages:
             premium_schedule.amount = calculate_credit_insurance.calculate_premium(premium_schedule, coverage)
 
+    facade.text = to_table_html(document)
+
     orm.object_session(facade).flush()
 
     dump = FinancialAgreementJsonExport().entity_to_dict(facade)
@@ -125,7 +141,6 @@ def create_agreement_code(session, document, logfile):
     amount1 = str(facade.premium_schedule__1__amount)
     amount2 = str(facade.premium_schedule__2__amount) \
         if facade.premium_schedule__2__amount else None
-
 
     values = {
         'premium_schedule__1__amount': amount1,
