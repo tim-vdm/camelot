@@ -3,9 +3,11 @@ import os
 import pprint
 
 from decorator import decorator
+from flask import current_app
 from flask import json
 from flask import jsonify
 from flask import request
+
 import flask.wrappers
 
 import werkzeug.exceptions
@@ -24,9 +26,8 @@ def log_to_file(function):
 
         timestamp = datetime.datetime.now()
         fname = '{}-{}.json'.format(timestamp, function.func_name)
-        logdir = os.path.join(os.getcwd(), 'logs')
-        if not os.path.exists(logdir):
-            os.makedirs(logdir)
+        logdir = os.path.join(current_app.config['PATH_DIR_LOG'], 'json-requests')
+
         logfile = os.path.join(logdir, fname)
 
         with open(logfile, 'w') as outfile:
@@ -37,8 +38,6 @@ def log_to_file(function):
                 elif isinstance(result, tuple):
                     dump['response'] = result[0].data
                 else:
-                    # from nose.tools import set_trace
-                    # set_trace()
                     dump['response'] = result
                 return result
             except werkzeug.exceptions.BadRequest, ex:

@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import os
 from flask import Flask
 from flask import jsonify
 from werkzeug.contrib.fixers import ProxyFix
@@ -16,9 +17,39 @@ def not_implemented(error):
     return response
 
 
+def create_path_dir_log(*args, **kwargs):
+    """
+    Create the directory for the logs
+    """
+
+    from flask import current_app
+    path_dir_log = current_app.config['PATH_DIR_LOG']
+
+    directories = [
+        (path_dir_log,),
+        (path_dir_log, 'json-requests'),
+        (path_dir_log, 'calculate_proposal'),
+        (path_dir_log, 'create_agreement_code'),
+    ]
+
+
+    current_app.logger.info("Creating the path directory for log: %s", path_dir_log)
+    for directory in directories:
+        directory = os.path.join(*directory)
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
+
 def create_app():
     app = Flask(__name__)
     app.config['JSON_SORT_KEYS'] = True
+
+    # FIXME: Use the tempdir module
+    app.config['PATH_DIR_LOG'] = os.environ.get('PATH_DIR_LOG',
+                                                os.path.join('/', 'tmp', 'vfinance_ws'))
+
+
+    app.before_first_request(create_path_dir_log)
 
     from vfinance_ws.ws import ws_v01
     from vfinance_ws.ws import ws_test

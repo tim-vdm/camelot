@@ -1,10 +1,13 @@
 import functools
+import datetime
+import os
 
 import werkzeug.exceptions
 
 from flask import Blueprint
 from flask import jsonify
 from flask import request
+from flask import current_app
 
 import camelot.core.exception
 import camelot.core.utils
@@ -83,6 +86,7 @@ def validation_json(validator=None):
 
 @bp.route('/calculate_proposal', methods=['POST'])
 @ws_jsonify
+@log_to_file
 @validation_json(validation_calculate_proposal)
 def calculate_proposal(document):
     """
@@ -131,7 +135,15 @@ def calculate_proposal(document):
         :language: json
 
     """
-    return v01.calculate_proposal(document)
+    identifier = document['agent_official_number_fsma']
+    timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+    fname = '%s-%s.json' % (identifier, timestamp,)
+    fname = os.path.join(current_app.config['PATH_DIR_LOG'], 'calculate_proposal', fname)
+
+    with open(fname, 'w') as outfile:
+        result = v01.calculate_proposal(document, logfile=outfile)
+
+    return result
 
 
 @bp.route('/create_agreement_code', methods=['POST'])
@@ -161,10 +173,19 @@ def create_agreement_code(document):
     :resheader Cotnent-Type: :mimetype:`application/json`
 
     """
-    return v01.create_agreement_code(document)
+    identifier = document['agent_official_number_fsma']
+    timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+    fname = '%s-%s.json' % (identifier, timestamp,)
+    fname = os.path.join(current_app.config['PATH_DIR_LOG'], 'create_agreement_code', fname)
+
+    with open(fname, 'w') as outfile:
+        result = v01.create_agreement_code(document, logfile=outfile)
+
+    return result
 
 @bp.route('/send_agreement', methods=['POST'])
 @ws_jsonify
+@log_to_file
 @validation_json(validation_send_agreement)
 def send_agreement(document):
     """

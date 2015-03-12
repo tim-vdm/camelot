@@ -3,14 +3,18 @@ import datetime
 import decimal
 import hashlib
 import json
+import json
 
 from sqlalchemy import orm
 
-from vfinance_ws.ws.utils import with_session
+from vfinance.facade.financial_agreement import FinancialAgreementFacade
+from vfinance.model.financial.agreement import FinancialAgreementJsonExport
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
 from vfinance.model.insurance.credit_insurance import CalculateCreditInsurance
-from vfinance.facade.financial_agreement import FinancialAgreementFacade
+from vfinance_ws.ws.utils import with_session
+
+import vfinance.connector.json_
 
 calculate_credit_insurance = CalculateCreditInsurance()
 
@@ -44,8 +48,7 @@ def fill_financial_agreement_facade(session, document):
     # facade.insured_party__1__sex = 'M'
 
     facade.premium_schedule__1__product = package.available_products[0].product
-    # from nose.tools import set_trace
-    # set_trace()
+
     # facade.premium_schedule__1__premium_fee_1 = D(100)
     facade.premium_schedule__1__premium_fee_1 = \
         document['premium_schedule__1__premium_fee_1']
@@ -86,7 +89,7 @@ def fill_financial_agreement_facade(session, document):
 
 
 @with_session
-def calculate_proposal(session, document):
+def calculate_proposal(session, document, logfile=None):
     facade = fill_financial_agreement_facade(session, document)
 
     for premium_schedule in facade.invested_amounts:
@@ -95,9 +98,14 @@ def calculate_proposal(session, document):
 
     orm.object_session(facade).flush()
 
+    dump = FinancialAgreementJsonExport().entity_to_dict(facade)
+    json.dump(dump, logfile, cls=vfinance.connector.json_.ExtendedEncoder)
+
     amount1 = str(facade.premium_schedule__1__amount)
     amount2 = str(facade.premium_schedule__2__amount) \
         if facade.premium_schedule__2__amount else None
+
+
 
     return {
         'premium_schedule__1__amount': amount1,
@@ -106,7 +114,7 @@ def calculate_proposal(session, document):
 
 
 @with_session
-def create_agreement_code(session, document):
+def create_agreement_code(session, document, logfile=None):
     facade = fill_financial_agreement_facade(session, document)
 
     facade.code = next_code = FinancialAgreementFacade.next_agreement_code(session)
@@ -116,6 +124,9 @@ def create_agreement_code(session, document):
             premium_schedule.amount = calculate_credit_insurance.calculate_premium(premium_schedule, coverage)
 
     orm.object_session(facade).flush()
+
+    dump = FinancialAgreementJsonExport().entity_to_dict(facade)
+    json.dump(dump, logfile, cls=vfinance.connector.json_.ExtendedEncoder)
 
     amount1 = str(facade.premium_schedule__1__amount)
     amount2 = str(facade.premium_schedule__2__amount) \

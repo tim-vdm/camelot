@@ -78,7 +78,6 @@ class WsTestCase(unittest.TestCase):
     def test_010_calculate_proposal(self):
         document = load_demo_json('calculate_proposal')
         response = self.post_json('calculate_proposal', data=document)
-        # set_trace()
         self.assertEqual(response.status_code, 200)
 
     def test_011_calculate_proposal_two_products(self):
