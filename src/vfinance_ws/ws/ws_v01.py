@@ -1,6 +1,7 @@
 import functools
-import datetime
 import os
+import uuid
+from cStringIO import StringIO
 
 import werkzeug.exceptions
 
@@ -77,7 +78,7 @@ def validation_json(validator=None):
                 try:
                     document = validator(request.get_json())
                     return function(document, *args, **kwargs)
-                except werkzeug.exceptions.BadRequest, ex:
+                except werkzeug.exceptions.BadRequest:
                     raise BadContentType('Invalid JSON message')
 
         return wrapper
@@ -135,15 +136,7 @@ def calculate_proposal(document):
         :language: json
 
     """
-    identifier = document['agent_official_number_fsma']
-    timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-    fname = '%s-%s.json' % (identifier, timestamp,)
-    fname = os.path.join(current_app.config['PATH_DIR_LOG'], 'calculate_proposal', fname)
-
-    with open(fname, 'w') as outfile:
-        result = v01.calculate_proposal(document, logfile=outfile)
-
-    return result
+    return v01.calculate_proposal(document)
 
 
 @bp.route('/create_agreement_code', methods=['POST'])
@@ -173,15 +166,32 @@ def create_agreement_code(document):
     :resheader Cotnent-Type: :mimetype:`application/json`
 
     """
-    identifier = document['agent_official_number_fsma']
-    timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-    fname = '%s-%s.json' % (identifier, timestamp,)
-    fname = os.path.join(current_app.config['PATH_DIR_LOG'], 'create_agreement_code', fname)
+    # from nose.tools import set_trace
+    # set_trace()
+    try:
+        sIO = StringIO()
 
-    with open(fname, 'w') as outfile:
-        result = v01.create_agreement_code(document, logfile=outfile)
+        result = v01.create_agreement_code(document, logfile=sIO)
 
-    return result
+        values = {
+            'fsma': document['agent_official_number_fsma'],
+            'code': result['code'].replace('/','_'),
+            'ident': uuid.uuid4().hex,
+        }
+        fname = '{code}-{fsma}-{ident}.json'.format(**values)
+
+        fname = os.path.join(current_app.config['PATH_DIR_LOG'],
+                             'create_agreement_code',
+                             fname)
+
+        with open(fname, 'w') as outfile:
+            sIO.seek(0)
+            outfile.write(sIO.getvalue())
+
+        return result
+    finally:
+        sIO.close()
+
 
 @bp.route('/send_agreement', methods=['POST'])
 @ws_jsonify

@@ -3,7 +3,6 @@ import datetime
 import decimal
 import hashlib
 import json
-import json
 
 from sqlalchemy import orm
 
@@ -89,7 +88,7 @@ def fill_financial_agreement_facade(session, document):
 
 
 @with_session
-def calculate_proposal(session, document, logfile=None):
+def calculate_proposal(session, document):
     facade = fill_financial_agreement_facade(session, document)
 
     for premium_schedule in facade.invested_amounts:
@@ -98,14 +97,9 @@ def calculate_proposal(session, document, logfile=None):
 
     orm.object_session(facade).flush()
 
-    dump = FinancialAgreementJsonExport().entity_to_dict(facade)
-    json.dump(dump, logfile, cls=vfinance.connector.json_.ExtendedEncoder)
-
     amount1 = str(facade.premium_schedule__1__amount)
     amount2 = str(facade.premium_schedule__2__amount) \
         if facade.premium_schedule__2__amount else None
-
-
 
     return {
         'premium_schedule__1__amount': amount1,
@@ -114,7 +108,7 @@ def calculate_proposal(session, document, logfile=None):
 
 
 @with_session
-def create_agreement_code(session, document, logfile=None):
+def create_agreement_code(session, document, logfile):
     facade = fill_financial_agreement_facade(session, document)
 
     facade.code = next_code = FinancialAgreementFacade.next_agreement_code(session)
