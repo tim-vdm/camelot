@@ -113,7 +113,7 @@ def create_agreement_code(session, document):
 
     for premium_schedule in facade.invested_amounts:
         for coverage in premium_schedule.agreed_coverages:
-            premium_schedule.amount = calculcate_credit_insurance.calculate_premium(premium_schedule, coverage)
+            premium_schedule.amount = calculate_credit_insurance.calculate_premium(premium_schedule, coverage)
 
     orm.object_session(facade).flush()
 
