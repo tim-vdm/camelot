@@ -45,7 +45,7 @@ def create_app():
     app.config['JSON_SORT_KEYS'] = True
 
     # FIXME: Use the tempdir module
-    app.config['PATH_DIR_LOG'] = os.environ.get('PATH_DIR_LOG',
+    app.config['PATH_DIR_LOG'] = os.environ.get('LOGHOME',
                                                 os.path.join('/', 'tmp', 'vfinance_ws'))
 
 
