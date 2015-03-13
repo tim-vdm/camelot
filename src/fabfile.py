@@ -188,3 +188,10 @@ def connect():
                                    user=env.HOST_USER,
                                    key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
         api.open_shell()
+
+def get_all_jsons():
+    with context_managers.settings(host_string=env.HOST_NAME,
+                                   user=env.HOST_USER,
+                                   key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
+        for f in api.run('ls {}'.format(os.path.join('/tmp', 'log', env.CONFIGURATION, 'create_agreement_code'))).split():
+            api.get(os.path.join('/tmp', 'log', env.CONFIGURATION, 'create_agreement_code', f), '/tmp/generated_jsons/%(path)s')
