@@ -9,6 +9,7 @@ from flask import Blueprint
 from flask import jsonify
 from flask import request
 from flask import current_app
+from flask import send_from_directory
 
 import camelot.core.exception
 import camelot.core.utils
@@ -163,7 +164,7 @@ def create_agreement_code(document):
     :status 200:
     :status 400:
     :reqheader Content-Type: Must be `application/json`
-    :resheader Cotnent-Type: :mimetype:`application/json`
+    :resheader Content-Type: :mimetype:`application/json`
 
     """
     # from nose.tools import set_trace
@@ -226,3 +227,19 @@ def get_proposal_pdf():
     return jsonify({
         'message': "Web service not implemented"
     }), 501
+
+
+@bp.route('/docs/', defaults={'filename': 'index.html'})
+@bp.route('/docs/<path:filename>')
+def docs(filename):
+    mimetypes = {
+        ".css": "text/css",
+        ".html": "text/html",
+        ".js": "application/javascript",
+        ".png": "image/png",
+        ".gif": "image/gif"
+    }
+    ext = os.path.splitext(filename)[1]
+    mimetype = mimetypes.get(ext, "text/html")
+    dirname = os.path.dirname(os.path.abspath(__file__))
+    return send_from_directory(os.path.join(dirname, 'docs', 'v0.1'), filename, mimetype=mimetype)
