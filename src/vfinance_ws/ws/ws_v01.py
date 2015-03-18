@@ -2,14 +2,15 @@ import functools
 import os
 import uuid
 from cStringIO import StringIO
+from pkg_resources import resource_stream
 
 import werkzeug.exceptions
 
 from flask import Blueprint
+from flask import current_app
 from flask import jsonify
 from flask import request
-from flask import current_app
-from flask import send_from_directory
+from flask import send_file
 
 import camelot.core.exception
 import camelot.core.utils
@@ -241,5 +242,5 @@ def docs(filename):
     }
     ext = os.path.splitext(filename)[1]
     mimetype = mimetypes.get(ext, "text/html")
-    dirname = os.path.dirname(os.path.abspath(__file__))
-    return send_from_directory(os.path.join(dirname, 'docs', 'v0.1'), filename, mimetype=mimetype)
+    path = os.path.join('docs', 'v0.1', filename)
+    return send_file(resource_stream(__name__, path), mimetype=mimetype)
