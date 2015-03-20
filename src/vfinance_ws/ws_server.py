@@ -32,8 +32,11 @@ def create_path_dir_log(*args, **kwargs):
         (path_dir_log, 'create_agreement_code'),
     ]
 
+    current_app.logger.info(
+        "Creating the path directory for log: %s",
+        path_dir_log
+    )
 
-    current_app.logger.info("Creating the path directory for log: %s", path_dir_log)
     for directory in directories:
         directory = os.path.join(*directory)
         if not os.path.exists(directory):
@@ -45,9 +48,8 @@ def create_app():
     app.config['JSON_SORT_KEYS'] = True
 
     # FIXME: Use the tempdir module
-    app.config['PATH_DIR_LOG'] = os.environ.get('LOGHOME',
-                                                os.path.join('/', 'tmp', 'vfinance_ws'))
-
+    path = os.path.join('/', 'tmp', 'vfinance_ws')
+    app.config['PATH_DIR_LOG'] = os.environ.get('LOGHOME', path)
 
     app.before_first_request(create_path_dir_log)
 
