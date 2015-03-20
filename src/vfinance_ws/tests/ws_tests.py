@@ -134,8 +134,15 @@ class WsTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 501)
 
     def test_080_send_agreement(self):
+        # from camelot.core.conf import settings
+        # class TestSettings(object):
+        #     MOCK = True
+        # settings.append(TestSettings())
+
         document = load_demo_json('send_agreement')
         response = self.post_json('send_agreement', data=document)
+
+        # set_trace()
         self.assertEqual(response.status_code, 200)
         content = json.loads(response.data)
         self.assertEqual(len(content), 0)

@@ -76,6 +76,16 @@ def get_packages(session, document):
 
 @with_session
 def send_agreement(session, document):
+    from vfinance.connector.aws import QueueCommand
+    from vfinance.connector.aws import AwsQueue
+
+    facade = create_facade_from_send_agreement_schema(session, document)
+    agreement_dict = FinancialAgreementJsonExport().entity_to_dict(facade)
+
+    # queue = AwsQueue()
+    # command = QueueCommand('import_agreement', agreement_dict)
+    # queue.write_message(command)
+
     return None
 
 
@@ -114,7 +124,6 @@ def create_facade_from_calculate_proposal_schema(session, document):
             raise Exception("The premium_schedule__2__product_id does not exist")
 
         facade.premium_schedule__2__product = product
-
 
     # facade.duration = 5*12
     facade.duration = document['duration']
@@ -159,9 +168,10 @@ def create_facade_from_create_agreement_schema(session, document):
         setattr(facade, field, document[field])
 
     FIELDS = [
-        'last_name', 'first_name', 'language', 'nationality_code', 'social_security_number', 
-        'passport_number', 'dangerous_hobby', 'dangerous_profession', 'street_1', 'city_code',
-        'city_name', 'country_code'
+        'last_name', 'first_name', 'language', 'nationality_code',
+        'social_security_number', 'passport_number', 'dangerous_hobby',
+        'dangerous_profession', 'street_1', 'city_code', 'city_name',
+        'country_code'
     ]
     for field in FIELDS:
         key = 'insured_party__1__{}'.format(field)
@@ -171,4 +181,17 @@ def create_facade_from_create_agreement_schema(session, document):
 
     facade.text = to_table_html(document)
 
+    return facade
+
+
+def create_facade_from_send_agreement_schema(session, document):
+    facade = create_facade_from_create_agreement_schema(session, document)
+    FIELDS = [
+        'signature',
+        'premium_schedule__1__amount',
+        'premium_schedule__2__amount',
+        'code',
+    ]
+    for field in FIELDS:
+        setattr(facade, field, document[field])
     return facade
