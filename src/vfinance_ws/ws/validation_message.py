@@ -40,7 +40,10 @@ DATE_SCHEMA = {
     Required("day"): Range(min=1, max=31),
 }
 
-String = lambda **kwargs: All(basestring, Length(**kwargs))
+
+def String(**kwargs):
+    return All(basestring, Length(**kwargs))
+
 Date = All(DATE_SCHEMA, ValidateDate)
 
 CALCULATE_PROPOSAL_SCHEMA = {

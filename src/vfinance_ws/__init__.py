@@ -1,7 +1,7 @@
 import logging
 import sys
 
-LOGGER = logging.getLogger( 'vfinance_ws' )
+LOGGER = logging.getLogger('vfinance_ws')
 
 try:
     import cdecimal

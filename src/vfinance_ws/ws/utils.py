@@ -14,9 +14,6 @@ from vfinance.facade.financial_agreement import FinancialAgreementFacade
 from flask import request
 import werkzeug.exceptions
 
-# DB_FILENAME = '/home/stephane/vfinance_26022015/src/packages.db'
-# DB_FILENAME = '/home/www/staging-patronale-life.mgx.io/src-preprod/src/packages.db'
-# DB_FILENAME = '/Users/jeroen/Projects/v-finance-web-service/conf/packages.db'
 DB_FILENAME = os.environ['DB_PATH']  # :raises: `KeyError` when env var DB_PATH is not set
 
 
