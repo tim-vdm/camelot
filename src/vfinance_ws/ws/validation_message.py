@@ -90,6 +90,11 @@ SEND_AGREEMENT_SCHEMA.update({
     Required("code"): String(max=32),
 })
 
+GET_PACKAGES_SCHEMA = {
+    Required("agent_official_number_fsma"): String(max=128),
+}
+
+
 def validate_document(document, schema):
     validator = Schema(schema)
     return validator(document)
@@ -105,3 +110,7 @@ def validation_create_agreement_code(document):
 
 def validation_send_agreement(document):
     return validate_document(document, SEND_AGREEMENT_SCHEMA)
+
+
+def validation_get_packages(document):
+    return validate_document(document, GET_PACKAGES_SCHEMA)

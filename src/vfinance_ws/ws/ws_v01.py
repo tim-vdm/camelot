@@ -23,6 +23,7 @@ from vfinance_ws.ws.validation_message import (
     validation_calculate_proposal,
     validation_create_agreement_code,
     validation_send_agreement,
+    validation_get_packages,
 )
 from vfinance_ws.ws.exceptions import BadContentType
 
@@ -229,6 +230,11 @@ def get_proposal_pdf():
         'message': "Web service not implemented"
     }), 501
 
+@bp.route('/packages', methods=['POST'])
+@ws_jsonify
+@validation_json(validation_get_packages)
+def get_packages(document):
+    return v01.get_packages(document)
 
 @bp.route('/docs/', defaults={'filename': 'index.html'})
 @bp.route('/docs/<path:filename>')

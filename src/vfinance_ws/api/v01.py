@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import datetime
-import decimal
 import hashlib
 import json
 
@@ -12,19 +11,75 @@ from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
 from vfinance.model.insurance.credit_insurance import CalculateCreditInsurance
 from vfinance_ws.ws.utils import with_session
-
+from vfinance_ws.api.utils import to_table_html
+from vfinance_ws.api.utils import DecimalEncoder
 import vfinance.connector.json_
 
 calculate_credit_insurance = CalculateCreditInsurance()
 
-class DecimalEncoder(json.JSONEncoder):
-    def default(self, o):
-        if isinstance(o, decimal.Decimal):
-            return str(o)
-        return super(DecimalEncoder, self).default(o)
+
+@with_session
+def calculate_proposal(session, document):
+    facade = create_facade_from_calculate_proposal_schema(session, document)
+
+    orm.object_session(facade).flush()
+
+    amount1 = str(facade.premium_schedule__1__amount)
+    amount2 = str(facade.premium_schedule__2__amount) \
+        if facade.premium_schedule__2__amount else None
+
+    return {
+        'premium_schedule__1__amount': amount1,
+        'premium_schedule__2__amount': amount2,
+    }
 
 
-def fill_financial_agreement_facade(session, document):
+@with_session
+def create_agreement_code(session, document, logfile):
+    facade = create_facade_from_create_agreement_schema(session, document)
+
+    orm.object_session(facade).flush()
+
+    dump = FinancialAgreementJsonExport().entity_to_dict(facade)
+    json.dump(dump, logfile, cls=vfinance.connector.json_.ExtendedEncoder)
+
+    amount1 = str(facade.premium_schedule__1__amount)
+    amount2 = str(facade.premium_schedule__2__amount) \
+        if facade.premium_schedule__2__amount else None
+
+    values = {
+        'premium_schedule__1__amount': amount1,
+        'premium_schedule__2__amount': amount2,
+        'code': facade.code,
+    }
+
+    use_for_signature = {
+        'proposal': document,
+        'values': values,
+    }
+
+    dump = json.dumps(
+        use_for_signature,
+        cls=DecimalEncoder
+    )
+
+    signature = hashlib.sha256(dump).hexdigest()
+
+    values['signature'] = signature
+    return values
+
+
+@with_session
+def get_packages(session, document):
+    return []
+
+
+@with_session
+def send_agreement(session, document):
+    return None
+
+
+def create_facade_from_calculate_proposal_schema(session, document):
     package = session.query(FinancialPackage).get(long(document['package_id']))
 
     if not package:
@@ -82,88 +137,38 @@ def fill_financial_agreement_facade(session, document):
     facade.premium_schedules_period_type = \
         document['premium_schedules_period_type']
 
+    for premium_schedule in facade.invested_amounts:
+        for coverage in premium_schedule.agreed_coverages:
+            premium_schedule.amount = calculate_credit_insurance.calculate_premium(premium_schedule, coverage)
+
     facade.code = "000"
 
     return facade
 
 
-@with_session
-def calculate_proposal(session, document):
-    facade = fill_financial_agreement_facade(session, document)
+def create_facade_from_create_agreement_schema(session, document):
+    facade = create_facade_from_calculate_proposal_schema(session, document)
 
-    for premium_schedule in facade.invested_amounts:
-        for coverage in premium_schedule.agreed_coverages:
-            premium_schedule.amount = calculate_credit_insurance.calculate_premium(premium_schedule, coverage)
+    FIELDS = [
+        'origin',
+        'pledgee_name',
+        'pledgee_tax_id',
+        'pledgee_reference'
+    ]
+    for field in FIELDS:
+        setattr(facade, field, document[field])
 
-    orm.object_session(facade).flush()
+    FIELDS = [
+        'last_name', 'first_name', 'language', 'nationality_code', 'social_security_number', 
+        'passport_number', 'dangerous_hobby', 'dangerous_profession', 'street_1', 'city_code',
+        'city_name', 'country_code'
+    ]
+    for field in FIELDS:
+        key = 'insured_party__1__{}'.format(field)
+        setattr(facade, key, document.get(key, None))
 
-    amount1 = str(facade.premium_schedule__1__amount)
-    amount2 = str(facade.premium_schedule__2__amount) \
-        if facade.premium_schedule__2__amount else None
-
-    return {
-        'premium_schedule__1__amount': amount1,
-        'premium_schedule__2__amount': amount2,
-    }
-
-
-def to_table_html(document):
-    TD_TEMPLATE = u"<td>{0}</td>"
-    TR_TEMPLATE = u"<tr>{0}</tr>"
-    TABLE_TEMPLATE = u"<table>{0}</table>"
-
-    lines = []
-    for k, v in document.iteritems():
-        lines.append(
-            TR_TEMPLATE.format(u''.join([TD_TEMPLATE.format(k),
-                                         TD_TEMPLATE.format(unicode(v))]))
-        )
-    return TABLE_TEMPLATE.format(u''.join(lines))
-
-
-@with_session
-def create_agreement_code(session, document, logfile):
-    facade = fill_financial_agreement_facade(session, document)
-
-    facade.code = next_code = FinancialAgreementFacade.next_agreement_code(session)
-
-    for premium_schedule in facade.invested_amounts:
-        for coverage in premium_schedule.agreed_coverages:
-            premium_schedule.amount = calculate_credit_insurance.calculate_premium(premium_schedule, coverage)
+    facade.code = FinancialAgreementFacade.next_agreement_code(session)
 
     facade.text = to_table_html(document)
 
-    orm.object_session(facade).flush()
-
-    dump = FinancialAgreementJsonExport().entity_to_dict(facade)
-    json.dump(dump, logfile, cls=vfinance.connector.json_.ExtendedEncoder)
-
-    amount1 = str(facade.premium_schedule__1__amount)
-    amount2 = str(facade.premium_schedule__2__amount) \
-        if facade.premium_schedule__2__amount else None
-
-    values = {
-        'premium_schedule__1__amount': amount1,
-        'premium_schedule__2__amount': amount2,
-        'code': next_code,
-    }
-
-    use_for_signature = {
-        'proposal': document,
-        'values': values,
-    }
-
-    dump = json.dumps(
-        use_for_signature,
-        cls=DecimalEncoder
-    )
-
-    signature = hashlib.sha256(dump).hexdigest()
-
-    values['signature'] = signature
-    return values
-
-@with_session
-def send_agreement(session, document):
-
-    return None
+    return facade
