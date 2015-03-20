@@ -171,6 +171,22 @@ def get_proposal_pdf():
 def get_packages(document):
     """
     :synopsis: Get a list of the available packages for the customer
+    .. literalinclude:: demo/post_get_packages.http
+        :language: http
+
+    .. literalinclude:: demo/get_packages.json
+        :language: json
+
+    .. literalinclude:: demo/200.http
+        :language: http
+
+    .. literalinclude:: demo/get_packages_response.json
+        :language: json
+
+    :status 200:
+    :status 400:
+    :reqheader Content-Type: Must be `application/json`
+    :resheader Content-Type: :mimetype:`application/json`
     """
     return {'packages': v01.get_packages(document)}
 
