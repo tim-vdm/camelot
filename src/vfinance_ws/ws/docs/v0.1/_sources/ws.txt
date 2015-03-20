@@ -24,3 +24,9 @@ Get a PDF report of a Proposal
 
 .. autoflask:: ws_server:create_app()
     :endpoints: api_v01.get_proposal_pdf
+
+Get the package list
+--------------------
+
+.. autoflask:: ws_server:create_app()
+    :endpoints: api_v01.get_packages

@@ -21,19 +21,16 @@ window.SphinxRtdTheme = (function (jquery) {
         var navBar,
             win,
             stickyNavCssClass = 'stickynav',
-            winScroll = false,
+            applyStickNav = function () {
+                if (navBar.height() <= win.height()) {
+                    navBar.addClass(stickyNavCssClass);
+                } else {
+                    navBar.removeClass(stickyNavCssClass);
+                }
+            },
             enable = function () {
-                navBar.addClass(stickyNavCssClass);
-                win.on('scroll', function() { // set flag on scroll event
-                    winScroll = true;
-                });
-                // use setInterval to only handle a subset of scroll events so we don't kill scroll performance
-                setInterval(function() {
-                    if (winScroll) {
-                        winScroll = false;
-                        navBar.scrollTop(win.scrollTop());
-                    }
-                }, 100);
+                applyStickNav();
+                win.on('resize', applyStickNav);
             },
             init = function () {
                 navBar = jquery('nav.wy-nav-side:first');

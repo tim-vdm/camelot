@@ -80,11 +80,18 @@ def get_packages(session, document):
     packages = []
 
     for package in session.query(FinancialPackage).all():
+        products = []
         for product in package.available_products:
-            packages.append({
+            products.append({
                 'id': product.product.id,
                 'name': product.product.name,
             })
+
+        packages.append({
+            'id': package.id,
+            'name': package.name,
+            'available_products': products
+        })
 
     return packages
 

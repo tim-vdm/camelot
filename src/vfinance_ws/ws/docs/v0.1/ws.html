@@ -14,6 +14,7 @@
   
 
   
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -27,14 +28,12 @@
   
 
   
-
-  
     <link rel="top" title="VFinanceWebService 0.1 documentation" href="index.html"/>
         <link rel="next" title="Web Services - Test" href="ws_test.html"/>
         <link rel="prev" title="Welcome to VFinanceWebService’s documentation!" href="index.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
 </head>
 
@@ -45,37 +44,26 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-
-        
-          <a href="index.html" class="icon icon-home"> VFinanceWebService
-        
-
-        
-        </a>
-
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+        <a href="index.html" class="fa fa-home"> VFinanceWebService</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-        
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul class="current">
+        
+            <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Web Services</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#calculate-a-proposal">Calculate a proposal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-an-agreement-code">Create an Agreement Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#send-an-agreement">Send an Agreement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-a-pdf-report-of-a-proposal">Get a PDF report of a Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-the-package-list">Get the package list</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ws_test.html">Web Services - Test</a><ul>
@@ -85,7 +73,6 @@
 </li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -116,7 +103,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
   <div class="section" id="web-services">
 <h1>Web Services<a class="headerlink" href="#web-services" title="Permalink to this headline">¶</a></h1>
@@ -492,6 +479,98 @@ this kind of message.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="get-the-package-list">
+<h2>Get the package list<a class="headerlink" href="#get-the-package-list" title="Permalink to this headline">¶</a></h2>
+<dl class="post">
+<dt id="post--api-v0.1-get_packages">
+<tt class="descname">POST </tt><tt class="descname">/api/v0.1/get_packages</tt><a class="headerlink" href="#post--api-v0.1-get_packages" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Synopsis:</th><td class="field-body">Get a list of the available packages for the customer</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/api/v0.1/get_packages</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate</span>
+<span class="na">Connection</span><span class="o">:</span> <span class="l">keep-alive</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">60</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">localhost:19021</span>
+<span class="na">User-Agent</span><span class="o">:</span> <span class="l">HTTPie/0.9.2</span>
+</pre></div>
+</div>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;agent_official_number_fsma&quot;</span><span class="p">:</span> <span class="s2">&quot;Agent Official Number FSMA&quot;</span>    
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.0</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">19</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Date</span><span class="o">:</span> <span class="l">Mon, 23 Feb 2015 06:35:43 GMT</span>
+<span class="na">Server</span><span class="o">:</span> <span class="l">Werkzeug/0.10.1 Python/2.7.8+</span>
+</pre></div>
+</div>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;packages&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;available_products&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">67</span><span class="p">,</span>
+                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Short Term Cover&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
+                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Aanvullende waarborg invaliditeit&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Short Term Cover&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;available_products&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">69</span><span class="p">,</span>
+                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Select+&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">65</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Select+&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; </li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a> &#8211; Must be <cite>application/json</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a> &#8211; <em class="mimetype">application/json</em></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -500,7 +579,7 @@ this kind of message.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ws_test.html" class="btn btn-neutral float-right" title="Web Services - Test">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ws_test.html" class="btn btn-neutral float-right" title="Web Services - Test"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Welcome to VFinanceWebService’s documentation!"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -515,10 +594,9 @@ this kind of message.</p>
         &copy; Copyright 2015, Vortex.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
-
         </div>
       </div>
 
