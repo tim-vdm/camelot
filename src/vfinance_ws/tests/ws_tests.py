@@ -147,5 +147,14 @@ class WsTestCase(unittest.TestCase):
         content = json.loads(response.data)
         self.assertEqual(len(content), 0)
 
+    def test_090_get_packages(self):
+        document = load_demo_json('get_packages')
+        response = self.post_json('get_packages', data=document)
+
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
+        self.assertIn('packages', content)
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

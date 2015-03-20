@@ -5,15 +5,21 @@ import json
 
 from sqlalchemy import orm
 
+from vfinance.connector.aws import AwsQueue
+from vfinance.connector.aws import QueueCommand
+from vfinance.connector.json_ import ExtendedEncoder
+
 from vfinance.facade.financial_agreement import FinancialAgreementFacade
+
 from vfinance.model.financial.agreement import FinancialAgreementJsonExport
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
 from vfinance.model.insurance.credit_insurance import CalculateCreditInsurance
-from vfinance_ws.ws.utils import with_session
-from vfinance_ws.api.utils import to_table_html
+
 from vfinance_ws.api.utils import DecimalEncoder
-import vfinance.connector.json_
+from vfinance_ws.api.utils import to_table_html
+from vfinance_ws.ws.utils import with_session
+
 
 calculate_credit_insurance = CalculateCreditInsurance()
 
@@ -41,7 +47,7 @@ def create_agreement_code(session, document, logfile):
     orm.object_session(facade).flush()
 
     dump = FinancialAgreementJsonExport().entity_to_dict(facade)
-    json.dump(dump, logfile, cls=vfinance.connector.json_.ExtendedEncoder)
+    json.dump(dump, logfile, cls=ExtendedEncoder)
 
     amount1 = str(facade.premium_schedule__1__amount)
     amount2 = str(facade.premium_schedule__2__amount) \
@@ -71,14 +77,20 @@ def create_agreement_code(session, document, logfile):
 
 @with_session
 def get_packages(session, document):
-    return []
+    packages = []
+
+    for package in session.query(FinancialPackage).all():
+        for product in package.available_products:
+            packages.append({
+                'id': product.product.id,
+                'name': product.product.name,
+            })
+
+    return packages
 
 
 @with_session
 def send_agreement(session, document):
-    from vfinance.connector.aws import QueueCommand
-    from vfinance.connector.aws import AwsQueue
-
     facade = create_facade_from_send_agreement_schema(session, document)
     agreement_dict = FinancialAgreementJsonExport().entity_to_dict(facade)
 

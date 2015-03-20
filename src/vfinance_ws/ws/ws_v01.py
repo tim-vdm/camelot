@@ -165,11 +165,14 @@ def get_proposal_pdf():
     }), 501
 
 
-@bp.route('/packages', methods=['POST'])
+@bp.route('/get_packages', methods=['POST'])
 @ws_jsonify
 @validation_json(validation_get_packages)
 def get_packages(document):
-    return v01.get_packages(document)
+    """
+    :synopsis: Get a list of the available packages for the customer
+    """
+    return {'packages': v01.get_packages(document)}
 
 
 @bp.route('/docs/', defaults={'filename': 'index.html'})
