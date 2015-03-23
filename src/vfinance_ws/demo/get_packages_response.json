@@ -1,0 +1,28 @@
+{
+    "packages": [
+        {
+            "available_products": [
+                {
+                    "id": 67,
+                    "name": "Short Term Cover"
+                },
+                {
+                    "id": 68,
+                    "name": "Aanvullende waarborg invaliditeit"
+                }
+            ],
+            "id": 64,
+            "name": "Short Term Cover"
+        },
+        {
+            "available_products": [
+                {
+                    "id": 69,
+                    "name": "Select+"
+                }
+            ],
+            "id": 65,
+            "name": "Select+"
+        }
+    ]
+}
