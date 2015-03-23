@@ -27,8 +27,15 @@ def log_to_file(function):
             'request': pprint.pformat(request.__dict__),
             'data': request.data,
             'response': None,
-            'exception': None
+            'exception': None,
+            'json': None
         }
+
+        try:
+            dump['json'] = json.loads(request.data)
+        except Exception:
+            pass
+
 
         timestamp = datetime.datetime.now()
         fname = '{}-{}.json'.format(timestamp, function.func_name)
@@ -56,7 +63,7 @@ def log_to_file(function):
                 dump['exception'] = ex.to_dict()
                 raise
             finally:
-                outfile.write(json.dumps(dump))
+                outfile.write(json.dumps(dump, indent=4, sort_keys=True))
 
     return decorator(wrapper, function)
 

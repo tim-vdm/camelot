@@ -47,7 +47,7 @@ def create_agreement_code(session, document, logfile):
     orm.object_session(facade).flush()
 
     dump = FinancialAgreementJsonExport().entity_to_dict(facade)
-    json.dump(dump, logfile, cls=ExtendedEncoder)
+    json.dump(dump, logfile, indent=4, sort_keys=True, cls=ExtendedEncoder)
 
     amount1 = str(facade.premium_schedule__1__amount)
     amount2 = str(facade.premium_schedule__2__amount) \
