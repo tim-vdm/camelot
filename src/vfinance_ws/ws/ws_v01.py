@@ -1,7 +1,8 @@
 import os
 import uuid
+import json
 from cStringIO import StringIO
-from pkg_resources import resource_stream
+from pkg_resources import resource_stream, resource_listdir
 
 from flask import Blueprint
 from flask import current_app
@@ -18,9 +19,9 @@ from vfinance_ws.ws.validation_message import (
 )
 
 from vfinance_ws.api import v01
+from flask.ext.httpauth import HTTPBasicAuth
 
 bp = Blueprint('api_v01', __name__)
-
 
 @bp.route('/calculate_proposal', methods=['POST'])
 @ws_jsonify
