@@ -30,16 +30,6 @@ logging.root.addHandler(handler)
 
 LOGGER.info('starting application server')
 
-#
-# use cdecimal
-#
-assert "decimal" not in sys.modules
-
-try:
-    import cdecimal
-    sys.modules["decimal"] = cdecimal
-except ImportError:
-    pass
 
 
 def main():
