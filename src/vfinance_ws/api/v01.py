@@ -5,8 +5,8 @@ import json
 
 from sqlalchemy import orm
 
-from vfinance.connector.aws import AwsQueue
-from vfinance.connector.aws import QueueCommand
+#from vfinance.connector.aws import AwsQueue
+#from vfinance.connector.aws import QueueCommand
 from vfinance.connector.json_ import ExtendedEncoder
 
 from vfinance.facade.financial_agreement import FinancialAgreementFacade
@@ -99,7 +99,8 @@ def get_packages(session, document):
 @with_session
 def send_agreement(session, document):
     facade = create_facade_from_send_agreement_schema(session, document)
-    agreement_dict = FinancialAgreementJsonExport().entity_to_dict(facade)
+    #agreement_dict = FinancialAgreementJsonExport().entity_to_dict(facade)
+    FinancialAgreementJsonExport().entity_to_dict(facade)
 
     # queue = AwsQueue()
     # command = QueueCommand('import_agreement', agreement_dict)
