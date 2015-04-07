@@ -46,7 +46,7 @@ class Ws2TestCase(unittest.TestCase):
             
         return self.client.post(url, headers=headers, data=data)
 
-    @unittest.skip("")
+    @unittest.skip("No Authentication")
     def test_001_calculate_proposal_bad_content_type(self):
         with self.app.test_request_context():
             url = url_for('api_v01.calculate_proposal')
@@ -69,7 +69,7 @@ class Ws2TestCase(unittest.TestCase):
             "Content-Type is not 'application/json'"
         )
 
-    @unittest.skip("")
+    @unittest.skip("No Authentication")
     def test_002_calculate_proposal_bad_content(self):
         response = self.post_json(
             'calculate_proposal',
@@ -79,7 +79,7 @@ class Ws2TestCase(unittest.TestCase):
         content = json.loads(response.data)
         self.assertEqual(content['message'], "Invalid JSON message")
 
-    # @unittest.skip("")
+    # @unittest.skip("No Authentication")
     def test_010_calculate_proposal(self):
         document = load_demo_json('calculate_proposal')
         response = self.post_json('calculate_proposal', data=document)
@@ -87,7 +87,7 @@ class Ws2TestCase(unittest.TestCase):
         # set_trace()
         self.assertEqual(response.status_code, 200)
 
-    @unittest.skip("")
+    @unittest.skip("No Authentication")
     def test_011_calculate_proposal_two_products(self):
         document = load_demo_json('calculate_proposal')
         document['premium_schedule__2__product_id'] = 68
@@ -95,7 +95,7 @@ class Ws2TestCase(unittest.TestCase):
         response = self.post_json('calculate_proposal', data=document)
         self.assertEqual(response.status_code, 200)
 
-    @unittest.skip("")
+    @unittest.skip("No Authentication")
     def test_012_calculate_proposal_missing_fields(self):
         response = self.post_json('calculate_proposal', data={})
 
@@ -106,7 +106,7 @@ class Ws2TestCase(unittest.TestCase):
 
         self.assertEqual(response.status_code, 400)
 
-    @unittest.skip("")
+    @unittest.skip("No Authentication")
     def test_013_calculate_proposal_bad_values(self):
         document = load_demo_json('calculate_proposal')
         document['agreement_date']['month'] = 2
@@ -118,13 +118,13 @@ class Ws2TestCase(unittest.TestCase):
         content = json.loads(response.data)
         self.assertIn('agreement_date/day', content)
 
-    @unittest.skip("")
+    @unittest.skip("No Authentication")
     def test_020_create_agreement_code(self):
         document = load_demo_json('create_agreement_code')
         response = self.post_json('create_agreement_code', data=document)
         self.assertEqual(response.status_code, 200)
 
-    @unittest.skip("")
+    @unittest.skip("No Authentication")
     def test_021_create_agreement_code_wrong_values(self):
         document = load_demo_json('create_agreement_code')
         document.update({
@@ -136,12 +136,12 @@ class Ws2TestCase(unittest.TestCase):
 
         self.assertIn('insured_party__1__nationality_code', content)
 
-    @unittest.skip("")
+    @unittest.skip("No Authentication")
     def test_070_get_proposal_pdf(self):
         response = self.post_json('get_proposal_pdf')
         self.assertEqual(response.status_code, 501)
 
-    @unittest.skip("")
+    @unittest.skip("No Authentication")
     def test_080_send_agreement(self):
         # from camelot.core.conf import settings
         # class TestSettings(object):
@@ -156,7 +156,7 @@ class Ws2TestCase(unittest.TestCase):
         content = json.loads(response.data)
         self.assertEqual(len(content), 0)
 
-    @unittest.skip("")
+    @unittest.skip("No Authentication")
     def test_090_get_packages(self):
         document = load_demo_json('get_packages')
         response = self.post_json('get_packages', data=document)
