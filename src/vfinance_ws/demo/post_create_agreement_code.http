@@ -1,0 +1,8 @@
+POST /api/v0.1/create_agreement_code HTTP/1.1
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Length: 0
+Content-Type:  application/json
+Host: localhost:19021
+User-Agent: HTTPie/0.9.1
