@@ -83,6 +83,8 @@ class Ws2TestCase(unittest.TestCase):
     def test_010_calculate_proposal(self):
         document = load_demo_json('calculate_proposal')
         response = self.post_json('calculate_proposal', data=document)
+        # from nose.tools import set_trace
+        # set_trace()
         self.assertEqual(response.status_code, 200)
 
     @unittest.skip("")
