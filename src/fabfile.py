@@ -195,3 +195,11 @@ def get_all_jsons():
                                    key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
         for f in api.run('ls {}'.format(os.path.join('/tmp', 'log', env.CONFIGURATION, 'create_agreement_code'))).split():
             api.get(os.path.join('/tmp', 'log', env.CONFIGURATION, 'create_agreement_code', f), '/tmp/generated_jsons/%(path)s')
+
+def get_db_files():
+    with context_managers.settings(host_string=env.HOST_NAME,
+                                   user=env.HOST_USER,
+                                   key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
+        for f in api.run('ls {}'.format(os.path.join('/var', 'v-finance-web-service'))).split():
+            if f.endswith('db'):
+                api.get(os.path.join('/var', 'v-finance-web-service', f), '/tmp/ws_db/%(path)s')
