@@ -74,6 +74,22 @@ def create_agreement_code(session, document, logfile):
     values['signature'] = signature
     return values
 
+@with_session
+def create_mortgage_loan_agreement_code(session, document, logfile):
+    values = {'code': '000/0000/00000'}
+    use_for_signature = {
+        'proposal': document,
+        'values': values,
+    }
+
+    dump = json.dumps(use_for_signature,
+                      cls=DecimalEncoder)
+
+    signature = hashlib.sha256(dump).hexdigest()
+
+    values['signature'] = signature
+    return values
+
 
 @with_session
 def get_packages(session, document):
