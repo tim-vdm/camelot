@@ -19,7 +19,7 @@ from vfinance_ws.ws.validation_message import (
 )
 
 from vfinance_ws.api import v01
-from flask.ext.httpauth import HTTPBasicAuth
+from flask_httpauth import HTTPBasicAuth
 
 bp = Blueprint('api_v01', __name__)
 
