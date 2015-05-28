@@ -75,7 +75,7 @@ def create_agreement_code(session, document, logfile):
     return values
 
 @with_session
-def create_mortgage_loan_agreement_code(session, document, logfile):
+def create_agreement_code_2(session, document, logfile):
     values = {'code': '000/0000/00000'}
     use_for_signature = {
         'proposal': document,

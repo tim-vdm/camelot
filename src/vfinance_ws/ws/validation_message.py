@@ -33,19 +33,57 @@ def ValidateDate(v):
             raise Invalid(error.message, path=['day'])
     return v
 
+def String(**kwargs):
+    return All(basestring, Length(**kwargs))
 
 DATE_SCHEMA = {
     Required("month"): Range(min=1, max=12),
     Required("year"): Range(min=1900, max=2400),
     Required("day"): Range(min=1, max=31),
 }
-
-
-def String(**kwargs):
-    return All(basestring, Length(**kwargs))
-
 Date = All(DATE_SCHEMA, ValidateDate)
 Boolean = In([True, False])
+Sex = In(["M", "F"])
+RowType = Schema(String(max=20))
+
+
+PERSON_SCHEMA = {
+    Required("first_name"): String(max=40),
+    Required("last_name"): String(max=40),
+    Required("social_security_number"): String(max=12),
+    Required("passport_number"): String(max=20),
+    Required("passport_expiry_date"): Date,
+    Required("smoker"): Boolean,
+    Required("sex"): Sex,
+    Required("street_1"): String(max=40),
+    Required("city_code"): String(max=5),
+    Required("city_name"): String(max=40),
+    Required("language"): String(max=5),
+    Optional("birth_date"): Date,
+    Optional("middle_name"): String(max=40),
+    Optional("personal_title"): String(max=10),
+    Optional("suffix"): String(max=3),
+    Optional("nationality_code"): String(max=2),
+    Optional("country_code"): String(max=2)
+}
+
+COMPANY_SCHEMA = {
+    Required("name"): String(max=40),
+}
+
+
+PARTY_SCHEMA = {
+    Required("row_type"): RowType,
+    Required("party_data"): Any(PERSON_SCHEMA, COMPANY_SCHEMA),
+}
+
+ROLE_SCHEMA = {
+    Required("described_by"): String(max=30),
+    Required("rank"): int,
+    Required("party"): PARTY_SCHEMA
+}
+
+Roles = Schema([ROLE_SCHEMA])
 
 CALCULATE_PROPOSAL_SCHEMA = {
     Required("agent_official_number_fsma"): String(max=128),
@@ -86,48 +124,14 @@ CREATE_AGREEMENT_CODE_SCHEMA.update({
     Optional('pledgee_reference'): Any(None, Length(max=30)),
 })
 
-CREATE_MORTGAGE_LOAN_AGREEMENT_CODE_SCHEMA = {
+CREATE_AGREEMENT_CODE_2_SCHEMA = {
     Required('origin'): Length(max=32),
     Required('agent_official_number_fsma'): String(max=128),
     Required('agreement_date'): Date,
     Required('from_date'): Date,
     Required('package_id'): int,
-    Required('borrower__1__birthdate'): Date,
-    Required('borrower__1__sex'): All(Upper, In(['M', 'F'])),
-    Required('borrower__1__smoker'): Boolean,
-    Optional('borrower__1__personal_title'): String(max=10),
-    Optional('borrower__1__suffix'): String(max=3),
-    Required('borrower__1__last_name'): String(max=30),
-    Optional('borrower__1__middle_name'): String(max=30),
-    Required('borrower__1__first_name'): String(max=30),
-    Required('borrower__1__nationality_code'): String(max=2),
-    Required('borrower__1__street_1'): String(max=128),
-    Optional('borrower__1__street_2'): String(max=128),
-    Required('borrower__1__city_code'): String(max=10),
-    Required('borrower__1__city_name'): String(max=40),
-    Required('borrower__1__country_code'): String(max=2),
-    Required('borrower__1__language'): String(max=5),
-    Required('borrower__1__social_security_number'): Any(None, Length(max=12)),
-    Required('borrower__1__passport_number'): Any(None, Length(max=20)),
-    Required('borrower__1__passport_expiry_date'): Date,
-    Optional('borrower__2__birthdate'): Date,
-    Optional('borrower__2__sex'): All(Upper, In(['M', 'F'])),
-    Optional('borrower__2__smoker'): Boolean,
-    Optional('borrower__2__personal_title'): String(max=10),
-    Optional('borrower__2__suffix'): String(max=3),
-    Optional('borrower__2__last_name'): String(max=30),
-    Optional('borrower__2__middle_name'): String(max=30),
-    Optional('borrower__2__first_name'): String(max=30),
-    Optional('borrower__2__nationality_code'): String(max=2),
-    Optional('borrower__2__street_1'): String(max=128),
-    Optional('borrower__2__street_2'): String(max=128),
-    Optional('borrower__2__city_code'): String(max=10),
-    Optional('borrower__2__city_name'): String(max=40),
-    Optional('borrower__2__country_code'): String(max=2),
-    Optional('borrower__2__language'): String(max=5),
-    Optional('borrower__2__social_security_number'): Any(None, Length(max=12)),
-    Optional('borrower__2__passport_number'): Any(None, Length(max=20)),
-    Optional('borrower__2__passport_expiry_date'): Date
+    Required('roles'): Roles,
+    Required('row_type'): RowType
 }
 
 SEND_AGREEMENT_SCHEMA = dict(CREATE_AGREEMENT_CODE_SCHEMA)
@@ -164,5 +168,5 @@ def validation_send_agreement(document):
 def validation_get_packages(document):
     return validate_document(document, GET_PACKAGES_SCHEMA)
 
-def validation_create_mortgage_loan_agreement_code(document):
-    return validate_document(document, CREATE_MORTGAGE_LOAN_AGREEMENT_CODE_SCHEMA)
+def validation_create_agreement_code_2(document):
+    return validate_document(document, CREATE_AGREEMENT_CODE_2_SCHEMA)

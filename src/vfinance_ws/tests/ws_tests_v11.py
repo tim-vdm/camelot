@@ -79,7 +79,7 @@ class Ws2TestCase(unittest.TestCase):
         content = json.loads(response.data)
         self.assertEqual(content['message'], "Invalid JSON message")
 
-    # @unittest.skip("No Authentication")
+    @unittest.skip("No Authentication")
     def test_010_calculate_proposal(self):
         document = load_demo_json('calculate_proposal')
         response = self.post_json('calculate_proposal', data=document)
@@ -165,6 +165,14 @@ class Ws2TestCase(unittest.TestCase):
         content = json.loads(response.data)
         self.assertIsInstance(content, dict)
         self.assertIn('packages', content)
+
+    def test_create_agreement(self):
+        document = load_demo_json('create_agreement_code')
+        response = self.post_json('create_agreement_code', data=document)
+
+        self.assertEqual(response.status_code, 200)
+        content = = json.loads(response.data)
+        self.assertIsInstance(content, dict)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

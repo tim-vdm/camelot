@@ -16,7 +16,7 @@ from vfinance_ws.ws.validation_message import (
     validation_create_agreement_code,
     validation_send_agreement,
     validation_get_packages,
-    validation_create_mortgage_loan_agreement_code
+    validation_create_agreement_code_2
 )
 
 from vfinance_ws.api import v01
@@ -238,25 +238,25 @@ def docs(filename):
     path = os.path.join('docs', 'v0.1', filename)
     return send_file(resource_stream(__name__, path), mimetype=mimetype)
 
-@bp.route('/mortgage_loan/create_agreement_code', methods=['POST'])
+@bp.route('/create_agreement_code', methods=['POST'])
 @ws_jsonify
-@validation_json(validation_create_mortgage_loan_agreement_code)
-def create_mortgage_loan_agreement_code(document):
+@validation_json(validation_create_agreement_code_2)
+def create_agreement_code_2(document):
     try:
         sIO = StringIO()
 
-        result = v01.create_mortgage_loan_agreement_code(document, logfile=sIO)
+        result = v01.create_agreement_code_2(document, logfile=sIO)
 
         values = {
             'fsma': document['agent_official_number_fsma'],
             'code': result['code'].replace('/', '_'),
             'ident': uuid.uuid4().hex,
         }
-        fname = '{code}-{fsma}-{ident}.json'.format(**values)
+        #fname = '{code}-{fsma}-{ident}.json'.format(**values)
 
-        fname = os.path.join(current_app.config['PATH_DIR_LOG'],
-                             'create_mortgage_loan_agreement_code',
-                             fname)
+        #fname = os.path.join(current_app.config['PATH_DIR_LOG'],
+        #                     'create_agreement_code_2',
+        #                     fname)
 
         #with open(fname, 'w') as outfile:
         #    sIO.seek(0)
