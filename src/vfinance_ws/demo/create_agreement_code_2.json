@@ -12,7 +12,7 @@
  },
  "package_id": 63,
  "roles":[{"described_by": "borrower",
-           "total_income": "1400.00",
+           "net_earnings_of_employment": "1400.00",
            "rank": 1,
            "party": {"row_type": "person",
                      "first_name": "Firstname",
