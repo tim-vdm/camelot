@@ -12,27 +12,27 @@
  },
  "package_id": 63,
  "roles":[{"described_by": "borrower",
+           "total_income": "1400.00",
            "rank": 1,
-           "party": {"row_type": "natural_person",
-                     "party_data":{"first_name": "Firstname",
-                                   "last_name": "Lastname",
-                                   "social_security_number": "012345678901",
-                                   "passport_number": "111-2222222-33",
-                                   "passport_expiry_date": {
-                                       "year":2018,
-                                       "month":3,
-                                       "day":23},
-                                   "smoker": true,
-                                   "sex": "M",
-                                   "street_1": "Street 12/b",
-                                   "city_code": "1234",
-                                   "city_name": "Brussels",
-                                   "language": "nl_BE",
-                                   "nationality_code": "BE",
-                                   "country_code": "BE",
-                                  }
+           "party": {"row_type": "person",
+                     "first_name": "Firstname",
+                     "last_name": "Lastname",
+                     "social_security_number": "012345678901",
+                     "passport_number": "111-2222222-33",
+                     "passport_expiry_date": {
+                         "year":2018,
+                         "month":3,
+                         "day":23},
+                     "smoker": true,
+                     "sex": "M",
+                     "street_1": "Street 12/b",
+                     "city_code": "1234",
+                     "city_name": "Brussels",
+                     "language": "nl_BE",
+                     "nationality_code": "BE",
+                     "country_code": "BE"
                     }
           }
  ],
- "row_type": "loan_agreement"
+ "row_type": "financial_agreement"
 }
