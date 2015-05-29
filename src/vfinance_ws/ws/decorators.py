@@ -105,15 +105,10 @@ def ws_jsonify(function):
         except voluptuous.MultipleInvalid as ex:
             errors = {}
             for error in ex.errors:
-                if isinstance(error, voluptuous.RequiredFieldInvalid):
-                    errors[error.path[0].schema] = {
-                        u'message': 'Required',
-                    }
-                else:
-                    path_str = '/'.join(error.path)
-                    errors[path_str] = {
-                        u'message': error.error_message
-                    }
+                path_str = '/'.join([unicode(path) for path in error.path])
+                errors[path_str] = {
+                    u'message': error.error_message
+                }
             return jsonify(errors), 400
         except BadContentType, ex:
             raise
