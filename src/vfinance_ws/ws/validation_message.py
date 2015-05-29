@@ -67,19 +67,20 @@ PERSON_SCHEMA = {
     Optional("country_code"): String(max=2)
 }
 
-COMPANY_SCHEMA = {
+ORGANIZATION_SCHEMA = {
     Required("name"): String(max=40),
 }
 
 
 PARTY_SCHEMA = {
     Required("row_type"): RowType,
-    Required("party_data"): Any(PERSON_SCHEMA, COMPANY_SCHEMA),
+    Required("party_data"): Any(PERSON_SCHEMA, ORGANIZATION_SCHEMA),
 }
 
 ROLE_SCHEMA = {
     Required("described_by"): String(max=30),
     Required("rank"): int,
+    Required("total_income"): String(max=12), # Decimal als string, role-feature
     Required("party"): PARTY_SCHEMA
 }
 
