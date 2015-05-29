@@ -48,6 +48,7 @@ RowType = Schema(String(max=20))
 
 
 PERSON_SCHEMA = {
+    Required("row_type"): 'person',
     Required("first_name"): String(max=40),
     Required("last_name"): String(max=40),
     Required("social_security_number"): String(max=12),
@@ -68,19 +69,17 @@ PERSON_SCHEMA = {
 }
 
 ORGANIZATION_SCHEMA = {
+    Required("row_type"): 'organization',
     Required("name"): String(max=40),
 }
 
 
-PARTY_SCHEMA = {
-    Required("row_type"): RowType,
-    Required("party_data"): Any(PERSON_SCHEMA, ORGANIZATION_SCHEMA),
-}
+PARTY_SCHEMA = Any(PERSON_SCHEMA, ORGANIZATION_SCHEMA)
 
 ROLE_SCHEMA = {
     Required("described_by"): String(max=30),
     Required("rank"): int,
-    Required("total_income"): String(max=12), # Decimal als string, role-feature
+    Required("total_income"): String(max=12),
     Required("party"): PARTY_SCHEMA
 }
 
