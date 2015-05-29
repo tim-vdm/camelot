@@ -79,7 +79,7 @@ PARTY_SCHEMA = Any(PERSON_SCHEMA, ORGANIZATION_SCHEMA)
 ROLE_SCHEMA = {
     Required("described_by"): String(max=30),
     Required("rank"): int,
-    Required("total_income"): String(max=12),
+    Required("net_earnings_of_employment"): String(max=12),
     Required("party"): PARTY_SCHEMA
 }
 
@@ -104,8 +104,8 @@ CALCULATE_PROPOSAL_SCHEMA = {
     Required("premium_schedules_premium_rate_1"): Coerce(Decimal),
 }
 
-CREATE_AGREEMENT_CODE_SCHEMA = dict(CALCULATE_PROPOSAL_SCHEMA)
-CREATE_AGREEMENT_CODE_SCHEMA.update({
+CI_CREATE_AGREEMENT_CODE_SCHEMA = dict(CALCULATE_PROPOSAL_SCHEMA)
+CI_CREATE_AGREEMENT_CODE_SCHEMA.update({
     Required("origin"): Length(max=32),
     Optional('insured_party__1__last_name'): String(max=30),
     Optional('insured_party__1__first_name'): String(max=30),
@@ -124,7 +124,7 @@ CREATE_AGREEMENT_CODE_SCHEMA.update({
     Optional('pledgee_reference'): Any(None, Length(max=30)),
 })
 
-CREATE_AGREEMENT_CODE_2_SCHEMA = {
+CREATE_AGREEMENT_CODE_SCHEMA = {
     Required('origin'): Length(max=32),
     Required('agent_official_number_fsma'): String(max=128),
     Required('agreement_date'): Date,
@@ -157,8 +157,8 @@ def validation_calculate_proposal(document):
     return validate_document(document, CALCULATE_PROPOSAL_SCHEMA)
 
 
-def validation_create_agreement_code(document):
-    return validate_document(document, CREATE_AGREEMENT_CODE_SCHEMA)
+def validation_ci_create_agreement_code(document):
+    return validate_document(document, CI_CREATE_AGREEMENT_CODE_SCHEMA)
 
 
 def validation_send_agreement(document):
@@ -168,5 +168,5 @@ def validation_send_agreement(document):
 def validation_get_packages(document):
     return validate_document(document, GET_PACKAGES_SCHEMA)
 
-def validation_create_agreement_code_2(document):
-    return validate_document(document, CREATE_AGREEMENT_CODE_2_SCHEMA)
+def validation_create_agreement_code(document):
+    return validate_document(document, CREATE_AGREEMENT_CODE_SCHEMA)

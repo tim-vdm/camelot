@@ -94,8 +94,8 @@ def calculate_proposal(document):
 @auth.login_required
 @ws_jsonify
 @log_to_file
-@validation_json(validation_create_agreement_code)
-def create_agreement_code(document):
+@validation_json(validation_ci_create_agreement_code)
+def ci_create_agreement_code(document):
     """
     :synopsis: Create an Agreement Code
 
@@ -126,7 +126,7 @@ def create_agreement_code(document):
     try:
         sIO = StringIO()
 
-        result = v01.create_agreement_code(document, logfile=sIO)
+        result = v01.ci_create_agreement_code(document, logfile=sIO)
 
         values = {
             'fsma': document['agent_official_number_fsma'],
@@ -240,12 +240,12 @@ def docs(filename):
 
 @bp.route('/create_agreement_code', methods=['POST'])
 @ws_jsonify
-@validation_json(validation_create_agreement_code_2)
+@validation_json(validation_create_agreement_code)
 def create_agreement_code_2(document):
     try:
         sIO = StringIO()
 
-        result = v01.create_agreement_code_2(document, logfile=sIO)
+        result = v01.create_agreement_code(document, logfile=sIO)
 
         values = {
             'fsma': document['agent_official_number_fsma'],
