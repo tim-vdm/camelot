@@ -13,13 +13,14 @@ from vfinance_ws.ws.decorators import log_to_file, ws_jsonify, validation_json
 
 from vfinance_ws.ws.validation_message import (
     validation_calculate_proposal,
-    validation_create_agreement_code,
+    validation_ci_create_agreement_code,
     validation_send_agreement,
     validation_get_packages,
-    validation_create_agreement_code_2
+    validation_create_agreement_code
 )
 
 from vfinance_ws.api import v01
+from vfinance_ws.api import v11
 from flask_httpauth import HTTPBasicAuth
 
 bp = Blueprint('api_v11', __name__)
@@ -126,7 +127,7 @@ def ci_create_agreement_code(document):
     try:
         sIO = StringIO()
 
-        result = v01.ci_create_agreement_code(document, logfile=sIO)
+        result = v11.ci_create_agreement_code(document, logfile=sIO)
 
         values = {
             'fsma': document['agent_official_number_fsma'],
@@ -241,26 +242,27 @@ def docs(filename):
 @bp.route('/create_agreement_code', methods=['POST'])
 @ws_jsonify
 @validation_json(validation_create_agreement_code)
-def create_agreement_code_2(document):
+def create_agreement_code(document):
     try:
         sIO = StringIO()
 
-        result = v01.create_agreement_code(document, logfile=sIO)
+        result = v11.create_agreement_code(document, logfile=sIO)
 
         values = {
             'fsma': document['agent_official_number_fsma'],
             'code': result['code'].replace('/', '_'),
             'ident': uuid.uuid4().hex,
         }
-        #fname = '{code}-{fsma}-{ident}.json'.format(**values)
+        fname = '{code}-{fsma}-{ident}.json'.format(**values)
 
-        #fname = os.path.join(current_app.config['PATH_DIR_LOG'],
-        #                     'create_agreement_code_2',
-        #                     fname)
+        fname = os.path.join(current_app.config['PATH_DIR_LOG'],
+                             'v11',
+                             'create_agreement_code',
+                             fname)
 
-        #with open(fname, 'w') as outfile:
-        #    sIO.seek(0)
-        #    outfile.write(sIO.getvalue())
+        with open(fname, 'w') as outfile:
+            sIO.seek(0)
+            outfile.write(sIO.getvalue())
 
         return result
     finally:
