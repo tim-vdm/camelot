@@ -13,7 +13,7 @@ from vfinance_ws.ws.decorators import log_to_file, ws_jsonify, validation_json
 
 from vfinance_ws.ws.validation_message import (
     validation_calculate_proposal,
-    validation_create_agreement_code,
+    validation_ci_create_agreement_code,
     validation_send_agreement,
     validation_get_packages,
 )
