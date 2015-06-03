@@ -80,7 +80,7 @@ def calculate_proposal(document):
 @bp.route('/create_agreement_code', methods=['POST'])
 @ws_jsonify
 @log_to_file
-@validation_json(validation_create_agreement_code)
+@validation_json(validation_ci_create_agreement_code)
 def create_agreement_code(document):
     """
     :synopsis: Create an Agreement Code
