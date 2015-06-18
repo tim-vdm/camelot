@@ -260,9 +260,9 @@ def create_agreement_code(document):
                              'create_agreement_code',
                              fname)
 
-        with open(fname, 'w') as outfile:
-            sIO.seek(0)
-            outfile.write(sIO.getvalue())
+        #with open(fname, 'w') as outfile:
+        #    sIO.seek(0)
+        #    outfile.write(sIO.getvalue())
 
         return result
     finally:
