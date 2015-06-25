@@ -9,7 +9,7 @@ from vfinance.connector.aws import AwsQueue
 from vfinance.connector.aws import QueueCommand
 from vfinance.connector.json_ import ExtendedEncoder
 
-from vfinance.facade.financial_agreement import FinancialAgreementFacade
+from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
 from vfinance.model.financial.agreement import FinancialAgreementJsonExport
 from vfinance.model.financial.package import FinancialPackage
@@ -114,7 +114,7 @@ def create_facade_from_calculate_proposal_schema(session, document):
     if not package:
         raise Exception("This package does not exist")
 
-    facade = FinancialAgreementFacade()
+    facade = CreditInsuranceAgreementFacade()
 
     # facade.agreement_date = datetime.date(2015, 3, 2)
     facade.agreement_date = datetime.date(**document['agreement_date'])
@@ -196,7 +196,7 @@ def create_facade_from_create_agreement_schema(session, document):
         key = 'insured_party__1__{}'.format(field)
         setattr(facade, key, document.get(key, None))
 
-    facade.code = FinancialAgreementFacade.next_agreement_code(session)
+    facade.code = CreditInsuranceAgreementFacade.next_agreement_code(session)
 
     facade.text = to_table_html(document)
 

@@ -1,5 +1,6 @@
 import os
 import functools
+import datetime
 
 from sqlalchemy.engine import create_engine
 
@@ -9,7 +10,7 @@ from camelot.core.sql import metadata
 
 from vfinance.model.bank.settings import SettingsProxy
 from vfinance.utils import setup_model as setup_vfinance_model
-from vfinance.facade.financial_agreement import FinancialAgreementFacade
+from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
 from flask import request
 import werkzeug.exceptions
@@ -48,4 +49,9 @@ def is_json_body():
 
 @with_session
 def get_next_agreement_code(session):
-    return FinancialAgreementFacade.next_agreement_code(session)
+    return CreditInsuranceAgreementFacade.next_agreement_code(session)
+
+def get_date_from_json_date(date):
+    return datetime.date(date['year'], date['month'], date['day'])
+
+

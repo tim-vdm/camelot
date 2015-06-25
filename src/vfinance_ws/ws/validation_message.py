@@ -59,7 +59,6 @@ PERSON_SCHEMA = {
     Required("city_code"): String(max=5),
     Required("city_name"): String(max=40),
     Required("language"): String(max=5),
-    Optional("smoker"): Boolean,
     Optional("birth_date"): Date,
     Optional("middle_name"): String(max=40),
     Optional("personal_title"): String(max=10),
@@ -80,6 +79,7 @@ ROLE_SCHEMA = {
     Required("described_by"): String(max=30),
     Required("rank"): int,
     Required("net_earnings_of_employment"): String(max=12),
+    Optional("smoker"): String(max=12),
     Required("party"): PARTY_SCHEMA
 }
 

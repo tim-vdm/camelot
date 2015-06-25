@@ -30,6 +30,7 @@ def create_path_dir_log(*args, **kwargs):
         (path_dir_log, 'json-requests'),
         (path_dir_log, 'calculate_proposal'),
         (path_dir_log, 'create_agreement_code'),
+        (path_dir_log, 'v11', 'create_agreement_code'),
     ]
 
     current_app.logger.info(

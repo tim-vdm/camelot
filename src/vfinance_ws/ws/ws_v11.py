@@ -1,6 +1,7 @@
 import os
 import uuid
 import json
+import datetime
 from cStringIO import StringIO
 from pkg_resources import resource_stream, resource_listdir
 
@@ -253,16 +254,29 @@ def create_agreement_code(document):
             'code': result['code'].replace('/', '_'),
             'ident': uuid.uuid4().hex,
         }
-        fname = '{code}-{fsma}-{ident}.json'.format(**values)
+        fname = '{code}.json'.format(**values)
 
-        fname = os.path.join(current_app.config['PATH_DIR_LOG'],
-                             'v11',
-                             'create_agreement_code',
+        today = datetime.date.today()
+        day = '{0:02}'.format(today.day)
+        month = '{0:02}'.format(today.month)
+        year = '{}'.format(today.year)
+
+        full_dir = os.path.join(current_app.config['PATH_DIR_LOG'],
+                                'v11',
+                                'create_agreement_code',
+                                year,
+                                month,
+                                day)
+
+        if not os.path.exists(full_dir):
+            os.makedirs(full_dir)
+        fname = os.path.join(full_dir,
                              fname)
 
-        #with open(fname, 'w') as outfile:
-        #    sIO.seek(0)
-        #    outfile.write(sIO.getvalue())
+
+        with open(fname, 'w') as outfile:
+            sIO.seek(0)
+            outfile.write(sIO.getvalue())
 
         return result
     finally:
