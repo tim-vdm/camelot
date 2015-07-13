@@ -46,6 +46,24 @@ Boolean = In([True, False])
 Sex = In(["M", "F"])
 RowType = Schema(String(max=20))
 
+ADDRESS_SCHEMA = {
+    Required("described_by"): String(max=40),
+    Required("from_date"): Date,
+    Optional("thru_date"): Date,
+    Required("street_1"): String(max=40),
+    Optional("street_2"): String(max=40),
+    Required("zip_code"): String(max=5),
+    Required("city"): String(max=40)
+}
+
+Addresses = Schema([ADDRESS_SCHEMA])
+
+CONTACT_MECHANISM_SCHEMA = {
+    Required("type"): String(max=10),
+    Required("address"): String(max=30)
+}
+
+ContactMechanisms = Schema([CONTACT_MECHANISM_SCHEMA])
 
 PERSON_SCHEMA = {
     Required("row_type"): 'person',
@@ -55,16 +73,24 @@ PERSON_SCHEMA = {
     Required("passport_number"): String(max=20),
     Required("passport_expiry_date"): Date,
     Required("sex"): Sex,
-    Required("street_1"): String(max=40),
-    Required("city_code"): String(max=5),
-    Required("city_name"): String(max=40),
     Required("language"): String(max=5),
     Optional("birth_date"): Date,
     Optional("middle_name"): String(max=40),
     Optional("personal_title"): String(max=10),
     Optional("suffix"): String(max=3),
     Optional("nationality_code"): String(max=2),
-    Optional("country_code"): String(max=2)
+    Optional("country_code"): String(max=2),
+    Optional("personal_title"): String(max=10),
+    Optional("marital_status"): String(max=50),
+    Optional("marital_contract"): String(max=50),
+    Optional("occupation"): String(max=50),
+    Optional("company_name"): String(max=40),
+    Optional("company_since"): Date,
+    Optional("activity"): String(max=40),
+    Optional("activity_since"): Date,
+    Optional("tax_id"): String(max=20),
+    Required("addresses"): Addresses,
+    Optional("contact_mechanisms"): ContactMechanisms
 }
 
 ORGANIZATION_SCHEMA = {
@@ -78,12 +104,33 @@ PARTY_SCHEMA = Any(PERSON_SCHEMA, ORGANIZATION_SCHEMA)
 ROLE_SCHEMA = {
     Required("described_by"): String(max=30),
     Required("rank"): int,
-    Required("net_earnings_of_employment"): String(max=12),
-    Optional("smoker"): String(max=12),
+    Required("net_earnings_of_employment"): String(max=40),
+    Optional("net_earnings_of_secondary_activity"): String(max=40),
+    Optional("loan_expenses"): String(max=40),
+    Optional("net_rent_revenue"): String(max=40),
+    Optional("net_alimony_revenues"): String(max=40),
+    Optional("net_child_support_revenues"): String(max=40),
+    Optional("net_other_revenues"): String(max=40),
+    Optional("replacement_income"): String(max=40),
+    Optional("net_child_allowance_revenue"): String(max=40),
+    Optional("expected_net_additional_revenues"): String(max=40),
+    Optional("earnings_documentation"): String(max=40),
+    Optional("housing_expenses"): String(max=40),
+    Optional("alimony_expenses"): String(max=40),
+    Optional("child_support_expenses"): String(max=40),
+    Optional("other_expenses"): String(max=40),
+    Optional("credit_card_history"): String(max=40),
+    Optional("credit_history"): String(max=40),
+    Optional("cohabiting_children"): String(max=40),
+    Optional("cohabiting_parents"): String(max=40),
+    Optional("smoking_habits"): String(max=40),
+    Optional("educational_level"): String(max=40),
+    Optional("fitness_level"): String(max=40),
     Required("party"): PARTY_SCHEMA
 }
 
 Roles = Schema([ROLE_SCHEMA])
+
 
 CALCULATE_PROPOSAL_SCHEMA = {
     Required("agent_official_number_fsma"): String(max=128),
