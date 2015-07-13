@@ -37,8 +37,6 @@
                      "last_name": "Lastname",
                      "social_security_number": "012345678901",
                      "passport_number": "111-2222222-33",
-                     "marital_status": "ongehuwd",
-                     "marital_contract": "scheiding_van_goederen",
                      "passport_expiry_date": {
                          "year":2018,
                          "month":3,
@@ -46,10 +44,9 @@
                      "sex": "M",
                      "language": "nl_BE",
                      "nationality_code": "BE",
-                     "country_code": "BE",
                      "personal_title": "Dhr.",
                      "marital_status": "divorced",
-                     "marital_contract": "none",
+                     "marital_contract": "scheiding_van_goederen",
                      "occupation": "clerk",
                      "company_name": "Vortex",
                      "company_since": {"year": 2014,
@@ -66,10 +63,13 @@
                                    "described_by": "domicile",
                                    "street_1": "Street 12/b",
                                    "zip_code": "1234",
-                                   "city": "Brussels"
+                                   "city": "Brussels",
+                                   "country_code": "BE"
                      }],
-                     "contact_mechanisms": [{"type": "phone",
-                                             "address": "+3232880203"}]
+                     "contact_mechanisms": [{"described_by": "phone",
+                                             "address_type": "domicile",
+                                             "contact_mechanism": "+3232880203",
+                                             "comment": "19-20h"}]
                     }
           }
  ],

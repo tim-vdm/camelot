@@ -53,14 +53,17 @@ ADDRESS_SCHEMA = {
     Required("street_1"): String(max=40),
     Optional("street_2"): String(max=40),
     Required("zip_code"): String(max=5),
-    Required("city"): String(max=40)
+    Required("city"): String(max=40),
+    Optional("country_code"): String(max=2),
 }
 
 Addresses = Schema([ADDRESS_SCHEMA])
 
 CONTACT_MECHANISM_SCHEMA = {
-    Required("type"): String(max=10),
-    Required("address"): String(max=30)
+    Required("described_by"): String(max=10),
+    Optional("address_type"): String(max=10),
+    Required("contact_mechanism"): String(max=30),
+    Optional("comment"): String(max=256)
 }
 
 ContactMechanisms = Schema([CONTACT_MECHANISM_SCHEMA])
@@ -79,7 +82,6 @@ PERSON_SCHEMA = {
     Optional("personal_title"): String(max=10),
     Optional("suffix"): String(max=3),
     Optional("nationality_code"): String(max=2),
-    Optional("country_code"): String(max=2),
     Optional("personal_title"): String(max=10),
     Optional("marital_status"): String(max=50),
     Optional("marital_contract"): String(max=50),

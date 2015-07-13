@@ -13,6 +13,7 @@ from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementF
 
 from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon
 from vfinance.model.bank import constants
+from vfinance.model.bank.varia import Country_
 from vfinance.model.financial.agreement import (FinancialAgreementJsonExport,
                                                FinancialAgreementRole,
                                                FinancialAgreementRoleFeature)
@@ -25,6 +26,7 @@ from vfinance_ws.api.utils import DecimalEncoder
 from vfinance_ws.api.utils import to_table_html
 from vfinance_ws.ws.utils import with_session
 from vfinance_ws.ws.utils import get_date_from_json_date
+import wingdbstub
 
 @with_session
 def ci_create_agreement_code(session, document, logfile):
@@ -83,6 +85,18 @@ def create_agreement_code(session, document, logfile):
     return values
 
 def create_agreement_from_json(session, document):
+    field_mappings = {'passport_number': 'identiteitskaart_nummer',
+                      'marital_status': 'burgerlijke_staat',
+                      'marital_status_since': 'burgerlijke_staat_sinds',
+                      'marital_contract': 'huwelijkscontract',
+                      'passport_expiry_date': 'identiteitskaart_datum',
+                      'activity': 'aktiviteit',
+                      'activity_since': 'aktiviteit_sinds',
+                      'tax_id': 'tax_number',
+                      'personal_title': 'titel',
+                      'company_name': 'werkgever',
+                      'company_since': 'werkgever_sinds',
+                      'occupation': 'beroep'}
     agreement = Hypotheek()
     package = session.query(FinancialPackage).get(long(document['package_id']))
     if not package:
@@ -91,6 +105,7 @@ def create_agreement_from_json(session, document):
         agreement.package = package
     orm.object_session(agreement).flush()
 
+    agreement.origin = document.get('origin')
     agreement.agreement_date = get_date_from_json_date(document['agreement_date'])
     agreement.from_date = get_date_from_json_date(document['from_date'])
 
@@ -103,14 +118,60 @@ def create_agreement_from_json(session, document):
             natural_person = role['party']
             person = NatuurlijkePersoon()
             agreement_role.natuurlijke_persoon = person
+
+            # Loop the addresses
+            addresses = natural_person['addresses']
+            for address in addresses:
+                address_type = address['described_by']
+                if address_type is not None and address_type == 'domicile':
+                    person.street = address['street_1']
+                    person.postcode = address['zip_code']
+                    person.gemeente = address['city']
+                    person.country_code = address['country_code']
+                elif address_type is not None and address_type == 'correspondence':
+                    person.correspondentie_straat = address['street_1']
+                    person.correspondentie_postcode = address['zip_code']
+                    person.correspondentie_gemeente = address['city']
+                    country = session.query(Country_).filter(Country_.code == address['country_code']).first()
+                    person.correspondentie_land = country
+
+            # Loop the contactmechanisms
+            contact_mechanisms = natural_person['contact_mechanisms']
+            for contact_mechanism in contact_mechanisms:
+                described_by = contact_mechanism['described_by']
+                value = contact_mechanism['contact_mechanism']
+                if described_by == 'fax':
+                    person.fax = value
+                elif described_by == 'mobile':
+                    person.gsm = value
+                elif described_by == 'email':
+                    person.email = value
+                elif described_by == 'phone':
+                    address_type = contact_mechanism.get('address_type')
+                    if address_type is not None and address_type == 'domicile':
+                        person.telefoon = value
+                    else:
+                        person.telefoon_werk = value
+
             for attr in natural_person.keys():
-                if attr.endswith('date'):
-                    setattr(person, attr, get_date_from_json_date(natural_person[attr]))
-                elif attr != 'row_type':
-                    setattr(person, attr, natural_person[attr])
+                value = None
+                attrib = attr
+
+
+                if attr.endswith('date') or attr.endswith('since'):
+                    value = get_date_from_json_date(natural_person[attr])
+                else:
+                    value = natural_person[attr]
+
+                if attr in field_mappings.keys():
+                    attrib = field_mappings.get(attr)
+
+                if attr not in ('row_type'):
+                    setattr(person, attrib, value)
+
         elif role['party']['row_type'] == 'organization':
             raise Exception('An organization as party for an AgreementRole has not yet been implemented')
-        for feature_name in ['net_earnings_of_employment', 'smoker']:
+        for feature_name in constants.role_feature_names:
             feature_value = role.get(feature_name)
             if feature_value is not None:
                 for feature in constants.role_features:
