@@ -47,17 +47,31 @@ Sex = In(["M", "F"])
 RowType = Schema(String(max=20))
 
 ADDRESS_SCHEMA = {
-    Required("described_by"): String(max=40),
-    Required("from_date"): Date,
-    Optional("thru_date"): Date,
     Required("street_1"): String(max=40),
     Optional("street_2"): String(max=40),
     Required("zip_code"): String(max=5),
     Required("city"): String(max=40),
-    Optional("country_code"): String(max=2),
+    Optional("country_code"): String(max=2)
 }
 
-Addresses = Schema([ADDRESS_SCHEMA])
+Address = Schema(ADDRESS_SCHEMA)
+
+HISTORICAL_ADDRESS_SCHEMA = dict(ADDRESS_SCHEMA)
+HISTORICAL_ADDRESS_SCHEMA.update({
+    Required("described_by"): String(max=40),
+    Required("from_date"): Date,
+    Optional("thru_date"): Date
+})
+
+
+FEATURE_SCHEMA = {
+    Required("described_by"): String(max=40),
+    Required("value"): String(max=40)
+}
+
+Features = Schema([FEATURE_SCHEMA])
+
+Addresses = Schema([HISTORICAL_ADDRESS_SCHEMA])
 
 CONTACT_MECHANISM_SCHEMA = {
     Required("described_by"): String(max=10),
@@ -68,6 +82,24 @@ CONTACT_MECHANISM_SCHEMA = {
 
 ContactMechanisms = Schema([CONTACT_MECHANISM_SCHEMA])
 
+ASSET_SCHEMA = {
+    Required("id"): int,
+    Required("described_by"): String(max=40),
+    Required("address"): Address
+}
+
+Asset = All(ASSET_SCHEMA)
+
+
+AGREEMENT_ASSET_SCHEMA = {
+    Required("used_as"): String(max=20),
+    Optional("hypothecaire_inschrijving"): String(max=20),
+    Optional("hypothecair_krediet"): String(max=20),
+    Required("asset"): Asset
+}
+
+Assets = Schema([AGREEMENT_ASSET_SCHEMA])
+
 PERSON_SCHEMA = {
     Required("row_type"): 'person',
     Required("first_name"): String(max=40),
@@ -77,7 +109,7 @@ PERSON_SCHEMA = {
     Required("passport_expiry_date"): Date,
     Required("sex"): Sex,
     Required("language"): String(max=5),
-    Optional("birth_date"): Date,
+    Required("birth_date"): Date,
     Optional("middle_name"): String(max=40),
     Optional("personal_title"): String(max=10),
     Optional("suffix"): String(max=3),
@@ -106,15 +138,15 @@ PARTY_SCHEMA = Any(PERSON_SCHEMA, ORGANIZATION_SCHEMA)
 ROLE_SCHEMA = {
     Required("described_by"): String(max=30),
     Required("rank"): int,
-    Required("net_earnings_of_employment"): String(max=40),
+    Optional("net_earnings_of_employment"): String(max=40),
     Optional("net_earnings_of_secondary_activity"): String(max=40),
     Optional("loan_expenses"): String(max=40),
-    Optional("net_rent_revenue"): String(max=40),
+    Optional("net_rent_revenues"): String(max=40),
     Optional("net_alimony_revenues"): String(max=40),
     Optional("net_child_support_revenues"): String(max=40),
     Optional("net_other_revenues"): String(max=40),
     Optional("replacement_income"): String(max=40),
-    Optional("net_child_allowance_revenue"): String(max=40),
+    Optional("net_child_allowance_revenues"): String(max=40),
     Optional("expected_net_additional_revenues"): String(max=40),
     Optional("earnings_documentation"): String(max=40),
     Optional("housing_expenses"): String(max=40),
@@ -125,9 +157,11 @@ ROLE_SCHEMA = {
     Optional("credit_history"): String(max=40),
     Optional("cohabiting_children"): String(max=40),
     Optional("cohabiting_parents"): String(max=40),
-    Optional("smoking_habits"): String(max=40),
+    Optional("smoking_habit"): String(max=40),
     Optional("educational_level"): String(max=40),
     Optional("fitness_level"): String(max=40),
+    Optional("asset_id"): int,
+    Optional("asset_ownership_percentage"): String(max=40),
     Required("party"): PARTY_SCHEMA
 }
 
@@ -176,11 +210,12 @@ CI_CREATE_AGREEMENT_CODE_SCHEMA.update({
 CREATE_AGREEMENT_CODE_SCHEMA = {
     Required('origin'): Length(max=32),
     Required('agent_official_number_fsma'): String(max=128),
+    Required('row_type'): RowType,
     Required('agreement_date'): Date,
     Required('from_date'): Date,
     Required('package_id'): int,
     Required('roles'): Roles,
-    Required('row_type'): RowType
+    Optional('assets'): Assets
 }
 
 SEND_AGREEMENT_SCHEMA = dict(CREATE_AGREEMENT_CODE_SCHEMA)

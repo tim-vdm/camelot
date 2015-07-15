@@ -11,7 +11,7 @@ from vfinance.connector.json_ import ExtendedEncoder
 
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
-from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon
+from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon, burgerlijke_staten
 from vfinance.model.bank import constants
 from vfinance.model.bank.varia import Country_
 from vfinance.model.financial.agreement import (FinancialAgreementJsonExport,
@@ -19,7 +19,7 @@ from vfinance.model.financial.agreement import (FinancialAgreementJsonExport,
                                                FinancialAgreementRoleFeature)
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
-from vfinance.model.hypo.hypotheek import Hypotheek
+from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag
 from vfinance.model.insurance.credit_insurance import CalculateCreditInsurance
 
 from vfinance_ws.api.utils import DecimalEncoder
@@ -97,6 +97,7 @@ def create_agreement_from_json(session, document):
                       'company_name': 'werkgever',
                       'company_since': 'werkgever_sinds',
                       'occupation': 'beroep'}
+    assets = []
     agreement = Hypotheek()
     package = session.query(FinancialPackage).get(long(document['package_id']))
     if not package:
@@ -109,15 +110,32 @@ def create_agreement_from_json(session, document):
     agreement.agreement_date = get_date_from_json_date(document['agreement_date'])
     agreement.from_date = get_date_from_json_date(document['from_date'])
 
+    agreement_assets = document.get('assets')
+    if agreement_assets is not None:
+        for agreement_asset in agreement_assets:
+            goed = TeHypothekerenGoed()
+            goed_aanvraag = GoedAanvraag()
+            goed_aanvraag.te_hypothekeren_goed = goed
+            goed_aanvraag.financial_agreement = agreement
+            #goed_aanvraag.hypothecaire_inschrijving = 
+            #goed_aanvraag.hypothecair_mandaat = 
+
+            asset = agreement_asset['asset']
+            id = asset['id']
+            address = asset['address']
+            goed.straat = address['street_1']
+            goed.postcode = address['zip_code']
+            goed.gemeente = address['city']
+            goed.type = asset['described_by']
+            assets.append({'id': id,
+                           'asset': goed})
+
+
     for role in document['roles']:
-        agreement_role = FinancialAgreementRole()
-        agreement_role.described_by = role['described_by']
-        agreement_role.rank = role['rank']
-        agreement_role.financial_agreement = agreement
+
         if role['party']['row_type'] == 'person':
             natural_person = role['party']
             person = NatuurlijkePersoon()
-            agreement_role.natuurlijke_persoon = person
 
             # Loop the addresses
             addresses = natural_person['addresses']
@@ -163,11 +181,62 @@ def create_agreement_from_json(session, document):
                 else:
                     value = natural_person[attr]
 
+
+                if attr == 'marital_status':
+                    val = natural_person[attr]
+                    mapping = {'single': 'o',
+                               'cohabited': 's',
+                               'legally_cohabited': 'ows',
+                               'married': 'h',
+                               'divorced': 'g',
+                               'widowed': 'w',
+                               'legally_separated': 'f'}
+                    value = mapping.get(val)
+
+                if attr == 'marital_contract':
+                    val = natural_person[attr]
+                    mapping = {'none': 'geen',
+                               'community_of_goods': 'gemeenschap',
+                               'separation_of_goods': 'scheiding',
+                               'separation_of_goods_community_of_acquisitions': 'scheiding_aanwinsten'}
+                    value = mapping.get(val)
+
+                if attr == 'occupation':
+                    val = natural_person[attr]
+                    mapping = {'labourer': 'arbeider',
+                               'clerk': 'bediende',
+                               'self_employed': 'zelfstandige',
+                               'retiree': 'gepensioneerde',
+                               'job-seeker': 'werkzoekende',
+                               'housewife': 'huisvrouw',
+                               'disabled': 'arbeidsonbekwaam',
+                               'manager': 'bedrijfsleider'}
+                    value = mapping.get(val)
+
+                if attr == 'language':
+                    value = natural_person[attr][:2]
+
                 if attr in field_mappings.keys():
                     attrib = field_mappings.get(attr)
 
                 if attr not in ('row_type'):
                     setattr(person, attrib, value)
+
+            if role['described_by'] == 'owner':
+                eigenaar = EigenaarGoed()
+                for asset in assets:
+                    if asset['id'] == role['asset_id']:
+                        owned_asset = asset['asset']
+                        eigenaar.percentage = Decimal(role['asset_ownership_percentage'])
+                        eigenaar.te_hypothekeren_goed_id = owned_asset
+                        eigenaar.natuurlijke_persoon = person
+
+            else:
+                agreement_role = FinancialAgreementRole()
+                agreement_role.described_by = role['described_by']
+                agreement_role.rank = role['rank']
+                agreement_role.financial_agreement = agreement
+                agreement_role.natuurlijke_persoon = person
 
         elif role['party']['row_type'] == 'organization':
             raise Exception('An organization as party for an AgreementRole has not yet been implemented')
@@ -179,11 +248,12 @@ def create_agreement_from_json(session, document):
                     if feature_name == feature[1] and choices is not None:
                         for choice in choices:
                             if choice[1] == feature_value:
-                                feature_value = Decimal(choice[0])
+                                feature_value = choice[0]
                 role_feature = FinancialAgreementRoleFeature()
                 role_feature.of = agreement_role
-                role_feature.value = feature_value
+                role_feature.value = Decimal(feature_value)
                 role_feature.described_by = feature_name
+
 
 
 
