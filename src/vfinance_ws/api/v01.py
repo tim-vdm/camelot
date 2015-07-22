@@ -28,11 +28,12 @@ calculate_credit_insurance = CalculateCreditInsurance()
 def calculate_proposal(session, document):
     facade = create_facade_from_calculate_proposal_schema(session, document)
 
-    orm.object_session(facade).flush()
 
     amount1 = str(facade.premium_schedule__1__amount)
     amount2 = str(facade.premium_schedule__2__amount) \
         if facade.premium_schedule__2__amount else None
+
+    session.expunge(facade)
 
     return {
         'premium_schedule__1__amount': amount1,
