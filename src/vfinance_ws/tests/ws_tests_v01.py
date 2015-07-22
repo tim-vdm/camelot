@@ -94,7 +94,7 @@ class WsTestCase(unittest.TestCase):
         message = json.loads(response.data)
 
         self.assertIn('package_id', message)
-        self.assertEqual(message['package_id']['message'], 'Required')
+        self.assertEqual(message['package_id']['message'], 'required key not provided')
 
         self.assertEqual(response.status_code, 400)
 
