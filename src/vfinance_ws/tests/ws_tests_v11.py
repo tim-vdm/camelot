@@ -167,11 +167,11 @@ class Ws2TestCase(unittest.TestCase):
         self.assertIn('packages', content)
 
     def test_create_agreement(self):
-        document = load_demo_json('create_agreement_code')
+        document = load_demo_json('create_agreement_code_2')
         response = self.post_json('create_agreement_code', data=document)
 
         self.assertEqual(response.status_code, 200)
-        content = = json.loads(response.data)
+        content = json.loads(response.data)
         self.assertIsInstance(content, dict)
 
 if __name__ == '__main__':
