@@ -254,7 +254,7 @@ def create_agreement_code(document):
             'code': result['code'].replace('/', '_'),
             'ident': uuid.uuid4().hex,
         }
-        fname = '{code}.json'.format(**values)
+        fname = '{code}-{fsma}-{ident}.json'.format(**values)
 
         today = datetime.date.today()
         day = '{0:02}'.format(today.day)
@@ -262,7 +262,6 @@ def create_agreement_code(document):
         year = '{}'.format(today.year)
 
         full_dir = os.path.join(current_app.config['PATH_DIR_LOG'],
-                                'v11',
                                 'create_agreement_code',
                                 year,
                                 month,
