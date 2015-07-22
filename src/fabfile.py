@@ -203,3 +203,10 @@ def get_db_files():
         for f in api.run('ls {}'.format(os.path.join('/var', 'v-finance-web-service'))).split():
             if f.endswith('db'):
                 api.get(os.path.join('/var', 'v-finance-web-service', f), '/tmp/ws_db/%(path)s')
+
+def put_db_file(filename):
+    with context_managers.settings(host_string=env.HOST_NAME,
+                                   user=env.HOST_USER,
+                                   key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
+        print('copying {} to {}'.format(filename, os.path.join('/var', 'v-finance-web-service', 'packages_{}.db'.format(env.CONFIGURATION))))
+        api.put(local_path=filename, remote_path=os.path.join('/var', 'v-finance-web-service', 'packages_{}.db'.format(env.CONFIGURATION)))
