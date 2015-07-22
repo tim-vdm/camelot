@@ -98,7 +98,6 @@
                      "personal_title": "Dhr.",
                      "marital_status": "divorced",
                      "marital_contract": "separation_of_goods",
-                     "occupation": "clerk",
                      "company_name": "Vortex",
                      "company_since": {"year": 2014,
                                        "month": 6,
@@ -122,17 +121,53 @@
                                              "contact_mechanism": "+3232880203",
                                              "comment": "19-20h"}]
            }
+          },
+          {"described_by": "appraiser",
+           "rank": 1,
+           "party": {"row_type": "organization",
+                     "tax_id": "0806.295.871",
+                     "name": "VastgoedSchatters N.V."
+           }
           }
  ],
- "assets":[{"used_as": "onderpand",
-            "hypothecaire_inschrijving": "120000.00",
-            "hypothecair_krediet": "65000.00",
+ "assets":[{"used_as": "mortgage_lien",
+            "lien_amount": "120000.00",
+            "conditional_lien_amount": "65000.00",
+            "building_lot_price": "40000.00",
+            "initial_value": "230000.00",
+            "added_value": "30000.00",
+            "building_lot_number": "ZVF234SA",
+            "appraised_value": "231000.00",
+            "selling_value": "215000.00",
+            "forced_selling_value": "195000.00",
+            "habitable_area": "120.00",
+            "housefront_width": "7.50",
+            "building_lot_width": "15.00",
+            "rental_revenues": "750.00",
             "asset": {"id": 1,
-                      "described_by": "villa",
+                      "described_by": "detached",
                       "address": {"street_1": "Teststraat 24",
                                   "zip_code": "9876",
                                   "city": "Antwerp"
                       }
             }
-           }]
+           }],
+ "schedules":[{"row_type": "applied_amount",
+               "product_id": 79,
+               "amount": "230000.00",
+               "duration": 240,
+               "period_type": "monthly",
+               "direct_debit": true,
+               "described_by": "fixed_amount",
+               "suspension_of_payment": 6,
+               "purchase_terrain": "1",
+               "new_housing": "1",
+               "renovation": "0",
+               "refinancing": "0",
+               "centralization": "0",
+               "building_purchase": "0",
+               "bridging_credit": "0",
+               "vat": true,
+               "registration_rights": false
+               }]
 }

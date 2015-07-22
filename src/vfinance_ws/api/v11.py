@@ -14,6 +14,7 @@ from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementF
 from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon, burgerlijke_staten
 from vfinance.model.bank import constants
 from vfinance.model.bank.varia import Country_
+from vfinance.model.bank.rechtspersoon import Rechtspersoon
 from vfinance.model.financial.agreement import (FinancialAgreementJsonExport,
                                                FinancialAgreementRole,
                                                FinancialAgreementRoleFeature)
@@ -26,7 +27,6 @@ from vfinance_ws.api.utils import DecimalEncoder
 from vfinance_ws.api.utils import to_table_html
 from vfinance_ws.ws.utils import with_session
 from vfinance_ws.ws.utils import get_date_from_json_date
-import wingdbstub
 
 @with_session
 def ci_create_agreement_code(session, document, logfile):
@@ -104,7 +104,7 @@ def create_agreement_from_json(session, document):
         raise Exception('The package with id {} does not exist'.format(document['package_id']))
     else:
         agreement.package = package
-    orm.object_session(agreement).flush()
+    #orm.object_session(agreement).flush()
 
     agreement.origin = document.get('origin')
     agreement.agreement_date = get_date_from_json_date(document['agreement_date'])
@@ -117,8 +117,20 @@ def create_agreement_from_json(session, document):
             goed_aanvraag = GoedAanvraag()
             goed_aanvraag.te_hypothekeren_goed = goed
             goed_aanvraag.financial_agreement = agreement
-            #goed_aanvraag.hypothecaire_inschrijving = 
-            #goed_aanvraag.hypothecair_mandaat = 
+            goed_aanvraag.hypothecaire_inschrijving = agreement_asset.get('lien_amount')
+            goed_aanvraag.hypothecair_mandaat = agreement_asset.get('conditional_lien_amount')
+            goed_aanvraag.prijs_grond = agreement_asset.get('building_lot_price')
+            goed_aanvraag.waarde_voor_werken = agreement_asset.get('initial_value')
+            goed_aanvraag.waarde_verhoging = agreement_asset.get('added_value')
+
+            goed.kadaster = agreement_asset.get('building_log_number')
+            goed.venale_verkoopwaarde = agreement_asset.get('appraised_value')
+            goed.vrijwillige_verkoop = agreement_asset.get('selling_value')
+            goed.gedwongen_verkoop = agreement_asset.get('forced_selling_value')
+            goed.bewoonbare_oppervlakte = agreement_asset.get('habitable_area')
+            goed.straat_breedte_gevel = agreement_asset.get('housefront_width')
+            goed.straat_breedte_grond = agreement_asset.get('building_lot_width')
+            goed.huurwaarde = agreement_asset.get('rental_revenues')
 
             asset = agreement_asset['asset']
             id = asset['id']
@@ -126,12 +138,21 @@ def create_agreement_from_json(session, document):
             goed.straat = address['street_1']
             goed.postcode = address['zip_code']
             goed.gemeente = address['city']
-            goed.type = asset['described_by']
+            mapping = {'building_lot': 'bouwgrond',
+                       'condominium': 'appartement',
+                       'attached': 'rijwoning',
+                       'semi_detached': 'half_open',
+                       'detached': 'villa',
+                       'bungalow': 'bungalow',
+                       'commercial_building': 'handelspand',
+                       'castle': 'kasteel'}
+            goed.type = mapping.get(asset['described_by'])
             assets.append({'id': id,
                            'asset': goed})
 
 
     for role in document['roles']:
+        role_type = role['described_by']
 
         if role['party']['row_type'] == 'person':
             natural_person = role['party']
@@ -222,7 +243,7 @@ def create_agreement_from_json(session, document):
                 if attr not in ('row_type'):
                     setattr(person, attrib, value)
 
-            if role['described_by'] == 'owner':
+            if role_type in ('owner', 'non_usufruct_owner', 'owner_usufruct'):
                 eigenaar = EigenaarGoed()
                 for asset in assets:
                     if asset['id'] == role['asset_id']:
@@ -230,16 +251,38 @@ def create_agreement_from_json(session, document):
                         eigenaar.percentage = Decimal(role['asset_ownership_percentage'])
                         eigenaar.te_hypothekeren_goed_id = owned_asset
                         eigenaar.natuurlijke_persoon = person
+                        if role_type == 'owner':
+                            eigenaar.type = 'volle_eigendom'
+                        elif role_type == 'non_usufruct_owner':
+                            eigenaar.type = 'naakte_eigendom'
+                        else:
+                            eigenaar.type = 'vruchtgebruik'
 
             else:
                 agreement_role = FinancialAgreementRole()
-                agreement_role.described_by = role['described_by']
+                agreement_role.described_by = role_type
                 agreement_role.rank = role['rank']
                 agreement_role.financial_agreement = agreement
                 agreement_role.natuurlijke_persoon = person
 
         elif role['party']['row_type'] == 'organization':
-            raise Exception('An organization as party for an AgreementRole has not yet been implemented')
+            rechtspersoon = Rechtspersoon()
+            organization = role['party']
+            #representative = organization.get('representative')
+            #if representative is not None:
+            #    vertegenwoordiger = create_natural_person_from_party(representative)
+            #    rechtspersoon.vertegenwoordiger = vertegenwoordiger
+            rechtspersoon.name = organization['name']
+            rechtspersoon.ondernemingsnummer = organization['tax_id']
+            if role_type == 'appraiser':
+                goed.schatter = rechtspersoon
+            else:
+                agreement_role = FinancialAgreementRole()
+                agreement_role.described_by = role_type
+                agreement_role.rank = role['rank']
+                agreement_role.financial_agreement = agreement
+                agreement_role.rechtspersoon = rechtspersoon
+
         for feature_name in constants.role_feature_names:
             feature_value = role.get(feature_name)
             if feature_value is not None:

@@ -92,13 +92,46 @@ Asset = All(ASSET_SCHEMA)
 
 
 AGREEMENT_ASSET_SCHEMA = {
-    Required("used_as"): String(max=20),
-    Optional("hypothecaire_inschrijving"): String(max=20),
-    Optional("hypothecair_krediet"): String(max=20),
+    Required("used_as"): String(max=40),
+    Optional("lien_amount"): String(max=20),
+    Optional("conditional_lien_amount"): String(max=20),
+    Optional("building_lot_price"): String(max=20),
+    Optional("initial_value"): String(max=20),
+    Optional("added_value"): String(max=20),
+    Optional("building_lot_number"): String(max=20),
+    Optional("appraised_value"): String(max=20),
+    Optional("selling_value"): String(max=20),
+    Optional("forced_selling_value"): String(max=20),
+    Optional("habitable_area"): String(max=20),
+    Optional("housefront_width"): String(max=20),
+    Optional("building_lot_width"): String(max=20),
+    Optional("rental_revenues"): String(max=20),
     Required("asset"): Asset
 }
 
 Assets = Schema([AGREEMENT_ASSET_SCHEMA])
+
+SCHEDULE_SCHEMA = {
+    Required("row_type"): String(max=20),
+    Required("product_id"): int,
+    Required("amount"): String(max=20),
+    Required("duration"): int,
+    Required("period_type"): String(max=40),
+    Required("direct_debit"): Boolean,
+    Required("described_by"): String(max=40),
+    Optional("suspension_of_payment"): int,
+    Optional("purchase_terrain"): String(max=40),
+    Optional("new_housing"): String(max=40),
+    Optional("renovation"): String(max=40),
+    Optional("refinancing"): String(max=40),
+    Optional("centralization"): String(max=40),
+    Optional("building_purchase"): String(max=40),
+    Optional("bridging_credit"): String(max=40),
+    Optional("vat"): Boolean,
+    Optional("registration_rights"): Boolean
+}
+
+Schedules = Schema([SCHEDULE_SCHEMA])
 
 PERSON_SCHEMA = {
     Required("row_type"): 'person',
@@ -127,9 +160,13 @@ PERSON_SCHEMA = {
     Optional("contact_mechanisms"): ContactMechanisms
 }
 
+Person = All(PERSON_SCHEMA)
+
 ORGANIZATION_SCHEMA = {
     Required("row_type"): 'organization',
     Required("name"): String(max=40),
+    Required("tax_id"): String(max=20)#,
+    #Optional("roles"): 
 }
 
 
@@ -215,7 +252,8 @@ CREATE_AGREEMENT_CODE_SCHEMA = {
     Required('from_date'): Date,
     Required('package_id'): int,
     Required('roles'): Roles,
-    Optional('assets'): Assets
+    Optional('assets'): Assets,
+    Required('schedules'): Schedules
 }
 
 SEND_AGREEMENT_SCHEMA = dict(CREATE_AGREEMENT_CODE_SCHEMA)
