@@ -256,7 +256,7 @@ CREATE_AGREEMENT_CODE_SCHEMA = {
     Required('schedules'): Schedules
 }
 
-SEND_AGREEMENT_SCHEMA = dict(CREATE_AGREEMENT_CODE_SCHEMA)
+SEND_AGREEMENT_SCHEMA = dict(CI_CREATE_AGREEMENT_CODE_SCHEMA)
 SEND_AGREEMENT_SCHEMA.update({
     Required("signature"): String(max=64),
     Required("premium_schedule__1__amount"): Coerce(Decimal),

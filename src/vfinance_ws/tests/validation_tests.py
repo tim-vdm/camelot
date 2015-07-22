@@ -166,7 +166,7 @@ class CalculateProposalSchemaTestCase(unittest.TestCase):
 
 class CreateAgreementCodeSchemaTestCase(unittest.TestCase):
     def setUp(self):
-        self.validator = voluptuous.Schema(validation_message.CREATE_AGREEMENT_CODE_SCHEMA)
+        self.validator = voluptuous.Schema(validation_message.CI_CREATE_AGREEMENT_CODE_SCHEMA)
 
     def test_01_create_agreement_code_correct(self):
         document = load_demo_json('create_agreement_code')
