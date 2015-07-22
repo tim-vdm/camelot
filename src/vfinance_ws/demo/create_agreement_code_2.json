@@ -78,7 +78,7 @@
           },
           {"described_by": "owner",
            "rank": 1,
-           "asset_id": 1,
+           "asset_id": "1",
            "asset_ownership_percentage": "50.0",
            "party": {"row_type": "person",
                      "first_name": "Firstname",
@@ -144,11 +144,12 @@
             "housefront_width": "7.50",
             "building_lot_width": "15.00",
             "rental_revenues": "750.00",
-            "asset": {"id": 1,
+            "asset": {"id": "1",
                       "described_by": "detached",
                       "address": {"street_1": "Teststraat 24",
                                   "zip_code": "9876",
-                                  "city": "Antwerp"
+                                  "city": "Antwerp",
+                                  "country_code": "BE"
                       }
             }
            }],
@@ -168,6 +169,6 @@
                "building_purchase": "0",
                "bridging_credit": "0",
                "vat": true,
-               "registration_rights": false
+               "registration_fee": false
                }]
 }

@@ -48,10 +48,11 @@ RowType = Schema(String(max=20))
 
 ADDRESS_SCHEMA = {
     Required("street_1"): String(max=40),
+    Optional("id"): String(max=32),
     Optional("street_2"): String(max=40),
     Required("zip_code"): String(max=5),
     Required("city"): String(max=40),
-    Optional("country_code"): String(max=2)
+    Required("country_code"): String(max=2)
 }
 
 Address = Schema(ADDRESS_SCHEMA)
@@ -83,7 +84,7 @@ CONTACT_MECHANISM_SCHEMA = {
 ContactMechanisms = Schema([CONTACT_MECHANISM_SCHEMA])
 
 ASSET_SCHEMA = {
-    Required("id"): int,
+    Required("id"): String(max=23),
     Required("described_by"): String(max=40),
     Required("address"): Address
 }
@@ -128,7 +129,7 @@ SCHEDULE_SCHEMA = {
     Optional("building_purchase"): String(max=40),
     Optional("bridging_credit"): String(max=40),
     Optional("vat"): Boolean,
-    Optional("registration_rights"): Boolean
+    Optional("registration_fee"): Boolean
 }
 
 Schedules = Schema([SCHEDULE_SCHEMA])
@@ -197,7 +198,7 @@ ROLE_SCHEMA = {
     Optional("smoking_habit"): String(max=40),
     Optional("educational_level"): String(max=40),
     Optional("fitness_level"): String(max=40),
-    Optional("asset_id"): int,
+    Optional("asset_id"): String(max=32),
     Optional("asset_ownership_percentage"): String(max=40),
     Required("party"): PARTY_SCHEMA
 }
