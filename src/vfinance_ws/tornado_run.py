@@ -54,8 +54,8 @@ def main():
         from ws import utils
 
         app = create_app()
-        next_agreement_code = utils.get_next_agreement_code()
-        LOGGER.info('app created, next agreement code will be: {}'.format(next_agreement_code))
+        #next_agreement_code = utils.get_next_agreement_code()
+        LOGGER.info('app created')#, next agreement code will be: {}'.format(next_agreement_code))
 
         # resource_filename = functools.partial(pkg_resources.resource_filename, 'vfinance_ws')
         # ssl_options = {

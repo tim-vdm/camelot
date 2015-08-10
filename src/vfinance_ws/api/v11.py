@@ -304,7 +304,7 @@ def create_agreement_from_json(session, document):
 
 
 
-    agreement.code = CreditInsuranceAgreementFacade.next_agreement_code(session)
+    agreement.code = CreditInsuranceAgreementFacade.next_agreement_code(package, session)
 
     orm.object_session(agreement).flush()
 
