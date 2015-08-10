@@ -200,7 +200,7 @@ def create_facade_from_create_agreement_schema(session, document):
         key = 'insured_party__1__{}'.format(field)
         setattr(facade, key, document.get(key, None))
 
-    facade.code = CreditInsuranceAgreementFacade.next_agreement_code(session)
+    facade.code = CreditInsuranceAgreementFacade.next_agreement_code(facade.package, session)
 
     facade.text = to_table_html(document)
 
