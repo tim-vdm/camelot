@@ -19,7 +19,7 @@ from vfinance.model.financial.agreement import (FinancialAgreementJsonExport,
                                                FinancialAgreementRole,
                                                FinancialAgreementRoleFeature)
 from vfinance.model.financial.package import FinancialPackage
-from vfinance.model.financial.product import FinancialProduct
+from vfinance.model.bank.product import Product
 from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag, Bedrag
 from vfinance.model.insurance.credit_insurance import CalculateCreditInsurance
 
@@ -299,24 +299,47 @@ def create_agreement_from_json(session, document):
 
     schedules = document.get('schedules')
     if schedules is not None:
+        mapping = {'fixed_payment': 'vaste_aflossing',
+                   'fixed_capital_payment': 'vast_kapitaal',
+                   'yearly': 1,
+                   'semesterly': 2,
+                   'quarterly': 4,
+                   'monthly': 12}
+        field_mapping = {'purchase_terrain': 'doel_aankoop_terrein',
+                         'new_housing': 'doel_nieuwbouw',
+                         'renovation': 'doel_renovatie',
+                         'refinancing': 'doel_herfinanciering',
+                         'centralization': 'doel_centralisatie',
+                         'building_purchase': {'vat': 'doel_aankoop_gebouw_btw',
+                                               'registration_fee': 'doel_aankoop_gebouw_registratie'},
+                         'bridging_credit': 'doel_overbrugging'}
         for schedule in schedules:
             bedrag = Bedrag()
-            # Product should fetch the proper product
-            product = session.query(FinancialProduct).get(69)
-            aflossing = None
-            afl_json = schedule.get('described_by')
-            if afl_json == 'fixed_payment':
-                aflossing = 'vaste_aflossing'
-            elif afl_json == 'fixed_capital_payment':
-                aflossing = 'vast_kapitaal'
+            product = session.query(Product).get(long(schedule.get('product_id')))
 
+            aflossing = mapping.get(schedule.get('described_by'))
+
+            # Should be decided by the product or the package?
             type_vervaldag = 'akte'
+
+            period_type = mapping.get(schedule.get('period_type'))
 
             bedrag.product = product
             bedrag.type_vervaldag = type_vervaldag
             bedrag.type_aflossing = aflossing
-            bedrag.looptijd = schedule.get('duration')
-            bedrag.bedrag = schedule.get('amount')
+            bedrag.terugbetaling_interval = period_type
+            bedrag.looptijd = schedule.get('duration', 0)
+            bedrag.bedrag = schedule.get('amount', 0)
+            bedrag.terugbetaling_start = schedule.get('suspension_of_payment', 0)
+            for field in field_mapping:
+                if field == 'building_purchase':
+                    if schedule.get('vat'):
+                        fieldname = field_mapping[field].get('vat')
+                    elif schedule.get('registration_fee'):
+                        fieldname = field_mapping[field].get('registration_fee')
+                else:
+                    fieldname = field_mapping[field]
+                setattr(bedrag, fieldname, bool(int(schedule.get(field))))
             bedrag.financial_agreement = agreement
 
 
