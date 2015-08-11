@@ -154,7 +154,7 @@
             }
            }],
  "schedules":[{"row_type": "applied_amount",
-               "product_id": 79,
+               "product_id": 69,
                "amount": "230000.00",
                "duration": 240,
                "period_type": "monthly",
