@@ -20,7 +20,7 @@ from vfinance.model.financial.agreement import (FinancialAgreementJsonExport,
                                                FinancialAgreementRoleFeature)
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
-from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag
+from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag, Bedrag
 from vfinance.model.insurance.credit_insurance import CalculateCreditInsurance
 
 from vfinance_ws.api.utils import DecimalEncoder
@@ -296,6 +296,28 @@ def create_agreement_from_json(session, document):
                 role_feature.of = agreement_role
                 role_feature.value = Decimal(feature_value)
                 role_feature.described_by = feature_name
+
+    schedules = document.get('schedules')
+    if schedules is not None:
+        for schedule in schedules:
+            bedrag = Bedrag()
+            # Product should fetch the proper product
+            product = session.query(FinancialProduct).get(69)
+            aflossing = None
+            afl_json = schedule.get('described_by')
+            if afl_json == 'fixed_payment':
+                aflossing = 'vaste_aflossing'
+            elif afl_json == 'fixed_capital_payment':
+                aflossing = 'vast_kapitaal'
+
+            type_vervaldag = 'akte'
+
+            bedrag.product = product
+            bedrag.type_vervaldag = type_vervaldag
+            bedrag.type_aflossing = aflossing
+            bedrag.looptijd = schedule.get('duration')
+            bedrag.bedrag = schedule.get('amount')
+            bedrag.financial_agreement = agreement
 
 
 
