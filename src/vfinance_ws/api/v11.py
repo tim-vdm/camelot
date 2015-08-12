@@ -339,7 +339,7 @@ def create_agreement_from_json(session, document):
                         fieldname = field_mapping[field].get('registration_fee')
                 else:
                     fieldname = field_mapping[field]
-                setattr(bedrag, fieldname, bool(int(schedule.get(field))))
+                setattr(bedrag, fieldname, bool(Decimal(schedule.get(field))))
             bedrag.financial_agreement = agreement
 
 
