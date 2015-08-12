@@ -298,6 +298,15 @@ def create_agreement_from_json(session, document):
                 role_feature.described_by = feature_name
 
     schedules = document.get('schedules')
+    aankoopprijs = Decimal(0.0)
+    bestek_bouwwerken = Decimal(0.0)
+    te_betalen_btw = Decimal(0.0)
+    notariskosten_hypotheek = Decimal(0.0)
+    notariskosten_aankoopakte = Decimal(0.0)
+    ereloon_architect = Decimal(0.0)
+    verzekeringskosten = Decimal(0.0)
+    eigen_middelen = Decimal(0.0)
+    andere_kosten = Decimal(0.0)
     if schedules is not None:
         mapping = {'fixed_payment': 'vaste_aflossing',
                    'fixed_capital_payment': 'vast_kapitaal',

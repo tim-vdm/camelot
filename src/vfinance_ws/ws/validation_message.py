@@ -121,6 +121,7 @@ SCHEDULE_SCHEMA = {
     Required("direct_debit"): Boolean,
     Required("described_by"): String(max=40),
     Optional("suspension_of_payment"): int,
+    Optional("down_payment"): String(max=40),
     Optional("purchase_terrain"): String(max=40),
     Optional("new_housing"): String(max=40),
     Optional("renovation"): String(max=40),
@@ -128,8 +129,15 @@ SCHEDULE_SCHEMA = {
     Optional("centralization"): String(max=40),
     Optional("building_purchase"): String(max=40),
     Optional("bridging_credit"): String(max=40),
-    Optional("vat"): Boolean,
-    Optional("registration_fee"): Boolean
+    Optional("figning_agent_mortgage"): String(max=40),
+    Optional("figning_agent_purchase"): String(max=40),
+    Optional("architect_fee"): String(max=40),
+    Optional("homeowners_insurance"): String(max=40),
+    Optional("mortgage_insurance"): String(max=40),
+    Optional("life_insurance"): String(max=40),
+    Optional("vat"): String(max=40),
+    Optional("registration_fee"): String(max=40),
+    Optional("other_costs"): String(max=40)
 }
 
 Schedules = Schema([SCHEDULE_SCHEMA])

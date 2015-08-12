@@ -161,14 +161,22 @@
                "direct_debit": true,
                "described_by": "fixed_amount",
                "suspension_of_payment": 6,
-               "purchase_terrain": "1.0",
-               "new_housing": "1.0",
-               "renovation": "0.0",
+               "down_payment": "7500.00",
+               "purchase_terrain": "80000.00",
+               "new_housing": "120000.0",
+               "renovation": "40000.0",
                "refinancing": "0.0",
                "centralization": "0.0",
-               "building_purchase": "0.0",
+               "building_purchase": "20000.0",
                "bridging_credit": "0.0",
-               "vat": true,
-               "registration_fee": false
+               "figning_agent_mortgage": "275.0",
+               "figning_agent_purchase": "234.0",
+               "architect_fee": "23000.0",
+               "homeowners_insurance": "120.0",
+               "mortgage_insurance": "150.0",
+               "life_insurance": "300.0",
+               "vat": "200.0",
+               "registration_fee": "100.0",
+               "other_costs": "50.0"
                }]
 }
