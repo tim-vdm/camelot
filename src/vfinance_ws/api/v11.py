@@ -329,7 +329,7 @@ def create_agreement_from_json(session, document):
             aflossing = mapping.get(schedule.get('described_by'))
 
             # Should be decided by the product or the package?
-            type_vervaldag = 'akte'
+            type_vervaldag = 'maand'
 
             period_type = mapping.get(schedule.get('period_type'))
 
