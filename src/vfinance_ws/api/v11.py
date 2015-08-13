@@ -353,7 +353,7 @@ def create_agreement_from_json(session, document):
                         fieldname = doel_field_mapping[field].get('registration_fee')
                 else:
                     fieldname = doel_field_mapping[field]
-                setattr(bedrag, fieldname, bool(Decimal(schedule.get(field))))
+                setattr(bedrag, fieldname, bool(Decimal(schedule.get(field, 0.0))))
 
             for field in aankoop:
                 aankoopprijs += Decimal(schedule.get(field, 0.0))
