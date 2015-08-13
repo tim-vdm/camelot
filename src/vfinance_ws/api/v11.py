@@ -314,14 +314,19 @@ def create_agreement_from_json(session, document):
                    'semesterly': 2,
                    'quarterly': 4,
                    'monthly': 12}
-        field_mapping = {'purchase_terrain': 'doel_aankoop_terrein',
-                         'new_housing': 'doel_nieuwbouw',
-                         'renovation': 'doel_renovatie',
-                         'refinancing': 'doel_herfinanciering',
-                         'centralization': 'doel_centralisatie',
-                         'building_purchase': {'vat': 'doel_aankoop_gebouw_btw',
-                                               'registration_fee': 'doel_aankoop_gebouw_registratie'},
-                         'bridging_credit': 'doel_overbrugging'}
+        doel_field_mapping = {'purchase_terrain': 'doel_aankoop_terrein',
+                              'new_housing': 'doel_nieuwbouw',
+                              'renovation': 'doel_renovatie',
+                              'refinancing': 'doel_herfinanciering',
+                              'centralization': 'doel_centralisatie',
+                              'building_purchase': {'vat': 'doel_aankoop_gebouw_btw',
+                                                    'registration_fee': 'doel_aankoop_gebouw_registratie'},
+                              'bridging_credit': 'doel_overbrugging'}
+        aankoop = ['building_purchase', 'purchase_terrain']
+        bouwwerken = ['renovation', 'new_housing']
+        verzekeringen = ['homeowners_insurance', 'mortgage_insurance', 'life_insurance']
+
+
         for schedule in schedules:
             bedrag = Bedrag()
             product = session.query(Product).get(long(schedule.get('product_id')))
@@ -340,19 +345,43 @@ def create_agreement_from_json(session, document):
             bedrag.looptijd = schedule.get('duration', 0)
             bedrag.bedrag = schedule.get('amount', 0)
             bedrag.terugbetaling_start = schedule.get('suspension_of_payment', 0)
-            for field in field_mapping:
+            for field in doel_field_mapping:
                 if field == 'building_purchase':
                     if schedule.get('vat'):
-                        fieldname = field_mapping[field].get('vat')
+                        fieldname = doel_field_mapping[field].get('vat')
                     elif schedule.get('registration_fee'):
-                        fieldname = field_mapping[field].get('registration_fee')
+                        fieldname = doel_field_mapping[field].get('registration_fee')
                 else:
-                    fieldname = field_mapping[field]
+                    fieldname = doel_field_mapping[field]
                 setattr(bedrag, fieldname, bool(Decimal(schedule.get(field))))
+
+            for field in aankoop:
+                aankoopprijs += Decimal(schedule.get(field, 0.0))
+            for field in bouwwerken:
+                bestek_bouwwerken += Decimal(schedule.get(field, 0.0))
+            for field in verzekeringen:
+                verzekeringskosten += Decimal(schedule.get(field, 0.0))
+
+            te_betalen_btw += Decimal(schedule.get('vat', 0.0))
+            notariskosten_hypotheek += Decimal(schedule.get('signing_agent_mortgage', 0.0))
+            notariskosten_aankoopakte += Decimal(schedule.get('signing_agent_purchase', 0.0))
+            ereloon_architect += Decimal(schedule.get('architect_fee', 0.0))
+            eigen_middelen += Decimal(schedule.get('down_payment', 0.0))
+            andere_kosten += Decimal(schedule.get('other_costs', 0.0))
+
             bedrag.financial_agreement = agreement
 
 
 
+    agreement.aankoopprijs = aankoopprijs
+    agreement.kosten_bouwwerken = bestek_bouwwerken
+    agreement.kosten_verzekering = verzekeringskosten
+    agreement.kosten_btw = te_betalen_btw
+    agreement.notariskosten_hypotheek = notariskosten_hypotheek
+    agreement.notariskosten_aankoop = notariskosten_aankoopakte
+    agreement.kosten_architect = ereloon_architect
+    agreement.eigen_middelen = eigen_middelen
+    agreement.kosten_andere = andere_kosten
 
 
 
