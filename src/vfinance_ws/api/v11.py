@@ -365,6 +365,7 @@ def create_agreement_from_json(session, document):
             te_betalen_btw += Decimal(schedule.get('vat', 0.0))
             notariskosten_hypotheek += Decimal(schedule.get('signing_agent_mortgage', 0.0))
             notariskosten_aankoopakte += Decimal(schedule.get('signing_agent_purchase', 0.0))
+            notariskosten_aankoopakte += Decimal(schedule.get('registration_fee', 0.0))
             ereloon_architect += Decimal(schedule.get('architect_fee', 0.0))
             eigen_middelen += Decimal(schedule.get('down_payment', 0.0))
             andere_kosten += Decimal(schedule.get('other_costs', 0.0))
