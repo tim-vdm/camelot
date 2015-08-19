@@ -242,6 +242,7 @@ def docs(filename):
 
 @bp.route('/create_agreement_code', methods=['POST'])
 @ws_jsonify
+@log_to_file
 @validation_json(validation_create_agreement_code)
 def create_agreement_code(document):
     try:
