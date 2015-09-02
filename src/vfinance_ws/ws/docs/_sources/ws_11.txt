@@ -1,0 +1,38 @@
+Web Services v1.1
+=================
+
+Calculate a proposal
+--------------------
+
+.. autoflask:: ws_server:create_app()
+    :endpoints: api_v11.calculate_proposal
+
+Create an Agreement Code
+------------------------
+
+.. autoflask:: ws_server:create_app()
+    :endpoints: api_v11.ci_create_agreement_code
+
+Send an Agreement
+-----------------
+
+.. autoflask:: ws_server:create_app()
+    :endpoints: api_v11.send_agreement
+
+Get a PDF report of a Proposal
+------------------------------
+
+.. autoflask:: ws_server:create_app()
+    :endpoints: api_v11.get_proposal_pdf
+
+Get the package list
+--------------------
+
+.. autoflask:: ws_server:create_app()
+    :endpoints: api_v11.get_packages
+
+Get the Hash
+------------
+
+.. autoflask:: ws_server:create_app()
+	:endpoints: api_v11.get_hash
