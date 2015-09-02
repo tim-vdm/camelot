@@ -12,7 +12,9 @@ Contents:
    :maxdepth: 2
 
    ws
+   ws_11
    ws_test
+   updates
 
 Indices and tables
 ==================

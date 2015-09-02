@@ -67,6 +67,11 @@ extensions = ['*.doc',
               '.rels',
               '*.pdf',
               '*.dat',
+              '*.json',
+              '*.http',
+              '*.ttf',
+              '*.woff',
+              '*.js',
               'hash']
 for extension in extensions:
     for i in range(7):

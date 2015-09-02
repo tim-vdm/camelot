@@ -206,17 +206,17 @@ def get_packages(document):
     return {'packages': v01.get_packages(document)}
 
 
-@bp.route('/docs/', defaults={'filename': 'index.html'})
-@bp.route('/docs/<path:filename>')
-def docs(filename):
-    mimetypes = {
-        ".css": "text/css",
-        ".html": "text/html",
-        ".js": "application/javascript",
-        ".png": "image/png",
-        ".gif": "image/gif"
-    }
-    ext = os.path.splitext(filename)[1]
-    mimetype = mimetypes.get(ext, "text/html")
-    path = os.path.join('docs', 'v0.1', filename)
-    return send_file(resource_stream(__name__, path), mimetype=mimetype)
+# @bp.route('/docs/', defaults={'filename': 'index.html'})
+# @bp.route('/docs/<path:filename>')
+# def docs(filename):
+#     mimetypes = {
+#         ".css": "text/css",
+#         ".html": "text/html",
+#         ".js": "application/javascript",
+#         ".png": "image/png",
+#         ".gif": "image/gif"
+#     }
+#     ext = os.path.splitext(filename)[1]
+#     mimetype = mimetypes.get(ext, "text/html")
+#     path = os.path.join('docs', 'v0.1', filename)
+#     return send_file(resource_stream(__name__, path), mimetype=mimetype)
