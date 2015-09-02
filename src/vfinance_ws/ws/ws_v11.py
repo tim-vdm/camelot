@@ -2,6 +2,7 @@ import os
 import uuid
 import json
 import datetime
+import contextlib
 from cStringIO import StringIO
 from pkg_resources import resource_stream, resource_listdir
 
@@ -274,6 +275,7 @@ def create_agreement_code(document):
 ## FIXME: This code is just an example, how to send a file with Flask.
 ## In fact, this function has to read the identifier of the proposal and send the PDF version
 ## We have to read it from the GET query.
+# @bp.route('/proposal-<identifier>.pdf')
 @bp.route('/test_get_pdf_proposal')
 @auth.login_required
 def test_get_pdf_proposal():
