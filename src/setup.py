@@ -66,7 +66,8 @@ extensions = ['*.doc',
               '*.bin',
               '.rels',
               '*.pdf',
-              '*.dat']
+              '*.dat',
+              'hash']
 for extension in extensions:
     for i in range(7):
         for submodule in ['art',

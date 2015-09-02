@@ -210,3 +210,16 @@ def put_db_file(filename):
                                    key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
         print('copying {} to {}'.format(filename, os.path.join('/var', 'v-finance-web-service', 'packages_{}.db'.format(env.CONFIGURATION))))
         api.put(local_path=filename, remote_path=os.path.join('/var', 'v-finance-web-service', 'packages_{}.db'.format(env.CONFIGURATION)))
+
+def generate_hash():
+    api.local("hg identify -q | tr '+' ' ' > vfinance_ws/hash")
+
+def check_hash():
+    h = api.local("hg identify -q | tr '+' ' '", capture=True).strip()
+    with context_managers.settings(host_string=env.HOST_NAME,
+                                   user=env.HOST_USER,
+                                   key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
+        import urllib2
+        h2 = urllib2.urlopen("http://localhost:8080/api/v1.1/hash").read().strip()
+
+        print "Local Hash: %r\nRemote Hash: %r\nEqual: %s" % (h, h2, h == h2)

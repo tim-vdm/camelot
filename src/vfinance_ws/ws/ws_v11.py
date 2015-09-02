@@ -4,7 +4,7 @@ import json
 import datetime
 import contextlib
 from cStringIO import StringIO
-from pkg_resources import resource_stream, resource_listdir
+from pkg_resources import resource_stream, resource_listdir, resource_exists
 
 from flask import Blueprint
 from flask import current_app
@@ -286,3 +286,10 @@ def test_get_pdf_proposal():
     )
     infile = resource_stream('vfinance_ws', os.path.join('demo', 'print.pdf'))
     return send_file(infile, **send_file_parameters)
+
+
+@bp.route('/hash')
+def get_hash():
+    if resource_exists('vfinance_ws', 'hash'):
+        return resource_stream('vfinance_ws', 'hash').read()
+    abort(404)
