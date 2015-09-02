@@ -245,9 +245,7 @@ def docs(filename):
 @log_to_file
 @validation_json(validation_create_agreement_code)
 def create_agreement_code(document):
-    try:
-        sIO = StringIO()
-
+    with contextlib.closing(StringIO()) as sIO:
         result = v11.create_agreement_code(document, logfile=sIO)
 
         values = {
@@ -257,27 +255,32 @@ def create_agreement_code(document):
         }
         fname = '{code}-{fsma}-{ident}.json'.format(**values)
 
-        today = datetime.date.today()
-        day = '{0:02}'.format(today.day)
-        month = '{0:02}'.format(today.month)
-        year = '{}'.format(today.year)
+        date = datetime.date.today().strftime("%Y%m%d")
 
         full_dir = os.path.join(current_app.config['PATH_DIR_LOG'],
                                 'create_agreement_code',
-                                year,
-                                month,
-                                day)
+                                date)
 
         if not os.path.exists(full_dir):
             os.makedirs(full_dir)
-        fname = os.path.join(full_dir,
-                             fname)
-
+        fname = os.path.join(full_dir, fname)
 
         with open(fname, 'w') as outfile:
-            sIO.seek(0)
             outfile.write(sIO.getvalue())
 
         return result
-    finally:
-        sIO.close()
+
+
+## FIXME: This code is just an example, how to send a file with Flask.
+## In fact, this function has to read the identifier of the proposal and send the PDF version
+## We have to read it from the GET query.
+@bp.route('/test_get_pdf_proposal')
+@auth.login_required
+def test_get_pdf_proposal():
+    send_file_parameters = dict(
+        mimetype='application/pdf; charset=binary',
+        as_attachment=True,
+        attachment_filename='print.pdf'
+    )
+    infile = resource_stream('vfinance_ws', os.path.join('demo', 'print.pdf'))
+    return send_file(infile, **send_file_parameters)
