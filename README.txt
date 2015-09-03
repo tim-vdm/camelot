@@ -19,3 +19,16 @@ For the developers, don't forget to add some environment variables
     PYTHONPATH=/usr/local/lib/python2.7/site-packages:$HOME/v-finance-web-service/src
 
 There is a conf/local.conf, you can use it for the run_local command
+
+Documentation:
+
+We use Sphinx for the documentation. 
+
+```
+cd docs/
+make clean html
+```
+
+The result will be available in src/vfinance_ws/ws/docs/ and the webserver will
+send the result to the browser when this one will check the last version of the
+documentation.
