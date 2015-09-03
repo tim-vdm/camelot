@@ -11,3 +11,4 @@ src/dist/
 src/logs
 src/v_finance_web_service.egg-info
 *.orig
+src/vfinance_ws/hash
