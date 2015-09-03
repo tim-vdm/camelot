@@ -239,7 +239,7 @@ def check_amount_proposal():
     port = ':8080' if env.CONFIGURATION == 'local' else ''
     ws_url = "%s://%s%s/api/v%s/credit_insurance/calculate_proposal" % (scheme, env.HOST_NAME, port, API_VERSION)
 
-    fpath = os.path.join(os.path.dirname(__file__), 'vfinance_ws', 'demo', 'check_amount_proposal.json')
+    fpath = os.path.join(os.path.dirname(__file__), 'vfinance_ws', 'demo', 'calculate_proposal.json')
 
     with open(fpath) as fp:
         agreement = json.load(fp)
@@ -258,7 +258,7 @@ def check_amount_proposal():
     agreement['agreement_date'] = date
 
     birthdate = today + dateutil.relativedelta.relativedelta(years=-20)
-    print birthdate
+
     agreement['insured_party__1__birthdate'] = convert_datetime_to_date(birthdate)
 
     agreement['from_date'] = date
@@ -268,9 +268,14 @@ def check_amount_proposal():
         'authorization': 'Basic ' + b64encode("{0}:{1}".format("1234567890", "secret"))
     }
 
-    print agreement
-
     response = requests.post(ws_url, headers=headers, data=json.dumps(agreement), verify=False)
 
-    print response.content
+    fpath = os.path.join(os.path.dirname(__file__), 'vfinance_ws', 'demo', 'calculate_proposal_response.json')
+
+    with open(fpath) as fp:
+        values = json.load(fp)
+
+    r = response.json()
+
+    print "Local Hash: %r\nRemote Hash: %r\nEqual: %s" % (r, values, r == values)
 
