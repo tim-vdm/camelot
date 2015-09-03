@@ -7,3 +7,5 @@ sphinx-rtd-theme
 flask-httpauth
 numpy
 boto
+python-dateutil
+requests
