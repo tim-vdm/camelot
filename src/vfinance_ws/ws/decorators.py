@@ -59,8 +59,10 @@ def log_to_file(function):
                 return result
             except werkzeug.exceptions.BadRequest, ex:
                 dump['exception'] = ex.message
+                current_app.logger.exception("BadRequest")
                 raise
             except BadContentType, ex:
+                current_app.logger.exception("BadContentType")
                 dump['exception'] = ex.to_dict()
                 raise
             finally:
@@ -118,6 +120,7 @@ def ws_jsonify(function):
             if isinstance(ex, camelot.core.exception.UserException):
                 if isinstance(ex.message, camelot.core.utils.ugettext_lazy):
                     msg = ex.message._string_to_translate
+            current_app.logger.exception("Exception")
             return jsonify({'message': msg}), 400
 
     return wrapper
