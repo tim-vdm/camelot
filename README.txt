@@ -17,3 +17,5 @@ For the developers, don't forget to add some environment variables
     DB_PATH=/tmp/test.db
     LOGHOME=/tmp/logs
     PYTHONPATH=/usr/local/lib/python2.7/site-packages:$HOME/v-finance-web-service/src
+
+There is a conf/local.conf, you can use it for the run_local command
