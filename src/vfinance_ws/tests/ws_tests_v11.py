@@ -159,6 +159,14 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         content = json.loads(response.data)
         self.assertIsInstance(content, dict)
+        
+    def test_create_agreement_code_polapp(self):
+        document = load_demo_json('polapp_agreement_code_v11')
+        response = self.post_json('create_agreement_code', data=document)
+
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
