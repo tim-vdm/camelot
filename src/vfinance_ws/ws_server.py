@@ -30,6 +30,7 @@ def create_path_dir_log(*args, **kwargs):
         (path_dir_log, 'json-requests'),
         (path_dir_log, 'calculate_proposal'),
         (path_dir_log, 'create_agreement_code'),
+        (path_dir_log, 'v11', 'create_agreement_code'),
     ]
 
     current_app.logger.info(
@@ -53,10 +54,18 @@ def create_app():
 
     app.before_first_request(create_path_dir_log)
 
+    from vfinance_ws.ws import ws_docs
+    app.register_blueprint(ws_docs.bp, url_prefix='/api/docs')
+
     from vfinance_ws.ws import ws_v01
+    app.register_blueprint(ws_v01.bp, url_prefix='/api/v0.1')
+
+    from vfinance_ws.ws import ws_v11
+    app.register_blueprint(ws_v11.bp, url_prefix='/api/v1.1')
+
     from vfinance_ws.ws import ws_test
     app.register_blueprint(ws_test.bp, url_prefix='/api/test')
-    app.register_blueprint(ws_v01.bp, url_prefix='/api/v0.1')
+
 
     from vfinance_ws.ws.exceptions import BadContentType
     app.register_error_handler(BadContentType, bad_request)

@@ -16,6 +16,14 @@
 
 import os
 import logging
+import urllib2
+import json
+import datetime
+import dateutil.relativedelta
+from base64 import b64encode
+
+
+import requests
 
 from fabric.state import env
 from fabric import (context_managers,
@@ -23,6 +31,8 @@ from fabric import (context_managers,
                     contrib)
 
 from cloudlaunch2.record import CloudRecord
+
+API_VERSION = '1.1'
 
 logging.basicConfig(level=logging.INFO)
 
@@ -195,3 +205,77 @@ def get_all_jsons():
                                    key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
         for f in api.run('ls {}'.format(os.path.join('/tmp', 'log', env.CONFIGURATION, 'create_agreement_code'))).split():
             api.get(os.path.join('/tmp', 'log', env.CONFIGURATION, 'create_agreement_code', f), '/tmp/generated_jsons/%(path)s')
+
+def get_db_files():
+    with context_managers.settings(host_string=env.HOST_NAME,
+                                   user=env.HOST_USER,
+                                   key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
+        for f in api.run('ls {}'.format(os.path.join('/var', 'v-finance-web-service'))).split():
+            if f.endswith('db'):
+                api.get(os.path.join('/var', 'v-finance-web-service', f), '/tmp/ws_db/%(path)s')
+
+def put_db_file(filename):
+    with context_managers.settings(host_string=env.HOST_NAME,
+                                   user=env.HOST_USER,
+                                   key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
+        print('copying {} to {}'.format(filename, os.path.join('/var', 'v-finance-web-service', 'packages_{}.db'.format(env.CONFIGURATION))))
+        api.put(local_path=filename, remote_path=os.path.join('/var', 'v-finance-web-service', 'packages_{}.db'.format(env.CONFIGURATION)))
+
+def generate_hash():
+    api.local("hg identify -q | tr '+' ' ' > vfinance_ws/hash")
+
+def check_hash():
+    h = api.local("hg identify -q | tr '+' ' '", capture=True).strip()
+    with context_managers.settings(host_string=env.HOST_NAME,
+                                   user=env.HOST_USER,
+                                   key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
+        scheme = 'http' if env.CONFIGURATION == 'local' else 'https'
+        h2 = urllib2.urlopen("{}://{}/api/v{}/hash".format(scheme, env.HOST_NAME, API_VERSION)).read().strip()
+
+        print "Local Hash: %r\nRemote Hash: %r\nEqual: %s" % (h, h2, h == h2)
+
+def check_amount_proposal():
+    scheme = 'http' if env.CONFIGURATION == 'local' else 'https'
+    port = ':8080' if env.CONFIGURATION == 'local' else ''
+    ws_url = "%s://%s%s/api/v%s/credit_insurance/calculate_proposal" % (scheme, env.HOST_NAME, port, API_VERSION)
+
+    fpath = os.path.join(os.path.dirname(__file__), 'vfinance_ws', 'demo', 'calculate_proposal.json')
+
+    with open(fpath) as fp:
+        agreement = json.load(fp)
+
+    def convert_datetime_to_date(dt):
+        return dict(
+            year=dt.year,
+            month=dt.month,
+            day=dt.day
+        )
+
+    today = datetime.date.today()
+
+    date = convert_datetime_to_date(today)
+
+    agreement['agreement_date'] = date
+
+    birthdate = today + dateutil.relativedelta.relativedelta(years=-20)
+
+    agreement['insured_party__1__birthdate'] = convert_datetime_to_date(birthdate)
+
+    agreement['from_date'] = date
+
+    headers = {
+        'content-type': 'application/json',
+        'authorization': 'Basic ' + b64encode("{0}:{1}".format("1234567890", "secret"))
+    }
+
+    response = requests.post(ws_url, headers=headers, data=json.dumps(agreement), verify=False)
+
+    fpath = os.path.join(os.path.dirname(__file__), 'vfinance_ws', 'demo', 'calculate_proposal_response.json')
+
+    with open(fpath) as fp:
+        values = json.load(fp)
+
+    r = response.json()
+
+    print "Local Hash: %r\nRemote Hash: %r\nEqual: %s" % (r, values, r == values)
+

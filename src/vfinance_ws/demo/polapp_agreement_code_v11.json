@@ -1,0 +1,142 @@
+{
+  "schedules": [],
+  "agent_official_number_fsma": "010019 A",
+  "agreement_date": {
+    "month": 9,
+    "day": 14,
+    "year": 2015
+  },
+  "from_date": {
+    "month": 9,
+    "day": 14,
+    "year": 2015
+  },
+  "package_id": 65,
+  "row_type": "financial_agreement",
+  "roles": [
+    {
+      "described_by": "subscriber",
+      "party": {
+        "sex": "M",
+        "nationality_code": "NL",
+        "passport_expiry_date": {
+          "month": 9,
+          "day": 9,
+          "year": 2019
+        },
+        "marital_status": "legally_cohabited",
+        "contact_mechanisms": [
+          {
+            "described_by": "email",
+            "address_type": "domicile",
+            "contact_mechanism": "jochem@oosterveen.net"
+          },
+          {
+            "described_by": "mobile",
+            "address_type": "domicile",
+            "contact_mechanism": "+32 489 27 68 93"
+          },
+          {
+            "described_by": "phone",
+            "address_type": "domicile",
+            "contact_mechanism": "+32 3 237 50 78"
+          }
+        ],
+        "last_name": "Oosterveen",
+        "row_type": "person",
+        "addresses": [
+          {
+            "street_1": "Verschansingstraat 44",
+            "country_code": "BE",
+            "city": "ANTWERPEN",
+            "from_date": {
+              "month": 9,
+              "day": 14,
+              "year": 2015
+            },
+            "described_by": "domicile",
+            "zip_code": "2000"
+          }
+        ],
+        "language": "nl",
+        "birth_date": {
+          "month": 12,
+          "day": 9,
+          "year": 1986
+        },
+        "first_name": "Jochem",
+        "passport_number": "86120952528",
+        "social_security_number": "86120952528"
+      },
+      "smoking_habit": "never",
+      "rank": 1
+    },
+    {
+      "described_by": "insured_party",
+      "party": {
+        "sex": "M",
+        "nationality_code": "NL",
+        "passport_expiry_date": {
+          "month": 9,
+          "day": 9,
+          "year": 2019
+        },
+        "marital_status": "legally_cohabited",
+        "contact_mechanisms": [
+          {
+            "described_by": "email",
+            "address_type": "domicile",
+            "contact_mechanism": "jochem@oosterveen.net"
+          },
+          {
+            "described_by": "mobile",
+            "address_type": "domicile",
+            "contact_mechanism": "+32 489 27 68 93"
+          },
+          {
+            "described_by": "phone",
+            "address_type": "domicile",
+            "contact_mechanism": "+32 3 237 50 78"
+          }
+        ],
+        "last_name": "Oosterveen",
+        "row_type": "person",
+        "addresses": [
+          {
+            "street_1": "Verschansingstraat 44",
+            "country_code": "BE",
+            "city": "ANTWERPEN",
+            "from_date": {
+              "month": 9,
+              "day": 14,
+              "year": 2015
+            },
+            "described_by": "domicile",
+            "zip_code": "2000"
+          }
+        ],
+        "language": "nl",
+        "birth_date": {
+          "month": 12,
+          "day": 9,
+          "year": 1986
+        },
+        "first_name": "Jochem",
+        "passport_number": "86120952528",
+        "social_security_number": "86120952528"
+      },
+      "smoking_habit": "never",
+      "rank": 1
+    },
+    {
+      "described_by": "pledgee",
+      "party": {
+        "tax_id": "BE 0462.920.226",
+        "row_type": "organization",
+        "name": "KBC Bank"
+      },
+      "rank": 1
+    }
+  ],
+  "origin": "app:0"
+}

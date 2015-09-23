@@ -38,7 +38,8 @@ def log_to_file(function):
 
 
         timestamp = datetime.datetime.now()
-        fname = '{}-{}.json'.format(timestamp, function.func_name)
+        version = request.url.split('/')[4]
+        fname = '{}-{}-{}.json'.format(timestamp, version, function.func_name)
         logdir = os.path.join(
             current_app.config['PATH_DIR_LOG'],
             'json-requests'
@@ -58,8 +59,10 @@ def log_to_file(function):
                 return result
             except werkzeug.exceptions.BadRequest, ex:
                 dump['exception'] = ex.message
+                current_app.logger.exception("BadRequest")
                 raise
             except BadContentType, ex:
+                current_app.logger.exception("BadContentType")
                 dump['exception'] = ex.to_dict()
                 raise
             finally:
@@ -105,15 +108,10 @@ def ws_jsonify(function):
         except voluptuous.MultipleInvalid as ex:
             errors = {}
             for error in ex.errors:
-                if isinstance(error, voluptuous.RequiredFieldInvalid):
-                    errors[error.path[0].schema] = {
-                        u'message': 'Required',
-                    }
-                else:
-                    path_str = '/'.join(error.path)
-                    errors[path_str] = {
-                        u'message': error.error_message
-                    }
+                path_str = '/'.join([unicode(path) for path in error.path])
+                errors[path_str] = {
+                    u'message': error.error_message
+                }
             return jsonify(errors), 400
         except BadContentType, ex:
             raise
@@ -122,6 +120,7 @@ def ws_jsonify(function):
             if isinstance(ex, camelot.core.exception.UserException):
                 if isinstance(ex.message, camelot.core.utils.ugettext_lazy):
                     msg = ex.message._string_to_translate
+            current_app.logger.exception("Exception")
             return jsonify({'message': msg}), 400
 
     return wrapper

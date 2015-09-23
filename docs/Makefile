@@ -50,7 +50,8 @@ clean:
 	rm -rf $(BUILDDIR)/*
 
 html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	# $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) ../src/vfinance_ws/ws/docs
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 

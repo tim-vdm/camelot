@@ -1,7 +1,9 @@
 import os
 import uuid
+import json
+import datetime
 from cStringIO import StringIO
-from pkg_resources import resource_stream
+from pkg_resources import resource_stream, resource_listdir
 
 from flask import Blueprint
 from flask import current_app
@@ -12,15 +14,15 @@ from vfinance_ws.ws.decorators import log_to_file, ws_jsonify, validation_json
 
 from vfinance_ws.ws.validation_message import (
     validation_calculate_proposal,
-    validation_create_agreement_code,
+    validation_ci_create_agreement_code,
     validation_send_agreement,
     validation_get_packages,
 )
 
 from vfinance_ws.api import v01
+from flask_httpauth import HTTPBasicAuth
 
 bp = Blueprint('api_v01', __name__)
-
 
 @bp.route('/calculate_proposal', methods=['POST'])
 @ws_jsonify
@@ -79,7 +81,7 @@ def calculate_proposal(document):
 @bp.route('/create_agreement_code', methods=['POST'])
 @ws_jsonify
 @log_to_file
-@validation_json(validation_create_agreement_code)
+@validation_json(validation_ci_create_agreement_code)
 def create_agreement_code(document):
     """
     :synopsis: Create an Agreement Code
@@ -117,8 +119,21 @@ def create_agreement_code(document):
         }
         fname = '{code}-{fsma}-{ident}.json'.format(**values)
 
-        fname = os.path.join(current_app.config['PATH_DIR_LOG'],
-                             'create_agreement_code',
+        today = datetime.date.today()
+        day = '{0:02}'.format(today.day)
+        month = '{0:02}'.format(today.month)
+        year = '{}'.format(today.year)
+
+        full_dir = os.path.join(current_app.config['PATH_DIR_LOG'],
+                                'create_agreement_code',
+                                year,
+                                month,
+                                day)
+
+        if not os.path.exists(full_dir):
+            os.makedirs(full_dir)
+
+        fname = os.path.join(full_dir,
                              fname)
 
         with open(fname, 'w') as outfile:
@@ -191,17 +206,17 @@ def get_packages(document):
     return {'packages': v01.get_packages(document)}
 
 
-@bp.route('/docs/', defaults={'filename': 'index.html'})
-@bp.route('/docs/<path:filename>')
-def docs(filename):
-    mimetypes = {
-        ".css": "text/css",
-        ".html": "text/html",
-        ".js": "application/javascript",
-        ".png": "image/png",
-        ".gif": "image/gif"
-    }
-    ext = os.path.splitext(filename)[1]
-    mimetype = mimetypes.get(ext, "text/html")
-    path = os.path.join('docs', 'v0.1', filename)
-    return send_file(resource_stream(__name__, path), mimetype=mimetype)
+# @bp.route('/docs/', defaults={'filename': 'index.html'})
+# @bp.route('/docs/<path:filename>')
+# def docs(filename):
+#     mimetypes = {
+#         ".css": "text/css",
+#         ".html": "text/html",
+#         ".js": "application/javascript",
+#         ".png": "image/png",
+#         ".gif": "image/gif"
+#     }
+#     ext = os.path.splitext(filename)[1]
+#     mimetype = mimetypes.get(ext, "text/html")
+#     path = os.path.join('docs', 'v0.1', filename)
+#     return send_file(resource_stream(__name__, path), mimetype=mimetype)

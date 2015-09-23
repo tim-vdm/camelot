@@ -6,6 +6,7 @@ tblib
 camelot
 polib
 stdnum
+flask_httpauth
 phonenumbers
 integration
 markupsafe

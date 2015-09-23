@@ -9,9 +9,9 @@ from sqlalchemy import orm
 #from vfinance.connector.aws import QueueCommand
 from vfinance.connector.json_ import ExtendedEncoder
 
-from vfinance.facade.financial_agreement import FinancialAgreementFacade
+from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
-from vfinance.model.financial.agreement import FinancialAgreementJsonExport
+from vfinance.model.financial.agreement import FinancialAgreementJsonExport, FinancialAgreement
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
 from vfinance.model.insurance.credit_insurance import CalculateCreditInsurance
@@ -28,11 +28,12 @@ calculate_credit_insurance = CalculateCreditInsurance()
 def calculate_proposal(session, document):
     facade = create_facade_from_calculate_proposal_schema(session, document)
 
-    orm.object_session(facade).flush()
 
     amount1 = str(facade.premium_schedule__1__amount)
     amount2 = str(facade.premium_schedule__2__amount) \
         if facade.premium_schedule__2__amount else None
+
+    session.expunge(facade)
 
     return {
         'premium_schedule__1__amount': amount1,
@@ -45,18 +46,22 @@ def create_agreement_code(session, document, logfile):
     facade = create_facade_from_create_agreement_schema(session, document)
 
     orm.object_session(facade).flush()
-
-    dump = FinancialAgreementJsonExport().entity_to_dict(facade)
-    json.dump(dump, logfile, indent=4, sort_keys=True, cls=ExtendedEncoder)
+    facade_id = facade.id
 
     amount1 = str(facade.premium_schedule__1__amount)
     amount2 = str(facade.premium_schedule__2__amount) \
         if facade.premium_schedule__2__amount else None
 
+    agreement = orm.object_session(facade).query(FinancialAgreement).get(facade_id)
+
+    dump = FinancialAgreementJsonExport().entity_to_dict(agreement)
+    json.dump(dump, logfile, indent=4, sort_keys=True, cls=ExtendedEncoder)
+
+
     values = {
         'premium_schedule__1__amount': amount1,
         'premium_schedule__2__amount': amount2,
-        'code': facade.code,
+        'code': agreement.code,
     }
 
     use_for_signature = {
@@ -115,7 +120,7 @@ def create_facade_from_calculate_proposal_schema(session, document):
     if not package:
         raise Exception("This package does not exist")
 
-    facade = FinancialAgreementFacade()
+    facade = CreditInsuranceAgreementFacade()
 
     # facade.agreement_date = datetime.date(2015, 3, 2)
     facade.agreement_date = datetime.date(**document['agreement_date'])
@@ -167,8 +172,7 @@ def create_facade_from_calculate_proposal_schema(session, document):
         document['premium_schedules_period_type']
 
     for premium_schedule in facade.invested_amounts:
-        for coverage in premium_schedule.agreed_coverages:
-            premium_schedule.amount = calculate_credit_insurance.calculate_premium(premium_schedule, coverage)
+        premium_schedule.amount = calculate_credit_insurance.calculate_premium(premium_schedule)
 
     facade.code = "000"
 
@@ -197,7 +201,7 @@ def create_facade_from_create_agreement_schema(session, document):
         key = 'insured_party__1__{}'.format(field)
         setattr(facade, key, document.get(key, None))
 
-    facade.code = FinancialAgreementFacade.next_agreement_code(session)
+    facade.code = CreditInsuranceAgreementFacade.next_agreement_code(facade.package, session)
 
     facade.text = to_table_html(document)
 

@@ -65,7 +65,14 @@ extensions = ['*.doc',
               '*.rels',
               '*.bin',
               '.rels',
-              '*.dat']
+              '*.pdf',
+              '*.dat',
+              '*.json',
+              '*.http',
+              '*.ttf',
+              '*.woff',
+              '*.js',
+              'hash']
 for extension in extensions:
     for i in range(7):
         for submodule in ['art',
@@ -93,7 +100,8 @@ setup(
                 'itsdangerous',
                 'six',
                 'polib',
-                'voluptuous'],
+                'voluptuous',
+                'flask_httpauth'],
     entry_points={'console_scripts': ['server = vfinance_ws.tornado_run:main'],
                   # "egg_info.writers": ["foo_bar.txt = setuptools.command.egg_info:write_arg"]
                   },
