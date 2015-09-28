@@ -127,6 +127,7 @@
             "asset_id": "1",
             "asset_ownership_percentage": "50.0",
             "described_by": "owner",
+            "net_earnings_of_employment": "1500.00",
             "party": {
                 "activity": "IT-Consultant",
                 "activity_since": {

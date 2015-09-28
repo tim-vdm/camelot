@@ -85,9 +85,16 @@ def calculate_proposal(document):
     .. literalinclude:: demo/bad_request_extra.json
         :language: json
 
+    Second screen in Polapp in case of Short Term Cover
+
+    .. image:: /_static/v11/polapp_screen_2_stc.png
+
+    Second screen in Polapp in case of Select+
+
+    .. image:: /_static/v11/polapp_screen_2_selectplus.png
+
     .. versionchanged:: 1.1
         Prefix the /calculate_proposal WS with /credit_insurance
-
 
     """
     return v01.calculate_proposal(document)
@@ -224,6 +231,10 @@ def get_packages(document):
     :reqheader Content-Type: Must be `application/json`
     :resheader Content-Type: :mimetype:`application/json`
     :reqheader Authorization: Token for Authentication
+
+    First input screen in polapp
+
+    .. image:: /_static/v11/polapp_screen_1.png
 
     .. versionchanged:: 1.1
         Prefix the /get_package WS with /credit_insurance

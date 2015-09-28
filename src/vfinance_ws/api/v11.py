@@ -285,7 +285,9 @@ def create_agreement_from_json(session, document):
 
         for feature_name in constants.role_feature_names:
             feature_value = role.get(feature_name)
-            if feature_value is not None:
+            # If role is not mapped to a FinancialAgreementRole, no FinancialAgreementRoleFeatures should be created
+            #if feature_value is not None:
+            if feature_value is not None and role_type not in ('appraiser', 'owner', 'non_usufruct_owner', 'owner_usufruct'):
                 for feature in constants.role_features:
                     choices = feature[5]
                     if feature_name == feature[1] and choices is not None:
