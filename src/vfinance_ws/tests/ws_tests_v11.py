@@ -1,7 +1,12 @@
 import unittest
+from decimal import Decimal as D
 
 from flask import json
 from flask import url_for
+
+from camelot.core.orm import Session
+
+from vfinance.model.financial.agreement import FinancialAgreement
 
 from vfinance_ws.ws_server import create_app
 
@@ -153,13 +158,28 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertIn('packages', content)
 
     def test_create_agreement(self):
+        import wingdbstub
         document = load_demo_json('create_agreement_code_2')
         response = self.post_json('create_agreement_code', data=document)
 
         self.assertEqual(response.status_code, 200)
         content = json.loads(response.data)
         self.assertIsInstance(content, dict)
-        
+        agreement_code = content.get('code')
+        session = Session
+        agreement = session.query(FinancialAgreement).filter(FinancialAgreement.code == agreement_code).first()
+        self.assertEqual(agreement.code, agreement_code)
+        features = []
+        for role in agreement.roles:
+            for feature in role.features:
+                self.assertTrue(feature.described_by not in features)
+                if feature.described_by == 'net_earnings_of_employment':
+                    self.assertEqual(feature.value, D('1400.00'))
+                features.append(feature.described_by)
+
+
+
+
     def test_create_agreement_code_polapp(self):
         document = load_demo_json('polapp_agreement_code_v11')
         response = self.post_json('create_agreement_code', data=document)
