@@ -158,7 +158,6 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertIn('packages', content)
 
     def test_create_agreement(self):
-        import wingdbstub
         document = load_demo_json('create_agreement_code_2')
         response = self.post_json('create_agreement_code', data=document)
 
