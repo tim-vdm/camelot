@@ -111,6 +111,7 @@ def create_agreement_from_json(session, document):
     agreement.from_date = get_date_from_json_date(document['from_date'])
 
     agreement_assets = document.get('assets')
+    goed = None
     if agreement_assets is not None:
         for agreement_asset in agreement_assets:
             goed = TeHypothekerenGoed()
@@ -243,6 +244,7 @@ def create_agreement_from_json(session, document):
                 if attr not in ('row_type'):
                     setattr(person, attrib, value)
 
+
             if role_type in ('owner', 'non_usufruct_owner', 'owner_usufruct'):
                 eigenaar = EigenaarGoed()
                 for asset in assets:
@@ -274,7 +276,7 @@ def create_agreement_from_json(session, document):
             #    rechtspersoon.vertegenwoordiger = vertegenwoordiger
             rechtspersoon.name = organization['name']
             rechtspersoon.ondernemingsnummer = organization['tax_id']
-            if role_type == 'appraiser':
+            if role_type == 'appraiser' and goed is not None:
                 goed.schatter = rechtspersoon
             else:
                 agreement_role = FinancialAgreementRole()
