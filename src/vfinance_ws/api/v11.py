@@ -5,13 +5,11 @@ from decimal import Decimal
 
 from sqlalchemy import orm
 
-from vfinance.connector.aws import AwsQueue
-from vfinance.connector.aws import QueueCommand
 from vfinance.connector.json_ import ExtendedEncoder
 
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
-from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon, burgerlijke_staten
+from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon
 from vfinance.model.bank import constants
 from vfinance.model.bank.varia import Country_
 from vfinance.model.bank.rechtspersoon import Rechtspersoon
@@ -21,12 +19,11 @@ from vfinance.model.financial.agreement import (FinancialAgreementJsonExport,
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.bank.product import Product
 from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag, Bedrag
-from vfinance.model.insurance.credit_insurance import CalculateCreditInsurance
 
 from vfinance_ws.api.utils import DecimalEncoder
-from vfinance_ws.api.utils import to_table_html
 from vfinance_ws.ws.utils import with_session
 from vfinance_ws.ws.utils import get_date_from_json_date
+from vfinance_ws.api.v01 import create_facade_from_create_agreement_schema
 
 @with_session
 def ci_create_agreement_code(session, document, logfile):

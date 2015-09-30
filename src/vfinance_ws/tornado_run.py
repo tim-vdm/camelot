@@ -41,7 +41,7 @@ def main():
         from tornado.ioloop import IOLoop
 
         from ws_server import create_app
-        from ws import utils
+        #from ws import utils
 
         app = create_app()
         #next_agreement_code = utils.get_next_agreement_code()

@@ -1,9 +1,7 @@
 import os
 from flask import Blueprint
 from flask import send_file
-from pkg_resources import resource_stream, resource_listdir, resource_exists
-
-from nose.tools import set_trace
+from pkg_resources import resource_stream
 
 bp = Blueprint('api_docs', __name__)
 

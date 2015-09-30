@@ -1,14 +1,11 @@
 import os
 import uuid
-import json
 import datetime
 from cStringIO import StringIO
-from pkg_resources import resource_stream, resource_listdir
 
 from flask import Blueprint
 from flask import current_app
 from flask import jsonify
-from flask import send_file
 
 from vfinance_ws.ws.decorators import log_to_file, ws_jsonify, validation_json
 
@@ -20,7 +17,6 @@ from vfinance_ws.ws.validation_message import (
 )
 
 from vfinance_ws.api import v01
-from flask_httpauth import HTTPBasicAuth
 
 bp = Blueprint('api_v01', __name__)
 

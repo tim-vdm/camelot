@@ -4,12 +4,13 @@ import json
 import datetime
 import contextlib
 from cStringIO import StringIO
-from pkg_resources import resource_stream, resource_listdir, resource_exists
+from pkg_resources import resource_stream, resource_exists
 
 from flask import Blueprint
 from flask import current_app
 from flask import jsonify
 from flask import send_file
+from flask import abort
 
 from vfinance_ws.ws.decorators import log_to_file, ws_jsonify, validation_json
 
