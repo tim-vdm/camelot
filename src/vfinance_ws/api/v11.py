@@ -13,7 +13,8 @@ from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon
 from vfinance.model.bank import constants
 from vfinance.model.bank.varia import Country_
 from vfinance.model.bank.rechtspersoon import Rechtspersoon
-from vfinance.model.financial.agreement import (FinancialAgreementJsonExport,
+from vfinance.model.financial.agreement import (FinancialAgreement,
+                                               FinancialAgreementJsonExport,
                                                FinancialAgreementRole,
                                                FinancialAgreementRoleFeature)
 from vfinance.model.financial.package import FinancialPackage
@@ -95,7 +96,11 @@ def create_agreement_from_json(session, document):
                       'company_since': 'werkgever_sinds',
                       'occupation': 'beroep'}
     assets = []
-    agreement = Hypotheek()
+    agreement = None
+    if document.get('row_type') == 'financial_agreement':
+        agreement = FinancialAgreement()
+    else:
+        agreement = Hypotheek()
     package = session.query(FinancialPackage).get(long(document['package_id']))
     if not package:
         raise Exception('The package with id {} does not exist'.format(document['package_id']))
