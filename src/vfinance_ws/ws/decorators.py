@@ -45,6 +45,10 @@ def log_to_file(function):
             'json-requests'
         )
 
+        if not os.path.exists(logdir):
+            os.makedirs(logdir)
+
+
         logfile = os.path.join(logdir, fname)
 
         with open(logfile, 'w') as outfile:
