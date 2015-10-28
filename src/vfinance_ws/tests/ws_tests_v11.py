@@ -132,12 +132,13 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         # Looptijd 120 maanden -> 1637,62
         document['duration'] = 120
         self.calculate_proposal_test_amount(document, '1637.62')
-        # Betaling jaarlijks -> 345,39
+        # Betaling jaarlijks -> 429.99 
+        document['duration'] = 240
         document['premium_schedules_period_type'] = 'yearly'
-        self.calculate_proposal_test_amount(document, '345.39')
-        # Type betaling bullet -> 573,17
+        self.calculate_proposal_test_amount(document, '429.99')
+        # Type betaling bullet -> 761,50
         document['loan_type_of_payments'] = 'bullet'
-        self.calculate_proposal_test_amount(document, '573.17')
+        self.calculate_proposal_test_amount(document, '761.50')
 
     def calculate_proposal_test_amount(self, document, schedule__1__amount=None, schedule__2__amount=None):
         response = self.post_json('calculate_proposal', data=document)
