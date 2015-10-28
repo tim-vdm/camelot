@@ -23,8 +23,7 @@ from vfinance.model.financial.agreement import (FinancialAgreement,
                                                FinancialAgreementRoleFeature)
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
-from vfinance.model.insurance.credit_insurance import CalculateCreditInsurance
-from vfinance.model.financial.constants import payment_types
+from vfinance.facade.agreement.credit_insurance import CalculatePremium
 from vfinance.model.bank.product import Product
 from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag, Bedrag
 
@@ -33,7 +32,7 @@ from vfinance_ws.ws.utils import with_session
 from vfinance_ws.ws.utils import get_date_from_json_date
 from vfinance_ws.api.v01 import create_facade_from_create_agreement_schema
 
-calculate_credit_insurance = CalculateCreditInsurance()
+calculate_credit_insurance = CalculatePremium()
 
 @with_session
 def ci_create_agreement_code(session, document, logfile):
@@ -417,12 +416,26 @@ def calculate_proposal(session, document):
     amount1 = str(facade.premium_schedule__1__amount)
     amount2 = str(facade.premium_schedule__2__amount) \
         if facade.premium_schedule__2__amount else None
+    payment_thru_date1 = {"year": facade.premium_schedule__1__payment_thru_date.year,
+                          "month": facade.premium_schedule__1__payment_thru_date.month,
+                          "day": facade.premium_schedule__1__payment_thru_date.day}
+    payment_thru_date2 = {"year": facade.premium_schedule__2__payment_thru_date.year,
+                          "month": facade.premium_schedule__2__payment_thru_date.month,
+                          "day": facade.premium_schedule__2__payment_thru_date.day} \
+        if facade.premium_schedule__2__payment_thru_date else None
+    premium_period_type1 = facade.premium_schedule__1__period_type
+    premium_period_type2 = facade.premium_schedule__2__period_type \
+        if facade.premium_schedule__2__period_type else None
 
     session.expunge(facade)
 
     return {
         'premium_schedule__1__amount': amount1,
         'premium_schedule__2__amount': amount2,
+        'premium_schedule__1__payment_thru_date': payment_thru_date1,
+        'premium_schedule__2__payment_thru_date': payment_thru_date2,
+        'premium_schedule__1__period_type': premium_period_type1,
+        'premium_schedule__2__period_type': premium_period_type2
     }
 
 def create_facade_from_calculate_proposal_schema(session, document):
@@ -469,7 +482,7 @@ def create_facade_from_calculate_proposal_schema(session, document):
         document.get('premium_schedules_coverage_limit')
     # facade.premium_schedules_payment_duration = 5*12
     facade.premium_schedules_payment_duration = \
-        document.get('premium_schedules_payment_duration')
+        document.get('premium_schedules_payment_duration', None)
     # facade.premium_schedules_coverage_level_type = 'fixed_amount'
     facade.premium_schedule__1__coverage_level_type = \
         document.get('premium_schedule__1__coverage_level_type')
@@ -502,8 +515,7 @@ def create_facade_from_calculate_proposal_schema(session, document):
 
     calculate_fictitious_extra_age(facade)
 
-    for premium_schedule in facade.invested_amounts:
-        premium_schedule.amount = calculate_credit_insurance.calculate_premium(premium_schedule)
+    calculate_credit_insurance.calculate(facade)
 
     facade.code = "000"
 
