@@ -22,7 +22,6 @@ from vfinance_ws.ws.validation_message import (
     validation_create_agreement_code
 )
 
-from vfinance_ws.api import v01
 from vfinance_ws.api import v11
 from flask_httpauth import HTTPBasicAuth
 
@@ -98,7 +97,7 @@ def calculate_proposal(document):
         Prefix the /calculate_proposal WS with /credit_insurance
 
     """
-    return v01.calculate_proposal(document)
+    return v11.calculate_proposal(document)
 
 
 @bp.route('/credit_insurance/create_agreement_code', methods=['POST'])
@@ -183,7 +182,7 @@ def send_agreement(document):
         Prefix the /send_agreement WS with /credit_insurance
 
     """
-    return v01.send_agreement(document)
+    return v11.send_agreement(document)
 
 
 @bp.route('/credit_insurance/get_proposal_pdf', methods=['POST'])
@@ -240,7 +239,7 @@ def get_packages(document):
     .. versionchanged:: 1.1
         Prefix the /get_package WS with /credit_insurance
     """
-    return {'packages': v01.get_packages(document)}
+    return {'packages': v11.get_packages(document)}
 
 
 @bp.route('/create_agreement_code', methods=['POST'])

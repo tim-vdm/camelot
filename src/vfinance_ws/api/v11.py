@@ -2,6 +2,7 @@
 import hashlib
 import json
 from decimal import Decimal
+import datetime
 
 from sqlalchemy import orm
 
@@ -13,11 +14,17 @@ from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon
 from vfinance.model.bank import constants
 from vfinance.model.bank.varia import Country_
 from vfinance.model.bank.rechtspersoon import Rechtspersoon
+from vfinance.model.bank.constants import (educational_levels,
+                                           activity_levels,
+                                           smoker_non_smoker)
 from vfinance.model.financial.agreement import (FinancialAgreement,
                                                FinancialAgreementJsonExport,
                                                FinancialAgreementRole,
                                                FinancialAgreementRoleFeature)
 from vfinance.model.financial.package import FinancialPackage
+from vfinance.model.financial.product import FinancialProduct
+from vfinance.model.insurance.credit_insurance import CalculateCreditInsurance
+from vfinance.model.financial.constants import payment_types
 from vfinance.model.bank.product import Product
 from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag, Bedrag
 
@@ -25,6 +32,8 @@ from vfinance_ws.api.utils import DecimalEncoder
 from vfinance_ws.ws.utils import with_session
 from vfinance_ws.ws.utils import get_date_from_json_date
 from vfinance_ws.api.v01 import create_facade_from_create_agreement_schema
+
+calculate_credit_insurance = CalculateCreditInsurance()
 
 @with_session
 def ci_create_agreement_code(session, document, logfile):
@@ -399,4 +408,146 @@ def create_agreement_from_json(session, document):
     orm.object_session(agreement).flush()
 
     return agreement
+
+@with_session
+def calculate_proposal(session, document):
+    facade = create_facade_from_calculate_proposal_schema(session, document)
+
+
+    amount1 = str(facade.premium_schedule__1__amount)
+    amount2 = str(facade.premium_schedule__2__amount) \
+        if facade.premium_schedule__2__amount else None
+
+    session.expunge(facade)
+
+    return {
+        'premium_schedule__1__amount': amount1,
+        'premium_schedule__2__amount': amount2,
+    }
+
+def create_facade_from_calculate_proposal_schema(session, document):
+    package = session.query(FinancialPackage).get(long(document['package_id']))
+
+    if not package:
+        raise Exception("This package does not exist")
+
+    facade = CreditInsuranceAgreementFacade()
+
+    # facade.agreement_date = datetime.date(2015, 3, 2)
+    facade.agreement_date = datetime.date(**document['agreement_date'])
+    # facade.from_date = datetime.date(2015, 3, 1)
+    facade.from_date = datetime.date(**document['from_date'])
+
+    facade.package = package
+
+    facade.insured_party__1__birthdate = datetime.date(
+        **document['insured_party__1__birthdate']
+    )
+    # facade.insured_party__1__birthdate = datetime.date(1980, 1, 1)
+    facade.insured_party__1__sex = document['insured_party__1__sex']
+    # facade.insured_party__1__sex = 'M'
+
+    facade.premium_schedule__1__product = package.available_products[0].product
+
+    # facade.premium_schedule__1__premium_fee_1 = D(100)
+    facade.premium_schedule__1__premium_fee_1 = \
+        document['premium_schedule__1__premium_fee_1']
+
+    product_2_id = document.get('premium_schedule__2__product_id')
+    if isinstance(product_2_id, (int, long)):
+        product = session.query(FinancialProduct).get(product_2_id)
+        if not product:
+            raise Exception("The premium_schedule__2__product_id does not exist")
+
+        facade.premium_schedule__2__product = product
+
+    # facade.duration = 5*12
+    facade.duration = document.get('duration')
+
+    # facade.premium_schedules_coverage_limit = D('150000')
+    facade.premium_schedules_coverage_limit = \
+        document.get('premium_schedules_coverage_limit')
+    # facade.premium_schedules_payment_duration = 5*12
+    facade.premium_schedules_payment_duration = \
+        document.get('premium_schedules_payment_duration')
+    # facade.premium_schedules_coverage_level_type = 'fixed_amount'
+    facade.premium_schedule__1__coverage_level_type = \
+        document.get('premium_schedule__1__coverage_level_type')
+    facade.premium_schedule__2__coverage_level_type = \
+        document.get('premium_schedule__2__coverage_level_type')
+    # facade.premium_schedules_premium_rate_1 = D(20)
+    facade.premium_schedules_premium_rate_1 = \
+        document.get('premium_schedules_premium_rate_1')
+    # facade.premium_schedules_period_type = 'single'
+    facade.premium_schedules_period_type = \
+        document.get('premium_schedules_period_type')
+
+    # New fields for select+
+    facade.insured_party__1__educational_level = \
+        dict_from_choices(educational_levels).get(document.get('insured_party__1__educational_level'))
+    facade.insured_party__1__net_earnings_of_employment = \
+        document.get('insured_party__1__net_earnings_of_employment')
+    facade.insured_party__1__fitness_level = \
+        dict_from_choices(activity_levels).get(document.get('insured_party__1__fitness_level'))
+    facade.insured_party__1__smoking_habit = \
+        dict_from_choices(smoker_non_smoker).get(document.get('insured_party__1__smoking_habit'))
+    facade.premium_schedule__1__premium_taxation_physical_person = \
+        document.get('premium_schedule__1__premium_taxation_physical_person')
+    facade.loan_type_of_payments = \
+        document.get('loan_type_of_payments')
+    facade.loan_interest_rate = \
+        document.get('loan_interest_rate')
+    facade.loan_loan_amount = \
+        document.get('loan_loan_amount')
+
+    calculate_fictitious_extra_age(facade)
+
+    for premium_schedule in facade.invested_amounts:
+        premium_schedule.amount = calculate_credit_insurance.calculate_premium(premium_schedule)
+
+    facade.code = "000"
+
+    return facade
+
+def dict_from_choices(choices):
+    #return {k:v for v, k in choices}
+    return {k:k for v, k in choices}
+
+extra_age_table = {'insured_party__1__educational_level':
+                        {'no_schooling': 3,
+                         'incomplete_primary': 3,
+                         'primary': 3,
+                         'lower_secondary': 2,
+                         'upper_secondary': 1,
+                         'post_secondary': 1,
+                         'first_stage_tertiary': -1,
+                         'second_stage_tertiary': -1,
+                         },
+                   'insured_party__1__fitness_level':
+                        {'extremely_inactive': 0,
+                         'sedentary': 0,
+                         'moderately_active': -1,
+                         'vigorously_active': -1,
+                         'extremely_active': -1},
+                   'insured_party__1__smoking_habit':
+                         {'never': 0,
+                          'regular': 5},
+                   }
+
+def calculate_fictitious_extra_age(agreement):
+    years = []
+    for key in extra_age_table.keys():
+        value = getattr(agreement, key)
+        years.append(extra_age_table[key].get(value, 0))
+    earnings = agreement.insured_party__1__net_earnings_of_employment
+    if earnings <= 500:
+        years.append(3)
+    elif earnings <= 1200:
+        years.append(2)
+    elif earnings <= 1700:
+        years.append(1)
+    else:
+        years.append(0)
+    agreement.premium_schedule__1__insurance_fictitious_extra_age = \
+        sum(years) * 365
 

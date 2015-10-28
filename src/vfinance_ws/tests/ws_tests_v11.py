@@ -114,6 +114,38 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         content = json.loads(response.data)
         self.assertIn('agreement_date/day', content)
 
+    def test_014_calculate_various_proposals_select_plus(self):
+        document = load_demo_json('calculate_proposal_select_plus')
+        self.calculate_proposal_test_amount(document, '1727.37')
+        # Laagste studieniveau -> 2129,91
+        document['insured_party__1__educational_level'] = 'no_schooling'
+        self.calculate_proposal_test_amount(document, '2129.91')
+        # Laagste inkomen -> 2552,31
+        document['insured_party__1__net_earnings_of_employment'] = '300.0'
+        self.calculate_proposal_test_amount(document, '2552.31')
+        # Roker -> 3591,15
+        document['insured_party__1__smoking_habit'] = 'regular'
+        self.calculate_proposal_test_amount(document, '3591.15')
+        # Niet sporter -> 3864,78
+        document['insured_party__1__fitness_level'] = 'sedentary'
+        self.calculate_proposal_test_amount(document, '3864.78')
+        # Looptijd 120 maanden -> 1637,62
+        document['duration'] = 120
+        self.calculate_proposal_test_amount(document, '1637.62')
+        # Betaling jaarlijks -> 345,39
+        document['premium_schedules_period_type'] = 'yearly'
+        self.calculate_proposal_test_amount(document, '345.39')
+        # Type betaling bullet -> 573,17
+        document['loan_type_of_payments'] = 'bullet'
+        self.calculate_proposal_test_amount(document, '573.17')
+
+    def calculate_proposal_test_amount(self, document, schedule__1__amount=None, schedule__2__amount=None):
+        response = self.post_json('calculate_proposal', data=document)
+        content = json.loads(response.data)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(content.get('premium_schedule__1__amount'), schedule__1__amount)
+        self.assertEqual(content.get('premium_schedule__2__amount'), schedule__2__amount)
+
     def test_020_create_agreement_code(self):
         document = load_demo_json('create_minimalist_agreement_code')
         response = self.post_json('create_agreement_code', data=document)
