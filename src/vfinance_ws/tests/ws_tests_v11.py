@@ -37,7 +37,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
 
         h = {
             'Content-Type': 'application/json',
-            'Authorization': 'Basic ' + b64encode("{0}:{1}".format("1234567890", "secret"))
+            'Authorization': 'Basic ' + b64encode("{0}:{1}".format("04f3debc-85b4-4fb3-9de1-88642557764b", "secret"))
         }
 
         if headers is None:
