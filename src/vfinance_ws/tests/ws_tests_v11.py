@@ -116,31 +116,31 @@ class WebServiceVersion11TestCase(unittest.TestCase):
 
     def test_014_calculate_various_proposals_select_plus(self):
         document = load_demo_json('calculate_proposal_select_plus')
-        self.calculate_proposal_test_amount(document, '1727.37')
+        self.calculate_proposal_check_amount(document, '1727.37')
         # Laagste studieniveau -> 2129,91
         document['insured_party__1__educational_level'] = 'no_schooling'
-        self.calculate_proposal_test_amount(document, '2129.91')
+        self.calculate_proposal_check_amount(document, '2129.91')
         # Laagste inkomen -> 2552,31
         document['insured_party__1__net_earnings_of_employment'] = '300.0'
-        self.calculate_proposal_test_amount(document, '2552.31')
+        self.calculate_proposal_check_amount(document, '2552.31')
         # Roker -> 3591,15
         document['insured_party__1__smoking_habit'] = 'regular'
-        self.calculate_proposal_test_amount(document, '3591.15')
+        self.calculate_proposal_check_amount(document, '3591.15')
         # Niet sporter -> 3864,78
         document['insured_party__1__fitness_level'] = 'sedentary'
-        self.calculate_proposal_test_amount(document, '3864.78')
+        self.calculate_proposal_check_amount(document, '3864.78')
         # Looptijd 120 maanden -> 1637,62
         document['duration'] = 120
-        self.calculate_proposal_test_amount(document, '1637.62')
+        self.calculate_proposal_check_amount(document, '1637.62')
         # Betaling jaarlijks -> 429.99 
         document['duration'] = 240
         document['premium_schedules_period_type'] = 'yearly'
-        self.calculate_proposal_test_amount(document, '429.99')
+        self.calculate_proposal_check_amount(document, '429.99')
         # Type betaling bullet -> 761,50
         document['loan_type_of_payments'] = 'bullet'
-        self.calculate_proposal_test_amount(document, '761.50')
+        self.calculate_proposal_check_amount(document, '761.50')
 
-    def calculate_proposal_test_amount(self, document, schedule__1__amount=None, schedule__2__amount=None):
+    def calculate_proposal_check_amount(self, document, schedule__1__amount=None, schedule__2__amount=None):
         response = self.post_json('calculate_proposal', data=document)
         content = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
