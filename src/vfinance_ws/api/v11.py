@@ -521,6 +521,50 @@ def create_facade_from_calculate_proposal_schema(session, document):
 
     return facade
 
+@with_session
+def get_packages(session, document):
+    packages = []
+
+    for package in session.query(FinancialPackage).all():
+        products = []
+        for product in package.available_products:
+            products.append({
+                'id': product.product.id,
+                'name': product.product.name,
+            })
+
+        packages.append({
+            'id': package.id,
+            'name': package.name,
+            'available_products': products
+        })
+
+    return packages
+
+@with_session
+def send_agreement(session, document):
+    facade = create_facade_from_send_agreement_schema(session, document)
+    #agreement_dict = FinancialAgreementJsonExport().entity_to_dict(facade)
+    FinancialAgreementJsonExport().entity_to_dict(facade)
+
+    # queue = AwsQueue()
+    # command = QueueCommand('import_agreement', agreement_dict)
+    # queue.write_message(command)
+
+    return None
+
+def create_facade_from_send_agreement_schema(session, document):
+    facade = create_facade_from_create_agreement_schema(session, document)
+    FIELDS = [
+        'signature',
+        'premium_schedule__1__amount',
+        'premium_schedule__2__amount',
+        'code',
+    ]
+    for field in FIELDS:
+        setattr(facade, field, document[field])
+    return facade
+
 def dict_from_choices(choices):
     #return {k:v for v, k in choices}
     return {k:k for v, k in choices}
