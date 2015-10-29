@@ -265,7 +265,7 @@ def check_amount_proposal():
 
     headers = {
         'content-type': 'application/json',
-        'authorization': 'Basic ' + b64encode("{0}:{1}".format("1234567890", "secret"))
+        'authorization': 'Basic ' + b64encode("{0}:{1}".format("04f3debc-85b4-4fb3-9de1-88642557764b", "secret"))
     }
 
     response = requests.post(ws_url, headers=headers, data=json.dumps(agreement), verify=False)
