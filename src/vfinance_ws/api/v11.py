@@ -304,7 +304,7 @@ def create_agreement_from_json(session, document):
                     choices = feature[5]
                     if feature_name == feature[1] and choices is not None:
                         for choice in choices:
-                            if choice[1] == feature_value:
+                            if choice[2] == feature_value:
                                 feature_value = choice[0]
                 role_feature = FinancialAgreementRoleFeature()
                 role_feature.of = agreement_role
@@ -566,8 +566,7 @@ def create_facade_from_send_agreement_schema(session, document):
     return facade
 
 def dict_from_choices(choices):
-    #return {k:v for v, k in choices}
-    return {k:k for v, k in choices}
+    return {k:k for v, t, k in choices}
 
 extra_age_table = {'insured_party__1__educational_level':
                         {'no_schooling': 3,
