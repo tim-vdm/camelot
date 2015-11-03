@@ -52,13 +52,13 @@ def calculate_proposal(document):
     .. literalinclude:: demo/post_calculate_proposal.http
         :language: http
 
-    .. literalinclude:: demo/calculate_proposal.json
+    .. literalinclude:: demo/calculate_proposal_select_plus.json
         :language: json
 
     .. literalinclude:: demo/200.http
         :language: http
 
-    .. literalinclude:: demo/calculate_proposal_response.json
+    .. literalinclude:: demo/calculate_proposal_select_plus_response.json
         :language: json
 
     .. literalinclude:: demo/400.http
