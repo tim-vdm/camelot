@@ -429,6 +429,10 @@ def calculate_proposal(session, document):
 
     session.expunge(facade)
 
+    for message in facade.get_messages(proposal_mode=True):
+        return {'message': message}
+
+
     return {
         'premium_schedule__1__amount': amount1,
         'premium_schedule__2__amount': amount2,
