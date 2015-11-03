@@ -30,8 +30,9 @@ bp = Blueprint('api_v11', __name__)
 auth = HTTPBasicAuth()
 @auth.verify_password
 def verify_token(username, password):
-    with resource_stream('vfinance_ws', os.path.join('data', 'tokens.json')) as infile:
-        tokens = json.load(infile)
+    #with resource_stream('vfinance_ws', os.path.join('data', 'tokens.json')) as infile:
+    infile = resource_stream('vfinance_ws', os.path.join('data', 'tokens.json'))
+    tokens = json.load(infile)
     return username in tokens
 
 @bp.route('/credit_insurance/calculate_proposal', methods=['POST'])
