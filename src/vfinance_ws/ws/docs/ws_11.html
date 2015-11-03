@@ -289,7 +289,7 @@
         <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
         <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">1</span>
     <span class="p">},</span>
-    <span class="nt">&quot;duration&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nt">&quot;duration&quot;</span><span class="p">:</span> <span class="mi">240</span><span class="p">,</span>
     <span class="nt">&quot;from_date&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2015</span><span class="p">,</span>
         <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
@@ -301,16 +301,20 @@
         <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">15</span>
     <span class="p">},</span>
     <span class="nt">&quot;insured_party__1__sex&quot;</span><span class="p">:</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;package_id&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
-    <span class="nt">&quot;premium_schedule__1__coverage_level_type&quot;</span><span class="p">:</span> <span class="s2">&quot;fixed_amount&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;premium_schedule__1__premium_fee_1&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;premium_schedule__1__product_id&quot;</span><span class="p">:</span> <span class="mi">67</span><span class="p">,</span>
-    <span class="nt">&quot;premium_schedule__2__coverage_level_type&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nt">&quot;premium_schedule__2__product_id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nt">&quot;premium_schedules_coverage_limit&quot;</span><span class="p">:</span> <span class="s2">&quot;5000&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;premium_schedules_payment_duration&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nt">&quot;package_id&quot;</span><span class="p">:</span> <span class="mi">65</span><span class="p">,</span>
+    <span class="nt">&quot;premium_schedule__1__coverage_level_type&quot;</span><span class="p">:</span> <span class="s2">&quot;amortization_table&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;premium_schedule__1__premium_fee_1&quot;</span><span class="p">:</span> <span class="s2">&quot;50&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;premium_schedule__1__product_id&quot;</span><span class="p">:</span> <span class="mi">69</span><span class="p">,</span>
+    <span class="nt">&quot;premium_schedules_coverage_limit&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span><span class="p">,</span>
     <span class="nt">&quot;premium_schedules_period_type&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;premium_schedules_premium_rate_1&quot;</span><span class="p">:</span> <span class="s2">&quot;20&quot;</span>
+    <span class="nt">&quot;premium_schedules_premium_rate_1&quot;</span><span class="p">:</span> <span class="s2">&quot;15&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;insured_party__1__educational_level&quot;</span><span class="p">:</span> <span class="s2">&quot;second_stage_tertiary&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;insured_party__1__net_earnings_of_employment&quot;</span><span class="p">:</span> <span class="s2">&quot;1845.00&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;insured_party__1__fitness_level&quot;</span><span class="p">:</span> <span class="s2">&quot;moderately_active&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;insured_party__1__smoking_habit&quot;</span><span class="p">:</span> <span class="s2">&quot;never&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;loan_type_of_payments&quot;</span><span class="p">:</span> <span class="s2">&quot;fixed_payment&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;loan_interest_rate&quot;</span><span class="p">:</span> <span class="s2">&quot;5.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;loan_loan_amount&quot;</span><span class="p">:</span> <span class="s2">&quot;100000&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -322,8 +326,16 @@
 </pre></div>
 </div>
 <div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;premium_schedule__1__amount&quot;</span><span class="p">:</span> <span class="s2">&quot;62.80&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;premium_schedule__2__amount&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="nt">&quot;premium_schedule__1__amount&quot;</span><span class="p">:</span> <span class="s2">&quot;1727.37&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;premium_schedule__1__payment_thru_date&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2028</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;premium_schedule__1__period_type&quot;</span><span class="p">:</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;premium_schedule__2__amount&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;premium_schedule__2__payment_thru_date&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;premium_schedule__2__period_type&quot;</span><span class="p">:</span> <span class="kc">null</span>
 <span class="p">}</span>
 </pre></div>
 </div>
