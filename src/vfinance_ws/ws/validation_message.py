@@ -112,6 +112,7 @@ AGREEMENT_ASSET_SCHEMA = {
 
 Assets = Schema([AGREEMENT_ASSET_SCHEMA])
 
+
 SCHEDULE_SCHEMA = {
     Required("row_type"): String(max=20),
     Required("product_id"): int,
@@ -137,7 +138,11 @@ SCHEDULE_SCHEMA = {
     Optional("life_insurance"): String(max=40),
     Optional("vat"): String(max=40),
     Optional("registration_fee"): String(max=40),
-    Optional("other_costs"): String(max=40)
+    Optional("other_costs"): String(max=40),
+    Optional("insured_from_date"): Date,
+    Optional("insured_duration"): int,
+    Optional("coverage_for"): String(max=40),
+    Optional("agreed_features"): Features
 }
 
 Schedules = Schema([SCHEDULE_SCHEMA])

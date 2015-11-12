@@ -30,13 +30,14 @@ from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, Eigenaa
 from vfinance_ws.api.utils import DecimalEncoder
 from vfinance_ws.ws.utils import with_session
 from vfinance_ws.ws.utils import get_date_from_json_date
-from vfinance_ws.api.v01 import create_facade_from_create_agreement_schema
+from vfinance_ws.api.v01 import create_facade_from_create_agreement_schema as create_facade_from_create_agreement_schema_v01
+
 
 calculate_credit_insurance = CalculatePremium()
 
 @with_session
 def ci_create_agreement_code(session, document, logfile):
-    facade = create_facade_from_create_agreement_schema(session, document)
+    facade = create_facade_from_create_agreement_schema_v01(session, document)
 
     orm.object_session(facade).flush()
 
@@ -105,7 +106,8 @@ def create_agreement_from_json(session, document):
                       'occupation': 'beroep'}
     assets = []
     agreement = None
-    if document.get('row_type') == 'financial_agreement':
+    agreement_type = document.get('row_type')
+    if agreement_type == 'financial_agreement':
         agreement = FinancialAgreement()
     else:
         agreement = Hypotheek()
@@ -522,6 +524,34 @@ def create_facade_from_calculate_proposal_schema(session, document):
     calculate_credit_insurance.calculate(facade)
 
     facade.code = "000"
+
+    return facade
+
+def create_facade_from_create_agreement_schema(session, document):
+    facade = create_facade_from_calculate_proposal_schema(session, document)
+
+    FIELDS = [
+        'origin',
+        'pledgee_name',
+        'pledgee_tax_id',
+        'pledgee_reference'
+    ]
+    for field in FIELDS:
+        setattr(facade, field, document[field])
+
+    FIELDS = [
+        'last_name', 'first_name', 'language', 'nationality_code',
+        'social_security_number', 'passport_number', 'dangerous_hobby',
+        'dangerous_profession', 'street_1', 'city_code', 'city_name',
+        'country_code'
+    ]
+    for field in FIELDS:
+        key = 'insured_party__1__{}'.format(field)
+        setattr(facade, key, document.get(key, None))
+
+    facade.code = CreditInsuranceAgreementFacade.next_agreement_code(facade.package, session)
+
+    facade.text = to_table_html(document)
 
     return facade
 
