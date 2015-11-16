@@ -1,1 +1,1 @@
-../subrepos/v-finance/src/six.py
+../../v-finance/src/six.py
