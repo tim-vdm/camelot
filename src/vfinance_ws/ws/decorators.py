@@ -107,6 +107,8 @@ def ws_jsonify(function):
 
             if result is None:
                 result = {}
+            elif result.keys() == ['message']:
+                return jsonify(result), 400
 
             return jsonify(result)
         except voluptuous.MultipleInvalid as ex:
