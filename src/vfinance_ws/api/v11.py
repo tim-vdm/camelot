@@ -306,8 +306,8 @@ def create_agreement_from_json(session, document):
             #if feature_value is not None:
             if feature_value is not None and role_type not in ('appraiser', 'owner', 'non_usufruct_owner', 'owner_usufruct'):
                 for feature in constants.role_features:
-                    choices = feature[5]
-                    if feature_name == feature[1] and choices is not None:
+                    choices = feature.choices
+                    if feature_name == feature.name and choices is not None:
                         for choice in choices:
                             if choice[2] == feature_value:
                                 feature_value = choice[0]
@@ -431,7 +431,7 @@ def create_agreement_from_json(session, document):
 
 
 
-    agreement.code = CreditInsuranceAgreementFacade.next_agreement_code(package, session)
+    agreement.code = agreement.next_agreement_code(package, session)
 
     orm.object_session(agreement).flush()
 
