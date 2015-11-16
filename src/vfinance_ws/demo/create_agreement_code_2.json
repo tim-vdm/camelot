@@ -198,7 +198,7 @@
             "rank": 1
         }
     ],
-    "row_type": "financial_agreement",
+    "row_type": "loan_application",
     "schedules": [
         {
             "amount": "230000.00",
