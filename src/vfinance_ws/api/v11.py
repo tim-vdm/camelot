@@ -21,13 +21,16 @@ from vfinance.model.financial.agreement import (FinancialAgreement,
                                                FinancialAgreementJsonExport,
                                                FinancialAgreementRole,
                                                FinancialAgreementRoleFeature)
+from vfinance.model.financial.premium import FinancialAgreementPremiumSchedule
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
+from vfinance.model.financial.feature import FinancialAgreementPremiumScheduleFeature
 from vfinance.facade.agreement.credit_insurance import CalculatePremium
 from vfinance.model.bank.product import Product
 from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag, Bedrag
 
 from vfinance_ws.api.utils import DecimalEncoder
+from vfinance_ws.api.utils import to_table_html
 from vfinance_ws.ws.utils import with_session
 from vfinance_ws.ws.utils import get_date_from_json_date
 from vfinance_ws.api.v01 import create_facade_from_create_agreement_schema as create_facade_from_create_agreement_schema_v01
@@ -326,10 +329,12 @@ def create_agreement_from_json(session, document):
     if schedules is not None:
         mapping = {'fixed_payment': 'vaste_aflossing',
                    'fixed_capital_payment': 'vast_kapitaal',
-                   'yearly': 1,
-                   'semesterly': 2,
-                   'quarterly': 4,
-                   'monthly': 12}
+                   'fixed_amount': 'vast_bedrag',
+                   'single': 'single',
+                   'yearly': 'yearly',
+                   'semesterly': 'semesterly',
+                   'quarterly': 'quarterly',
+                   'monthly': 'monthly'}
         doel_field_mapping = {'purchase_terrain': 'doel_aankoop_terrein',
                               'new_housing': 'doel_nieuwbouw',
                               'renovation': 'doel_renovatie',
@@ -344,49 +349,71 @@ def create_agreement_from_json(session, document):
 
 
         for schedule in schedules:
-            bedrag = Bedrag()
             product = session.query(Product).get(long(schedule.get('product_id')))
-
-            aflossing = mapping.get(schedule.get('described_by'))
-
-            # Should be decided by the product or the package?
-            type_vervaldag = 'akte'
-
             period_type = mapping.get(schedule.get('period_type'))
+            duration = schedule.get('duration')
+            amount = schedule.get('amount')
+            direct_debit = schedule.get('direct_debit')
+            payment_type = mapping.get(schedule.get('described_by'))
+            if agreement_type == 'financial_agreement':
+                coverage_level = None
+                for cl in product.get_available_coverage_levels_at(agreement.from_date):
+                    if cl.type == schedule.get('coverage_for'):
+                        coverage_level = cl
+                premium_schedule = FinancialAgreementPremiumSchedule()
+                premium_schedule.product = product
+                premium_schedule.amount = amount
+                premium_schedule.duration = duration
+                premium_schedule.period_type = period_type
+                premium_schedule.direct_debit = direct_debit
+                premium_schedule.insured_from_date = get_date_from_json_date(schedule.get('insured_from_date'))
+                premium_schedule.insured_duration = schedule.get('insured_duration')
+                premium_schedule.coverage_for = coverage_level
+                premium_schedule.financial_agreement = agreement
+                for feature in schedule.get('agreed_features'):
+                    agreed_feature = FinancialAgreementPremiumScheduleFeature()
+                    agreed_feature.described_by = feature.get('described_by')
+                    agreed_feature.value = feature.get('value')
+                    agreed_feature.agreed_on = premium_schedule
+            else:
+                bedrag = Bedrag()
 
-            bedrag.product = product
-            bedrag.type_vervaldag = type_vervaldag
-            bedrag.type_aflossing = aflossing
-            bedrag.terugbetaling_interval = period_type
-            bedrag.looptijd = schedule.get('duration', 0)
-            bedrag.bedrag = schedule.get('amount', 0)
-            bedrag.terugbetaling_start = schedule.get('suspension_of_payment', 0)
-            for field in doel_field_mapping:
-                if field == 'building_purchase':
-                    if schedule.get('vat'):
-                        fieldname = doel_field_mapping[field].get('vat')
-                    elif schedule.get('registration_fee'):
-                        fieldname = doel_field_mapping[field].get('registration_fee')
-                else:
-                    fieldname = doel_field_mapping[field]
-                setattr(bedrag, fieldname, bool(Decimal(schedule.get(field, 0.0))))
+                # Should be decided by the product or the package?
+                type_vervaldag = 'akte'
 
-            for field in aankoop:
-                aankoopprijs += Decimal(schedule.get(field, 0.0))
-            for field in bouwwerken:
-                bestek_bouwwerken += Decimal(schedule.get(field, 0.0))
-            for field in verzekeringen:
-                verzekeringskosten += Decimal(schedule.get(field, 0.0))
+                bedrag.product = product
+                bedrag.type_vervaldag = type_vervaldag
+                bedrag.type_aflossing = payment_type
+                bedrag.terugbetaling_interval = period_type
+                bedrag.looptijd = duration
+                bedrag.bedrag = amount
+                bedrag.terugbetaling_start = schedule.get('suspension_of_payment', 0)
+                for field in doel_field_mapping:
+                    if field == 'building_purchase':
+                        if schedule.get('vat'):
+                            fieldname = doel_field_mapping[field].get('vat')
+                        elif schedule.get('registration_fee'):
+                            fieldname = doel_field_mapping[field].get('registration_fee')
+                    else:
+                        fieldname = doel_field_mapping[field]
+                    setattr(bedrag, fieldname, bool(Decimal(schedule.get(field, 0.0))))
 
-            te_betalen_btw += Decimal(schedule.get('vat', 0.0))
-            notariskosten_hypotheek += Decimal(schedule.get('signing_agent_mortgage', 0.0))
-            notariskosten_aankoopakte += Decimal(schedule.get('signing_agent_purchase', 0.0))
-            notariskosten_aankoopakte += Decimal(schedule.get('registration_fee', 0.0))
-            ereloon_architect += Decimal(schedule.get('architect_fee', 0.0))
-            eigen_middelen += Decimal(schedule.get('down_payment', 0.0))
-            andere_kosten += Decimal(schedule.get('other_costs', 0.0))
+                for field in aankoop:
+                    aankoopprijs += Decimal(schedule.get(field, 0.0))
+                for field in bouwwerken:
+                    bestek_bouwwerken += Decimal(schedule.get(field, 0.0))
+                for field in verzekeringen:
+                    verzekeringskosten += Decimal(schedule.get(field, 0.0))
 
-            bedrag.financial_agreement = agreement
+                te_betalen_btw += Decimal(schedule.get('vat', 0.0))
+                notariskosten_hypotheek += Decimal(schedule.get('signing_agent_mortgage', 0.0))
+                notariskosten_aankoopakte += Decimal(schedule.get('signing_agent_purchase', 0.0))
+                notariskosten_aankoopakte += Decimal(schedule.get('registration_fee', 0.0))
+                ereloon_architect += Decimal(schedule.get('architect_fee', 0.0))
+                eigen_middelen += Decimal(schedule.get('down_payment', 0.0))
+                andere_kosten += Decimal(schedule.get('other_costs', 0.0))
+
+                bedrag.financial_agreement = agreement
 
 
 
