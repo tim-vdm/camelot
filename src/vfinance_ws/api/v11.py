@@ -5,6 +5,7 @@ from decimal import Decimal
 import datetime
 
 from sqlalchemy import orm
+from camelot.core.exception import UserException
 
 from vfinance.connector.json_ import ExtendedEncoder
 
@@ -459,7 +460,7 @@ def calculate_proposal(session, document):
     session.expunge(facade)
 
     for message in facade.get_messages(proposal_mode=True):
-        return {'message': message}
+        raise UserException(message)
 
 
     return {
