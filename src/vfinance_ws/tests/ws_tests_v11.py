@@ -83,12 +83,12 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(content['message'], "Invalid JSON message")
 
     def test_010_calculate_proposal(self):
-        document = load_demo_json('calculate_proposal_stc_v11')
+        document = load_demo_json('v11_calculate_proposal_stc')
         response = self.post_json('calculate_proposal', data=document)
         self.assertEqual(response.status_code, 200)
 
     def test_011_calculate_proposal_two_products(self):
-        document = load_demo_json('calculate_proposal_stc_v11')
+        document = load_demo_json('v11_calculate_proposal_stc')
         document['premium_schedule__2__product_id'] = 68
         document['premium_schedule__2__coverage_level_type'] = 'decreasing_amount'
         response = self.post_json('calculate_proposal', data=document)
@@ -105,7 +105,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 400)
 
     def test_013_calculate_proposal_bad_values(self):
-        document = load_demo_json('calculate_proposal_stc_v11')
+        document = load_demo_json('v11_calculate_proposal_stc')
         document['agreement_date']['month'] = 2
         document['agreement_date']['day'] = 29
 
@@ -116,7 +116,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertIn('agreement_date/day', content)
 
     def test_014_calculate_various_proposals_select_plus(self):
-        document = load_demo_json('calculate_proposal_select_plus')
+        document = load_demo_json('v11_calculate_proposal_select_plus')
         self.calculate_proposal_check_amount(document, '1727.37')
         # Laagste studieniveau -> 2129,91
         document['insured_party__1__educational_level'] = 'no_schooling'
@@ -149,12 +149,12 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(content.get('premium_schedule__2__amount'), schedule__2__amount)
 
     def test_020_create_agreement_code(self):
-        document = load_demo_json('create_minimalist_agreement_code')
+        document = load_demo_json('v11_create_minimalist_agreement_code')
         response = self.post_json('create_agreement_code', data=document)
         self.assertEqual(response.status_code, 200)
 
     def test_021_create_agreement_code_wrong_values(self):
-        document = load_demo_json('create_agreement_code')
+        document = load_demo_json('v11_create_agreement_code')
         document.update({
             'insured_party__1__nationality_code': 'qwertyuio'
         })
@@ -192,7 +192,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertIn('packages', content)
 
     def test_create_agreement(self):
-        document = load_demo_json('create_agreement_code_2')
+        document = load_demo_json('v11_create_agreement_code')
         response = self.post_json('create_agreement_code', data=document)
 
         self.assertEqual(response.status_code, 200)
@@ -211,10 +211,20 @@ class WebServiceVersion11TestCase(unittest.TestCase):
                 features.append(feature.described_by)
 
 
+    def test_create_agreement_code_wrong_coverage_level(self):
+        document = load_demo_json('v11_create_agreement_code_select_plus')
+        document['schedules'][0]['coverage_for'] = 'wrong_coverage'
+        response = self.post_json('create_agreement_code', data=document)
+        session = Session
+
+        content = json.loads(response.data)
+
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(content.get('message'), 'Coverage of type wrong_coverage is not available')
 
 
     def test_create_agreement_code_polapp(self):
-        document = load_demo_json('polapp_agreement_code_v11')
+        document = load_demo_json('v11_polapp_agreement_code')
         response = self.post_json('create_agreement_code', data=document)
         session = Session
 
@@ -222,8 +232,9 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         content = json.loads(response.data)
         self.assertIsInstance(content, dict)
 
+
     def test_create_agreement_code_select_plus(self):
-        document = load_demo_json('create_agreement_code_select_plus_v11')
+        document = load_demo_json('v11_create_agreement_code_select_plus')
         response = self.post_json('create_agreement_code', data=document)
         session = Session
 
@@ -236,6 +247,22 @@ class WebServiceVersion11TestCase(unittest.TestCase):
                                                             FinancialAgreement,
                                                             json_path))[0]
         self.assertIsNotNone(imported_agreement)
+        self.assertEqual(imported_agreement.origin, 'BIA:12000')
+        roles = {role.described_by: role for role in imported_agreement.roles}
+        insured_party = roles.get('insured_party')
+        self.assertEqual(insured_party.smoking_habit, 1)
+        self.assertEqual(insured_party.natuurlijke_persoon.sex, 'M')
+        self.assertEqual(insured_party.natuurlijke_persoon.last_name, 'aezr')
+        self.assertEqual(insured_party.natuurlijke_persoon.first_name, 'azer')
+        self.assertEqual(insured_party.natuurlijke_persoon.identity_number, '900101')
+        premium_schedule = imported_agreement.invested_amounts[0]
+        self.assertEqual(premium_schedule.amount, D('230000.00'))
+        self.assertEqual(premium_schedule.insured_duration, 240)
+        agreed_features = {agreed_feature.described_by: agreed_feature.value for agreed_feature in premium_schedule.agreed_features}
+        self.assertEqual(100, agreed_features.get('premium_fee_1'))
+        self.assertEqual(20, agreed_features.get('premium_rate_1'))
+        self.assertEqual(100, agreed_features.get('coverage_limit'))
+        self.assertEqual(3, agreed_features.get('premium_taxation_physical_person'))
 
 
 if __name__ == '__main__':

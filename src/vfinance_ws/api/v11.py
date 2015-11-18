@@ -355,10 +355,15 @@ def create_agreement_from_json(session, document):
             direct_debit = schedule.get('direct_debit')
             schedule_type = schedule.get('row_type')
             if schedule_type == 'applied_amount':
+                coverage_level_json = schedule.get('coverage_for')
                 coverage_level = None
-                for cl in product.get_available_coverage_levels_at(agreement.from_date):
-                    if cl.type == schedule.get('coverage_for'):
-                        coverage_level = cl
+                if coverage_level_json is not None:
+                    for cl in product.get_available_coverage_levels_at(agreement.from_date):
+                        if cl.type == coverage_level_json:
+                            coverage_level = cl
+                            break
+                        else:
+                            raise UserException('Coverage of type {} is not available'.format(coverage_level_json))
                 premium_schedule = FinancialAgreementPremiumSchedule()
                 premium_schedule.product = product
                 premium_schedule.amount = amount
@@ -369,11 +374,13 @@ def create_agreement_from_json(session, document):
                 premium_schedule.insured_duration = schedule.get('insured_duration')
                 premium_schedule.coverage_for = coverage_level
                 premium_schedule.financial_agreement = agreement
-                for feature in schedule.get('agreed_features'):
-                    agreed_feature = FinancialAgreementPremiumScheduleFeature()
-                    agreed_feature.described_by = feature.get('described_by')
-                    agreed_feature.value = feature.get('value')
-                    agreed_feature.agreed_on = premium_schedule
+                for feature_name in [insurance_feature[1] for insurance_feature in constants.insurance_features]:
+                    feature_value = schedule.get(feature_name)
+                    if feature_value is not None:
+                        agreed_feature = FinancialAgreementPremiumScheduleFeature()
+                        agreed_feature.described_by = feature_name
+                        agreed_feature.value = Decimal(feature_value)
+                        agreed_feature.agreed_on = premium_schedule
             elif schedule_type == 'loan_application':
                 bedrag = Bedrag()
 

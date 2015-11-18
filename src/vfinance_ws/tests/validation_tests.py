@@ -160,7 +160,7 @@ class CalculateProposalSchemaTestCase(unittest.TestCase):
         self.validator = voluptuous.Schema(validation_message.CALCULATE_PROPOSAL_SCHEMA)
 
     def test_01_calculate_proposal_correct(self):
-        document = load_demo_json('calculate_proposal')
+        document = load_demo_json('v01_calculate_proposal')
         self.validator(document)
 
 
@@ -169,7 +169,7 @@ class CreateAgreementCodeSchemaTestCase(unittest.TestCase):
         self.validator = voluptuous.Schema(validation_message.CI_CREATE_AGREEMENT_CODE_SCHEMA)
 
     def test_01_create_agreement_code_correct(self):
-        document = load_demo_json('create_agreement_code')
+        document = load_demo_json('v01_create_agreement_code')
         self.validator(document)
 
 

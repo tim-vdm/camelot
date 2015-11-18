@@ -66,14 +66,6 @@ HISTORICAL_ADDRESS_SCHEMA.update({
     Optional("thru_date"): Date
 })
 
-
-FEATURE_SCHEMA = {
-    Required("described_by"): String(max=40),
-    Required("value"): String(max=40)
-}
-
-Features = Schema([FEATURE_SCHEMA])
-
 Addresses = Schema([HISTORICAL_ADDRESS_SCHEMA])
 
 CONTACT_MECHANISM_SCHEMA = {
@@ -144,7 +136,10 @@ SCHEDULE_SCHEMA = {
     Optional("insured_from_date"): Date,
     Optional("insured_duration"): int,
     Optional("coverage_for"): String(max=40),
-    Optional("agreed_features"): Features
+    Optional("premium_fee_1"): String(max=20),
+    Optional("premium_rate_1"): String(max=20),
+    Optional("coverage_limit"): String(max=20),
+    Optional("premium_taxation_physical_person"): String(max=20)
 }
 
 Schedules = Schema([SCHEDULE_SCHEMA])

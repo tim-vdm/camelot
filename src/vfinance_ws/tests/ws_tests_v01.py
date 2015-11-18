@@ -72,12 +72,12 @@ class WebServiceVersion01TestCase(unittest.TestCase):
         self.assertEqual(content['message'], "Invalid JSON message")
 
     def test_010_calculate_proposal(self):
-        document = load_demo_json('calculate_proposal')
+        document = load_demo_json('v01_calculate_proposal')
         response = self.post_json('calculate_proposal', data=document)
         self.assertEqual(response.status_code, 200)
 
     def test_011_calculate_proposal_two_products(self):
-        document = load_demo_json('calculate_proposal')
+        document = load_demo_json('v01_calculate_proposal')
         document['premium_schedule__2__product_id'] = 68
         document['premium_schedule__2__coverage_level_type'] = 'decreasing_amount'
         response = self.post_json('calculate_proposal', data=document)
@@ -94,7 +94,7 @@ class WebServiceVersion01TestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 400)
 
     def test_013_calculate_proposal_bad_values(self):
-        document = load_demo_json('calculate_proposal')
+        document = load_demo_json('v01_calculate_proposal')
         document['agreement_date']['month'] = 2
         document['agreement_date']['day'] = 29
 
@@ -105,12 +105,12 @@ class WebServiceVersion01TestCase(unittest.TestCase):
         self.assertIn('agreement_date/day', content)
 
     def test_020_create_agreement_code(self):
-        document = load_demo_json('create_agreement_code')
+        document = load_demo_json('v01_create_agreement_code')
         response = self.post_json('create_agreement_code', data=document)
         self.assertEqual(response.status_code, 200)
 
     def test_021_create_agreement_code_wrong_values(self):
-        document = load_demo_json('create_agreement_code')
+        document = load_demo_json('v01_create_agreement_code')
         document.update({
             'insured_party__1__nationality_code': 'qwertyuio'
         })
