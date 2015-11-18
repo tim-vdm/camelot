@@ -215,7 +215,6 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         document = load_demo_json('v11_create_agreement_code_select_plus')
         document['schedules'][0]['coverage_for'] = 'wrong_coverage'
         response = self.post_json('create_agreement_code', data=document)
-        session = Session
 
         content = json.loads(response.data)
 
@@ -226,7 +225,6 @@ class WebServiceVersion11TestCase(unittest.TestCase):
     def test_create_agreement_code_polapp(self):
         document = load_demo_json('v11_polapp_agreement_code')
         response = self.post_json('create_agreement_code', data=document)
-        session = Session
 
         self.assertEqual(response.status_code, 200)
         content = json.loads(response.data)
