@@ -221,7 +221,7 @@
             "refinancing": "0.0",
             "registration_fee": "100.0",
             "renovation": "40000.0",
-            "row_type": "applied_amount",
+            "row_type": "loan_application",
             "signing_agent_mortgage": "275.0",
             "signing_agent_purchase": "234.0",
             "suspension_of_payment": 6,

@@ -44,6 +44,8 @@ DATE_SCHEMA = {
 Date = All(DATE_SCHEMA, ValidateDate)
 Boolean = In([True, False])
 Sex = In(["M", "F"])
+ScheduleType = In(["loan_application",
+                   "applied_amount"])
 RowType = Schema(String(max=20))
 
 ADDRESS_SCHEMA = {
@@ -114,7 +116,7 @@ Assets = Schema([AGREEMENT_ASSET_SCHEMA])
 
 
 SCHEDULE_SCHEMA = {
-    Required("row_type"): String(max=20),
+    Required("row_type"): ScheduleType,
     Required("product_id"): int,
     Required("amount"): String(max=20),
     Required("duration"): int,

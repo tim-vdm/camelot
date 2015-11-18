@@ -328,14 +328,12 @@ def create_agreement_from_json(session, document):
     eigen_middelen = Decimal(0.0)
     andere_kosten = Decimal(0.0)
     if schedules is not None:
-        mapping = {'fixed_payment': 'vaste_aflossing',
-                   'fixed_capital_payment': 'vast_kapitaal',
-                   'fixed_amount': 'vast_bedrag',
-                   'single': 'single',
-                   'yearly': 'yearly',
-                   'semesterly': 'semesterly',
-                   'quarterly': 'quarterly',
-                   'monthly': 'monthly'}
+        aflossing_field_mapping = {'fixed_payment': 'vaste_aflossing',
+                                   'fixed_capital_payment': 'vast_kapitaal'}
+        interval_field_mapping = {'yearly': 1,
+                                  'semesterly': 2,
+                                  'quarterly': 4,
+                                  'monthly': 12}
         doel_field_mapping = {'purchase_terrain': 'doel_aankoop_terrein',
                               'new_housing': 'doel_nieuwbouw',
                               'renovation': 'doel_renovatie',
@@ -351,12 +349,12 @@ def create_agreement_from_json(session, document):
 
         for schedule in schedules:
             product = session.query(Product).get(long(schedule.get('product_id')))
-            period_type = mapping.get(schedule.get('period_type'))
+            period_type = schedule.get('period_type')
             duration = schedule.get('duration')
             amount = schedule.get('amount')
             direct_debit = schedule.get('direct_debit')
-            payment_type = mapping.get(schedule.get('described_by'))
-            if agreement_type == 'financial_agreement':
+            schedule_type = schedule.get('row_type')
+            if schedule_type == 'applied_amount':
                 coverage_level = None
                 for cl in product.get_available_coverage_levels_at(agreement.from_date):
                     if cl.type == schedule.get('coverage_for'):
@@ -376,7 +374,7 @@ def create_agreement_from_json(session, document):
                     agreed_feature.described_by = feature.get('described_by')
                     agreed_feature.value = feature.get('value')
                     agreed_feature.agreed_on = premium_schedule
-            else:
+            elif schedule_type == 'loan_application':
                 bedrag = Bedrag()
 
                 # Should be decided by the product or the package?
@@ -384,8 +382,8 @@ def create_agreement_from_json(session, document):
 
                 bedrag.product = product
                 bedrag.type_vervaldag = type_vervaldag
-                bedrag.type_aflossing = payment_type
-                bedrag.terugbetaling_interval = period_type
+                bedrag.type_aflossing = aflossing_field_mapping.get(schedule.get('described_by'))
+                bedrag.terugbetaling_interval = interval_field_mapping.get(period_type)
                 bedrag.looptijd = duration
                 bedrag.bedrag = amount
                 bedrag.terugbetaling_start = schedule.get('suspension_of_payment', 0)

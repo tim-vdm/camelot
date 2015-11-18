@@ -268,6 +268,8 @@ def create_agreement_code(document):
             os.makedirs(full_dir)
         fname = os.path.join(full_dir, fname)
 
+        result.update({'json_path': fname})
+
         with open(fname, 'w') as outfile:
             outfile.write(sIO.getvalue())
 
