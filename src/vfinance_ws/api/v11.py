@@ -164,8 +164,8 @@ def create_agreement_from_json(session, document):
             assets.append({'id': id,
                            'asset': goed})
 
-
     for role in document['roles']:
+        agreement_role = None
         role_type = role['described_by']
 
         if role['party']['row_type'] == 'person':
@@ -298,21 +298,22 @@ def create_agreement_from_json(session, document):
                 agreement_role.financial_agreement = agreement
                 agreement_role.rechtspersoon = rechtspersoon
 
-        for feature_name in constants.role_feature_names:
-            feature_value = role.get(feature_name)
-            # If role is not mapped to a FinancialAgreementRole, no FinancialAgreementRoleFeatures should be created
-            #if feature_value is not None:
-            if feature_value is not None and role_type not in ('appraiser', 'owner', 'non_usufruct_owner', 'owner_usufruct'):
-                for feature in constants.role_features:
-                    choices = feature.choices
-                    if feature_name == feature.name and choices is not None:
-                        for choice in choices:
-                            if choice[2] == feature_value:
-                                feature_value = choice[0]
-                role_feature = FinancialAgreementRoleFeature()
-                role_feature.of = agreement_role
-                role_feature.value = Decimal(feature_value)
-                role_feature.described_by = feature_name
+        if agreement_role is not None:
+            for feature_name in constants.role_feature_names:
+                feature_value = role.get(feature_name)
+                # If role is not mapped to a FinancialAgreementRole, no FinancialAgreementRoleFeatures should be created
+                #if feature_value is not None:
+                if feature_value is not None and role_type not in ('appraiser', 'owner', 'non_usufruct_owner', 'owner_usufruct'):
+                    for feature in constants.role_features:
+                        choices = feature.choices
+                        if feature_name == feature.name and choices is not None:
+                            for choice in choices:
+                                if choice[2] == feature_value:
+                                    feature_value = choice[0]
+                    role_feature = FinancialAgreementRoleFeature()
+                    role_feature.of = agreement_role
+                    role_feature.value = Decimal(feature_value)
+                    role_feature.described_by = feature_name
 
     schedules = document.get('schedules')
     aankoopprijs = Decimal(0.0)

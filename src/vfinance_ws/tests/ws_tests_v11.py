@@ -231,6 +231,43 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertIsInstance(content, dict)
 
 
+    def test_create_agreement_code_duplicate_roles(self):
+        # This test should be adapted when we know about the agreement where
+        # the income of both roles was the same.
+        document = load_demo_json('v11_create_agreement_code_duplicate_roles')
+        response = self.post_json('create_agreement_code', data=document)
+        session = Session
+
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
+        json_path = content.get('json_path')
+        import_action = JsonImportAction()
+        imported_agreement = list(import_action.import_file(session,
+                                                            FinancialAgreement,
+                                                            json_path))[0]
+        self.assertIsNotNone(imported_agreement)
+        self.assertEqual(imported_agreement.origin, 'BIA:12000')
+        roles = {'{r.described_by}_{r.rank}'.format(r=role): role for role in imported_agreement.roles}
+        insured_party = roles.get('insured_party_1')
+        self.assertEqual(insured_party.smoking_habit, 1)
+        self.assertEqual(insured_party.natuurlijke_persoon.sex, 'M')
+        self.assertEqual(insured_party.natuurlijke_persoon.last_name, 'aezr')
+        self.assertEqual(insured_party.natuurlijke_persoon.first_name, 'azer')
+        self.assertEqual(insured_party.natuurlijke_persoon.identity_number, '900101')
+        self.assertEqual(insured_party.net_earnings_of_employment, D('1234.56'))
+        insured_party_2 = roles.get('insured_party_2')
+        self.assertEqual(insured_party_2.net_earnings_of_employment, None)
+        self.assertEqual(insured_party_2.smoking_habit, 2)
+        premium_schedule = imported_agreement.invested_amounts[0]
+        self.assertEqual(premium_schedule.amount, D('230000.00'))
+        self.assertEqual(premium_schedule.insured_duration, 240)
+        agreed_features = {agreed_feature.described_by: agreed_feature.value for agreed_feature in premium_schedule.agreed_features}
+        self.assertEqual(100, agreed_features.get('premium_fee_1'))
+        self.assertEqual(20, agreed_features.get('premium_rate_1'))
+        self.assertEqual(100, agreed_features.get('coverage_limit'))
+        self.assertEqual(3, agreed_features.get('premium_taxation_physical_person'))
+
     def test_create_agreement_code_select_plus(self):
         document = load_demo_json('v11_create_agreement_code_select_plus')
         response = self.post_json('create_agreement_code', data=document)

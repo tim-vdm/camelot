@@ -1,0 +1,145 @@
+{
+    "agent_official_number_fsma": "010210 A",
+    "agreement_date": {
+        "day": 5,
+        "month": 11,
+        "year": 2015
+    },
+    "from_date": {
+        "day": 5,
+        "month": 11,
+        "year": 2015
+    },
+    "origin": "BIA:12000",
+    "package_id": 65,
+    "roles": [
+        {
+            "party": {
+                "contact_mechanisms": [],
+                "birth_date": {"day": 1, "month": 1, "year": 1990},
+                "nationality_code": "BE",
+                "addresses": [
+                    {"street_1": "azerrtyu",
+                     "country_code": "BE",
+                     "zip_code": "2000",
+                     "city": "ANTWERPEN",
+                     "described_by": "domicile",
+                     "from_date": {"day": 5,
+                                   "month": 11,
+                                   "year": 2015}
+                    }
+                ],
+                "last_name": "aezr",
+                "language": "nl",
+                "first_name": "azer",
+                "social_security_number": "900101",
+                "sex": "M",
+                "passport_expiry_date": {"day": 1,
+                                         "month": 1,
+                                         "year": 2020},
+                "row_type": "person",
+                "passport_number": "900101"},
+            "smoking_habit": "never",
+            "rank": 1,
+            "described_by": "insured_party"
+        },
+        {
+            "party": {
+                "contact_mechanisms": [],
+                "birth_date": {"day": 1,
+                               "month": 1,
+                               "year": 1990},
+                "nationality_code": "BE",
+                "addresses": [
+                    {"street_1": "azerrtyu",
+                     "country_code": "BE",
+                     "zip_code": "2000",
+                     "city": "ANTWERPEN",
+                     "described_by": "domicile",
+                     "from_date": {"day": 5,
+                                   "month": 11,
+                                   "year": 2015}
+                    }
+                ],
+                "last_name": "aezr",
+                "language": "nl",
+                "first_name": "azer",
+                "social_security_number": "900101",
+                "sex": "M",
+                "passport_expiry_date": {"day": 1,
+                                         "month": 1,
+                                         "year": 2020},
+                "row_type": "person",
+                "passport_number": "900101"
+            },
+            "net_earnings_of_employment": "1234.56",
+            "smoking_habit": "regular",
+            "rank": 1,
+            "described_by": "insured_party"
+        },
+        {
+            "party": {
+                "contact_mechanisms": [],
+                "birth_date": {"day": 1,
+                               "month": 1,
+                               "year": 1990},
+                "nationality_code": "BE",
+                "addresses": [
+                    {"street_1": "azerrtyu",
+                     "country_code": "BE",
+                     "zip_code": "2000",
+                     "city": "ANTWERPEN",
+                     "described_by": "domicile",
+                     "from_date": {"day": 5,
+                                   "month": 11,
+                                   "year": 2015}
+                    }
+                ],
+                "last_name": "aezr",
+                "language": "nl",
+                "first_name": "azer",
+                "social_security_number": "900101",
+                "sex": "M",
+                "passport_expiry_date": {"day": 1,
+                                         "month": 1,
+                                         "year": 2020},
+                "row_type": "person",
+                "passport_number": "900101"
+            },
+            "smoking_habit": "never",
+            "rank": 2,
+            "described_by": "insured_party"
+        },
+        {
+            "party": {
+                "tax_id": "BE 0445.781.316",
+                "row_type": "organization",
+                "name": "Alpha Cr\u00e9dit"
+            },
+            "rank": 1,
+            "described_by": "pledgee"
+        }
+    ],
+    "row_type": "financial_agreement",
+    "schedules": [
+        {
+            "amount": "230000.00",
+            "described_by": "fixed_amount",
+            "direct_debit": true,
+            "duration": 240,
+            "period_type": "monthly",
+            "product_id": 69,
+            "row_type": "premium_amount",
+            "premium_fee_1": "100.0",
+            "premium_rate_1": "20.0",
+            "coverage_limit": "100.0",
+            "premium_taxation_physical_person": "3.0",
+            "insured_from_date": {"day": 5,
+                                  "month": 11,
+                                  "year": 2015},
+            "insured_duration": 240,
+            "coverage_for": "amortization_table"
+        }
+    ]
+}
+
