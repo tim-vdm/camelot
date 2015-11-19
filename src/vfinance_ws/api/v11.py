@@ -299,8 +299,15 @@ def create_agreement_from_json(session, document):
                 agreement_role.rechtspersoon = rechtspersoon
 
         if agreement_role is not None:
+            date_previous_disability = role.get('date_previous_disability')
+            if date_previous_disability is not None:
+                agreement_role.date_previous_disability = datetime.date(**date_previous_disability)
+            date_previous_medical_procedure = role.get('date_previous_medical_procedure')
+            if date_previous_medical_procedure is not None:
+                agreement_role.date_previous_medical_procedure = datetime.date(**date_previous_medical_procedure)
             for feature_name in constants.role_feature_names:
                 feature_value = role.get(feature_name)
+                feature_reference_value = role.get(feature_name + '_reference')
                 # If role is not mapped to a FinancialAgreementRole, no FinancialAgreementRoleFeatures should be created
                 #if feature_value is not None:
                 if feature_value is not None and role_type not in ('appraiser', 'owner', 'non_usufruct_owner', 'owner_usufruct'):
@@ -313,7 +320,10 @@ def create_agreement_from_json(session, document):
                     role_feature = FinancialAgreementRoleFeature()
                     role_feature.of = agreement_role
                     role_feature.value = Decimal(feature_value)
+                    role_feature.reference = feature_reference_value
                     role_feature.described_by = feature_name
+
+
 
     schedules = document.get('schedules')
     aankoopprijs = Decimal(0.0)

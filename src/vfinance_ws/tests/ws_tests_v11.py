@@ -1,4 +1,5 @@
 import unittest
+import datetime
 from decimal import Decimal as D
 
 from flask import json
@@ -287,9 +288,27 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         insured_party = roles.get('insured_party')
         self.assertEqual(insured_party.smoking_habit, 1)
         self.assertEqual(insured_party.natuurlijke_persoon.sex, 'M')
-        self.assertEqual(insured_party.natuurlijke_persoon.last_name, 'aezr')
-        self.assertEqual(insured_party.natuurlijke_persoon.first_name, 'azer')
-        self.assertEqual(insured_party.natuurlijke_persoon.identity_number, '900101')
+        self.assertEqual(insured_party.natuurlijke_persoon.last_name, 'Delaruelle')
+        self.assertEqual(insured_party.natuurlijke_persoon.first_name, 'Pieter-Jan')
+        self.assertEqual(insured_party.natuurlijke_persoon.identity_number, '900102')
+        self.assertEqual(insured_party.natuurlijke_persoon.geboorteplaats, 'Wilrijk')
+        self.assertEqual(insured_party.natuurlijke_persoon.birth_country_code, 'BE')
+        self.assertEqual(insured_party.fitness_level, D('1'))
+        self.assertEqual(insured_party.fitness_level_reference, 'Judo, Ippon v.z.w. Diest')
+        self.assertEqual(insured_party.height, D('188.0'))
+        self.assertEqual(insured_party.weight, D('90.0'))
+        self.assertEqual(insured_party.dangerous_hobby, D('3'))
+        self.assertEqual(insured_party.dangerous_profession, D('4'))
+        self.assertEqual(insured_party.medical_condition, D('2'))
+        self.assertEqual(insured_party.medical_procedure, D('2'))
+        self.assertEqual(insured_party.medical_test_deviation, D('1'))
+        self.assertEqual(insured_party.currently_disabled, D('2'))
+        self.assertEqual(insured_party.date_previous_disability, datetime.date(year=1995,
+                                                                               month=4,
+                                                                               day=7))
+        self.assertEqual(insured_party.date_previous_medical_procedure, datetime.date(year=1995,
+                                                                                      month=2,
+                                                                                      day=6))
         premium_schedule = imported_agreement.invested_amounts[0]
         self.assertEqual(premium_schedule.amount, D('230000.00'))
         self.assertEqual(premium_schedule.insured_duration, 240)

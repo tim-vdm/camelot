@@ -168,6 +168,8 @@ PERSON_SCHEMA = {
     Optional("activity"): String(max=40),
     Optional("activity_since"): Date,
     Optional("tax_id"): String(max=20),
+    Optional("place_of_birth"): String(max=40),
+    Optional("birth_country_code"): String(max=40),
     Required("addresses"): Addresses,
     Optional("contact_mechanisms"): ContactMechanisms
 }
@@ -209,8 +211,19 @@ ROLE_SCHEMA = {
     Optional("smoking_habit"): String(max=40),
     Optional("educational_level"): String(max=40),
     Optional("fitness_level"): String(max=40),
+    Optional("fitness_level_reference"): String(max=40),
     Optional("asset_id"): String(max=32),
     Optional("asset_ownership_percentage"): String(max=40),
+    Optional("height"): String(max=40),
+    Optional("weight"): String(max=40),
+    Optional("dangerous_hobby"): String(max=40),
+    Optional("dangerous_profession"): String(max=40),
+    Optional("medical_condition"): String(max=40),
+    Optional("medical_procedure"): String(max=40),
+    Optional("medical_test_deviation"): String(max=40),
+    Optional("currently_disabled"): String(max=40),
+    Optional("date_previous_disability"): Date,
+    Optional("date_previous_medical_procedure"): Date,
     Required("party"): PARTY_SCHEMA
 }
 
