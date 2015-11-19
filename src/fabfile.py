@@ -206,6 +206,14 @@ def get_all_jsons():
         for f in api.run('ls {}'.format(os.path.join('/tmp', 'log', env.CONFIGURATION, 'create_agreement_code'))).split():
             api.get(os.path.join('/tmp', 'log', env.CONFIGURATION, 'create_agreement_code', f), '/tmp/generated_jsons/%(path)s')
 
+def get_all_request_jsons():
+    with context_managers.settings(host_string=env.HOST_NAME,
+                                   user=env.HOST_USER,
+                                   key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
+        files = api.run('ls {}'.format(os.path.join('/tmp', 'log', env.CONFIGURATION, 'json-requests'))).split()
+        for f in files:
+            api.get(os.path.join('/tmp', 'log', env.CONFIGURATION, 'json-requests', f), '/tmp/request_jsons/%(path)s')
+
 def get_db_files():
     with context_managers.settings(host_string=env.HOST_NAME,
                                    user=env.HOST_USER,

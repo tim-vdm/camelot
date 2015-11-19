@@ -44,9 +44,10 @@ DATE_SCHEMA = {
 Date = All(DATE_SCHEMA, ValidateDate)
 Boolean = In([True, False])
 Sex = In(["M", "F"])
-ScheduleType = In(["loan_application",
+ScheduleType = In(["premium_amount",
                    "applied_amount"])
-RowType = Schema(String(max=20))
+AgreementType = In(["financial_agreement",
+                    "loan_application"])
 
 ADDRESS_SCHEMA = {
     Required("street_1"): String(max=40),
@@ -266,7 +267,7 @@ CI_CREATE_AGREEMENT_CODE_SCHEMA.update({
 CREATE_AGREEMENT_CODE_SCHEMA = {
     Required('origin'): Length(max=32),
     Required('agent_official_number_fsma'): String(max=128),
-    Required('row_type'): RowType,
+    Required('row_type'): AgreementType,
     Required('agreement_date'): Date,
     Required('from_date'): Date,
     Required('package_id'): int,

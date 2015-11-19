@@ -39,7 +39,7 @@ def log_to_file(function):
 
         timestamp = datetime.datetime.now()
         version = request.url.split('/')[4]
-        fname = '{}-{}-{}.json'.format(timestamp, version, function.func_name)
+        fname = '{}-{}-{}.json'.format(timestamp, version, function.func_name).replace(' ', '_')
         logdir = os.path.join(
             current_app.config['PATH_DIR_LOG'],
             'json-requests'
@@ -50,6 +50,7 @@ def log_to_file(function):
 
 
         logfile = os.path.join(logdir, fname)
+
 
         with open(logfile, 'w') as outfile:
             try:
