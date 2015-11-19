@@ -15,9 +15,6 @@ from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon
 from vfinance.model.bank import constants
 from vfinance.model.bank.varia import Country_
 from vfinance.model.bank.rechtspersoon import Rechtspersoon
-from vfinance.model.bank.constants import (educational_levels,
-                                           activity_levels,
-                                           smoker_non_smoker)
 from vfinance.model.financial.agreement import (FinancialAgreement,
                                                FinancialAgreementJsonExport,
                                                FinancialAgreementRole,
