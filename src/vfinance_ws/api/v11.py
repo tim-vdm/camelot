@@ -536,13 +536,13 @@ def create_facade_from_calculate_proposal_schema(session, document):
 
     # New fields for select+
     facade.insured_party__1__educational_level = \
-        dict_from_choices(educational_levels).get(document.get('insured_party__1__educational_level'))
+        document.get('insured_party__1__educational_level')
     facade.insured_party__1__net_earnings_of_employment = \
         document.get('insured_party__1__net_earnings_of_employment')
     facade.insured_party__1__fitness_level = \
-        dict_from_choices(activity_levels).get(document.get('insured_party__1__fitness_level'))
+        document.get('insured_party__1__fitness_level')
     facade.insured_party__1__smoking_habit = \
-        dict_from_choices(smoker_non_smoker).get(document.get('insured_party__1__smoking_habit'))
+        document.get('insured_party__1__smoking_habit')
     facade.premium_schedule__1__premium_taxation_physical_person = \
         document.get('premium_schedule__1__premium_taxation_physical_person')
     facade.loan_type_of_payments = \
@@ -631,9 +631,6 @@ def create_facade_from_send_agreement_schema(session, document):
     for field in FIELDS:
         setattr(facade, field, document[field])
     return facade
-
-def dict_from_choices(choices):
-    return {k:k for v, t, k in choices}
 
 extra_age_table = {'insured_party__1__educational_level':
                         {'no_schooling': 3,
