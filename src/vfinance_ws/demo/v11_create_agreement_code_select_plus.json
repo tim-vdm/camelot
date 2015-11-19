@@ -95,7 +95,7 @@
             "duration": 240,
             "period_type": "monthly",
             "product_id": 69,
-            "row_type": "applied_amount",
+            "row_type": "premium_amount",
             "premium_fee_1": "100.0",
             "premium_rate_1": "20.0",
             "coverage_limit": "100.0",

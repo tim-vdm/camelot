@@ -354,7 +354,7 @@ def create_agreement_from_json(session, document):
             amount = schedule.get('amount')
             direct_debit = schedule.get('direct_debit')
             schedule_type = schedule.get('row_type')
-            if schedule_type == 'applied_amount':
+            if schedule_type == 'premium_amount':
                 coverage_level_json = schedule.get('coverage_for')
                 coverage_level = None
                 if coverage_level_json is not None:
@@ -381,7 +381,7 @@ def create_agreement_from_json(session, document):
                         agreed_feature.described_by = feature_name
                         agreed_feature.value = Decimal(feature_value)
                         agreed_feature.agreed_on = premium_schedule
-            elif schedule_type == 'loan_application':
+            elif schedule_type == 'applied_amount':
                 bedrag = Bedrag()
 
                 # Should be decided by the product or the package?
