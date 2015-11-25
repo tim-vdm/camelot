@@ -229,6 +229,7 @@ ROLE_SCHEMA = {
     Optional("currently_disabled"): String(max=40),
     Optional("date_previous_disability"): Date,
     Optional("date_previous_medical_procedure"): Date,
+    Optional("reference"): String(max=60),
     Required("party"): PARTY_SCHEMA
 }
 

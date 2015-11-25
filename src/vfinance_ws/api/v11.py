@@ -303,6 +303,7 @@ def create_agreement_from_json(session, document):
 
         if agreement_role is not None:
             date_previous_disability = role.get('date_previous_disability')
+            agreement_role.reference = role.get('reference')
             if date_previous_disability is not None:
                 agreement_role.date_previous_disability = datetime.date(**date_previous_disability)
             date_previous_medical_procedure = role.get('date_previous_medical_procedure')
