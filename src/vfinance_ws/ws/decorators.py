@@ -4,7 +4,6 @@ import pprint
 import functools
 
 import voluptuous
-from decorator import decorator
 
 from flask import current_app
 from flask import json
@@ -22,7 +21,8 @@ from vfinance_ws.ws.exceptions import BadContentType
 
 
 def log_to_file(function):
-    def wrapper(function, *args, **kwargs):
+    @functools.wraps(function)
+    def wrapper(*args, **kwargs):
         dump = {
             'request': pprint.pformat(request.__dict__),
             'data': request.data,
@@ -73,18 +73,20 @@ def log_to_file(function):
             finally:
                 outfile.write(json.dumps(dump, indent=4, sort_keys=True))
 
-    return decorator(wrapper, function)
+    return wrapper
 
 
 def to_json(function):
-    def wrapper(function, *args, **kwargs):
+    @functools.wraps(function)
+    def wrapper(*args, **kwargs):
         result = function(*args, **kwargs)
         return jsonify(result)
-    return decorator(wrapper, function)
+    return wrapper
 
 
 def check_minimal_requirements(function):
-    def wrapper(function, *args, **kwargs):
+    @functools.wraps(function)
+    def wrapper(*args, **kwargs):
         if not request.content_type:
             raise BadContentType('Content-Type is not setted')
 
@@ -97,7 +99,7 @@ def check_minimal_requirements(function):
             raise BadContentType("Invalid JSON message")
 
         return function(*args, **kwargs)
-    return decorator(wrapper, function)
+    return wrapper
 
 
 def ws_jsonify(function):

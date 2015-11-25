@@ -108,7 +108,6 @@
     "schedules": [
         {
             "amount": "230000.00",
-            "described_by": "fixed_amount",
             "direct_debit": true,
             "duration": 240,
             "period_type": "monthly",
@@ -124,6 +123,7 @@
             "insured_duration": 240,
             "coverage_for": "amortization_table"
         }
-    ]
+    ],
+    "fiscal_regime": "retirement_savings"
 }
 

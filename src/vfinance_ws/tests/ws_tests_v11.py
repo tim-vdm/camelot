@@ -303,6 +303,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(insured_party.medical_procedure, D('2'))
         self.assertEqual(insured_party.medical_test_deviation, D('1'))
         self.assertEqual(insured_party.currently_disabled, D('2'))
+        self.assertEqual(insured_party.natuurlijke_persoon.passport_expiry_date, datetime.date(2020, 1, 1))
         self.assertEqual(insured_party.date_previous_disability, datetime.date(year=1995,
                                                                                month=4,
                                                                                day=7))
@@ -317,6 +318,11 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(20, agreed_features.get('premium_rate_1'))
         self.assertEqual(100, agreed_features.get('coverage_limit'))
         self.assertEqual(3, agreed_features.get('premium_taxation_physical_person'))
+        fiscal_regime = None
+        for agreed_functional_setting in imported_agreement.agreed_functional_settings:
+            if agreed_functional_setting.group == 'fiscal_regime':
+                fiscal_regime = agreed_functional_setting.described_by
+        self.assertEqual('retirement_savings', fiscal_regime)
 
 
 if __name__ == '__main__':

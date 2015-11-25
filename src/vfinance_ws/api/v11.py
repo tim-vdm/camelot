@@ -18,11 +18,14 @@ from vfinance.model.bank.rechtspersoon import Rechtspersoon
 from vfinance.model.financial.agreement import (FinancialAgreement,
                                                FinancialAgreementJsonExport,
                                                FinancialAgreementRole,
-                                               FinancialAgreementRoleFeature)
+                                               FinancialAgreementRoleFeature,
+                                               FinancialAgreementFunctionalSettingAgreement,
+                                               InsuredLoanAgreement)
 from vfinance.model.financial.premium import FinancialAgreementPremiumSchedule
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
 from vfinance.model.financial.feature import FinancialAgreementPremiumScheduleFeature
+from vfinance.model.financial.constants import exclusiveness_by_functional_setting_group
 from vfinance.facade.agreement.credit_insurance import CalculatePremium
 from vfinance.model.bank.product import Product
 from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag, Bedrag
@@ -353,10 +356,22 @@ def create_agreement_from_json(session, document):
         aankoop = ['building_purchase', 'purchase_terrain']
         bouwwerken = ['renovation', 'new_housing']
         verzekeringen = ['homeowners_insurance', 'mortgage_insurance', 'life_insurance']
+        insured_loans = {}
+
+        for schedule in [sch for sch in schedules if sch.get('row_type') == 'approved_amount']:
+            insured_loan = InsuredLoanAgreement()
+            insured_loan.loan_amount = schedule.get('amount')
+            insured_loan.interest_rate = schedule.get('initial_interest_rate')
+            insured_loan.number_of_months = schedule.get('duration')
+            insured_loan.type_of_payments = aflossing_field_mapping.get(schedule.get('described_by'))
+            insured_loan.payment_interval = interval_field_mapping.get(schedule.get('period_type'))
+            insured_loans[schedule.get('id')] = insured_loan
 
 
-        for schedule in schedules:
+        for schedule in [sch for sch in schedules if sch.get('row_type') != 'approved_amount']:
+            insured_loan = None
             product = session.query(Product).get(long(schedule.get('product_id')))
+            insured_loan = insured_loans.get(schedule.get('for_id'))
             period_type = schedule.get('period_type')
             duration = schedule.get('duration')
             amount = schedule.get('amount')
@@ -440,6 +455,13 @@ def create_agreement_from_json(session, document):
     agreement.kosten_architect = ereloon_architect
     agreement.eigen_middelen = eigen_middelen
     agreement.kosten_andere = andere_kosten
+
+    for functional_setting_group in [group for group in exclusiveness_by_functional_setting_group if exclusiveness_by_functional_setting_group.get(group) == True]:
+        value = document.get(functional_setting_group)
+        if value is not None:
+            functional_setting = FinancialAgreementFunctionalSettingAgreement()
+            functional_setting.described_by = value
+            functional_setting.agreed_on = agreement
 
 
 

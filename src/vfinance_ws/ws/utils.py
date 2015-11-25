@@ -52,6 +52,6 @@ def get_next_agreement_code(package, session):
     return CreditInsuranceAgreementFacade.next_agreement_code(package, session)
 
 def get_date_from_json_date(date):
-    return datetime.date(date['year'], date['month'], date['day'])
-
+    if date is not None:
+        return datetime.date(**date)
 

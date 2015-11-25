@@ -45,7 +45,8 @@ Date = All(DATE_SCHEMA, ValidateDate)
 Boolean = In([True, False])
 Sex = In(["M", "F"])
 ScheduleType = In(["premium_amount",
-                   "applied_amount"])
+                   "applied_amount",
+                   "approved_amount"])
 AgreementType = In(["financial_agreement",
                     "loan_application"])
 
@@ -115,7 +116,9 @@ SCHEDULE_SCHEMA = {
     Required("duration"): int,
     Required("period_type"): String(max=40),
     Required("direct_debit"): Boolean,
-    Required("described_by"): String(max=40),
+    Optional("id"): int,
+    Optional("for_id"): int,
+    Optional("described_by"): String(max=40),
     Optional("suspension_of_payment"): int,
     Optional("down_payment"): String(max=40),
     Optional("purchase_terrain"): String(max=40),
@@ -140,7 +143,9 @@ SCHEDULE_SCHEMA = {
     Optional("premium_fee_1"): String(max=20),
     Optional("premium_rate_1"): String(max=20),
     Optional("coverage_limit"): String(max=20),
-    Optional("premium_taxation_physical_person"): String(max=20)
+    Optional("premium_taxation_physical_person"): String(max=20),
+    Optional("initial_interest_rate"): String(max=20),
+    Optional("insurance_fictitious_extra_age"): String(max=20)
 }
 
 Schedules = Schema([SCHEDULE_SCHEMA])
@@ -286,7 +291,14 @@ CREATE_AGREEMENT_CODE_SCHEMA = {
     Required('package_id'): int,
     Required('roles'): Roles,
     Optional('assets'): Assets,
-    Required('schedules'): Schedules
+    Required('schedules'): Schedules,
+    Optional('fiscal_regime'): String(max=40),
+    Optional('start_condition'): String(max=40),
+    Optional('exit_condition'): String(max=40),
+    Optional('attribute_condition'): String(max=40),
+    Optional('state_guarantee'): String(max=40),
+    Optional('funding_loss'): String(max=40),
+    Optional('termination'): String(max=40),
 }
 
 SEND_AGREEMENT_SCHEMA = dict(CI_CREATE_AGREEMENT_CODE_SCHEMA)
