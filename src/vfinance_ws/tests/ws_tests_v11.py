@@ -310,6 +310,9 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(insured_party.date_previous_medical_procedure, datetime.date(year=1995,
                                                                                       month=2,
                                                                                       day=6))
+        subscriber = roles.get('subscriber')
+        self.assertEqual(subscriber.natuurlijke_persoon.sex, 'F')
+
         premium_schedule = imported_agreement.invested_amounts[0]
         self.assertEqual(premium_schedule.amount, D('230000.00'))
         self.assertEqual(premium_schedule.insured_duration, 240)

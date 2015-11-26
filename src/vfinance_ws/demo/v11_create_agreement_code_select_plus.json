@@ -29,11 +29,11 @@
                                    "year": 2015}
                     }
                 ],
-                "last_name": "aezr",
+                "last_name": "female",
                 "language": "nl",
-                "first_name": "azer",
+                "first_name": "test",
                 "social_security_number": "900101",
-                "sex": "M",
+                "sex": "F",
                 "passport_expiry_date": {"day": 1,
                                          "month": 1,
                                          "year": 2020},
