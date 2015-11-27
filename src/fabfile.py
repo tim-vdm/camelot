@@ -226,8 +226,8 @@ def generate_db_file(db_name='generated'):
     with context_managers.settings(host_string=env.HOST_NAME,
                                    user=env.HOST_USER,
                                    key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
-        if not os.path.exists("tmp"):
-            api.local("mkdir tmp")
+        if not os.path.exists('tmp'):
+            os.makedirs('tmp')
         if os.path.exists('tmp/{}.db'.format(db_name)):
             api.local("rm tmp/{}.db".format(db_name))
         api.local("touch tmp/{}.db".format(db_name))
