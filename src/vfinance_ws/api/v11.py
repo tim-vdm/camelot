@@ -342,10 +342,10 @@ def create_agreement_from_json(session, document):
     if schedules is not None:
         aflossing_field_mapping = {'fixed_payment': 'vaste_aflossing',
                                    'fixed_capital_payment': 'vast_kapitaal'}
-        interval_field_mapping = {'yearly': 1,
-                                  'semesterly': 2,
-                                  'quarterly': 4,
-                                  'monthly': 12}
+        interval_field_mapping = {'yearly': 12,
+                                  'semesterly': 4,
+                                  'quarterly': 2,
+                                  'monthly': 1}
         doel_field_mapping = {'purchase_terrain': 'doel_aankoop_terrein',
                               'new_housing': 'doel_nieuwbouw',
                               'renovation': 'doel_renovatie',
@@ -396,8 +396,10 @@ def create_agreement_from_json(session, document):
                 premium_schedule.direct_debit = direct_debit
                 premium_schedule.insured_from_date = get_date_from_json_date(schedule.get('insured_from_date'))
                 premium_schedule.insured_duration = schedule.get('insured_duration')
+                premium_schedule.insured_loan = insured_loan
                 premium_schedule.coverage_for = coverage_level
                 premium_schedule.financial_agreement = agreement
+                premium_schedule.coverage_amortization = insured_loan
                 for feature_name in [insurance_feature[1] for insurance_feature in constants.insurance_features]:
                     feature_value = schedule.get(feature_name)
                     if feature_value is not None:

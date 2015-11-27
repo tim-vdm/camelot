@@ -311,6 +311,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(insured_party.medical_test_deviation, D('1'))
         self.assertEqual(insured_party.currently_disabled, D('2'))
         self.assertEqual(insured_party.natuurlijke_persoon.passport_expiry_date, datetime.date(2020, 1, 1))
+        self.assertEqual(insured_party.natuurlijke_persoon.burgerlijke_staat, 'o')
         self.assertEqual(insured_party.date_previous_disability, datetime.date(year=1995,
                                                                                month=4,
                                                                                day=7))
@@ -323,6 +324,11 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         premium_schedule = imported_agreement.invested_amounts[0]
         self.assertEqual(premium_schedule.amount, D('230000.00'))
         self.assertEqual(premium_schedule.insured_duration, 240)
+        insured_loan = premium_schedule.coverage_amortization
+        self.assertEqual(insured_loan.loan_amount, D('100000'))
+        self.assertEqual(insured_loan.interest_rate, D('5.0'))
+        self.assertEqual(insured_loan.number_of_months, 360)
+        self.assertEqual(insured_loan.payment_interval, 1)
         agreed_features = {agreed_feature.described_by: agreed_feature.value for agreed_feature in premium_schedule.agreed_features}
         self.assertEqual(100, agreed_features.get('premium_fee_1'))
         self.assertEqual(20, agreed_features.get('premium_rate_1'))
