@@ -396,7 +396,6 @@ def create_agreement_from_json(session, document):
                 premium_schedule.direct_debit = direct_debit
                 premium_schedule.insured_from_date = get_date_from_json_date(schedule.get('insured_from_date'))
                 premium_schedule.insured_duration = schedule.get('insured_duration')
-                premium_schedule.insured_loan = insured_loan
                 premium_schedule.coverage_for = coverage_level
                 premium_schedule.financial_agreement = agreement
                 premium_schedule.coverage_amortization = insured_loan
