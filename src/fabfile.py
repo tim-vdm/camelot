@@ -222,6 +222,21 @@ def get_db_files():
             if f.endswith('db'):
                 api.get(os.path.join('/var', 'v-finance-web-service', f), '/tmp/ws_db/%(path)s')
 
+def generate_db_file(db_name='generated'):
+    with context_managers.settings(host_string=env.HOST_NAME,
+                                   user=env.HOST_USER,
+                                   key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
+        if not os.path.exists("tmp"):
+            api.local("mkdir tmp")
+        if os.path.exists('tmp/{}.db'.format(db_name)):
+            api.local("rm tmp/{}.db".format(db_name))
+        api.local("touch tmp/{}.db".format(db_name))
+        files = api.local("ls ../sql/*", capture=True).split()
+        for sql_file in sorted(files):
+            api.local("sqlite3 tmp/{}.db < {}".format(db_name, sql_file))
+        last_agreement_code = api.run("sqlite3 {} 'SELECT MAX(code) FROM financial_agreement;'".format(os.path.join('/var', 'v-finance-web-service', 'packages_{}.db'.format(env.CONFIGURATION))))
+        api.local("sqlite3 tmp/{}.db \"INSERT INTO financial_agreement (row_type, code, agreement_date, from_date, thru_date, package_id) VALUES ('financial_agreement', '{}', '2001-01-01', '2001-01-01', '2400-12-31', 65);\"".format(db_name, last_agreement_code))
+
 def put_db_file(filename):
     with context_managers.settings(host_string=env.HOST_NAME,
                                    user=env.HOST_USER,
