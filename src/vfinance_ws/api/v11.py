@@ -343,8 +343,8 @@ def create_agreement_from_json(session, document):
         aflossing_field_mapping = {'fixed_payment': 'vaste_aflossing',
                                    'fixed_capital_payment': 'vast_kapitaal'}
         interval_field_mapping = {'yearly': 12,
-                                  'semesterly': 4,
-                                  'quarterly': 2,
+                                  'semesterly': 6,
+                                  'quarterly': 3,
                                   'monthly': 1}
         doel_field_mapping = {'purchase_terrain': 'doel_aankoop_terrein',
                               'new_housing': 'doel_nieuwbouw',
