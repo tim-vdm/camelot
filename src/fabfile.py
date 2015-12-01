@@ -20,6 +20,7 @@ import urllib2
 import json
 import datetime
 import dateutil.relativedelta
+import sqlite3
 from base64 import b64encode
 
 
@@ -228,14 +229,18 @@ def generate_db_file(db_name='generated'):
                                    key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
         if not os.path.exists('tmp'):
             os.makedirs('tmp')
-        if os.path.exists('tmp/{}.db'.format(db_name)):
-            api.local("rm tmp/{}.db".format(db_name))
-        api.local("touch tmp/{}.db".format(db_name))
-        files = api.local("ls ../sql/*", capture=True).split()
-        for sql_file in sorted(files):
-            api.local("sqlite3 tmp/{}.db < {}".format(db_name, sql_file))
+        if os.path.exists(os.path.join('tmp', '{}.db'.format(db_name))):
+            os.remove(os.path.join('tmp', '{}.db'.format(db_name)))
+        connection = sqlite3.connect(os.path.join('tmp', '{}.db'.format(db_name)))
+        cursor = connection.cursor()
+        for d, _, filenames in os.walk(os.path.join('..', 'sql')):
+            for sql_file in sorted(filenames):
+                with open(os.path.join(d, sql_file), 'r') as filename:
+                    cursor.executescript(filename.read())
         last_agreement_code = api.run("sqlite3 {} 'SELECT MAX(code) FROM financial_agreement;'".format(os.path.join('/var', 'v-finance-web-service', 'packages_{}.db'.format(env.CONFIGURATION))))
-        api.local("sqlite3 tmp/{}.db \"INSERT INTO financial_agreement (row_type, code, agreement_date, from_date, thru_date, package_id) VALUES ('financial_agreement', '{}', '2001-01-01', '2001-01-01', '2400-12-31', 65);\"".format(db_name, last_agreement_code))
+        cursor.execute("INSERT INTO financial_agreement (row_type, code, agreement_date, from_date, thru_date, package_id) VALUES ('financial_agreement', '{}', '2001-01-01', '2001-01-01', '2400-12-31', 65);".format(last_agreement_code))
+        connection.commit()
+        connection.close()
 
 def put_db_file(filename):
     with context_managers.settings(host_string=env.HOST_NAME,
