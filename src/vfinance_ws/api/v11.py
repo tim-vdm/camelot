@@ -386,8 +386,8 @@ def create_agreement_from_json(session, document):
                         if cl.type == coverage_level_json:
                             coverage_level = cl
                             break
-                        else:
-                            raise UserException('Coverage of type {} is not available'.format(coverage_level_json))
+                    else:
+                        raise UserException('Coverage of type {} is not available'.format(coverage_level_json))
                 premium_schedule = FinancialAgreementPremiumSchedule()
                 premium_schedule.product = product
                 premium_schedule.amount = amount

@@ -238,6 +238,14 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         content = json.loads(response.data)
         self.assertIsInstance(content, dict)
 
+    def test_create_agreement_code_stc(self):
+        document = load_demo_json('v11_create_agreement_code_stc')
+        response = self.post_json('create_agreement_code', data=document)
+
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
+
 
     def test_create_agreement_code_duplicate_roles(self):
         # This test should be adapted when we know about the agreement where
