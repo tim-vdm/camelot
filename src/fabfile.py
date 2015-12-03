@@ -234,7 +234,7 @@ def generate_db_file(db_name='generated'):
         connection = sqlite3.connect(os.path.join('tmp', '{}.db'.format(db_name)))
         cursor = connection.cursor()
         for d, _, filenames in os.walk(os.path.join('..', 'sql')):
-            for sql_file in sorted(filenames):
+            for sql_file in sorted([filename for filename in filenames if filename.endswith('sql')]):
                 with open(os.path.join(d, sql_file), 'r') as filename:
                     cursor.executescript(filename.read())
         last_agreement_code = api.run("sqlite3 {} 'SELECT MAX(code) FROM financial_agreement;'".format(os.path.join('/var', 'v-finance-web-service', 'packages_{}.db'.format(env.CONFIGURATION))))

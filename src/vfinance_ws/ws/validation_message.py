@@ -235,6 +235,13 @@ ROLE_SCHEMA = {
 
 Roles = Schema([ROLE_SCHEMA])
 
+DIRECT_DEBIT_MANDATE_SCHEMA = {
+    Required("row_type"): 'direct_debit',
+    Required("iban"): String(max=34),
+    Optional("bic"): String(max=11)
+}
+
+DirectDebitMandates = Schema([DIRECT_DEBIT_MANDATE_SCHEMA])
 
 CALCULATE_PROPOSAL_SCHEMA = {
     Required("agent_official_number_fsma"): String(max=128),
@@ -300,6 +307,7 @@ CREATE_AGREEMENT_CODE_SCHEMA = {
     Optional('state_guarantee'): String(max=40),
     Optional('funding_loss'): String(max=40),
     Optional('termination'): String(max=40),
+    Optional('bank_accounts'): DirectDebitMandates
 }
 
 SEND_AGREEMENT_SCHEMA = dict(CI_CREATE_AGREEMENT_CODE_SCHEMA)

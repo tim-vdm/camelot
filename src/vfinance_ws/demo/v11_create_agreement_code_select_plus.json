@@ -29,11 +29,11 @@
                                    "year": 2015}
                     }
                 ],
-                "last_name": "female",
+                "last_name": "aezr",
                 "language": "nl",
-                "first_name": "test",
+                "first_name": "azer",
                 "social_security_number": "900101",
-                "sex": "F",
+                "sex": "M",
                 "passport_expiry_date": {"day": 1,
                                          "month": 1,
                                          "year": 2020},
@@ -72,8 +72,7 @@
                 "row_type": "person",
                 "place_of_birth": "Wilrijk",
                 "birth_country_code": "BE",
-                "passport_number": "900102",
-                "marital_status": "single"
+                "passport_number": "900102"
             },
             "smoking_habit": "regular",
             "fitness_level": "moderately_active",
@@ -122,20 +121,20 @@
                                   "month": 11,
                                   "year": 2015},
             "insured_duration": 240,
-            "coverage_for": "amortization_table",
-            "for_id": 1
-        },
-        {
-            "id": 1,
-            "product_id": -1,
-            "row_type": "approved_amount",
-            "amount": "100000",
-            "initial_interest_rate": "5.0",
-            "duration": 360,
-            "period_type": "monthly",
-            "direct_debit": false
+            "coverage_for": "amortization_table"
         }
     ],
-    "fiscal_regime": "retirement_savings"
+    "fiscal_regime": "retirement_savings",
+    "bank_accounts": [
+        {
+            "row_type": "direct_debit",
+            "iban": "be48-6511-4362-0327"
+        },
+        {
+            "row_type": "direct_debit",
+            "iban": "NL91/ABNA/04171/64300",
+            "bic": "TESTBIC"
+        }
+    ]
 }
 

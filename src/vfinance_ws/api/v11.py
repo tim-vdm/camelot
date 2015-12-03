@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 import hashlib
 import json
+import re
 from decimal import Decimal
 import datetime
+from stdnum import iban
 
 from sqlalchemy import orm
 from camelot.core.exception import UserException
@@ -28,6 +30,7 @@ from vfinance.model.financial.feature import FinancialAgreementPremiumScheduleFe
 from vfinance.model.financial.constants import exclusiveness_by_functional_setting_group
 from vfinance.facade.agreement.credit_insurance import CalculatePremium
 from vfinance.model.bank.product import Product
+from vfinance.model.bank.direct_debit import DirectDebitMandate
 from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag, Bedrag
 
 from vfinance_ws.api.utils import DecimalEncoder
@@ -466,10 +469,28 @@ def create_agreement_from_json(session, document):
             functional_setting.agreed_on = agreement
 
 
-
-
-
     agreement.code = agreement.next_agreement_code(package, session)
+
+    bank_accounts = document.get('bank_accounts')
+    if bank_accounts is not None:
+        for bank_account in [account for account in bank_accounts if account.get('row_type') == 'direct_debit']:
+            iban_number = bank_account.get('iban')
+            bic = bank_account.get('bic')
+            if iban_number is not None:
+                iban_number = iban.format(re.sub('[.\-/ ]', '', iban_number))
+                mandate = DirectDebitMandate()
+                mandate.agreement = agreement
+                mandate.identification = agreement.code
+                mandate.date = agreement.agreement_date
+                mandate.from_date = agreement.agreement_date
+                mandate._iban = iban_number
+                if mandate.bank_identifier_code is not None and bic is not None:
+                    if mandate.bank_identifier_code != bic:
+                        raise UserException('BIC {} is not valid for iban {}'.format(iban_number, bic))
+                elif bic is not None:
+                    mandate.bank_identifier_code = bic
+                agreement.direct_debit_mandates.append(mandate)
+
 
     orm.object_session(agreement).flush()
 
