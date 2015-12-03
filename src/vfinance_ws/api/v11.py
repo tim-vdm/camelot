@@ -342,10 +342,10 @@ def create_agreement_from_json(session, document):
     if schedules is not None:
         aflossing_field_mapping = {'fixed_payment': 'vaste_aflossing',
                                    'fixed_capital_payment': 'vast_kapitaal'}
-        interval_field_mapping = {'yearly': 1,
-                                  'semesterly': 2,
-                                  'quarterly': 4,
-                                  'monthly': 12}
+        interval_field_mapping = {'yearly': 12,
+                                  'semesterly': 6,
+                                  'quarterly': 3,
+                                  'monthly': 1}
         doel_field_mapping = {'purchase_terrain': 'doel_aankoop_terrein',
                               'new_housing': 'doel_nieuwbouw',
                               'renovation': 'doel_renovatie',
@@ -386,8 +386,8 @@ def create_agreement_from_json(session, document):
                         if cl.type == coverage_level_json:
                             coverage_level = cl
                             break
-                        else:
-                            raise UserException('Coverage of type {} is not available'.format(coverage_level_json))
+                    else:
+                        raise UserException('Coverage of type {} is not available'.format(coverage_level_json))
                 premium_schedule = FinancialAgreementPremiumSchedule()
                 premium_schedule.product = product
                 premium_schedule.amount = amount
@@ -398,6 +398,7 @@ def create_agreement_from_json(session, document):
                 premium_schedule.insured_duration = schedule.get('insured_duration')
                 premium_schedule.coverage_for = coverage_level
                 premium_schedule.financial_agreement = agreement
+                premium_schedule.coverage_amortization = insured_loan
                 for feature_name in [insurance_feature[1] for insurance_feature in constants.insurance_features]:
                     feature_value = schedule.get(feature_name)
                     if feature_value is not None:

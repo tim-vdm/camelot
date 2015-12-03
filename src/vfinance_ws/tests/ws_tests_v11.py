@@ -222,9 +222,24 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 400)
         self.assertEqual(content.get('message'), 'Coverage of type wrong_coverage is not available')
 
+    def test_create_agreement_code_loansmanager(self):
+        document = load_demo_json('v11_create_agreement_code_loansmanager')
+        response = self.post_json('create_agreement_code', data=document)
+
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
 
     def test_create_agreement_code_polapp(self):
         document = load_demo_json('v11_polapp_agreement_code')
+        response = self.post_json('create_agreement_code', data=document)
+
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
+
+    def test_create_agreement_code_stc(self):
+        document = load_demo_json('v11_create_agreement_code_stc')
         response = self.post_json('create_agreement_code', data=document)
 
         self.assertEqual(response.status_code, 200)
@@ -304,15 +319,24 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(insured_party.medical_test_deviation, D('1'))
         self.assertEqual(insured_party.currently_disabled, D('2'))
         self.assertEqual(insured_party.natuurlijke_persoon.passport_expiry_date, datetime.date(2020, 1, 1))
+        self.assertEqual(insured_party.natuurlijke_persoon.burgerlijke_staat, 'o')
         self.assertEqual(insured_party.date_previous_disability, datetime.date(year=1995,
                                                                                month=4,
                                                                                day=7))
         self.assertEqual(insured_party.date_previous_medical_procedure, datetime.date(year=1995,
                                                                                       month=2,
                                                                                       day=6))
+        subscriber = roles.get('subscriber')
+        self.assertEqual(subscriber.natuurlijke_persoon.sex, 'F')
+
         premium_schedule = imported_agreement.invested_amounts[0]
         self.assertEqual(premium_schedule.amount, D('230000.00'))
         self.assertEqual(premium_schedule.insured_duration, 240)
+        insured_loan = premium_schedule.coverage_amortization
+        self.assertEqual(insured_loan.loan_amount, D('100000'))
+        self.assertEqual(insured_loan.interest_rate, D('5.0'))
+        self.assertEqual(insured_loan.number_of_months, 360)
+        self.assertEqual(insured_loan.payment_interval, 1)
         agreed_features = {agreed_feature.described_by: agreed_feature.value for agreed_feature in premium_schedule.agreed_features}
         self.assertEqual(100, agreed_features.get('premium_fee_1'))
         self.assertEqual(20, agreed_features.get('premium_rate_1'))
