@@ -707,19 +707,21 @@ extra_age_table = {'insured_party__1__educational_level':
                    }
 
 def calculate_fictitious_extra_age(agreement):
-    years = []
-    for key in extra_age_table.keys():
-        value = getattr(agreement, key)
-        years.append(extra_age_table[key].get(value, 0))
-    earnings = agreement.insured_party__1__net_earnings_of_employment
-    if earnings <= 500:
-        years.append(3)
-    elif earnings <= 1200:
-        years.append(2)
-    elif earnings <= 1700:
-        years.append(1)
-    else:
-        years.append(0)
-    agreement.premium_schedule__1__insurance_fictitious_extra_age = \
-        sum(years) * 365
+    if agreement.package is not None:
+        if agreement.package.name == 'Select+':
+            years = []
+            for key in extra_age_table.keys():
+                value = getattr(agreement, key)
+                years.append(extra_age_table[key].get(value, 0))
+            earnings = agreement.insured_party__1__net_earnings_of_employment
+            if earnings <= 500:
+                years.append(3)
+            elif earnings <= 1200:
+                years.append(2)
+            elif earnings <= 1700:
+                years.append(1)
+            else:
+                years.append(0)
+            agreement.premium_schedule__1__insurance_fictitious_extra_age = \
+                sum(years) * 365
 
