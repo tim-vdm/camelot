@@ -1,0 +1,12 @@
+{
+  "premium_schedule__1__amount": "62.85", 
+  "premium_schedule__1__payment_thru_date": {
+    "day": 7, 
+    "month": 10, 
+    "year": 2016
+  }, 
+  "premium_schedule__1__period_type": "single", 
+  "premium_schedule__2__amount": null, 
+  "premium_schedule__2__payment_thru_date": null, 
+  "premium_schedule__2__period_type": null
+}
