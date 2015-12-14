@@ -73,7 +73,7 @@ Addresses = Schema([HISTORICAL_ADDRESS_SCHEMA])
 CONTACT_MECHANISM_SCHEMA = {
     Required("described_by"): String(max=10),
     Optional("address_type"): String(max=10),
-    Required("contact_mechanism"): String(max=30),
+    Required("contact_mechanism"): String(max=64),
     Optional("comment"): String(max=256)
 }
 
