@@ -257,6 +257,7 @@ def create_agreement_code(document):
             'ident': uuid.uuid4().hex,
         }
         fname = '{code}-{fsma}-{ident}.json'.format(**values)
+        fname = fname.replace(' ', '_')
 
         today = datetime.date.today()
         day = '{0:02}'.format(today.day)
