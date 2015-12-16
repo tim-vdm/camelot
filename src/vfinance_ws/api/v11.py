@@ -17,6 +17,7 @@ from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon
 from vfinance.model.bank import constants
 from vfinance.model.bank.varia import Country_
 from vfinance.model.bank.rechtspersoon import Rechtspersoon
+from vfinance.model.bank.validation import iban_regexp, bic_regexp
 from vfinance.model.financial.agreement import (FinancialAgreement,
                                                FinancialAgreementJsonExport,
                                                FinancialAgreementRole,
@@ -475,19 +476,27 @@ def create_agreement_from_json(session, document):
     if bank_accounts is not None:
         for bank_account in [account for account in bank_accounts if account.get('row_type') == 'direct_debit']:
             iban_number = bank_account.get('iban')
+            try:
+                iban_number = iban.validate(iban_number)
+            except:
+                raise UserException('IBAN {} is not valid.'.format(iban_number))
+
             bic = bank_account.get('bic')
             if iban_number is not None:
-                iban_number = iban.format(re.sub('[.\-/ ]', '', iban_number))
+                if iban_regexp.match(iban_number.replace(' ', '')) is None:
+                    raise UserException('IBAN {} is not valid.'.format(iban_number))
+                iban_number = iban.format(iban_number)
                 mandate = DirectDebitMandate()
                 mandate.agreement = agreement
                 mandate.identification = agreement.code
                 mandate.date = agreement.agreement_date
                 mandate.from_date = agreement.agreement_date
-                mandate._iban = iban_number
-                if mandate.bank_identifier_code is not None and bic is not None:
-                    if mandate.bank_identifier_code != bic:
+                mandate.iban = iban_number
+                if bic is not None:
+                    if bic_regexp.match(bic) is None:
+                        raise UserExceptions('BIC {} is not valid'.format(bic))
+                    if mandate.bank_identifier_code is not None and mandate.bank_identifier_code != bic:
                         raise UserException('BIC {} is not valid for iban {}'.format(iban_number, bic))
-                elif bic is not None:
                     mandate.bank_identifier_code = bic
                 agreement.direct_debit_mandates.append(mandate)
 
@@ -708,7 +717,7 @@ extra_age_table = {'insured_party__1__educational_level':
 
 def calculate_fictitious_extra_age(agreement):
     if agreement.package is not None:
-        if agreement.package.name == 'Select+':
+        if agreement.package.id == 65:
             years = []
             for key in extra_age_table.keys():
                 value = getattr(agreement, key)
