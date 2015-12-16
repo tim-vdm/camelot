@@ -6,6 +6,8 @@ from decimal import Decimal
 import datetime
 from stdnum import iban
 
+from stdnum.exceptions import InvalidChecksum, InvalidFormat
+
 from sqlalchemy import orm
 from camelot.core.exception import UserException
 
@@ -478,13 +480,13 @@ def create_agreement_from_json(session, document):
             iban_number = bank_account.get('iban')
             try:
                 iban_number = iban.validate(iban_number)
-            except:
-                raise UserException('IBAN {} is not valid.'.format(iban_number))
+            except (InvalidChecksum, InvalidFormat):
+                raise UserException('IBAN \'{}\' is not valid.'.format(iban_number))
 
             bic = bank_account.get('bic')
             if iban_number is not None:
                 if iban_regexp.match(iban_number.replace(' ', '')) is None:
-                    raise UserException('IBAN {} is not valid.'.format(iban_number))
+                    raise UserException('IBAN \'{}\' is not valid.'.format(iban_number))
                 iban_number = iban.format(iban_number)
                 mandate = DirectDebitMandate()
                 mandate.agreement = agreement
@@ -494,9 +496,9 @@ def create_agreement_from_json(session, document):
                 mandate.iban = iban_number
                 if bic is not None:
                     if bic_regexp.match(bic) is None:
-                        raise UserExceptions('BIC {} is not valid'.format(bic))
+                        raise UserExceptions('BIC \'{}\' is not valid'.format(bic))
                     if mandate.bank_identifier_code is not None and mandate.bank_identifier_code != bic:
-                        raise UserException('BIC {} is not valid for iban {}'.format(iban_number, bic))
+                        raise UserException('BIC \'{}\' is not valid for iban {}'.format(iban_number, bic))
                     mandate.bank_identifier_code = bic
                 agreement.direct_debit_mandates.append(mandate)
 
