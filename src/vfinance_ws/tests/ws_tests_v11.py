@@ -295,6 +295,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(insured_party.natuurlijke_persoon.identity_number, '900102')
         self.assertEqual(insured_party.natuurlijke_persoon.geboorteplaats, 'Wilrijk')
         self.assertEqual(insured_party.natuurlijke_persoon.birth_country_code, 'BE')
+        self.assertEqual(insured_party.natuurlijke_persoon.origin, 'BIA:12000')
         self.assertEqual(insured_party.fitness_level, D('1'))
         self.assertEqual(insured_party.fitness_level_reference, 'Judo, Ippon v.z.w. Diest')
         self.assertEqual(insured_party.height, D('188.0'))

@@ -128,7 +128,8 @@ def create_agreement_from_json(session, document):
         agreement.package = package
     #orm.object_session(agreement).flush()
 
-    agreement.origin = document.get('origin')
+    origin = document.get('origin')
+    agreement.origin = origin
     agreement.agreement_date = get_date_from_json_date(document['agreement_date'])
     agreement.from_date = get_date_from_json_date(document['from_date'])
 
@@ -180,6 +181,7 @@ def create_agreement_from_json(session, document):
         if role['party']['row_type'] == 'person':
             natural_person = role['party']
             person = NatuurlijkePersoon()
+            person.origin = origin
 
             # Loop the addresses
             addresses = natural_person['addresses']
@@ -291,6 +293,7 @@ def create_agreement_from_json(session, document):
 
         elif role['party']['row_type'] == 'organization':
             rechtspersoon = Rechtspersoon()
+            rechtspersoon.origin = origin
             organization = role['party']
             #representative = organization.get('representative')
             #if representative is not None:
