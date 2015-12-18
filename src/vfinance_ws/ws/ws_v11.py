@@ -257,12 +257,18 @@ def create_agreement_code(document):
             'ident': uuid.uuid4().hex,
         }
         fname = '{code}-{fsma}-{ident}.json'.format(**values)
+        fname = fname.replace(' ', '_')
 
-        date = datetime.date.today().strftime("%Y%m%d")
+        today = datetime.date.today()
+        day = '{0:02}'.format(today.day)
+        month = '{0:02}'.format(today.month)
+        year = '{}'.format(today.year)
 
         full_dir = os.path.join(current_app.config['PATH_DIR_LOG'],
                                 'create_agreement_code',
-                                date)
+                                year,
+                                month,
+                                day)
 
         if not os.path.exists(full_dir):
             os.makedirs(full_dir)

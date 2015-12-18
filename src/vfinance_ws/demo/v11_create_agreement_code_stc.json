@@ -1,0 +1,136 @@
+{
+        "agent_official_number_fsma": "010019 A", 
+        "agreement_date": {
+            "day": 1, 
+            "month": 12, 
+            "year": 2015
+        }, 
+        "from_date": {
+            "day": 1, 
+            "month": 12, 
+            "year": 2015
+        }, 
+        "origin": "app:0", 
+        "package_id": 64, 
+        "roles": [
+            {
+                "described_by": "subscriber", 
+                "party": {
+                    "addresses": [
+                        {
+                            "city": "HERENTALS", 
+                            "country_code": "BE", 
+                            "described_by": "domicile", 
+                            "from_date": {
+                                "day": 1, 
+                                "month": 12, 
+                                "year": 2015
+                            }, 
+                            "street_1": "Teststraat", 
+                            "zip_code": "2200"
+                        }
+                    ], 
+                    "birth_date": {
+                        "day": 4, 
+                        "month": 10, 
+                        "year": 1978
+                    }, 
+                    "contact_mechanisms": [], 
+                    "first_name": "Test", 
+                    "language": "nl", 
+                    "last_name": "Tester", 
+                    "marital_status": "married", 
+                    "nationality_code": "BE", 
+                    "passport_expiry_date": {
+                        "day": 1, 
+                        "month": 1, 
+                        "year": 2016
+                    }, 
+                    "passport_number": "ident", 
+                    "row_type": "person", 
+                    "sex": "M", 
+                    "social_security_number": "781004"
+                }, 
+                "rank": 1
+            }, 
+            {
+                "dangerous_hobby": "13", 
+                "dangerous_profession": "2", 
+                "described_by": "insured_party", 
+                "party": {
+                    "addresses": [
+                        {
+                            "city": "HERENTALS", 
+                            "country_code": "BE", 
+                            "described_by": "domicile", 
+                            "from_date": {
+                                "day": 1, 
+                                "month": 12, 
+                                "year": 2015
+                            }, 
+                            "street_1": "Teststraat", 
+                            "zip_code": "2200"
+                        }
+                    ], 
+                    "birth_date": {
+                        "day": 4, 
+                        "month": 10, 
+                        "year": 1978
+                    }, 
+                    "contact_mechanisms": [], 
+                    "first_name": "Test", 
+                    "language": "nl", 
+                    "last_name": "Tester", 
+                    "marital_status": "married", 
+                    "nationality_code": "BE", 
+                    "passport_expiry_date": {
+                        "day": 1, 
+                        "month": 1, 
+                        "year": 2016
+                    }, 
+                    "passport_number": "ident", 
+                    "row_type": "person", 
+                    "sex": "M", 
+                    "social_security_number": "781004"
+                }, 
+                "rank": 1, 
+                "smoking_habit": "regular"
+            }, 
+            {
+                "described_by": "pledgee", 
+                "party": {
+                    "name": "Credissimo Hainaut", 
+                    "row_type": "organization", 
+                    "tax_id": "BE 0402.495.065"
+                }, 
+                "rank": 1, 
+                "reference": "Refkredit"
+            }
+        ], 
+        "row_type": "financial_agreement", 
+        "schedules": [
+            {
+                "amount": "186.06", 
+                "coverage_for": "decreasing_amount", 
+                "coverage_limit": "7000", 
+                "direct_debit": false, 
+                "duration": 36, 
+                "period_type": "single", 
+                "premium_fee_1": "50", 
+                "premium_rate_1": "25", 
+                "product_id": 67, 
+                "row_type": "premium_amount"
+            }, 
+            {
+                "amount": "93.39", 
+                "coverage_for": "decreasing_amount", 
+                "coverage_limit": "7000", 
+                "direct_debit": false, 
+                "duration": 36, 
+                "period_type": "single", 
+                "premium_rate_1": "25", 
+                "product_id": 68, 
+                "row_type": "premium_amount"
+            }
+        ]
+}

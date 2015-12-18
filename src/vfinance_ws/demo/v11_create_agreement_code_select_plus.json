@@ -124,6 +124,17 @@
             "coverage_for": "amortization_table"
         }
     ],
-    "fiscal_regime": "retirement_savings"
+    "fiscal_regime": "retirement_savings",
+    "bank_accounts": [
+        {
+            "row_type": "direct_debit",
+            "iban": "BE48651143620327"
+        },
+        {
+            "row_type": "direct_debit",
+            "iban": "NL91 ABNA 04171 64300",
+            "bic": "ABNANL2AXXX"
+        }
+    ]
 }
 
