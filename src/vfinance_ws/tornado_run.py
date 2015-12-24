@@ -5,7 +5,12 @@ import os
 import sys
 import logging
 import logging.handlers
-#from . import wingdbstub
+
+from PyQt4 import QtGui
+
+from camelot.core.templates import environment, loader
+from vfinance.admin.jinja2_filters import filters
+from vfinance.model.financial.notification.environment import PackageExtensionLoader
 
 LOGGER = logging.getLogger('v-finance-web-service.tornado_run')
 
@@ -31,7 +36,7 @@ logging.root.addHandler(handler)
 
 LOGGER.info('starting application server')
 
-
+qapplications = []
 
 def main():
     try:
@@ -57,6 +62,16 @@ def main():
         http_server = HTTPServer(WSGIContainer(app), ssl_options=ssl_options)
         http_server.listen(int(sys.argv[1]))
         # http_server.listen(19021)
+        loader.loaders.insert(0, PackageExtensionLoader(
+            package_name='vfinance', package_path='art/templates'))
+        loader.loaders.insert(0, PackageExtensionLoader(
+            package_name='vfinance_ws', package_path='art/templates'))
+        environment.autoescape = True
+        environment.finalize = lambda x: '' if x is None else x
+        environment.add_extension('jinja2.ext.i18n')
+        environment.add_extension('jinja2.ext.do')
+        environment.filters.update(filters)
+        qapplications.append(QtGui.QApplication(([a for a in sys.argv[2:] if a])))
         IOLoop.instance().start()
     except Exception, e:
         LOGGER.fatal('Could not run application', exc_info=e)

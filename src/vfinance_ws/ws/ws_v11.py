@@ -19,7 +19,8 @@ from vfinance_ws.ws.validation_message import (
     validation_ci_create_agreement_code,
     validation_send_agreement,
     validation_get_packages,
-    validation_create_agreement_code
+    validation_create_agreement_code,
+    validation_get_proposal
 )
 
 from vfinance_ws.api import v11
@@ -186,9 +187,10 @@ def send_agreement(document):
     return v11.send_agreement(document)
 
 
-@bp.route('/credit_insurance/get_proposal_pdf', methods=['POST'])
+@bp.route('/credit_insurance/get_proposal', methods=['POST'])
 @auth.login_required
-def get_proposal_pdf():
+@validation_json(validation_get_proposal)
+def get_proposal_pdf(document):
     """
     :synopsis: Get a PDF version of a Proposal
 
@@ -203,9 +205,7 @@ def get_proposal_pdf():
         Prefix the /get_proposal_pdf WS with /credit_insurance
 
     """
-    return jsonify({
-        'message': "Web service not implemented"
-    }), 501
+    return v11.get_proposal(document)
 
 
 @bp.route('/credit_insurance/get_packages', methods=['POST'])
