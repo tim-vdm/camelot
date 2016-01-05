@@ -24,6 +24,7 @@ from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon
 from vfinance.model.bank import constants
 from vfinance.model.bank.varia import Country_
 from vfinance.model.bank.rechtspersoon import Rechtspersoon
+from vfinance.model.bank.dual_person import CommercialRelation
 from vfinance.model.bank.validation import iban_regexp, bic_regexp
 from vfinance.model.financial.agreement import (FinancialAgreement,
                                                FinancialAgreementJsonExport,
@@ -554,10 +555,19 @@ def calculate_proposal(session, document):
 
 @with_session
 def get_proposal(session, document):
+    import wingdbstub
     facade = create_facade_from_calculate_proposal_schema(session, document)
     facade.insured_party__1__first_name = document.get('insured_party__1__first_name')
     facade.insured_party__1__last_name = document.get('insured_party__1__last_name')
     facade.insured_party__1__language = document.get('insured_party__1__language')
+    broker = CommercialRelation()
+    #broker.name = document.get('broker__name')
+    broker.email = document.get('broker__email')
+    broker.zipcode = document.get('broker__zip_code')
+    broker.city = document.get('broker__city')
+    broker.street = document.get('broker__street')
+    broker.telefoon = document.get('broker__telephone')
+    facade.broker_relation = broker
     options = None
     language = document.get('insured_party__1__language')
 
