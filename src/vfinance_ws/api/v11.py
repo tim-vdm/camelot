@@ -555,7 +555,7 @@ def calculate_proposal(session, document):
 
 @with_session
 def get_proposal(session, document):
-    import wingdbstub
+    #import wingdbstub
     facade = create_facade_from_calculate_proposal_schema(session, document)
     facade.insured_party__1__first_name = document.get('insured_party__1__first_name')
     facade.insured_party__1__last_name = document.get('insured_party__1__last_name')
