@@ -205,8 +205,7 @@ def get_proposal_pdf(document):
         Prefix the /get_proposal_pdf WS with /credit_insurance
 
     """
-    #return v11.get_proposal(document)
-    return jsonify({'message': "Web service not implemented"}), 501
+    return v11.get_proposal(document)
 
 
 @bp.route('/credit_insurance/get_packages', methods=['POST'])
