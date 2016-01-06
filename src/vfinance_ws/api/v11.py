@@ -2,23 +2,29 @@
 import hashlib
 import json
 import re
+import os
 from decimal import Decimal
 import datetime
 from stdnum import iban
+from flask import send_file
+from pkg_resources import resource_stream
 
 from stdnum.exceptions import InvalidChecksum, InvalidFormat
 
 from sqlalchemy import orm
 from camelot.core.exception import UserException
+from camelot.core.utils import ugettext
 
 from vfinance.connector.json_ import ExtendedEncoder
 
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
+from vfinance.admin.translations import TemplateLanguage
 from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon
 from vfinance.model.bank import constants
 from vfinance.model.bank.varia import Country_
 from vfinance.model.bank.rechtspersoon import Rechtspersoon
+from vfinance.model.bank.dual_person import CommercialRelation
 from vfinance.model.bank.validation import iban_regexp, bic_regexp
 from vfinance.model.financial.agreement import (FinancialAgreement,
                                                FinancialAgreementJsonExport,
@@ -31,10 +37,13 @@ from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
 from vfinance.model.financial.feature import FinancialAgreementPremiumScheduleFeature
 from vfinance.model.financial.constants import exclusiveness_by_functional_setting_group
+from vfinance.model.financial.notification.agreement_document import AgreementDocument
 from vfinance.facade.agreement.credit_insurance import CalculatePremium
 from vfinance.model.bank.product import Product
 from vfinance.model.bank.direct_debit import DirectDebitMandate
+from vfinance.model.bank.constants import get_interface_value_from_model_value, get_model_value_from_interface_value
 from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag, Bedrag
+from vfinance.view.action_steps.print_preview import PrintNotification
 
 from vfinance_ws.api.utils import DecimalEncoder
 from vfinance_ws.api.utils import to_table_html
@@ -544,6 +553,39 @@ def calculate_proposal(session, document):
         'premium_schedule__2__period_type': premium_period_type2
     }
 
+@with_session
+def get_proposal(session, document):
+    #import wingdbstub
+    facade = create_facade_from_calculate_proposal_schema(session, document)
+    facade.insured_party__1__first_name = document.get('insured_party__1__first_name')
+    facade.insured_party__1__last_name = document.get('insured_party__1__last_name')
+    facade.insured_party__1__language = document.get('insured_party__1__language')
+    broker = CommercialRelation()
+    #broker.name = document.get('broker__name')
+    broker.email = document.get('broker__email')
+    broker.zipcode = document.get('broker__zip_code')
+    broker.city = document.get('broker__city')
+    broker.street = document.get('broker__street')
+    broker.telefoon = document.get('broker__telephone')
+    facade.broker_relation = broker
+    options = None
+    language = document.get('insured_party__1__language')
+
+    with TemplateLanguage(language=language):
+        print_notification = PrintNotification()
+        facade_context = AgreementDocument().context(facade, options)
+        template_name = 'notifications/Select_Plus/agreement-proposal_{}_BE.html'.format(language)
+        print_notification.add_template(template_name, facade_context, 'Agreement')
+        filename = print_notification.get_pdf()
+
+    send_file_parameters = dict(
+        mimetype='application/pdf; charset=binary',
+        as_attachment=True,
+        attachment_filename='proposal.pdf'
+    )
+    #infile = resource_stream('vfinance_ws', os.path.join('tmp', 'proposal.pdf'))
+    return send_file(filename, **send_file_parameters)
+
 def create_facade_from_calculate_proposal_schema(session, document):
     package = session.query(FinancialPackage).get(long(document['package_id']))
 
@@ -603,13 +645,13 @@ def create_facade_from_calculate_proposal_schema(session, document):
 
     # New fields for select+
     facade.insured_party__1__educational_level = \
-        document.get('insured_party__1__educational_level')
+        get_model_value_from_interface_value('educational_level', document.get('insured_party__1__educational_level'))
     facade.insured_party__1__net_earnings_of_employment = \
         document.get('insured_party__1__net_earnings_of_employment')
     facade.insured_party__1__fitness_level = \
-        document.get('insured_party__1__fitness_level')
+        get_model_value_from_interface_value('fitness_level', document.get('insured_party__1__fitness_level'))
     facade.insured_party__1__smoking_habit = \
-        document.get('insured_party__1__smoking_habit')
+        get_model_value_from_interface_value('smoking_habit', document.get('insured_party__1__smoking_habit'))
     facade.premium_schedule__1__premium_taxation_physical_person = \
         document.get('premium_schedule__1__premium_taxation_physical_person')
     facade.loan_type_of_payments = \
@@ -699,7 +741,7 @@ def create_facade_from_send_agreement_schema(session, document):
         setattr(facade, field, document[field])
     return facade
 
-extra_age_table = {'insured_party__1__educational_level':
+extra_age_table = {'educational_level':
                         {'no_schooling': 3,
                          'incomplete_primary': 3,
                          'primary': 3,
@@ -709,13 +751,13 @@ extra_age_table = {'insured_party__1__educational_level':
                          'first_stage_tertiary': -1,
                          'second_stage_tertiary': -1,
                          },
-                   'insured_party__1__fitness_level':
+                   'fitness_level':
                         {'extremely_inactive': 0,
                          'sedentary': 0,
                          'moderately_active': -1,
                          'vigorously_active': -1,
                          'extremely_active': -1},
-                   'insured_party__1__smoking_habit':
+                   'smoking_habit':
                          {'never': 0,
                           'regular': 5},
                    }
@@ -725,7 +767,7 @@ def calculate_fictitious_extra_age(agreement):
         if agreement.package.id == 65:
             years = []
             for key in extra_age_table.keys():
-                value = getattr(agreement, key)
+                value = get_interface_value_from_model_value(key, getattr(agreement, 'insured_party__1__{}'.format(key)))
                 years.append(extra_age_table[key].get(value, 0))
             earnings = agreement.insured_party__1__net_earnings_of_employment
             if earnings <= 500:

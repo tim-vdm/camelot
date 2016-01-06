@@ -44,6 +44,7 @@ DATE_SCHEMA = {
 Date = All(DATE_SCHEMA, ValidateDate)
 Boolean = In([True, False])
 Sex = In(["M", "F"])
+Language = In(["nl", "fr"])
 ScheduleType = In(["premium_amount",
                    "applied_amount",
                    "approved_amount"])
@@ -323,6 +324,25 @@ GET_PACKAGES_SCHEMA = {
 }
 
 
+GET_PROPOSAL_SCHEMA = dict(CALCULATE_PROPOSAL_SCHEMA)
+GET_PROPOSAL_SCHEMA.update({Required("insured_party__1__language"): Language,
+                            Required("broker__name"): String(max=40),
+                            Required("broker__email"): String(max=40),
+                            Optional("broker__telephone"): String(max=40),
+                            Optional("broker__city"): String(max=40),
+                            Optional("broker__zip_code"): String(max=40),
+                            Optional("broker__street"): String(max=40),
+                            Optional("insured_party__1__first_name"): String(max=40),
+                            Optional("insured_party__1__last_name"): String(max=40),
+                            Optional("insured_party__1__telephone"): String(max=40),
+                            Optional("insured_party__1__email"): String(max=40),
+                            Optional("insured_party__1__zip_code"): String(max=5),
+                            Optional("insured_party__1__city"): String(max=40),
+                            Optional("pledgee_name"): String(max=30),
+                            Optional("pledgee_tax_id"): String(max=20),
+                            Optional("pledgee_reference"): String(max=30)
+                            })
+
 
 def validate_document(document, schema):
     validator = Schema(schema)
@@ -346,3 +366,6 @@ def validation_get_packages(document):
 
 def validation_create_agreement_code(document):
     return validate_document(document, CREATE_AGREEMENT_CODE_SCHEMA)
+
+def validation_get_proposal(document):
+    return validate_document(document, GET_PROPOSAL_SCHEMA)
