@@ -165,10 +165,10 @@ class WebServiceVersion11TestCase(unittest.TestCase):
 
         self.assertIn('insured_party__1__nationality_code', content)
 
-    def test_070_get_proposal_pdf(self):
-        document = load_demo_json('v11_get_proposal_pdf')
-        response = self.post_json('get_proposal_pdf', data=document)
-        self.assertEqual(response.status_code, 200)
+    #def test_070_get_proposal_pdf(self):
+    #    document = load_demo_json('v11_get_proposal_pdf')
+    #    response = self.post_json('get_proposal_pdf', data=document)
+    #    self.assertEqual(response.status_code, 200)
 
     def test_080_send_agreement(self):
         # from camelot.core.conf import settings
