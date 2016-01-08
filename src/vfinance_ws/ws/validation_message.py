@@ -52,9 +52,9 @@ AgreementType = In(["financial_agreement",
                     "loan_application"])
 
 ADDRESS_SCHEMA = {
-    Required("street_1"): String(max=40),
+    Required("street_1"): String(max=128),
     Optional("id"): String(max=32),
-    Optional("street_2"): String(max=40),
+    Optional("street_2"): String(max=128),
     Required("zip_code"): String(max=5),
     Required("city"): String(max=40),
     Required("country_code"): String(max=2)
