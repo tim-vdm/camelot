@@ -10,6 +10,7 @@ jinja2
 markupsafe
 phonenumbers
 polib
+pyqrcode
 six
 sqlalchemy
 stdnum
