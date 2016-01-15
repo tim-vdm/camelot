@@ -121,7 +121,18 @@
                                   "month": 11,
                                   "year": 2015},
             "insured_duration": 240,
-            "coverage_for": "amortization_table"
+            "coverage_for": "amortization_table",
+            "for_id": 1
+        },
+        {
+            "id": 1,
+            "product_id": -1,
+            "row_type": "approved_amount",
+            "amount": "100000",
+            "initial_interest_rate": "5.0",
+            "duration": 360,
+            "period_type": "monthly",
+            "direct_debit": false
         }
     ],
     "fiscal_regime": "retirement_savings",

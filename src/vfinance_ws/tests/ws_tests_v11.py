@@ -223,6 +223,14 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 400)
         self.assertEqual(content.get('message'), 'Coverage of type wrong_coverage is not available')
 
+    def test_create_agreement_code_loansmanager(self):
+        document = load_demo_json('v11_create_agreement_code_loansmanager')
+        response = self.post_json('create_agreement_code', data=document)
+
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
+
 
     def test_create_agreement_code_polapp(self):
         document = load_demo_json('v11_polapp_agreement_code')
@@ -231,6 +239,15 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         content = json.loads(response.data)
         self.assertIsInstance(content, dict)
+
+    def test_create_agreement_code_stc(self):
+        document = load_demo_json('v11_create_agreement_code_stc')
+        response = self.post_json('create_agreement_code', data=document)
+
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
+
 
 
     def test_create_agreement_code_duplicate_roles(self):
@@ -287,8 +304,8 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(imported_agreement.origin, 'BIA:12000')
         roles = {role.described_by: role for role in imported_agreement.roles}
         insured_party = roles.get('insured_party')
-        direct_debit_mandate_be = imported_agreement.direct_debit_mandates[0]
-        direct_debit_mandate_nl = imported_agreement.direct_debit_mandates[1]
+        #direct_debit_mandate_be = imported_agreement.direct_debit_mandates[0]
+        #direct_debit_mandate_nl = imported_agreement.direct_debit_mandates[1]
         self.assertEqual(insured_party.smoking_habit, 1)
         self.assertEqual(insured_party.natuurlijke_persoon.sex, 'M')
         self.assertEqual(insured_party.natuurlijke_persoon.last_name, 'Delaruelle')
@@ -314,9 +331,16 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(insured_party.date_previous_medical_procedure, datetime.date(year=1995,
                                                                                       month=2,
                                                                                       day=6))
+        subscriber = roles.get('subscriber')
+        self.assertEqual(subscriber.natuurlijke_persoon.sex, 'M')
         premium_schedule = imported_agreement.invested_amounts[0]
         self.assertEqual(premium_schedule.amount, D('230000.00'))
         self.assertEqual(premium_schedule.insured_duration, 240)
+        insured_loan = premium_schedule.coverage_amortization
+        self.assertEqual(insured_loan.loan_amount, D('100000'))
+        self.assertEqual(insured_loan.interest_rate, D('5.0'))
+        self.assertEqual(insured_loan.number_of_months, 360)
+        self.assertEqual(insured_loan.payment_interval, 1)
         agreed_features = {agreed_feature.described_by: agreed_feature.value for agreed_feature in premium_schedule.agreed_features}
         self.assertEqual(100, agreed_features.get('premium_fee_1'))
         self.assertEqual(20, agreed_features.get('premium_rate_1'))
@@ -327,10 +351,10 @@ class WebServiceVersion11TestCase(unittest.TestCase):
             if agreed_functional_setting.group == 'fiscal_regime':
                 fiscal_regime = agreed_functional_setting.described_by
         self.assertEqual('retirement_savings', fiscal_regime)
-        self.assertEqual(direct_debit_mandate_be._iban, 'BE48 6511 4362 0327')
-        self.assertEqual(direct_debit_mandate_be.bank_identifier_code, 'KEYTBEBB')
-        self.assertEqual(direct_debit_mandate_nl._iban, 'NL91 ABNA 0417 1643 00')
-        self.assertEqual(direct_debit_mandate_nl.bank_identifier_code, 'ABNANL2AXXX')
+        #self.assertEqual(direct_debit_mandate_be._iban, 'BE48 6511 4362 0327')
+        #self.assertEqual(direct_debit_mandate_be.bank_identifier_code, 'KEYTBEBB')
+        #self.assertEqual(direct_debit_mandate_nl._iban, 'NL91 ABNA 0417 1643 00')
+        #self.assertEqual(direct_debit_mandate_nl.bank_identifier_code, 'ABNANL2AXXX')
 
 
 if __name__ == '__main__':
