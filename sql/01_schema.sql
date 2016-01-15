@@ -235,13 +235,6 @@ CREATE TABLE kapbon_product_beschrijving (
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id)
 );
-CREATE TABLE bank_identifier_code (
-	name VARCHAR(128) NOT NULL, 
-	code VARCHAR(11) NOT NULL, 
-	country VARCHAR(2) NOT NULL, 
-	id INTEGER NOT NULL, 
-	PRIMARY KEY (id)
-);
 
 
 
@@ -843,10 +836,9 @@ CREATE TABLE financial_transaction_credit_distribution (
 	quantity NUMERIC(17, 6) NOT NULL, 
 	id INTEGER NOT NULL, 
 	financial_transaction_id INTEGER, 
-	bank_identifier_code_id INTEGER, 
+	bank_identifier_code VARCHAR(11), 
 	PRIMARY KEY (id), 
-	CONSTRAINT financial_transaction_credit_distribution_financial_transaction_id_fk FOREIGN KEY(financial_transaction_id) REFERENCES financial_transaction (id) ON DELETE cascade ON UPDATE cascade, 
-	CONSTRAINT financial_transaction_credit_distribution_bank_identifier_code_id_fk FOREIGN KEY(bank_identifier_code_id) REFERENCES bank_identifier_code (id) ON DELETE restrict ON UPDATE cascade
+	CONSTRAINT financial_transaction_credit_distribution_financial_transaction_id_fk FOREIGN KEY(financial_transaction_id) REFERENCES financial_transaction (id) ON DELETE cascade ON UPDATE cascade
 );
 
 
@@ -1205,11 +1197,10 @@ CREATE TABLE bank_bank_account (
 	id INTEGER NOT NULL, 
 	rechtspersoon INTEGER, 
 	natuurlijke_persoon INTEGER, 
-	bank_identifier_code_id INTEGER, 
+	bank_identifier_code VARCHAR(11), 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(rechtspersoon) REFERENCES bank_rechtspersoon (id) ON DELETE restrict ON UPDATE cascade, 
-	FOREIGN KEY(natuurlijke_persoon) REFERENCES bank_natuurlijke_persoon (id) ON DELETE restrict ON UPDATE cascade, 
-	FOREIGN KEY(bank_identifier_code_id) REFERENCES bank_identifier_code (id) ON DELETE restrict ON UPDATE cascade
+	FOREIGN KEY(natuurlijke_persoon) REFERENCES bank_natuurlijke_persoon (id) ON DELETE restrict ON UPDATE cascade
 );
 
 
@@ -1885,13 +1876,12 @@ CREATE TABLE financial_clearing_mandate (
 	described_by INTEGER NOT NULL, 
 	sequence_type INTEGER NOT NULL, 
 	id INTEGER NOT NULL, 
-	bank_identifier_code_id INTEGER, 
+	bank_identifier_code VARCHAR(11), 
 	financial_agreement_id INTEGER, 
 	financial_account_id INTEGER, 
 	hypotheek_id INTEGER, 
 	modification_of_id INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(bank_identifier_code_id) REFERENCES bank_identifier_code (id) ON DELETE restrict ON UPDATE cascade, 
 	CONSTRAINT financial_clearing_mandate_financial_agreement_id_fk FOREIGN KEY(financial_agreement_id) REFERENCES financial_agreement (id) ON DELETE set null ON UPDATE cascade, 
 	CONSTRAINT financial_clearing_mandate_financial_account_id_fk FOREIGN KEY(financial_account_id) REFERENCES financial_account (id) ON DELETE set null ON UPDATE cascade, 
 	CONSTRAINT financial_clearing_mandate_hypotheek_id_fk FOREIGN KEY(hypotheek_id) REFERENCES hypo_hypotheek (id) ON DELETE set null ON UPDATE cascade, 

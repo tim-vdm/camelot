@@ -19,7 +19,8 @@ from vfinance_ws.ws.validation_message import (
     validation_ci_create_agreement_code,
     validation_send_agreement,
     validation_get_packages,
-    validation_create_agreement_code
+    validation_create_agreement_code,
+    validation_get_proposal
 )
 
 from vfinance_ws.api import v11
@@ -186,9 +187,10 @@ def send_agreement(document):
     return v11.send_agreement(document)
 
 
-@bp.route('/credit_insurance/get_proposal_pdf', methods=['POST'])
+@bp.route('/credit_insurance/get_proposal', methods=['POST'])
 @auth.login_required
-def get_proposal_pdf():
+@validation_json(validation_get_proposal)
+def get_proposal_pdf(document):
     """
     :synopsis: Get a PDF version of a Proposal
 
@@ -203,9 +205,8 @@ def get_proposal_pdf():
         Prefix the /get_proposal_pdf WS with /credit_insurance
 
     """
-    return jsonify({
-        'message': "Web service not implemented"
-    }), 501
+    return jsonify({'message': "Web service not implemented"}), 501
+    #return v11.get_proposal(document)
 
 
 @bp.route('/credit_insurance/get_packages', methods=['POST'])
@@ -257,12 +258,18 @@ def create_agreement_code(document):
             'ident': uuid.uuid4().hex,
         }
         fname = '{code}-{fsma}-{ident}.json'.format(**values)
+        fname = fname.replace(' ', '_')
 
-        date = datetime.date.today().strftime("%Y%m%d")
+        today = datetime.date.today()
+        day = '{0:02}'.format(today.day)
+        month = '{0:02}'.format(today.month)
+        year = '{}'.format(today.year)
 
         full_dir = os.path.join(current_app.config['PATH_DIR_LOG'],
                                 'create_agreement_code',
-                                date)
+                                year,
+                                month,
+                                day)
 
         if not os.path.exists(full_dir):
             os.makedirs(full_dir)

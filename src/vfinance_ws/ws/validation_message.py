@@ -44,6 +44,7 @@ DATE_SCHEMA = {
 Date = All(DATE_SCHEMA, ValidateDate)
 Boolean = In([True, False])
 Sex = In(["M", "F"])
+Language = In(["nl", "fr"])
 ScheduleType = In(["premium_amount",
                    "applied_amount",
                    "approved_amount"])
@@ -51,9 +52,9 @@ AgreementType = In(["financial_agreement",
                     "loan_application"])
 
 ADDRESS_SCHEMA = {
-    Required("street_1"): String(max=40),
+    Required("street_1"): String(max=128),
     Optional("id"): String(max=32),
-    Optional("street_2"): String(max=40),
+    Optional("street_2"): String(max=128),
     Required("zip_code"): String(max=5),
     Required("city"): String(max=40),
     Required("country_code"): String(max=2)
@@ -73,7 +74,7 @@ Addresses = Schema([HISTORICAL_ADDRESS_SCHEMA])
 CONTACT_MECHANISM_SCHEMA = {
     Required("described_by"): String(max=10),
     Optional("address_type"): String(max=10),
-    Required("contact_mechanism"): String(max=30),
+    Required("contact_mechanism"): String(max=64),
     Optional("comment"): String(max=256)
 }
 
@@ -235,6 +236,13 @@ ROLE_SCHEMA = {
 
 Roles = Schema([ROLE_SCHEMA])
 
+DIRECT_DEBIT_MANDATE_SCHEMA = {
+    Required("row_type"): 'direct_debit',
+    Required("iban"): String(max=34),
+    Optional("bic"): String(max=11)
+}
+
+DirectDebitMandates = Schema([DIRECT_DEBIT_MANDATE_SCHEMA])
 
 CALCULATE_PROPOSAL_SCHEMA = {
     Required("agent_official_number_fsma"): String(max=128),
@@ -300,6 +308,7 @@ CREATE_AGREEMENT_CODE_SCHEMA = {
     Optional('state_guarantee'): String(max=40),
     Optional('funding_loss'): String(max=40),
     Optional('termination'): String(max=40),
+    Optional('bank_accounts'): DirectDebitMandates
 }
 
 SEND_AGREEMENT_SCHEMA = dict(CI_CREATE_AGREEMENT_CODE_SCHEMA)
@@ -314,6 +323,25 @@ GET_PACKAGES_SCHEMA = {
     Required("agent_official_number_fsma"): String(max=128),
 }
 
+
+GET_PROPOSAL_SCHEMA = dict(CALCULATE_PROPOSAL_SCHEMA)
+GET_PROPOSAL_SCHEMA.update({Required("insured_party__1__language"): Language,
+                            Required("broker__name"): String(max=40),
+                            Required("broker__email"): String(max=40),
+                            Optional("broker__telephone"): String(max=40),
+                            Optional("broker__city"): String(max=40),
+                            Optional("broker__zip_code"): String(max=40),
+                            Optional("broker__street"): String(max=40),
+                            Optional("insured_party__1__first_name"): String(max=40),
+                            Optional("insured_party__1__last_name"): String(max=40),
+                            Optional("insured_party__1__telephone"): String(max=40),
+                            Optional("insured_party__1__email"): String(max=40),
+                            Optional("insured_party__1__zip_code"): String(max=5),
+                            Optional("insured_party__1__city"): String(max=40),
+                            Optional("pledgee_name"): String(max=30),
+                            Optional("pledgee_tax_id"): String(max=20),
+                            Optional("pledgee_reference"): String(max=30)
+                            })
 
 
 def validate_document(document, schema):
@@ -338,3 +366,6 @@ def validation_get_packages(document):
 
 def validation_create_agreement_code(document):
     return validate_document(document, CREATE_AGREEMENT_CODE_SCHEMA)
+
+def validation_get_proposal(document):
+    return validate_document(document, GET_PROPOSAL_SCHEMA)
