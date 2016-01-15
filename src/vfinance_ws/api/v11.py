@@ -486,33 +486,33 @@ def create_agreement_from_json(session, document):
 
     agreement.code = agreement.next_agreement_code(package, session)
 
-    bank_accounts = document.get('bank_accounts')
-    if bank_accounts is not None:
-        for bank_account in [account for account in bank_accounts if account.get('row_type') == 'direct_debit']:
-            iban_number = bank_account.get('iban')
-            try:
-                iban_number = iban.validate(iban_number)
-            except (InvalidChecksum, InvalidFormat):
-                raise UserException('IBAN \'{}\' is not valid.'.format(iban_number))
+    #bank_accounts = document.get('bank_accounts')
+    #if bank_accounts is not None:
+    #    for bank_account in [account for account in bank_accounts if account.get('row_type') == 'direct_debit']:
+    #        iban_number = bank_account.get('iban')
+    #        try:
+    #            iban_number = iban.validate(iban_number)
+    #        except (InvalidChecksum, InvalidFormat):
+    #            raise UserException('IBAN \'{}\' is not valid.'.format(iban_number))
 
-            bic = bank_account.get('bic')
-            if iban_number is not None:
-                if iban_regexp.match(iban_number.replace(' ', '')) is None:
-                    raise UserException('IBAN \'{}\' is not valid.'.format(iban_number))
-                iban_number = iban.format(iban_number)
-                mandate = DirectDebitMandate()
-                mandate.agreement = agreement
-                mandate.identification = agreement.code
-                mandate.date = agreement.agreement_date
-                mandate.from_date = agreement.agreement_date
-                mandate.iban = iban_number
-                if bic is not None:
-                    if bic_regexp.match(bic) is None:
-                        raise UserExceptions('BIC \'{}\' is not valid'.format(bic))
-                    if mandate.bank_identifier_code is not None and mandate.bank_identifier_code != bic:
-                        raise UserException('BIC \'{}\' is not valid for iban {}'.format(iban_number, bic))
-                    mandate.bank_identifier_code = bic
-                agreement.direct_debit_mandates.append(mandate)
+    #        bic = bank_account.get('bic')
+    #        if iban_number is not None:
+    #            if iban_regexp.match(iban_number.replace(' ', '')) is None:
+    #                raise UserException('IBAN \'{}\' is not valid.'.format(iban_number))
+    #            iban_number = iban.format(iban_number)
+    #            mandate = DirectDebitMandate()
+    #            mandate.agreement = agreement
+    #            mandate.identification = agreement.code
+    #            mandate.date = agreement.agreement_date
+    #            mandate.from_date = agreement.agreement_date
+    #            mandate.iban = iban_number
+    #            if bic is not None:
+    #                if bic_regexp.match(bic) is None:
+    #                    raise UserExceptions('BIC \'{}\' is not valid'.format(bic))
+    #                if mandate.bank_identifier_code is not None and mandate.bank_identifier_code != bic:
+    #                    raise UserException('BIC \'{}\' is not valid for iban {}'.format(iban_number, bic))
+    #                mandate.bank_identifier_code = bic
+    #            agreement.direct_debit_mandates.append(mandate)
 
 
     orm.object_session(agreement).flush()
