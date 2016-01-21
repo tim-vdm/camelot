@@ -304,6 +304,17 @@ def create_agreement_from_json(session, document):
             rechtspersoon = Rechtspersoon()
             rechtspersoon.origin = origin
             organization = role['party']
+            # Loop the addresses
+            addresses = organization.get('addresses')
+            if addresses is not None:
+                for address in addresses:
+                    address_type = address['described_by']
+                    if address_type is not None and address_type == 'official':
+                        rechtspersoon.straat = address['street_1']
+                        rechtspersoon.postcode = address['zip_code']
+                        rechtspersoon.gemeente = address['city']
+                        country = session.query(Country_).filter(Country_.code == address['country_code']).first()
+                        rechtspersoon.land = country
             #representative = organization.get('representative')
             #if representative is not None:
             #    vertegenwoordiger = create_natural_person_from_party(representative)

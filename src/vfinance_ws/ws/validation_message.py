@@ -185,7 +185,8 @@ Person = All(PERSON_SCHEMA)
 ORGANIZATION_SCHEMA = {
     Required("row_type"): 'organization',
     Required("name"): String(max=40),
-    Required("tax_id"): String(max=20)#,
+    Required("tax_id"): String(max=20),
+    Optional("addresses"): Addresses
     #Optional("roles"): 
 }
 
