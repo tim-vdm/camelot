@@ -186,7 +186,8 @@ ORGANIZATION_SCHEMA = {
     Required("row_type"): 'organization',
     Required("name"): String(max=40),
     Required("tax_id"): String(max=20),
-    Optional("addresses"): Addresses
+    Optional("addresses"): Addresses,
+    Optional("contact_mechanisms"): ContactMechanisms
     #Optional("roles"): 
 }
 

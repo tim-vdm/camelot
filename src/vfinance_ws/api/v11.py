@@ -321,6 +321,18 @@ def create_agreement_from_json(session, document):
             #    rechtspersoon.vertegenwoordiger = vertegenwoordiger
             rechtspersoon.name = organization['name']
             rechtspersoon.ondernemingsnummer = organization['tax_id']
+            contact_mechanisms = organization.get('contact_mechanisms', [])
+            for contact_mechanism in contact_mechanisms:
+                described_by = contact_mechanism['described_by']
+                value = contact_mechanism['contact_mechanism']
+                if described_by == 'fax':
+                    rechtspersoon.fax = value
+                elif described_by == 'mobile':
+                    rechtspersoon.gsm = value
+                elif described_by == 'email':
+                    rechtspersoon.email = value
+                elif described_by == 'phone':
+                    rechtspersoon.telefoon = value
             if role_type == 'appraiser' and goed is not None:
                 goed.schatter = rechtspersoon
             else:
@@ -689,6 +701,7 @@ def create_facade_from_create_agreement_schema(session, document):
         'pledgee_tax_id',
         'pledgee_reference'
     ]
+    facade.pledgee__1__rechtspersoon = Rechtspersoon()
     for field in FIELDS:
         setattr(facade, field, document[field])
 

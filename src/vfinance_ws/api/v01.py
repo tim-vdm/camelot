@@ -11,6 +11,7 @@ from vfinance.connector.json_ import ExtendedEncoder
 
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
+from vfinance.model.bank.rechtspersoon import Rechtspersoon
 from vfinance.model.financial.agreement import FinancialAgreementJsonExport, FinancialAgreement
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
@@ -188,6 +189,7 @@ def create_facade_from_create_agreement_schema(session, document):
         'pledgee_tax_id',
         'pledgee_reference'
     ]
+    facade.pledgee__1__rechtspersoon = Rechtspersoon()
     for field in FIELDS:
         setattr(facade, field, document[field])
 
