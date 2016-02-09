@@ -31,9 +31,10 @@ from vfinance.model.financial.agreement import (FinancialAgreement,
                                                FinancialAgreementRole,
                                                FinancialAgreementRoleFeature,
                                                FinancialAgreementFunctionalSettingAgreement,
-                                               InsuredLoanAgreement)
+                                               InsuredLoanAgreement,
+                                               FinancialAgreementItem)
 from vfinance.model.financial.premium import FinancialAgreementPremiumSchedule
-from vfinance.model.financial.package import FinancialPackage
+from vfinance.model.financial.package import FinancialPackage, FinancialItemClause
 from vfinance.model.financial.product import FinancialProduct
 from vfinance.model.financial.feature import FinancialAgreementPremiumScheduleFeature
 from vfinance.model.financial.constants import exclusiveness_by_functional_setting_group
@@ -536,6 +537,21 @@ def create_agreement_from_json(session, document):
                         raise UserException('BIC \'{}\' is not valid for iban {}'.format(iban_number, bic))
                     mandate.bank_identifier_code = bic
                 agreement.direct_debit_mandates.append(mandate)
+
+    agreed_items = document.get('agreed_items')
+    if agreed_items is not None:
+        for agreed_item in agreed_items:
+            agreement_item = FinancialAgreementItem()
+            agreement_item.described_by = agreed_item.get('described_by')
+            agreement_item.rank = agreed_item.get('rank')
+            agreement_item.associated_clause = orm.object_session(agreement).query(FinancialItemClause).get(agreed_item.get('associated_clause_id'))
+            custom_clause = agreed_item.get('custom_clause')
+            if custom_clause is not None:
+                agreement_item.use_custom_clause = True
+                agreement_item.custom_clause = custom_clause
+
+            agreement.agreed_items.append(agreement_item)
+
 
 
     orm.object_session(agreement).flush()

@@ -146,6 +146,19 @@
             "iban": "NL91 ABNA 04171 64300",
             "bic": "ABNANL2AXXX"
         }
+    ],
+    "agreed_items": [
+        {
+            "described_by": "beneficiary",
+            "rank": 1,
+            "associated_clause_id": 268
+        },
+        {
+            "described_by": "beneficiary",
+            "rank": 2,
+            "associated_clause_id": 272,
+            "custom_clause": "De begunstigden"
+        }
     ]
 }
 

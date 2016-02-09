@@ -304,8 +304,8 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(imported_agreement.origin, 'BIA:12000')
         roles = {role.described_by: role for role in imported_agreement.roles}
         insured_party = roles.get('insured_party')
-        #direct_debit_mandate_be = imported_agreement.direct_debit_mandates[0]
-        #direct_debit_mandate_nl = imported_agreement.direct_debit_mandates[1]
+        direct_debit_mandate_be = imported_agreement.direct_debit_mandates[0]
+        direct_debit_mandate_nl = imported_agreement.direct_debit_mandates[1]
         self.assertEqual(insured_party.smoking_habit, 1)
         self.assertEqual(insured_party.natuurlijke_persoon.sex, 'M')
         self.assertEqual(insured_party.natuurlijke_persoon.last_name, 'Delaruelle')
@@ -351,10 +351,20 @@ class WebServiceVersion11TestCase(unittest.TestCase):
             if agreed_functional_setting.group == 'fiscal_regime':
                 fiscal_regime = agreed_functional_setting.described_by
         self.assertEqual('retirement_savings', fiscal_regime)
-        #self.assertEqual(direct_debit_mandate_be._iban, 'BE48 6511 4362 0327')
-        #self.assertEqual(direct_debit_mandate_be.bank_identifier_code, 'KEYTBEBB')
-        #self.assertEqual(direct_debit_mandate_nl._iban, 'NL91 ABNA 0417 1643 00')
-        #self.assertEqual(direct_debit_mandate_nl.bank_identifier_code, 'ABNANL2AXXX')
+        self.assertEqual(direct_debit_mandate_be._iban, 'BE48 6511 4362 0327')
+        self.assertEqual(direct_debit_mandate_be.bank_identifier_code, 'KEYTBEBB')
+        self.assertEqual(direct_debit_mandate_nl._iban, 'NL91 ABNA 0417 1643 00')
+        self.assertEqual(direct_debit_mandate_nl.bank_identifier_code, 'ABNANL2AXXX')
+
+        items = [item for item in imported_agreement.agreed_items]
+        self.assertEqual(len(items), 2)
+        for item in items:
+            if item.rank == 1:
+                self.assertIn('personen die de volle eigendom of het vruchtgebruik van de woning', item.shown_clause)
+            if item.rank == 2:
+                self.assertIn('De begunstigden', item.shown_clause)
+
+
 
 
 if __name__ == '__main__':
