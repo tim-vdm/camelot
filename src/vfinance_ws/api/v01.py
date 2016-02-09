@@ -185,13 +185,22 @@ def create_facade_from_create_agreement_schema(session, document):
 
     FIELDS = [
         'origin',
-        'pledgee_name',
-        'pledgee_tax_id',
-        'pledgee_reference'
     ]
-    facade.pledgee__1__rechtspersoon = Rechtspersoon()
+
     for field in FIELDS:
         setattr(facade, field, document[field])
+
+    FIELDS = [
+        'name',
+        'tax_id',
+        'reference'
+    ]
+    facade.pledgee__1__rechtspersoon = Rechtspersoon()
+
+    for field in FIELDS:
+        fac_prop = 'pledgee__1__{}'.format(field)
+        document_key = 'pledgee_{}'.format(field)
+        setattr(facade, fac_prop, document[document_key])
 
     FIELDS = [
         'last_name', 'first_name', 'language', 'nationality_code',
