@@ -9,6 +9,7 @@ itsdangerous
 jinja2
 markupsafe
 phonenumbers
+png
 polib
 pyqrcode
 six
