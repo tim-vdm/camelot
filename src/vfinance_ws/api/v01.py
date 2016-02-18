@@ -12,7 +12,7 @@ from vfinance.connector.json_ import FinancialAgreementJsonExport, ExtendedEncod
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
 from vfinance.model.bank.rechtspersoon import Rechtspersoon
-from vfinance.model.financial.agreement import FinancialAgreementJsonExport, FinancialAgreement
+from vfinance.model.financial.agreement import FinancialAgreement
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
 from vfinance.model.insurance.credit_insurance import CalculateCreditInsurance

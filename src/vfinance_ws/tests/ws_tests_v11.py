@@ -364,23 +364,11 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         premium_schedule = imported_agreement.invested_amounts[0]
         self.assertEqual(premium_schedule.amount, D('230000.00'))
         self.assertEqual(premium_schedule.insured_duration, 240)
-<<<<<<< working copy
-<<<<<<< working copy
-        insured_loan = premium_schedule.coverage_amortization
-        self.assertEqual(insured_loan.loan_amount, D('100000'))
-        self.assertEqual(insured_loan.interest_rate, D('5.0'))
-        self.assertEqual(insured_loan.number_of_months, 360)
-        # payment_interval
-        self.assertEqual(insured_loan.payment_interval, 1)
-=======
->>>>>>> destination
-=======
         insured_loan = premium_schedule.coverage_amortization
         self.assertEqual(insured_loan.loan_amount, D('100000'))
         self.assertEqual(insured_loan.interest_rate, D('5.0'))
         self.assertEqual(insured_loan.number_of_months, 360)
         self.assertEqual(insured_loan.payment_interval, 1)
->>>>>>> destination
         agreed_features = {agreed_feature.described_by: agreed_feature.value for agreed_feature in premium_schedule.agreed_features}
         self.assertEqual(100, agreed_features.get('premium_fee_1'))
         self.assertEqual(20, agreed_features.get('premium_rate_1'))
@@ -396,8 +384,6 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(direct_debit_mandate_nl._iban, 'NL91 ABNA 0417 1643 00')
         self.assertEqual(direct_debit_mandate_nl.bank_identifier_code, 'ABNANL2AXXX')
 
-<<<<<<< working copy
-<<<<<<< working copy
 
         items = [item for item in imported_agreement.agreed_items]
         self.assertEqual(len(items), 2)
@@ -407,22 +393,6 @@ class WebServiceVersion11TestCase(unittest.TestCase):
             if item.rank == 2:
                 self.assertIn('De begunstigden', item.shown_clause)
 
-
-
-=======
->>>>>>> destination
-=======
-        items = [item for item in imported_agreement.agreed_items]
-        self.assertEqual(len(items), 2)
-        for item in items:
-            if item.rank == 1:
-                self.assertIn('personen die de volle eigendom of het vruchtgebruik van de woning', item.shown_clause)
-            if item.rank == 2:
-                self.assertIn('De begunstigden', item.shown_clause)
-
-
-
->>>>>>> destination
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
