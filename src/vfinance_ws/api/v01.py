@@ -7,7 +7,7 @@ from sqlalchemy import orm
 
 #from vfinance.connector.aws import AwsQueue
 #from vfinance.connector.aws import QueueCommand
-from vfinance.connector.json_ import ExtendedEncoder
+from vfinance.connector.json_ import FinancialAgreementJsonExport, ExtendedEncoder
 
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 

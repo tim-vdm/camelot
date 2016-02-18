@@ -15,7 +15,9 @@ from sqlalchemy import orm
 from camelot.core.exception import UserException
 from camelot.core.utils import ugettext
 
-from vfinance.connector.json_ import ExtendedEncoder
+from vfinance.connector.json_ import ExtendedEncoder, FinancialAgreementJsonExport
+
+from vfinance.data.types import role_feature_types
 
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
@@ -27,7 +29,6 @@ from vfinance.model.bank.rechtspersoon import Rechtspersoon
 from vfinance.model.bank.dual_person import CommercialRelation
 from vfinance.model.bank.validation import iban_regexp, bic_regexp
 from vfinance.model.financial.agreement import (FinancialAgreement,
-                                               FinancialAgreementJsonExport,
                                                FinancialAgreementRole,
                                                FinancialAgreementRoleFeature,
                                                FinancialAgreementFunctionalSettingAgreement,
@@ -132,6 +133,7 @@ def create_agreement_from_json(session, document):
     else:
         agreement = Hypotheek()
     package = session.query(FinancialPackage).get(long(document['package_id']))
+    agreement.code = agreement.next_agreement_code(package, session)
     if not package:
         raise Exception('The package with id {} does not exist'.format(document['package_id']))
     else:
@@ -357,8 +359,8 @@ def create_agreement_from_json(session, document):
                 # If role is not mapped to a FinancialAgreementRole, no FinancialAgreementRoleFeatures should be created
                 #if feature_value is not None:
                 if feature_value is not None and role_type not in ('appraiser', 'owner', 'non_usufruct_owner', 'owner_usufruct'):
-                    for feature in constants.role_features:
-                        choices = feature.choices
+                    for feature in role_feature_types:
+                        choices = feature.values
                         if feature_name == feature.name and choices is not None:
                             for choice in choices:
                                 if choice[2] == feature_value:
@@ -388,6 +390,9 @@ def create_agreement_from_json(session, document):
                                   'semesterly': 6,
                                   'quarterly': 3,
                                   'monthly': 1}
+        hypo_interval_field_mapping = {'monthly': 12,
+                                       'quarterly': 4,
+                                       'yearly': 1}
         doel_field_mapping = {'purchase_terrain': 'doel_aankoop_terrein',
                               'new_housing': 'doel_nieuwbouw',
                               'renovation': 'doel_renovatie',
@@ -457,7 +462,7 @@ def create_agreement_from_json(session, document):
                 bedrag.product = product
                 bedrag.type_vervaldag = type_vervaldag
                 bedrag.type_aflossing = aflossing_field_mapping.get(schedule.get('described_by'))
-                bedrag.terugbetaling_interval = interval_field_mapping.get(period_type)
+                bedrag.terugbetaling_interval = hypo_interval_field_mapping.get(period_type)
                 bedrag.looptijd = duration
                 bedrag.bedrag = amount
                 bedrag.terugbetaling_start = schedule.get('suspension_of_payment', 0)
@@ -508,7 +513,6 @@ def create_agreement_from_json(session, document):
             functional_setting.agreed_on = agreement
 
 
-    agreement.code = agreement.next_agreement_code(package, session)
 
     bank_accounts = document.get('bank_accounts')
     if bank_accounts is not None:
@@ -594,36 +598,47 @@ def calculate_proposal(session, document):
 
 @with_session
 def get_proposal(session, document):
-    #import wingdbstub
     facade = create_facade_from_calculate_proposal_schema(session, document)
     facade.insured_party__1__first_name = document.get('insured_party__1__first_name')
     facade.insured_party__1__last_name = document.get('insured_party__1__last_name')
     facade.insured_party__1__language = document.get('insured_party__1__language')
     broker = CommercialRelation()
-    #broker.name = document.get('broker__name')
-    broker.email = document.get('broker__email')
-    broker.zipcode = document.get('broker__zip_code')
-    broker.city = document.get('broker__city')
-    broker.street = document.get('broker__street')
-    broker.telefoon = document.get('broker__telephone')
+    broker.rechtspersoon = Rechtspersoon()
+    broker.rechtspersoon.name = document.get('broker__name')
+    broker.rechtspersoon.email = document.get('broker__email')
+    broker.rechtspersoon.postcode = document.get('broker__zip_code')
+    broker.rechtspersoon.city_name = document.get('broker__city')
+    broker.rechtspersoon.straat = document.get('broker__street')
+    broker.rechtspersoon.telefoon = document.get('broker__telephone')
     facade.broker_relation = broker
     options = None
     language = document.get('insured_party__1__language')
+    package = facade.package
+
+    html = None
+    notification_type = 'agreement-proposal'
 
     with TemplateLanguage(language=language):
         print_notification = PrintNotification()
         facade_context = AgreementDocument().context(facade, options)
-        template_name = 'notifications/Select_Plus/agreement-proposal_{}_BE.html'.format(language)
-        print_notification.add_template(template_name, facade_context, 'Agreement')
-        filename = print_notification.get_pdf()
 
-    send_file_parameters = dict(
-        mimetype='application/pdf; charset=binary',
-        as_attachment=True,
-        attachment_filename='proposal.pdf'
-    )
-    #infile = resource_stream('vfinance_ws', os.path.join('tmp', 'proposal.pdf'))
-    return send_file(filename, **send_file_parameters)
+        notification_applicabilities = list(
+            package.get_applied_notifications_at(
+                application_date = facade.agreement_date,
+                notification_type = notification_type,
+                subscriber_language = language)
+            )
+
+        for notification_applicability in notification_applicabilities:
+            print_notification.add_notification(
+                notification_applicability,
+                facade_context,
+                verbose_name=u'{0} {1.code}'.format(ugettext(notification_type), facade),
+            )
+
+        html = print_notification.html
+
+    return html
 
 def create_facade_from_calculate_proposal_schema(session, document):
     package = session.query(FinancialPackage).get(long(document['package_id']))

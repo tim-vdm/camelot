@@ -8,6 +8,8 @@ from flask import url_for
 from camelot.core.orm import Session
 
 from vfinance.model.financial.agreement import FinancialAgreement
+from vfinance.model.financial.package import FinancialPackage
+from vfinance.model.hypo.hypotheek import Hypotheek
 from vfinance.connector.json_ import  JsonImportAction
 
 from vfinance_ws.ws_server import create_app
@@ -24,6 +26,13 @@ print DEMO_DIR
 def load_demo_json(fname):
     with open(os.path.join(DEMO_DIR, "%s.json" % (fname,))) as infile:
         return json.load(infile)
+
+def set_new_agreement_code(session, json_path):
+    json_structure = json.load(open(json_path))
+    package = session.query(FinancialPackage).get(long(json_structure['package_id']))
+    new_agreement_code = FinancialAgreement.next_agreement_code(package, session)
+    json_structure['code'] = new_agreement_code
+    json.dump(json_structure, open(json_path, 'w'), indent=3)
 
 from base64 import b64encode
 
@@ -88,6 +97,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         response = self.post_json('calculate_proposal', data=document)
         self.assertEqual(response.status_code, 200)
 
+
     def test_011_calculate_proposal_two_products(self):
         document = load_demo_json('v11_calculate_proposal_stc')
         document['premium_schedule__2__product_id'] = 68
@@ -148,6 +158,12 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(content.get('premium_schedule__1__amount'), schedule__1__amount)
         self.assertEqual(content.get('premium_schedule__2__amount'), schedule__2__amount)
+
+    def test_get_proposal_select_plus(self):
+        document = load_demo_json('v11_get_proposal_select_plus')
+        response = self.post_json('get_proposal', data=document)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('1.727,37', response.data)
 
     def test_020_create_agreement_code(self):
         document = load_demo_json('v11_create_minimalist_agreement_code')
@@ -226,10 +242,20 @@ class WebServiceVersion11TestCase(unittest.TestCase):
     def test_create_agreement_code_loansmanager(self):
         document = load_demo_json('v11_create_agreement_code_loansmanager')
         response = self.post_json('create_agreement_code', data=document)
+        session = Session
 
         self.assertEqual(response.status_code, 200)
         content = json.loads(response.data)
         self.assertIsInstance(content, dict)
+
+        json_path = content.get('json_path')
+        set_new_agreement_code(session, json_path)
+        import_action = JsonImportAction()
+        imported_agreement = list(import_action.import_file(session,
+                                                            FinancialAgreement,
+                                                            json_path))[0]
+
+        self.assertIsNotNone(imported_agreement)
 
 
     def test_create_agreement_code_polapp(self):
@@ -261,6 +287,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         content = json.loads(response.data)
         self.assertIsInstance(content, dict)
         json_path = content.get('json_path')
+        set_new_agreement_code(session, json_path)
         import_action = JsonImportAction()
         imported_agreement = list(import_action.import_file(session,
                                                             FinancialAgreement,
@@ -296,6 +323,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         content = json.loads(response.data)
         self.assertIsInstance(content, dict)
         json_path = content.get('json_path')
+        set_new_agreement_code(session, json_path)
         import_action = JsonImportAction()
         imported_agreement = list(import_action.import_file(session,
                                                             FinancialAgreement,
@@ -336,11 +364,23 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         premium_schedule = imported_agreement.invested_amounts[0]
         self.assertEqual(premium_schedule.amount, D('230000.00'))
         self.assertEqual(premium_schedule.insured_duration, 240)
+<<<<<<< working copy
+<<<<<<< working copy
+        insured_loan = premium_schedule.coverage_amortization
+        self.assertEqual(insured_loan.loan_amount, D('100000'))
+        self.assertEqual(insured_loan.interest_rate, D('5.0'))
+        self.assertEqual(insured_loan.number_of_months, 360)
+        # payment_interval
+        self.assertEqual(insured_loan.payment_interval, 1)
+=======
+>>>>>>> destination
+=======
         insured_loan = premium_schedule.coverage_amortization
         self.assertEqual(insured_loan.loan_amount, D('100000'))
         self.assertEqual(insured_loan.interest_rate, D('5.0'))
         self.assertEqual(insured_loan.number_of_months, 360)
         self.assertEqual(insured_loan.payment_interval, 1)
+>>>>>>> destination
         agreed_features = {agreed_feature.described_by: agreed_feature.value for agreed_feature in premium_schedule.agreed_features}
         self.assertEqual(100, agreed_features.get('premium_fee_1'))
         self.assertEqual(20, agreed_features.get('premium_rate_1'))
@@ -356,6 +396,9 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(direct_debit_mandate_nl._iban, 'NL91 ABNA 0417 1643 00')
         self.assertEqual(direct_debit_mandate_nl.bank_identifier_code, 'ABNANL2AXXX')
 
+<<<<<<< working copy
+<<<<<<< working copy
+
         items = [item for item in imported_agreement.agreed_items]
         self.assertEqual(len(items), 2)
         for item in items:
@@ -366,6 +409,20 @@ class WebServiceVersion11TestCase(unittest.TestCase):
 
 
 
+=======
+>>>>>>> destination
+=======
+        items = [item for item in imported_agreement.agreed_items]
+        self.assertEqual(len(items), 2)
+        for item in items:
+            if item.rank == 1:
+                self.assertIn('personen die de volle eigendom of het vruchtgebruik van de woning', item.shown_clause)
+            if item.rank == 2:
+                self.assertIn('De begunstigden', item.shown_clause)
+
+
+
+>>>>>>> destination
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
