@@ -121,7 +121,18 @@
                                   "month": 11,
                                   "year": 2015},
             "insured_duration": 240,
-            "coverage_for": "amortization_table"
+            "coverage_for": "amortization_table",
+            "for_id": 1
+        },
+        {
+            "id": 1,
+            "product_id": -1,
+            "row_type": "approved_amount",
+            "amount": "100000",
+            "initial_interest_rate": "5.0",
+            "duration": 360,
+            "period_type": "monthly",
+            "direct_debit": false
         }
     ],
     "fiscal_regime": "retirement_savings",
@@ -134,6 +145,19 @@
             "row_type": "direct_debit",
             "iban": "NL91 ABNA 04171 64300",
             "bic": "ABNANL2AXXX"
+        }
+    ],
+    "agreed_items": [
+        {
+            "described_by": "beneficiary",
+            "rank": 1,
+            "associated_clause_id": 268
+        },
+        {
+            "described_by": "beneficiary",
+            "rank": 2,
+            "associated_clause_id": 272,
+            "custom_clause": "De begunstigden"
         }
     ]
 }

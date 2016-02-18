@@ -15,7 +15,9 @@ from sqlalchemy import orm
 from camelot.core.exception import UserException
 from camelot.core.utils import ugettext
 
-from vfinance.connector.json_ import ExtendedEncoder
+from vfinance.connector.json_ import ExtendedEncoder, FinancialAgreementJsonExport
+
+from vfinance.data.types import role_feature_types
 
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
@@ -27,13 +29,13 @@ from vfinance.model.bank.rechtspersoon import Rechtspersoon
 from vfinance.model.bank.dual_person import CommercialRelation
 from vfinance.model.bank.validation import iban_regexp, bic_regexp
 from vfinance.model.financial.agreement import (FinancialAgreement,
-                                               FinancialAgreementJsonExport,
                                                FinancialAgreementRole,
                                                FinancialAgreementRoleFeature,
                                                FinancialAgreementFunctionalSettingAgreement,
-                                               InsuredLoanAgreement)
+                                               InsuredLoanAgreement,
+                                               FinancialAgreementItem)
 from vfinance.model.financial.premium import FinancialAgreementPremiumSchedule
-from vfinance.model.financial.package import FinancialPackage
+from vfinance.model.financial.package import FinancialPackage, FinancialItemClause
 from vfinance.model.financial.product import FinancialProduct
 from vfinance.model.financial.feature import FinancialAgreementPremiumScheduleFeature
 from vfinance.model.financial.constants import exclusiveness_by_functional_setting_group
@@ -131,6 +133,7 @@ def create_agreement_from_json(session, document):
     else:
         agreement = Hypotheek()
     package = session.query(FinancialPackage).get(long(document['package_id']))
+    agreement.code = agreement.next_agreement_code(package, session)
     if not package:
         raise Exception('The package with id {} does not exist'.format(document['package_id']))
     else:
@@ -304,12 +307,35 @@ def create_agreement_from_json(session, document):
             rechtspersoon = Rechtspersoon()
             rechtspersoon.origin = origin
             organization = role['party']
+            # Loop the addresses
+            addresses = organization.get('addresses')
+            if addresses is not None:
+                for address in addresses:
+                    address_type = address['described_by']
+                    if address_type is not None and address_type == 'official':
+                        rechtspersoon.straat = address['street_1']
+                        rechtspersoon.postcode = address['zip_code']
+                        rechtspersoon.gemeente = address['city']
+                        country = session.query(Country_).filter(Country_.code == address['country_code']).first()
+                        rechtspersoon.land = country
             #representative = organization.get('representative')
             #if representative is not None:
             #    vertegenwoordiger = create_natural_person_from_party(representative)
             #    rechtspersoon.vertegenwoordiger = vertegenwoordiger
             rechtspersoon.name = organization['name']
             rechtspersoon.ondernemingsnummer = organization['tax_id']
+            contact_mechanisms = organization.get('contact_mechanisms', [])
+            for contact_mechanism in contact_mechanisms:
+                described_by = contact_mechanism['described_by']
+                value = contact_mechanism['contact_mechanism']
+                if described_by == 'fax':
+                    rechtspersoon.fax = value
+                elif described_by == 'mobile':
+                    rechtspersoon.gsm = value
+                elif described_by == 'email':
+                    rechtspersoon.email = value
+                elif described_by == 'phone':
+                    rechtspersoon.telefoon = value
             if role_type == 'appraiser' and goed is not None:
                 goed.schatter = rechtspersoon
             else:
@@ -333,8 +359,8 @@ def create_agreement_from_json(session, document):
                 # If role is not mapped to a FinancialAgreementRole, no FinancialAgreementRoleFeatures should be created
                 #if feature_value is not None:
                 if feature_value is not None and role_type not in ('appraiser', 'owner', 'non_usufruct_owner', 'owner_usufruct'):
-                    for feature in constants.role_features:
-                        choices = feature.choices
+                    for feature in role_feature_types:
+                        choices = feature.values
                         if feature_name == feature.name and choices is not None:
                             for choice in choices:
                                 if choice[2] == feature_value:
@@ -364,6 +390,9 @@ def create_agreement_from_json(session, document):
                                   'semesterly': 6,
                                   'quarterly': 3,
                                   'monthly': 1}
+        hypo_interval_field_mapping = {'monthly': 12,
+                                       'quarterly': 4,
+                                       'yearly': 1}
         doel_field_mapping = {'purchase_terrain': 'doel_aankoop_terrein',
                               'new_housing': 'doel_nieuwbouw',
                               'renovation': 'doel_renovatie',
@@ -433,7 +462,7 @@ def create_agreement_from_json(session, document):
                 bedrag.product = product
                 bedrag.type_vervaldag = type_vervaldag
                 bedrag.type_aflossing = aflossing_field_mapping.get(schedule.get('described_by'))
-                bedrag.terugbetaling_interval = interval_field_mapping.get(period_type)
+                bedrag.terugbetaling_interval = hypo_interval_field_mapping.get(period_type)
                 bedrag.looptijd = duration
                 bedrag.bedrag = amount
                 bedrag.terugbetaling_start = schedule.get('suspension_of_payment', 0)
@@ -484,7 +513,6 @@ def create_agreement_from_json(session, document):
             functional_setting.agreed_on = agreement
 
 
-    agreement.code = agreement.next_agreement_code(package, session)
 
     bank_accounts = document.get('bank_accounts')
     if bank_accounts is not None:
@@ -513,6 +541,21 @@ def create_agreement_from_json(session, document):
                         raise UserException('BIC \'{}\' is not valid for iban {}'.format(iban_number, bic))
                     mandate.bank_identifier_code = bic
                 agreement.direct_debit_mandates.append(mandate)
+
+    agreed_items = document.get('agreed_items')
+    if agreed_items is not None:
+        for agreed_item in agreed_items:
+            agreement_item = FinancialAgreementItem()
+            agreement_item.described_by = agreed_item.get('described_by')
+            agreement_item.rank = agreed_item.get('rank')
+            agreement_item.associated_clause = orm.object_session(agreement).query(FinancialItemClause).get(agreed_item.get('associated_clause_id'))
+            custom_clause = agreed_item.get('custom_clause')
+            if custom_clause is not None:
+                agreement_item.use_custom_clause = True
+                agreement_item.custom_clause = custom_clause
+
+            agreement.agreed_items.append(agreement_item)
+
 
 
     orm.object_session(agreement).flush()
@@ -555,36 +598,47 @@ def calculate_proposal(session, document):
 
 @with_session
 def get_proposal(session, document):
-    #import wingdbstub
     facade = create_facade_from_calculate_proposal_schema(session, document)
     facade.insured_party__1__first_name = document.get('insured_party__1__first_name')
     facade.insured_party__1__last_name = document.get('insured_party__1__last_name')
     facade.insured_party__1__language = document.get('insured_party__1__language')
     broker = CommercialRelation()
-    #broker.name = document.get('broker__name')
-    broker.email = document.get('broker__email')
-    broker.zipcode = document.get('broker__zip_code')
-    broker.city = document.get('broker__city')
-    broker.street = document.get('broker__street')
-    broker.telefoon = document.get('broker__telephone')
+    broker.rechtspersoon = Rechtspersoon()
+    broker.rechtspersoon.name = document.get('broker__name')
+    broker.rechtspersoon.email = document.get('broker__email')
+    broker.rechtspersoon.postcode = document.get('broker__zip_code')
+    broker.rechtspersoon.city_name = document.get('broker__city')
+    broker.rechtspersoon.straat = document.get('broker__street')
+    broker.rechtspersoon.telefoon = document.get('broker__telephone')
     facade.broker_relation = broker
     options = None
     language = document.get('insured_party__1__language')
+    package = facade.package
+
+    html = None
+    notification_type = 'agreement-proposal'
 
     with TemplateLanguage(language=language):
         print_notification = PrintNotification()
         facade_context = AgreementDocument().context(facade, options)
-        template_name = 'notifications/Select_Plus/agreement-proposal_{}_BE.html'.format(language)
-        print_notification.add_template(template_name, facade_context, 'Agreement')
-        filename = print_notification.get_pdf()
 
-    send_file_parameters = dict(
-        mimetype='application/pdf; charset=binary',
-        as_attachment=True,
-        attachment_filename='proposal.pdf'
-    )
-    #infile = resource_stream('vfinance_ws', os.path.join('tmp', 'proposal.pdf'))
-    return send_file(filename, **send_file_parameters)
+        notification_applicabilities = list(
+            package.get_applied_notifications_at(
+                application_date = facade.agreement_date,
+                notification_type = notification_type,
+                subscriber_language = language)
+            )
+
+        for notification_applicability in notification_applicabilities:
+            print_notification.add_notification(
+                notification_applicability,
+                facade_context,
+                verbose_name=u'{0} {1.code}'.format(ugettext(notification_type), facade),
+            )
+
+        html = print_notification.html
+
+    return html
 
 def create_facade_from_calculate_proposal_schema(session, document):
     package = session.query(FinancialPackage).get(long(document['package_id']))
@@ -678,6 +732,7 @@ def create_facade_from_create_agreement_schema(session, document):
         'pledgee_tax_id',
         'pledgee_reference'
     ]
+    facade.pledgee__1__rechtspersoon = Rechtspersoon()
     for field in FIELDS:
         setattr(facade, field, document[field])
 

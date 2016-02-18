@@ -190,9 +190,9 @@ def send_agreement(document):
 @bp.route('/credit_insurance/get_proposal', methods=['POST'])
 @auth.login_required
 @validation_json(validation_get_proposal)
-def get_proposal_pdf(document):
+def get_proposal(document):
     """
-    :synopsis: Get a PDF version of a Proposal
+    :synopsis: Get a html version of a Proposal
 
     :reqheader Authorization: Token for Authentication
 
@@ -202,11 +202,10 @@ def get_proposal_pdf(document):
         :language: http
 
     .. versionchanged:: 1.1
-        Prefix the /get_proposal_pdf WS with /credit_insurance
+        Prefix the /get_proposal WS with /credit_insurance
 
     """
-    #return v11.get_proposal(document)
-    return jsonify({'message': "Web service not implemented"}), 501
+    return v11.get_proposal(document)
 
 
 @bp.route('/credit_insurance/get_packages', methods=['POST'])

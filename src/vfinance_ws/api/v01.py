@@ -7,10 +7,11 @@ from sqlalchemy import orm
 
 #from vfinance.connector.aws import AwsQueue
 #from vfinance.connector.aws import QueueCommand
-from vfinance.connector.json_ import ExtendedEncoder
+from vfinance.connector.json_ import FinancialAgreementJsonExport, ExtendedEncoder
 
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
+from vfinance.model.bank.rechtspersoon import Rechtspersoon
 from vfinance.model.financial.agreement import FinancialAgreementJsonExport, FinancialAgreement
 from vfinance.model.financial.package import FinancialPackage
 from vfinance.model.financial.product import FinancialProduct
@@ -184,12 +185,22 @@ def create_facade_from_create_agreement_schema(session, document):
 
     FIELDS = [
         'origin',
-        'pledgee_name',
-        'pledgee_tax_id',
-        'pledgee_reference'
     ]
+
     for field in FIELDS:
         setattr(facade, field, document[field])
+
+    FIELDS = [
+        'name',
+        'tax_id',
+        'reference'
+    ]
+    facade.pledgee__1__rechtspersoon = Rechtspersoon()
+
+    for field in FIELDS:
+        fac_prop = 'pledgee__1__{}'.format(field)
+        document_key = 'pledgee_{}'.format(field)
+        setattr(facade, fac_prop, document[document_key])
 
     FIELDS = [
         'last_name', 'first_name', 'language', 'nationality_code',

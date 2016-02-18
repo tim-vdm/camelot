@@ -52,9 +52,9 @@ AgreementType = In(["financial_agreement",
                     "loan_application"])
 
 ADDRESS_SCHEMA = {
-    Required("street_1"): String(max=40),
+    Required("street_1"): String(max=128),
     Optional("id"): String(max=32),
-    Optional("street_2"): String(max=40),
+    Optional("street_2"): String(max=128),
     Required("zip_code"): String(max=5),
     Required("city"): String(max=40),
     Required("country_code"): String(max=2)
@@ -185,7 +185,9 @@ Person = All(PERSON_SCHEMA)
 ORGANIZATION_SCHEMA = {
     Required("row_type"): 'organization',
     Required("name"): String(max=40),
-    Required("tax_id"): String(max=20)#,
+    Required("tax_id"): String(max=20),
+    Optional("addresses"): Addresses,
+    Optional("contact_mechanisms"): ContactMechanisms
     #Optional("roles"): 
 }
 
@@ -242,7 +244,15 @@ DIRECT_DEBIT_MANDATE_SCHEMA = {
     Optional("bic"): String(max=11)
 }
 
+AGREED_ITEM_SCHEMA = {
+    Required("described_by"): String(max=30),
+    Required("rank"): int,
+    Required("associated_clause_id"): int,
+    Optional("custom_clause"): String()
+}
+
 DirectDebitMandates = Schema([DIRECT_DEBIT_MANDATE_SCHEMA])
+AgreedItems = Schema([AGREED_ITEM_SCHEMA])
 
 CALCULATE_PROPOSAL_SCHEMA = {
     Required("agent_official_number_fsma"): String(max=128),
@@ -308,7 +318,8 @@ CREATE_AGREEMENT_CODE_SCHEMA = {
     Optional('state_guarantee'): String(max=40),
     Optional('funding_loss'): String(max=40),
     Optional('termination'): String(max=40),
-    Optional('bank_accounts'): DirectDebitMandates
+    Optional('bank_accounts'): DirectDebitMandates,
+    Optional('agreed_items'): AgreedItems
 }
 
 SEND_AGREEMENT_SCHEMA = dict(CI_CREATE_AGREEMENT_CODE_SCHEMA)

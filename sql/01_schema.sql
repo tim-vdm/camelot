@@ -256,6 +256,7 @@ CREATE TABLE bond_product_beschrijving (
 	PRIMARY KEY (id)
 );
 CREATE TABLE bank_settings (
+	language VARCHAR(6),
 	value VARCHAR(250) NOT NULL, 
 	"key" VARCHAR(250) NOT NULL, 
 	perm_id INTEGER, 
@@ -3014,6 +3015,7 @@ CREATE TABLE financial_agreement
   broker_relation_id integer,
   broker_agent_id integer,
   id INTEGER PRIMARY KEY,
+  version_id INTEGER NOT NULL,
   kosten_andere numeric(17,2),
   kosten_bouwwerken numeric(17,2),
   schattingskosten numeric(17,2),
