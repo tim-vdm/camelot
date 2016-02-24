@@ -238,7 +238,7 @@ def generate_db_file(db_name='generated'):
                 with open(os.path.join(d, sql_file), 'r') as filename:
                     cursor.executescript(filename.read())
         last_agreement_code = api.run("sqlite3 {} 'SELECT MAX(code) FROM financial_agreement;'".format(os.path.join('/var', 'v-finance-web-service', 'packages_{}.db'.format(env.CONFIGURATION))))
-        cursor.execute("INSERT INTO financial_agreement (row_type, code, agreement_date, from_date, thru_date, package_id) VALUES ('financial_agreement', '{}', '2001-01-01', '2001-01-01', '2400-12-31', 65);".format(last_agreement_code))
+        cursor.execute("INSERT INTO financial_agreement (row_type, code, agreement_date, from_date, thru_date, package_id, version_id) VALUES ('financial_agreement', '{}', '2001-01-01', '2001-01-01', '2400-12-31', 65, 1);".format(last_agreement_code))
         connection.commit()
         connection.close()
 
