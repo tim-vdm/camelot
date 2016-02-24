@@ -14,6 +14,7 @@ from stdnum.exceptions import InvalidChecksum, InvalidFormat
 from sqlalchemy import orm
 from camelot.core.exception import UserException
 from camelot.core.utils import ugettext
+from camelot.core.templates import environment
 
 from vfinance.connector.json_ import ExtendedEncoder
 
@@ -43,7 +44,6 @@ from vfinance.model.bank.product import Product
 from vfinance.model.bank.direct_debit import DirectDebitMandate
 from vfinance.model.bank.constants import get_interface_value_from_model_value, get_model_value_from_interface_value
 from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag, Bedrag
-from vfinance.view.action_steps.print_preview import PrintNotification
 
 from vfinance_ws.api.utils import DecimalEncoder
 from vfinance_ws.api.utils import to_table_html
@@ -570,21 +570,16 @@ def get_proposal(session, document):
     facade.broker_relation = broker
     options = None
     language = document.get('insured_party__1__language')
+    package = facade.package
+
+    html = None
 
     with TemplateLanguage(language=language):
-        print_notification = PrintNotification()
         facade_context = AgreementDocument().context(facade, options)
-        template_name = 'notifications/Select_Plus/agreement-proposal_{}_BE.html'.format(language)
-        print_notification.add_template(template_name, facade_context, 'Agreement')
-        filename = print_notification.get_pdf()
+        template = environment.get_template('notifications/Select_Plus/agreement-proposal_{}_BE.html'.format(language))
+        html = template.render(facade_context)
 
-    send_file_parameters = dict(
-        mimetype='application/pdf; charset=binary',
-        as_attachment=True,
-        attachment_filename='proposal.pdf'
-    )
-    #infile = resource_stream('vfinance_ws', os.path.join('tmp', 'proposal.pdf'))
-    return send_file(filename, **send_file_parameters)
+    return html
 
 def create_facade_from_calculate_proposal_schema(session, document):
     package = session.query(FinancialPackage).get(long(document['package_id']))
