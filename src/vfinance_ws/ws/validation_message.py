@@ -146,7 +146,8 @@ SCHEDULE_SCHEMA = {
     Optional("coverage_limit"): String(max=20),
     Optional("premium_taxation_physical_person"): String(max=20),
     Optional("initial_interest_rate"): String(max=20),
-    Optional("insurance_fictitious_extra_age"): String(max=20)
+    Optional("insurance_fictitious_extra_age"): String(max=20),
+    Optional("payment_duration"): int
 }
 
 Schedules = Schema([SCHEDULE_SCHEMA])

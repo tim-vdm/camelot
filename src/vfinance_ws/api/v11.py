@@ -425,6 +425,7 @@ def create_agreement_from_json(session, document):
             amount = schedule.get('amount')
             direct_debit = schedule.get('direct_debit')
             schedule_type = schedule.get('row_type')
+            payment_duration = schedule.get('payment_duration')
             if schedule_type == 'premium_amount':
                 coverage_level_json = schedule.get('coverage_for')
                 coverage_level = None
@@ -439,6 +440,7 @@ def create_agreement_from_json(session, document):
                 premium_schedule.product = product
                 premium_schedule.amount = amount
                 premium_schedule.duration = duration
+                premium_schedule.payment_duration = payment_duration
                 premium_schedule.period_type = period_type
                 premium_schedule.direct_debit = direct_debit
                 premium_schedule.insured_from_date = get_date_from_json_date(schedule.get('insured_from_date'))
