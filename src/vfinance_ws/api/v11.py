@@ -14,6 +14,7 @@ from stdnum.exceptions import InvalidChecksum, InvalidFormat
 from sqlalchemy import orm
 from camelot.core.exception import UserException
 from camelot.core.utils import ugettext
+from camelot.core.templates import environment
 
 from vfinance.connector.json_ import ExtendedEncoder, FinancialAgreementJsonExport
 
@@ -45,7 +46,6 @@ from vfinance.model.bank.product import Product
 from vfinance.model.bank.direct_debit import DirectDebitMandate
 from vfinance.model.bank.constants import get_interface_value_from_model_value, get_model_value_from_interface_value
 from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag, Bedrag
-from vfinance.view.action_steps.print_preview import PrintNotification
 
 from vfinance_ws.api.utils import DecimalEncoder
 from vfinance_ws.api.utils import to_table_html
@@ -425,6 +425,7 @@ def create_agreement_from_json(session, document):
             amount = schedule.get('amount')
             direct_debit = schedule.get('direct_debit')
             schedule_type = schedule.get('row_type')
+            payment_duration = schedule.get('payment_duration')
             if schedule_type == 'premium_amount':
                 coverage_level_json = schedule.get('coverage_for')
                 coverage_level = None
@@ -439,6 +440,7 @@ def create_agreement_from_json(session, document):
                 premium_schedule.product = product
                 premium_schedule.amount = amount
                 premium_schedule.duration = duration
+                premium_schedule.payment_duration = payment_duration
                 premium_schedule.period_type = period_type
                 premium_schedule.direct_debit = direct_debit
                 premium_schedule.insured_from_date = get_date_from_json_date(schedule.get('insured_from_date'))
@@ -616,27 +618,11 @@ def get_proposal(session, document):
     package = facade.package
 
     html = None
-    notification_type = 'agreement-proposal'
 
     with TemplateLanguage(language=language):
-        print_notification = PrintNotification()
         facade_context = AgreementDocument().context(facade, options)
-
-        notification_applicabilities = list(
-            package.get_applied_notifications_at(
-                application_date = facade.agreement_date,
-                notification_type = notification_type,
-                subscriber_language = language)
-            )
-
-        for notification_applicability in notification_applicabilities:
-            print_notification.add_notification(
-                notification_applicability,
-                facade_context,
-                verbose_name=u'{0} {1.code}'.format(ugettext(notification_type), facade),
-            )
-
-        html = print_notification.html
+        template = environment.get_template('notifications/Select_Plus/agreement-proposal_{}_BE.html'.format(language))
+        html = template.render(facade_context)
 
     return html
 
