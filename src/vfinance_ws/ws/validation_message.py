@@ -270,7 +270,7 @@ CALCULATE_PROPOSAL_SCHEMA = {
     Optional("premium_schedule__2__coverage_level_type"): Any(None, 'decreasing_amount'),
     Required("premium_schedules_coverage_limit"): Coerce(Decimal),
     Optional("premium_schedules_payment_duration"): int,
-    Required("premium_schedules_period_type"): In(["single", "yearly"]),
+    Required("premium_schedules_period_type"): In(["single", "monthly", "quarterly", "yearly"]),
     Required("premium_schedules_premium_rate_1"): Coerce(Decimal),
     Optional("insured_party__1__educational_level"): String(max=40),
     Optional("insured_party__1__net_earnings_of_employment"): Coerce(Decimal),
