@@ -44,7 +44,7 @@ DATE_SCHEMA = {
 Date = All(DATE_SCHEMA, ValidateDate)
 Boolean = In([True, False])
 Sex = In(["M", "F"])
-Language = In(["nl", "fr"])
+Language = In(["nl_BE", "fr_BE"])
 ScheduleType = In(["premium_amount",
                    "applied_amount",
                    "approved_amount"])

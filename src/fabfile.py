@@ -68,7 +68,7 @@ def build_upload():
 
 def run_local():
     with context_managers.lcd('dist/cloud'), context_managers.shell_env(LOGHOME='/tmp/log-vfws.txt'), context_managers.shell_env(DB_PATH='/tmp/test.db'):
-        api.local('python -m cloudlaunch.main'
+        api.local('python -m cloudlaunch2.main'
                   ' --cld-file=v-finance-web-service-{0.CONFIGURATION}.cld'
                   ' --cld-name=V-Finance-WS'
                   ' --cld-branch={0.CONFIGURATION}'
@@ -162,7 +162,7 @@ def restart_service():
 
 def start_service():
     with _get_sdk_context():
-        api.sudo('start v-finance-web-service-{0.CONFIGURATION}'.format(env))
+        api.sudo('start --verbose v-finance-web-service-{0.CONFIGURATION}'.format(env))
 
 
 def stop_service():
