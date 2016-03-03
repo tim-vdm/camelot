@@ -3,6 +3,7 @@ import uuid
 import json
 import datetime
 import contextlib
+import threading
 from cStringIO import StringIO
 from pkg_resources import resource_stream, resource_exists
 
@@ -35,6 +36,13 @@ def verify_token(username, password):
     #with resource_stream('vfinance_ws', os.path.join('data', 'tokens.json')) as infile:
     infile = resource_stream('vfinance_ws', os.path.join('data', 'tokens.json'))
     tokens = json.load(infile)
+    if username in tokens:
+        user = tokens.get(username)
+        thread = threading.currentThread()
+        if user is not None:
+            thread.name = user.get('name')
+        else:
+            thread.name = 'User not found for token {}'.format(token)
     return username in tokens
 
 @bp.route('/credit_insurance/calculate_proposal', methods=['POST'])
@@ -190,6 +198,8 @@ def send_agreement(document):
 
 @bp.route('/credit_insurance/get_proposal', methods=['POST'])
 @auth.login_required
+#@ws_jsonify
+@log_to_file
 @validation_json(validation_get_proposal)
 def get_proposal(document):
     """
