@@ -2,6 +2,7 @@ import datetime
 import os
 import pprint
 import functools
+import threading
 
 import voluptuous
 
@@ -132,6 +133,25 @@ def ws_jsonify(function):
 
     return wrapper
 
+def log_user_by_token(function):
+    @functools.wraps(function)
+    def wrapper(*args, **kwargs):
+        thread = threading.currentThread()
+
+        with open(os.path.join('vfinance_ws', 'data', 'tokens.json')) as token_file:
+            users = json.loads(token_file.read())
+            token = request.authorization.get('username')
+            user = users.get(token)
+            if user is not None:
+                thread.name = user.get('name')
+            else:
+                thread.name = 'User not found for token {}'.format(token)
+
+        return function(*args, **kwargs)
+
+    return wrapper
+
+
 
 def validation_json(validator=None):
     def decorator(function):
@@ -154,3 +174,4 @@ def validation_json(validator=None):
 
         return wrapper
     return decorator
+
