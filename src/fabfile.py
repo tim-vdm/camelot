@@ -162,7 +162,7 @@ def restart_service():
 
 def start_service():
     with _get_sdk_context():
-        api.sudo('start --verbose v-finance-web-service-{0.CONFIGURATION}'.format(env))
+        api.sudo('start v-finance-web-service-{0.CONFIGURATION}'.format(env))
 
 
 def stop_service():
