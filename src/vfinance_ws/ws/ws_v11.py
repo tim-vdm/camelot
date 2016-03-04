@@ -41,7 +41,7 @@ def verify_token(username, password):
         if user is not None:
             thread.name = user.get('name')
         else:
-            thread.name = 'User not found for token {}'.format(token)
+            thread.name = '{}'.format(token)
     return username in tokens
 
 @bp.route('/credit_insurance/calculate_proposal', methods=['POST'])
