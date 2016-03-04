@@ -13,7 +13,7 @@ from flask import jsonify
 from flask import send_file
 from flask import abort
 
-from vfinance_ws.ws.decorators import log_to_file, ws_jsonify, validation_json, log_user_by_token
+from vfinance_ws.ws.decorators import log_to_file, ws_jsonify, validation_json
 
 from vfinance_ws.ws.validation_message import (
     validation_calculate_proposal,
@@ -31,7 +31,6 @@ bp = Blueprint('api_v11', __name__)
 
 auth = HTTPBasicAuth()
 @auth.verify_password
-@log_user_by_token
 def verify_token(username, password):
     #with resource_stream('vfinance_ws', os.path.join('data', 'tokens.json')) as infile:
     infile = resource_stream('vfinance_ws', os.path.join('data', 'tokens.json'))
@@ -198,7 +197,7 @@ def send_agreement(document):
 
 @bp.route('/credit_insurance/get_proposal', methods=['POST'])
 @auth.login_required
-#@ws_jsonify
+@ws_jsonify
 @log_to_file
 @validation_json(validation_get_proposal)
 def get_proposal(document):

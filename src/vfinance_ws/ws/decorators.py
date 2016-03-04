@@ -112,7 +112,9 @@ def ws_jsonify(function):
             if result is None:
                 result = {}
 
-            return jsonify(result)
+            if type(result) == dict:
+                return jsonify(result)
+            return result
         except voluptuous.MultipleInvalid as ex:
             errors = {}
             for error in ex.errors:
@@ -130,24 +132,6 @@ def ws_jsonify(function):
                     msg = ex.message._string_to_translate
             current_app.logger.exception("Exception")
             return jsonify({'message': msg}), 400
-
-    return wrapper
-
-def log_user_by_token(function):
-    @functools.wraps(function)
-    def wrapper(*args, **kwargs):
-        thread = threading.currentThread()
-
-        with open(os.path.join('vfinance_ws', 'data', 'tokens.json')) as token_file:
-            users = json.loads(token_file.read())
-            token = request.authorization.get('username')
-            user = users.get(token)
-            if user is not None:
-                thread.name = user.get('name')
-            else:
-                thread.name = 'User not found for token {}'.format(token)
-
-        return function(*args, **kwargs)
 
     return wrapper
 
