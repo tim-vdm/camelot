@@ -8,6 +8,36 @@ CREATE TABLE res_country (
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id)
 );
+CREATE TABLE geographic_boundary
+(
+  id serial NOT NULL,
+  code character varying(10),
+  name character varying(100) NOT NULL,
+  row_type character varying(40),
+  latitude numeric(6,4),
+  longitude numeric(7,4),
+  CONSTRAINT geographic_boundary_pkey PRIMARY KEY (id)
+);
+CREATE TABLE geographic_boundary_city
+(
+  geographicboundary_id integer NOT NULL,
+  country_geographicboundary_id integer NOT NULL,
+  CONSTRAINT geographic_boundary_city_pkey PRIMARY KEY (geographicboundary_id),
+  CONSTRAINT geographic_boundary_city_country_geographicboundary_id_fk FOREIGN KEY (country_geographicboundary_id)
+      REFERENCES geographic_boundary_country (geographicboundary_id) MATCH SIMPLE
+      ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT geographic_boundary_city_geographicboundary_id_fkey FOREIGN KEY (geographicboundary_id)
+      REFERENCES geographic_boundary (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE CASCADE
+);
+CREATE TABLE geographic_boundary_country
+(
+  geographicboundary_id integer NOT NULL,
+  CONSTRAINT geographic_boundary_country_pkey PRIMARY KEY (geographicboundary_id),
+  CONSTRAINT geographic_boundary_country_geographicboundary_id_fkey FOREIGN KEY (geographicboundary_id)
+      REFERENCES geographic_boundary (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE CASCADE
+);
 CREATE TABLE financial_package (
 	name VARCHAR(255) NOT NULL, 
 	comment TEXT, 
