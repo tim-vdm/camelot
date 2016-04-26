@@ -1,7 +1,252 @@
 BEGIN;
-INSERT INTO "financial_package" VALUES('Short Term Cover','',4000000,4999999,8000000,8009999,64,NULL,NULL);
-INSERT INTO "financial_package" VALUES('Select+','',4000000,4999999,8000000,8009999,65,NULL,NULL);
-INSERT INTO "financial_package" VALUES('Patronale Life Hypotheken','',0,0,8000000,8009999,66,NULL,NULL);
+--INSERT INTO "financial_package" VALUES('Short Term Cover','',4000000,4999999,8000000,8009999,64,NULL,NULL);
+--INSERT INTO "financial_package" VALUES('Select+','',4000000,4999999,8000000,8009999,65,NULL,NULL);
+--INSERT INTO "financial_package" VALUES('Patronale Life Hypotheken','',0,0,8000000,8009999,66,NULL,NULL);
+
+
+INSERT INTO "financial_package" VALUES('BIKKELPOLIS',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Overlijdensrisicoverzekering Nederland</p>',5000000,5999999,8000000,8009999,NULL,35);
+INSERT INTO "financial_package" VALUES('Global Strategy Account 44',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,37);
+INSERT INTO "financial_package" VALUES('Boutique 44',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,38);
+INSERT INTO "financial_package" VALUES('Patrimonial Invest',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aangepaste nummering</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; color:#ff0000;">- NIET VERGETEN !!!!!!!!!!!!!!!!!!!!!! 72331999 QUOTREKENING PER FD FONDS AANMAKEN</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; color:#ff0000;">- Naam fonds veranderen : Status = Complete -&gt; status DRAFT zetten -&gt; naam + BFI aanpassen -&gt; complete -&gt; status active zetten. NIET VERGETEN OM DE DATA JUIST TE ZETTEN OPDAT FONDS EFFECTIE KAN BESTAAN OP DATUM DAT AANPASSING GEBEURD IS.</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; color:#ff0000;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ff0000;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1) De fondsen hebben een nummer : FFF</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">dit nummer is oplopend en gemeenschappelijk voor alle fondsen,</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">onafhankelijk hun depot bank. de laagste nummer is 1.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2) Een depot bank heeft een nummer DD, beginnende bij 1.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3) De fondsen rekeningen op het actief worden :</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2331 990 DD FFF</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4) De account nummers zijn oplopend op product niveau : AAAA</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5) De cash rekeningen worden :</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">15 990 000 AAAA</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">6) De fonds rekeningen op het passief worden :</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">15 990 FFF AAAA</p>',4000000,4999999,8000000,8009999,NULL,11);
+INSERT INTO "financial_package" VALUES('Private Life Account 44',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120515 MVD: opmaak pla tak 44. de makelaars zullen gaandeweg geregistreerd worden. de standaardclausules zijn ingebracht. seciale clausules zullen op het moment dat ze vereist zijn ingebracht worden.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">safe 21 MAG NIET ONDER DE PRODUCTEN KOMEN; DIT IS EEN PRODUCT WAAR PATRONALE STEEDS DE MASTERBROKER IS.</p>',4000000,4999999,8000000,8009999,NULL,31);
+INSERT INTO "financial_package" VALUES('Safe21',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassingen rentevoeten</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120411 mvd : aanpassing intrest 2.75 vanaf 21/04/2012</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing boekhouding</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120418 mvd : aanpassing rekening afkopen -&gt; niet langer onder toekenning premie maar wel onder onttrekkingen voor afkoop.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing parameters V-Finance</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120308 mvd : Product dient nog geparametriseerd te worden. ik wacht op goedkeuring.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120315 MVD: REKENINGEN IN VENICE OK.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120319 MVD: productparameters OK</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing clausules</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20151103 mvd : toevoeging clausule taksactie 2015</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,30);
+INSERT INTO "financial_package" VALUES('StarFix',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing tarieven</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120121 mvd : aanpassingen intrest naar 3.25 vanaf 01/04/2012</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120411 mvd : aanpassing intrest naar 2.75% vanaf 21/04/2012</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120801 mvd : aanpassing intrest naar 2.40% vanaf 19/08/2012</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121206 mvd : aanpassing intrest naar 2.65% vanaf 01/12/2012 -&gt; standaard 2.40% echter indien er aan de actie wordt deelgenomen bedraagt de intrest 2.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140312 hvc : aanpassing intrest naar 2.25% vanaf 01/03/2014</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing boekhouding</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120418 mvd : aanpassing rekening afkopen -&gt; niet langer onder toekenning premie maar wel onder onttrekkingen voor afkoop.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing clausules</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20151103 mvd : toevoeging clausule taksactie 2015</p>',4000000,4999999,8000000,8009999,NULL,4);
+INSERT INTO "financial_package" VALUES('Huurwaarborg - Garantie Locative',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">MVD 13/12/2010 :Portefeuille huurwaarborg Nationale Suisse werd per 31/10/2010 overgedragen aan Patronale Life NV. De reserves werden in excel beheerd door NS. Deze gegevens werden geïmporteerd in V-Finance.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">MVD 29/02/2012 : klanten ingelezen NL -&gt; allemaal fr. om makkelijk te maken alle documenten NL op template.FR gezet.</p>',4000000,4999999,8000000,8009999,NULL,13);
+INSERT INTO "financial_package" VALUES('Elitis Strategy Plan',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Elitis Strategy Plan omvat de spaarproducten Tak 23 van EVEST, standaard 10% overlijdensdekking bovenop de reserve voorzien.</p>',4000000,4999999,8000000,8009999,NULL,18);
+INSERT INTO "financial_package" VALUES('ForkFix',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130322 MVD : ForkFix. Nieuwe FORKBON binnen FORK REKENING. EXCLUSIEF voor BV BVBA. Andere makelaars mogen deze bon niet verkopen. Looptijd is op 10 j + 1 m gezet. Hier kan niet van afgeweken worden.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,36);
+INSERT INTO "financial_package" VALUES('Hypo-Secure Life',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">toevoeging van documenttype ''certificaat NL'' voor product</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20151010 mvd : nieuw certificaat gekoppeld (toevoeging variabel tarief)</p>',4000000,4999999,8000000,8009999,NULL,39);
+INSERT INTO "financial_package" VALUES('Hypo-Secure Affinity',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600;">15% korting op tarief + Tarief voor Drie jaar vast</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd 20101228: Het certificaat moet nog opgemaakt worden in XML. Premie op twee hoofden nog niet mogelijk. tot nader orde twee premies berekenen: één per hoofd en twee certificaten afleveren.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20110217 : Certificaat is gekoppeld, er moeten nog een aantal zaken manueel aangepsat worden. aan te passen zaken zijn doorgegeven aan JD.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20110413 : Hyposecure kan gebruikt worden</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20110420 : klant wordt 180 dagen ouder gemaakt </p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20120201 : rekeningnummer aangepast. affinity en family vallen nu onder dezelfde hoofderekening 14212040 en 14212041</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20151010 mvd : nieuw certificaat gekoppeld (toevoeging variabel tarief)</p>',4000000,4999999,8000000,8009999,NULL,10);
+INSERT INTO "financial_package" VALUES('Hypo-Secure Family',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600;">geen korting op tarief + Tarief vast voor de hele duur</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd 20101228: Het certificaat moet nog opgemaakt worden in XML. Premie op twee hoofden nog niet mogelijk. tot nader orde twee premies berekenen: één per hoofd en twee certificaten afleveren.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20110217 : Certificaat is gekoppeld, er moeten nog een aantal zaken manueel aangepast worden. aan te passen zaken zijn doorgegeven aan JD.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20110413 : Hyposecure kan gebruikt worden</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20110420 : klant wordt 180 dagen ouder gemaakt</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20120201 : rekeningnummer aangepast. affinity en family vallen nu onder dezelfde hoofderekening 14212040 en 14212041</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20151010 mvd : nieuw certificaat gekoppeld (toevoeging variabel/vast tarief)</p>',4000000,4999999,8000000,8009999,NULL,23);
+INSERT INTO "financial_package" VALUES('Global Strategy Account',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120112 MVD : ESA is herzien -&gt; GSA = ESA + aanpassing nieuwe kostenstructuur. Bestaande portefeuille ESA, ECA blijft behouden om het overzicht niet te verliezen in één product.</p>',4000000,4999999,8000000,8009999,NULL,29);
+INSERT INTO "financial_package" VALUES('S-Team Invest',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">S-Team Invest omvat de producten van S-team </p>',4000000,4999999,8000000,8009999,NULL,20);
+INSERT INTO "financial_package" VALUES('Platinum Life',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Omvat enkel Octane Tranche VII</p>',4000000,4999999,8000000,8009999,NULL,21);
+INSERT INTO "financial_package" VALUES('Select+',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,65);
+INSERT INTO "financial_package" VALUES('Fork Huurwaarborg',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,3);
+INSERT INTO "financial_package" VALUES('Fout',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">StarFix Plus wordt in het leven geroepen om tegemoet te komen aan de lagere intrestvoeten. hier zal WD aan gekoppeld worden. Nog niet commercieel in voegen. Enkel intern besproken.</p>',4000000,4999999,8000000,8009999,NULL,12);
+INSERT INTO "financial_package" VALUES('Private Life Account',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Private life Account omvat de producten van Fructi Causa:</p>',4000000,4999999,8000000,8009999,NULL,16);
+INSERT INTO "financial_package" VALUES('Cardif Golden Future',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,40);
+INSERT INTO "financial_package" VALUES('Patronale Life Hypotheken Investeringskrediet',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,0,8000000,8009999,'300/0300/00081',63);
+INSERT INTO "financial_package" VALUES('Patronale Life Hypotheken A.R.225',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,0,8000000,8009999,'300/0200/00088',67);
+INSERT INTO "financial_package" VALUES('MAESTRO INVEST BEL 3',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,47);
+INSERT INTO "financial_package" VALUES('DB HIGH COUPON II',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,46);
+INSERT INTO "financial_package" VALUES('DB HIGH COUPON I',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,45);
+INSERT INTO "financial_package" VALUES('Reflex Horizon Dreze',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,57);
+INSERT INTO "financial_package" VALUES('Reflex Horizon CP-Banque SCRL',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,56);
+INSERT INTO "financial_package" VALUES('PROFIL INVEST',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,48);
+INSERT INTO "financial_package" VALUES('ROBECO LIFE BELGIUM (CAPI)',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,60);
+INSERT INTO "financial_package" VALUES('Reflex Horizon Gesbanque',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,59);
+INSERT INTO "financial_package" VALUES('Global Investors Account',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Global Investors Account omvat de producten van Fides</p>',4000000,4999999,8000000,8009999,NULL,17);
+INSERT INTO "financial_package" VALUES('Elitis Strategy Account',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Elitis Strategy Account omvat deproducten Tak 23 van EVEST</p>',4000000,4999999,8000000,8009999,NULL,19);
+INSERT INTO "financial_package" VALUES('Elitis Classic Account',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Voorganger Elitis Strategy Account</p>',4000000,4999999,8000000,8009999,NULL,22);
+INSERT INTO "financial_package" VALUES('PATRONALE OVERLIJDENSRISICOVERZEKERING',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Overlijdensrisicoverzekering Nederland</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',5000000,5999999,8000000,8009999,NULL,27);
+INSERT INTO "financial_package" VALUES('Patronale Life Pensioenplan',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">T-Fund 21 Overzetten naar V-Finance</p>',4000000,4999999,8000000,8009999,NULL,28);
+INSERT INTO "financial_package" VALUES('CARDIF EQUITIES',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,62);
+INSERT INTO "financial_package" VALUES('ROBECO LIFE BELGIUM (REMBT)',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,61);
+INSERT INTO "financial_package" VALUES('Short Term Cover',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,64);
+INSERT INTO "financial_package" VALUES('Reflex Horizon Eural',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,58);
+INSERT INTO "financial_package" VALUES('Patronale Life Hypotheken Wet 92',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,0,8000000,8009999,'300/0100/00095',66);
+INSERT INTO "financial_package" VALUES('Fork Rekening',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,15);
+INSERT INTO "financial_package" VALUES('Boutique 23',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,26);
+INSERT INTO "financial_package" VALUES('Reflex Confort CP-Banque SCRL',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,51);
+INSERT INTO "financial_package" VALUES('Reflex Confort Cortal',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,50);
+INSERT INTO "financial_package" VALUES('Reflex Confort Artesia',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,49);
+INSERT INTO "financial_package" VALUES('Cortal invest',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,44);
+INSERT INTO "financial_package" VALUES('Cardif Golden Future Eural',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,43);
+INSERT INTO "financial_package" VALUES('Renta Bonus',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,14);
+INSERT INTO "financial_package" VALUES('Fork Rekening Corporate',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,24);
+INSERT INTO "financial_package" VALUES('Deposit4Sure',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130326 mvd : certificaat DEPOSIT 4 SURE -&gt; Adres agent hard gecodeerd op adres van Bart Van Cauwenbergh</p>',4000000,4999999,8000000,8009999,NULL,32);
+INSERT INTO "financial_package" VALUES('Merit Selection',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Merit Selection is het product dat door Merit Capital zal verkocht worden.</p>',4000000,4999999,8000000,8009999,NULL,33);
+INSERT INTO "financial_package" VALUES('Patronale Life BONUSPLAN',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,34);
+INSERT INTO "financial_package" VALUES('Reflex Horizon Cortal',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,55);
+INSERT INTO "financial_package" VALUES('Reflex Horizon Artesia',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,54);
+INSERT INTO "financial_package" VALUES('Reflex Confort Gesbanque',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,53);
+INSERT INTO "financial_package" VALUES('Reflex Confort Dreze',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,52);
+INSERT INTO "financial_package" VALUES('Cardif Golden Future - option 2 EUR',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,42);
+INSERT INTO "financial_package" VALUES('Cardif Golden Future - option 1 EUR',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,41);
+INSERT INTO "financial_package" VALUES('Secure 21',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing rentevoeten</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120411 mvd : wijziging rentevoet A van 2.25 naar 1.65 vanaf 21/04/2012.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing boekhouding</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120418 mvd : aanpassing rekening afkopen -&gt; niet langer onder toekenning premie maar wel onder onttrekkingen voor afkoop.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">_______________________________________________________________</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">RABOBANK heeft range 023/XXXX/XXXXX toegewezen gekregen (op verzoek van RABO ZELF). nummers 023/10000/001 tot 023/1000/250XX werden reeds geregistreerd.extra nummers aangevraagd. tot 500 geregistreerd (04/04/2012). tot 1000 geregistreerd (18/04/2012).</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ingeven agreement Rabo Bank NV</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1. bestand staat op FTP Server TO_PAT</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2. in dit excel bestand staan de verschillende in te geven contracten</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3. tot Erik importscript heeft gamaakt zal dit manueel ingevuld dienen te worden</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- geef persoon in (de gegevens uit de excel)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- geef bij de persoon ook zijn rekeningnummer in</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- 1VN = VE = BEG bij leven, beg bij overlijden = standaard RABO</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- standaard open ended</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- geen waarborg</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- uitkering bij eerste overlijden</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- mail to first subscriber</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">zet op agreement niveau in extra tekstveld de referentie van rabo (copy paste, dan hebben we een link mocht het nodig zijn).</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4. in de hoofdmap op de SFTP-server staat een txt met de OGM-nummers aan RABO aangeleverd (rabo neemt enkel middenste cijfers op in hun bestand, hier kan je volledig OGM nummer vinden). <br/>vul txt aan met OK indien OGM werd gebruikt.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5. als de contracten ingegeven zijn dan knip en plak je de excel in de map ''ingelezen bestanden''</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">6. laad het certificaat op op de SFTP server in de map TO_RABO volgende bestandsnaam dient gebruikt te worden (dit moet manueel gedaan worden en correct)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- instellingen bestandsnaam RABO Bank NV:</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600;">- NL-cliënten: polis_&lt;effectiefpolisnummer&gt;_&lt;referentie rabobank&gt;_&lt;startdatum polis&gt;;</span> voorbeeld polis_141202xxx_4575845_20110401 </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600;">- FR-cliënten: police_&lt;polisnummer&gt;_&lt;referentie rabobank&gt;_&lt;startdatum polis&gt;</span> ; voorbeeld police_141202xxx_4575845_20110401 </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Verdana,sans-serif''; font-size:10pt; color:#000099;">De startdatum dient als JJJJMMDD doorgegeven te worden</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,5);
+INSERT INTO "financial_package" VALUES('Fructisafe',NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing rentevoeten</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120123 mvd : aanpassing intrest 3.25 vanaf 01/04/2012 </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120411 mvd : aanpassing intrest 2.75 vanaf 21/04/2012</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing boekhouding</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120418 mvd : aanpassing rekening afkopen -&gt; niet langer onder toekenning premie maar wel onder onttrekkingen voor afkoop.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing clausules</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20151103 mvd : toevoeging clausule taksactie 2015</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,25);
 
 INSERT INTO "financial_notification_applicability" VALUES('2015-01-01','2400-12-31',11,'notifications/Select_Plus/agreement_nl_BE.html','nl',NULL,280,65);
 INSERT INTO "financial_notification_applicability" VALUES('2015-02-01','2400-12-31',10,'notifications/Short_Term_Cover/agreement-proposal_nl_BE.html','nl',NULL,281,64);
@@ -59,16 +304,510 @@ INSERT INTO "financialproduct_status" VALUES(NULL,'2015-06-02','2400-12-31','201
 INSERT INTO "financialproduct_status" VALUES(NULL,'2015-06-02','2400-12-31','2015-06-02','2400-12-31',1,6,67);
 INSERT INTO "financialproduct_status" VALUES(NULL,'2015-06-02','2400-12-31','2015-06-02','2400-12-31',1,7,68);
 
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421212,5,0,0,'Short Term Cover',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'COSTC','',67,37,0,'','RPSTC','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_STC',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421211,5,0,0,'Aanvullende waarborg invaliditeit',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'COINV','',68,37,0,'','RPINV','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_INV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421213,5,0,0,'Select+',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'CoSSV','',69,37,0,'','SSV','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_SSV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('loan',NULL,NULL,2234,5,1,0,'Patronale Life Hypotheken',NULL,'2000-01-01','1980-01-01',NULL,NULL,NULL,NULL,NULL,'',70,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,1,0,'NewHy','Hypot','HypRa','Hypaf',NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('loan',NULL,NULL,2234,5,1,0,'Patronale Life Hypotheken',NULL,'2000-01-01','1980-01-01',NULL,NULL,NULL,NULL,NULL,'',1001,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,1,0,'NewHy','Hypot','HypRa','Hypaf',NULL,NULL,NULL);
+--INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421212,5,0,0,'Short Term Cover',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'COSTC','',67,37,0,'','RPSTC','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_STC',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+--INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421211,5,0,0,'Aanvullende waarborg invaliditeit',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'COINV','',68,37,0,'','RPINV','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_INV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+--INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421213,5,0,0,'Select+',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'CoSSV','',69,37,0,'','SSV','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_SSV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+--INSERT INTO "financial_product" VALUES('loan',NULL,NULL,2234,5,1,0,'Patronale Life Hypotheken',NULL,'2000-01-01','1980-01-01',NULL,NULL,NULL,NULL,NULL,'',70,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,1,0,'NewHy','Hypot','HypRa','Hypaf',NULL,NULL,NULL);
+--INSERT INTO "financial_product" VALUES('loan',NULL,NULL,2234,5,1,0,'Patronale Life Hypotheken',NULL,'2000-01-01','1980-01-01',NULL,NULL,NULL,NULL,NULL,'',1001,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,1,0,'NewHy','Hypot','HypRa','Hypaf',NULL,NULL,NULL);
 
-INSERT INTO "financial_product_availability" VALUES('2014-01-01','2400-12-31',79,63,70,3);
-INSERT INTO "financial_product_availability" VALUES('2015-03-01','2400-12-31',80,64,67,1);
-INSERT INTO "financial_product_availability" VALUES('2015-03-01','2400-12-31',81,64,68,3);
-INSERT INTO "financial_product_availability" VALUES('2015-03-01','2400-12-31',82,65,69,1);
+
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421213,5,0,0,'Select+',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'CoSSV',NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150331 mvd : accounting rules geparametriseerd + dagboeken en rekeningen in Venice geparametriseerd</p>',69,37,0,'','SSV','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_SSV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421212,5,0,0,'Short Term Cover',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'COSTC',NULL,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',67,37,0,'','RPSTC','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_STC',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421205,5,0,0,'Winstdeelname Fructisafe',NULL,'2013-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Winstdeelnameproduct</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">intrest gegarandeerd voor één jaar. alle contracten krijgen hetzelfde percentage toegekend</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2014 = 1.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2015 = 0.80%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2013 = 2.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2014 = 2.50%</p>',34,40,0,'',NULL,'VAT21',NULL,NULL,NULL,NULL,NULL,'WD_TK',NULL,NULL,'IFSW',365,365.25,0,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,14213500,4,0,0,'Fork Rekening',NULL,'2010-04-01','1980-01-01',NULL,NULL,'Ovdr','UL3','Co26',NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150121 mvd : boekhoudrekeningen aangepast. commissieboekingen gedefinieerd. de oplitsing van de kostenrekeningen naar Maatschappij, Makelaar en Promotor. + premium rate gestopt op 21.01.2015 (geen % instapvergoeding)</p>',15,38,0,'',NULL,'VAT26',NULL,NULL,'Kabon',NULL,'PreAt',NULL,'RESBE',NULL,'I_FR',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421202,5,0,0,'Secure 21',NULL,'2000-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">standaard commissieverdeling</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">PREMIUM FEE = PATRONALE LIFE = 35</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">EIT = MAKELAAR</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing rentevoeten</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120411 mvd : wijziging rentevoet A van 2.25 naar 1.65 vanaf 21/04/2012.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120102 mvd : wijziging rentevoet B -&gt; 1% voor 2013.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20131401 mvd : contracten @ 2.25 levenslagn krijgen 0.4% B rentevoet over 2013.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20131205 mvd : wijziging rentevoet B --&gt; contracten @ 2.25 levenslagn krijgen 0.2% B rentevoet over 2014</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20131205 mvd : wijziging rentevoet B --&gt; contracten @ 1.65 levenslagn krijgen 0.8% B rentevoet over 2014</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140411 mvd : aanpassing A intrest naar 1.40% vanaf 01/05/2014</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20141103 hvc : aanpassing vanaf 20141001 van A intrest naar 0.80%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140105 mvd : B-rentevoet 1-1-2015 - 31-12-2015 : <span style=" text-decoration: underline; color:#aa0000;">@ 2.25% = 0</span><span style=" color:#aa0000;">%</span>, <span style=" text-decoration: underline; color:#aa0000;">@ 1.65% = 0%</span> @ 1.40% =0.20% en @ 0.80 = 0.80%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20151216 mvd : aanpassing A intrest naar 0.40% vanaf 01/01/2016</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20151216 mvd : B-rentevoet 1-1-2016 - 31-12-2016 : <span style=" text-decoration: underline; color:#aa0000;">@ 2.25% = 0</span><span style=" color:#aa0000;">%</span>, <span style=" text-decoration: underline; color:#aa0000;">@ 1.65% = 0%</span> @ 1.40% =0.20% en @ 0.80 = 0.80% en @ 0.40 = 1.20% </p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing boekhouding</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120418 mvd : aanpassing rekening afkopen -&gt; niet langer onder toekenning premie maar wel onder onttrekkingen voor afkoop.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130325 mvd : aanpassingen WD -&gt; free_pct_2 = 3.45%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140320 mvd : aanpassingen WD -&gt; free_pct_2 = 3.15%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">_______________________________________________________________</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">RABOBANK heeft range 023/XXXX/XXXXX toegewezen gekregen (op verzoek van RABO ZELF). nummers 023/10000/001 tot 023/1000/250XX werden reeds geregistreerd.extra nummers aangevraagd. tot 500 geregistreerd (04/04/2012). tot 1000 geregistreerd (18/04/2012).</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">tot 1500 geregistreerd op 03/09/2013.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ingeven agreement Rabo Bank NV</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1. bestand staat op FTP Server TO_PAT</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2. in dit excel bestand staan de verschillende in te geven contracten</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3. tot Erik importscript heeft gamaakt zal dit manueel ingevuld dienen te worden</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- geef persoon in (de gegevens uit de excel)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- geef bij de persoon ook zijn rekeningnummer in</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- 1VN = VE = BEG bij leven, beg bij overlijden = standaard RABO</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- standaard open ended</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- geen waarborg</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- uitkering bij eerste overlijden</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- mail to first subscriber</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">zet op agreement niveau in extra tekstveld de referentie van rabo (copy paste, dan hebben we een link mocht het nodig zijn).</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4. in de hoofdmap op de SFTP-server staat een txt met de OGM-nummers aan RABO aangeleverd (rabo neemt enkel middenste cijfers op in hun bestand, hier kan je volledig OGM nummer vinden). <br/>vul txt aan met OK indien OGM werd gebruikt.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5. als de contracten ingegeven zijn dan knip en plak je de excel in de map ''ingelezen bestanden''</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">6. laad het certificaat op op de SFTP server in de map TO_RABO volgende bestandsnaam dient gebruikt te worden (dit moet manueel gedaan worden en correct)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- instellingen bestandsnaam RABO Bank NV:</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600;">- NL-cliënten: polis_&lt;effectiefpolisnummer&gt;_&lt;referentie rabobank&gt;_&lt;startdatum polis&gt;;</span> voorbeeld polis_141202xxx_4575845_20110401 </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600;">- FR-cliënten: police_&lt;polisnummer&gt;_&lt;referentie rabobank&gt;_&lt;startdatum polis&gt;</span> ; voorbeeld police_141202xxx_4575845_20110401 </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Verdana,sans-serif''; font-size:10pt; color:#000099;">De startdatum dient als JJJJMMDD doorgegeven te worden</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',5,37,0,NULL,'SSV','VAT21',NULL,'BA','VPREM',NULL,'PreAt',NULL,'RESBE',NULL,'I_S21',365,365.25,0,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421211,5,0,0,'Aanvullende waarborg invaliditeit',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'COINV',NULL,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',68,37,0,'','RPINV','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_INV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421202,5,0,0,'Winstdeelname Secure 21',NULL,'2013-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Winstdeelnameproduct</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">intrest gegarandeerd voor één jaar. alle contracten krijgen hetzelfde percentage toegekend</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2013 = 1.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2014 = 1.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2015 = 0.80%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2012 = 3.45%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2013 = 3.15%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2014 = 2.90%</p>',36,40,0,'',NULL,'VAT21',NULL,NULL,NULL,NULL,NULL,'WD_TK',NULL,NULL,'IS21W',365,365.25,0,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Boutique 23',NULL,'2011-04-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150313 mvd : aquilae teogevoegd als fonds</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150326 mvd : uitstapkost 96 maanden (passed duration ipv agreed duration)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Commissie BTQ</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">EIT : PL ALTIJD 0.5% -&gt; MKLR max 4.5%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">GIT :</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<table border="0" cellpadding="0" cellspacing="2" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
+<tr>
+<td width="166"/>
+<td width="105"/>
+<td width="67"/>
+<td width="64"/>
+<td width="67"/>
+<td width="64"/></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"> </p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cie MKLR</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cie PL</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">totaal</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">intrest</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Totaal</p></td></tr>
+<tr>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,23%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,60%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,83%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,17%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1,00%</p></td></tr>
+<tr>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2,00%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1,07%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,60%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1,67%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,33%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2,00%</p></td></tr>
+<tr>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1,90%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,60%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2,50%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,50%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3,00%</p></td></tr>
+<tr>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4,00%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2,73%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,60%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3,33%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,67%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4,00%</p></td></tr>
+<tr>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3,57%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,60%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4,17%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,83%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5,00%</p></td></tr></table>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',26,39,3,'22352','SSV','VAT23','Switc','BA','VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'MAESTRO INVEST BEL 3',NULL,'2015-06-24','2015-06-24',NULL,NULL,'ovdr',NULL,'CoCD','MIG_V',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',46,39,3,NULL,NULL,'VAT23','Switc',NULL,'VPREM',NULL,NULL,NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'DB HIGH COUPON',NULL,'2015-06-24','2015-06-24',NULL,NULL,'ovdr',NULL,'CoCD','MIG_V',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',45,39,3,NULL,'RPCD','VAT23','Switc',NULL,'VPREM',NULL,NULL,NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('loan',NULL,NULL,2234,5,1,0,'Patronale Life Persoonlijke lening (hypotheek)',NULL,'2000-01-01','2000-01-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150828 mvd : Wet92 en AR225 (nalv release augustus 20150828)</p>',70,1001,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,1,0,'NewHy','Hypot','HypRa','Hypaf',NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Platinum Life',NULL,'2000-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Omvat enkel Octane Tranche VII</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',21,39,3,'22352','SSV','VAT23','Switc',NULL,'VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Merit Selection',NULL,'2012-04-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Merit Selection : product ontwikkeld samen met Merit Capital. binnen Merit Selection zullen fondsen beheerd door Merit Capital aangeboden worden.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150928 mvd : uitstapkost niet gedefinieerd 75 eeur eerste 8 jaar van het contract.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Fondsen</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140519 mvd : Carmignac A toegevoegd. Switch naar Carmignac a mogelijk gemaakt om de kleine fondsen (dyntech, ...) leeg te kunnen maken.</p>',31,39,3,'22352','SSV','VAT23','Switc','BA','VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,142133,6,0,0,'Huurwaarborg - Garantie Locative',NULL,'2000-01-01','1980-01-01','2010-10-30',NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">MVD 13/12/2010 :Portefeuille huurwaarborg Nationale Suisse werd per 31/10/2010 overgedragen aan Patronale Life NV. De reserves werden in excel beheerd door NS. Deze gegevens werden geïmporteerd in V-Finance.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">MVD 29/02/2012 : klanten ingelezen NL -&gt; allemaal fr. om makkelijk te maken alle documenten NL op template.FR gezet.</p>',13,38,0,NULL,NULL,'VAT26',NULL,NULL,'Kabon',NULL,'PreAt',NULL,'RESBE',NULL,'I_HNS',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'PROFIL INVEST',NULL,'2015-06-24','2015-06-24',NULL,NULL,'ovdr',NULL,'CoCD','MIG_V',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',47,39,3,NULL,NULL,'VAT23','Switc',NULL,'VPREM',NULL,NULL,NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421201,5,0,0,'Winstdeelname Starfix',NULL,'2013-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Winstdeelnameproduct</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">intrest gegarandeerd voor één jaar. alle contracten krijgen hetzelfde percentage toegekend</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2014 = 1.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2015 = 0.80%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2013 = 2.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2014 = 2.50%</p>',33,40,0,'',NULL,'VAT21',NULL,NULL,NULL,NULL,NULL,'WD_TK',NULL,NULL,'ISFW',365,365.25,0,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,0,0,0,0,'Tak 23 BASIS',NULL,'2013-06-27','1980-01-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',39,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421201,0,0,0,'Fout','','2010-10-21','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">StarFix Plus wordt in het leven geroepen om tegemoet te komen aan de lagere intrestvoeten. hier zal WD aan gekoppeld worden. Nog niet commercieel in voegen. Enkel intern besproken.</p>',12,NULL,0,'',NULL,NULL,NULL,NULL,'',NULL,'',NULL,'',NULL,NULL,365,365.25,0,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,0,0,0,0,'FONDS GENERAL',NULL,'2014-09-02','2014-09-02',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',43,37,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,0,0,0,0,'Tak 21 BASIS',NULL,'2000-01-01','1980-01-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',37,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,0,0,0,0,'Tak 26 BASIS',NULL,'2013-06-27','1980-01-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',38,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Elitis Strategy Account',NULL,'2010-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Elitis Strategy Account omvat deproducten Tak 23 van EVEST</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20131022 mvd : toevoegen BTQ fondsen</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',19,39,3,'22352','SSV','VAT23','Switc','BA','VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Private Life Account',NULL,'2000-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Private life Account omvat de producten van Fructi Causa</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130523 mvd : instapkost mpij 35 eur toegevoegd</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140428 mvd : uitstapkost 1% standaard toegevoegd (nieuwe voorwaarden : vanaf 01.01.2013 standaard 1% EIT en GIT, voordien 1% GIT en 2.5% dalend naar 0 voor EIT)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">contracten met datum 30/12/2010 werden op 0% gezet --&gt; tft van UL3 naar V-Finance.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',16,39,3,'22352','SSV','VAT23','Switc','BA','VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('loan',NULL,NULL,2234,5,1,0,'Patronale Life Investeringskrediet',NULL,'2000-01-01','2000-01-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',71,1001,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,1,0,'NewHy','Hypot','HypRa','Hypaf',NULL);
+INSERT INTO "financial_product" VALUES('loan',NULL,NULL,2234,5,1,0,'Patronale Life Hypotheken (basis)',NULL,'2000-01-01','1980-01-01',NULL,NULL,NULL,NULL,NULL,NULL,'KnipR','
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',1001,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,2,0,'NewHy','Hypot','HypRa','Hypaf',NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421209,5,0,0,'Winstdeelname Safe21',NULL,'2013-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Winstdeelnameproduct</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">intrest gegarandeerd voor één jaar. alle contracten krijgen hetzelfde percentage toegekend</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2014 = 1.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2015 = 0.80%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2013 = 2.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2014 = 2.50%</p>',35,40,0,'',NULL,'VAT21',NULL,NULL,NULL,NULL,NULL,'WD_TK',NULL,NULL,'ISfeW',365,365.25,0,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,1421210,5,0,0,'Patronale Life BonusPLan (ex ASCO Life)',NULL,'2002-12-31','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">ASCO LIFE BONUSPLAN; 2 contracten in beheer.</p>',32,37,0,NULL,NULL,'VAT21',NULL,NULL,'VPREM',NULL,'PREAT',NULL,'RESBE',NULL,'I_BPL',365,365.25,0,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Global Investors Account',NULL,'2000-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Global Investors Account omvat de producten van Fides</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',17,39,3,'22352','SSV','VAT23','Switc',NULL,'VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,3,14212061,4,0,0,'Bikkelpolis',NULL,'2014-05-01','2014-05-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140514 MVD : RGA heeft voor de bikkelpolis een afzonderlijke sterftetafel opgesmaakt. Er is voor de Bikkelpolis een korting op de tafel t.o.v. Patronale ORV. Hierdoor moet het product ORV ontdubbeld worden. Nieuw tarief Bikkelpolis vindt ingang per 01.06.2014. </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20141031 mvd : vastgesteld dat premiumrate4 niet correct verdeeld was : 50% PL en 50% IQ.</p>',42,37,0,NULL,'ORVNL','VASSV',NULL,NULL,'VPRNL',NULL,NULL,NULL,NULL,NULL,'I_ORV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421208,5,0,0,'Patronale Life Pensioenplan',NULL,'2011-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">T-Fund 21 Overzetten naar V-Finance</p>',28,37,0,'','SSV','VAT21',NULL,NULL,'VPREM',NULL,'PreAt',NULL,'RESBE',NULL,'I_PLP',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,14212042,4,0,0,'Hypo-Secure Life',NULL,'2014-01-01','2014-03-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',41,37,0,NULL,'SSV','VASSV',NULL,NULL,'VPREM',NULL,NULL,NULL,'RESBE',NULL,'I_SSV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Cardif Golden Future',NULL,'2015-06-24','2015-06-24',NULL,NULL,'ovdr',NULL,'CoCD','MIG_V',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',44,39,3,NULL,'RPCD','VAT23','Switc',NULL,'VPREM',NULL,NULL,NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,142132,6,0,0,'Fork Huurwaarborg',NULL,'2010-04-01','1980-01-01',NULL,NULL,'Ovdr','UL3','Co26H',NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150121 mvd : boekhoudrekeningen aangepast. commissieboekingen gedefinieerd. de oplitsing van de kostenrekeningen naar Maatschappij, Makelaar en Promotor. + premium rate gestopt op 21.01.2015 (geen % instapvergoeding)<br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150625 mvd : boekhoudrekeningen aangepast. 72411126 toegevoeg 01.01.2000-31.12.2014 ( gaf fout bij volledige afkopen)</p>',3,38,0,NULL,NULL,'VAT26',NULL,NULL,'Kabon',NULL,'PreAt',NULL,'RESBE',NULL,'I_HWB',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Global Strategy Account',NULL,'2011-12-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120112 MVD : ESA is herzien -&gt; GSA = ESA + aanpassing nieuwe kostenstructuur. Bestaande portefeuille ESA, ECA blijft behouden om het overzicht niet te verliezen in één product.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',29,39,3,'22352','SSV','VAT23','Switc','BA','VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Elitis Classic Account',NULL,'2010-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Voorganger Elitis Strategy Account</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20131022 mvd : toevoegen BTQ fondsen</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',22,39,3,'22352','SSV','VAT23','Switc',NULL,'VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15990,4,0,0,'Patrimonial Invest',NULL,'2010-09-30','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120914 mvd : BA toegevoegd aan het product.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150327 mvd : redemption fee 75 eur gedurende 96 maanden</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aangepaste nummering</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; color:#ff0000;">- NIET VERGETEN !!!!!!!!!!!!!!!!!!!!!! 72331999 QUOTREKENING PER FD FONDS AANMAKEN</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; color:#ff0000;">- Naam fonds veranderen : Status = Complete -&gt; status DRAFT zetten -&gt; naam + BFI aanpassen -&gt; complete -&gt; status active zetten. NIET VERGETEN OM DE DATA JUIST TE ZETTEN OPDAT FONDS EFFECTIE KAN BESTAAN OP DATUM DAT AANPASSING GEBEURD IS.</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; color:#ff0000;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ff0000;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1) De fondsen hebben een nummer : FFF</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">dit nummer is oplopend en gemeenschappelijk voor alle fondsen,</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">onafhankelijk hun depot bank. de laagste nummer is 1.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2) Een depot bank heeft een nummer DD, beginnende bij 1.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3) De fondsen rekeningen op het actief worden :</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2331 990 DD FFF</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4) De account nummers zijn oplopend op product niveau : AAAA</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5) De cash rekeningen worden :</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">15 990 000 AAAA</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">6) De fonds rekeningen op het passief worden :</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">15 990 FFF AAAA</p>',11,39,3,'2235299','SSV','VAT23','Switc',NULL,'VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,1,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,3,14212060,4,0,0,'Patronale Overlijdensrisicoverzekering',NULL,'2012-01-01','2012-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Overlijdensverzekering Nederland. in eerste instantie enkel een vast kapitaal overlijden voor de duur van de verzekering</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121010 mvd : productparameters ingebracht</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121106 mvd : boekhoudrekeningen ingebracht. de rekening voor NL worden afgescheiden van de rekeningen voor BE</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- de afkooprekeningen moeten nog bepaald worden. Bij een opzegging vervalt het contract zonder waarde. De reserve komt de maatschappij toe. Er vind geen uitkering plaats aan het adres van de verzekeringsnemer. </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- de rekeningen met betrekking tot overlijden moeten nog gedefinieerd worden. ontrekking voor overlijden ipv onttrekking voor afkoop. -&gt; aangezien er geen afkopen mogelijk zijn, zijn de betreffende boekingen ontrrekkingen voor overlijden. Met de daarbijbehorende uitkering aan de begunstigden.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">-klantenrange : 5.000.000 - 5.999.999</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130118 mvd : parameters aangepast naar de nieuwe voorwaarden</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130625 mvd : aanpassing productparamters. Verlaging van de kosten voor IQ (vaste kost dalt van 8 naar 5; % daalt van 10% naar 8% en de spreidingskost van 1EUR werd geschrapt). kosten werden ook in de excel bijgewerkt.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140416 mvd : aanpassing productparameters tot einde van 2014 --&gt; 8% daalt naar 5% (IQ) + minimum premium rate valt weg.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27,37,0,NULL,'ORVNL','VASSV',NULL,NULL,'VPRNL',NULL,NULL,NULL,NULL,NULL,'I_ORV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Reflex Confort/horizon',NULL,'2015-06-24','2015-06-24',NULL,NULL,'ovdr',NULL,'CoCD','MIG_V',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',48,39,3,NULL,'RPCD','VAT23','Switc',NULL,'VPREM',NULL,NULL,NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421205,5,0,0,'Fructisafe',NULL,'2011-04-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing rentevoeten</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120123 mvd : aanpassing intrest 3.25 vanaf 01/04/2012 </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120411 mvd : aanpassing intrest 2.75 vanaf 21/04/2012</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120801 mvd : aanpassing intrest naar 2.40% vanaf 19/08/2012</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121206 mvd : aanpassing intrest naar 2.65% vanaf 01/12/2012 -&gt; standaard 2.40% echter indien er aan de actie wordt deelgenomen bedraagt de intrest 2.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140312 hvc : aanpassing intrest naar 2.25% vanaf 01/03/2014</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140411 mvd : aanpassing intrest naar 2.00% vanaf 01/05/2014</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140922 hvc : aanpassing intrest naar 1.25% vanaf 01/10/2014</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing boekhouding</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120418 mvd : aanpassing rekening afkopen -&gt; niet langer onder toekenning premie maar wel onder onttrekkingen voor afkoop.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130325 mvd : aanpassingen WD -&gt; free_pct_2 = 2.65%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150311 mvd : verzekeringstaksactie 2015 --&gt; instapkost makelaar/promotor standaard op 0%/EUR (01.11.2015 - 31.12.2015)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150311 mvd : verzekeringstaksactie 2015 --&gt; BA MPIJ standaard op 1% (01.11.2015 - 31.12.2015)</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',25,37,0,'','SSV','VAT21',NULL,NULL,'VPREM',NULL,'PreAt',NULL,'RESBE',NULL,'I_FS',365,365.25,0,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421201,5,0,0,'StarFix',NULL,'2000-07-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">standaard commissieverdeling</span><span style=" text-decoration: underline;"> </span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Finamore = 1%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Makelaar = gevraagd percentage - 1%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">vb EIT = 3% --&gt; Finamore = 1% en MKLR = 2%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">PREMIUM FEE = PATRONALE LIFE = 35 EUR</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing tarieven</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120121 mvd : aanpassingen intrest naar 3.25 vanaf 01/04/2012</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120411 mvd : aanpassing intrest naar 2.75% vanaf 21/04/2012</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120801 mvd : aanpassing intrest naar 2.40% vanaf 19/08/2012</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121206 mvd : aanpassing intrest naar 2.65% vanaf 01/12/2012 -&gt; standaard 2.40% echter indien er aan de actie wordt deelgenomen bedraagt de intrest 2.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140312 hvc : aanpassing intrest naar 2.25% vanaf 01/03/2014</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140411 mvd : aanpassing intrest naar 2.00% vanaf 01/05/2014</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140922 hvc : aanpassing intrest naar 1.25% vanaf 01/10/2014</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing boekhouding</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120418 mvd : aanpassing rekening afkopen -&gt; niet langer onder toekenning premie maar wel onder onttrekkingen voor afkoop.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120102 mvd : RV = 25%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130325 mvd : aanpassingen WD -&gt; free_pct_2 = 2.65%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150311 mvd : verzekeringstaksactie 2015 --&gt; instapkost makelaar/promotor standaard op 0%/EUR (01.11.2015 - 31.12.2015)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150311 mvd : verzekeringstaksactie 2015 --&gt; BA MPIJ standaard op 1% (01.11.2015 - 31.12.2015)</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4,37,0,NULL,'SSV','VAT21',NULL,'BA','VPREM',NULL,'PreAt',NULL,'RESBE',NULL,'I_SF',365,365.25,0,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Renta Bonus',NULL,'2000-11-08','1980-01-01','2010-12-30',NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',14,39,3,'22352','SSV','VAT23','Switc',NULL,'VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,14213501,4,0,0,'Fork Rekening Corporate',NULL,'2011-04-01','1980-01-01',NULL,NULL,'Ovdr','UL3','Co26',NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150121 mvd : boekhoudrekeningen aangepast. commissieboekingen gedefinieerd. de oplitsing van de kostenrekeningen naar Maatschappij, Makelaar en Promotor.</p>',24,38,0,'',NULL,'VAT26',NULL,NULL,'Kabon',NULL,'PreAt',NULL,'RESBE',NULL,'I_FRC',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'CARDIF EQUITIES',NULL,'2015-06-24','2015-06-24',NULL,NULL,'ovdr',NULL,'CoCD','MIG_V',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',50,39,3,NULL,'RPCD','VAT23','Switc',NULL,'VPREM',NULL,NULL,NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'ROBECO LIFE BELGIUM',NULL,'2015-06-24','2015-06-24',NULL,NULL,'ovdr',NULL,'CoCD','MIG_V',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',49,39,3,NULL,'RPCD','VAT23','Switc',NULL,'VPREM',NULL,NULL,NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,14212040,4,0,0,'Hypo-Secure Family',NULL,'2010-06-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600;">geen korting op tarief + Tarief vast voor de hele duur</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd 20101228: Het certificaat moet nog opgemaakt worden in XML. Premie op twee hoofden nog niet mogelijk. tot nader orde twee premies berekenen: één per hoofd en twee certificaten afleveren.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20110217 : Certificaat is gekoppeld, er moeten nog een aantal zaken manueel aangepast worden. aan te passen zaken zijn doorgegeven aan JD.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20110413 : Hyposecure kan gebruikt worden</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20110420 : klant wordt 180 dagen ouder gemaakt</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20120201 : rekeningnummer aangepast. affinity en family vallen nu onder dezelfde hoofderekening 14212040 en 14212041</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130116 mvd : premietaks op 1.1 gezet (SSV verhoogd niet naar 2%)</p>',23,37,0,'','SSV','VASSV',NULL,NULL,'VPREM',NULL,'PreAt',NULL,'RESBE',NULL,'I_SSV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,14212041,4,0,0,'Hypo-Secure Affinity',NULL,'2010-06-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600;">15% korting op tarief + Tarief voor Drie jaar vast</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd 20101228: Het certificaat moet nog opgemaakt worden in XML. Premie op twee hoofden nog niet mogelijk. tot nader orde twee premies berekenen: één per hoofd en twee certificaten afleveren.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20110217 : Certificaat is gekoppeld, er moeten nog een aantal zaken manueel aangepsat worden. aan te passen zaken zijn doorgegeven aan JD.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20110413 : Hyposecure kan gebruikt worden</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20110420 : klant wordt 180 dagen ouder gemaakt </p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">mvd20120201 : rekeningnummer aangepast. affinity en family vallen nu onder dezelfde hoofderekening 14212040 en 14212041</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130116 mvd : premietaks op 1.1 gezet (SSV verhoogd niet naar 2%)</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Boekhouding</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130227 mvd : afkooprekeningen geregistreerd</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',10,37,0,NULL,'SSV','VASSV',NULL,NULL,'VPREM',NULL,'PreAt',NULL,'RESBE',NULL,'I_SSV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,0,0,0,0,'TAK 21 Winstdeelname BASIS',NULL,'2013-01-01','1980-01-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',40,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'S-Team Invest',NULL,'2000-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">S-Team Invest omvat de producten van S-team </p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',20,39,3,'22352','SSV','VAT23','Switc',NULL,'VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Elitis Strategy Plan',NULL,'2000-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Elitis Strategy Plan omvat de spaarproducten Tak 23 van EVEST, standaard 10% overlijdensdekking bovenop de reserve voorzien.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20131022 mvd : toevoegen BTQ fondsen</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',18,39,3,'22352','SSV','VAT23','Switc',NULL,'VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,1,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421209,5,0,0,'Safe21',NULL,'2012-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassingen rentevoeten</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120411 mvd : aanpassing intrest 2.75 vanaf 21/04/2012</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120801 mvd : aanpassing intrest naar 2.40% vanaf 19/08/2012</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121206 mvd : aanpassing intrest naar 2.65% vanaf 01/12/2012 -&gt; standaard 2.40% echter indien er aan de actie wordt deelgenomen bedraagt de intrest 2.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140312 hvc : aanpassing intrest naar 2.25% vanaf 01/03/2014</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140411 mvd : aanpassing intrest naar 2.00% vanaf 01/05/2014</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140922 hvc : aanpassing intrest naar 1.25% vanaf 01/10/2014</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing boekhouding</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120418 mvd : aanpassing rekening afkopen -&gt; niet langer onder toekenning premie maar wel onder onttrekkingen voor afkoop.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing parameters V-Finance</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120308 mvd : Product dient nog geparametriseerd te worden. ik wacht op goedkeuring.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120315 MVD: REKENINGEN IN VENICE OK.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120319 MVD: productparameters OK</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130325 mvd : aanpassingen WD -&gt; free_pct_2 = 2.65%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150311 mvd : verzekeringstaksactie 2015 --&gt; instapkost makelaar/promotor standaard op 0%/EUR (01.11.2015 - 31.12.2015)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150311 mvd : verzekeringstaksactie 2015 --&gt; BA MPIJ standaard op 1% (01.11.2015 - 31.12.2015)</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',30,37,0,NULL,'SSV','VAT21',NULL,'BA','VPREM',NULL,'PreAt',NULL,'RESBE',NULL,'I_Sfe',365,365.25,0,1,1,NULL,NULL,NULL,NULL,NULL);
+
+--INSERT INTO "financial_product_availability" VALUES('2014-01-01','2400-12-31',79,63,70,3);
+--INSERT INTO "financial_product_availability" VALUES('2015-03-01','2400-12-31',80,64,67,1);
+--INSERT INTO "financial_product_availability" VALUES('2015-03-01','2400-12-31',81,64,68,3);
+--INSERT INTO "financial_product_availability" VALUES('2015-03-01','2400-12-31',82,65,69,1);
 
 INSERT INTO "financial_product_feature_distribution" VALUES(2,50,'Forfaitaire inningstoeslag PL',122,1059);
 INSERT INTO "financial_product_feature_distribution" VALUES(2,60,'% inningscommissie',123,1061);

@@ -10,12 +10,14 @@ CREATE TABLE res_country (
 );
 CREATE TABLE financial_package (
 	name VARCHAR(255) NOT NULL, 
+    code character varying(25),
 	comment TEXT, 
 	from_customer INTEGER NOT NULL, 
 	thru_customer INTEGER NOT NULL, 
 	from_supplier INTEGER NOT NULL, 
 	thru_supplier INTEGER NOT NULL, 
-	id INTEGER NOT NULL, code character varying(25), from_agreement character varying(15), 
+    from_agreement character varying(15), 
+	id INTEGER NOT NULL,
 	PRIMARY KEY (id)
 );
 
@@ -2891,7 +2893,56 @@ CREATE TABLE bank_direct_debit_invoice (
 	FOREIGN KEY(of_id) REFERENCES bank_invoice_item (id) ON DELETE restrict ON UPDATE cascade, 
 	FOREIGN KEY(via_id) REFERENCES bank_direct_debit_item (id) ON DELETE restrict ON UPDATE cascade
 );
-CREATE TABLE [financial_product] ([row_type] VARCHAR (40) NOT NULL, [origin] VARCHAR (30), [jurisdiction] INTEGER, [account_number_prefix] INTEGER NOT NULL, [account_number_digits] INTEGER NOT NULL, [company_number_digits] INTEGER NOT NULL, [rank_number_digits] INTEGER NOT NULL, [name] VARCHAR (255) NOT NULL, [code] VARCHAR (100), [from_date] DATE NOT NULL, [book_from_date] DATE NOT NULL, [sales_discontinuation_date] DATE, [support_discontinuation_date] DATE, [accounting_year_transfer_book] VARCHAR (25), [external_application_book] VARCHAR (25), [supplier_distribution_book] VARCHAR (25), [comment] TEXT, [id] INTEGER NOT NULL, [specialization_of_id] INTEGER, [fund_number_digits] INTEGER, [financed_commissions_prefix] VARCHAR (15), [risk_sales_book] VARCHAR (25), [redemption_book] VARCHAR (25), [switch_book] VARCHAR (25), [funded_premium_book] VARCHAR (25), [premium_sales_book] VARCHAR (25), [financed_commissions_sales_book] VARCHAR (25), [premium_attribution_book] VARCHAR (25), [profit_attribution_book] VARCHAR (25), [depot_movement_book] VARCHAR (25), [quotation_book] VARCHAR (25), [interest_book] VARCHAR (25), [days_a_year] INTEGER NOT NULL, [age_days_a_year] NUMERIC (8, 4) NOT NULL, [unit_linked] BOOLEAN NOT NULL, [numbering_scheme] INTEGER NOT NULL, [profit_shared] BOOLEAN NOT NULL, [completion_book] VARCHAR (25), [repayment_book] VARCHAR (25), [additional_cost_book] VARCHAR (25), [transaction_book] VARCHAR (25), [company_code] VARCHAR (30), [transfer_book] VARCHAR (30), direct_debit_book character varying(25), PRIMARY KEY ([id]), FOREIGN KEY ([specialization_of_id]) REFERENCES [financial_product] ([id]) ON DELETE RESTRICT ON UPDATE CASCADE, CHECK (unit_linked IN ( 0 , 1 )), CHECK (profit_shared IN ( 0 , 1 )));
+
+CREATE TABLE financial_product (
+    row_type VARCHAR (40) NOT NULL,
+    origin VARCHAR (30),
+    jurisdiction INTEGER,
+    account_number_prefix INTEGER NOT NULL,
+    account_number_digits INTEGER NOT NULL,
+    company_number_digits INTEGER NOT NULL,
+    rank_number_digits INTEGER NOT NULL,
+    name VARCHAR (255) NOT NULL,
+    code VARCHAR (100),
+    from_date DATE NOT NULL,
+    book_from_date DATE NOT NULL,
+    sales_discontinuation_date DATE,
+    support_discontinuation_date DATE,
+    accounting_year_transfer_book VARCHAR (25),
+    external_application_book VARCHAR (25),
+    supplier_distribution_book VARCHAR (25),
+    transfer_book VARCHAR (30),
+    direct_debit_book character varying(25),
+    comment TEXT,
+    id INTEGER NOT NULL,
+    specialization_of_id INTEGER,
+    fund_number_digits INTEGER,
+    financed_commissions_prefix VARCHAR (15),
+    risk_sales_book VARCHAR (25),
+    redemption_book VARCHAR (25),
+    switch_book VARCHAR (25),
+    funded_premium_book VARCHAR (25),
+    premium_sales_book VARCHAR (25),
+    financed_commissions_sales_book VARCHAR (25),
+    premium_attribution_book VARCHAR (25),
+    profit_attribution_book VARCHAR (25),
+    depot_movement_book VARCHAR (25),
+    quotation_book VARCHAR (25),
+    interest_book VARCHAR (25),
+    days_a_year INTEGER NOT NULL,
+    age_days_a_year NUMERIC (8, 4) NOT NULL,
+    unit_linked BOOLEAN NOT NULL,
+    numbering_scheme INTEGER NOT NULL,
+    profit_shared BOOLEAN NOT NULL,
+    completion_book VARCHAR (25),
+    repayment_book VARCHAR (25),
+    additional_cost_book VARCHAR (25),
+    transaction_book VARCHAR (25),
+    company_code VARCHAR (30),
+    PRIMARY KEY (id),
+    FOREIGN KEY (specialization_of_id) REFERENCES financial_product (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CHECK (unit_linked IN ( 0 , 1 )), CHECK (profit_shared IN ( 0 , 1 ))
+);
 
 
 
