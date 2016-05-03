@@ -68,7 +68,7 @@ def build_upload():
 
 def run_local():
     with context_managers.lcd('dist/cloud'), context_managers.shell_env(LOGHOME='/tmp/log-vfws.txt'), context_managers.shell_env(DB_PATH='/tmp/test.db'):
-        api.local('python -m cloudlaunch.main'
+        api.local('python -m cloudlaunch2.main'
                   ' --cld-file=v-finance-web-service-{0.CONFIGURATION}.cld'
                   ' --cld-name=V-Finance-WS'
                   ' --cld-branch={0.CONFIGURATION}'

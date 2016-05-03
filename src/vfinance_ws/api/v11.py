@@ -620,7 +620,7 @@ def get_proposal(session, document):
     html = None
 
     with TemplateLanguage(language=language):
-        facade_context = AgreementDocument().context(facade, options)
+        facade_context = AgreementDocument().context(facade, None, options)
         template = environment.get_template('notifications/Select_Plus/agreement-proposal_{}.html'.format(language))
         html = template.render(facade_context)
 

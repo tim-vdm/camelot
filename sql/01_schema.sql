@@ -601,11 +601,12 @@ CREATE TABLE organization (
 );
 
 CREATE TABLE financial_product_availability (
+    availability INTEGER NOT NULL,
 	from_date DATE NOT NULL, 
 	thru_date DATE NOT NULL, 
 	id INTEGER NOT NULL, 
 	available_for_id INTEGER NOT NULL, 
-	product_id INTEGER NOT NULL, availability integer, 
+	product_id INTEGER NOT NULL,
 	PRIMARY KEY (id), 
 	CONSTRAINT financial_product_availability_available_for_id_fk FOREIGN KEY(available_for_id) REFERENCES financial_package (id) ON DELETE cascade ON UPDATE cascade, 
 	CONSTRAINT financial_product_availability_product_id_fk FOREIGN KEY(product_id) REFERENCES financial_product (id) ON DELETE restrict ON UPDATE cascade

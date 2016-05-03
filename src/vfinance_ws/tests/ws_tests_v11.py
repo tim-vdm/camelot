@@ -1,6 +1,7 @@
 import unittest
 import datetime
 from decimal import Decimal as D
+import wingdbstub
 
 from flask import json
 from flask import url_for
@@ -164,6 +165,20 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         response = self.post_json('get_proposal', data=document)
         self.assertEqual(response.status_code, 200)
         self.assertIn('1.727,37', response.data)
+
+    def test_calculate_proposal_hypo_secure_affinity(self):
+        document = load_demo_json('v11_calculate_proposal_hypo_secure_affinity')
+        self.calculate_proposal_check_amount(document, '298.79')
+
+    def test_get_proposal_hypo_secure_affinity(self):
+        document = load_demo_json('v11_get_proposal_hypo_secure_affinity')
+
+    def test_calculate_proposal_hypo_secure_family(self):
+        document = load_demo_json('v11_calculate_proposal_hypo_secure_family')
+
+    def test_calculate_proposal_hypo_secure_family(self):
+        document = load_demo_json('v11_get_proposal_hypo_secure_family')
+
 
     def test_020_create_agreement_code(self):
         document = load_demo_json('v11_create_minimalist_agreement_code')
