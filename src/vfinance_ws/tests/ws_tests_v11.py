@@ -1,7 +1,6 @@
 import unittest
 import datetime
 from decimal import Decimal as D
-import wingdbstub
 
 from flask import json
 from flask import url_for
