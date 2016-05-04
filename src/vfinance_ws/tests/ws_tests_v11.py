@@ -1,4 +1,5 @@
 import unittest
+import wingdbstub
 import datetime
 from decimal import Decimal as D
 
@@ -171,12 +172,19 @@ class WebServiceVersion11TestCase(unittest.TestCase):
 
     def test_get_proposal_hypo_secure_affinity(self):
         document = load_demo_json('v11_get_proposal_hypo_secure_affinity')
+        response = self.post_json('get_proposal', data=document)
+        self.assertEqual(response.status_code, 200)
+
 
     def test_calculate_proposal_hypo_secure_family(self):
         document = load_demo_json('v11_calculate_proposal_hypo_secure_family')
+        self.calculate_proposal_check_amount(document, '342.51')
 
-    def test_calculate_proposal_hypo_secure_family(self):
+    def test_get_proposal_hypo_secure_family(self):
         document = load_demo_json('v11_get_proposal_hypo_secure_family')
+        response = self.post_json('get_proposal', data=document)
+        self.assertEqual(response.status_code, 200)
+
 
 
     def test_020_create_agreement_code(self):
