@@ -304,12 +304,6 @@ INSERT INTO "financialproduct_status" VALUES(NULL,'2015-06-02','2400-12-31','201
 INSERT INTO "financialproduct_status" VALUES(NULL,'2015-06-02','2400-12-31','2015-06-02','2400-12-31',1,6,67);
 INSERT INTO "financialproduct_status" VALUES(NULL,'2015-06-02','2400-12-31','2015-06-02','2400-12-31',1,7,68);
 
---INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421212,5,0,0,'Short Term Cover',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'COSTC','',67,37,0,'','RPSTC','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_STC',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
---INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421211,5,0,0,'Aanvullende waarborg invaliditeit',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'COINV','',68,37,0,'','RPINV','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_INV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
---INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421213,5,0,0,'Select+',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'CoSSV','',69,37,0,'','SSV','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_SSV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
---INSERT INTO "financial_product" VALUES('loan',NULL,NULL,2234,5,1,0,'Patronale Life Hypotheken',NULL,'2000-01-01','1980-01-01',NULL,NULL,NULL,NULL,NULL,'',70,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,1,0,'NewHy','Hypot','HypRa','Hypaf',NULL,NULL,NULL);
---INSERT INTO "financial_product" VALUES('loan',NULL,NULL,2234,5,1,0,'Patronale Life Hypotheken',NULL,'2000-01-01','1980-01-01',NULL,NULL,NULL,NULL,NULL,'',1001,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,0,1,0,'NewHy','Hypot','HypRa','Hypaf',NULL,NULL,NULL);
-
 
 INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421213,5,0,0,'Select+',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'CoSSV',NULL,NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150331 mvd : accounting rules geparametriseerd + dagboeken en rekeningen in Venice geparametriseerd</p>',69,37,0,'','SSV','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_SSV',365,365.25,0,1,0,NULL,NULL,NULL,NULL,NULL);
@@ -893,72 +887,1560 @@ INSERT INTO "financial_product_feature_distribution" VALUES(4,50,NULL,126,1073);
 INSERT INTO "financial_product_feature_distribution" VALUES(4,25,NULL,127,1078);
 INSERT INTO "financial_product_feature_distribution" VALUES(4,4.17,NULL,128,1080);
 INSERT INTO "financial_product_feature_distribution" VALUES(4,12.5,NULL,129,1079);
+
+
+INSERT INTO "product_feature_applicability" VALUES('2011-01-10','2012-03-31','2010-10-01','2400-12-31',3.45,0,0,0,2400,0,96,0,2400,NULL,0,100,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2010-10-01','2010-12-05','2010-10-01','2400-12-31',3.25,0,0,0,2400,0,96,0,2400,NULL,0,61,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2010-01-01','2400-12-31','2010-01-01','2400-12-31',4,0,NULL,0,2400,0,2400,0,2400,NULL,0,72,10,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',2,0,0,0,2400,0,2400,0,2400,NULL,0,302,40,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',26);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,1,168,11,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">VERDELING CONFORM DE COMMISSIEBAREMA''S TOEPASSEN A.U.B.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" text-decoration: underline;">EIT = mklr + fc + pl</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0 = 0 + 0 + 0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0.5 = 0 + 0.1 + 0.4</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1 = 0.5 + 0.1 + 0.4</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1.5 = 1 + 0.1 + 0.4</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2 = 1.5 + 0.1 + 0.4</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2.5 = 2 + 0.1 + 0.4</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3 = 2.5 + 0.1 + 0.4</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',16);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2011-09-30','2010-04-01','2400-12-31',0,0,NULL,0,2400,0,2400,0,2400,NULL,0,320,2,NULL,NULL,3);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,1,170,22,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">VERDELING CONFORM DE COMMISSIEBAREMA''S TOEPASSEN A.U.B.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" text-decoration: underline;">GIT = mklr pl (saldo is onze intrest)</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2 = 1.38 0.3 = 1.68</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2.5 = 1.70 + 0.4 = 2.1</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3 = 2.12 + 0.4 = 2.52</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3.5 = 2.54 + 0.4 = 2.94</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4 = 2.96 + 0.4 = 3.36</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4.5 = 3.38 + 0.4 = 3.78</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5 = 3.80 + 0.4 = 4.2</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">INTREST = 6,28%</p>',16);
+INSERT INTO "product_feature_applicability" VALUES('2010-10-21','2400-12-31','2010-10-21','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,NULL,103,37,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',12);
+INSERT INTO "product_feature_applicability" VALUES('2011-10-01','2400-12-31','2010-04-01','2400-12-31',4,0,0,0,2400,0,2400,0,2400,NULL,1,324,10,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2400-12-31','2000-01-01','2400-12-31',4.4,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,13,9,NULL,NULL,4);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2400-12-31','2000-01-01','2400-12-31',0.3,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,23,15,NULL,NULL,4);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.8875,80.88,80.88,0,2400,0,2400,0,2400,NULL,NULL,179,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',6.58888,90.99,90.99,0,2400,0,2400,0,2400,NULL,NULL,180,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.88,101.1,101.1,0,2400,0,2400,0,2400,NULL,NULL,181,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.87068,105,105,0,2400,0,2400,0,2400,NULL,NULL,182,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.88888,109.19,109.19,0,2400,0,2400,0,2400,NULL,NULL,183,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.88235,171.87,171.87,0,2400,0,2400,0,2400,NULL,NULL,185,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.88275,258.82,258.82,0,2400,0,2400,0,2400,NULL,NULL,186,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.88275,293.19,293.19,0,2400,0,2400,0,2400,NULL,NULL,187,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.88362,321.5,321.5,0,2400,0,2400,0,2400,NULL,NULL,188,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.56589,330.3,330.3,0,2400,0,2400,0,2400,NULL,NULL,192,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.88108,374.07,374.07,0,2400,0,2400,0,2400,NULL,NULL,211,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',5.70541,600,600,0,2400,0,2400,0,2400,NULL,NULL,212,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.87984,126.38,126.38,0,2400,0,2400,0,2400,NULL,NULL,184,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.91838,50,50,0,2400,0,2400,0,2400,NULL,NULL,189,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.88,50.55,50.55,0,2400,0,2400,0,2400,NULL,NULL,190,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2400-12-31','2000-01-01','2400-12-31',5,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,24,16,NULL,NULL,4);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',0,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,223,44,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2012-12-31','2000-01-01','2400-12-31',1.1,0,0,0,2400,0,2400,0,2400,NULL,0,12,8,NULL,NULL,4);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2013-01-01','2400-12-31',25,0,0,0,2400,0,2400,0,2400,NULL,0,631,19,NULL,NULL,24);
+INSERT INTO "product_feature_applicability" VALUES('2011-10-01','2400-12-31','2011-10-01','2400-12-31',35,0,0,0,2400,0,2400,0,2400,NULL,0,321,10,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,857,20,NULL,NULL,34);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2010-09-30','2000-01-01','2400-12-31',3.75,0,0,0,2400,0,96,0,2400,NULL,0,17,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2010-09-30','2400-12-31','2010-09-30','2400-12-31',1,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,231,43,NULL,NULL,11);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-30','2014-02-28','2010-10-01','2400-12-31',2.4,0,0,0,2400,0,96,0,2400,NULL,0,603,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2010-08-17','2400-12-31','2010-08-17','2400-12-31',5,0,0,0,2400,0,2400,0,2400,NULL,0,60,21,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2400-12-31','2000-01-01','2400-12-31',75,0,0,0,2400,0,96,0,2400,NULL,0,22,12,NULL,NULL,4);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0.3,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,54,15,NULL,NULL,5);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',5,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,55,16,NULL,NULL,5);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',4.75,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,58,20,NULL,NULL,5);
+INSERT INTO "product_feature_applicability" VALUES('2010-01-01','2400-12-31','2010-01-01','2400-12-31',15,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,65,26,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2010-01-01','2400-12-31','2010-01-01','2400-12-31',0,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,67,28,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2010-01-01','2400-12-31','2010-01-01','2400-12-31',0.03,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,68,29,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2010-01-01','2400-12-31','2010-01-01','2400-12-31',150,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,70,31,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2013-01-01','2400-12-31',25,0,0,0,2400,0,2400,0,2400,NULL,0,626,18,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',3,0,0,0,2400,0,2400,0,2400,NULL,0,173,43,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',16);
+INSERT INTO "product_feature_applicability" VALUES('2010-01-01','2400-12-31','2010-01-01','2400-12-31',2.22,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,157,44,NULL,NULL,19);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',2.22,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,158,44,NULL,NULL,16);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',2.22,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,160,44,NULL,NULL,21);
+INSERT INTO "product_feature_applicability" VALUES('2010-01-01','2400-12-31','2010-01-01','2400-12-31',2.22,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,161,44,NULL,NULL,22);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0,0,NULL,0,2400,0,2400,0,2400,NULL,1,59,11,NULL,NULL,5);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-06','2011-01-09','2010-10-01','2400-12-31',3.35,0,0,0,2400,0,96,0,2400,NULL,0,99,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',5,0,0,0,2400,0,60,0,2400,NULL,0,47,4,NULL,NULL,5);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2012-12-31','2000-01-01','2012-12-31',1.1,0,0,0,2400,0,2400,0,2400,NULL,0,50,8,NULL,NULL,5);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',2.22,0,0,0,2400,0,2400,0,2400,NULL,0,159,44,NULL,NULL,17);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',4.4,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,277,9,NULL,NULL,25);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',4.4,0,0,0,2400,0,2400,0,2400,NULL,0,51,9,NULL,NULL,5);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-05','2400-12-31','2011-01-05','2400-12-31',5.73529,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,314,40,NULL,NULL,19);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-05','2400-12-31','2011-01-05','2400-12-31',1.70585,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,315,41,NULL,NULL,19);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-05','2400-12-31','2011-01-05','2400-12-31',3,0,0,0,2400,0,2400,0,2400,NULL,0,316,43,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',19);
+INSERT INTO "product_feature_applicability" VALUES('2010-10-21','2400-12-31','2010-10-21','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,0,326,36,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',12);
+INSERT INTO "product_feature_applicability" VALUES('2011-10-01','2400-12-31','2011-10-01','2400-12-31',35,0,0,0,2400,0,2400,0,2400,NULL,0,331,10,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2002-12-31','2400-12-31','2002-12-31','2400-12-31',3.4,0,0,0,4800,0,4800,0,4800,NULL,0,481,1,NULL,NULL,32);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',2.22,0,0,0,2400,0,2400,0,2400,NULL,0,156,44,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',18);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0.08333,0,0,0,2400,0,2400,0,2400,NULL,0,48,13,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',2,0,0,120,120,96,107,0,2400,NULL,NULL,147,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',1,0,0,24,24,12,22,0,2400,NULL,NULL,130,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',1,0,0,36,36,24,34,0,2400,NULL,NULL,133,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',1,0,0,84,84,72,82,0,2400,NULL,NULL,143,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2012-04-20','2000-01-01','2400-12-31',2.25,0,0,0,2400,0,2400,0,2400,NULL,0,44,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2400-12-31','2010-06-29','2012-11-30',21,0,0,0,2400,0,96,0,2400,NULL,NULL,42,18,NULL,NULL,4);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-02','2011-01-09','2010-04-01','2400-12-31',3.6,0,0,120,120,0,120,0,2400,NULL,0,116,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',75,0,NULL,0,2400,0,96,0,2400,NULL,NULL,53,12,NULL,NULL,5);
+INSERT INTO "product_feature_applicability" VALUES('2011-09-01','2400-12-31','2011-09-01','2400-12-31',50,0,0,0,2400,0,2400,0,2400,NULL,0,323,10,0,NULL,11);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2400-12-31','2010-06-29','2400-12-31',4.75,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,41,20,NULL,NULL,4);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-02','2011-01-09','2010-04-01','2400-12-31',3.2,0,0,84,84,0,84,0,2400,NULL,NULL,117,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-01-01','2012-12-31','2010-01-01','2400-12-31',1.1,0,0,0,2400,0,2400,0,2400,NULL,0,71,8,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-02','2011-01-09','2010-04-01','2400-12-31',1.55,0,0,24,24,0,24,0,2400,NULL,NULL,114,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-06','2012-09-02','2010-04-01','2400-12-31',2.35,0,0,84,84,0,84,0,4800,NULL,0,483,1,0,NULL,15);
 INSERT INTO "product_feature_applicability" VALUES('1980-01-01','2400-12-31','1980-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1029,10004,NULL,NULL,1001);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',4.75,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1016,20,NULL,NULL,30);
 INSERT INTO "product_feature_applicability" VALUES('1980-01-01','2400-12-31','1980-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1030,10005,NULL,NULL,1001);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',1,0,0,120,120,108,118,0,2400,NULL,NULL,148,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2010-04-01','2400-12-31',0,0,NULL,0,2400,0,2400,0,2400,NULL,1,234,11,NULL,NULL,24);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',4,0,0,84,84,36,47,0,2400,NULL,NULL,140,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',3,0,0,84,84,48,59,0,2400,NULL,NULL,141,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',2,0,0,84,84,60,71,0,2400,NULL,NULL,142,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',5,0,0,120,120,0,71,0,2400,NULL,NULL,144,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',4,0,0,120,120,72,83,0,2400,NULL,NULL,145,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',3,0,0,120,120,84,95,0,2400,NULL,NULL,146,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',4,0,0,60,60,12,23,0,2400,NULL,NULL,135,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',3,0,0,60,60,24,35,0,2400,NULL,NULL,136,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',2,0,0,60,60,36,47,0,2400,NULL,NULL,137,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',5,0,0,84,84,0,35,0,2400,NULL,NULL,139,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',1,0,0,60,60,48,58,0,2400,NULL,NULL,138,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',3,0,0,36,36,0,11,0,2400,NULL,NULL,131,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',2,0,0,36,36,12,23,0,2400,NULL,NULL,132,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2011-12-01','2400-12-31','2011-12-01','2400-12-31',35,0,0,0,4800,0,4800,0,4800,NULL,0,364,10,NULL,NULL,29);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',5,0,0,60,60,0,11,0,2400,NULL,NULL,134,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',0.3,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,122,15,NULL,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2000-11-08','2400-12-31','2000-11-08','2400-12-31',0.04167,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,165,13,NULL,NULL,14);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',4,0,0,120,120,72,83,0,2400,NULL,0,249,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2010-10-21','2400-12-31','2010-10-21','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,0,332,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',12);
+INSERT INTO "product_feature_applicability" VALUES('2011-10-01','2400-12-31','2010-04-01','2400-12-31',0,0,NULL,0,2400,0,2400,0,2400,NULL,1,333,10,NULL,NULL,3);
+INSERT INTO "product_feature_applicability" VALUES('2011-12-01','2400-12-31','2011-12-01','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,367,40,NULL,NULL,29);
+INSERT INTO "product_feature_applicability" VALUES('2011-10-01','2400-12-31','2011-10-01','2400-12-31',35,0,0,0,2400,0,2400,0,2400,NULL,0,322,10,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',5);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',2,0,0,24,24,0,11,0,2400,NULL,NULL,129,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2011-12-31',15,0,0,0,2400,0,2400,0,2400,NULL,0,151,19,NULL,NULL,3);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2011-12-31',15,0,0,0,2400,0,2400,0,2400,NULL,0,150,19,NULL,NULL,13);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2011-12-31',15,0,0,0,2400,0,2400,0,2400,NULL,0,149,19,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2000-11-08','2400-12-31','2000-11-08','2400-12-31',3,0,0,0,2400,0,2400,0,2400,NULL,1,163,11,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">MIN. 0.25% VOOR PATRONALE LIFE EN MAX 3% (= inclusief 0.25% PL)</p>',14);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-05','2400-12-31','2000-01-01','2400-12-31',4.4,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,200,9,NULL,NULL,16);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',15,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,213,44,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2011-01-05','2400-12-31',2,0,0,0,4800,0,4800,0,4800,NULL,0,619,8,NULL,NULL,19);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',0,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,214,42,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2000-11-08','2400-12-31','2000-11-08','2400-12-31',4.4,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,167,9,NULL,NULL,14);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',3.25,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,216,1,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',15,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,220,26,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',0,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,221,28,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2012-12-31','2010-06-01','2400-12-31',1.1,0,0,0,2400,0,2400,0,2400,NULL,0,217,8,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2010-09-30','2012-12-31','2010-09-30','2400-12-31',1.1,0,0,0,2400,0,2400,0,2400,NULL,0,196,8,NULL,NULL,11);
+INSERT INTO "product_feature_applicability" VALUES('2000-11-08','2012-12-31','2000-11-08','2400-12-31',1.1,0,0,0,2400,0,2400,0,2400,NULL,0,166,8,NULL,NULL,14);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2012-01-01','2012-12-31',21,0,0,0,2400,0,2400,0,2400,NULL,0,387,19,NULL,NULL,24);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2010-09-30','2010-04-01','2010-09-30',4,0,0,0,2400,0,2400,0,2400,NULL,0,121,2,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-05','2012-12-31','2000-01-01','2012-12-31',1.1,0,0,0,2400,0,2400,0,2400,NULL,0,199,8,NULL,NULL,16);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2400-12-31','2013-01-01','2400-12-31',25,0,0,0,4800,0,96,0,4800,NULL,0,627,18,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2011-10-01','2010-06-01','2400-12-31',4,0,NULL,0,2400,0,2400,0,2400,NULL,0,325,2,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2011-09-01','2015-10-31','2011-09-01','2400-12-31',0,0,NULL,0,2400,0,2400,0,2400,NULL,0,334,37,NULL,NULL,25);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',0,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,224,42,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2010-01-01','2400-12-31','2010-01-01','2400-12-31',3.25,0,NULL,0,2400,0,2400,0,2400,NULL,0,64,1,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2010-09-30','2400-12-31','2010-09-30','2400-12-31',4.4,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,198,9,NULL,NULL,11);
+INSERT INTO "product_feature_applicability" VALUES('2010-09-30','2400-12-31','2010-09-30','2400-12-31',0,0,NULL,0,2400,0,2400,0,2400,NULL,1,227,11,NULL,NULL,11);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2010-04-01','2400-12-31',0.3,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,235,15,NULL,NULL,24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2010-04-01','2400-12-31',5,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,236,16,NULL,NULL,24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',2,0,0,0,36,12,23,0,2400,NULL,0,239,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',2,0,0,120,120,96,107,0,2400,NULL,0,240,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',1,0,0,24,24,12,22,0,2400,NULL,0,241,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',1,0,0,36,36,24,34,0,2400,NULL,0,242,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',1,0,0,84,84,72,82,0,2400,NULL,0,243,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',1,0,0,120,120,108,118,0,2400,NULL,0,244,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',4,0,0,84,84,36,47,0,2400,NULL,0,245,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',2,0,0,84,84,60,71,0,2400,NULL,0,247,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',3,0,0,84,84,48,59,0,2400,NULL,0,246,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',5,0,0,120,120,0,71,0,2400,NULL,0,248,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-05','2400-12-31','2011-01-02','2400-12-31',500,0,0,0,2400,0,2400,0,2400,NULL,0,206,31,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',16);
+INSERT INTO "product_feature_applicability" VALUES('2010-09-30','2400-12-31','2010-09-30','2400-12-31',2,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,229,40,NULL,NULL,11);
+INSERT INTO "product_feature_applicability" VALUES('2010-09-30','2400-12-31','2010-09-30','2400-12-31',0.56761,0,0,0,2400,0,2400,0,2400,NULL,0,230,41,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',11);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',15,0,NULL,0,2400,0,2400,0,2400,NULL,1,219,11,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-05','2400-12-31','2011-01-02','2400-12-31',1.70585,0,0,0,2400,0,2400,0,2400,NULL,0,209,41,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',16);
+INSERT INTO "product_feature_applicability" VALUES('2000-11-08','2400-12-31','2000-11-08','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,0,162,2,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deze instapkost wordt gefactureerd aan Alternea. Klant betaald 0 EUR.</p>',14);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-05','2400-12-31','2011-01-02','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,0,207,37,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',16);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',4,0,NULL,0,2400,0,2400,0,2400,NULL,0,218,10,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2010-09-30','2011-08-31','2010-09-30','2011-08-31',50,0,0,0,2400,0,2400,0,2400,NULL,0,73,2,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',11);
+INSERT INTO "product_feature_applicability" VALUES('2011-12-01','2400-12-31','2011-12-01','2400-12-31',0.56567,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,368,41,NULL,NULL,29);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2010-04-01','2011-12-31',15,0,0,0,2400,0,2400,0,2400,NULL,0,237,19,NULL,NULL,24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',3,0,0,120,120,84,95,0,2400,NULL,0,250,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',4,0,0,60,60,12,23,0,2400,NULL,0,251,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',3,0,0,60,60,24,35,0,2400,NULL,0,252,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',2,0,0,60,60,36,47,0,2400,NULL,0,253,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',5,0,0,84,84,0,35,0,2400,NULL,0,254,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',1,0,0,60,60,48,58,0,2400,NULL,0,255,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',2,0,0,24,24,0,11,0,2400,NULL,0,256,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2011-01-01','2400-12-31',2,0,0,0,2400,0,2400,0,2400,NULL,0,620,8,NULL,NULL,20);
+INSERT INTO "product_feature_applicability" VALUES('2010-09-22','2400-12-31','2010-09-22','2400-12-31',15,0,NULL,0,2400,0,2400,0,2400,NULL,1,153,11,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2013-01-01','2400-12-31',25,0,0,0,2400,0,2400,0,2400,NULL,0,628,19,NULL,NULL,3);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',0.03,0,0,0,2400,0,2400,0,2400,NULL,0,222,29,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-03','2013-02-04','2010-04-01','2400-12-31',1.8,0,0,84,84,0,84,0,4800,NULL,0,583,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-02-05','2013-03-04','2010-04-01','2400-12-31',1.05,0,0,60,60,0,60,0,4800,NULL,0,659,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',3,0,0,36,36,0,11,0,2400,NULL,0,257,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',5,0,0,60,60,0,11,0,2400,NULL,0,258,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',180,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,225,45,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',180,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,215,45,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2012-03-31','2011-04-01','2400-12-31',3.45,0,0,0,2400,0,96,0,2400,NULL,0,275,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',5,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,123,16,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2400-12-31','2000-01-01','2400-12-31',0.05,0,0,0,2400,0,2400,0,2400,0,0,20,14,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2000-11-08','2400-12-31','2000-11-08','2400-12-31',2.5,0,0,0,2400,0,2400,0,2400,NULL,0,164,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',14);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0.08333,0,0,0,2400,0,2400,0,2400,NULL,0,49,14,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2010-05-10','2010-10-31','2010-04-01','2400-12-31',3,0,0,84,84,0,84,0,2400,NULL,NULL,106,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',5,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,281,16,NULL,NULL,25);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',0.3,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,280,15,NULL,NULL,25);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',4.75,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,285,20,NULL,NULL,25);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',5,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,286,21,NULL,NULL,25);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',3,0,100000,240,299,0,4800,0,4800,NULL,0,524,1,NULL,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',4,0,0,0,2400,0,2400,0,2400,NULL,0,290,10,3,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110513 mvd: op maandelijks gezet om probleem op te lossen dat kost werd aangerekend ook op de single premie</p>',5);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',75,0,0,0,2400,0,96,0,2400,NULL,0,282,12,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',0.08333,0,0,0,2400,0,60,0,2400,NULL,0,283,13,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-10','2011-02-01','2010-04-01','2400-12-31',3.2,0,0,60,60,0,60,0,2400,NULL,0,127,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-10','2011-02-01','2010-04-01','2400-12-31',2.4,0,0,36,36,0,35,0,2400,NULL,NULL,124,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-10','2011-02-01','2010-04-01','2400-12-31',4,0,0,120,120,0,120,0,2400,NULL,NULL,125,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-10','2011-02-01','2010-04-01','2400-12-31',3.35,0,0,84,84,0,84,0,2400,NULL,NULL,126,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-10','2011-02-01','2010-04-01','2400-12-31',2,0,0,24,24,0,24,0,2400,NULL,NULL,128,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2011-02-02','2011-05-16','2010-04-01','2400-12-31',4,0,0,120,120,0,120,0,2400,NULL,0,264,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2011-02-02','2012-03-05','2010-04-01','2400-12-31',3.6,0,0,84,84,0,84,0,2400,NULL,0,263,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2011-02-02','2011-11-09','2010-04-01','2400-12-31',2,0,0,24,24,0,24,0,2400,NULL,0,260,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2011-02-02','2011-05-01','2010-04-01','2400-12-31',2.5,0,0,36,36,0,36,0,2400,NULL,0,261,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-03','2013-02-04','2010-04-01','2400-12-31',0.1,0,0,24,24,0,24,0,4800,NULL,0,661,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2012-03-05','2011-04-01','2400-12-31',1.2,0,0,12,12,0,12,0,2400,NULL,0,271,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2012-03-05','2011-04-01','2400-12-31',3.6,0,0,84,84,0,84,0,2400,NULL,0,268,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',4,0,0,120,120,0,120,0,2400,NULL,0,269,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2012-02-13','2011-04-01','2400-12-31',3.3,0,0,60,60,0,60,0,2400,NULL,0,267,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2012-03-05','2011-04-01','2400-12-31',2,0,0,24,24,0,24,0,2400,NULL,0,265,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2010-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,4800,NULL,0,956,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-05','2013-01-02','2011-04-01','2400-12-31',0.08,0,0,12,12,0,12,0,2400,NULL,0,599,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
 INSERT INTO "product_feature_applicability" VALUES('1980-01-01','2400-12-31','1980-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1031,10006,NULL,NULL,1001);
-INSERT INTO "product_feature_applicability" VALUES('1980-01-01','2400-12-31','1980-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1032,10007,NULL,NULL,1001);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',2.5,0,0,0,4800,0,4800,0,4800,NULL,0,1057,1,0,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0.15,0,0,0,4800,0,4800,0,4800,NULL,0,1058,29,0,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',50,0,0,0,4800,0,4800,0,4800,NULL,1,1059,10,0,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',35,0,0,0,4800,0,4800,0,4800,NULL,0,1060,59,0,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',60,0,0,0,4800,0,4800,0,4800,NULL,1,1061,11,0,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,0,1062,9,0,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,0,1063,8,0,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',2.5,0,0,0,4800,0,4800,0,4800,NULL,0,1064,1,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0.15,0,0,0,4800,0,4800,0,4800,NULL,0,1065,29,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',40,0,0,0,4800,0,4800,0,4800,NULL,1,1068,11,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,0,1069,9,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,0,1070,8,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',2.25,0,NULL,0,4800,0,4800,0,4800,NULL,0,1071,1,NULL,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0.018,0,NULL,0,4800,0,4800,0,4800,NULL,0,1072,29,NULL,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',50,0,NULL,0,4800,0,4800,0,4800,NULL,0,1073,59,12,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,1074,10,NULL,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',15,0,NULL,0,4800,0,4800,0,4800,NULL,1,1075,11,NULL,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',250,0,NULL,0,4800,0,4800,0,4800,NULL,0,1077,59,0,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',25,0,NULL,0,4800,0,4800,0,4800,NULL,0,1078,59,6,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',12.5,0,NULL,0,4800,0,4800,0,4800,NULL,0,1079,59,3,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',4.17,0,NULL,0,4800,0,4800,0,4800,NULL,0,1080,59,1,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,1081,45,NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',69);
-INSERT INTO "product_feature_applicability" VALUES('2015-03-01','2400-12-31','2015-03-01','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,0,1082,9,NULL,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-03-01','2400-12-31','2015-03-01','2400-12-31',1.1,0,NULL,0,4800,0,4800,0,4800,NULL,0,1083,8,NULL,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',75,0,NULL,0,4800,0,4800,0,4800,NULL,0,1085,12,NULL,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',5,0,NULL,0,4800,0,4800,0,4800,NULL,0,1086,4,NULL,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',75,0,NULL,0,4800,0,4800,0,4800,NULL,0,1087,12,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',5,0,NULL,0,4800,0,4800,0,4800,NULL,0,1088,4,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',75,0,NULL,0,4800,0,4800,0,4800,NULL,0,1090,83,NULL,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',18,0,NULL,0,4800,0,4800,0,4800,NULL,0,1091,82,NULL,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',70,0,NULL,0,4800,0,4800,0,4800,NULL,0,1092,106,NULL,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',18,0,NULL,0,4800,0,4800,0,4800,NULL,0,1093,105,NULL,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',6,0,NULL,0,4800,0,4800,0,4800,NULL,0,1094,109,NULL,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',144,0,NULL,0,4800,0,4800,0,4800,NULL,0,1095,110,NULL,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',60,0,NULL,0,4800,0,4800,0,4800,NULL,0,1096,83,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',18,0,NULL,0,4800,0,4800,0,4800,NULL,0,1097,82,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',50,0,NULL,0,4800,0,4800,0,4800,NULL,0,1098,106,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',18,0,NULL,0,4800,0,4800,0,4800,NULL,0,1099,105,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,1100,87,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2011-01-01','2011-12-31',1.15,0,0,0,2400,0,2400,0,2400,NULL,0,120,17,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',35,0,0,0,2400,0,2400,0,2400,NULL,0,298,10,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',26);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2011-09-30','2000-01-01','2011-09-30',35,0,0,0,2400,0,2400,0,2400,NULL,0,46,2,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2010-01-01','2400-12-31','2010-01-01','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,1,308,32000,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">BALANGRIJK : Geef hier het Totale GIT commissie % in dat op het certificaat moet verschijnen!</p>',19);
+INSERT INTO "product_feature_applicability" VALUES('2010-09-30','2400-12-31','2010-09-30','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,1,228,22,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">% ingeven dat effectief als commissie aangerekend wordt bij activering. DUS EXCLUSIEF intrest. De verdeling gebeurt daarna op niveau van de premie bij de aanmaak van de agreement.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',11);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2012-12-31','2011-04-01','2400-12-31',1.1,0,0,0,2400,0,2400,0,2400,NULL,0,296,8,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',26);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',4,0,0,0,2400,0,2400,0,2400,NULL,0,291,10,12,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110513 mvd: op maandelijks gezet om probleem op te lossen dat kost werd aangerekend ook op de single premie</p>',5);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.88138,76.84,76.84,0,2400,0,2400,0,2400,NULL,NULL,178,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.88285,353.85,353.85,0,2400,0,2400,0,2400,NULL,NULL,176,11,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',3.87974,75.83,75.83,0,2400,0,2400,0,2400,NULL,0,191,11,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',18);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',4,0,0,0,2400,0,2400,0,2400,NULL,0,52,10,1,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110513 mvd: op maandelijks gezet om probleem op te lossen dat kost werd aangerekend ook op de single premie</p>',5);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-06','2012-09-02','2010-04-01','2400-12-31',0.7,0,0,36,36,0,36,0,4800,NULL,0,486,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2011-12-01','2400-12-31','2011-12-01','2400-12-31',0.5,0,0,0,4800,0,4800,0,4800,NULL,0,741,53,NULL,NULL,29);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2011-01-01','2400-12-31',4.4,0,0,0,2400,0,2400,0,2400,NULL,0,177,9,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',18);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2011-05-01','2011-04-01','2400-12-31',2.5,0,0,36,36,0,36,0,2400,NULL,0,266,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',4.4,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,297,9,NULL,NULL,26);
+INSERT INTO "product_feature_applicability" VALUES('2010-09-30','2400-12-31','2010-09-30','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,1,305,32000,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">BALANGRIJK : Geef hier het Totale GIT commissie % in dat op het certificaat moet verschijnen!</p>',11);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,1,301,22,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',26);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2010-12-31','2000-01-01','2010-12-31',1.5,0,0,0,2400,0,2400,0,2400,NULL,0,45,17,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2011-03-01','2011-08-31','2011-03-01','2011-08-31',1.1,0,NULL,0,2400,0,2400,0,2400,NULL,0,311,37,0,NULL,25);
+INSERT INTO "product_feature_applicability" VALUES('2011-12-01','2400-12-31','2011-12-01','2400-12-31',1,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,369,43,NULL,NULL,29);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2011-09-30','2011-04-01','2011-09-30',250,0,0,0,2400,0,2400,0,2400,NULL,0,278,2,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,1,306,32000,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">BALANGRIJK : Geef hier het Totale GIT commissie % in dat op het certificaat moet verschijnen!</p>',16);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,1,307,32000,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">BALANGRIJK : Geef hier het Totale GIT commissie % in dat op het certificaat moet verschijnen!</p>',26);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',0.56761,0,0,0,2400,0,2400,0,2400,NULL,0,303,41,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',26);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',1,0,0,0,2400,0,2400,0,2400,NULL,0,304,43,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',26);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-06','2012-09-02','2010-04-01','2400-12-31',1.45,0,0,60,60,0,60,0,4800,NULL,0,487,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-06','2012-09-02','2010-04-01','2400-12-31',0.35,0,0,24,24,0,24,0,4800,NULL,0,485,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,1,299,11,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',26);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-06','2012-09-02','2010-04-01','2400-12-31',2.7,0,0,120,120,0,120,0,4800,NULL,0,482,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2011-05-02','2012-02-13','2011-04-01','2400-12-31',2.6,0,0,36,36,0,36,0,2400,NULL,0,289,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-05-16','2012-03-05','2011-05-16','2400-12-31',3.75,0,0,120,120,0,120,0,2400,NULL,0,294,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,858,18,NULL,NULL,34);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,859,56,NULL,NULL,34);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,860,4,NULL,NULL,34);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-05','2400-12-31','2011-01-02','2400-12-31',5.95238,0,0,0,2400,0,2400,0,2400,NULL,0,208,40,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">GIT klant/KWARTAAL</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2% 0,500%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2,50% 0,625%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3% 0,750%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3,50% 0,875%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4% 1,000%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4,50% 1,125%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5% 1,250%</p>',16);
+INSERT INTO "product_feature_applicability" VALUES('2011-12-01','2400-12-31','2011-12-01','2400-12-31',75,0,0,0,4800,0,96,0,4800,NULL,0,740,56,NULL,NULL,29);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-01','2400-12-31','2011-01-01','2400-12-31',4.4,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,319,9,NULL,NULL,20);
+INSERT INTO "product_feature_applicability" VALUES('2011-03-01','2011-08-31','2011-01-01','2400-12-31',1.1,12500,0,0,2400,0,2400,0,2400,NULL,0,312,37,NULL,NULL,4);
+INSERT INTO "product_feature_applicability" VALUES('2011-03-01','2011-08-31','2011-03-01','2400-12-31',1.1,12500,0,0,2400,0,2400,0,2400,NULL,0,310,37,NULL,NULL,5);
+INSERT INTO "product_feature_applicability" VALUES('2010-01-01','2400-12-31','2010-01-01','2400-12-31',100,0,0,0,2400,0,2400,0,2400,NULL,0,317,50,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',19);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0.08333,0,0,0,2400,0,2400,0,2400,NULL,0,337,13,3,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0.08333,0,0,0,2400,0,2400,0,2400,NULL,0,338,13,12,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2011-12-01','2400-12-31','2011-12-01','2400-12-31',0,0,0,0,4800,0,4800,0,4800,NULL,1,366,22,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">GIT</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; text-decoration: underline;"/>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1% = 0.14 MB + 0.34 MKLR + 0.35 PL</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2% = 0.38 MB + 0.94 MKLR + 0.35 PL</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3% = 0.62 MB + 1.53 MKLR + 0.35 PL</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4% = 0.87 MB + 2.11 MKLR + 0.35 PL</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5% = 1.11 MB + 2.71 MKLR + 0.35 PL</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5.5% = 1.23 MB + 3.00 MKLR + 0.35 PL</p>',29);
+INSERT INTO "product_feature_applicability" VALUES('2011-12-01','2400-12-31','2011-12-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,370,32000,NULL,NULL,29);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-01','2012-12-31','2011-01-01','2400-12-31',1.1,0,0,0,2400,0,2400,0,2400,NULL,0,318,8,NULL,NULL,20);
+INSERT INTO "product_feature_applicability" VALUES('2010-05-10','2010-10-31','2010-04-01','2400-12-31',3.75,0,0,120,120,0,120,0,2400,NULL,0,105,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-05-10','2010-10-31','2010-04-01','2400-12-31',1.05,0,0,24,24,0,24,0,2400,NULL,0,108,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-05-10','2010-10-31','2010-04-01','2400-12-31',2.4,0,0,60,60,0,60,0,2400,NULL,0,107,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-11-01','2010-12-01','2010-04-01','2400-12-31',1.25,0,0,24,24,0,24,0,2400,NULL,0,109,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-11-01','2010-12-01','2010-04-01','2400-12-31',1.5,0,0,36,36,0,36,0,2400,NULL,0,111,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-11-01','2010-12-01','2010-04-01','2400-12-31',2.3,0,0,60,60,0,60,0,2400,NULL,0,112,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-11-01','2010-12-01','2010-04-01','2400-12-31',2.9,0,0,84,84,0,84,0,2400,NULL,0,113,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-11-01','2010-12-01','2010-04-01','2400-12-31',3.35,0,0,120,120,0,120,0,2400,NULL,0,110,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-02','2011-01-09','2010-04-01','2400-12-31',2.65,0,0,60,60,0,60,0,2400,NULL,0,118,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2011-02-02','2012-02-13','2010-04-01','2400-12-31',3.3,0,0,60,60,0,60,0,2400,NULL,0,262,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-06','2012-04-05','2010-04-01','2400-12-31',1.7,0,0,36,36,0,34,0,4800,NULL,0,398,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2011-11-10','2012-02-13','2010-04-01','2400-12-31',2.6,0,0,36,36,0,36,0,2400,NULL,0,340,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2013-02-05','2013-03-04','2010-04-01','2400-12-31',1.9,0,0,84,84,0,84,0,4800,NULL,0,658,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2011-11-10','2012-02-13','2010-04-01','2400-12-31',2.1,0,0,24,24,0,24,0,2400,NULL,0,342,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','2010-04-01','2400-12-31',0.2,0,0,36,36,0,36,0,4800,NULL,0,964,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-05','2012-12-31','2011-01-05','2400-12-31',1.1,0,0,0,4800,0,4800,0,4800,NULL,0,361,8,NULL,NULL,19);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2011-04-01','2400-12-31',2,0,0,0,2400,0,2400,0,2400,NULL,0,621,8,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',26);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',0,0,0,0,4800,0,4800,0,4800,NULL,0,358,11,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-01','2400-12-31','2011-01-01','2400-12-31',1.15,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,360,1,NULL,NULL,28);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',150,0,0,0,4800,0,4800,0,4800,NULL,0,346,31,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',23);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2013-06-30','2012-01-01','2400-12-31',0.5,0,100000,0,4800,0,4800,0,4800,NULL,0,547,69,3,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2011-12-01','2012-12-31','2011-12-01','2400-12-31',1.1,0,0,0,4800,0,4800,0,4800,NULL,0,362,8,NULL,NULL,29);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-01','2014-04-30','2011-04-01','2400-12-31',2.25,0,0,0,2400,0,96,0,2400,NULL,0,823,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2400-12-31','2012-04-01','2400-12-31',2,0,0,0,4800,0,4800,0,4800,NULL,0,442,40,NULL,NULL,31);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2400-12-31','2012-04-01','2400-12-31',0.56761,0,0,0,4800,0,4800,0,4800,NULL,0,443,41,NULL,NULL,31);
+INSERT INTO "product_feature_applicability" VALUES('2011-05-16','2012-03-05','2011-05-16','2400-12-31',3.75,0,0,120,120,0,120,0,2400,NULL,0,293,1,0,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">23052011 mvd : brief ontvangen van CBFA met de mededeling dat 3.75% max toegekende rente mag zijn. KB Leven art. 24.</p>',15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2013-06-30','2012-01-01','2400-12-31',2,0,100000,0,4800,0,4800,0,4800,NULL,0,651,65,3,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2013-06-30','2012-01-01','2400-12-31',4,0,100000,0,4800,0,4800,0,4800,NULL,0,650,65,6,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2013-06-30','2012-01-01','2400-12-31',0.67,0,100000,0,4800,0,4800,0,4800,NULL,0,649,65,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',4,0,100000,240,420,0,4800,0,4800,NULL,0,571,67,6,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2011-12-01','2400-12-31','2011-12-01','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,363,9,NULL,NULL,29);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2012-01-01','2012-12-31',21,0,0,0,2400,0,2400,0,2400,NULL,0,384,19,NULL,NULL,3);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2012-01-01','2012-12-31',21,0,0,0,2400,0,2400,0,2400,NULL,0,385,19,NULL,NULL,13);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',4,0,0,0,2400,0,2400,0,2400,NULL,1,233,10,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',30,0,NULL,0,4800,0,4800,0,4800,NULL,0,1078,59,6,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2012-01-01','2012-12-31',21,0,0,0,2400,0,2400,0,2400,NULL,0,386,19,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2012-02-14','2012-03-05','2010-04-01','2400-12-31',2.5,0,0,36,36,0,36,0,2400,NULL,0,390,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2012-04-20','2011-04-01','2400-12-31',3.25,0,0,0,2400,0,96,0,2400,NULL,0,383,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2012-02-14','2012-03-05','2010-04-01','2400-12-31',3.25,0,0,60,60,0,60,0,2400,NULL,0,391,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-06','2012-04-05','2010-04-01','2400-12-31',3,0,0,84,84,0,84,0,4800,NULL,0,400,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-21','2400-12-31','2013-01-01','2013-12-31',1,0,0,0,2400,0,2400,0,2400,NULL,0,624,17,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',0,0,100000,0,4800,0,4800,0,4800,NULL,0,545,69,12,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',0,0,100000,0,4800,0,4800,0,4800,NULL,0,542,70,12,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-06','2012-04-05','2010-04-01','2400-12-31',2.45,0,0,60,60,0,60,0,4800,NULL,0,399,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-03','2013-02-04','2011-04-01','2400-12-31',0.05,0,0,12,12,0,12,0,2400,NULL,0,638,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-02-14','2012-03-05','2010-04-01','2400-12-31',2,0,0,24,24,0,24,0,2400,NULL,0,389,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','2010-04-01','2400-12-31',0.1,0,0,24,24,0,24,0,4800,NULL,0,965,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2015-01-01','2015-01-01','2015-12-31',0.8,0,0,0,4800,0,4800,0,4800,NULL,0,1052,1,NULL,NULL,35);
 INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',60,0,NULL,0,4800,0,4800,0,4800,NULL,0,1101,88,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',6,0,NULL,0,4800,0,4800,0,4800,NULL,0,1102,109,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',144,0,NULL,0,4800,0,4800,0,4800,NULL,0,1103,110,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1104,87,NULL,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',50,0,NULL,0,4800,0,4800,0,4800,NULL,0,1073,59,12,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',60,0,NULL,0,4800,0,4800,0,4800,NULL,0,1096,83,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',80,0,NULL,0,4800,0,4800,0,4800,NULL,0,1112,83,NULL,NULL,69);
 INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,1105,97,NULL,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',50,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1106,98,NULL,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',60,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1107,88,NULL,NULL,67);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1108,98,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1109,97,NULL,NULL,68);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',120,0,NULL,0,4800,0,4800,0,4800,NULL,0,1110,109,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,1118,87,NULL,NULL,69);
 INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',420,0,NULL,0,4800,0,4800,0,4800,NULL,0,1111,110,NULL,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',85,0,NULL,0,4800,0,4800,0,4800,NULL,0,1112,83,NULL,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',18,0,NULL,0,4800,0,4800,0,4800,NULL,0,1113,105,NULL,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',75,0,NULL,0,4800,0,4800,0,4800,NULL,0,1114,106,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',50,0,NULL,0,4800,0,4800,0,4800,NULL,0,1117,98,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,1126,11,NULL,NULL,49);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,0,1125,8,NULL,NULL,49);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',30.99,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1131,52,NULL,NULL,48);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1128,9,NULL,NULL,48);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1137,9,NULL,NULL,46);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',1.4,0,0,0,4800,0,108,0,4800,NULL,0,432,32000,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',13);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2012-01-01','2012-12-31',1.4,0,0,0,2400,0,2400,0,2400,NULL,0,359,17,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('1980-01-01','2400-12-31','1980-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1032,10007,NULL,NULL,1001);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2400-12-31','2012-03-01','2400-12-31',5,0,0,0,4800,0,4800,0,4800,NULL,0,410,16,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-22','2012-08-18','2010-10-01','2400-12-31',2.75,0,0,0,2400,0,96,0,2400,NULL,0,423,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2012-03-31','2012-03-01','2400-12-31',3.45,0,0,0,4800,0,96,0,4800,NULL,0,402,1,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2400-12-31','2012-03-01','2400-12-31',5,0,0,0,4800,0,60,0,4800,NULL,0,403,4,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2012-12-31','2012-03-01','2400-12-31',1.1,0,0,0,4800,0,4800,0,4800,NULL,0,405,8,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-21','2012-08-18','2011-04-01','2400-12-31',2.75,0,0,0,2400,0,96,0,2400,NULL,0,424,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2011-12-01','2400-12-31',2,0,0,0,4800,0,4800,0,4800,NULL,0,622,8,NULL,NULL,29);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-21','2012-08-18','2012-03-01','2400-12-31',2.75,0,0,0,4800,0,96,0,4800,NULL,0,425,1,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2012-05-20','2014-02-28','2000-01-01','2400-12-31',1.4,0,0,108,108,0,108,0,2400,NULL,0,426,1,NULL,NULL,3);
+INSERT INTO "product_feature_applicability" VALUES('2007-01-01','2010-12-31','2007-01-01','2400-12-31',2.35294,0,0,0,2400,0,108,0,108,NULL,0,101,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2,352940 %</p>',13);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2012-12-31',21,0,0,0,2400,0,2400,0,2400,NULL,0,56,18,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2010-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,4800,NULL,0,955,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2013-01-01','2400-12-31',25,0,0,0,2400,0,2400,0,2400,NULL,0,625,18,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2400-12-31','2012-03-01','2012-12-31',21,0,0,0,4800,0,96,0,4800,NULL,0,411,18,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2013-01-01','2400-12-31',25,0,0,0,2400,0,2400,0,2400,NULL,0,629,19,NULL,NULL,13);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-06','2012-04-05','2010-04-01','2400-12-31',1.35,0,0,24,24,0,24,0,4800,NULL,0,397,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-06','2012-04-05','2010-04-01','2400-12-31',0.65,0,0,12,12,0,12,0,4800,NULL,0,395,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-06','2012-06-17','2010-04-01','2400-12-31',3.55,0,0,120,120,0,120,0,4800,NULL,0,396,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2012-04-20','2012-03-01','2400-12-31',3.25,0,0,0,4800,0,96,0,4800,NULL,0,414,1,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-06','2012-06-17','2010-04-01','2400-12-31',0.45,0,0,12,12,0,12,0,4800,NULL,0,421,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2400-12-31','2012-03-01','2400-12-31',4.4,0,0,0,4800,0,4800,0,4800,NULL,0,404,9,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2400-12-31','2012-03-01','2400-12-31',5,0,0,0,4800,0,4800,0,4800,NULL,NULL,412,21,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-06','2012-06-17','2010-04-01','2400-12-31',1.55,0,0,36,36,0,36,0,4800,NULL,0,417,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2400-12-31','2012-03-01','2400-12-31',0.08333,0,0,0,4800,0,4800,0,4800,NULL,0,408,13,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2012-05-19','2000-01-01','2400-12-31',2.39,0,0,108,108,0,108,0,2400,NULL,0,4,1,NULL,NULL,3);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2012-04-21','2010-10-01','2400-12-31',3.25,0,0,0,2400,0,96,0,2400,NULL,0,382,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-06','2012-06-17','2010-04-01','2400-12-31',2.3,0,0,60,60,0,60,0,4800,NULL,0,420,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-06','2012-06-17','2010-04-01','2400-12-31',2.8,0,0,84,84,0,84,0,4800,NULL,0,418,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-06','2012-06-17','2010-04-01','2400-12-31',1.15,0,0,24,24,0,24,0,4800,NULL,0,419,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-05','2013-01-02','2010-04-01','2400-12-31',2,0,0,84,84,0,84,0,4800,NULL,0,637,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-03','2013-02-04','2010-04-01','2400-12-31',0.85,0,0,60,60,0,60,0,4800,NULL,0,632,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-03','2013-02-04','2010-04-01','2400-12-31',0.3,0,0,36,36,0,36,0,4800,NULL,0,636,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2400-12-31','2012-03-01','2400-12-31',0.3,0,0,0,4800,0,4800,0,4800,NULL,NULL,409,15,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2013-03-05','2013-04-02','2010-04-01','2400-12-31',0.15,0,0,12,12,0,12,0,4800,NULL,0,684,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',3,0,100000,240,420,0,4800,0,4800,NULL,0,525,1,NULL,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2013-03-05','2013-04-02','2010-04-01','2400-12-31',0.55,0,0,36,36,0,36,0,4800,NULL,0,682,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-02-05','2013-03-04','2010-04-01','2400-12-31',2.3,0,0,120,120,0,120,0,4800,NULL,0,686,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-03','2013-02-04','2010-04-01','2400-12-31',0.05,0,0,12,12,0,12,0,4800,NULL,0,634,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-03','2013-02-04','2010-04-01','2400-12-31',2.1,0,0,120,120,0,120,0,4800,NULL,0,633,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-03','2013-02-04','2011-04-01','2400-12-31',0.3,0,0,36,36,0,36,0,2400,NULL,0,640,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',5,0,0,0,2400,0,60,0,2400,NULL,0,287,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2400-12-31','2000-01-01','2400-12-31',3,0,0,0,2400,0,60,0,2400,NULL,0,19,4,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-03','2013-02-04','2011-04-01','2400-12-31',0.1,0,0,24,24,0,24,0,2400,NULL,0,639,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2400-12-31','2012-03-01','2400-12-31',75,0,0,0,4800,0,96,0,4800,NULL,0,407,12,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-01','2400-12-31','2000-01-01','2400-12-31',1.05,0,0,108,108,0,108,0,2400,NULL,0,825,1,NULL,NULL,3);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-01','2014-04-30','2012-03-01','2400-12-31',2.25,0,0,0,4800,0,96,0,4800,NULL,0,824,1,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2400-12-31','2012-03-01','2400-12-31',35,0,0,0,4800,0,4800,0,4800,NULL,0,413,10,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-21','2014-04-30','2000-01-01','2400-12-31',1.65,0,0,0,2400,0,2400,0,2400,NULL,0,422,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',14,0,0,0,2400,0,2400,0,2400,NULL,0,313,34,NULL,NULL,18);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2400-12-31','2012-04-01','2400-12-31',0,0,0,0,4800,0,4800,0,4800,NULL,1,439,11,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Steeds 0.50% voor PL rest is voor Makelaar met een maximum van 4.5%</p>',31);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2012-12-31','2012-04-01','2400-12-31',1.1,0,0,0,4800,0,4800,0,4800,NULL,0,446,8,NULL,NULL,31);
+INSERT INTO "product_feature_applicability" VALUES('2013-07-01','2400-12-31','2013-07-01','2400-12-31',3,0,0,0,4800,0,4800,0,4800,NULL,0,743,31,1,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2012-04-01','2400-12-31',2,0,0,0,4800,0,4800,0,4800,NULL,0,623,8,NULL,NULL,31);
+INSERT INTO "product_feature_applicability" VALUES('2012-06-18','2012-07-02','2010-04-01','2400-12-31',0.75,0,0,12,12,0,12,0,4800,NULL,0,452,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',3,0,100000,240,420,0,4800,0,4800,NULL,0,526,1,NULL,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2012-06-18','2012-07-02','2010-04-01','2400-12-31',0.95,0,0,24,24,0,24,0,4800,NULL,0,453,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-06-18','2012-07-02','2010-04-01','2400-12-31',1.3,0,0,36,36,0,36,0,4800,NULL,0,454,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-06-18','2012-07-02','2010-04-01','2400-12-31',3.1,0,0,120,120,0,120,0,4800,NULL,0,457,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-06-18','2012-07-02','2010-04-01','2400-12-31',2.7,0,0,84,84,0,84,0,4800,NULL,0,456,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2400-12-31','2012-04-01','2400-12-31',35,0,0,0,4800,0,4800,0,4800,NULL,0,447,10,NULL,NULL,31);
+INSERT INTO "product_feature_applicability" VALUES('2012-06-18','2012-07-02','2010-04-01','2400-12-31',2.15,0,0,60,60,0,60,0,4800,NULL,0,455,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-07-03','2012-08-05','2010-04-01','2400-12-31',2.7,0,0,84,84,0,84,0,4800,NULL,0,473,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-07-03','2012-08-05','2010-04-01','2400-12-31',0.45,0,0,12,12,0,12,0,4800,NULL,0,469,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2400-12-31','2012-04-01','2400-12-31',4.4,0,0,0,4800,0,4800,0,4800,NULL,0,445,9,NULL,NULL,31);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2400-12-31','2012-04-01','2400-12-31',5,0,0,0,4800,0,4800,0,4800,NULL,0,449,21,NULL,NULL,31);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2400-12-31','2012-04-01','2400-12-31',0,0,0,0,4800,0,4800,0,4800,NULL,1,440,22,NULL,'
+<table border="0" cellpadding="0" cellspacing="2" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
+<tr>
+<td width="166">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Free % 1</p></td>
+<td width="105">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cie MKLR</p></td>
+<td width="67">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cie PL</p></td>
+<td width="64">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">totaal</p></td></tr>
+<tr>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,23%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,60%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,83%</p></td></tr>
+<tr>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2,00%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1,07%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,60%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1,67%</p></td></tr>
+<tr>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1,90%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,60%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2,50%</p></td></tr>
+<tr>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4,00%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2,73%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,60%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3,33%</p></td></tr>
+<tr>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3,57%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0,60%</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4,17%</p></td></tr></table>',31);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2400-12-31','2012-04-01','2400-12-31',1,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,444,43,NULL,NULL,31);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2400-12-31','2012-04-01','2400-12-31',35,0,7000,0,4800,0,4800,0,4800,NULL,0,450,52,NULL,NULL,31);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2400-12-31','2012-04-01','2400-12-31',0.5,7000.01,1000000000,0,4800,0,4800,0,4800,NULL,NULL,451,53,NULL,NULL,31);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2012-01-01','2400-12-31',2.25,0,100000,60,239,0,4800,0,4800,NULL,0,647,1,NULL,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2012-07-03','2012-08-05','2010-04-01','2400-12-31',2.1,0,0,60,60,0,60,0,4800,NULL,0,472,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2400-12-31','2012-04-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,441,32000,NULL,NULL,31);
+INSERT INTO "product_feature_applicability" VALUES('2012-07-03','2012-08-05','2010-04-01','2400-12-31',3.1,0,0,120,120,0,120,0,4800,NULL,0,474,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-07-03','2012-08-05','2010-04-01','2400-12-31',0.85,0,0,24,24,0,24,0,4800,NULL,0,470,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-07-03','2012-08-05','2010-04-01','2400-12-31',1.25,0,0,36,36,0,36,0,4800,NULL,0,471,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-06','2012-09-02','2010-04-01','2400-12-31',0.15,0,0,12,12,0,12,0,4800,NULL,0,484,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-06-18','2012-07-02','2011-04-01','2400-12-31',0.95,0,0,24,24,0,24,0,2400,NULL,0,459,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-06-18','2012-07-02','2011-04-01','2400-12-31',2.15,0,0,60,60,0,60,0,2400,NULL,0,461,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-06-18','2012-07-02','2011-04-01','2400-12-31',0.75,0,0,12,12,0,12,0,2400,NULL,0,458,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-06-18','2012-07-02','2011-04-01','2400-12-31',2.7,0,0,84,84,0,84,0,2400,NULL,0,462,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-06-18','2012-07-02','2011-04-01','2400-12-31',1.3,0,0,36,36,0,36,0,2400,NULL,0,460,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-06-18','2012-07-02','2011-05-16','2400-12-31',3.1,0,0,120,120,0,120,0,2400,NULL,0,463,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-07-03','2012-08-05','2011-04-01','2400-12-31',1.25,0,0,36,36,0,36,0,2400,NULL,0,477,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-07-03','2012-08-05','2011-04-01','2400-12-31',2.1,0,0,60,60,0,60,0,2400,NULL,0,480,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-07-03','2012-08-05','2011-05-16','2400-12-31',3.1,0,0,120,120,0,120,0,2400,NULL,0,479,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-07-03','2012-08-05','2011-04-01','2400-12-31',0.45,0,0,12,12,0,12,0,2400,NULL,0,475,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-06','2012-09-02','2011-04-01','2400-12-31',0.35,0,0,24,24,0,24,0,2400,NULL,0,489,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-06','2012-09-02','2011-04-01','2400-12-31',1.45,0,0,60,60,0,60,0,2400,NULL,0,492,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-06','2012-09-02','2011-04-01','2400-12-31',2.35,0,0,84,84,0,84,0,2400,NULL,0,488,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2013-12-31','2012-01-01','2013-12-31',3.45,0,0,0,4800,0,12,0,4800,NULL,0,699,32001,NULL,NULL,5);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-06','2012-09-02','2011-04-01','2400-12-31',0.15,0,0,12,12,0,12,0,2400,NULL,0,490,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-06','2012-09-02','2011-04-01','2400-12-31',0.7,0,0,36,36,0,36,0,2400,NULL,0,491,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2015-01-01','2015-01-01','2015-12-31',0.8,0,0,0,4800,0,4800,0,4800,NULL,0,1053,1,NULL,NULL,34);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,866,18,NULL,NULL,36);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2013-06-30','2012-01-01','2400-12-31',10,0,100000,0,4800,0,4800,0,4800,NULL,0,532,60,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-30','2014-02-28','2012-03-01','2400-12-31',2.4,0,0,0,4800,0,96,0,4800,NULL,0,607,1,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',50,0,100000,0,4800,0,4800,0,4800,NULL,0,537,68,12,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2012-01-01','2400-12-31',3,0,100000,240,299,0,4800,0,4800,NULL,0,646,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2013-06-30','2012-01-01','2400-12-31',5,0,0,0,4800,0,4800,0,4800,NULL,0,541,31,1,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',5,0,100000,0,4800,0,4800,0,4800,NULL,0,573,67,6,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',25,0,100000,0,4800,0,4800,0,4800,NULL,0,576,66,6,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',2,0,100000,240,420,0,4800,0,4800,NULL,0,559,67,3,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',2,0,100000,240,420,0,4800,0,4800,NULL,0,560,65,3,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-01','2012-12-29','2012-03-01','2400-12-31',2.4,0,0,0,4800,0,96,0,4800,NULL,0,606,1,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2007-01-01','2010-12-31','2007-01-01','2400-12-31',1.05,0,0,0,2400,108,2400,108,2400,NULL,0,826,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2,352940 %</p>',13);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',2,0,100000,0,4800,0,4800,0,4800,NULL,0,570,70,6,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2013-03-05','2013-04-02','2010-04-01','2400-12-31',1.1,0,0,60,60,0,60,0,4800,NULL,0,685,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2000-11-08','2400-12-31',2,0,0,0,2400,0,2400,0,2400,NULL,0,616,8,NULL,NULL,14);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',0.67,0,100000,240,420,0,4800,0,4800,NULL,0,565,67,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',25,0,100000,0,4800,0,4800,0,4800,NULL,0,574,68,6,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2013-01-01','2400-12-31',2,0,0,0,2400,0,2400,0,2400,NULL,0,610,8,NULL,NULL,5);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-05','2013-01-02','2011-04-01','2400-12-31',1,0,0,60,60,0,60,0,2400,NULL,0,597,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-09-16','2013-11-12','2010-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,4800,NULL,0,769,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-05','2013-01-02','2011-04-01','2400-12-31',0.4,0,0,36,36,0,36,0,2400,NULL,0,598,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-05','2013-01-02','2011-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,2400,NULL,0,594,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',25,0,0,0,4800,0,4800,0,4800,NULL,0,539,31,6,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2013-05-14','2013-06-06','2011-04-01','2400-12-31',0.8,0,0,60,60,0,60,0,2400,NULL,0,721,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-05','2013-01-02','2011-04-01','2400-12-31',2,0,0,84,84,0,84,0,2400,NULL,0,596,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','2010-04-01','2400-12-31',0.05,0,0,12,12,0,12,0,4800,NULL,0,966,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2012-01-01','2400-12-31',3.25,0,100000,300,420,0,4800,0,4800,NULL,0,645,1,NULL,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',85,0,0,0,4800,0,4800,0,4800,NULL,0,527,83,NULL,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',8,0,100000,240,420,0,4800,0,4800,NULL,0,543,65,12,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2010-06-01','2400-12-31',1.1,0,0,0,2400,0,2400,0,2400,NULL,0,612,8,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',0.67,0,100000,240,420,0,4800,0,4800,NULL,0,566,65,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',10,0,100000,0,4800,0,4800,0,4800,NULL,0,534,65,12,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','2010-04-01','2400-12-31',0.65,0,0,60,60,0,60,0,4800,NULL,0,967,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-19','2012-11-30','2010-10-01','2400-12-31',2.4,0,0,0,2400,0,96,0,2400,NULL,0,494,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2011-09-30','2000-01-01','2011-09-30',35,0,0,0,2400,0,2400,0,2400,NULL,0,14,2,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2400-12-31','2012-12-01','2400-12-31',25,0,NULL,0,2400,0,96,0,2400,NULL,NULL,601,18,NULL,NULL,4);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2012-12-31','2011-04-01','2400-12-31',1.1,0,0,0,2400,0,2400,0,2400,NULL,0,276,8,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2011-04-01','2400-12-31',2,0,0,0,2400,0,2400,0,2400,NULL,0,613,8,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2012-03-01','2400-12-31',2,0,0,0,4800,0,4800,0,4800,NULL,0,614,8,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2010-09-30','2400-12-31',2,0,0,0,2400,0,2400,0,2400,NULL,0,615,8,NULL,NULL,11);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',2.5,0,100000,0,4800,0,4800,0,4800,NULL,0,555,67,3,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',0.84,0,100000,0,4800,0,4800,0,4800,NULL,0,563,65,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-30','2014-02-28','2011-04-01','2400-12-31',2.4,0,0,0,2400,0,96,0,2400,NULL,0,605,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',4,0,100000,0,4800,0,4800,0,4800,NULL,0,530,11,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',4.17,0,100000,0,4800,0,4800,0,4800,NULL,0,562,68,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',4.17,0,100000,0,4800,0,4800,0,4800,NULL,0,564,66,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-05','2013-01-02','2010-04-01','2400-12-31',0.08,0,0,12,12,0,12,0,4800,NULL,0,589,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-05','2014-04-07','2010-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,4800,NULL,0,829,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2010-04-01','2400-12-31',2,0,0,120,120,0,120,0,4800,NULL,0,953,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',4,0,100000,0,4800,0,4800,0,4800,NULL,0,568,70,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',18,0,0,0,4800,0,4800,0,4800,NULL,0,528,82,NULL,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2012-11-08','2012-12-04','2011-05-16','2400-12-31',2.5,0,0,120,120,0,120,0,2400,NULL,0,584,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',10,0,0,0,4800,0,4800,0,4800,NULL,0,540,31,3,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2012-11-08','2012-12-04','2010-04-01','2400-12-31',2.5,0,0,120,120,0,120,0,4800,NULL,0,582,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-11-08','2012-12-04','2010-04-01','2400-12-31',2.2,0,0,84,84,0,84,0,4800,NULL,0,593,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-05','2013-01-02','2010-04-01','2400-12-31',1,0,0,60,60,0,60,0,4800,NULL,0,591,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-02','2012-12-04','2010-04-01','2400-12-31',0.55,0,0,36,36,0,36,0,4800,NULL,0,513,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',18,0,NULL,0,4800,0,4800,0,4800,NULL,0,1097,82,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-01','2012-12-29','2010-10-01','2400-12-31',2.65,0,0,0,2400,0,96,0,2400,NULL,0,602,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2012-11-08','2012-12-04','2010-04-01','2400-12-31',1.2,0,0,60,60,0,60,0,4800,NULL,0,581,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2010-01-01','2400-12-31',1.1,0,0,0,2400,0,2400,0,2400,NULL,0,611,8,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-05','2013-01-02','2010-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,4800,NULL,0,590,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',8,0,100000,240,420,0,4800,0,4800,NULL,0,544,67,12,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',2.5,0,100000,0,4800,0,4800,0,4800,NULL,0,557,65,3,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-05','2013-01-02','2010-04-01','2400-12-31',0.4,0,0,36,36,0,36,0,4800,NULL,0,588,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-07','2012-08-11','2010-04-01','2400-12-31',2.1,0,0,120,120,0,120,0,4800,NULL,0,730,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',4,0,100000,240,420,0,4800,0,4800,NULL,0,572,65,6,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',10,0,100000,0,4800,0,4800,0,4800,NULL,0,535,67,12,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',0.84,0,100000,0,4800,0,4800,0,4800,NULL,0,561,67,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-05','2013-01-02','2010-04-01','2400-12-31',2.35,0,0,120,120,0,120,0,4800,NULL,0,592,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-11-08','2012-12-04','2011-04-01','2400-12-31',2.2,0,0,84,84,0,84,0,2400,NULL,0,586,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',4.4,0,0,0,2400,0,2400,0,2400,NULL,0,780,9,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',3,0,100000,0,4800,0,4800,0,4800,NULL,0,546,70,3,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',12.5,0,100000,0,4800,0,4800,0,4800,NULL,0,556,68,3,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2010-01-01','2400-12-31','2010-01-01','2400-12-31',4.4,0,0,0,2400,0,2400,0,2400,NULL,0,781,9,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',12.5,0,100000,0,4800,0,4800,0,4800,NULL,0,558,66,3,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-05','2014-04-07','2010-04-01','2400-12-31',1.1,0,0,60,60,0,60,0,4800,NULL,0,830,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-05','2014-04-07','2010-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,4800,NULL,0,828,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-11-13','2013-12-09','2010-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,4800,NULL,0,783,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-11-13','2013-12-09','2010-04-01','2400-12-31',2.4,0,0,120,120,0,120,0,4800,NULL,0,782,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-19','2012-11-30','2011-04-01','2400-12-31',2.4,0,0,0,2400,0,96,0,2400,NULL,0,495,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-01','2400-12-31','2012-10-01','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,0,608,2,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2000-01-01','2400-12-31',2,0,0,0,2400,0,2400,0,2400,NULL,0,609,8,NULL,NULL,4);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',25,0,0,0,4800,0,4800,0,4800,NULL,0,538,31,12,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2012-09-03','2012-10-01','2010-04-01','2400-12-31',0.3,0,0,24,24,0,24,0,4800,NULL,0,501,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',3.25,0,100000,300,420,0,4800,0,4800,NULL,0,522,1,NULL,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2012-01-01','2012-12-31',21,0,0,0,2400,0,2400,0,2400,NULL,0,388,18,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2013-01-01','2400-12-31',25,0,0,0,2400,0,2400,0,2400,NULL,0,630,19,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2012-09-03','2012-10-01','2011-04-01','2400-12-31',1.25,0,0,60,60,0,60,0,2400,NULL,0,504,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-09-03','2012-10-01','2010-04-01','2400-12-31',1.25,0,0,60,60,0,60,0,4800,NULL,0,498,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',5,0,100000,0,4800,0,4800,0,4800,NULL,0,533,62,NULL,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2012-09-03','2012-10-01','2010-04-01','2400-12-31',0.03,0,0,12,12,0,12,0,4800,NULL,0,497,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2010-09-30','2400-12-31','2010-09-30','2400-12-31',75,0,0,0,4800,0,96,0,4800,NULL,0,509,56,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',11);
+INSERT INTO "product_feature_applicability" VALUES('2012-09-03','2012-10-01','2010-04-01','2400-12-31',2.15,0,0,84,84,0,84,0,4800,NULL,0,499,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2013-01-01','2400-12-31',2,0,0,0,2400,0,2400,0,2400,NULL,0,617,8,NULL,NULL,16);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2400-12-31','2013-01-01','2400-12-31',2,0,0,0,2400,0,2400,0,2400,NULL,0,618,8,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',18);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-02','2012-11-07','2010-04-01','2400-12-31',1.25,0,0,60,60,0,60,0,4800,NULL,0,512,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',2.25,0,100000,0,239,0,4800,0,4800,NULL,0,523,1,NULL,NULL,27);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2012-12-31','2012-01-01','2400-12-31',5,0,100000,0,4800,0,4800,0,4800,NULL,0,575,65,6,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-19','2012-11-30','2012-03-01','2400-12-31',2.4,0,0,0,4800,0,96,0,4800,NULL,0,496,1,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',50,0,100000,0,4800,0,4800,0,4800,NULL,0,536,66,12,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-02','2012-11-07','2010-04-01','2400-12-31',2.25,0,0,84,84,0,84,0,4800,NULL,0,511,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2011-01-01','2400-12-31',2,0,0,0,4800,0,4800,0,4800,NULL,NULL,668,8,NULL,NULL,28);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-02','2012-11-07','2010-04-01','2400-12-31',2.65,0,0,120,120,0,120,0,4800,NULL,0,515,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2002-12-31','2400-12-31',2,0,0,0,4800,0,4800,0,4800,NULL,NULL,669,8,NULL,NULL,32);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-02','2012-12-04','2010-04-01','2400-12-31',0.3,0,0,24,24,0,24,0,4800,NULL,0,514,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-03-05','2013-04-02','2010-04-01','2400-12-31',0.35,0,0,24,24,0,24,0,4800,NULL,0,683,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-02','2012-12-04','2010-04-01','2400-12-31',0.03,0,0,12,12,0,12,0,4800,NULL,0,510,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-09-03','2012-10-01','2010-04-01','2400-12-31',0.6,0,0,36,36,0,36,0,4800,NULL,0,502,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-02','2012-12-04','2011-04-01','2400-12-31',0.3,0,0,24,24,0,24,0,2400,NULL,0,520,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-09-03','2012-10-01','2011-04-01','2400-12-31',0.03,0,0,12,12,0,12,0,2400,NULL,0,503,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-09-03','2012-10-01','2011-04-01','2400-12-31',2.15,0,0,84,84,0,84,0,2400,NULL,0,506,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-09-03','2012-10-01','2011-05-16','2400-12-31',2.5,0,0,120,120,0,120,0,2400,NULL,0,505,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-02','2012-11-07','2011-04-01','2400-12-31',1.25,0,0,60,60,0,60,0,2400,NULL,0,518,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-02','2012-11-07','2011-04-01','2400-12-31',2.25,0,0,84,84,0,84,0,2400,NULL,0,517,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-02','2012-11-07','2011-05-16','2400-12-31',2.65,0,0,120,120,0,120,0,2400,NULL,0,519,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-02','2012-12-04','2011-04-01','2400-12-31',0.03,0,0,12,12,0,12,0,2400,NULL,0,516,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-02','2012-12-04','2011-04-01','2400-12-31',0.55,0,0,36,36,0,36,0,2400,NULL,0,521,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-05','2013-01-02','2011-05-16','2400-12-31',2.35,0,0,120,120,0,120,0,2400,NULL,0,643,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-09-16','2013-11-12','2010-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,4800,NULL,0,772,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-09-03','2012-10-01','2011-04-01','2400-12-31',0.6,0,0,36,36,0,36,0,2400,NULL,0,508,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,868,4,NULL,NULL,36);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-05','2014-04-07','2010-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,4800,NULL,0,832,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-05','2014-04-07','2010-04-01','2400-12-31',2.3,0,0,120,120,0,120,0,4800,NULL,0,831,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',85,0,NULL,0,4800,0,4800,0,4800,NULL,0,889,83,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-01','2400-12-31','2014-01-01','2400-12-31',85,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,891,83,NULL,NULL,41);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-05','2014-04-07','2010-04-01','2400-12-31',0.45,0,0,36,36,0,36,0,4800,NULL,0,827,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2013-06-30','2012-01-01','2400-12-31',8,0,100000,0,4800,0,4800,0,4800,NULL,0,648,65,12,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-07-01','2400-12-31','2013-07-01','2400-12-31',0.08,0,100000,0,4800,0,4800,0,4800,NULL,0,745,69,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-03-05','2013-04-02','2010-04-01','2400-12-31',2,0,0,84,84,0,84,0,4800,NULL,0,681,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2012-01-01','2400-12-31',0.67,0,100000,0,4800,0,4800,0,4800,NULL,0,652,67,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2012-01-01','2400-12-31',2,0,100000,0,4800,0,4800,0,4800,NULL,0,653,67,3,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2012-01-01','2400-12-31',8,0,100000,0,4800,0,4800,0,4800,NULL,0,654,67,12,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2012-01-01','2400-12-31',4,0,100000,0,4800,0,4800,0,4800,NULL,0,655,67,6,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-04-01','2013-05-13','2010-04-01','2400-12-31',2.2,0,0,120,120,0,120,0,4800,NULL,0,701,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-04-01','2013-05-13','2010-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,4800,NULL,0,704,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-04-01','2013-05-13','2010-04-01','2400-12-31',1.75,0,0,84,84,0,84,0,4800,NULL,0,705,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-05-14','2013-06-06','2010-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,4800,NULL,0,712,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-05-14','2013-06-06','2010-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,4800,NULL,0,716,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-05-14','2013-06-06','2010-04-01','2400-12-31',0.4,0,0,36,36,0,36,0,4800,NULL,0,714,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-04-01','2013-05-13','2010-04-01','2400-12-31',0.4,0,0,36,36,0,36,0,4800,NULL,0,703,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-04-01','2013-05-13','2010-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,4800,NULL,0,702,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',1,0,0,121,121,12,24,0,4800,NULL,0,695,4,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-04-01','2013-05-13','2010-04-01','2400-12-31',0.9,0,0,60,60,0,60,0,4800,NULL,0,700,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',2,0,0,121,121,0,11,0,4800,NULL,0,694,4,NULL,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-04-02','2013-05-13','2011-04-01','2400-12-31',0.4,0,0,36,36,0,36,0,2400,NULL,0,711,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-04-02','2013-05-13','2011-04-01','2400-12-31',1.75,0,0,84,84,0,84,0,2400,NULL,0,707,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-04-02','2013-05-13','2011-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,2400,NULL,0,708,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-05-14','2013-06-06','2011-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,2400,NULL,0,723,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',25,0,NULL,0,4800,0,4800,0,4800,NULL,0,924,31,12,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-07','2013-08-11','2011-04-01','2400-12-31',0.8,0,0,60,60,0,60,0,2400,NULL,0,736,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-07','2013-08-11','2011-04-01','2400-12-31',0.05,0,0,12,12,0,12,0,2400,NULL,0,734,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-07','2013-08-11','2011-04-01','2400-12-31',0.35,0,0,36,36,0,36,0,2400,NULL,0,735,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-07','2013-08-11','2011-04-01','2400-12-31',0.1,0,0,24,24,0,24,0,2400,NULL,0,732,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-07','2013-08-11','2011-05-16','2400-12-31',2.1,0,0,120,120,0,120,0,2400,NULL,0,733,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-07','2013-08-11','2011-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,2400,NULL,0,731,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-04-02','2013-05-13','2011-05-16','2400-12-31',2.2,0,0,120,120,0,120,0,2400,NULL,0,710,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-04-02','2013-05-13','2011-04-01','2400-12-31',0.9,0,0,60,60,0,60,0,2400,NULL,0,706,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-04-02','2013-05-13','2011-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,2400,NULL,0,709,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2010-04-01','2400-12-31',0.35,0,0,36,36,0,36,0,4800,NULL,0,957,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2013-12-31','2012-01-01','2013-12-31',2.65,0,0,0,2400,0,12,0,4800,NULL,0,696,32001,NULL,NULL,25);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2016-01-31','2013-01-01','2400-12-31',2,0,0,121,121,0,121,0,4800,NULL,0,693,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','2010-04-01','2400-12-31',1.4,0,0,84,84,0,84,0,4800,NULL,0,968,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2013-12-31','2012-01-01','2013-12-31',2.65,0,0,0,4800,0,12,0,4800,NULL,0,697,32001,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-01','2400-12-31','2012-03-01','2400-12-31',1.25,0,0,0,4800,0,96,0,4800,NULL,0,990,1,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2012-12-01','2012-12-29','2011-04-01','2400-12-31',2.65,0,0,0,2400,0,96,0,2400,NULL,0,604,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-30','2012-12-31','2011-01-01','2012-12-31',1.1,0,0,0,2400,0,2400,0,2400,NULL,0,193,8,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',18);
+INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2010-04-01','2400-12-31',0.8,0,0,60,60,0,60,0,4800,NULL,0,954,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2013-06-30','2012-01-01','2400-12-31',1,0,100000,0,4800,0,4800,0,4800,NULL,0,569,69,6,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-07-01','2014-04-30','2013-07-01','2400-12-31',8,0,100000,0,4800,0,4800,0,4800,NULL,0,748,60,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',85,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,890,83,NULL,NULL,23);
+INSERT INTO "product_feature_applicability" VALUES('2013-07-01','2400-12-31','2013-07-01','2400-12-31',0.5,0,100000,0,4800,0,4800,0,4800,NULL,0,746,69,6,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',160,0,NULL,0,4800,0,4800,0,4800,NULL,0,915,73,NULL,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2013-12-31','2012-01-01','2013-12-31',2.65,0,0,0,4800,0,12,0,4800,NULL,0,698,32001,NULL,NULL,4);
+INSERT INTO "product_feature_applicability" VALUES('2011-05-02','2011-11-09','2010-04-01','2400-12-31',2.6,0,0,36,36,0,36,0,2400,NULL,0,288,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2013-02-05','2013-03-04','2010-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,4800,NULL,0,660,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-02-05','2013-03-04','2010-04-01','2400-12-31',0.45,0,0,36,36,0,36,0,4800,NULL,0,656,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-05-14','2013-06-06','2010-04-01','2400-12-31',0.8,0,0,60,60,0,60,0,4800,NULL,0,715,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-05-14','2013-06-06','2010-04-01','2400-12-31',2.1,0,0,120,120,0,120,0,4800,NULL,0,717,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-09-16','2013-11-12','2011-04-01','2400-12-31',0.6,0,0,36,36,0,36,0,2400,NULL,0,779,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-05-14','2013-06-06','2010-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,4800,NULL,0,713,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-03-05','2013-04-02','2010-04-01','2400-12-31',2.4,0,0,120,120,0,120,0,4800,NULL,0,657,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-02-05','2013-03-04','2010-04-01','2400-12-31',0.3,0,0,24,24,0,24,0,4800,NULL,0,635,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-06','2012-04-05','2011-04-01','2400-12-31',3,0,0,84,84,0,84,0,2400,NULL,0,464,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-07-03','2012-08-05','2011-04-01','2400-12-31',0.85,0,0,24,24,0,24,0,2400,NULL,0,478,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-07-03','2012-08-05','2011-04-01','2400-12-31',2.7,0,0,84,84,0,84,0,2400,NULL,0,476,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-08-06','2012-09-02','2011-05-16','2400-12-31',2.7,0,0,120,120,0,120,0,2400,NULL,0,493,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-09-03','2012-10-01','2011-04-01','2400-12-31',0.3,0,0,24,24,0,24,0,2400,NULL,0,507,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-03','2013-02-04','2011-05-16','2400-12-31',2.1,0,0,120,120,0,120,0,2400,NULL,0,595,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-02-05','2013-04-01','2011-04-01','2400-12-31',0.55,0,0,36,36,0,36,0,2400,NULL,0,664,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-03','2013-02-04','2011-04-01','2400-12-31',0.85,0,0,60,60,0,60,0,2400,NULL,0,667,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-02-05','2013-04-01','2011-05-16','2400-12-31',2.4,0,0,120,120,0,120,0,2400,NULL,0,687,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-02-05','2013-04-01','2011-04-01','2400-12-31',1.1,0,0,60,60,0,60,0,2400,NULL,0,689,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-08-12','2013-09-15','2011-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,2400,NULL,0,765,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-09-16','2013-11-12','2011-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,2400,NULL,0,774,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-09-16','2013-11-12','2011-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,2400,NULL,0,778,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-09-16','2013-11-12','2011-04-01','2400-12-31',1.2,0,0,60,60,0,60,0,2400,NULL,0,776,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-08-12','2013-09-15','2011-05-16','2400-12-31',2.2,0,0,120,120,0,120,0,2400,NULL,0,763,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-08-12','2013-09-15','2011-04-01','2400-12-31',0.6,0,0,36,36,0,36,0,2400,NULL,0,767,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-05-14','2013-06-06','2011-05-16','2400-12-31',2.1,0,0,120,120,0,120,0,2400,NULL,0,719,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-03','2013-02-04','2011-04-01','2400-12-31',1.8,0,0,84,84,0,84,0,2400,NULL,0,641,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-02-05','2013-04-01','2011-04-01','2400-12-31',2,0,0,84,84,0,84,0,2400,NULL,0,691,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-09-16','2013-11-12','2010-04-01','2400-12-31',0.6,0,0,36,36,0,36,0,4800,NULL,0,773,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-01','2400-12-31','2013-06-01','2400-12-31',35,0,0,0,4800,0,4800,0,4800,NULL,0,724,10,0,NULL,16);
+INSERT INTO "product_feature_applicability" VALUES('2010-10-21','2400-12-31','2010-10-21','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,670,35,NULL,NULL,12);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2013-06-30','2012-01-01','2400-12-31',0.17,0,100000,0,4800,0,4800,0,4800,NULL,0,567,69,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-07-01','2400-12-31','2013-07-01','2400-12-31',0.08,0,0,0,4800,0,4800,0,4800,NULL,0,753,69,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2000-01-01','2400-12-31',2,0,0,0,4800,0,4800,0,4800,NULL,NULL,671,8,NULL,NULL,17);
+INSERT INTO "product_feature_applicability" VALUES('2013-07-01','2014-04-30','2013-07-01','2400-12-31',1.25,0,100000,0,4800,0,4800,0,4800,NULL,0,750,65,3,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-05','2014-04-07','2011-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,2400,NULL,0,835,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2010-01-01','2400-12-31',2,0,0,0,4800,0,4800,0,4800,NULL,NULL,672,8,NULL,NULL,22);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2012-04-20','2013-01-01','2013-12-31',0.4,0,0,0,2400,0,2400,0,2400,NULL,0,644,17,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',50,0,NULL,0,4800,0,4800,0,4800,NULL,0,1098,106,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2013-07-01','2014-04-30','2013-07-01','2400-12-31',5,0,100000,0,4800,0,4800,0,4800,NULL,0,751,65,12,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-07-01','2014-04-30','2013-07-01','2400-12-31',0.42,0,100000,0,4800,0,4800,0,4800,NULL,0,752,65,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-07-01','2014-04-30','2013-07-01','2400-12-31',2.5,0,100000,0,4800,0,4800,0,4800,NULL,0,749,65,6,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',18,0,NULL,0,4800,0,4800,0,4800,NULL,0,1099,105,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2013-07-01','2400-12-31','2013-07-01','2400-12-31',0.25,0,100000,0,4800,0,4800,0,4800,NULL,0,744,69,3,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-09-16','2013-11-12','2010-04-01','2400-12-31',1.2,0,0,60,60,0,60,0,4800,NULL,0,768,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2011-12-01','2400-12-31','2011-12-01','2400-12-31',0,0,0,0,4800,0,4800,0,4800,NULL,1,754,37,NULL,NULL,29);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2010-10-31','2010-04-01','2400-12-31',1.5,0,0,36,36,0,36,0,2400,NULL,NULL,104,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2012-03-05','2010-04-01','2400-12-31',1.2,0,0,12,12,0,12,0,2400,NULL,0,270,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2010-12-02','2011-01-09','2010-04-01','2400-12-31',1.9,0,0,36,36,0,36,0,2400,NULL,NULL,115,1,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-07','2012-08-11','2010-04-01','2400-12-31',0.05,0,0,12,12,0,12,0,4800,NULL,0,727,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-07','2012-08-11','2010-04-01','2400-12-31',0.35,0,0,36,36,0,36,0,4800,NULL,0,728,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-08-12','2013-09-15','2010-04-01','2400-12-31',1.2,0,0,60,60,0,60,0,4800,NULL,0,756,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-08-12','2013-09-15','2010-04-01','2400-12-31',2.2,0,0,120,120,0,120,0,4800,NULL,0,761,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-08-12','2013-09-15','2010-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,4800,NULL,0,759,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-09-16','2013-11-12','2010-04-01','2400-12-31',0.3,0,0,24,24,0,24,0,4800,NULL,0,771,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-09-16','2013-11-12','2011-04-01','2400-12-31',0.3,0,0,24,24,0,24,0,2400,NULL,0,777,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-08-12','2013-09-15','2010-04-01','2400-12-31',0.6,0,0,36,36,0,36,0,4800,NULL,0,757,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-08-12','2013-09-15','2010-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,4800,NULL,0,758,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-08-12','2013-09-15','2010-04-01','2400-12-31',0.3,0,0,24,24,0,24,0,4800,NULL,0,760,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-07','2012-08-11','2010-04-01','2400-12-31',0.8,0,0,60,60,0,60,0,4800,NULL,0,725,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-07','2012-08-11','2010-04-01','2400-12-31',0.1,0,0,24,24,0,24,0,4800,NULL,0,726,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-07','2012-08-11','2010-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,4800,NULL,0,729,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-09-03','2012-10-01','2010-04-01','2400-12-31',2.5,0,0,120,120,0,120,0,4800,NULL,0,500,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-05-14','2013-06-06','2011-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,2400,NULL,0,718,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-08-12','2013-09-15','2011-04-01','2400-12-31',1.2,0,0,60,60,0,60,0,2400,NULL,0,766,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-08-12','2013-09-15','2011-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,2400,NULL,0,762,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-08-12','2013-09-15','2011-04-01','2400-12-31',0.3,0,0,24,24,0,24,0,2400,NULL,0,764,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-05-14','2013-06-06','2011-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,2400,NULL,0,722,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-05-14','2013-06-06','2011-04-01','2400-12-31',0.4,0,0,36,36,0,36,0,2400,NULL,0,720,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-02-05','2013-04-01','2011-04-01','2400-12-31',0.35,0,0,24,24,0,24,0,2400,NULL,0,688,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-06-01','2400-12-31','2011-04-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,737,11,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">EIT : 100% MAKELAAR</p>',25);
+INSERT INTO "product_feature_applicability" VALUES('2012-10-02','2012-12-04','2011-04-01','2400-12-31',1.2,0,0,60,60,0,60,0,2400,NULL,0,585,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-02-05','2013-04-01','2011-04-01','2400-12-31',0.15,0,0,12,12,0,12,0,2400,NULL,0,690,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2015-10-31','2012-03-01','2400-12-31',0.5,0,0,0,4800,0,4800,0,4800,NULL,1,406,11,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">EIT : </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0.50% ALTIJD COMPANY</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">saldo = MAKELAAR</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">vb. 3% --&gt; 0.5% PATRONALE + 2.5% MAKELAAR</p>',30);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-08','2014-06-03','2011-04-01','2400-12-31',0.9,0,0,60,60,0,60,0,2400,NULL,0,913,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-08','2014-06-03','2011-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,2400,NULL,0,912,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-08','2014-06-03','2011-04-01','2400-12-31',0.45,0,0,36,36,0,36,0,2400,NULL,0,911,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-08','2014-06-03','2011-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,2400,NULL,0,910,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2014-09-30','2010-10-01','2400-12-31',2,0,0,0,2400,0,96,0,2400,NULL,0,892,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2014-09-30','2011-04-01','2400-12-31',2,0,0,0,2400,0,96,0,2400,NULL,0,894,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-01','2400-12-31','2014-03-01','2400-12-31',2.25,0,NULL,0,4800,0,4800,0,4800,NULL,0,870,1,NULL,NULL,41);
+INSERT INTO "product_feature_applicability" VALUES('2014-04-08','2014-05-07','2010-04-01','2400-12-31',1,0,0,60,60,0,60,0,4800,NULL,0,881,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2014-12-31','2013-01-01','2014-12-31',3.15,0,0,0,4800,0,12,0,4800,NULL,0,852,32001,NULL,NULL,5);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-01','2400-12-31','2014-03-01','2400-12-31',15,0,NULL,0,4800,0,4800,0,4800,NULL,0,875,44,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',41);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-01','2400-12-31','2014-03-01','2400-12-31',15,0,NULL,0,4800,0,4800,0,4800,NULL,1,876,11,NULL,NULL,41);
+INSERT INTO "product_feature_applicability" VALUES('2014-04-08','2014-05-07','2011-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,2400,NULL,0,883,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-05','2014-04-07','2011-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,2400,NULL,0,833,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-05','2014-04-07','2011-05-16','2400-12-31',2.3,0,0,120,120,0,120,0,2400,NULL,0,836,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-05','2014-04-07','2011-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,2400,NULL,0,837,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-05','2014-04-07','2011-04-01','2400-12-31',1.1,0,0,60,60,0,60,0,2400,NULL,0,838,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',5,0,NULL,0,4800,0,4800,0,4800,NULL,0,922,60,NULL,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-05','2014-04-07','2011-04-01','2400-12-31',0.45,0,0,36,36,0,36,0,2400,NULL,0,834,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2015-01-01','2015-01-01','2015-12-31',0.8,0,0,0,4800,0,4800,0,4800,NULL,0,1056,1,NULL,NULL,33);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,1100,87,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',6,0,NULL,0,4800,0,4800,0,4800,NULL,0,1102,109,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-01','2014-04-30','2010-10-01','2400-12-31',2.25,0,0,0,2400,0,96,0,2400,NULL,0,822,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',5,0,100000,0,4800,0,4800,0,4800,NULL,0,896,60,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2014-04-08','2014-05-07','2010-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,4800,NULL,0,882,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-04-08','2014-05-07','2010-04-01','2400-12-31',2.3,0,0,120,120,0,120,0,4800,NULL,0,878,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-04-08','2014-05-07','2010-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,4800,NULL,0,877,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-04-08','2014-05-07','2010-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,4800,NULL,0,880,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-04-08','2014-05-07','2010-04-01','2400-12-31',0.45,0,0,36,36,0,36,0,4800,NULL,0,879,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',3,0,NULL,240,299,0,4800,0,4800,NULL,NULL,918,1,NULL,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',3.25,0,NULL,300,420,0,4800,0,4800,NULL,0,916,1,NULL,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',2.25,0,NULL,60,239,0,4800,0,4800,NULL,0,917,1,NULL,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',18,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,920,82,NULL,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-07','2014-03-04','2010-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,4800,NULL,0,812,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-07','2014-03-04','2010-04-01','2400-12-31',2.3,0,0,120,120,0,120,0,4800,NULL,0,813,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-07','2014-03-04','2010-04-01','2400-12-31',1.1,0,0,60,60,0,60,0,4800,NULL,0,811,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-07','2014-03-04','2010-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,4800,NULL,0,808,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-09-16','2013-11-12','2010-04-01','2400-12-31',2.3,0,0,120,120,0,120,0,4800,NULL,0,770,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-07','2014-03-04','2010-04-01','2400-12-31',0.3,0,0,24,24,0,24,0,4800,NULL,0,809,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-07','2014-03-04','2010-04-01','2400-12-31',0.55,0,0,36,36,0,36,0,4800,NULL,0,810,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-07','2014-03-04','2011-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,2400,NULL,0,814,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-07','2014-03-04','2011-04-01','2400-12-31',0.55,0,0,36,36,0,36,0,2400,NULL,0,816,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-11-13','2013-12-09','2011-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,2400,NULL,0,790,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-11-13','2013-12-09','2011-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,2400,NULL,0,792,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-11-13','2013-12-09','2011-04-01','2400-12-31',0.4,0,0,24,24,0,24,0,2400,NULL,0,793,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-07','2014-03-04','2011-04-01','2400-12-31',0.3,0,0,24,24,0,24,0,2400,NULL,0,815,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-07','2014-03-04','2011-05-16','2400-12-31',2.3,0,0,120,120,0,120,0,2400,NULL,0,819,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-07','2014-03-04','2011-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,2400,NULL,0,818,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-07','2014-03-04','2011-04-01','2400-12-31',1.1,0,0,60,60,0,60,0,2400,NULL,0,817,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-01','2400-12-31','2014-03-01','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,0,872,9,NULL,NULL,41);
+INSERT INTO "product_feature_applicability" VALUES('2013-09-16','2013-11-12','2011-05-16','2400-12-31',2.2,0,0,120,120,0,120,0,2400,NULL,0,775,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,853,20,NULL,NULL,33);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,863,56,NULL,NULL,35);
+INSERT INTO "product_feature_applicability" VALUES('2013-11-13','2013-12-09','2011-04-01','2400-12-31',1.3,0,0,60,60,0,60,0,2400,NULL,0,791,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-21','2400-12-31','2014-01-01','2014-12-31',0.8,0,0,0,2400,0,2400,0,2400,NULL,0,795,17,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2013-11-13','2013-12-09','2011-04-01','2400-12-31',0.7,0,0,36,36,0,36,0,2400,NULL,0,789,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-11-13','2013-12-09','2011-05-16','2400-12-31',2.4,0,0,120,120,0,120,0,2400,NULL,0,788,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2012-04-20','2014-01-01','2014-12-31',0.2,0,0,0,2400,0,2400,0,2400,NULL,0,794,17,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',5);
+INSERT INTO "product_feature_applicability" VALUES('2013-11-13','2013-12-09','2010-04-01','2400-12-31',0.7,0,0,36,36,0,36,0,4800,NULL,0,787,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-11-13','2013-12-09','2010-04-01','2400-12-31',1.3,0,0,60,60,0,60,0,4800,NULL,0,785,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-11-13','2013-12-09','2010-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,4800,NULL,0,784,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-11-13','2013-12-09','2010-04-01','2400-12-31',0.4,0,0,24,24,0,24,0,4800,NULL,0,786,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-12-10','2014-01-06','2011-04-01','2400-12-31',0.25,0,0,24,24,0,24,0,2400,NULL,0,804,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',8,0,NULL,0,4800,0,4800,0,4800,NULL,0,928,67,12,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',5,0,NULL,0,4800,0,4800,0,4800,NULL,0,923,62,NULL,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2013-12-10','2014-01-06','2011-04-01','2400-12-31',1.1,0,0,60,60,0,60,0,2400,NULL,0,805,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-12-10','2014-01-06','2011-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,2400,NULL,0,802,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-12-10','2014-01-06','2011-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,2400,NULL,0,803,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-12-10','2014-07-06','2010-04-01','2400-12-31',2.3,0,0,120,120,0,120,0,4800,NULL,0,799,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-12-10','2014-07-06','2010-04-01','2400-12-31',1.1,0,0,60,60,0,60,0,4800,NULL,0,798,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-12-10','2014-07-06','2010-04-01','2400-12-31',0.55,0,0,36,36,0,36,0,4800,NULL,0,797,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-12-10','2014-07-06','2010-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,4800,NULL,0,796,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-12-10','2014-07-06','2010-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,4800,NULL,0,800,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-12-10','2014-07-06','2010-04-01','2400-12-31',0.25,0,0,24,24,0,24,0,4800,NULL,0,801,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-12-10','2014-01-06','2011-04-01','2400-12-31',0.55,0,0,36,36,0,36,0,2400,NULL,0,806,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2013-12-10','2014-01-06','2011-05-16','2400-12-31',2.3,0,0,120,120,0,120,0,2400,NULL,0,807,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-08','2014-06-03','2010-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,4800,NULL,0,904,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-08','2014-06-03','2010-04-01','2400-12-31',2.2,0,0,120,120,0,120,0,4800,NULL,0,903,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-08','2014-06-03','2010-04-01','2400-12-31',0.9,0,0,60,60,0,60,0,4800,NULL,0,905,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-08','2014-06-03','2010-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,4800,NULL,0,906,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-08','2014-06-03','2010-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,4800,NULL,0,907,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-08','2014-06-03','2010-04-01','2400-12-31',0.45,0,0,36,36,0,36,0,4800,NULL,0,908,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',50,0,NULL,0,4800,0,4800,0,4800,NULL,0,925,66,12,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2010-04-01','2400-12-31',1.5,0,0,84,84,0,84,0,4800,NULL,0,952,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2014-01-01','2012-01-01','2014-12-31',1.65,0,0,0,4800,0,4800,0,4800,NULL,0,673,1,NULL,NULL,33);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2014-01-01','2013-01-01','2014-12-31',1.65,0,0,0,4800,0,4800,0,4800,NULL,0,848,1,NULL,NULL,34);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',144,0,NULL,0,4800,0,4800,0,4800,NULL,0,1103,110,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1108,98,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,854,18,NULL,NULL,33);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,855,56,NULL,NULL,33);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,856,4,NULL,NULL,33);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0,0,100000,0,4800,0,4800,0,4800,NULL,0,897,65,3,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,861,20,NULL,NULL,35);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,862,18,NULL,NULL,35);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,864,4,NULL,NULL,35);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-01','2400-12-31','2014-03-01','2400-12-31',1.1,0,NULL,0,4800,0,4800,0,4800,NULL,0,873,8,NULL,NULL,41);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,865,20,NULL,NULL,36);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2400-12-31','2013-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,867,56,NULL,NULL,36);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2014-09-30','2012-03-01','2400-12-31',2,0,0,0,4800,0,96,0,4800,NULL,0,893,1,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2014-09-30','2000-01-01','2400-12-31',1.4,0,0,0,2400,0,2400,0,2400,NULL,0,895,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2014-08-27','2014-09-09','2010-04-01','2400-12-31',0.02,0,0,12,12,0,12,0,4800,NULL,0,977,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0,0,100000,0,4800,0,4800,0,4800,NULL,0,900,65,6,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1109,97,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2014-03-01','2400-12-31','2014-03-01','2400-12-31',4,0,NULL,0,4800,0,4800,0,4800,NULL,0,874,10,NULL,NULL,41);
 INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',18,0,NULL,0,4800,0,4800,0,4800,NULL,0,1115,82,NULL,NULL,69);
 INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,1116,97,NULL,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',50,0,NULL,0,4800,0,4800,0,4800,NULL,0,1117,98,NULL,NULL,69);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,1118,87,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0,0,100000,0,4800,0,4800,0,4800,NULL,0,898,65,12,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0,0,100000,0,4800,0,4800,0,4800,NULL,0,899,65,1,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2014-04-08','2014-05-07','2011-05-16','2400-12-31',2.3,0,0,120,120,0,120,0,2400,NULL,0,884,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2011-01-01','2400-12-31','2014-01-01','2400-12-31',1,0,NULL,0,4800,0,60,0,4800,NULL,0,902,4,NULL,NULL,16);
+INSERT INTO "product_feature_applicability" VALUES('2014-04-08','2014-05-07','2011-04-01','2400-12-31',0.45,0,0,36,36,0,36,0,2400,NULL,0,887,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-04-08','2014-05-07','2011-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,2400,NULL,0,888,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-04-08','2014-05-07','2011-04-01','2400-12-31',1,0,0,60,60,0,60,0,2400,NULL,0,886,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-04-08','2014-05-07','2011-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,2400,NULL,0,885,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',160,0,0,0,4800,0,4800,0,4800,NULL,0,529,73,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',27);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',4,0,NULL,0,4800,0,4800,0,4800,NULL,0,921,11,NULL,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',85,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,919,83,NULL,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,927,65,12,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',50,0,NULL,0,4800,0,4800,0,4800,NULL,0,926,68,12,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,930,70,12,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,929,69,12,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',25,0,NULL,0,4800,0,4800,0,4800,NULL,0,931,31,6,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',25,0,NULL,0,4800,0,4800,0,4800,NULL,0,932,66,6,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',25,0,NULL,0,4800,0,4800,0,4800,NULL,0,933,68,6,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',4,0,NULL,0,4800,0,4800,0,4800,NULL,0,935,67,6,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0.5,0,NULL,0,4800,0,4800,0,4800,NULL,0,936,69,6,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',3,0,NULL,0,4800,0,4800,0,4800,NULL,0,944,70,3,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,0,937,70,6,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',60,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1107,88,NULL,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',50,0,0,0,4800,0,4800,0,4800,NULL,1,1059,10,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',67);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-08','2014-06-03','2011-05-16','2400-12-31',2.2,0,0,120,120,0,120,0,2400,NULL,0,909,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,941,65,3,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,0,1069,9,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',10,0,NULL,0,4800,0,4800,0,4800,NULL,0,938,31,3,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',12.5,0,NULL,0,4800,0,4800,0,4800,NULL,0,939,66,3,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',12.5,0,NULL,0,4800,0,4800,0,4800,NULL,0,940,68,3,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,0,942,67,3,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0.25,0,NULL,0,4800,0,4800,0,4800,NULL,0,943,69,3,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,1074,10,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2010-04-01','2400-12-31',0.01,0,0,12,12,0,12,0,4800,NULL,0,994,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2010-04-01','2400-12-31',0.95,0,0,84,84,0,84,0,4800,NULL,0,995,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2010-04-01','2400-12-31',0.1,0,0,36,36,0,36,0,4800,NULL,0,996,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2011-05-16','2400-12-31',2,0,0,120,120,0,120,0,2400,NULL,0,963,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2011-04-01','2400-12-31',1.5,0,0,84,84,0,84,0,2400,NULL,0,962,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2011-04-01','2400-12-31',0.8,0,0,60,60,0,60,0,2400,NULL,0,961,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2011-04-01','2400-12-31',0.35,0,0,36,36,0,36,0,2400,NULL,0,960,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2400-12-31','2012-04-01','2400-12-31',75,0,NULL,0,4800,0,4800,0,4800,NULL,0,448,12,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',31);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1104,87,NULL,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,1139,11,NULL,NULL,46);
+INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','2010-04-01','2400-12-31',1.85,0,0,120,120,0,120,0,4800,NULL,0,969,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',50,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1106,98,NULL,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',18,0,NULL,0,4800,0,4800,0,4800,NULL,0,1113,105,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2010-04-01','2400-12-31',0.03,0,0,24,24,0,24,0,4800,NULL,0,997,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2010-04-01','2400-12-31',0.35,0,0,60,60,0,60,0,4800,NULL,0,993,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1138,8,NULL,NULL,46);
+INSERT INTO "product_feature_applicability" VALUES('2016-01-01','2400-12-31','2016-01-01','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,1,1176,37,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4);
+INSERT INTO "product_feature_applicability" VALUES('2011-10-01','2015-10-31','2011-10-01','2400-12-31',215,0,0,0,2400,0,2400,0,2400,NULL,1,330,2,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2015-11-01','2015-12-31','2015-11-01','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,1,1177,2,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2014-08-27','2014-09-09','2010-04-01','2400-12-31',1.6,0,0,120,120,0,120,0,4800,NULL,0,978,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-08-27','2014-09-09','2010-04-01','2400-12-31',0.5,0,0,60,60,0,60,0,4800,NULL,0,980,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-08-27','2014-09-09','2010-04-01','2400-12-31',0.15,0,0,36,36,0,36,0,4800,NULL,0,981,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-08-27','2014-09-09','2010-04-01','2400-12-31',0.06,0,0,24,24,0,24,0,4800,NULL,0,979,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2016-01-01','2400-12-31','2016-01-01','2400-12-31',215,0,0,0,2400,0,2400,0,2400,NULL,1,1178,2,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-11-01','2400-12-31',15,0,NULL,0,4800,0,4800,0,4800,NULL,0,1182,114,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',50);
+INSERT INTO "product_feature_applicability" VALUES('2014-08-27','2014-09-09','2011-04-01','2400-12-31',0.5,0,0,60,60,0,60,0,2400,NULL,0,983,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-08-27','2014-09-09','2011-04-01','2400-12-31',0.06,0,0,24,24,0,24,0,2400,NULL,0,984,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-08-27','2014-09-09','2011-05-16','2400-12-31',1.6,0,0,120,120,0,120,0,2400,NULL,0,982,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2011-04-01','2400-12-31',0.95,0,0,84,84,0,84,0,2400,NULL,0,1000,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-07','2014-11-06','2010-04-01','2400-12-31',0.03,0,0,24,24,0,24,0,4800,NULL,0,1013,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-07','2014-11-06','2010-04-01','2400-12-31',0.9,0,0,84,84,0,84,0,4800,NULL,0,1011,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-07','2014-11-06','2010-04-01','2400-12-31',0.1,0,0,36,36,0,36,0,4800,NULL,0,1012,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-07','2014-11-06','2010-04-01','2400-12-31',0.01,0,0,12,12,0,12,0,4800,NULL,0,1010,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-07','2014-11-06','2010-04-01','2400-12-31',1.35,0,0,120,120,0,120,0,4800,NULL,0,1014,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-08-27','2014-09-09','2011-04-01','2400-12-31',1.15,0,0,84,84,0,84,0,2400,NULL,0,986,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-01','2015-12-31','2000-01-01','2400-12-31',0.8,0,0,0,2400,0,2400,0,2400,NULL,0,991,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,948,65,1,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',3,0,NULL,0,4800,0,4800,0,4800,NULL,0,945,31,1,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',4.17,0,NULL,0,4800,0,4800,0,4800,NULL,0,946,66,1,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',4.17,0,NULL,0,4800,0,4800,0,4800,NULL,0,947,68,1,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0.67,0,NULL,0,4800,0,4800,0,4800,NULL,0,949,67,1,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0.08,0,NULL,0,4800,0,4800,0,4800,NULL,0,950,69,1,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',4,0,NULL,0,4800,0,4800,0,4800,NULL,0,951,70,1,NULL,42);
+INSERT INTO "product_feature_applicability" VALUES('2014-04-08','2014-05-07','2011-04-01','2400-12-31',1.7,0,0,84,84,0,84,0,2400,NULL,0,914,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2011-04-01','2400-12-31',0.1,0,0,12,12,0,12,0,2400,NULL,0,958,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2011-04-01','2400-12-31',0.2,0,0,24,24,0,24,0,2400,NULL,0,959,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','2011-05-16','2400-12-31',1.85,0,0,120,120,0,120,0,2400,NULL,0,971,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','2011-04-01','2400-12-31',0.05,0,0,12,12,0,12,0,2400,NULL,0,970,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','2011-04-01','2400-12-31',1.4,0,0,84,84,0,84,0,2400,NULL,0,972,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','2011-04-01','2400-12-31',0.2,0,0,36,36,0,36,0,2400,NULL,0,974,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','2011-04-01','2400-12-31',0.1,0,0,24,24,0,24,0,2400,NULL,0,975,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','2011-04-01','2400-12-31',0.65,0,0,60,60,0,60,0,2400,NULL,0,973,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2400-12-31','2014-05-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,934,65,6,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',42);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-01','2400-12-31','2010-10-01','2400-12-31',1.25,0,0,0,2400,0,96,0,2400,NULL,0,988,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-01','2400-12-31','2011-04-01','2400-12-31',1.25,0,0,0,2400,0,96,0,2400,NULL,0,989,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2014-08-27','2014-09-09','2011-04-01','2400-12-31',0.15,0,0,36,36,0,36,0,2400,NULL,0,985,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-08-27','2014-09-09','2010-04-01','2400-12-31',1.15,0,0,84,84,0,84,0,4800,NULL,0,976,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-08-27','2014-09-09','2011-04-01','2400-12-31',0.02,0,0,12,12,0,12,0,2400,NULL,0,987,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2011-04-01','2400-12-31',0.35,0,0,60,60,0,60,0,2400,NULL,0,998,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-07','2014-11-06','2011-04-01','2400-12-31',0.1,0,0,36,36,0,36,0,2400,NULL,0,1006,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-07','2014-11-06','2011-04-01','2400-12-31',0.01,0,0,12,12,0,12,0,2400,NULL,0,1004,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2010-04-01','2400-12-31',1.4,0,0,120,120,0,120,0,4800,NULL,0,992,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-07','2014-11-06','2011-04-01','2400-12-31',0.9,0,0,84,84,0,84,0,2400,NULL,0,1009,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-07','2014-11-06','2011-04-01','2400-12-31',0.03,0,0,24,24,0,24,0,2400,NULL,0,1008,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-07','2014-11-06','2011-04-01','2400-12-31',0.3,0,0,60,60,0,60,0,2400,NULL,0,1005,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-11-07','2015-01-12','2011-04-01','2400-12-31',0.03,0,0,24,24,0,24,0,2400,NULL,0,1018,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-11-07','2015-01-12','2010-04-01','2400-12-31',0.1,0,0,36,36,0,36,0,4800,NULL,0,1025,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-11-07','2015-01-12','2010-04-01','2400-12-31',0.01,0,0,12,12,0,12,0,4800,NULL,0,1024,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-11-07','2015-01-12','2010-04-01','2400-12-31',0.3,0,0,60,60,0,60,0,4800,NULL,0,1026,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-11-07','2015-01-12','2010-04-01','2400-12-31',1.3,0,0,120,120,0,120,0,4800,NULL,0,1023,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-07','2014-11-06','2010-04-01','2400-12-31',0.3,0,0,60,60,0,60,0,4800,NULL,0,1015,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',2.5,0,0,0,4800,0,4800,0,4800,NULL,0,678,32001,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2013 = 2.65</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2014 = 2.50</p>',35);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',2.5,0,0,0,4800,0,4800,0,4800,NULL,0,1054,32001,NULL,NULL,34);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',75,0,0,0,2400,0,96,0,2400,NULL,0,300,56,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',26);
+INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2011-04-01','2400-12-31',0.01,0,0,12,12,0,12,0,2400,NULL,0,1003,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2011-04-01','2400-12-31',0.1,0,0,36,36,0,36,0,2400,NULL,0,1002,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2011-05-16','2400-12-31',1.4,0,0,120,120,0,120,0,2400,NULL,0,1001,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2011-04-01','2400-12-31',0.03,0,0,24,24,0,24,0,2400,NULL,0,999,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2010-09-30','2400-12-31','2010-09-30','2400-12-31',75,0,0,0,2400,0,96,0,2400,NULL,0,274,12,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',11);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,1140,11,NULL,NULL,45);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',75,0,NULL,0,4800,0,4800,0,4800,NULL,0,1090,83,NULL,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,1144,11,NULL,NULL,44);
 INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',40,0,NULL,0,4800,0,4800,0,4800,NULL,0,1119,88,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',120,0,NULL,0,4800,0,4800,0,4800,NULL,0,1110,109,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',1,0,NULL,0,4800,0,4800,0,4800,NULL,0,1147,53,NULL,NULL,50);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',70,0,NULL,0,4800,0,4800,0,4800,NULL,0,1114,106,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-11-01','2015-11-30',15,0,NULL,0,4800,0,4800,0,4800,NULL,0,1184,114,NULL,NULL,48);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,0,1063,8,0,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,0,1062,9,0,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',5,0,NULL,0,4800,0,4800,0,4800,NULL,0,1088,4,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,0,1070,8,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2014-01-01','2012-01-01','2014-12-31',1.65,0,0,0,4800,0,4800,0,4800,NULL,0,677,1,NULL,NULL,35);
+INSERT INTO "product_feature_applicability" VALUES('2015-03-01','2400-12-31','2015-03-01','2400-12-31',1.1,0,NULL,0,4800,0,4800,0,4800,NULL,0,1083,8,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2015-03-01','2400-12-31','2015-03-01','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,0,1082,9,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,1081,45,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',69);
+INSERT INTO "product_feature_applicability" VALUES('2012-04-01','2400-12-31','2012-04-01','2400-12-31',75,0,NULL,0,4800,0,96,0,4800,NULL,0,1170,56,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',31);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2015-10-31','2000-01-01','2400-12-31',1,0,0,0,2400,0,2400,0,2400,NULL,1,16,11,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">EIT:</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">FINAMORE = 1%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">saldo = MAKELAAR</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">vb 3% -&gt; 1% finamore + 2% Makelaar</p>',4);
+INSERT INTO "product_feature_applicability" VALUES('2015-11-01','2015-12-31','2015-11-01','2400-12-31',0,0,0,0,2400,0,2400,0,2400,NULL,1,1171,11,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">EIT:</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">FINAMORE = 1%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">saldo = MAKELAAR</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">vb 3% -&gt; 1% finamore + 2% Makelaar</p>',4);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2015-10-31',19,0,NULL,0,4800,0,4800,0,4800,NULL,0,1149,114,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',50);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-01','2400-12-31','2016-01-01','2016-12-31',0.8,0,0,0,2400,0,2400,0,2400,NULL,0,1190,17,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-11-01','2400-12-31',15,0,NULL,0,4800,0,4800,0,4800,NULL,0,1183,114,NULL,NULL,49);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2015-10-31',19,0,NULL,0,4800,0,4800,0,4800,NULL,0,1148,114,NULL,NULL,48);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2015-10-31',19,0,NULL,0,4800,0,4800,0,4800,NULL,0,1150,114,NULL,NULL,44);
+INSERT INTO "product_feature_applicability" VALUES('2016-01-01','2400-12-31','2016-01-01','2016-12-31',1.2,0,0,0,2400,0,2400,0,2400,NULL,0,1191,17,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',3,0,NULL,0,4800,0,4800,0,4800,NULL,0,1159,10014,NULL,NULL,70);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-11-01','2400-12-31',15,0,NULL,0,4800,0,4800,0,4800,NULL,0,1185,114,NULL,NULL,44);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,0,1122,8,NULL,NULL,50);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',2.9,0,0,0,4800,0,4800,0,4800,NULL,0,680,32001,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2012 = 3.45</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2013 = 3.15</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2014 = 2.90</p>',36);
+INSERT INTO "product_feature_applicability" VALUES('2012-01-01','2400-12-31','2012-01-01','2400-12-31',2.5,0,0,0,4800,0,4800,0,4800,NULL,0,1055,32001,NULL,NULL,33);
+INSERT INTO "product_feature_applicability" VALUES('2014-11-07','2015-01-12','2011-04-01','2400-12-31',0.8,0,0,84,84,0,84,0,2400,NULL,0,1020,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-07','2014-11-06','2011-05-16','2400-12-31',1.35,0,0,120,120,0,120,0,2400,NULL,0,1007,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',35,0,0,0,4800,0,4800,0,4800,NULL,0,1060,59,0,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',67);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',18,0,NULL,0,4800,0,4800,0,4800,NULL,0,1091,82,NULL,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,1123,11,NULL,NULL,50);
+INSERT INTO "product_feature_applicability" VALUES('2014-11-07','2015-01-12','2011-05-16','2400-12-31',1.3,0,0,120,120,0,120,0,2400,NULL,0,1022,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-11-07','2015-01-12','2011-04-01','2400-12-31',0.1,0,0,36,36,0,36,0,2400,NULL,0,1019,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-11-07','2015-01-12','2011-04-01','2400-12-31',0.01,0,0,12,12,0,12,0,2400,NULL,0,1021,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',18,0,NULL,0,4800,0,4800,0,4800,NULL,0,1093,105,NULL,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',6,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1160,10014,NULL,NULL,71);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1133,9,NULL,NULL,47);
+INSERT INTO "product_feature_applicability" VALUES('2016-01-01','2400-12-31','2016-01-01','2400-12-31',1,0,0,0,2400,0,2400,0,2400,NULL,1,1172,11,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">EIT:</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">FINAMORE = 1%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">saldo = MAKELAAR</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">vb 3% -&gt; 1% finamore + 2% Makelaar</p>',4);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,0,1121,9,NULL,NULL,50);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,1135,11,NULL,NULL,47);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',5,0,NULL,0,4800,0,4800,0,4800,NULL,0,1086,4,NULL,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',75,0,NULL,0,4800,0,4800,0,4800,NULL,0,1085,12,NULL,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',1,0,NULL,0,4800,0,4800,0,4800,NULL,0,1136,53,NULL,NULL,47);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0.15,0,0,0,4800,0,4800,0,4800,NULL,0,1058,29,0,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',2.5,0,0,0,4800,0,4800,0,4800,NULL,0,1064,1,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',75,0,NULL,0,4800,0,4800,0,4800,NULL,0,1087,12,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0.15,0,0,0,4800,0,4800,0,4800,NULL,0,1065,29,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,1162,10010,NULL,NULL,1001);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',2.25,0,NULL,0,4800,0,4800,0,4800,NULL,0,1071,1,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,0,1141,9,NULL,NULL,45);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,1163,10011,NULL,NULL,1001);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1145,8,NULL,NULL,44);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,1164,10012,NULL,NULL,1001);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',30.99,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1146,52,NULL,NULL,44);
+INSERT INTO "product_feature_applicability" VALUES('2016-01-01','2400-12-31','2016-01-01','2400-12-31',0.5,0,0,0,4800,0,4800,0,4800,NULL,1,1181,11,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">EIT : </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0.50% ALTIJD COMPANY</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">saldo = MAKELAAR</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">vb. 3% --&gt; 0.5% PATRONALE + 2.5% MAKELAAR</p>',30);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-12-01','2400-12-31',13,0,NULL,0,4800,0,4800,0,4800,NULL,0,1187,114,NULL,NULL,48);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2015-10-31',19,0,NULL,0,4800,0,4800,0,4800,NULL,0,1151,114,NULL,NULL,49);
+INSERT INTO "product_feature_applicability" VALUES('2015-11-01','2015-12-31','2015-11-01','2400-12-31',1,0,0,0,2400,0,2400,0,2400,NULL,1,1173,37,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',5,0,NULL,0,4800,0,4800,0,4800,NULL,0,1080,59,1,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2016-01-01','2400-12-31','2000-01-01','2400-12-31',0.4,0,0,0,2400,0,2400,0,2400,NULL,0,1188,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2014-09-30','2016-01-01','2016-12-31',0.2,0,0,0,2400,0,2400,0,2400,NULL,0,1189,17,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2016-02-01','2400-12-31','2013-01-01','2400-12-31',1.3,0,0,121,121,0,121,0,4800,NULL,0,1192,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',70,0,NULL,0,4800,0,4800,0,4800,NULL,0,1092,106,NULL,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-13','2400-12-31','2010-04-01','2400-12-31',1.3,0,0,120,120,0,120,0,4800,NULL,0,1047,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2015-11-01','2015-12-31','2015-11-01','2400-12-31',0,0,0,0,4800,0,4800,0,4800,NULL,1,1180,11,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">EIT : </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0.50% ALTIJD COMPANY</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">saldo = MAKELAAR</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">vb. 3% --&gt; 0.5% PATRONALE + 2.5% MAKELAAR</p>',30);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2016-01-01','2016-01-01','2016-12-31',0.4,0,0,0,4800,0,4800,0,4800,NULL,0,1193,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',36);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2016-01-01','2016-01-01','2016-12-31',0.4,0,0,0,4800,0,4800,0,4800,NULL,0,1194,1,NULL,NULL,35);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2016-01-01','2016-01-01','2016-12-31',0.4,0,0,0,4800,0,4800,0,4800,NULL,0,1195,1,NULL,NULL,34);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2016-01-01','2016-01-01','2016-12-31',0.4,0,0,0,4800,0,4800,0,4800,NULL,0,1196,1,NULL,NULL,33);
+INSERT INTO "product_feature_applicability" VALUES('2011-12-01','2400-12-31','2011-12-01','2400-12-31',0,0,0,0,4800,0,4800,0,4800,NULL,1,365,11,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">EIT</span></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">minimaal 1% dient aangerekend te worden.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">verdeling is als volgt:</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">PL 0.35% + Finamore 0.65% + 0% MKLR = 1% MINIMAAL</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Makelaar kan on top maximaal 4.5% vragen = 0.35%+ 0.65% + 4.5%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; text-decoration: underline;"><br/></p>',29);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2014-01-01','2012-01-01','2014-12-31',1.65,0,0,0,4800,0,4800,0,4800,NULL,0,679,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',36);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-13','2400-12-31','2011-04-01','2400-12-31',0.01,0,0,12,12,0,12,0,2400,NULL,0,1039,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-13','2400-12-31','2011-04-01','2400-12-31',0.1,0,0,36,36,0,36,0,2400,NULL,0,1040,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-05-01','2014-09-30','2015-01-01','2015-12-31',0.2,0,0,0,2400,0,2400,0,2400,NULL,0,1034,17,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-13','2400-12-31','2011-04-01','2400-12-31',0.3,0,0,60,60,0,60,0,2400,NULL,0,1041,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-13','2400-12-31','2011-04-01','2400-12-31',0.03,0,0,24,24,0,24,0,2400,NULL,0,1042,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2014-10-01','2400-12-31','2015-01-01','2015-12-31',0.8,0,0,0,2400,0,2400,0,2400,NULL,0,1035,17,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',5);
+INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2015-01-01','2015-01-01','2015-12-31',0.8,0,0,0,4800,0,4800,0,4800,NULL,0,1050,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',36);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-13','2400-12-31','2011-04-01','2400-12-31',0.75,0,0,84,84,0,84,0,2400,NULL,0,1038,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',60,0,0,0,4800,0,4800,0,4800,NULL,1,1061,11,0,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2014-11-07','2015-01-12','2011-04-01','2400-12-31',0.3,0,0,60,60,0,60,0,2400,NULL,0,1017,1,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-13','2400-12-31','2011-05-16','2400-12-31',1.3,0,0,120,120,0,120,0,2400,NULL,0,1037,1,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',2.5,0,0,0,4800,0,4800,0,4800,NULL,0,1057,1,0,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',250,0,NULL,0,4800,0,4800,0,4800,NULL,0,1077,59,0,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2014-11-07','2015-01-12','2010-04-01','2400-12-31',0.8,0,0,84,84,0,84,0,4800,NULL,0,1027,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2014-11-07','2015-01-12','2010-04-01','2400-12-31',0.03,0,0,24,24,0,24,0,4800,NULL,0,1028,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-13','2400-12-31','2010-04-01','2400-12-31',0.1,0,0,36,36,0,36,0,4800,NULL,0,1043,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-13','2400-12-31','2010-04-01','2400-12-31',0.01,0,0,12,12,0,12,0,4800,NULL,0,1045,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-13','2400-12-31','2010-04-01','2400-12-31',0.3,0,0,60,60,0,60,0,4800,NULL,0,1046,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-13','2400-12-31','2010-04-01','2400-12-31',0.03,0,0,24,24,0,24,0,4800,NULL,0,1048,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-13','2400-12-31','2010-04-01','2400-12-31',0.75,0,0,84,84,0,84,0,4800,NULL,0,1044,1,0,NULL,15);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',15,0,NULL,0,4800,0,4800,0,4800,NULL,1,1075,11,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',40,0,0,0,4800,0,4800,0,4800,NULL,1,1068,11,NULL,NULL,68);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1134,8,NULL,NULL,47);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',144,0,NULL,0,4800,0,4800,0,4800,NULL,0,1095,110,NULL,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,1130,11,NULL,NULL,48);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0.018,0,NULL,0,4800,0,4800,0,4800,NULL,0,1072,29,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,0,1124,9,NULL,NULL,49);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',6,0,NULL,0,4800,0,4800,0,4800,NULL,0,1094,109,NULL,NULL,67);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',60,0,NULL,0,4800,0,4800,0,4800,NULL,0,1127,52,NULL,NULL,49);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1129,8,NULL,NULL,48);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,0,1142,9,NULL,NULL,45);
+INSERT INTO "product_feature_applicability" VALUES('2015-06-24','2400-12-31','2015-06-24','2400-12-31',1,0,NULL,0,4800,0,4800,0,4800,NULL,0,1143,4,NULL,NULL,45);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,0,1165,10013,NULL,NULL,1001);
+INSERT INTO "product_feature_applicability" VALUES('2015-11-01','2015-12-31','2015-11-01','2400-12-31',1,0,NULL,0,2400,0,2400,0,2400,NULL,1,1174,37,NULL,NULL,25);
+INSERT INTO "product_feature_applicability" VALUES('2016-01-01','2400-12-31','2016-01-01','2400-12-31',0,0,NULL,0,2400,0,2400,0,2400,NULL,1,1175,37,NULL,NULL,25);
+INSERT INTO "product_feature_applicability" VALUES('2015-11-01','2015-12-31','2015-11-01','2400-12-31',1,0,NULL,0,4800,0,4800,0,4800,NULL,1,1179,37,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',15,0,NULL,0,4800,0,4800,0,4800,NULL,0,1079,59,3,NULL,69);
+
 INSERT INTO "financial_product_feature_distribution" VALUES(4,250,NULL,130,1077);
+
 INSERT INTO "financial_item_clause" VALUES('Standaard begunstigingsclausule','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bla bla bla</p>',NULL,1,1,5);
 INSERT INTO "financial_item_clause" VALUES('AANGEPASTE Begunstiging bij overlijden beleggingsverzekering Patronale Life NL','

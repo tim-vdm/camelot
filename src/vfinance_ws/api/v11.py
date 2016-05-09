@@ -604,6 +604,7 @@ def get_proposal(session, document):
     facade.insured_party__1__first_name = document.get('insured_party__1__first_name')
     facade.insured_party__1__last_name = document.get('insured_party__1__last_name')
     facade.insured_party__1__language = document.get('insured_party__1__language')
+    facade.agreed_functional_settings.append(FinancialAgreementFunctionalSettingAgreement(described_by='exit_at_first_decease'))
     broker = CommercialRelation()
     broker.rechtspersoon = Rechtspersoon()
     broker.rechtspersoon.name = document.get('broker__name')
