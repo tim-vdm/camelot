@@ -1,5 +1,6 @@
 import os
 import sys
+import tempfile
 
 from PyQt4 import QtGui
 
@@ -12,7 +13,9 @@ if os.environ.get('DEBUGGER') == 'wingdb':
     import wingdbstub
     assert wingdbstub
 
-s = type('settings', (object,), {'CAMELOT_MEDIA_ROOT': '/home/pjd/tmp/'})
+tempdir = tempfile.mkdtemp()
+
+s = type('settings', (object,), {'CAMELOT_MEDIA_ROOT': tempdir})
 
 settings.append(s)
 
