@@ -163,7 +163,7 @@ INSERT INTO "financial_package" VALUES('Short Term Cover',NULL,'
 INSERT INTO "financial_package" VALUES('Reflex Horizon Eural',NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,58);
 INSERT INTO "financial_package" VALUES('Patronale Life Hypotheken Wet 92',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,0,8000000,8009999,'300/0100/00095',66);
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,0,8000000,8009999,NULL ,66);
 INSERT INTO "financial_package" VALUES('Fork Rekening',NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,15);
 INSERT INTO "financial_package" VALUES('Boutique 23',NULL,'
