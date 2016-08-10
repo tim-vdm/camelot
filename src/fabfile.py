@@ -68,7 +68,7 @@ def build_upload():
 
 def run_local():
     with context_managers.lcd('dist/cloud'), context_managers.shell_env(LOGHOME='/tmp/log-vfws.txt'), context_managers.shell_env(DB_PATH='/tmp/test.db'):
-        api.local('python -m cloudlaunch.main'
+        api.local('python -m cloudlaunch2.main'
                   ' --cld-file=v-finance-web-service-{0.CONFIGURATION}.cld'
                   ' --cld-name=V-Finance-WS'
                   ' --cld-branch={0.CONFIGURATION}'
@@ -104,6 +104,19 @@ def install_dependencies():
             print('*** You must generate the key and crt files. Please see ../conf/README. ***')
             raise ve
         api.sudo('service nginx start')
+        api.sudo('service nginx reload')
+
+
+def deploy_new_certificate():
+    with context_managers.settings(host_string=env.HOST_NAME,
+                                   user=env.HOST_USER,
+                                   key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
+        try:
+            api.put('../conf/patronale_ssl.crt', '/opt/ssl/patronale_ssl.crt', use_sudo=True)
+            api.put('../conf/patronale_ssl.key', '/opt/ssl/patronale_ssl.key', use_sudo=True)
+        except ValueError as ve:
+            print('*** You must generate the key and crt files. Please see ../conf/README. ***')
+            raise ve
         api.sudo('service nginx reload')
 
 

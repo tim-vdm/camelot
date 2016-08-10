@@ -12,6 +12,7 @@ phonenumbers
 png
 polib
 pyqrcode
+requests
 six
 sqlalchemy
 stdnum

@@ -2,6 +2,7 @@ import datetime
 import os
 import pprint
 import functools
+import threading
 
 import voluptuous
 
@@ -111,7 +112,9 @@ def ws_jsonify(function):
             if result is None:
                 result = {}
 
-            return jsonify(result)
+            if type(result) == dict:
+                return jsonify(result)
+            return result
         except voluptuous.MultipleInvalid as ex:
             errors = {}
             for error in ex.errors:
@@ -131,6 +134,7 @@ def ws_jsonify(function):
             return jsonify({'message': msg}), 400
 
     return wrapper
+
 
 
 def validation_json(validator=None):
@@ -154,3 +158,4 @@ def validation_json(validator=None):
 
         return wrapper
     return decorator
+

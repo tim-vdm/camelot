@@ -1,6 +1,13 @@
 Documentation can be read at:
     https://test-api.vortex-financials.be/api/docs
 
+To upload new version to production run:
+    fab generate_hash -c ../conf/production.conf
+    fab generate_db_file -c ../conf/production.conf
+    fab -c ../conf/production.conf put_db_file:/path/to/ws/s-c ../conf/production.conf put_db_file:/path/to/ws/src/dir/tmp/generated.db
+    fab build_upload -c ../conf/production.conf
+    fab restart_service -c ../conf/production.conf
+
 When tests pass locally but production doesn't work you can run locally from the egg:
     1. fab build -c ../conf/production.conf
     2. fab run_local -c ../conf/production.conf

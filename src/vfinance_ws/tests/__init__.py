@@ -1,15 +1,24 @@
 import os
 import sys
+import tempfile
 
 from PyQt4 import QtGui
 
 from camelot.core.templates import environment, loader
+from camelot.core.conf import settings
 from vfinance.admin.jinja2_filters import filters
 from vfinance.model.financial.notification.environment import PackageExtensionLoader
 
 if os.environ.get('DEBUGGER') == 'wingdb':
     import wingdbstub
     assert wingdbstub
+
+tempdir = tempfile.mkdtemp()
+
+s = type('settings', (object,), {'CAMELOT_MEDIA_ROOT': tempdir})
+
+settings.append(s)
+
 
 qapplications = []
 

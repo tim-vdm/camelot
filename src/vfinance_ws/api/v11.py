@@ -604,6 +604,7 @@ def get_proposal(session, document):
     facade.insured_party__1__first_name = document.get('insured_party__1__first_name')
     facade.insured_party__1__last_name = document.get('insured_party__1__last_name')
     facade.insured_party__1__language = document.get('insured_party__1__language')
+    facade.agreed_functional_settings.append(FinancialAgreementFunctionalSettingAgreement(described_by='exit_at_first_decease'))
     broker = CommercialRelation()
     broker.rechtspersoon = Rechtspersoon()
     broker.rechtspersoon.name = document.get('broker__name')
@@ -620,8 +621,8 @@ def get_proposal(session, document):
     html = None
 
     with TemplateLanguage(language=language):
-        facade_context = AgreementDocument().context(facade, options)
-        template = environment.get_template('notifications/Select_Plus/agreement-proposal_{}_BE.html'.format(language))
+        facade_context = AgreementDocument().context(facade, None, options)
+        template = environment.get_template('notifications/Select_Plus/agreement-proposal_{}.html'.format(language))
         html = template.render(facade_context)
 
     return html

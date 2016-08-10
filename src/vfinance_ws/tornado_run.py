@@ -14,7 +14,7 @@ from vfinance.model.financial.notification.environment import PackageExtensionLo
 
 LOGGER = logging.getLogger('v-finance-web-service.tornado_run')
 
-format_str = '[%(asctime)s] [%(levelname)-5s] [%(name)-20s] - %(message)s'
+format_str = '[%(asctime)s] [%(levelname)-5s] [%(name)-20s] [%(threadName)s]- %(message)s'
 logging.basicConfig(level=logging.INFO, format=format_str)
 
 #
