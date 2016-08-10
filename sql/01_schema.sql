@@ -270,6 +270,8 @@ CREATE TABLE geographic_boundary (
 	name VARCHAR(40) NOT NULL, 
 	row_type VARCHAR(40) NOT NULL, 
 	id INTEGER NOT NULL, 
+	latitude NUMERIC(6, 4),
+	longitude NUMERIC(6, 4),
 	PRIMARY KEY (id)
 );
 CREATE TABLE hypo_periode (
@@ -2988,6 +2990,7 @@ CREATE TABLE bank_natuurlijke_persoon
   identiteitskaart_nummer character varying(30),
   language character varying(50) NOT NULL,
   nationaliteit integer,
+  nationaliteit_geographicboundary_id integer,
   datum_verplaatsing date,
   verplaats_naar_natuurlijke_persoon integer,
   werkgever_sinds date,
@@ -2999,6 +3002,7 @@ CREATE TABLE bank_natuurlijke_persoon
   public_figure integer,
   aktiviteit character varying(40),
   geboorteplaats character varying(30),
+  geboorteplaats_id integer,
   contract_toestand character varying(50),
   voornaam character varying(30) NOT NULL,
   middle_name character varying(40),
