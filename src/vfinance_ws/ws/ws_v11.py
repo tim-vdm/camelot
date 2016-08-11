@@ -122,6 +122,11 @@ def ci_create_agreement_code(document):
     .. literalinclude:: demo/post_create_agreement_code.http
         :language: http
 
+    An example json for Select+
+
+    .. literalinclude:: demo/v11_create_agreement_code_select_plus.json
+        :language: json
+
     .. literalinclude:: demo/v11_create_agreement_code.json
         :language: json
 
