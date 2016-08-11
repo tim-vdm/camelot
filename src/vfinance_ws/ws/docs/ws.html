@@ -45,27 +45,17 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+      <div class="wy-side-nav-search">
+        
 
-          
-            <a href="index.html" class="icon icon-home"> VFinanceWebService
-          
+        
+          <a href="index.html" class="icon icon-home"> VFinanceWebService
+        
 
-          
-          </a>
+        
+        </a>
 
-          
-            
-            
-              <div class="version">
-                0.1
-              </div>
-            
-          
-
-          
+        
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -74,14 +64,14 @@
   </form>
 </div>
 
-          
-        </div>
+        
+      </div>
 
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
           
-            
-            
-                <ul class="current">
+          
+              <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Web Services v0.1</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#calculate-a-proposal">Calculate a proposal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-an-agreement-code">Create an Agreement Code</a></li>
@@ -90,15 +80,35 @@
 <li class="toctree-l2"><a class="reference internal" href="#get-the-package-list">Get the package list</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ws_11.html">Web Services v1.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ws_test.html">Web Services - Test</a></li>
-<li class="toctree-l1"><a class="reference internal" href="updates.html">Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ws_11.html">Web Services v1.1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ws_11.html#get-the-package-list">Get the package list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws_11.html#calculate-a-proposal">Calculate a proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws_11.html#create-an-agreement-code">Create an Agreement Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws_11.html#send-an-agreement">Send an Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws_11.html#get-a-pdf-report-of-a-proposal">Get a PDF report of a Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws_11.html#get-the-hash">Get the Hash</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ws_test.html">Web Services - Test</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ws_test.html#test-your-http-request">Test your HTTP request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws_test.html#your-http-request-is-compliant">Your HTTP request is compliant</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Changes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="updates.html#release-1-1-in-development">Release 1.1 (in development)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="updates.html#incompatible-changes">Incompatible changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="updates.html#features-added">Features added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="updates.html#bugs-fixed">Bugs fixed</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
-            
           
-        </div>
+        
       </div>
+      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -113,13 +123,7 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
+          <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
@@ -134,8 +138,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+          <div role="main" class="document">
             
   <div class="section" id="web-services-v0-1">
 <h1>Web Services v0.1<a class="headerlink" href="#web-services-v0-1" title="Permalink to this headline">¶</a></h1>
@@ -143,7 +146,7 @@
 <h2>Calculate a proposal<a class="headerlink" href="#calculate-a-proposal" title="Permalink to this headline">¶</a></h2>
 <dl class="post">
 <dt id="post--api-v0.1-calculate_proposal">
-<code class="descname">POST </code><code class="descname">/api/v0.1/calculate_proposal</code><a class="headerlink" href="#post--api-v0.1-calculate_proposal" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">POST </tt><tt class="descname">/api/v0.1/calculate_proposal</tt><a class="headerlink" href="#post--api-v0.1-calculate_proposal" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -222,7 +225,7 @@
 </pre></div>
 </div>
 <div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;premium_schedule__1__amount&quot;</span><span class="p">:</span> <span class="s2">&quot;62.80&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;premium_schedule__1__amount&quot;</span><span class="p">:</span> <span class="s2">&quot;62.85&quot;</span><span class="p">,</span>
     <span class="nt">&quot;premium_schedule__2__amount&quot;</span><span class="p">:</span> <span class="kc">null</span>
 <span class="p">}</span>
 </pre></div>
@@ -324,7 +327,7 @@ this kind of message.</p>
 <h2>Create an Agreement Code<a class="headerlink" href="#create-an-agreement-code" title="Permalink to this headline">¶</a></h2>
 <dl class="post">
 <dt id="post--api-v0.1-create_agreement_code">
-<code class="descname">POST </code><code class="descname">/api/v0.1/create_agreement_code</code><a class="headerlink" href="#post--api-v0.1-create_agreement_code" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">POST </tt><tt class="descname">/api/v0.1/create_agreement_code</tt><a class="headerlink" href="#post--api-v0.1-create_agreement_code" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -436,7 +439,7 @@ this kind of message.</p>
 <h2>Send an Agreement<a class="headerlink" href="#send-an-agreement" title="Permalink to this headline">¶</a></h2>
 <dl class="post">
 <dt id="post--api-v0.1-send_agreement">
-<code class="descname">POST </code><code class="descname">/api/v0.1/send_agreement</code><a class="headerlink" href="#post--api-v0.1-send_agreement" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">POST </tt><tt class="descname">/api/v0.1/send_agreement</tt><a class="headerlink" href="#post--api-v0.1-send_agreement" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -487,7 +490,7 @@ this kind of message.</p>
 <h2>Get a PDF report of a Proposal<a class="headerlink" href="#get-a-pdf-report-of-a-proposal" title="Permalink to this headline">¶</a></h2>
 <dl class="post">
 <dt id="post--api-v0.1-get_proposal_pdf">
-<code class="descname">POST </code><code class="descname">/api/v0.1/get_proposal_pdf</code><a class="headerlink" href="#post--api-v0.1-get_proposal_pdf" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">POST </tt><tt class="descname">/api/v0.1/get_proposal_pdf</tt><a class="headerlink" href="#post--api-v0.1-get_proposal_pdf" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -515,7 +518,7 @@ this kind of message.</p>
 <h2>Get the package list<a class="headerlink" href="#get-the-package-list" title="Permalink to this headline">¶</a></h2>
 <dl class="post">
 <dt id="post--api-v0.1-get_packages">
-<code class="descname">POST </code><code class="descname">/api/v0.1/get_packages</code><a class="headerlink" href="#post--api-v0.1-get_packages" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">POST </tt><tt class="descname">/api/v0.1/get_packages</tt><a class="headerlink" href="#post--api-v0.1-get_packages" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -606,7 +609,6 @@ this kind of message.</p>
 </div>
 
 
-           </div>
           </div>
           <footer>
   
@@ -625,10 +627,9 @@ this kind of message.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2015, Vortex.
-
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
 </footer>
 
