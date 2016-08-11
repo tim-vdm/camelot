@@ -272,6 +272,7 @@ CREATE TABLE geographic_boundary (
 	id INTEGER NOT NULL, 
 	latitude NUMERIC(6, 4),
 	longitude NUMERIC(6, 4),
+	status INTEGER,
 	PRIMARY KEY (id)
 );
 CREATE TABLE hypo_periode (
@@ -1005,6 +1006,7 @@ CREATE TABLE bank_rechtspersoon (
 	correspondentie_postcode VARCHAR(128), 
 	correspondentie_gemeente VARCHAR(128),
 	ownership_verified_at DATE, 
+	status INTEGER,
 	PRIMARY KEY (id), 
 	CONSTRAINT bank_rechtspersoon_vertegenwoordiger_fk FOREIGN KEY(vertegenwoordiger) REFERENCES bank_natuurlijke_persoon (id), 
 	CONSTRAINT bank_rechtspersoon_land_fk FOREIGN KEY(land) REFERENCES res_country (id), 
@@ -1478,12 +1480,12 @@ CREATE TABLE bond_bestellijn (
 CREATE TABLE hypo_te_hypothekeren_goed (
 	verwerving VARCHAR(50), 
 	venale_verkoopwaarde NUMERIC(17, 2), 
-	postcode VARCHAR(10) NOT NULL, 
+	postcode VARCHAR(10), 
 	huurwaarde NUMERIC(17, 2), 
 	bestemming VARCHAR(50), 
-	straat VARCHAR(100) NOT NULL, 
+	straat VARCHAR(100), 
 	type VARCHAR(50), 
-	gemeente VARCHAR(30) NOT NULL, 
+	gemeente VARCHAR(30), 
 	compromis VARCHAR(100), 
 	vrijwillige_verkoop NUMERIC(17, 2), 
 	gedwongen_verkoop NUMERIC(17, 2), 
@@ -1496,9 +1498,11 @@ CREATE TABLE hypo_te_hypothekeren_goed (
 	id INTEGER NOT NULL, 
 	schatter_id INTEGER, 
     land INTEGER,
+    address INTEGER NOT NULL,
 	PRIMARY KEY (id), 
 	CONSTRAINT hypo_te_hypothekeren_goed_schatter_id_fk FOREIGN KEY(schatter_id) REFERENCES bank_rechtspersoon (id), 
-	CONSTRAINT hypo_te_hypothekeren_goed_brandverzekering_fk FOREIGN KEY(brandverzekering) REFERENCES hypo_verzekering (id)
+	CONSTRAINT hypo_te_hypothekeren_goed_brandverzekering_fk FOREIGN KEY(brandverzekering) REFERENCES hypo_verzekering (id),
+    CONSTRAINT hypo_te_hypothekeren_goed_address_fkey FOREIGN KEY (address) REFERENCES address (id)
 );
 
 
@@ -2990,7 +2994,7 @@ CREATE TABLE bank_natuurlijke_persoon
   identiteitskaart_nummer character varying(30),
   language character varying(50) NOT NULL,
   nationaliteit integer,
-  nationaliteit_geographicboundary_id integer,
+  nationaliteit_geographicboundary_id INTEGER,
   datum_verplaatsing date,
   verplaats_naar_natuurlijke_persoon integer,
   werkgever_sinds date,
@@ -3031,6 +3035,8 @@ CREATE TABLE bank_natuurlijke_persoon
   id INTEGER PRIMARY KEY,
   partner_id integer,
   country_of_birth_id integer,
+  place_of_birth_id INTEGER,
+  status INTEGER,
   nota text,
   correspondentie_straat character varying(128),
   correspondentie_postcode character varying(128),
@@ -3137,5 +3143,27 @@ CREATE TABLE hypo_goed_aanvraag
   CONSTRAINT hypo_goed_aanvraag_write_uid_fkey FOREIGN KEY (write_uid)
       REFERENCES res_users (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE SET NULL
+);
+CREATE TABLE person_address
+(
+  id INTEGER PRIMARY KEY,
+  described_by integer NOT NULL,
+  from_date date NOT NULL,
+  thru_date date NOT NULL,
+  comment character varying(256),
+  rechtspersoon_id integer,
+  natuurlijke_persoon_id integer,
+  address_id integer NOT NULL,
+  status integer,
+  CONSTRAINT person_address_address_id_fk FOREIGN KEY (address_id)
+      REFERENCES address (id) MATCH SIMPLE
+      ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT person_address_natuurlijke_persoon_fkey FOREIGN KEY (natuurlijke_persoon_id)
+      REFERENCES bank_natuurlijke_persoon (id) MATCH SIMPLE
+      ON UPDATE CASCADE ON DELETE RESTRICT,
+  CONSTRAINT person_address_rechtspersoon_fkey FOREIGN KEY (rechtspersoon_id)
+      REFERENCES bank_rechtspersoon (id) MATCH SIMPLE
+      ON UPDATE CASCADE ON DELETE RESTRICT,
+  CONSTRAINT person_address_persoon_fk CHECK (natuurlijke_persoon_id IS NOT NULL OR rechtspersoon_id IS NOT NULL)
 );
 COMMIT;
