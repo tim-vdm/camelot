@@ -8,6 +8,36 @@ CREATE TABLE res_country (
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id)
 );
+CREATE TABLE geographic_boundary
+(
+  id serial NOT NULL,
+  code character varying(10),
+  name character varying(100) NOT NULL,
+  row_type character varying(40),
+  latitude numeric(6,4),
+  longitude numeric(7,4),
+  CONSTRAINT geographic_boundary_pkey PRIMARY KEY (id)
+);
+CREATE TABLE geographic_boundary_city
+(
+  geographicboundary_id integer NOT NULL,
+  country_geographicboundary_id integer NOT NULL,
+  CONSTRAINT geographic_boundary_city_pkey PRIMARY KEY (geographicboundary_id),
+  CONSTRAINT geographic_boundary_city_country_geographicboundary_id_fk FOREIGN KEY (country_geographicboundary_id)
+      REFERENCES geographic_boundary_country (geographicboundary_id) MATCH SIMPLE
+      ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT geographic_boundary_city_geographicboundary_id_fkey FOREIGN KEY (geographicboundary_id)
+      REFERENCES geographic_boundary (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE CASCADE
+);
+CREATE TABLE geographic_boundary_country
+(
+  geographicboundary_id integer NOT NULL,
+  CONSTRAINT geographic_boundary_country_pkey PRIMARY KEY (geographicboundary_id),
+  CONSTRAINT geographic_boundary_country_geographicboundary_id_fkey FOREIGN KEY (geographicboundary_id)
+      REFERENCES geographic_boundary (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE CASCADE
+);
 CREATE TABLE financial_package (
 	name VARCHAR(255) NOT NULL, 
     code character varying(25),
@@ -2980,6 +3010,121 @@ CREATE TABLE financial_product_book
       REFERENCES financial_product (id) MATCH SIMPLE
       ON UPDATE CASCADE ON DELETE CASCADE
 );
+CREATE TABLE bank_natuurlijke_persoon
+(
+  id serial NOT NULL,
+  perm_id integer,
+  create_uid integer,
+  create_date timestamp without time zone,
+  write_date timestamp without time zone,
+  write_uid integer,
+  aktiviteit_sinds date,
+  titel character varying(32),
+  naam character varying(30) NOT NULL,
+  huur_inkomsten double precision,
+  adres_sinds date,
+  postcode character varying(24),
+  contract_type character varying(50),
+  alimentatie_lasten double precision,
+  identiteitskaart_datum date,
+  kredietkaarten boolean,
+  andere_inkomsten double precision,
+  telefoon_werk character varying(64),
+  identiteitskaart_nummer character varying(30),
+  toestand_moeder character varying(22),
+  nationaliteit integer,
+  alimentatie_inkomsten double precision,
+  werkgever_sinds date,
+  kinderbijslag double precision,
+  toekomstige_lasten double precision,
+  beroeps_inkomsten double precision,
+  email character varying(64),
+  burgerlijke_staat_sinds date,
+  werkgever character varying(40),
+  fax character varying(64),
+  beroep character varying(50),
+  aktiviteit character varying(40),
+  geboorteplaats character varying(30),
+  toestand_vader character varying(22),
+  vervangings_inkomsten double precision,
+  voornaam character varying(30) NOT NULL,
+  contract_toestand character varying(50),
+  straat character varying(128),
+  huur_lasten double precision,
+  gemeente character varying(128),
+  land integer,
+  nationaal_nummer character varying(20),
+  gender character varying(16),
+  functie integer,
+  geboortedatum date NOT NULL,
+  btw_nummer character varying(15),
+  huwelijkscontract character varying(40),
+  telefoon character varying(64),
+  andere_lasten double precision,
+  toekomstige_inkomsten double precision,
+  gsm character varying(64),
+  burgerlijke_staat character varying(16),
+  aankomstdatum date,
+  language character varying(16) NOT NULL,
+  pasfoto bytea,
+  feitelijk_rechtspersoon boolean,
+  verplaatst_naar integer,
+  datum_verplaatsing date,
+  kredietcentrale_geverifieerd character varying(16),
+  kinderen_ten_laste_onbekend integer,
+  beroepsinkomsten_bewezen character varying(17),
+  name character varying(128),
+  beroepsinkomsten_bewijs character varying(1024),
+  kredietcentrale_verificatie character varying(1024),
+  identiteitskaart character varying(1024),
+  verplaats_naar_natuurlijke_persoon integer,
+  active boolean,
+  partner_id integer,
+  correspondentie_land integer,
+  datum_overlijden date,
+  akte_bekendheid_overlijden character varying(100),
+  rookgedrag boolean,
+  origin character varying(50),
+  nota text,
+  correspondentie_straat character varying(128),
+  correspondentie_postcode character varying(128),
+  correspondentie_gemeente character varying(128),
+  no_commercial_mailings boolean NOT NULL,
+  tax_number character varying(40),
+  bankrekening character varying(50),
+  middle_name character varying(40),
+  educational_level integer,
+  fitness_level integer,
+  public_figure integer,
+  country_of_birth_id integer,
+  nationaliteit_geographicboundary_id integer,
+  geboorteplaats_id integer,
+  CONSTRAINT bank_natuurlijke_persoon_pkey PRIMARY KEY (id),
+  CONSTRAINT bank_natuurlijke_persoon_country_of_birth_id_fk FOREIGN KEY (country_of_birth_id)
+      REFERENCES res_country (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT bank_natuurlijke_persoon_create_uid_fkey FOREIGN KEY (create_uid)
+      REFERENCES res_users (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE SET NULL,
+  CONSTRAINT bank_natuurlijke_persoon_land_fkey FOREIGN KEY (land)
+      REFERENCES res_country (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE SET NULL,
+  CONSTRAINT bank_natuurlijke_persoon_nationaliteit_fkey FOREIGN KEY (nationaliteit)
+      REFERENCES res_country (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE SET NULL,
+  CONSTRAINT bank_natuurlijke_persoon_partner_id_fk FOREIGN KEY (partner_id)
+      REFERENCES bank_natuurlijke_persoon (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT bank_natuurlijke_persoon_verplaats_naar_natuurlijke_persoo_fkey FOREIGN KEY (verplaats_naar_natuurlijke_persoon)
+      REFERENCES bank_natuurlijke_persoon (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE SET NULL,
+  CONSTRAINT bank_natuurlijke_persoon_verplaatst_naar_fkey FOREIGN KEY (verplaatst_naar)
+      REFERENCES bank_rechtspersoon (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE SET NULL,
+  CONSTRAINT bank_natuurlijke_persoon_write_uid_fkey FOREIGN KEY (write_uid)
+      REFERENCES res_users (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE SET NULL
+)
 CREATE TABLE bank_natuurlijke_persoon
 (
   aktiviteit_sinds date,
