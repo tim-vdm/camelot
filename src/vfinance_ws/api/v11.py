@@ -264,6 +264,25 @@ def create_agreement_from_json(session, document):
                     value = get_date_from_json_date(natural_person[attr])
                 else:
                     value = natural_person[attr]
+                    
+                if attr == 'place_of_birth':
+                    place = natural_person[attr]
+                    if place is not None:
+                        country_code = place.get('country_code')
+                        country = session.query(Country).filter(Country.code==country_code).first()
+                        zip_code = place.get('zip_code')
+                        city = place.get('city')
+                        if city is not None and zip_code is not None:
+                            birthplace = session.query(City).filter(sql.and_(City.code==zip_code,
+                                                                             City.country==country,
+                                                                             City.name==city)).first()
+                            if birthplace is None:
+                                birthplace = City(country=country, code=zip_code, name=city)
+                        elif country is not None:
+                            birthplace = country
+                                
+                    value = birthplace
+                    
 
 
                 if attr == 'marital_status':
@@ -303,7 +322,7 @@ def create_agreement_from_json(session, document):
                 if attr in field_mappings.keys():
                     attrib = field_mappings.get(attr)
 
-                if attr not in ('row_type', 'addresses', 'place_of_birth'):
+                if attr not in ('row_type', 'addresses'):
                     setattr(person, attrib, value)
 
 

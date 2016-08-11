@@ -62,6 +62,14 @@ ADDRESS_SCHEMA = {
 
 Address = Schema(ADDRESS_SCHEMA)
 
+PLACE_SCHEMA = {
+    Required("country_code"): String(max=2),
+    Optional("zip_code"): String(max=5),
+    Optional("city"): String(max=40)
+}
+
+Place = Schema(PLACE_SCHEMA)
+
 HISTORICAL_ADDRESS_SCHEMA = dict(ADDRESS_SCHEMA)
 HISTORICAL_ADDRESS_SCHEMA.update({
     Required("described_by"): String(max=40),
@@ -175,8 +183,7 @@ PERSON_SCHEMA = {
     Optional("activity"): String(max=40),
     Optional("activity_since"): Date,
     Optional("tax_id"): String(max=20),
-    Optional("place_of_birth"): String(max=40),
-    Optional("birth_country_code"): String(max=40),
+    Optional("place_of_birth"): Place,
     Required("addresses"): Addresses,
     Optional("contact_mechanisms"): ContactMechanisms
 }

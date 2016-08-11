@@ -70,8 +70,9 @@
                                          "month": 1,
                                          "year": 2020},
                 "row_type": "person",
-                "place_of_birth": "Wilrijk",
-                "birth_country_code": "BE",
+                "place_of_birth": {"country_code": "BE",
+                                   "zip_code": "2610",
+                                   "city": "Wilrijk"},
                 "passport_number": "900102"
             },
             "smoking_habit": "regular",
