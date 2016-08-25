@@ -657,7 +657,7 @@ def get_proposal(session, document):
                                    'country_code':'BE',
                                    'street_1':document.get('broker__street',),
                                    'described_by':'domicile'}, session)
-    broker.addresses.append(address)
+    broker.rechtspersoon.addresses.append(address)
     broker.rechtspersoon.telefoon = document.get('broker__telephone')
     facade.broker_relation = broker
     options = None
