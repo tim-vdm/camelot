@@ -145,7 +145,7 @@ def make_person_address(address, session):
             address_type = 'domicile'
         new_address = PersonAddress()
         new_address.address = address_
-        new_address.described_by = address['described_by']
+        new_address.described_by = address_type
         new_address.from_date = constants.begin_of_times
         new_address.thru_date = end_of_times()
 
@@ -357,9 +357,10 @@ def create_agreement_from_json(session, document):
             if addresses is not None:
                 for address in addresses:
                     address_type = address['described_by']
-                    if address_type is not None and address_type == 'official':
+                    if address_type is not None:
                         new_address = make_person_address(address, session)
-                        rechtspersoon.addresses.append = country
+                        new_address.organization = rechtspersoon
+                        #rechtspersoon.addresses.append = new_address
             #representative = organization.get('representative')
             #if representative is not None:
             #    vertegenwoordiger = create_natural_person_from_party(representative)
