@@ -127,8 +127,48 @@ def ci_create_agreement_code(document):
     .. literalinclude:: demo/v11_create_agreement_code_select_plus.json
         :language: json
 
-    .. literalinclude:: demo/v11_create_agreement_code.json
-        :language: json
+    The list of dangerous hobbies/professions for Select+:
+
+        ===    ============================================       ========================================
+        id      Nl                                                 Fr
+        ===    ============================================       ========================================
+        0       Geen beroep/hobby met risico                       Pas de profession/passe-temps a risque
+        1       Autosporten                                        Sports automobiles
+        2       Bergbeklimmmen                                     Escalade - Alpinisme - Trekking
+        3       Brandweerman                                       Pompiers secouristes
+        4       Diplomatiek personeel                              Personnel diplomatique
+        5       Duiken                                             Plongee
+        6       Gevaarlijke producten                              Produits dangereux
+        19      Journalist                                         Journaliste
+        7       Juridische beroepen                                Professions juridiques
+        8       Luchtvaart (motorvliegtuigen)                      Aeronautique (appareils e moteur)
+        9       Luchtvaart (toestellen zonder motor)               Aeronautique (appareils sans moteur)
+        10      Militair                                           Militaires
+        11      Motorboten                                         Motonautisme
+        12      Motorrijden                                        Motocyclisme
+        13      Openbare orde en veiligheid                        Forces de l'ordre
+        14      Parapenten - Valschermspringen                     Parapente - Parachutisme
+        20      Petroleum - Gas                                    Petrole - Gaz
+        15      Ruitersport                                        Equitation
+        16      Safari en jacht                                    Safaris et chasse
+        17      Sneeuwsporten                                      Sports de neige
+        18      Speleologie                                        Speleologie
+        21      Stuntman                                           Cascadeurs
+        22      Zeilsport                                          Yachting
+        ===    ============================================       ========================================
+
+    The list of possible agreed items (beneficiary_clause) for Select+:
+
+        ===  ==   =========================
+        268  Nl   Mede-eigenaar(s)
+        269  Nl   Echtgeno(o)t(e)/Partner
+        270  Nl   Kinderen
+        271  Nl   Ouders
+        274  Fr   Co-prorietaire(s)
+        275  Fr   Conjoint/Cohabitant legal
+        276  Fr   Enfants
+        277  Fr   Parents
+        ===  ==   =========================
 
     .. literalinclude:: demo/200.http
         :language: http
