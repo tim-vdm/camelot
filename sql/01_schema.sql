@@ -1,13 +1,4 @@
 BEGIN;
-CREATE TABLE res_country (
-	name VARCHAR(64) NOT NULL, 
-	code VARCHAR(2) NOT NULL, 
-	perm_id INTEGER, 
-	create_uid INTEGER, 
-	create_date DATETIME, 
-	id INTEGER NOT NULL, 
-	PRIMARY KEY (id)
-);
 CREATE TABLE financial_package (
 	name VARCHAR(255) NOT NULL, 
     code character varying(25),
@@ -1008,9 +999,7 @@ CREATE TABLE bank_rechtspersoon (
 	ownership_verified_at DATE, 
 	status INTEGER,
 	PRIMARY KEY (id), 
-	CONSTRAINT bank_rechtspersoon_vertegenwoordiger_fk FOREIGN KEY(vertegenwoordiger) REFERENCES bank_natuurlijke_persoon (id), 
-	CONSTRAINT bank_rechtspersoon_land_fk FOREIGN KEY(land) REFERENCES res_country (id), 
-	CONSTRAINT bank_rechtspersoon_correspondentie_land_fk FOREIGN KEY(correspondentie_land) REFERENCES res_country (id)
+	CONSTRAINT bank_rechtspersoon_vertegenwoordiger_fk FOREIGN KEY(vertegenwoordiger) REFERENCES bank_natuurlijke_persoon (id)
 );
 CREATE TABLE bank_kind_ten_laste (
 	kind INTEGER, 
@@ -3041,20 +3030,14 @@ CREATE TABLE bank_natuurlijke_persoon
   correspondentie_straat character varying(128),
   correspondentie_postcode character varying(128),
   correspondentie_gemeente character varying(128),
-  CONSTRAINT bank_natuurlijke_persoon_correspondentie_land_fk FOREIGN KEY (correspondentie_land)
-      REFERENCES res_country (id) MATCH SIMPLE
-      ON UPDATE NO ACTION ON DELETE NO ACTION,
   CONSTRAINT bank_natuurlijke_persoon_country_of_birth_id_fk FOREIGN KEY (country_of_birth_id)
-      REFERENCES res_country (id) MATCH SIMPLE
+      REFERENCES geographic_boundary_country (geographicboundary_id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION,
   CONSTRAINT bank_natuurlijke_persoon_functie_fk FOREIGN KEY (functie)
       REFERENCES res_partner_function (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION,
-  CONSTRAINT bank_natuurlijke_persoon_land_fk FOREIGN KEY (land)
-      REFERENCES res_country (id) MATCH SIMPLE
-      ON UPDATE NO ACTION ON DELETE NO ACTION,
   CONSTRAINT bank_natuurlijke_persoon_nationaliteit_fk FOREIGN KEY (nationaliteit)
-      REFERENCES res_country (id) MATCH SIMPLE
+      REFERENCES geographic_boundary_country (geographicboundary_id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION,
   CONSTRAINT bank_natuurlijke_persoon_partner_id_fk FOREIGN KEY (partner_id)
       REFERENCES bank_natuurlijke_persoon (id) MATCH SIMPLE
