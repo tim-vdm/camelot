@@ -649,16 +649,16 @@ def get_proposal(session, document):
     facade.insured_party__1__language = document.get('insured_party__1__language')
     facade.agreed_functional_settings.append(FinancialAgreementFunctionalSettingAgreement(described_by='exit_at_first_decease'))
     broker = CommercialRelation()
-    broker.rechtspersoon = Rechtspersoon()
-    broker.rechtspersoon.name = document.get('broker__name')
-    broker.rechtspersoon.email = document.get('broker__email')
+    broker.from_rechtspersoon = Rechtspersoon()
+    broker.from_rechtspersoon.name = document.get('broker__name')
+    broker.from_rechtspersoon.email = document.get('broker__email')
     address = make_person_address({'zip_code':document.get('broker__zip_code',''),
                                    'city':document.get('broker__city',''),
                                    'country_code':'BE',
                                    'street_1':document.get('broker__street',),
                                    'described_by':'domicile'}, session)
-    broker.rechtspersoon.addresses.append(address)
-    broker.rechtspersoon.telefoon = document.get('broker__telephone')
+    broker.from_rechtspersoon.addresses.append(address)
+    broker.from_rechtspersoon.telefoon = document.get('broker__telephone')
     facade.broker_relation = broker
     options = None
     language = document.get('insured_party__1__language')

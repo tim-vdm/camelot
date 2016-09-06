@@ -33,5 +33,9 @@
     "loan_interest_rate": "5.0",
     "loan_loan_amount": "100000",
     "broker__email": "test@broker.be",
-    "broker__name": "TestBrokerName"
+    "broker__name": "TestBrokerName",
+    "broker__telephone": "+3232880203",
+    "broker__city": "Antwerpen",
+    "broker__zip_code": "2018",
+    "broker__street": "Brokerteststraat 11"
 }
