@@ -17,10 +17,10 @@
         "day": 15
     },
     "insured_party__1__sex": "M",
-    "package_id": 65,
+    "package_id": 23,
     "premium_schedule__1__coverage_level_type": "amortization_table",
     "premium_schedule__1__premium_fee_1": "50",
-    "premium_schedule__1__product_id": 69,
+    "premium_schedule__1__product_id": 23,
     "premium_schedules_coverage_limit": "100",
     "premium_schedules_period_type": "single",
     "premium_schedules_premium_rate_1": "15",

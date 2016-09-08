@@ -1,0 +1,134 @@
+{ "agent_official_number_fsma" : "010019 A",
+  "agreement_date" : { "day" : 25,
+      "month" : 8,
+      "year" : 2016
+    },
+  "from_date" : { "day" : 25,
+      "month" : 8,
+      "year" : 2016
+    },
+  "origin" : "app:0",
+  "package_id" : 65,
+  "roles" : [ { "dangerous_hobby" : "0",
+        "dangerous_profession" : "0",
+        "described_by" : "insured_party",
+        "educational_level" : "incomplete_primary",
+        "fitness_level" : "moderately_active",
+        "net_earnings_of_employment" : "1701",
+        "party" : { "addresses" : [ { "city" : "Antwerp",
+                  "country_code" : "BE",
+                  "described_by" : "domicile",
+                  "from_date" : { "day" : 25,
+                      "month" : 8,
+                      "year" : 2016
+                    },
+                  "street_1" : "Jozef de Bomstraat 54/6",
+                  "zip_code" : "2018"
+                } ],
+            "birth_date" : { "day" : 3,
+                "month" : 7,
+                "year" : 1981
+              },
+            "contact_mechanisms" : [ { "address_type" : "domicile",
+                  "contact_mechanism" : "rfmind@gmail.com",
+                  "described_by" : "email"
+                },
+                { "address_type" : "domicile",
+                  "contact_mechanism" : "0484968810",
+                  "described_by" : "mobile"
+                }
+              ],
+            "first_name" : "Pieter-Jan",
+            "language" : "nl_BE",
+            "last_name" : "Delaruelle",
+            "marital_status" : "single",
+            "nationality_code" : "BE",
+            "passport_expiry_date" : { "day" : 31,
+                "month" : 12,
+                "year" : 2017
+              },
+            "passport_number" : "591-8442723-42",
+            "row_type" : "person",
+            "sex" : "M",
+            "social_security_number" : "81070339504"
+          },
+        "rank" : 1,
+        "smoking_habit" : "regular"
+      },
+      { "described_by" : "subscriber",
+        "party" : { "addresses" : [ { "city" : "Antwerp",
+                  "country_code" : "BE",
+                  "described_by" : "official",
+                  "from_date" : { "day" : 25,
+                      "month" : 8,
+                      "year" : 2016
+                    },
+                  "street_1" : "somestreet 1",
+                  "zip_code" : "2000"
+                } ],
+            "contact_mechanisms" : [ { "address_type" : "official",
+                  "contact_mechanism" : "aezr@aer.be",
+                  "described_by" : "email"
+                },
+                { "address_type" : "official",
+                  "contact_mechanism" : "0484968810",
+                  "described_by" : "mobile"
+                }
+              ],
+            "name" : "somename",
+            "row_type" : "organization",
+            "tax_id" : "44674"
+          },
+        "rank" : 1
+      },
+      { "described_by" : "pledgee",
+        "party" : { "addresses" : [ { "city" : "Li\\u00e8ge",
+                  "country_code" : "BE",
+                  "described_by" : "official",
+                  "from_date" : { "day" : 25,
+                      "month" : 8,
+                      "year" : 2016
+                    },
+                  "street_1" : "rue des Clarisses",
+                  "zip_code" : "4000"
+                } ],
+            "contact_mechanisms" : [ { "address_type" : "official",
+                  "contact_mechanism" : "04/232.45.45",
+                  "described_by" : "mobile"
+                } ],
+            "name" : "Elantis",
+            "row_type" : "organization",
+            "tax_id" : "BE 0404.228.296"
+          },
+        "rank" : 1,
+        "reference" : "UnitTestPledgee"
+      }
+    ],
+  "row_type" : "financial_agreement",
+  "schedules" : [ { "amount" : "100000",
+        "direct_debit" : false,
+        "duration" : 240,
+        "id" : 0,
+        "initial_interest_rate" : "5.00000",
+        "period_type" : "monthly",
+        "product_id" : -1,
+        "row_type" : "approved_amount"
+      },
+      { "amount" : "5182.28",
+        "coverage_for" : "amortization_table",
+        "coverage_limit" : "100",
+        "direct_debit" : false,
+        "duration" : 240,
+        "for_id" : 0,
+        "insurance_fictitious_extra_age" : "2555",
+        "insured_duration" : 240,
+        "payment_duration" : 1,
+        "period_type" : "single",
+        "premium_fee_1" : "50",
+        "premium_rate_1" : "50",
+        "premium_taxation_physical_person" : "1.1",
+        "product_id" : 69,
+        "row_type" : "premium_amount"
+      }
+    ]
+}

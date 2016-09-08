@@ -11,10 +11,13 @@ from pkg_resources import resource_stream
 
 from stdnum.exceptions import InvalidChecksum, InvalidFormat
 
-from sqlalchemy import orm
+from sqlalchemy import orm, sql
 from camelot.core.exception import UserException
 from camelot.core.utils import ugettext
 from camelot.core.templates import environment
+
+from camelot.model.party import Country, City, Address
+from camelot.model.authentication import end_of_times
 
 from vfinance.connector.json_ import ExtendedEncoder, FinancialAgreementJsonExport
 
@@ -25,7 +28,6 @@ from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementF
 from vfinance.admin.translations import TemplateLanguage
 from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon
 from vfinance.model.bank import constants
-from vfinance.model.bank.varia import Country_
 from vfinance.model.bank.rechtspersoon import Rechtspersoon
 from vfinance.model.bank.dual_person import CommercialRelation
 from vfinance.model.bank.validation import iban_regexp, bic_regexp
@@ -43,6 +45,7 @@ from vfinance.model.financial.constants import exclusiveness_by_functional_setti
 from vfinance.model.financial.notification.agreement_document import AgreementDocument
 from vfinance.facade.agreement.credit_insurance import CalculatePremium
 from vfinance.model.bank.product import Product
+from vfinance.model.bank.persoon import PersonAddress
 from vfinance.model.bank.direct_debit import DirectDebitMandate
 from vfinance.model.bank.constants import get_interface_value_from_model_value, get_model_value_from_interface_value
 from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag, Bedrag
@@ -112,6 +115,42 @@ def create_agreement_code(session, document, logfile):
     values['signature'] = signature
     return values
 
+def make_address(address, session):
+    new_address = None
+    address_zipcode = address['zip_code']
+    address_city_name = address['city']
+    address_country = session.query(Country).filter(Country.code == address['country_code']).first()
+    if address_zipcode is not None and address_city_name is not None and address_country is not None:
+        address_city = session.query(City).filter(sql.and_(City.code == address_zipcode.strip(),
+                                                           City.country == address_country,
+                                                           City.name == address_city_name.strip())).first()
+        if address_city is None:
+            address_city = City()
+            address_city.country = address_country
+            address_city.name = address_city_name
+            address_city.code = address_zipcode
+
+        new_address = Address()
+        new_address.street1 = address['street_1']
+        new_address.city = address_city
+
+    return new_address
+
+def make_person_address(address, session):
+    new_addres = None
+    address_ = make_address(address, session)
+    if address is not None:
+        address_type = address['described_by']
+        if address_type == 'official':
+            address_type = 'domicile'
+        new_address = PersonAddress()
+        new_address.address = address_
+        new_address.described_by = address_type
+        new_address.from_date = constants.begin_of_times
+        new_address.thru_date = end_of_times()
+
+    return new_address
+
 def create_agreement_from_json(session, document):
     field_mappings = {'passport_number': 'identiteitskaart_nummer',
                       'marital_status': 'burgerlijke_staat',
@@ -170,10 +209,7 @@ def create_agreement_from_json(session, document):
 
             asset = agreement_asset['asset']
             id = asset['id']
-            address = asset['address']
-            goed.straat = address['street_1']
-            goed.postcode = address['zip_code']
-            goed.gemeente = address['city']
+            goed.address = make_address(asset['address'], session)
             mapping = {'building_lot': 'bouwgrond',
                        'condominium': 'appartement',
                        'attached': 'rijwoning',
@@ -198,18 +234,8 @@ def create_agreement_from_json(session, document):
             # Loop the addresses
             addresses = natural_person['addresses']
             for address in addresses:
-                address_type = address['described_by']
-                if address_type is not None and address_type == 'domicile':
-                    person.street = address['street_1']
-                    person.postcode = address['zip_code']
-                    person.gemeente = address['city']
-                    person.country_code = address['country_code']
-                elif address_type is not None and address_type == 'correspondence':
-                    person.correspondentie_straat = address['street_1']
-                    person.correspondentie_postcode = address['zip_code']
-                    person.correspondentie_gemeente = address['city']
-                    country = session.query(Country_).filter(Country_.code == address['country_code']).first()
-                    person.correspondentie_land = country
+                new_address = make_person_address(address, session)
+                person.addresses.append(new_address)
 
             # Loop the contactmechanisms
             contact_mechanisms = natural_person['contact_mechanisms']
@@ -238,6 +264,25 @@ def create_agreement_from_json(session, document):
                     value = get_date_from_json_date(natural_person[attr])
                 else:
                     value = natural_person[attr]
+                    
+                if attr == 'place_of_birth':
+                    place = natural_person[attr]
+                    if place is not None:
+                        country_code = place.get('country_code')
+                        country = session.query(Country).filter(Country.code==country_code).first()
+                        zip_code = place.get('zip_code')
+                        city = place.get('city')
+                        if city is not None and zip_code is not None:
+                            birthplace = session.query(City).filter(sql.and_(City.code==zip_code,
+                                                                             City.country==country,
+                                                                             City.name==city)).first()
+                            if birthplace is None:
+                                birthplace = City(country=country, code=zip_code, name=city)
+                        elif country is not None:
+                            birthplace = country
+                                
+                    value = birthplace
+                    
 
 
                 if attr == 'marital_status':
@@ -277,7 +322,7 @@ def create_agreement_from_json(session, document):
                 if attr in field_mappings.keys():
                     attrib = field_mappings.get(attr)
 
-                if attr not in ('row_type'):
+                if attr not in ('row_type', 'addresses'):
                     setattr(person, attrib, value)
 
 
@@ -312,12 +357,10 @@ def create_agreement_from_json(session, document):
             if addresses is not None:
                 for address in addresses:
                     address_type = address['described_by']
-                    if address_type is not None and address_type == 'official':
-                        rechtspersoon.straat = address['street_1']
-                        rechtspersoon.postcode = address['zip_code']
-                        rechtspersoon.gemeente = address['city']
-                        country = session.query(Country_).filter(Country_.code == address['country_code']).first()
-                        rechtspersoon.land = country
+                    if address_type is not None:
+                        new_address = make_person_address(address, session)
+                        new_address.organization = rechtspersoon
+                        #rechtspersoon.addresses.append = new_address
             #representative = organization.get('representative')
             #if representative is not None:
             #    vertegenwoordiger = create_natural_person_from_party(representative)
@@ -606,13 +649,16 @@ def get_proposal(session, document):
     facade.insured_party__1__language = document.get('insured_party__1__language')
     facade.agreed_functional_settings.append(FinancialAgreementFunctionalSettingAgreement(described_by='exit_at_first_decease'))
     broker = CommercialRelation()
-    broker.rechtspersoon = Rechtspersoon()
-    broker.rechtspersoon.name = document.get('broker__name')
-    broker.rechtspersoon.email = document.get('broker__email')
-    broker.rechtspersoon.postcode = document.get('broker__zip_code')
-    broker.rechtspersoon.city_name = document.get('broker__city')
-    broker.rechtspersoon.straat = document.get('broker__street')
-    broker.rechtspersoon.telefoon = document.get('broker__telephone')
+    broker.from_rechtspersoon = Rechtspersoon()
+    broker.from_rechtspersoon.name = document.get('broker__name')
+    broker.from_rechtspersoon.email = document.get('broker__email')
+    address = make_person_address({'zip_code':document.get('broker__zip_code',''),
+                                   'city':document.get('broker__city',''),
+                                   'country_code':'BE',
+                                   'street_1':document.get('broker__street',),
+                                   'described_by':'domicile'}, session)
+    broker.from_rechtspersoon.addresses.append(address)
+    broker.from_rechtspersoon.telefoon = document.get('broker__telephone')
     facade.broker_relation = broker
     options = None
     language = document.get('insured_party__1__language')

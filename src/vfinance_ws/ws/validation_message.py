@@ -62,6 +62,14 @@ ADDRESS_SCHEMA = {
 
 Address = Schema(ADDRESS_SCHEMA)
 
+PLACE_SCHEMA = {
+    Required("country_code"): String(max=2),
+    Optional("zip_code"): String(max=5),
+    Optional("city"): String(max=40)
+}
+
+Place = Schema(PLACE_SCHEMA)
+
 HISTORICAL_ADDRESS_SCHEMA = dict(ADDRESS_SCHEMA)
 HISTORICAL_ADDRESS_SCHEMA.update({
     Required("described_by"): String(max=40),
@@ -175,8 +183,7 @@ PERSON_SCHEMA = {
     Optional("activity"): String(max=40),
     Optional("activity_since"): Date,
     Optional("tax_id"): String(max=20),
-    Optional("place_of_birth"): String(max=40),
-    Optional("birth_country_code"): String(max=40),
+    Optional("place_of_birth"): Place,
     Required("addresses"): Addresses,
     Optional("contact_mechanisms"): ContactMechanisms
 }
@@ -340,10 +347,10 @@ GET_PROPOSAL_SCHEMA = dict(CALCULATE_PROPOSAL_SCHEMA)
 GET_PROPOSAL_SCHEMA.update({Required("insured_party__1__language"): Language,
                             Required("broker__name"): String(max=40),
                             Required("broker__email"): String(max=40),
-                            Optional("broker__telephone"): String(max=40),
-                            Optional("broker__city"): String(max=40),
-                            Optional("broker__zip_code"): String(max=40),
-                            Optional("broker__street"): String(max=40),
+                            Required("broker__telephone"): String(max=40),
+                            Required("broker__city"): String(max=40),
+                            Required("broker__zip_code"): String(max=40),
+                            Required("broker__street"): String(max=40),
                             Optional("insured_party__1__first_name"): String(max=40),
                             Optional("insured_party__1__last_name"): String(max=40),
                             Optional("insured_party__1__telephone"): String(max=40),

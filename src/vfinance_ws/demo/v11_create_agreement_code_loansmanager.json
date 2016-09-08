@@ -258,7 +258,7 @@
             "smoking_habit": "never"
         }
     ], 
-    "row_type": "financial_agreement", 
+    "row_type": "loan_application", 
     "schedules": [
         {
             "amount": "160000.00", 

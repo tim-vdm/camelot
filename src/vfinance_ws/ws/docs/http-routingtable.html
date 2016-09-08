@@ -50,27 +50,17 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+      <div class="wy-side-nav-search">
+        
 
-          
-            <a href="index.html" class="icon icon-home"> VFinanceWebService
-          
+        
+          <a href="index.html" class="icon icon-home"> VFinanceWebService
+        
 
-          
-          </a>
+        
+        </a>
 
-          
-            
-            
-              <div class="version">
-                0.1
-              </div>
-            
-          
-
-          
+        
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,24 +69,51 @@
   </form>
 </div>
 
-          
-        </div>
+        
+      </div>
 
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
           
-            
-            
-                <ul>
-<li class="toctree-l1"><a class="reference internal" href="ws.html">Web Services v0.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ws_11.html">Web Services v1.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ws_test.html">Web Services - Test</a></li>
-<li class="toctree-l1"><a class="reference internal" href="updates.html">Changes</a></li>
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="ws.html">Web Services v0.1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ws.html#calculate-a-proposal">Calculate a proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws.html#create-an-agreement-code">Create an Agreement Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws.html#send-an-agreement">Send an Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws.html#get-a-pdf-report-of-a-proposal">Get a PDF report of a Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws.html#get-the-package-list">Get the package list</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ws_11.html">Web Services v1.1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ws_11.html#get-the-package-list">Get the package list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws_11.html#calculate-a-proposal">Calculate a proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws_11.html#create-an-agreement-code">Create an Agreement Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws_11.html#send-an-agreement">Send an Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws_11.html#get-a-pdf-report-of-a-proposal">Get a PDF report of a Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws_11.html#get-the-hash">Get the Hash</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ws_test.html">Web Services - Test</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ws_test.html#test-your-http-request">Test your HTTP request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws_test.html#your-http-request-is-compliant">Your HTTP request is compliant</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Changes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="updates.html#release-1-1-in-development">Release 1.1 (in development)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="updates.html#incompatible-changes">Incompatible changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="updates.html#features-added">Features added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="updates.html#bugs-fixed">Bugs fixed</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
-            
           
-        </div>
+        
       </div>
+      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -111,13 +128,7 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
+          <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
@@ -130,8 +141,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+          <div role="main" class="document">
             
 
    <h1>HTTP Routing Table</h1>
@@ -147,87 +157,81 @@
      <tr>
        <td></td>
        <td>
-       <a href="ws_test.html#get--api-test-request"><code class="xref">GET /api/test/request</code></a></td><td>
+       <a href="ws_test.html#get--api-test-request"><tt class="xref">GET /api/test/request</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws_11.html#get--api-v1.1-hash"><code class="xref">GET /api/v1.1/hash</code></a></td><td>
+       <a href="ws_11.html#get--api-v1.1-hash"><tt class="xref">GET /api/v1.1/hash</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws_test.html#post--api-test-is_compliant"><code class="xref">POST /api/test/is_compliant</code></a></td><td>
+       <a href="ws_test.html#post--api-test-is_compliant"><tt class="xref">POST /api/test/is_compliant</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws_test.html#post--api-test-request"><code class="xref">POST /api/test/request</code></a></td><td>
+       <a href="ws_test.html#post--api-test-request"><tt class="xref">POST /api/test/request</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws.html#post--api-v0.1-calculate_proposal"><code class="xref">POST /api/v0.1/calculate_proposal</code></a></td><td>
+       <a href="ws.html#post--api-v0.1-calculate_proposal"><tt class="xref">POST /api/v0.1/calculate_proposal</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws.html#post--api-v0.1-create_agreement_code"><code class="xref">POST /api/v0.1/create_agreement_code</code></a></td><td>
+       <a href="ws.html#post--api-v0.1-create_agreement_code"><tt class="xref">POST /api/v0.1/create_agreement_code</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws.html#post--api-v0.1-get_packages"><code class="xref">POST /api/v0.1/get_packages</code></a></td><td>
+       <a href="ws.html#post--api-v0.1-get_packages"><tt class="xref">POST /api/v0.1/get_packages</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws.html#post--api-v0.1-get_proposal_pdf"><code class="xref">POST /api/v0.1/get_proposal_pdf</code></a></td><td>
+       <a href="ws.html#post--api-v0.1-get_proposal_pdf"><tt class="xref">POST /api/v0.1/get_proposal_pdf</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws.html#post--api-v0.1-send_agreement"><code class="xref">POST /api/v0.1/send_agreement</code></a></td><td>
+       <a href="ws.html#post--api-v0.1-send_agreement"><tt class="xref">POST /api/v0.1/send_agreement</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws_11.html#post--api-v1.1-credit_insurance-calculate_proposal"><code class="xref">POST /api/v1.1/credit_insurance/calculate_proposal</code></a></td><td>
+       <a href="ws_11.html#post--api-v1.1-credit_insurance-calculate_proposal"><tt class="xref">POST /api/v1.1/credit_insurance/calculate_proposal</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws_11.html#post--api-v1.1-credit_insurance-create_agreement_code"><code class="xref">POST /api/v1.1/credit_insurance/create_agreement_code</code></a></td><td>
+       <a href="ws_11.html#post--api-v1.1-credit_insurance-create_agreement_code"><tt class="xref">POST /api/v1.1/credit_insurance/create_agreement_code</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws_11.html#post--api-v1.1-credit_insurance-get_packages"><code class="xref">POST /api/v1.1/credit_insurance/get_packages</code></a></td><td>
+       <a href="ws_11.html#post--api-v1.1-credit_insurance-get_packages"><tt class="xref">POST /api/v1.1/credit_insurance/get_packages</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws_11.html#post--api-v1.1-credit_insurance-get_proposal_pdf"><code class="xref">POST /api/v1.1/credit_insurance/get_proposal_pdf</code></a></td><td>
+       <a href="ws_11.html#post--api-v1.1-credit_insurance-send_agreement"><tt class="xref">POST /api/v1.1/credit_insurance/send_agreement</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws_11.html#post--api-v1.1-credit_insurance-send_agreement"><code class="xref">POST /api/v1.1/credit_insurance/send_agreement</code></a></td><td>
+       <a href="ws_test.html#put--api-test-request"><tt class="xref">PUT /api/test/request</tt></a></td><td>
        <em></em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ws_test.html#put--api-test-request"><code class="xref">PUT /api/test/request</code></a></td><td>
-       <em></em></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="ws_test.html#patch--api-test-request"><code class="xref">PATCH /api/test/request</code></a></td><td>
+       <a href="ws_test.html#patch--api-test-request"><tt class="xref">PATCH /api/test/request</tt></a></td><td>
        <em></em></td></tr>
    </table>
 
 
-           </div>
           </div>
           <footer>
   
@@ -237,10 +241,9 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2015, Vortex.
-
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
 </footer>
 

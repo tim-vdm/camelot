@@ -1,0 +1,31 @@
+{
+    "agent_official_number_fsma": "Agent Official Number FSMA",
+    "agreement_date": {
+        "year": 2016,
+        "month": 5,
+        "day": 3
+    },
+    "duration": 240,
+    "from_date": {
+        "year": 2016,
+        "month": 5,
+        "day": 3
+    },
+    "insured_party__1__birthdate": {
+        "year": 1981,
+        "month": 7,
+        "day": 3
+    },
+    "insured_party__1__sex": "M",
+    "insured_party__1__smoking_habit": "never",
+    "package_id": 10,
+    "premium_schedule__1__product_id": 10,
+    "premium_schedule__1__coverage_level_type": "amortization_table",
+    "premium_schedule__1__premium_fee_1": "20",
+    "premium_schedules_premium_rate_1": "5.0",
+    "premium_schedules_coverage_limit": "100.0",
+    "premium_schedules_period_type": "yearly",
+    "loan_type_of_payments": "fixed_payment",
+    "loan_interest_rate": "5.0",
+    "loan_loan_amount": "100000"
+}

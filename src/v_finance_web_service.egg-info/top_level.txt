@@ -2,6 +2,7 @@ camelot
 cloudlaunch2
 dateutil
 decorator
+dogpile
 flask
 flask_httpauth
 integration

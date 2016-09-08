@@ -45,27 +45,17 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+      <div class="wy-side-nav-search">
+        
 
-          
-            <a href="index.html" class="icon icon-home"> VFinanceWebService
-          
+        
+          <a href="index.html" class="icon icon-home"> VFinanceWebService
+        
 
-          
-          </a>
+        
+        </a>
 
-          
-            
-            
-              <div class="version">
-                0.1
-              </div>
-            
-          
-
-          
+        
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -74,15 +64,22 @@
   </form>
 </div>
 
-          
-        </div>
+        
+      </div>
 
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
           
-            
-            
-                <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="ws.html">Web Services v0.1</a></li>
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ws.html">Web Services v0.1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ws.html#calculate-a-proposal">Calculate a proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws.html#create-an-agreement-code">Create an Agreement Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws.html#send-an-agreement">Send an Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws.html#get-a-pdf-report-of-a-proposal">Get a PDF report of a Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws.html#get-the-package-list">Get the package list</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Web Services v1.1</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#get-the-package-list">Get the package list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#calculate-a-proposal">Calculate a proposal</a></li>
@@ -92,14 +89,26 @@
 <li class="toctree-l2"><a class="reference internal" href="#get-the-hash">Get the Hash</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ws_test.html">Web Services - Test</a></li>
-<li class="toctree-l1"><a class="reference internal" href="updates.html">Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ws_test.html">Web Services - Test</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ws_test.html#test-your-http-request">Test your HTTP request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws_test.html#your-http-request-is-compliant">Your HTTP request is compliant</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Changes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="updates.html#release-1-1-in-development">Release 1.1 (in development)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="updates.html#incompatible-changes">Incompatible changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="updates.html#features-added">Features added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="updates.html#bugs-fixed">Bugs fixed</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
-            
           
-        </div>
+        
       </div>
+      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -114,13 +123,7 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
+          <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
@@ -135,8 +138,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+          <div role="main" class="document">
             
   <div class="section" id="web-services-v1-1">
 <h1>Web Services v1.1<a class="headerlink" href="#web-services-v1-1" title="Permalink to this headline">¶</a></h1>
@@ -144,7 +146,7 @@
 <h2>Get the package list<a class="headerlink" href="#get-the-package-list" title="Permalink to this headline">¶</a></h2>
 <dl class="post">
 <dt id="post--api-v1.1-credit_insurance-get_packages">
-<code class="descname">POST </code><code class="descname">/api/v1.1/credit_insurance/get_packages</code><a class="headerlink" href="#post--api-v1.1-credit_insurance-get_packages" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">POST </tt><tt class="descname">/api/v1.1/credit_insurance/get_packages</tt><a class="headerlink" href="#post--api-v1.1-credit_insurance-get_packages" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -231,7 +233,7 @@
 </tbody>
 </table>
 <p>First input screen in polapp</p>
-<img alt="_static/v11/polapp_screen_1.png" src="_static/v11/polapp_screen_1.png" />
+<img alt="_images/polapp_screen_1.png" src="_images/polapp_screen_1.png" />
 <div class="versionchanged">
 <p><span class="versionmodified">Changed in version 1.1: </span>Prefix the /get_package WS with /credit_insurance</p>
 </div>
@@ -242,7 +244,7 @@
 <h2>Calculate a proposal<a class="headerlink" href="#calculate-a-proposal" title="Permalink to this headline">¶</a></h2>
 <dl class="post">
 <dt id="post--api-v1.1-credit_insurance-calculate_proposal">
-<code class="descname">POST </code><code class="descname">/api/v1.1/credit_insurance/calculate_proposal</code><a class="headerlink" href="#post--api-v1.1-credit_insurance-calculate_proposal" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">POST </tt><tt class="descname">/api/v1.1/credit_insurance/calculate_proposal</tt><a class="headerlink" href="#post--api-v1.1-credit_insurance-calculate_proposal" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -430,9 +432,9 @@ this kind of message.</p>
 </pre></div>
 </div>
 <p>Second screen in Polapp in case of Short Term Cover</p>
-<img alt="_static/v11/polapp_screen_2_stc.png" src="_static/v11/polapp_screen_2_stc.png" />
+<img alt="_images/polapp_screen_2_stc.png" src="_images/polapp_screen_2_stc.png" />
 <p>Second screen in Polapp in case of Select+</p>
-<img alt="_static/v11/polapp_screen_2_selectplus.png" src="_static/v11/polapp_screen_2_selectplus.png" />
+<img alt="_images/polapp_screen_2_selectplus.png" src="_images/polapp_screen_2_selectplus.png" />
 <div class="versionchanged">
 <p><span class="versionmodified">Changed in version 1.1: </span>Prefix the /calculate_proposal WS with /credit_insurance</p>
 </div>
@@ -443,7 +445,7 @@ this kind of message.</p>
 <h2>Create an Agreement Code<a class="headerlink" href="#create-an-agreement-code" title="Permalink to this headline">¶</a></h2>
 <dl class="post">
 <dt id="post--api-v1.1-credit_insurance-create_agreement_code">
-<code class="descname">POST </code><code class="descname">/api/v1.1/credit_insurance/create_agreement_code</code><a class="headerlink" href="#post--api-v1.1-credit_insurance-create_agreement_code" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">POST </tt><tt class="descname">/api/v1.1/credit_insurance/create_agreement_code</tt><a class="headerlink" href="#post--api-v1.1-credit_insurance-create_agreement_code" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -629,160 +631,239 @@ this kind of message.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The list of dangerous hobbies/professions for Select+:</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="3%" />
-<col width="51%" />
-<col width="46%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">id</th>
-<th class="head">Nl</th>
-<th class="head">Fr</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>0</td>
-<td>Geen beroep/hobby met risico</td>
-<td>Pas de profession/passe-temps a risque</td>
-</tr>
-<tr class="row-odd"><td>1</td>
-<td>Autosporten</td>
-<td>Sports automobiles</td>
-</tr>
-<tr class="row-even"><td>2</td>
-<td>Bergbeklimmmen</td>
-<td>Escalade - Alpinisme - Trekking</td>
-</tr>
-<tr class="row-odd"><td>3</td>
-<td>Brandweerman</td>
-<td>Pompiers secouristes</td>
-</tr>
-<tr class="row-even"><td>4</td>
-<td>Diplomatiek personeel</td>
-<td>Personnel diplomatique</td>
-</tr>
-<tr class="row-odd"><td>5</td>
-<td>Duiken</td>
-<td>Plongee</td>
-</tr>
-<tr class="row-even"><td>6</td>
-<td>Gevaarlijke producten</td>
-<td>Produits dangereux</td>
-</tr>
-<tr class="row-odd"><td>19</td>
-<td>Journalist</td>
-<td>Journaliste</td>
-</tr>
-<tr class="row-even"><td>7</td>
-<td>Juridische beroepen</td>
-<td>Professions juridiques</td>
-</tr>
-<tr class="row-odd"><td>8</td>
-<td>Luchtvaart (motorvliegtuigen)</td>
-<td>Aeronautique (appareils e moteur)</td>
-</tr>
-<tr class="row-even"><td>9</td>
-<td>Luchtvaart (toestellen zonder motor)</td>
-<td>Aeronautique (appareils sans moteur)</td>
-</tr>
-<tr class="row-odd"><td>10</td>
-<td>Militair</td>
-<td>Militaires</td>
-</tr>
-<tr class="row-even"><td>11</td>
-<td>Motorboten</td>
-<td>Motonautisme</td>
-</tr>
-<tr class="row-odd"><td>12</td>
-<td>Motorrijden</td>
-<td>Motocyclisme</td>
-</tr>
-<tr class="row-even"><td>13</td>
-<td>Openbare orde en veiligheid</td>
-<td>Forces de l&#8217;ordre</td>
-</tr>
-<tr class="row-odd"><td>14</td>
-<td>Parapenten - Valschermspringen</td>
-<td>Parapente - Parachutisme</td>
-</tr>
-<tr class="row-even"><td>20</td>
-<td>Petroleum - Gas</td>
-<td>Petrole - Gaz</td>
-</tr>
-<tr class="row-odd"><td>15</td>
-<td>Ruitersport</td>
-<td>Equitation</td>
-</tr>
-<tr class="row-even"><td>16</td>
-<td>Safari en jacht</td>
-<td>Safaris et chasse</td>
-</tr>
-<tr class="row-odd"><td>17</td>
-<td>Sneeuwsporten</td>
-<td>Sports de neige</td>
-</tr>
-<tr class="row-even"><td>18</td>
-<td>Speleologie</td>
-<td>Speleologie</td>
-</tr>
-<tr class="row-odd"><td>21</td>
-<td>Stuntman</td>
-<td>Cascadeurs</td>
-</tr>
-<tr class="row-even"><td>22</td>
-<td>Zeilsport</td>
-<td>Yachting</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>The list of possible agreed items (beneficiary_clause) for Select+:</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="10%" />
-<col width="7%" />
-<col width="83%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>268</td>
-<td>Nl</td>
-<td>Mede-eigenaar(s)</td>
-</tr>
-<tr class="row-even"><td>269</td>
-<td>Nl</td>
-<td>Echtgeno(o)t(e)/Partner</td>
-</tr>
-<tr class="row-odd"><td>270</td>
-<td>Nl</td>
-<td>Kinderen</td>
-</tr>
-<tr class="row-even"><td>271</td>
-<td>Nl</td>
-<td>Ouders</td>
-</tr>
-<tr class="row-odd"><td>274</td>
-<td>Fr</td>
-<td>Co-prorietaire(s)</td>
-</tr>
-<tr class="row-even"><td>275</td>
-<td>Fr</td>
-<td>Conjoint/Cohabitant legal</td>
-</tr>
-<tr class="row-odd"><td>276</td>
-<td>Fr</td>
-<td>Enfants</td>
-</tr>
-<tr class="row-even"><td>277</td>
-<td>Fr</td>
-<td>Parents</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;agent_official_number_fsma&quot;</span><span class="p">:</span> <span class="s2">&quot;fsma&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;agreement_date&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2015</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;assets&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;added_value&quot;</span><span class="p">:</span> <span class="s2">&quot;30000.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;appraised_value&quot;</span><span class="p">:</span> <span class="s2">&quot;231000.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;asset&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Antwerp&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;country_code&quot;</span><span class="p">:</span> <span class="s2">&quot;BE&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;street_1&quot;</span><span class="p">:</span> <span class="s2">&quot;Teststraat 24&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;zip_code&quot;</span><span class="p">:</span> <span class="s2">&quot;9876&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;described_by&quot;</span><span class="p">:</span> <span class="s2">&quot;detached&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;building_lot_number&quot;</span><span class="p">:</span> <span class="s2">&quot;ZVF234SA&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building_lot_price&quot;</span><span class="p">:</span> <span class="s2">&quot;40000.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building_lot_width&quot;</span><span class="p">:</span> <span class="s2">&quot;15.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;conditional_lien_amount&quot;</span><span class="p">:</span> <span class="s2">&quot;65000.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;forced_selling_value&quot;</span><span class="p">:</span> <span class="s2">&quot;195000.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;habitable_area&quot;</span><span class="p">:</span> <span class="s2">&quot;120.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;housefront_width&quot;</span><span class="p">:</span> <span class="s2">&quot;7.50&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;initial_value&quot;</span><span class="p">:</span> <span class="s2">&quot;230000.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;lien_amount&quot;</span><span class="p">:</span> <span class="s2">&quot;120000.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;rental_revenues&quot;</span><span class="p">:</span> <span class="s2">&quot;750.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;selling_value&quot;</span><span class="p">:</span> <span class="s2">&quot;215000.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;used_as&quot;</span><span class="p">:</span> <span class="s2">&quot;mortgage_lien&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;from_date&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2015</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;origin&quot;</span><span class="p">:</span> <span class="s2">&quot;BIA:12000&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;package_id&quot;</span><span class="p">:</span> <span class="mi">66</span><span class="p">,</span>
+    <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;alimony_expenses&quot;</span><span class="p">:</span> <span class="s2">&quot;234.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;child_support_expenses&quot;</span><span class="p">:</span> <span class="s2">&quot;540.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;cohabiting_children&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;cohabiting_parents&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;credit_card_history&quot;</span><span class="p">:</span> <span class="s2">&quot;no_delinquency&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;credit_history&quot;</span><span class="p">:</span> <span class="s2">&quot;no_delinquency&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;described_by&quot;</span><span class="p">:</span> <span class="s2">&quot;borrower&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;earnings_documentation&quot;</span><span class="p">:</span> <span class="s2">&quot;stated&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;educational_level&quot;</span><span class="p">:</span> <span class="s2">&quot;first_stage_tertiary&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;housing_expenses&quot;</span><span class="p">:</span> <span class="s2">&quot;231.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;loan_expenses&quot;</span><span class="p">:</span> <span class="s2">&quot;340.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;net_alimony_revenues&quot;</span><span class="p">:</span> <span class="s2">&quot;452.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;net_child_allowance_revenues&quot;</span><span class="p">:</span> <span class="s2">&quot;325.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;net_child_support_revenues&quot;</span><span class="p">:</span> <span class="s2">&quot;342.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;net_earnings_of_employment&quot;</span><span class="p">:</span> <span class="s2">&quot;1400.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;net_earnings_of_secondary_activity&quot;</span><span class="p">:</span> <span class="s2">&quot;250.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;net_other_revenues&quot;</span><span class="p">:</span> <span class="s2">&quot;100.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;net_rent_revenues&quot;</span><span class="p">:</span> <span class="s2">&quot;600.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;other_expenses&quot;</span><span class="p">:</span> <span class="s2">&quot;25.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;party&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;IT-Consultant&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;activity_since&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                    <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2009</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;addresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Brussels&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;country_code&quot;</span><span class="p">:</span> <span class="s2">&quot;BE&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;described_by&quot;</span><span class="p">:</span> <span class="s2">&quot;domicile&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;from_date&quot;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                            <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                            <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2010</span>
+                        <span class="p">},</span>
+                        <span class="nt">&quot;street_1&quot;</span><span class="p">:</span> <span class="s2">&quot;Street 12/b&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;zip_code&quot;</span><span class="p">:</span> <span class="s2">&quot;1234&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;birth_date&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+                    <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1981</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;company_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Vortex&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;company_since&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+                    <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+                    <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2014</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;contact_mechanisms&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;address_type&quot;</span><span class="p">:</span> <span class="s2">&quot;domicile&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;19-20h&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;contact_mechanism&quot;</span><span class="p">:</span> <span class="s2">&quot;+3232880203&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;described_by&quot;</span><span class="p">:</span> <span class="s2">&quot;phone&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Firstname&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;nl_BE&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lastname&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;marital_contract&quot;</span><span class="p">:</span> <span class="s2">&quot;separation_of_goods&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;marital_status&quot;</span><span class="p">:</span> <span class="s2">&quot;divorced&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;nationality_code&quot;</span><span class="p">:</span> <span class="s2">&quot;BE&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;occupation&quot;</span><span class="p">:</span> <span class="s2">&quot;clerk&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;passport_expiry_date&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
+                    <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2018</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;passport_number&quot;</span><span class="p">:</span> <span class="s2">&quot;111-2222222-33&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;personal_title&quot;</span><span class="p">:</span> <span class="s2">&quot;Dhr.&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;row_type&quot;</span><span class="p">:</span> <span class="s2">&quot;person&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;sex&quot;</span><span class="p">:</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;social_security_number&quot;</span><span class="p">:</span> <span class="s2">&quot;012345678901&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;tax_id&quot;</span><span class="p">:</span> <span class="s2">&quot;0806.295.870&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;rank&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;smoking_habit&quot;</span><span class="p">:</span> <span class="s2">&quot;regular&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;asset_id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;asset_ownership_percentage&quot;</span><span class="p">:</span> <span class="s2">&quot;50.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;described_by&quot;</span><span class="p">:</span> <span class="s2">&quot;owner&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;net_earnings_of_employment&quot;</span><span class="p">:</span> <span class="s2">&quot;1500.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;party&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;activity&quot;</span><span class="p">:</span> <span class="s2">&quot;IT-Consultant&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;activity_since&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                    <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2009</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;addresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Brussels&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;country_code&quot;</span><span class="p">:</span> <span class="s2">&quot;BE&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;described_by&quot;</span><span class="p">:</span> <span class="s2">&quot;domicile&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;from_date&quot;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                            <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                            <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2010</span>
+                        <span class="p">},</span>
+                        <span class="nt">&quot;street_1&quot;</span><span class="p">:</span> <span class="s2">&quot;Street 12/b&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;zip_code&quot;</span><span class="p">:</span> <span class="s2">&quot;1234&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;birth_date&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+                    <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1981</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;company_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Vortex&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;company_since&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+                    <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+                    <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2014</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;contact_mechanisms&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;address_type&quot;</span><span class="p">:</span> <span class="s2">&quot;domicile&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;19-20h&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;contact_mechanism&quot;</span><span class="p">:</span> <span class="s2">&quot;+3232880203&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;described_by&quot;</span><span class="p">:</span> <span class="s2">&quot;phone&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Firstname&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;nl_BE&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lastname&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;marital_contract&quot;</span><span class="p">:</span> <span class="s2">&quot;separation_of_goods&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;marital_status&quot;</span><span class="p">:</span> <span class="s2">&quot;divorced&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;nationality_code&quot;</span><span class="p">:</span> <span class="s2">&quot;BE&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;passport_expiry_date&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;day&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
+                    <span class="nt">&quot;month&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="nt">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2018</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;passport_number&quot;</span><span class="p">:</span> <span class="s2">&quot;111-2222222-33&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;personal_title&quot;</span><span class="p">:</span> <span class="s2">&quot;Dhr.&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;row_type&quot;</span><span class="p">:</span> <span class="s2">&quot;person&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;sex&quot;</span><span class="p">:</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;social_security_number&quot;</span><span class="p">:</span> <span class="s2">&quot;012345678901&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;tax_id&quot;</span><span class="p">:</span> <span class="s2">&quot;0806.295.870&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;rank&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;described_by&quot;</span><span class="p">:</span> <span class="s2">&quot;appraiser&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;party&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;VastgoedSchatters N.V.&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;row_type&quot;</span><span class="p">:</span> <span class="s2">&quot;organization&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;tax_id&quot;</span><span class="p">:</span> <span class="s2">&quot;0806.295.871&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;rank&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;row_type&quot;</span><span class="p">:</span> <span class="s2">&quot;loan_application&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;schedules&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="s2">&quot;230000.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;architect_fee&quot;</span><span class="p">:</span> <span class="s2">&quot;23000.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;bridging_credit&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;building_purchase&quot;</span><span class="p">:</span> <span class="s2">&quot;20000.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;centralization&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;described_by&quot;</span><span class="p">:</span> <span class="s2">&quot;fixed_amount&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;direct_debit&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;down_payment&quot;</span><span class="p">:</span> <span class="s2">&quot;7500.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;duration&quot;</span><span class="p">:</span> <span class="mi">240</span><span class="p">,</span>
+            <span class="nt">&quot;homeowners_insurance&quot;</span><span class="p">:</span> <span class="s2">&quot;120.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;life_insurance&quot;</span><span class="p">:</span> <span class="s2">&quot;300.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;mortgage_insurance&quot;</span><span class="p">:</span> <span class="s2">&quot;150.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;new_housing&quot;</span><span class="p">:</span> <span class="s2">&quot;120000.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;other_costs&quot;</span><span class="p">:</span> <span class="s2">&quot;50.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;period_type&quot;</span><span class="p">:</span> <span class="s2">&quot;monthly&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+            <span class="nt">&quot;purchase_terrain&quot;</span><span class="p">:</span> <span class="s2">&quot;80000.00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;refinancing&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;registration_fee&quot;</span><span class="p">:</span> <span class="s2">&quot;100.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;renovation&quot;</span><span class="p">:</span> <span class="s2">&quot;40000.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;row_type&quot;</span><span class="p">:</span> <span class="s2">&quot;applied_amount&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;signing_agent_mortgage&quot;</span><span class="p">:</span> <span class="s2">&quot;275.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;signing_agent_purchase&quot;</span><span class="p">:</span> <span class="s2">&quot;234.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;suspension_of_payment&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+            <span class="nt">&quot;vat&quot;</span><span class="p">:</span> <span class="s2">&quot;200.0&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.0</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Length</span><span class="o">:</span> <span class="l">464</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
@@ -833,7 +914,7 @@ this kind of message.</p>
 <h2>Send an Agreement<a class="headerlink" href="#send-an-agreement" title="Permalink to this headline">¶</a></h2>
 <dl class="post">
 <dt id="post--api-v1.1-credit_insurance-send_agreement">
-<code class="descname">POST </code><code class="descname">/api/v1.1/credit_insurance/send_agreement</code><a class="headerlink" href="#post--api-v1.1-credit_insurance-send_agreement" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">POST </tt><tt class="descname">/api/v1.1/credit_insurance/send_agreement</tt><a class="headerlink" href="#post--api-v1.1-credit_insurance-send_agreement" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -886,47 +967,12 @@ this kind of message.</p>
 </div>
 <div class="section" id="get-a-pdf-report-of-a-proposal">
 <h2>Get a PDF report of a Proposal<a class="headerlink" href="#get-a-pdf-report-of-a-proposal" title="Permalink to this headline">¶</a></h2>
-<dl class="post">
-<dt id="post--api-v1.1-credit_insurance-get_proposal_pdf">
-<code class="descname">POST </code><code class="descname">/api/v1.1/credit_insurance/get_proposal_pdf</code><a class="headerlink" href="#post--api-v1.1-credit_insurance-get_proposal_pdf" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Synopsis:</th><td class="field-body"><p class="first">Get a PDF version of a Proposal</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.8">Authorization</a> &#8211; Token for Authentication</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Not Yet Implemented</strong></p>
-<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.0</span> <span class="m">501</span> <span class="ne">NOT IMPLEMENTED</span>
-<span class="na">Content-Length</span><span class="o">:</span> <span class="l">46</span>
-<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
-<span class="na">Date</span><span class="o">:</span> <span class="l">Fri, 20 Mar 2015 14:41:01 GMT</span>
-<span class="na">Server</span><span class="o">:</span> <span class="l">Werkzeug/0.10.1 Python/2.7.8+</span>
-
-<span class="p">{</span>
-    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Web service not implemented&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.1: </span>Prefix the /get_proposal_pdf WS with /credit_insurance</p>
-</div>
-</dd></dl>
-
 </div>
 <div class="section" id="get-the-hash">
 <h2>Get the Hash<a class="headerlink" href="#get-the-hash" title="Permalink to this headline">¶</a></h2>
 <dl class="get">
 <dt id="get--api-v1.1-hash">
-<code class="descname">GET </code><code class="descname">/api/v1.1/hash</code><a class="headerlink" href="#get--api-v1.1-hash" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">GET </tt><tt class="descname">/api/v1.1/hash</tt><a class="headerlink" href="#get--api-v1.1-hash" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -951,7 +997,6 @@ this kind of message.</p>
 </div>
 
 
-           </div>
           </div>
           <footer>
   
@@ -970,10 +1015,9 @@ this kind of message.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2015, Vortex.
-
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
 </footer>
 

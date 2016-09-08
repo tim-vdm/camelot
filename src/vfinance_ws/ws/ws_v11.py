@@ -62,13 +62,13 @@ def calculate_proposal(document):
     .. literalinclude:: demo/post_calculate_proposal.http
         :language: http
 
-    .. literalinclude:: demo/calculate_proposal_select_plus.json
+    .. literalinclude:: demo/v11_calculate_proposal_select_plus.json
         :language: json
 
     .. literalinclude:: demo/200.http
         :language: http
 
-    .. literalinclude:: demo/calculate_proposal_select_plus_response.json
+    .. literalinclude:: demo/v11_calculate_proposal_select_plus_response.json
         :language: json
 
     .. literalinclude:: demo/400.http
@@ -97,11 +97,11 @@ def calculate_proposal(document):
 
     Second screen in Polapp in case of Short Term Cover
 
-    .. image:: /_static/v11/polapp_screen_2_stc.png
+    .. image:: /_images/polapp_screen_2_stc.png
 
     Second screen in Polapp in case of Select+
 
-    .. image:: /_static/v11/polapp_screen_2_selectplus.png
+    .. image:: /_images/polapp_screen_2_selectplus.png
 
     .. versionchanged:: 1.1
         Prefix the /calculate_proposal WS with /credit_insurance
@@ -173,7 +173,7 @@ def ci_create_agreement_code(document):
     .. literalinclude:: demo/200.http
         :language: http
 
-    .. literalinclude:: demo/create_agreement_code_response.json
+    .. literalinclude:: demo/v11_create_agreement_code_response.json
         :language: json
 
 
@@ -290,7 +290,7 @@ def get_packages(document):
 
     First input screen in polapp
 
-    .. image:: /_static/v11/polapp_screen_1.png
+    .. image:: /_images/polapp_screen_1.png
 
     .. versionchanged:: 1.1
         Prefix the /get_package WS with /credit_insurance

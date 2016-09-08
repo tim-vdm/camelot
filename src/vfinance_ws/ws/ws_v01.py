@@ -37,13 +37,13 @@ def calculate_proposal(document):
     .. literalinclude:: demo/post_calculate_proposal.http
         :language: http
 
-    .. literalinclude:: demo/calculate_proposal.json
+    .. literalinclude:: demo/v01_calculate_proposal.json
         :language: json
 
     .. literalinclude:: demo/200.http
         :language: http
 
-    .. literalinclude:: demo/calculate_proposal_response.json
+    .. literalinclude:: demo/v01_calculate_proposal_response.json
         :language: json
 
     .. literalinclude:: demo/400.http
@@ -85,13 +85,13 @@ def create_agreement_code(document):
     .. literalinclude:: demo/post_create_agreement_code.http
         :language: http
 
-    .. literalinclude:: demo/create_agreement_code.json
+    .. literalinclude:: demo/v01_create_agreement_code.json
         :language: json
 
     .. literalinclude:: demo/200.http
         :language: http
 
-    .. literalinclude:: demo/create_agreement_code_response.json
+    .. literalinclude:: demo/v01_create_agreement_code_response.json
         :language: json
 
 

@@ -296,6 +296,23 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertIsInstance(content, dict)
 
 
+    def test_create_agreement_code_polapp_stc(self):
+        document = load_demo_json('v11_create_agreement_code_polapp_stc')
+        response = self.post_json('create_agreement_code', data=document)
+
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
+
+
+    def test_create_agreement_code_polapp_select_plus(self):
+        document = load_demo_json('v11_create_agreement_code_polapp_select_plus')
+        response = self.post_json('create_agreement_code', data=document)
+
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
+
 
     def test_create_agreement_code_duplicate_roles(self):
         # This test should be adapted when we know about the agreement where
@@ -360,8 +377,8 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(insured_party.natuurlijke_persoon.last_name, 'Delaruelle')
         self.assertEqual(insured_party.natuurlijke_persoon.first_name, 'Pieter-Jan')
         self.assertEqual(insured_party.natuurlijke_persoon.identity_number, '900102')
-        self.assertEqual(insured_party.natuurlijke_persoon.geboorteplaats, 'Wilrijk')
-        self.assertEqual(insured_party.natuurlijke_persoon.birth_country_code, 'BE')
+        self.assertEqual(insured_party.natuurlijke_persoon.place_of_birth.name, 'Wilrijk')
+        self.assertEqual(insured_party.natuurlijke_persoon.place_of_birth.country.code, 'BE')
         self.assertEqual(insured_party.natuurlijke_persoon.origin, 'BIA:12000')
         self.assertEqual(insured_party.fitness_level, D('1'))
         self.assertEqual(insured_party.fitness_level_reference, 'Judo, Ippon v.z.w. Diest')
