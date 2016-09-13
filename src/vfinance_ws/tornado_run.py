@@ -5,6 +5,7 @@ import os
 import sys
 import logging
 import logging.handlers
+import wingdbstub
 
 from PyQt4 import QtGui
 

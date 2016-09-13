@@ -135,29 +135,23 @@ CREATE TABLE authentication_mechanism (
 
 
 CREATE TABLE hypo_rente_tabel_categorie (
-	doel_aankoop_gebouw_registratie BOOLEAN, 
-	doel_herfinanciering BOOLEAN, 
-	doel_nieuwbouw BOOLEAN, 
+	building_purchase BOOLEAN, 
+	state_guarantee BOOLEAN, 
+	registration_fee BOOLEAN, 
+	homeowners_insurance BOOLEAN, 
+	mortgage_insurance BOOLEAN, 
+	life_insurance BOOLEAN, 
+	refinancing BOOLEAN, 
+	new_housing BOOLEAN, 
 	name VARCHAR(100) NOT NULL, 
-	doel_centralisatie BOOLEAN, 
-	doel_aankoop_terrein BOOLEAN, 
-	doel_handelszaak BOOLEAN, 
-	doel_aankoop_gebouw_btw BOOLEAN, 
-	doel_overbrugging BOOLEAN, 
-	doel_renovatie BOOLEAN, 
-	doel_behoud BOOLEAN, 
+	centralization BOOLEAN, 
+	purchase_terrain BOOLEAN, 
+	vat BOOLEAN, 
+	bridging_credit BOOLEAN, 
+	renovation BOOLEAN, 
+	inheritance_tax BOOLEAN, 
 	id INTEGER NOT NULL, 
-	PRIMARY KEY (id), 
-	CHECK (doel_aankoop_gebouw_registratie IN (0, 1)), 
-	CHECK (doel_herfinanciering IN (0, 1)), 
-	CHECK (doel_nieuwbouw IN (0, 1)), 
-	CHECK (doel_centralisatie IN (0, 1)), 
-	CHECK (doel_aankoop_terrein IN (0, 1)), 
-	CHECK (doel_handelszaak IN (0, 1)), 
-	CHECK (doel_aankoop_gebouw_btw IN (0, 1)), 
-	CHECK (doel_overbrugging IN (0, 1)), 
-	CHECK (doel_renovatie IN (0, 1)), 
-	CHECK (doel_behoud IN (0, 1))
+	PRIMARY KEY (id)
 );
 CREATE TABLE financial_security_order (
 	order_date DATE NOT NULL, 
@@ -695,6 +689,8 @@ CREATE TABLE geographic_boundary_country (
 	PRIMARY KEY (geographicboundary_id), 
 	FOREIGN KEY(geographicboundary_id) REFERENCES geographic_boundary (id)
 );
+
+
 CREATE TABLE insurance_coverage_availability (
 	from_date DATE NOT NULL, 
 	thru_date DATE NOT NULL, 
@@ -843,9 +839,9 @@ CREATE TABLE financial_transaction_credit_distribution (
 
 CREATE TABLE hypo_rente_tabel (
 	looptijd INTEGER NOT NULL, 
-	type_aflossing VARCHAR(50) NOT NULL, 
 	categorie INTEGER NOT NULL, 
 	name VARCHAR(100), 
+	payment_type INTEGER NOT NULL, 
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
 	CONSTRAINT hypo_rente_tabel_categorie_fk FOREIGN KEY(categorie) REFERENCES hypo_rente_tabel_categorie (id)
@@ -1488,6 +1484,8 @@ CREATE TABLE hypo_te_hypothekeren_goed (
 	schatter_id INTEGER, 
     land INTEGER,
     address INTEGER NOT NULL,
+    floor INTEGER,
+    room VARCHAR(10),
 	PRIMARY KEY (id), 
 	CONSTRAINT hypo_te_hypothekeren_goed_schatter_id_fk FOREIGN KEY(schatter_id) REFERENCES bank_rechtspersoon (id), 
 	CONSTRAINT hypo_te_hypothekeren_goed_brandverzekering_fk FOREIGN KEY(brandverzekering) REFERENCES hypo_verzekering (id),
@@ -1676,9 +1674,11 @@ CREATE TABLE "financial_agreement_premium_schedule" (
 	duration INTEGER NOT NULL, 
 	payment_duration INTEGER, 
 	period_type INTEGER NOT NULL, 
+	described_by INTEGER NOT NULL, 
 	amount NUMERIC(17, 2) NOT NULL, 
 	increase_rate NUMERIC(17, 5) NOT NULL, 
 	direct_debit BOOLEAN NOT NULL, 
+	row_type CHARACTER VARYING(40) NOT NULL, 
 	id INTEGER NOT NULL, insured_duration INTEGER, coverage_amortization_id INTEGER, insured_from_date DATE, coverage_for_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(financial_agreement_id) REFERENCES financial_agreement (id) ON DELETE cascade ON UPDATE cascade, 
@@ -1733,6 +1733,7 @@ CREATE TABLE hypo_goed (
 
 CREATE TABLE financial_agreement_role (
 	id INTEGER NOT NULL, 
+	for_asset_id INTEGER, 
 	described_by INTEGER NOT NULL, 
 	rank INTEGER NOT NULL, 
 	use_custom_clause BOOLEAN, 
@@ -1748,7 +1749,8 @@ CREATE TABLE financial_agreement_role (
 	FOREIGN KEY(rechtspersoon) REFERENCES bank_rechtspersoon (id) ON DELETE restrict ON UPDATE cascade, 
 	FOREIGN KEY(natuurlijke_persoon) REFERENCES bank_natuurlijke_persoon (id) ON DELETE restrict ON UPDATE cascade, 
 	CONSTRAINT financial_agreement_role_financial_agreement_id_fk FOREIGN KEY(financial_agreement_id) REFERENCES financial_agreement (id) ON DELETE cascade ON UPDATE cascade, 
-	CONSTRAINT financial_agreement_role_associated_clause_id_fk FOREIGN KEY(associated_clause_id) REFERENCES financial_role_clause (id) ON DELETE restrict ON UPDATE cascade
+	CONSTRAINT financial_agreement_role_associated_clause_id_fk FOREIGN KEY(associated_clause_id) REFERENCES financial_role_clause (id) ON DELETE restrict ON UPDATE cascade,
+	CONSTRAINT financial_agreement_role_for_asset_id_fkey FOREIGN KEY(for_asset_id) REFERENCES hypo_te_hypothekeren_goed (id) MATCH SIMPLE
 );
 
 
@@ -2014,6 +2016,7 @@ CREATE TABLE hypo_application_role_feature (
 	FOREIGN KEY(of_id) REFERENCES hypo_application_role (id) ON DELETE cascade ON UPDATE cascade
 );
 CREATE TABLE hypo_goedgekeurd_bedrag (
+	agreed_schedule_id INTEGER,
 	goedgekeurde_referentie_index VARCHAR(7), 
 	goedgekeurd_type_vervaldag VARCHAR(50), 
 	beslissing INTEGER, 
@@ -2068,9 +2071,20 @@ CREATE TABLE hypo_goedgekeurd_bedrag (
 	CONSTRAINT hypo_goedgekeurd_bedrag_beslissing_fk FOREIGN KEY(beslissing) REFERENCES hypo_beslissing (id), 
 	CONSTRAINT hypo_goedgekeurd_bedrag_bedrag_fk FOREIGN KEY(bedrag) REFERENCES hypo_bedrag (id), 
 	CONSTRAINT hypo_goedgekeurd_bedrag_voorgesteld_index_type_fk FOREIGN KEY(voorgesteld_index_type) REFERENCES hypo_index_type (id), 
-	CONSTRAINT hypo_goedgekeurd_bedrag_goedgekeurd_index_type_fk FOREIGN KEY(goedgekeurd_index_type) REFERENCES hypo_index_type (id)
+	CONSTRAINT hypo_goedgekeurd_bedrag_goedgekeurd_index_type_fk FOREIGN KEY(goedgekeurd_index_type) REFERENCES hypo_index_type (id),
+	CONSTRAINT hypo_goedgekeurd_bedrag_agreed_schedule_id_fkey FOREIGN KEY (agreed_schedule_id) REFERENCES financial_agreement_premium_schedule (id)
 );
 
+CREATE TABLE financial_agreement_asset_feature
+(
+    value numeric(17,5) NOT NULL,
+    reference character varying(128),
+    of_id INTEGER NOT NULL,
+    described_by INTEGER NOT NULL,
+    id INTEGER NOT NULL,
+    PRIMARY KEY (id),
+    CONSTRAINT financial_agreement_asset_feature_of_id_pkey FOREIGN KEY (of_id) REFERENCES financial_agreement_asset_usage (id) MATCH SIMPLE
+);
 
 
 

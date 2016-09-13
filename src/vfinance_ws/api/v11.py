@@ -21,7 +21,7 @@ from camelot.model.authentication import end_of_times
 
 from vfinance.connector.json_ import ExtendedEncoder, FinancialAgreementJsonExport
 
-from vfinance.data.types import role_feature_types
+from vfinance.data.types import role_feature_types, asset_feature_types
 
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
@@ -35,6 +35,8 @@ from vfinance.model.financial.agreement import (FinancialAgreement,
                                                FinancialAgreementRole,
                                                FinancialAgreementRoleFeature,
                                                FinancialAgreementFunctionalSettingAgreement,
+                                               FinancialAgreementAssetUsage,
+                                               FinancialAgreementAssetFeature,
                                                InsuredLoanAgreement,
                                                FinancialAgreementItem)
 from vfinance.model.financial.premium import FinancialAgreementPremiumSchedule
@@ -48,7 +50,7 @@ from vfinance.model.bank.product import Product
 from vfinance.model.bank.persoon import PersonAddress
 from vfinance.model.bank.direct_debit import DirectDebitMandate
 from vfinance.model.bank.constants import get_interface_value_from_model_value, get_model_value_from_interface_value
-from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, EigenaarGoed, GoedAanvraag, Bedrag
+from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, AppliedLoanAmount
 
 from vfinance_ws.api.utils import DecimalEncoder
 from vfinance_ws.api.utils import to_table_html
@@ -189,27 +191,21 @@ def create_agreement_from_json(session, document):
     if agreement_assets is not None:
         for agreement_asset in agreement_assets:
             goed = TeHypothekerenGoed()
-            goed_aanvraag = GoedAanvraag()
-            goed_aanvraag.te_hypothekeren_goed = goed
-            goed_aanvraag.financial_agreement = agreement
-            goed_aanvraag.hypothecaire_inschrijving = agreement_asset.get('lien_amount')
-            goed_aanvraag.hypothecair_mandaat = agreement_asset.get('conditional_lien_amount')
-            goed_aanvraag.prijs_grond = agreement_asset.get('building_lot_price')
-            goed_aanvraag.waarde_voor_werken = agreement_asset.get('initial_value')
-            goed_aanvraag.waarde_verhoging = agreement_asset.get('added_value')
+            asset = FinancialAgreementAssetUsage()
+            asset.asset_usage = goed
+            asset.financial_agreement = agreement
+            for feature_type in asset_feature_types:
+                feature_value = agreement_asset.get(feature_type.name)
+                if feature_value is not None:
+                    asset_feature = FinancialAgreementAssetFeature()
+                    asset_feature.described_by = feature_type.name
+                    asset_feature.of = asset
+                    asset_feature.value = feature_value
 
-            goed.kadaster = agreement_asset.get('building_log_number')
-            goed.venale_verkoopwaarde = agreement_asset.get('appraised_value')
-            goed.vrijwillige_verkoop = agreement_asset.get('selling_value')
-            goed.gedwongen_verkoop = agreement_asset.get('forced_selling_value')
-            goed.bewoonbare_oppervlakte = agreement_asset.get('habitable_area')
-            goed.straat_breedte_gevel = agreement_asset.get('housefront_width')
-            goed.straat_breedte_grond = agreement_asset.get('building_lot_width')
-            goed.huurwaarde = agreement_asset.get('rental_revenues')
 
-            asset = agreement_asset['asset']
-            id = asset['id']
-            goed.address = make_address(asset['address'], session)
+            goed.kadaster = agreement_asset.get('building_lot_number')
+
+            goed.address = make_address(agreement_asset['asset']['address'], session)
             mapping = {'building_lot': 'bouwgrond',
                        'condominium': 'appartement',
                        'attached': 'rijwoning',
@@ -218,8 +214,8 @@ def create_agreement_from_json(session, document):
                        'bungalow': 'bungalow',
                        'commercial_building': 'handelspand',
                        'castle': 'kasteel'}
-            goed.type = mapping.get(asset['described_by'])
-            assets.append({'id': id,
+            goed.type = mapping.get(agreement_asset['asset']['described_by'])
+            assets.append({'id': agreement_asset['asset']['id'],
                            'asset': goed})
 
     for role in document['roles']:
@@ -227,21 +223,21 @@ def create_agreement_from_json(session, document):
         role_type = role['described_by']
 
         if role['party']['row_type'] == 'person':
-            natural_person = role['party']
+            natural_person = role.pop('party')
             person = NatuurlijkePersoon()
             person.origin = origin
 
             # Loop the addresses
-            addresses = natural_person['addresses']
+            addresses = natural_person.pop('addresses')
             for address in addresses:
                 new_address = make_person_address(address, session)
                 person.addresses.append(new_address)
 
             # Loop the contactmechanisms
-            contact_mechanisms = natural_person['contact_mechanisms']
+            contact_mechanisms = natural_person.pop('contact_mechanisms')
             for contact_mechanism in contact_mechanisms:
-                described_by = contact_mechanism['described_by']
-                value = contact_mechanism['contact_mechanism']
+                described_by = contact_mechanism.pop('described_by')
+                value = contact_mechanism.pop('contact_mechanism')
                 if described_by == 'fax':
                     person.fax = value
                 elif described_by == 'mobile':
@@ -249,7 +245,7 @@ def create_agreement_from_json(session, document):
                 elif described_by == 'email':
                     person.email = value
                 elif described_by == 'phone':
-                    address_type = contact_mechanism.get('address_type')
+                    address_type = contact_mechanism.pop('address_type')
                     if address_type is not None and address_type == 'domicile':
                         person.telefoon = value
                     else:
@@ -322,31 +318,27 @@ def create_agreement_from_json(session, document):
                 if attr in field_mappings.keys():
                     attrib = field_mappings.get(attr)
 
-                if attr not in ('row_type', 'addresses'):
+                if attr not in ('row_type', 'addresses', 'contact_mechanisms'):
                     setattr(person, attrib, value)
 
 
+
+            agreement_role = FinancialAgreementRole()
+            agreement_role.described_by = role_type
+            agreement_role.rank = role['rank']
+            agreement_role.financial_agreement = agreement
+            agreement_role.natuurlijke_persoon = person
+
             if role_type in ('owner', 'non_usufruct_owner', 'owner_usufruct'):
-                eigenaar = EigenaarGoed()
                 for asset in assets:
                     if asset['id'] == role['asset_id']:
-                        owned_asset = asset['asset']
-                        eigenaar.percentage = Decimal(role['asset_ownership_percentage'])
-                        eigenaar.te_hypothekeren_goed_id = owned_asset
-                        eigenaar.natuurlijke_persoon = person
-                        if role_type == 'owner':
-                            eigenaar.type = 'volle_eigendom'
-                        elif role_type == 'non_usufruct_owner':
-                            eigenaar.type = 'naakte_eigendom'
-                        else:
-                            eigenaar.type = 'vruchtgebruik'
+                        agreement_role.for_asset = asset['asset']
 
-            else:
-                agreement_role = FinancialAgreementRole()
-                agreement_role.described_by = role_type
-                agreement_role.rank = role['rank']
-                agreement_role.financial_agreement = agreement
-                agreement_role.natuurlijke_persoon = person
+                        role_feature = FinancialAgreementRoleFeature()
+                        role_feature.of = agreement_role
+                        role_feature.described_by = 'ownership_percentage'
+                        role_feature.value = Decimal(role['asset_ownership_percentage'])
+
 
         elif role['party']['row_type'] == 'organization':
             rechtspersoon = Rechtspersoon()
@@ -387,6 +379,15 @@ def create_agreement_from_json(session, document):
                 agreement_role.rank = role['rank']
                 agreement_role.financial_agreement = agreement
                 agreement_role.rechtspersoon = rechtspersoon
+                if role_type in ('owner', 'non_usufruct_owner', 'owner_usufruct'):
+                    for asset in assets:
+                        if asset['id'] == role['asset_id']:
+                            agreement_role.for_asset = asset
+
+                            role_feature = FinancialAgreementRoleFeature()
+                            role_feature.of = agreement_role
+                            role_feature.described_by = 'ownership_percentage'
+                            role_feature.value = Decimal(role['asset_ownership_percentage'])
 
         if agreement_role is not None:
             date_previous_disability = role.get('date_previous_disability')
@@ -396,23 +397,22 @@ def create_agreement_from_json(session, document):
             date_previous_medical_procedure = role.get('date_previous_medical_procedure')
             if date_previous_medical_procedure is not None:
                 agreement_role.date_previous_medical_procedure = datetime.date(**date_previous_medical_procedure)
-            for feature_name in constants.role_feature_names:
-                feature_value = role.get(feature_name)
-                feature_reference_value = role.get(feature_name + '_reference')
+            for feature_type in role_feature_types:
+                feature_value = role.get(feature_type.name)
+                feature_reference_value = role.get(feature_type.name + '_reference')
                 # If role is not mapped to a FinancialAgreementRole, no FinancialAgreementRoleFeatures should be created
                 #if feature_value is not None:
                 if feature_value is not None and role_type not in ('appraiser', 'owner', 'non_usufruct_owner', 'owner_usufruct'):
-                    for feature in role_feature_types:
-                        choices = feature.values
-                        if feature_name == feature.name and choices is not None:
-                            for choice in choices:
-                                if choice[2] == feature_value:
-                                    feature_value = choice[0]
+                    choices = feature_type.values
+                    if choices is not None:
+                        for choice in choices:
+                            if choice[2] == feature_value:
+                                feature_value = choice[0]
                     role_feature = FinancialAgreementRoleFeature()
                     role_feature.of = agreement_role
                     role_feature.value = Decimal(feature_value)
                     role_feature.reference = feature_reference_value
-                    role_feature.described_by = feature_name
+                    role_feature.described_by = feature_type.name
 
 
 
@@ -499,27 +499,18 @@ def create_agreement_from_json(session, document):
                         agreed_feature.value = Decimal(feature_value)
                         agreed_feature.agreed_on = premium_schedule
             elif schedule_type == 'applied_amount':
-                bedrag = Bedrag()
+                applied_amount = AppliedLoanAmount()
+                applied_amount.financial_agreement = agreement
 
                 # Should be decided by the product or the package?
-                type_vervaldag = 'akte'
+                #type_vervaldag = 'akte'
+                #bedrag.type_vervaldag = type_vervaldag
 
-                bedrag.product = product
-                bedrag.type_vervaldag = type_vervaldag
-                bedrag.type_aflossing = aflossing_field_mapping.get(schedule.get('described_by'))
-                bedrag.terugbetaling_interval = hypo_interval_field_mapping.get(period_type)
-                bedrag.looptijd = duration
-                bedrag.bedrag = amount
-                bedrag.terugbetaling_start = schedule.get('suspension_of_payment', 0)
-                for field in doel_field_mapping:
-                    if field == 'building_purchase':
-                        if schedule.get('vat'):
-                            fieldname = doel_field_mapping[field].get('vat')
-                        elif schedule.get('registration_fee'):
-                            fieldname = doel_field_mapping[field].get('registration_fee')
-                    else:
-                        fieldname = doel_field_mapping[field]
-                    setattr(bedrag, fieldname, bool(Decimal(schedule.get(field, 0.0))))
+                applied_amount.product = product
+                applied_amount.duration = duration
+                applied_amount.amount = Decimal(amount)
+                applied_amount.period_type = period_type
+                applied_amount.described_by = schedule.get('described_by')
 
                 for field in aankoop:
                     aankoopprijs += Decimal(schedule.get(field, 0.0))
@@ -536,7 +527,19 @@ def create_agreement_from_json(session, document):
                 eigen_middelen += Decimal(schedule.get('down_payment', 0.0))
                 andere_kosten += Decimal(schedule.get('other_costs', 0.0))
 
-                bedrag.financial_agreement = agreement
+                for field in doel_field_mapping:
+                    if field == 'building_purchase':
+                        if schedule.get('vat'):
+                            fieldname = doel_field_mapping[field].get('vat')
+                        elif schedule.get('registration_fee'):
+                            fieldname = doel_field_mapping[field].get('registration_fee')
+                    else:
+                        fieldname = doel_field_mapping[field]
+                    setattr(applied_amount, fieldname, bool(Decimal(schedule.get(field, 0.0))))
+
+                #bedrag.terugbetaling_start = schedule.get('suspension_of_payment', 0)
+
+
 
 
 
