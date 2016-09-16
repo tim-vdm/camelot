@@ -21,7 +21,7 @@ from camelot.model.authentication import end_of_times
 
 from vfinance.connector.json_ import ExtendedEncoder, FinancialAgreementJsonExport
 
-from vfinance.data.types import role_feature_types, asset_feature_types
+from vfinance.data.types import role_feature_types, asset_feature_types, product_feature_types
 
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
@@ -433,14 +433,6 @@ def create_agreement_from_json(session, document):
         hypo_interval_field_mapping = {'monthly': 12,
                                        'quarterly': 4,
                                        'yearly': 1}
-        doel_field_mapping = {'purchase_terrain': 'doel_aankoop_terrein',
-                              'new_housing': 'doel_nieuwbouw',
-                              'renovation': 'doel_renovatie',
-                              'refinancing': 'doel_herfinanciering',
-                              'centralization': 'doel_centralisatie',
-                              'building_purchase': {'vat': 'doel_aankoop_gebouw_btw',
-                                                    'registration_fee': 'doel_aankoop_gebouw_registratie'},
-                              'bridging_credit': 'doel_overbrugging'}
         aankoop = ['building_purchase', 'purchase_terrain']
         bouwwerken = ['renovation', 'new_housing']
         verzekeringen = ['homeowners_insurance', 'mortgage_insurance', 'life_insurance']
@@ -524,15 +516,9 @@ def create_agreement_from_json(session, document):
                 eigen_middelen += Decimal(schedule.get('down_payment', 0.0))
                 andere_kosten += Decimal(schedule.get('other_costs', 0.0))
 
-                for field in doel_field_mapping:
-                    if field == 'building_purchase':
-                        if schedule.get('vat'):
-                            fieldname = doel_field_mapping[field].get('vat')
-                        elif schedule.get('registration_fee'):
-                            fieldname = doel_field_mapping[field].get('registration_fee')
-                    else:
-                        fieldname = doel_field_mapping[field]
-                    setattr(applied_amount, fieldname, bool(Decimal(schedule.get(field, 0.0))))
+                for feature in product_feature_types:
+                    setattr(applied_amount, feature.name, Decimal(schedule.get(field, 0.0)))
+
 
                 #bedrag.terugbetaling_start = schedule.get('suspension_of_payment', 0)
 
