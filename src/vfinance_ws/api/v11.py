@@ -195,12 +195,13 @@ def create_agreement_from_json(session, document):
             asset.asset_usage = goed
             asset.financial_agreement = agreement
             for feature_type in asset_feature_types:
-                feature_value = agreement_asset.get(feature_type.name)
-                if feature_value is not None:
-                    asset_feature = FinancialAgreementAssetFeature()
-                    asset_feature.described_by = feature_type.name
-                    asset_feature.of = asset
-                    asset_feature.value = feature_value
+                if agreement_asset.get(feature_type.name) is not None:
+                    feature_value = agreement_asset.pop(feature_type.name)
+                    if feature_value is not None:
+                        asset_feature = FinancialAgreementAssetFeature()
+                        asset_feature.described_by = feature_type.name
+                        asset_feature.of = asset
+                        asset_feature.value = feature_value
 
 
             goed.kadaster = agreement_asset.get('building_lot_number')
@@ -336,7 +337,7 @@ def create_agreement_from_json(session, document):
 
                         role_feature = FinancialAgreementRoleFeature()
                         role_feature.of = agreement_role
-                        role_feature.described_by = 'ownership_percentage'
+                        role_feature.described_by = 'asset_ownership_percentage'
                         role_feature.value = Decimal(role['asset_ownership_percentage'])
 
 
@@ -384,10 +385,6 @@ def create_agreement_from_json(session, document):
                         if asset['id'] == role['asset_id']:
                             agreement_role.for_asset = asset
 
-                            role_feature = FinancialAgreementRoleFeature()
-                            role_feature.of = agreement_role
-                            role_feature.described_by = 'ownership_percentage'
-                            role_feature.value = Decimal(role['asset_ownership_percentage'])
 
         if agreement_role is not None:
             date_previous_disability = role.get('date_previous_disability')
