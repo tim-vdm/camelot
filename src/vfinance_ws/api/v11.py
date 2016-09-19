@@ -330,15 +330,14 @@ def create_agreement_from_json(session, document):
             agreement_role.financial_agreement = agreement
             agreement_role.natuurlijke_persoon = person
 
-            if role_type in ('owner', 'non_usufruct_owner', 'owner_usufruct'):
-                for asset in assets:
-                    if asset['id'] == role['asset_id']:
-                        agreement_role.for_asset = asset['asset']
+            for asset in assets:
+                if asset['id'] == role['asset_id']:
+                    agreement_role.for_asset = asset['asset']
 
-                        role_feature = FinancialAgreementRoleFeature()
-                        role_feature.of = agreement_role
-                        role_feature.described_by = 'asset_ownership_percentage'
-                        role_feature.value = Decimal(role['asset_ownership_percentage'])
+                    role_feature = FinancialAgreementRoleFeature()
+                    role_feature.of = agreement_role
+                    role_feature.described_by = 'asset_ownership_percentage'
+                    role_feature.value = Decimal(role['asset_ownership_percentage'])
 
 
         elif role['party']['row_type'] == 'organization':
@@ -380,10 +379,9 @@ def create_agreement_from_json(session, document):
                 agreement_role.rank = role['rank']
                 agreement_role.financial_agreement = agreement
                 agreement_role.rechtspersoon = rechtspersoon
-                if role_type in ('owner', 'non_usufruct_owner', 'owner_usufruct'):
-                    for asset in assets:
-                        if asset['id'] == role['asset_id']:
-                            agreement_role.for_asset = asset
+                for asset in assets:
+                    if asset['id'] == role['asset_id']:
+                        agreement_role.for_asset = asset
 
 
         if agreement_role is not None:
@@ -399,7 +397,7 @@ def create_agreement_from_json(session, document):
                 feature_reference_value = role.get(feature_type.name + '_reference')
                 # If role is not mapped to a FinancialAgreementRole, no FinancialAgreementRoleFeatures should be created
                 #if feature_value is not None:
-                if feature_value is not None and role_type not in ('appraiser', 'owner', 'non_usufruct_owner', 'owner_usufruct'):
+                if feature_value is not None:
                     choices = feature_type.values
                     if choices is not None:
                         for choice in choices:
