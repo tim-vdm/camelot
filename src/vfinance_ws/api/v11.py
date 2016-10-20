@@ -581,7 +581,7 @@ def create_agreement_from_json(session, document):
                 mandate.iban = iban_number
                 if bic is not None:
                     if bic_regexp.match(bic) is None:
-                        raise UserExceptions('BIC \'{}\' is not valid'.format(bic))
+                        raise UserException('BIC \'{}\' is not valid'.format(bic))
                     if mandate.bank_identifier_code is not None and mandate.bank_identifier_code != bic:
                         raise UserException('BIC \'{}\' is not valid for iban {}'.format(iban_number, bic))
                     mandate.bank_identifier_code = bic
