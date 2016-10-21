@@ -994,6 +994,7 @@ CREATE TABLE bank_rechtspersoon (
 	correspondentie_gemeente VARCHAR(128),
 	ownership_verified_at DATE, 
 	status INTEGER,
+	no_commercial_mailings boolean NOT NULL,
 	PRIMARY KEY (id), 
 	CONSTRAINT bank_rechtspersoon_vertegenwoordiger_fk FOREIGN KEY(vertegenwoordiger) REFERENCES bank_natuurlijke_persoon (id)
 );
@@ -1743,6 +1744,7 @@ CREATE TABLE financial_agreement_role (
 	natuurlijke_persoon INTEGER, 
 	financial_agreement_id INTEGER NOT NULL, 
 	associated_clause_id INTEGER, reference varchar(30), 
+	referenced_by_id INTEGER, 
 	PRIMARY KEY (id), 
 	CONSTRAINT financial_agreement_role_persoon_fk CHECK (natuurlijke_persoon is not null or rechtspersoon is not null), 
 	CHECK (use_custom_clause IN (0, 1)), 

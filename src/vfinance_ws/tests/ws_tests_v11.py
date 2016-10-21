@@ -241,12 +241,15 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         session = Session
         agreement = session.query(FinancialAgreement).filter(FinancialAgreement.code == agreement_code).first()
         self.assertEqual(agreement.code, agreement_code)
-        features = []
         for role in agreement.roles:
             for feature in role.features:
+                features = []
                 self.assertTrue(feature.described_by not in features)
                 if feature.described_by == 'net_earnings_of_employment':
-                    self.assertEqual(feature.value, D('1400.00'))
+                    if role.described_by == 'borrower':
+                        self.assertEqual(feature.value, D('1400.00'))
+                    if role.described_by == 'owner':
+                        self.assertEqual(feature.value, D('1500.00'))
                 features.append(feature.described_by)
 
 
@@ -414,7 +417,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(3, agreed_features.get('premium_taxation_physical_person'))
         fiscal_regime = None
         for agreed_functional_setting in imported_agreement.agreed_functional_settings:
-            if agreed_functional_setting.group == 'fiscal_regime':
+            if agreed_functional_setting.group is not None and agreed_functional_setting.group.name == 'fiscal_regime':
                 fiscal_regime = agreed_functional_setting.described_by
         self.assertEqual('retirement_savings', fiscal_regime)
         self.assertEqual(direct_debit_mandate_be._iban, 'BE48 6511 4362 0327')

@@ -21,7 +21,7 @@ from camelot.model.authentication import end_of_times
 
 from vfinance.connector.json_ import ExtendedEncoder, FinancialAgreementJsonExport
 
-from vfinance.data.types import role_feature_types, asset_feature_types, product_feature_types
+from vfinance.data.types import role_feature_types, asset_feature_types, product_feature_types, insurance_feature_types
 
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
@@ -196,7 +196,7 @@ def create_agreement_from_json(session, document):
             asset.financial_agreement = agreement
             for feature_type in asset_feature_types:
                 if agreement_asset.get(feature_type.name) is not None:
-                    feature_value = agreement_asset.pop(feature_type.name)
+                    feature_value = Decimal(agreement_asset.pop(feature_type.name))
                     if feature_value is not None:
                         asset_feature = FinancialAgreementAssetFeature()
                         asset_feature.described_by = feature_type.name
@@ -330,14 +330,6 @@ def create_agreement_from_json(session, document):
             agreement_role.financial_agreement = agreement
             agreement_role.natuurlijke_persoon = person
 
-            for asset in assets:
-                if asset['id'] == role['asset_id']:
-                    agreement_role.for_asset = asset['asset']
-
-                    role_feature = FinancialAgreementRoleFeature()
-                    role_feature.of = agreement_role
-                    role_feature.described_by = 'asset_ownership_percentage'
-                    role_feature.value = Decimal(role['asset_ownership_percentage'])
 
 
         elif role['party']['row_type'] == 'organization':
@@ -383,6 +375,16 @@ def create_agreement_from_json(session, document):
                     if asset['id'] == role['asset_id']:
                         agreement_role.for_asset = asset
 
+        for asset in assets:
+            asset_id = role.get('asset_id')
+            if asset_id is not None and asset['id'] == asset_id:
+                agreement_role.for_asset = asset['asset']
+
+                role_feature = FinancialAgreementRoleFeature()
+                role_feature.of = agreement_role
+                role_feature.described_by = 'asset_ownership_percentage'
+                role_feature.value = Decimal(role['asset_ownership_percentage'])
+
 
         if agreement_role is not None:
             date_previous_disability = role.get('date_previous_disability')
@@ -422,6 +424,7 @@ def create_agreement_from_json(session, document):
     eigen_middelen = Decimal(0.0)
     andere_kosten = Decimal(0.0)
     if schedules is not None:
+        changed_terms = {'fixed_amount': 'fixed_payment'}
         aflossing_field_mapping = {'fixed_payment': 'vaste_aflossing',
                                    'fixed_capital_payment': 'vast_kapitaal'}
         interval_field_mapping = {'yearly': 12,
@@ -478,7 +481,8 @@ def create_agreement_from_json(session, document):
                 premium_schedule.coverage_for = coverage_level
                 premium_schedule.financial_agreement = agreement
                 premium_schedule.coverage_amortization = insured_loan
-                for feature_name in [insurance_feature[1] for insurance_feature in constants.insurance_features]:
+                #for feature_name in [insurance_feature[1] for insurance_feature in constants.insurance_features]:
+                for feature_name in [insurance_feature[1] for insurance_feature in insurance_feature_types]:
                     feature_value = schedule.get(feature_name)
                     if feature_value is not None:
                         agreed_feature = FinancialAgreementPremiumScheduleFeature()
@@ -497,7 +501,7 @@ def create_agreement_from_json(session, document):
                 applied_amount.duration = duration
                 applied_amount.amount = Decimal(amount)
                 applied_amount.period_type = period_type
-                applied_amount.described_by = schedule.get('described_by')
+                applied_amount.described_by = schedule.get('described_by') #changed_terms[schedule.get('described_by')]
 
                 for field in aankoop:
                     aankoopprijs += Decimal(schedule.get(field, 0.0))
@@ -535,7 +539,8 @@ def create_agreement_from_json(session, document):
     agreement.kosten_andere = andere_kosten
 
     for functional_setting_group in [group for group in exclusiveness_by_functional_setting_group if exclusiveness_by_functional_setting_group.get(group) == True]:
-        value = document.get(functional_setting_group)
+        
+        value = document.get(functional_setting_group.name)
         if value is not None:
             functional_setting = FinancialAgreementFunctionalSettingAgreement()
             functional_setting.described_by = value

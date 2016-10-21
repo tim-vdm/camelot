@@ -104,7 +104,7 @@
             "bridging_credit": "0.0",
             "building_purchase": "20000.0",
             "centralization": "0.0",
-            "described_by": "fixed_amount",
+            "described_by": "fixed_payment",
             "direct_debit": true,
             "down_payment": "7500.00",
             "duration": 240,
