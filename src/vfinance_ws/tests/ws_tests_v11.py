@@ -317,6 +317,15 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertIsInstance(content, dict)
 
 
+    def test_create_agreement_code_all_features(self):
+        document = load_demo_json('v11_create_agreement_code_all_features')
+        response = self.post_json('create_agreement_code', data=document)
+
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
+
+
     def test_create_agreement_code_duplicate_roles(self):
         # This test should be adapted when we know about the agreement where
         # the income of both roles was the same.

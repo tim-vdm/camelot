@@ -196,12 +196,12 @@ def create_agreement_from_json(session, document):
             asset.financial_agreement = agreement
             for feature_type in asset_feature_types:
                 if agreement_asset.get(feature_type.name) is not None:
-                    feature_value = Decimal(agreement_asset.pop(feature_type.name))
+                    feature_value = agreement_asset.pop(feature_type.name)
                     if feature_value is not None:
                         asset_feature = FinancialAgreementAssetFeature()
                         asset_feature.described_by = feature_type.name
                         asset_feature.of = asset
-                        asset_feature.value = feature_value
+                        asset_feature.value = Decimal(feature_value)
 
 
             goed.kadaster = agreement_asset.get('building_lot_number')
@@ -519,7 +519,12 @@ def create_agreement_from_json(session, document):
                 andere_kosten += Decimal(schedule.get('other_costs', 0.0))
 
                 for feature in product_feature_types:
-                    setattr(applied_amount, feature.name, Decimal(schedule.get(field, 0.0)))
+                    feature_value = schedule.get(feature.name)
+                    if feature_value is not None:
+                        agreed_feature = FinancialAgreementPremiumScheduleFeature()
+                        agreed_feature.described_by = feature.name
+                        agreed_feature.value = Decimal(feature_value)
+                        agreed_feature.agreed_on = applied_amount
 
 
                 #bedrag.terugbetaling_start = schedule.get('suspension_of_payment', 0)
