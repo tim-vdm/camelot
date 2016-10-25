@@ -250,6 +250,9 @@ class WebServiceVersion11TestCase(unittest.TestCase):
                         self.assertEqual(feature.value, D('1400.00'))
                     if role.described_by == 'owner':
                         self.assertEqual(feature.value, D('1500.00'))
+                if feature.described_by == 'asset_ownership_percentage':
+                    if role.described_by == 'owner':
+                        self.assertEqual(feature.value, D('50.0'))
                 features.append(feature.described_by)
 
 
