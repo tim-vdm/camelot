@@ -327,6 +327,26 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         content = json.loads(response.data)
         self.assertIsInstance(content, dict)
+        agreement_code = content.get('code')
+        session = Session
+        agreement = session.query(FinancialAgreement).filter(FinancialAgreement.code == agreement_code).first()
+        self.assertEqual(agreement.code, agreement_code)
+        for asset in agreement.assets:
+            self.assertEqual(asset.appraised_value, D('120000.00'))
+            self.assertEqual(asset.building_lot_price, D('100000.00'))
+            self.assertEqual(asset.building_lot_width, D('5'))
+            self.assertEqual(asset.conditional_lien_amount, D('123000.0'))
+            self.assertEqual(asset.forced_selling_value, D('120001.00'))
+            self.assertEqual(asset.habitable_area, D('30'))
+            self.assertEqual(asset.housefront_width, D('4'))
+            self.assertEqual(asset.lien_amount, D('130000.0'))
+            self.assertEqual(asset.rental_revenues, D('0'))
+            self.assertEqual(asset.selling_value, D('125000.0'))
+            self.assertEqual(asset.purchase_registration_fee, D('3310.00'))
+            self.assertEqual(asset.architect_fee, D('2342.0'))
+            self.assertEqual(asset.vat, D('21.0'))
+            self.assertEqual(asset.down_payment, D('14016.25'))
+            self.assertEqual(asset.lien_registration_fee, D('4579.25'))
 
 
     def test_create_agreement_code_duplicate_roles(self):

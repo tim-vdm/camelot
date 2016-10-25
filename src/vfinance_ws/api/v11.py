@@ -498,20 +498,35 @@ def create_agreement_from_json(session, document):
                 applied_amount.period_type = period_type
                 applied_amount.described_by = schedule.get('described_by') #changed_terms[schedule.get('described_by')]
 
-                for field in aankoop:
-                    aankoopprijs += Decimal(schedule.get(field, 0.0))
-                for field in bouwwerken:
-                    bestek_bouwwerken += Decimal(schedule.get(field, 0.0))
-                for field in verzekeringen:
-                    verzekeringskosten += Decimal(schedule.get(field, 0.0))
 
-                te_betalen_btw += Decimal(schedule.get('vat', 0.0))
-                notariskosten_hypotheek += Decimal(schedule.get('signing_agent_mortgage', 0.0))
-                notariskosten_aankoopakte += Decimal(schedule.get('signing_agent_purchase', 0.0))
-                notariskosten_aankoopakte += Decimal(schedule.get('registration_fee', 0.0))
-                ereloon_architect += Decimal(schedule.get('architect_fee', 0.0))
-                eigen_middelen += Decimal(schedule.get('down_payment', 0.0))
-                andere_kosten += Decimal(schedule.get('other_costs', 0.0))
+                for json_asset in assets:
+                    asset = json_asset.get('asset')
+                    for feature in ('architect_fee', 'vat', 'down_payment', 'registration_fee', 'signing_agent_purchase'):
+                        if schedule.get(feature) is not None:
+                            feature_value = schedule.pop(feature)
+                            if feature_value is not None:
+                                feature_name = feature
+                                if feature_name == 'signing_agent_purchase':
+                                    feature_name = 'purchase_registration_fee'
+                                if feature_name == 'registration_fee':
+                                    feature_name = 'lien_registration_fee'
+                                asset_feature = FinancialAgreementAssetFeature()
+                                asset_feature.described_by = feature_name
+                                asset_feature.of = asset.assets[0]
+                                asset_feature.value = Decimal(feature_value)
+                    if schedule.get('signing_agent_mortgage') is not None:
+                        value = Decimal(schedule.get('signing_agent_mortgage'))
+                        for asset_feature in asset.assets[0].agreed_features:
+                            if asset_feature.described_by == 'lien_registration_fee':
+                                asset_feature.value += value
+                            else:
+                                asset_feature = FinancialAgreementAssetFeature()
+                                asset_feature.described_by = 'lien_registration_fee'
+                                asset_feature.of = asset.assets[0]
+                                asset_feature.value = value
+
+
+                schedule['other_purpose'] = schedule.get('other_costs')
 
                 for feature in product_feature_types:
                     feature_value = schedule.get(feature.name)
@@ -521,22 +536,6 @@ def create_agreement_from_json(session, document):
                         agreed_feature.value = Decimal(feature_value)
                         agreed_feature.agreed_on = applied_amount
 
-
-                #bedrag.terugbetaling_start = schedule.get('suspension_of_payment', 0)
-
-
-
-
-
-    agreement.aankoopprijs = aankoopprijs
-    agreement.kosten_bouwwerken = bestek_bouwwerken
-    agreement.kosten_verzekering = verzekeringskosten
-    agreement.kosten_btw = te_betalen_btw
-    agreement.notariskosten_hypotheek = notariskosten_hypotheek
-    agreement.notariskosten_aankoop = notariskosten_aankoopakte
-    agreement.kosten_architect = ereloon_architect
-    agreement.eigen_middelen = eigen_middelen
-    agreement.kosten_andere = andere_kosten
 
     for functional_setting_group in [group for group in exclusiveness_by_functional_setting_group if exclusiveness_by_functional_setting_group.get(group) == True]:
         
