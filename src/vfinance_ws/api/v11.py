@@ -380,11 +380,6 @@ def create_agreement_from_json(session, document):
             if asset_id is not None and asset['id'] == asset_id:
                 agreement_role.for_asset = asset['asset']
 
-                role_feature = FinancialAgreementRoleFeature()
-                role_feature.of = agreement_role
-                role_feature.described_by = 'asset_ownership_percentage'
-                role_feature.value = Decimal(role['asset_ownership_percentage'])
-
 
         if agreement_role is not None:
             date_previous_disability = role.get('date_previous_disability')
