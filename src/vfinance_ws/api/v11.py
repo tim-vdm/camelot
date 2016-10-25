@@ -519,11 +519,12 @@ def create_agreement_from_json(session, document):
                         for asset_feature in asset.assets[0].agreed_features:
                             if asset_feature.described_by == 'lien_registration_fee':
                                 asset_feature.value += value
-                            else:
-                                asset_feature = FinancialAgreementAssetFeature()
-                                asset_feature.described_by = 'lien_registration_fee'
-                                asset_feature.of = asset.assets[0]
-                                asset_feature.value = value
+                                break
+                        else:
+                            asset_feature = FinancialAgreementAssetFeature()
+                            asset_feature.described_by = 'lien_registration_fee'
+                            asset_feature.of = asset.assets[0]
+                            asset_feature.value = value
 
 
                 schedule['other_purpose'] = schedule.get('other_costs')
