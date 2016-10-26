@@ -1,0 +1,46 @@
+{
+    "agent_official_number_fsma": "114816A", 
+    "agreement_date": {
+        "day": 21, 
+        "month": 10, 
+        "year": 2016
+    }, 
+    "duration": 60, 
+    "from_date": {
+        "day": 20, 
+        "month": 11, 
+        "year": 2016
+    }, 
+    "insured_party__1__birthdate": {
+        "day": 19, 
+        "month": 9, 
+        "year": 1981
+    }, 
+    "insured_party__1__city_code": "6031", 
+    "insured_party__1__city_name": "MONCEAU SUR SAMBRE", 
+    "insured_party__1__country_code": "BE", 
+    "insured_party__1__dangerous_hobby": null, 
+    "insured_party__1__dangerous_profession": null, 
+    "insured_party__1__first_name": "FRANCK", 
+    "insured_party__1__language": "fr_BE", 
+    "insured_party__1__last_name": "LETELLIER", 
+    "insured_party__1__nationality_code": "BE", 
+    "insured_party__1__passport_number": "591627425610", 
+    "insured_party__1__sex": "M", 
+    "insured_party__1__social_security_number": "81091921707", 
+    "insured_party__1__street_1": "AVENUE HOUTARD  54", 
+    "origin": "BIA:1234", 
+    "package_id": 64, 
+    "pledgee_name": "KREFIMA", 
+    "pledgee_reference": "149079", 
+    "pledgee_tax_id": "BE 0404.094.377", 
+    "premium_schedule__1__coverage_level_type": "decreasing_amount", 
+    "premium_schedule__1__premium_fee_1": "50.00", 
+    "premium_schedule__1__product_id": 67, 
+    "premium_schedule__2__coverage_level_type": null, 
+    "premium_schedule__2__product_id": null, 
+    "premium_schedules_coverage_limit": "10500.00", 
+    "premium_schedules_payment_duration": 60, 
+    "premium_schedules_period_type": "single", 
+    "premium_schedules_premium_rate_1": "60.00"
+}

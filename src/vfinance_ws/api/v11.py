@@ -16,8 +16,7 @@ from camelot.core.exception import UserException
 from camelot.core.utils import ugettext
 from camelot.core.templates import environment
 
-from camelot.model.party import Country, City, Address
-from camelot.model.authentication import end_of_times
+from camelot.model.party import Country, City
 
 from vfinance.connector.json_ import ExtendedEncoder, FinancialAgreementJsonExport
 
@@ -27,7 +26,6 @@ from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementF
 
 from vfinance.admin.translations import TemplateLanguage
 from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon
-from vfinance.model.bank import constants
 from vfinance.model.bank.rechtspersoon import Rechtspersoon
 from vfinance.model.bank.dual_person import CommercialRelation
 from vfinance.model.bank.validation import iban_regexp, bic_regexp
@@ -47,13 +45,13 @@ from vfinance.model.financial.constants import exclusiveness_by_functional_setti
 from vfinance.model.financial.notification.agreement_document import AgreementDocument
 from vfinance.facade.agreement.credit_insurance import CalculatePremium
 from vfinance.model.bank.product import Product
-from vfinance.model.bank.persoon import PersonAddress
 from vfinance.model.bank.direct_debit import DirectDebitMandate
 from vfinance.model.bank.constants import get_interface_value_from_model_value, get_model_value_from_interface_value
 from vfinance.model.hypo.hypotheek import Hypotheek, TeHypothekerenGoed, AppliedLoanAmount
 
 from vfinance_ws.api.utils import DecimalEncoder
 from vfinance_ws.api.utils import to_table_html
+from vfinance_ws.api.utils import make_address, make_person_address
 from vfinance_ws.ws.utils import with_session
 from vfinance_ws.ws.utils import get_date_from_json_date
 from vfinance_ws.api.v01 import create_facade_from_create_agreement_schema as create_facade_from_create_agreement_schema_v01
@@ -117,41 +115,6 @@ def create_agreement_code(session, document, logfile):
     values['signature'] = signature
     return values
 
-def make_address(address, session):
-    new_address = None
-    address_zipcode = address['zip_code']
-    address_city_name = address['city']
-    address_country = session.query(Country).filter(Country.code == address['country_code']).first()
-    if address_zipcode is not None and address_city_name is not None and address_country is not None:
-        address_city = session.query(City).filter(sql.and_(City.code == address_zipcode.strip(),
-                                                           City.country == address_country,
-                                                           City.name == address_city_name.strip())).first()
-        if address_city is None:
-            address_city = City()
-            address_city.country = address_country
-            address_city.name = address_city_name
-            address_city.code = address_zipcode
-
-        new_address = Address()
-        new_address.street1 = address['street_1']
-        new_address.city = address_city
-
-    return new_address
-
-def make_person_address(address, session):
-    new_addres = None
-    address_ = make_address(address, session)
-    if address is not None:
-        address_type = address['described_by']
-        if address_type == 'official':
-            address_type = 'domicile'
-        new_address = PersonAddress()
-        new_address.address = address_
-        new_address.described_by = address_type
-        new_address.from_date = constants.begin_of_times
-        new_address.thru_date = end_of_times()
-
-    return new_address
 
 def create_agreement_from_json(session, document):
     field_mappings = {'passport_number': 'identiteitskaart_nummer',

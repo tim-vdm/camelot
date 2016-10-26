@@ -3,6 +3,10 @@ import unittest
 from flask import json
 from flask import url_for
 
+from camelot.core.orm import Session
+
+from vfinance.model.financial.agreement import FinancialAgreement
+
 from vfinance_ws.ws_server import create_app
 
 try:
@@ -119,6 +123,26 @@ class WebServiceVersion01TestCase(unittest.TestCase):
         content = json.loads(response.data)
 
         self.assertIn('insured_party__1__nationality_code', content)
+
+    def test_022_create_agreement_code_BIA(self):
+        document = load_demo_json('v01_create_agreement_code_BIA')
+        response = self.post_json('create_agreement_code', data=document)
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
+        agreement_code = content.get('code')
+        session = Session
+        agreement = session.query(FinancialAgreement).filter(FinancialAgreement.code == agreement_code).first()
+        self.assertEqual(agreement.code, agreement_code)
+        for role in agreement.roles:
+            if role.described_by == 'insured_party':
+                self.assertGreater(len(role.addresses), 0)
+                for address in role.addresses:
+                    if address.address is not None:
+                        self.assertEqual(u'AVENUE HOUTARD  54', adress.street1)
+                        self.assertEqual(u'MONCEAU SUR SAMBRE', adress.city.name)
+                        self.assertEqual(u'6031', adress.city.code)
+                        self.assertEqual(u'BE', adress.city.country.code)
 
     def test_070_get_proposal_pdf(self):
         response = self.post_json('get_proposal_pdf')

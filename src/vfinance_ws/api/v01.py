@@ -8,6 +8,7 @@ from sqlalchemy import orm
 #from vfinance.connector.aws import AwsQueue
 #from vfinance.connector.aws import QueueCommand
 from vfinance.connector.json_ import FinancialAgreementJsonExport, ExtendedEncoder
+from camelot.model.party import Country, City, Address
 
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
@@ -19,6 +20,7 @@ from vfinance.model.insurance.credit_insurance import CalculateCreditInsurance
 
 from vfinance_ws.api.utils import DecimalEncoder
 from vfinance_ws.api.utils import to_table_html
+from vfinance_ws.api.utils import make_person_address
 from vfinance_ws.ws.utils import with_session
 
 
@@ -205,12 +207,25 @@ def create_facade_from_create_agreement_schema(session, document):
     FIELDS = [
         'last_name', 'first_name', 'language', 'nationality_code',
         'social_security_number', 'passport_number', 'dangerous_hobby',
-        'dangerous_profession', 'street_1', 'city_code', 'city_name',
-        'country_code'
-    ]
+        'dangerous_profession']
+    
+    address_json = {'zip_code': document.get('insured_party__1__city_code'),
+                    'city': document.get('insured_party__1__city_name'),
+                    'country_code': document.get('insured_party__1__country_code'),
+                    'street_1': document.get('insured_party__1__street_1'),
+                    'described_by': 'domicile'}
+    
+    address = make_person_address(address_json, session)
+    
     for field in FIELDS:
-        key = 'insured_party__1__{}'.format(field)
-        setattr(facade, key, document.get(key, None))
+        field_name = field
+        key = 'insured_party__1__{}'.format(field_name)
+        value = document.get(key, None)
+        setattr(facade, key, value)
+        
+    for role in facade.roles:
+        if role.described_by == 'insured_party':
+            role.addresses.append(address)
 
     facade.code = CreditInsuranceAgreementFacade.next_agreement_code(facade.package, session)
 
