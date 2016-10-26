@@ -139,10 +139,10 @@ class WebServiceVersion01TestCase(unittest.TestCase):
                 self.assertGreater(len(role.addresses), 0)
                 for address in role.addresses:
                     if address.address is not None:
-                        self.assertEqual(u'AVENUE HOUTARD  54', adress.street1)
-                        self.assertEqual(u'MONCEAU SUR SAMBRE', adress.city.name)
-                        self.assertEqual(u'6031', adress.city.code)
-                        self.assertEqual(u'BE', adress.city.country.code)
+                        self.assertEqual(u'AVENUE HOUTARD  54', address.address.street1)
+                        self.assertEqual(u'MONCEAU SUR SAMBRE', address.address.city.name)
+                        self.assertEqual(u'6031', address.address.city.code)
+                        self.assertEqual(u'BE', address.address.city.country.code)
 
     def test_070_get_proposal_pdf(self):
         response = self.post_json('get_proposal_pdf')
