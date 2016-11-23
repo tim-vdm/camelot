@@ -276,6 +276,12 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertIsInstance(content, dict)
 
         json_path = content.get('json_path')
+        exported_json = None
+        with open(json_path) as json_file:
+            exported_json = json.load(json_file)
+        owners = [o for o in exported_json.get('roles') if o.get('described_by') == 'owner']
+        for owner in owners:
+            self.assertIsInstance(owner.get('for_asset').get('address').get('city'), dict)
         set_new_agreement_code(session, json_path)
         import_action = JsonImportAction()
         imported_agreement = list(import_action.import_file(session,
