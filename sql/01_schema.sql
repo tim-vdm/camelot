@@ -108,8 +108,8 @@ CREATE TABLE financial_security (
 
 
 CREATE TABLE accounting_period (
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	from_database_date DATE NOT NULL, 
+	thru_database_date DATE NOT NULL, 
 	from_book_date DATE NOT NULL, 
 	thru_book_date DATE NOT NULL, 
 	from_doc_date DATE NOT NULL, 
@@ -323,8 +323,8 @@ CREATE TABLE financial_work_effort (
 
 CREATE TABLE financial_transaction (
 	agreement_date DATE NOT NULL, 
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	code VARCHAR(15) NOT NULL, 
 	text TEXT, 
 	transaction_type INTEGER NOT NULL, 
@@ -445,8 +445,8 @@ CREATE TABLE hypo_entry_presence (
 
 
 CREATE TABLE financial_functional_setting_applicability (
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	described_by INTEGER NOT NULL, 
 	availability INTEGER NOT NULL, 
 	comment TEXT, 
@@ -644,8 +644,8 @@ CREATE TABLE financialworkeffort_status (
 CREATE TABLE financial_product_account (
 	described_by INTEGER NOT NULL, 
 	number VARCHAR(15) NOT NULL, 
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	from_book_date DATE NOT NULL, 
+	thru_book_date DATE NOT NULL, 
 	id INTEGER NOT NULL, 
 	available_for_id INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
@@ -748,6 +748,7 @@ CREATE TABLE financial_security_quotation (
 	from_datetime DATETIME NOT NULL, 
 	value NUMERIC(17, 6) NOT NULL, 
 	id INTEGER NOT NULL, 
+	apply_from_date DATE,
 	PRIMARY KEY (id), 
 	FOREIGN KEY(financial_security_id) REFERENCES financial_security (id) ON DELETE cascade ON UPDATE cascade, 
 	CONSTRAINT financial_security_quotation_financial_security_id_fk FOREIGN KEY(financial_security_id) REFERENCES financial_security (id)
@@ -912,8 +913,8 @@ CREATE TABLE hypo_rente_historiek (
 );
 
 CREATE TABLE financial_account_item (
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	rank INTEGER NOT NULL, 
 	use_custom_clause BOOLEAN NOT NULL, 
 	custom_clause TEXT, 
@@ -1038,8 +1039,8 @@ CREATE TABLE financial_product_feature_condition (
 
 CREATE TABLE financial_account_functional_setting_application (
 	described_by INTEGER NOT NULL, 
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	clause TEXT, 
 	id INTEGER NOT NULL, 
 	applied_on_id INTEGER NOT NULL, 
@@ -1357,8 +1358,8 @@ CREATE TABLE hypo_verzekering (
 
 CREATE TABLE financial_account_role (
 	id INTEGER NOT NULL, 
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	described_by INTEGER NOT NULL, 
 	natuurlijke_persoon INTEGER, 
 	rechtspersoon INTEGER, 
@@ -1607,8 +1608,8 @@ CREATE TABLE kapbon_koper (
 
 
 CREATE TABLE financial_account_broker (
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	id INTEGER NOT NULL, 
 	financial_account_id INTEGER NOT NULL, 
 	broker_relation_id INTEGER, 
@@ -1681,6 +1682,8 @@ CREATE TABLE "financial_agreement_premium_schedule" (
 	direct_debit BOOLEAN NOT NULL, 
 	row_type CHARACTER VARYING(40) NOT NULL, 
 	id INTEGER NOT NULL, insured_duration INTEGER, coverage_amortization_id INTEGER, insured_from_date DATE, coverage_for_id INTEGER, 
+	valid_from_date DATE,
+	valid_thru_date DATE,
 	PRIMARY KEY (id), 
 	FOREIGN KEY(financial_agreement_id) REFERENCES financial_agreement (id) ON DELETE cascade ON UPDATE cascade, 
 	FOREIGN KEY(product_id) REFERENCES financial_product (id) ON DELETE restrict ON UPDATE cascade, 
@@ -1897,8 +1900,8 @@ CREATE TABLE financial_clearing_mandate (
 
 
 CREATE TABLE financial_account_asset_usage (
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	id INTEGER NOT NULL, 
 	financial_account_id INTEGER NOT NULL, 
 	asset_usage_id INTEGER NOT NULL, 
@@ -2051,7 +2054,7 @@ CREATE TABLE hypo_goedgekeurd_bedrag (
 	voorgestelde_referentie_index VARCHAR(7), 
 	goedgekeurd_bedrag NUMERIC(17, 2), 
 	goedgekeurde_intrest_b VARCHAR(12), 
-	voorgesteld_index_type INTEGER, 
+	voorgesteld_index_type_id INTEGER, 
 	voorgestelde_eerste_herziening INTEGER, 
 	goedgekeurde_intrest_a VARCHAR(12), 
 	goedgekeurd_terugbetaling_start INTEGER, 
@@ -2064,10 +2067,16 @@ CREATE TABLE hypo_goedgekeurd_bedrag (
 	goedgekeurde_jaarrente VARCHAR(12), 
 	goedgekeurde_volgende_herzieningen_ristorno INTEGER, 
 	venice_id INTEGER, 
-	goedgekeurd_index_type INTEGER, 
-	goedgekeurd_vast_bedrag NUMERIC(17, 2), 
+	goedgekeurd_index_type_id INTEGER, 
 	id INTEGER NOT NULL, 
 	product_id INTEGER NOT NULL, 
+	apply_from_date DATE,
+	database_from_date DATE,
+	database_thru_date DATE,
+	valid_from_date DATE,
+	valid_thru_date DATE,
+	history_of_id INTEGER,
+	version_id INTEGER,
 	PRIMARY KEY (id), 
 	CONSTRAINT hypo_goedgekeurd_bedrag_product_id_fk FOREIGN KEY(product_id) REFERENCES financial_product (id) ON DELETE restrict ON UPDATE cascade, 
 	CONSTRAINT hypo_goedgekeurd_bedrag_beslissing_fk FOREIGN KEY(beslissing) REFERENCES hypo_beslissing (id), 
@@ -2163,17 +2172,19 @@ CREATE TABLE financial_account_premium_schedule (
 	product_id INTEGER NOT NULL, 
 	agreed_schedule_id INTEGER NOT NULL, 
 	account_number INTEGER NOT NULL, 
-	valid_from_date DATE NOT NULL, 
-	valid_thru_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	payment_thru_date DATE NOT NULL, 
 	premium_amount NUMERIC(17, 2) NOT NULL, 
 	period_type INTEGER NOT NULL, 
 	increase_rate NUMERIC(17, 5) NOT NULL, 
 	direct_debit BOOLEAN NOT NULL, 
 	version_id INTEGER NOT NULL, 
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	database_from_date DATE NOT NULL, 
+	database_thru_date DATE NOT NULL, 
 	history_of_id INTEGER NOT NULL, coverage_amortization_id INTEGER, insured_from_date DATE, insured_thru_date DATE, coverage_for_id INTEGER, 
+	valid_from_date DATE NOT NULL, 
+	valid_thru_date DATE NOT NULL, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(financial_account_id) REFERENCES financial_account (id) ON DELETE restrict ON UPDATE cascade, 
 	FOREIGN KEY(product_id) REFERENCES financial_product (id) ON DELETE restrict ON UPDATE cascade, 
@@ -2312,8 +2323,8 @@ CREATE TABLE financial_agreement_fund_distribution (
 
 CREATE TABLE financial_account_fund_distribution (
 	distribution_of_id INTEGER NOT NULL, 
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	fund_id INTEGER NOT NULL, 
 	target_percentage NUMERIC(17, 6) NOT NULL, 
 	id INTEGER NOT NULL, 
@@ -2454,6 +2465,8 @@ CREATE TABLE financial_security_order_line (
 	premium_schedule_id INTEGER NOT NULL, 
 	part_of_id INTEGER, 
 	financial_security_id INTEGER NOT NULL, 
+	database_from_date DATE,
+	database_thru_date DATE,
 	PRIMARY KEY (id), 
 	FOREIGN KEY(premium_schedule_id) REFERENCES financial_account_premium_schedule (id) ON DELETE restrict ON UPDATE cascade, 
 	CONSTRAINT financial_security_order_line_part_of_id_fk FOREIGN KEY(part_of_id) REFERENCES financial_security_order (id) ON DELETE set null ON UPDATE cascade, 
@@ -2524,6 +2537,8 @@ CREATE TABLE hypo_wijziging (
 	venice_doc INTEGER, 
 	goedgekeurd_index_type INTEGER, 
 	id INTEGER NOT NULL, 
+	previous_version_id INTEGER,
+	next_version_id INTEGER,
 	PRIMARY KEY (id), 
 	CONSTRAINT hypo_wijziging_dossier_fk FOREIGN KEY(dossier) REFERENCES hypo_dossier (id), 
 	CONSTRAINT hypo_wijziging_vorig_goedgekeurd_bedrag_fk FOREIGN KEY(vorig_goedgekeurd_bedrag) REFERENCES hypo_goedgekeurd_bedrag (id), 
@@ -2534,8 +2549,8 @@ CREATE TABLE hypo_wijziging (
 
 CREATE TABLE hypo_dossier_feature_application (
 	described_by INTEGER NOT NULL, 
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	comment TEXT, 
 	id INTEGER NOT NULL, 
 	applied_on_id INTEGER NOT NULL, 
@@ -2608,8 +2623,8 @@ CREATE TABLE hypo_dossier_role (
 	id INTEGER NOT NULL, 
 	described_by INTEGER NOT NULL, 
 	rank INTEGER NOT NULL, 
-	thru_date DATE NOT NULL, 
-	from_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
 	rechtspersoon INTEGER, 
 	natuurlijke_persoon INTEGER, 
 	dossier_id INTEGER NOT NULL, 
@@ -2669,9 +2684,9 @@ CREATE TABLE bank_invoice_item (
 
 CREATE TABLE hypo_akte_dossier (
 	dossier INTEGER NOT NULL, 
-	from_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
 	akte INTEGER NOT NULL, 
-	thru_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	perm_id INTEGER, 
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
@@ -2732,8 +2747,8 @@ CREATE TABLE hypo_korting (
 
 CREATE TABLE hypo_dossier_functional_setting_application (
 	described_by INTEGER NOT NULL, 
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	clause TEXT, 
 	id INTEGER NOT NULL, 
 	applied_on_id INTEGER NOT NULL, 
@@ -2775,9 +2790,9 @@ CREATE TABLE hypo_terugbetaling (
 
 CREATE TABLE hypo_bijkomende_waarborg_dossier (
 	dossier INTEGER NOT NULL, 
-	from_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
 	bijkomende_waarborg INTEGER NOT NULL, 
-	thru_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	perm_id INTEGER, 
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id), 
@@ -2821,8 +2836,8 @@ CREATE TABLE hypo_factuur (
 );
 
 CREATE TABLE hypo_dossier_broker (
-	from_date DATE NOT NULL, 
-	thru_date DATE NOT NULL, 
+	apply_from_date DATE NOT NULL, 
+	apply_thru_date DATE NOT NULL, 
 	id INTEGER NOT NULL, 
 	dossier_id INTEGER NOT NULL, 
 	broker_relation_id INTEGER, 
@@ -2976,8 +2991,8 @@ CREATE TABLE financial_product_book
 (
   described_by integer NOT NULL,
   name character varying(25) NOT NULL,
-  from_date date NOT NULL,
-  thru_date date NOT NULL,
+  from_book_date date NOT NULL,
+  thru_book_date date NOT NULL,
   id serial NOT NULL,
   financial_product_id integer NOT NULL,
   CONSTRAINT financial_product_book_pkey PRIMARY KEY (id),
@@ -3066,8 +3081,8 @@ CREATE TABLE financial_agreement
 (
   row_type character varying(40) NOT NULL,
   agreement_date date NOT NULL,
-  from_date date NOT NULL,
-  thru_date date NOT NULL,
+  apply_from_date date NOT NULL,
+  apply_thru_date date NOT NULL,
   code character varying(20) NOT NULL,
   text text,
   package_id integer NOT NULL,
