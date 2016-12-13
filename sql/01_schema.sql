@@ -2081,8 +2081,8 @@ CREATE TABLE hypo_goedgekeurd_bedrag (
 	CONSTRAINT hypo_goedgekeurd_bedrag_product_id_fk FOREIGN KEY(product_id) REFERENCES financial_product (id) ON DELETE restrict ON UPDATE cascade, 
 	CONSTRAINT hypo_goedgekeurd_bedrag_beslissing_fk FOREIGN KEY(beslissing) REFERENCES hypo_beslissing (id), 
 	CONSTRAINT hypo_goedgekeurd_bedrag_bedrag_fk FOREIGN KEY(bedrag) REFERENCES hypo_bedrag (id), 
-	CONSTRAINT hypo_goedgekeurd_bedrag_voorgesteld_index_type_fk FOREIGN KEY(voorgesteld_index_type) REFERENCES hypo_index_type (id), 
-	CONSTRAINT hypo_goedgekeurd_bedrag_goedgekeurd_index_type_fk FOREIGN KEY(goedgekeurd_index_type) REFERENCES hypo_index_type (id),
+	CONSTRAINT hypo_goedgekeurd_bedrag_voorgesteld_index_type_fk FOREIGN KEY(voorgesteld_index_type_id) REFERENCES hypo_index_type (id), 
+	CONSTRAINT hypo_goedgekeurd_bedrag_goedgekeurd_index_type_fk FOREIGN KEY(goedgekeurd_index_type_id) REFERENCES hypo_index_type (id),
 	CONSTRAINT hypo_goedgekeurd_bedrag_agreed_schedule_id_fkey FOREIGN KEY (agreed_schedule_id) REFERENCES financial_agreement_premium_schedule (id)
 );
 

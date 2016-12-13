@@ -147,7 +147,7 @@ def create_agreement_from_json(session, document):
     origin = document.get('origin')
     agreement.origin = origin
     agreement.agreement_date = get_date_from_json_date(document['agreement_date'])
-    agreement.from_date = get_date_from_json_date(document['from_date'])
+    agreement.apply_from_date = get_date_from_json_date(document['from_date'])
 
     agreement_assets = document.get('assets')
     goed = None
@@ -421,7 +421,7 @@ def create_agreement_from_json(session, document):
                 coverage_level_json = schedule.get('coverage_for')
                 coverage_level = None
                 if coverage_level_json is not None:
-                    for cl in product.get_available_coverage_levels_at(agreement.from_date):
+                    for cl in product.get_available_coverage_levels_at(agreement.apply_from_date):
                         if cl.type == coverage_level_json:
                             coverage_level = cl
                             break
@@ -636,7 +636,7 @@ def create_facade_from_calculate_proposal_schema(session, document):
     # facade.agreement_date = datetime.date(2015, 3, 2)
     facade.agreement_date = datetime.date(**document['agreement_date'])
     # facade.from_date = datetime.date(2015, 3, 1)
-    facade.from_date = datetime.date(**document['from_date'])
+    facade.apply_from_date = datetime.date(**document['from_date'])
 
     facade.package = package
 
