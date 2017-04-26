@@ -447,7 +447,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(insured_loan.loan_amount, D('100000'))
         self.assertEqual(insured_loan.interest_rate, D('5.0'))
         self.assertEqual(insured_loan.number_of_months, 360)
-        self.assertEqual(insured_loan.payment_interval, 1)
+        self.assertEqual(insured_loan.period_type, 'monthly')
         agreed_features = {agreed_feature.described_by: agreed_feature.value for agreed_feature in premium_schedule.agreed_features}
         self.assertEqual(100, agreed_features.get('premium_fee_1'))
         self.assertEqual(20, agreed_features.get('premium_rate_1'))

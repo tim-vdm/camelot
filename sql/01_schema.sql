@@ -246,7 +246,6 @@ CREATE TABLE bank_settings (
 	language VARCHAR(6),
 	value VARCHAR(250) NOT NULL, 
 	"key" VARCHAR(250) NOT NULL, 
-	perm_id INTEGER, 
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id)
 );
@@ -996,6 +995,7 @@ CREATE TABLE bank_rechtspersoon (
 	ownership_verified_at DATE, 
 	status INTEGER,
 	no_commercial_mailings boolean NOT NULL,
+	website VARCHAR(253),
 	PRIMARY KEY (id), 
 	CONSTRAINT bank_rechtspersoon_vertegenwoordiger_fk FOREIGN KEY(vertegenwoordiger) REFERENCES bank_natuurlijke_persoon (id)
 );
@@ -1914,17 +1914,19 @@ CREATE TABLE financial_account_asset_usage (
 
 
 CREATE TABLE hypo_lopend_krediet (
-	status INTEGER NOT NULL, 
+	relation_type INTEGER NOT NULL, 
 	ontleend_bedrag NUMERIC(17, 2), 
-	saldo NUMERIC(17, 2), 
-	krediet_nummer VARCHAR(40), 
+	amount NUMERIC(17, 2) NOT NULL, 
+	reference VARCHAR(40), 
 	einddatum DATE, 
 	maandlast NUMERIC(17, 2), 
 	regelmatig_betaald BOOLEAN, 
 	hypotheek INTEGER, 
-	datum_akte DATE, 
-	looptijd INTEGER, 
-	rentevoet NUMERIC(6, 4), 
+	apply_from_date DATE, 
+	duration INTEGER NOT NULL, 
+	payment_duration INTEGER, 
+	period_type INTEGER NOT NULL, 
+	rate NUMERIC(7, 4), 
 	type_aflossing VARCHAR(50) NOT NULL, 
 	verkocht BOOLEAN, 
 	datum_verkoop DATE, 
@@ -1932,6 +1934,7 @@ CREATE TABLE hypo_lopend_krediet (
 	perm_id INTEGER, 
 	id INTEGER NOT NULL, 
 	maatschappij_id INTEGER, 
+	row_type VARCHAR(40) NOT NULL, 
 	PRIMARY KEY (id), 
 	CHECK (regelmatig_betaald IN (0, 1)), 
 	CHECK (verkocht IN (0, 1)), 
@@ -2341,7 +2344,7 @@ CREATE TABLE insurance_insured_loan (
 	interest_rate NUMERIC(10, 5), 
 	number_of_months INTEGER, 
 	type_of_payments INTEGER, 
-	payment_interval INTEGER, 
+	period_type INTEGER, 
 	starting_date DATE, 
 	id INTEGER NOT NULL, 
 	loan_id INTEGER, 
@@ -2482,7 +2485,7 @@ CREATE TABLE insurance_insured_loan_account (
 	interest_rate NUMERIC(10, 5), 
 	number_of_months INTEGER, 
 	type_of_payments INTEGER, 
-	payment_interval INTEGER, 
+	pariod_type INTEGER, 
 	starting_date DATE, 
 	id INTEGER NOT NULL, 
 	loan_id INTEGER, 
@@ -3061,6 +3064,7 @@ CREATE TABLE bank_natuurlijke_persoon
   correspondentie_straat character varying(128),
   correspondentie_postcode character varying(128),
   correspondentie_gemeente character varying(128),
+  website VARCHAR(253),
   CONSTRAINT bank_natuurlijke_persoon_country_of_birth_id_fk FOREIGN KEY (country_of_birth_id)
       REFERENCES geographic_boundary_country (geographicboundary_id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION,
