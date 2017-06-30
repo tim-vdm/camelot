@@ -16,6 +16,8 @@ from voluptuous import (
     Upper,
 )
 
+from vfinance.data.types import asset_feature_types, role_feature_types, insurance_feature_types
+
 
 def lookup(dic, key, *keys):
     if keys:
@@ -99,21 +101,13 @@ Asset = All(ASSET_SCHEMA)
 
 AGREEMENT_ASSET_SCHEMA = {
     Required("used_as"): String(max=40),
-    Optional("lien_amount"): String(max=20),
-    Optional("conditional_lien_amount"): String(max=20),
-    Optional("building_lot_price"): String(max=20),
+    Required("asset"): Asset,
     Optional("initial_value"): String(max=20),
-    Optional("added_value"): String(max=20),
-    Optional("building_lot_number"): String(max=20),
-    Optional("appraised_value"): String(max=20),
-    Optional("selling_value"): String(max=20),
-    Optional("forced_selling_value"): String(max=20),
-    Optional("habitable_area"): String(max=20),
-    Optional("housefront_width"): String(max=20),
-    Optional("building_lot_width"): String(max=20),
-    Optional("rental_revenues"): String(max=20),
-    Required("asset"): Asset
+    Optional("building_lot_number"): String(max=20)
 }
+
+for asset_feature_type in asset_feature_types:
+    AGREEMENT_ASSET_SCHEMA.update({Optional(asset_feature_type.name): String(max=20)})
 
 Assets = Schema([AGREEMENT_ASSET_SCHEMA])
 
@@ -128,37 +122,41 @@ SCHEDULE_SCHEMA = {
     Optional("id"): int,
     Optional("for_id"): int,
     Optional("described_by"): String(max=40),
-    Optional("suspension_of_payment"): int,
-    Optional("down_payment"): String(max=40),
-    Optional("purchase_terrain"): String(max=40),
-    Optional("new_housing"): String(max=40),
-    Optional("renovation"): String(max=40),
-    Optional("refinancing"): String(max=40),
-    Optional("centralization"): String(max=40),
-    Optional("building_purchase"): String(max=40),
-    Optional("bridging_credit"): String(max=40),
-    Optional("signing_agent_mortgage"): String(max=40),
-    Optional("signing_agent_purchase"): String(max=40),
-    Optional("architect_fee"): String(max=40),
-    Optional("homeowners_insurance"): String(max=40),
-    Optional("mortgage_insurance"): String(max=40),
-    Optional("life_insurance"): String(max=40),
-    Optional("vat"): String(max=40),
-    Optional("registration_fee"): String(max=40),
-    Optional("other_costs"): String(max=40),
-    Optional("insured_from_date"): Date,
-    Optional("insured_duration"): int,
-    Optional("coverage_for"): String(max=40),
-    Optional("premium_fee_1"): String(max=20),
-    Optional("premium_rate_1"): String(max=20),
-    Optional("coverage_limit"): String(max=20),
-    Optional("premium_taxation_physical_person"): String(max=20),
-    Optional("initial_interest_rate"): String(max=20),
-    Optional("insurance_fictitious_extra_age"): String(max=20),
-    Optional("payment_duration"): int
 }
 
+for schedule_feature_type in insurance_feature_types:
+    SCHEDULE_SCHEMA.update({Optional(schedule_feature_type.name): String(max=40)})
+
 Schedules = Schema([SCHEDULE_SCHEMA])
+
+    #Optional("suspension_of_payment"): int,
+    #Optional("down_payment"): String(max=40),
+    #Optional("purchase_terrain"): String(max=40),
+    #Optional("new_housing"): String(max=40),
+    #Optional("renovation"): String(max=40),
+    #Optional("refinancing"): String(max=40),
+    #Optional("centralization"): String(max=40),
+    #Optional("building_purchase"): String(max=40),
+    #Optional("bridging_credit"): String(max=40),
+    #Optional("signing_agent_mortgage"): String(max=40),
+    #Optional("signing_agent_purchase"): String(max=40),
+    #Optional("architect_fee"): String(max=40),
+    #Optional("homeowners_insurance"): String(max=40),
+    #Optional("mortgage_insurance"): String(max=40),
+    #Optional("life_insurance"): String(max=40),
+    #Optional("vat"): String(max=40),
+    #Optional("registration_fee"): String(max=40),
+    #Optional("other_costs"): String(max=40),
+    #Optional("insured_from_date"): Date,
+    #Optional("insured_duration"): int,
+    #Optional("coverage_for"): String(max=40),
+    #Optional("premium_fee_1"): String(max=20),
+    #Optional("premium_rate_1"): String(max=20),
+    #Optional("coverage_limit"): String(max=20),
+    #Optional("premium_taxation_physical_person"): String(max=20),
+    #Optional("initial_interest_rate"): String(max=20),
+    #Optional("insurance_fictitious_extra_age"): String(max=20),
+    #Optional("payment_duration"): int
 
 PERSON_SCHEMA = {
     Required("row_type"): 'person',
@@ -196,7 +194,6 @@ ORGANIZATION_SCHEMA = {
     Required("tax_id"): String(max=20),
     Optional("addresses"): Addresses,
     Optional("contact_mechanisms"): ContactMechanisms
-    #Optional("roles"): 
 }
 
 
@@ -205,44 +202,16 @@ PARTY_SCHEMA = Any(PERSON_SCHEMA, ORGANIZATION_SCHEMA)
 ROLE_SCHEMA = {
     Required("described_by"): String(max=30),
     Required("rank"): int,
-    Optional("net_earnings_of_employment"): String(max=40),
-    Optional("net_earnings_of_secondary_activity"): String(max=40),
-    Optional("loan_expenses"): String(max=40),
-    Optional("net_rent_revenues"): String(max=40),
-    Optional("net_alimony_revenues"): String(max=40),
-    Optional("net_child_support_revenues"): String(max=40),
-    Optional("net_other_revenues"): String(max=40),
-    Optional("replacement_income"): String(max=40),
-    Optional("net_child_allowance_revenues"): String(max=40),
-    Optional("expected_net_additional_revenues"): String(max=40),
-    Optional("earnings_documentation"): String(max=40),
-    Optional("housing_expenses"): String(max=40),
-    Optional("alimony_expenses"): String(max=40),
-    Optional("child_support_expenses"): String(max=40),
-    Optional("other_expenses"): String(max=40),
-    Optional("credit_card_history"): String(max=40),
-    Optional("credit_history"): String(max=40),
-    Optional("cohabiting_children"): String(max=40),
-    Optional("cohabiting_parents"): String(max=40),
-    Optional("smoking_habit"): String(max=40),
-    Optional("educational_level"): String(max=40),
-    Optional("fitness_level"): String(max=40),
-    Optional("fitness_level_reference"): String(max=40),
+    Required("party"): PARTY_SCHEMA,
     Optional("asset_id"): String(max=32),
-    Optional("asset_ownership_percentage"): String(max=40),
-    Optional("height"): String(max=40),
-    Optional("weight"): String(max=40),
-    Optional("dangerous_hobby"): String(max=40),
-    Optional("dangerous_profession"): String(max=40),
-    Optional("medical_condition"): String(max=40),
-    Optional("medical_procedure"): String(max=40),
-    Optional("medical_test_deviation"): String(max=40),
-    Optional("currently_disabled"): String(max=40),
+    Optional("reference"): String(max=60),
     Optional("date_previous_disability"): Date,
     Optional("date_previous_medical_procedure"): Date,
-    Optional("reference"): String(max=60),
-    Required("party"): PARTY_SCHEMA
+    Optional("fitness_level_reference"): String(max=40),
 }
+
+for role_feature_type in role_feature_types:
+    ROLE_SCHEMA.update({Optional(role_feature_type.name): String(max=20)})
 
 Roles = Schema([ROLE_SCHEMA])
 
