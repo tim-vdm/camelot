@@ -16,7 +16,7 @@ from voluptuous import (
     Upper,
 )
 
-from vfinance.data.types import asset_feature_types, role_feature_types, insurance_feature_types
+from vfinance.data.types import asset_feature_types, role_feature_types, insurance_feature_types, loan_feature_types
 
 
 def lookup(dic, key, *keys):
@@ -122,41 +122,29 @@ SCHEDULE_SCHEMA = {
     Optional("id"): int,
     Optional("for_id"): int,
     Optional("described_by"): String(max=40),
+    Optional("signing_agent_mortgage"): String(max=40),
+    Optional("signing_agent_purchase"): String(max=40),
+    Optional("suspension_of_payment"): int,
+    Optional("insured_from_date"): Date,
+    Optional("insured_duration"): int,
+    Optional("coverage_for"): String(max=40),
+    Optional("other_costs"): String(max=40),
+    Optional("registration_fee"): String(max=40),
+    Optional("initial_interest_rate"): String(max=20),
+    Optional("payment_duration"): int
 }
 
 for schedule_feature_type in insurance_feature_types:
     SCHEDULE_SCHEMA.update({Optional(schedule_feature_type.name): String(max=40)})
 
+for schedule_feature_type in loan_feature_types:
+    SCHEDULE_SCHEMA.update({Optional(schedule_feature_type.name): String(max=40)})
+
+for asset_feature_type in asset_feature_types:
+    SCHEDULE_SCHEMA.update({Optional(asset_feature_type.name): String(max=20)})
+
 Schedules = Schema([SCHEDULE_SCHEMA])
 
-    #Optional("suspension_of_payment"): int,
-    #Optional("down_payment"): String(max=40),
-    #Optional("purchase_terrain"): String(max=40),
-    #Optional("new_housing"): String(max=40),
-    #Optional("renovation"): String(max=40),
-    #Optional("refinancing"): String(max=40),
-    #Optional("centralization"): String(max=40),
-    #Optional("building_purchase"): String(max=40),
-    #Optional("bridging_credit"): String(max=40),
-    #Optional("signing_agent_mortgage"): String(max=40),
-    #Optional("signing_agent_purchase"): String(max=40),
-    #Optional("architect_fee"): String(max=40),
-    #Optional("homeowners_insurance"): String(max=40),
-    #Optional("mortgage_insurance"): String(max=40),
-    #Optional("life_insurance"): String(max=40),
-    #Optional("vat"): String(max=40),
-    #Optional("registration_fee"): String(max=40),
-    #Optional("other_costs"): String(max=40),
-    #Optional("insured_from_date"): Date,
-    #Optional("insured_duration"): int,
-    #Optional("coverage_for"): String(max=40),
-    #Optional("premium_fee_1"): String(max=20),
-    #Optional("premium_rate_1"): String(max=20),
-    #Optional("coverage_limit"): String(max=20),
-    #Optional("premium_taxation_physical_person"): String(max=20),
-    #Optional("initial_interest_rate"): String(max=20),
-    #Optional("insurance_fictitious_extra_age"): String(max=20),
-    #Optional("payment_duration"): int
 
 PERSON_SCHEMA = {
     Required("row_type"): 'person',
