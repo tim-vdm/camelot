@@ -11,19 +11,14 @@
         "year": 2016
     }, 
     "origin": "TESTJSON:BRANCH21", 
-    "package_id": 66, 
+    "package_id": 30, 
     "roles": [
         {
-            "cohabiting_children": "0", 
-            "described_by": "borrower", 
-            "educational_level": "no_schooling", 
-            "net_earnings_of_employment": "1.00", 
-            "net_other_revenues": "0.00", 
-            "other_expenses": "0.00", 
+            "described_by": "subscriber", 
             "party": {
                 "addresses": [
                     {
-                        "city": "BOOM", 
+                        "city": "Olen", 
                         "country_code": "BE", 
                         "described_by": "domicile", 
                         "from_date": {
@@ -31,152 +26,51 @@
                             "month": 1, 
                             "year": 1900
                         }, 
-                        "street_1": "JB Corremansstraat 52", 
-                        "zip_code": "2850"
+                        "street_1": "Hoefsmidstraat 27", 
+                        "zip_code": "2250"
                     }
                 ], 
                 "birth_date": {
-                    "day": 2, 
+                    "day": 23, 
                     "month": 2, 
-                    "year": 1989
-                }, 
-                "company_name": "", 
-                "company_since": {
-                    "day": 28, 
-                    "month": 7, 
-                    "year": 2015
+                    "year": 1984
                 }, 
                 "contact_mechanisms": [
                     {
-                        "address_type": "domicile", 
-                        "contact_mechanism": "+32", 
+                        "address_type": "domicile",
+                        "contact_mechanism": "+32496377674",
                         "described_by": "phone"
                     }, 
                     {
-                        "address_type": "work", 
-                        "contact_mechanism": "+32", 
-                        "described_by": "phone"
-                    }, 
-                    {
-                        "address_type": "domicile", 
-                        "contact_mechanism": "+32", 
-                        "described_by": "mobile"
-                    }, 
-                    {
-                        "address_type": "domicile", 
-                        "contact_mechanism": "+32", 
-                        "described_by": "fax"
+                        "address_type": "domicile",
+                        "contact_mechanism": "mario.vandyck@patronale.be",
+                        "described_by": "email"
                     }
                 ], 
-                "first_name": "Abedin", 
+                "first_name": "Mario", 
                 "language": "nl_BE", 
-                "last_name": "SALIHI", 
-                "marital_contract": "none", 
-                "marital_status": "single", 
-                "nationality_code": "MK", 
-                "occupation": "labourer", 
-                "passport_expiry_date": {
-                    "day": 29, 
-                    "month": 4, 
-                    "year": 2018
-                }, 
-                "passport_number": "149858633", 
-                "row_type": "person", 
-                "sex": "M", 
-                "social_security_number": "89020261940"
-            }, 
-            "rank": 1, 
-            "smoking_habit": "never"
-        }, 
-        {
-            "cohabiting_children": "2", 
-            "described_by": "borrower", 
-            "educational_level": "no_schooling", 
-            "net_child_allowance_revenues": "324.00", 
-            "net_earnings_of_employment": "1117.00", 
-            "net_other_revenues": "0.00", 
-            "other_expenses": "0.00", 
-            "party": {
-                "addresses": [
-                    {
-                        "city": "BOOM", 
-                        "country_code": "BE", 
-                        "described_by": "domicile", 
-                        "from_date": {
-                            "day": 1, 
-                            "month": 1, 
-                            "year": 1900
-                        }, 
-                        "street_1": "JB Corremansstraat 52", 
-                        "zip_code": "2850"
-                    }
-                ], 
-                "birth_date": {
-                    "day": 2, 
-                    "month": 11, 
-                    "year": 1992
-                }, 
-                "company_name": "ACLVB", 
-                "company_since": {
-                    "day": 1, 
-                    "month": 1, 
-                    "year": 2015
-                }, 
-                "contact_mechanisms": [
-                    {
-                        "address_type": "domicile", 
-                        "contact_mechanism": "+32", 
-                        "described_by": "phone"
-                    }, 
-                    {
-                        "address_type": "work", 
-                        "contact_mechanism": "+32", 
-                        "described_by": "phone"
-                    }, 
-                    {
-                        "address_type": "domicile", 
-                        "contact_mechanism": "+32", 
-                        "described_by": "mobile"
-                    }, 
-                    {
-                        "address_type": "domicile", 
-                        "contact_mechanism": "+32", 
-                        "described_by": "fax"
-                    }
-                ], 
-                "first_name": "Monica", 
-                "language": "nl_BE", 
-                "last_name": "BEKIR", 
-                "marital_contract": "none", 
-                "marital_status": "single", 
+                "last_name": "Van Dyck", 
+                "marital_status": "married", 
                 "nationality_code": "BE", 
-                "occupation": "unemployed", 
-                "passport_expiry_date": {
-                    "day": 28, 
-                    "month": 8, 
-                    "year": 2025
-                }, 
-                "passport_number": "592188591424", 
+                "occupation": "clerk", 
+                "social_security_number": "84022326547"
                 "row_type": "person", 
-                "sex": "F", 
-                "social_security_number": "92110240292"
+                "sex": "M", 
+                "passport_number": "149858633", 
+                "passport_expiry_date": {
+                    "day": 29, 
+                    "month": 4, 
+                    "year": 2018
+                }, 
             }, 
-            "rank": 2, 
-            "smoking_habit": "never"
+            "rank": 1, 
         }, 
         {
-            "asset_id": "76120", 
-            "asset_ownership_percentage": "100.00", 
-            "cohabiting_children": "0", 
-            "described_by": "owner", 
-            "educational_level": "no_schooling", 
-            "net_earnings_of_employment": "1.00", 
-            "net_other_revenues": "0.00", 
-            "other_expenses": "0.00", 
+            "described_by": "insured_party", 
             "party": {
                 "addresses": [
                     {
-                        "city": "BOOM", 
+                        "city": "Olen", 
                         "country_code": "BE", 
                         "described_by": "domicile", 
                         "from_date": {
@@ -184,95 +78,55 @@
                             "month": 1, 
                             "year": 1900
                         }, 
-                        "street_1": "JB Corremansstraat 52", 
-                        "zip_code": "2850"
+                        "street_1": "Hoefsmidstraat 27", 
+                        "zip_code": "2250"
                     }
                 ], 
                 "birth_date": {
-                    "day": 2, 
+                    "day": 23, 
                     "month": 2, 
-                    "year": 1989
-                }, 
-                "company_name": "", 
-                "company_since": {
-                    "day": 28, 
-                    "month": 7, 
-                    "year": 2015
+                    "year": 1984
                 }, 
                 "contact_mechanisms": [
                     {
-                        "address_type": "domicile", 
-                        "contact_mechanism": "+32", 
+                        "address_type": "domicile",
+                        "contact_mechanism": "+32496377674",
                         "described_by": "phone"
                     }, 
                     {
-                        "address_type": "work", 
-                        "contact_mechanism": "+32", 
-                        "described_by": "phone"
-                    }, 
-                    {
-                        "address_type": "domicile", 
-                        "contact_mechanism": "+32", 
-                        "described_by": "mobile"
-                    }, 
-                    {
-                        "address_type": "domicile", 
-                        "contact_mechanism": "+32", 
-                        "described_by": "fax"
+                        "address_type": "domicile",
+                        "contact_mechanism": "mario.vandyck@patronale.be",
+                        "described_by": "email"
                     }
                 ], 
-                "first_name": "Abedin", 
+                "first_name": "Mario", 
                 "language": "nl_BE", 
-                "last_name": "SALIHI", 
-                "marital_contract": "none", 
-                "marital_status": "single", 
-                "nationality_code": "MK", 
-                "occupation": "labourer", 
+                "last_name": "Van Dyck", 
+                "marital_status": "married", 
+                "nationality_code": "BE", 
+                "occupation": "clerk", 
+                "social_security_number": "84022326547"
+                "row_type": "person", 
+                "sex": "M", 
+                "passport_number": "149858633", 
                 "passport_expiry_date": {
                     "day": 29, 
                     "month": 4, 
                     "year": 2018
                 }, 
-                "passport_number": "149858633", 
-                "row_type": "person", 
-                "sex": "M", 
-                "social_security_number": "89020261940"
             }, 
             "rank": 1, 
-            "smoking_habit": "never"
         }
     ], 
-    "row_type": "loan_application", 
+    "row_type": "financial_agreement", 
     "schedules": [
         {
-            "amount": "160000.00", 
-            "building_purchase": "160000.00", 
+            "amount": "50000.00", 
             "described_by": "fixed_payment", 
-            "direct_debit": true, 
-            "duration": 360, 
-            "life_insurance": "0.00", 
-            "new_housing": "0.00", 
-            "other_costs": "0.00", 
-            "period_type": "monthly", 
-            "product_id": 1001, 
-            "row_type": "applied_amount", 
-            "signing_agent_mortgage": "4456.25", 
-            "signing_agent_purchase": "3310.00", 
-            "suspension_of_payment": 0,
-            "registration_fee": "123.00",
-            "purchase_terrain": "100000",
-            "new_housing": "1234.0",
-            "renovation": "43210.0",
-            "refinancing": "1234.50",
-            "centralization": "12.30",
-            "building_purchase": "432.1",
-            "bridging_credit": "20.40",
-            "homeowners_insurance": "934.12",
-            "mortgage_insurance": "62.2",
-            "life_insurance": "50.0",
-            "architect_fee": "2342.0",
-            "vat": "21.0",
-            "down_payment": "14016.25"
+            "duration": 240, 
+            "period_type": "single", 
+            "product_id": 30, 
+            "row_type": "premium_amount", 
         }
     ]
 }
