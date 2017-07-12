@@ -308,6 +308,15 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertIsInstance(content, dict)
 
 
+    def test_create_agreement_code_stc_2(self):
+        document = load_demo_json('v11_create_agreement_code_stc_2')
+        response = self.post_json('create_agreement_code', data=document)
+
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
+
+
     def test_create_agreement_code_polapp_stc(self):
         document = load_demo_json('v11_create_agreement_code_polapp_stc')
         response = self.post_json('create_agreement_code', data=document)
@@ -471,6 +480,15 @@ class WebServiceVersion11TestCase(unittest.TestCase):
                 self.assertIn('personen die de volle eigendom of het vruchtgebruik van de woning', item.shown_clause)
             if item.rank == 2:
                 self.assertIn('De begunstigden', item.shown_clause)
+
+
+    def test_create_agreement_code_branch21(self):
+        document = load_demo_json('v11_create_agreement_code_branch21')
+        response = self.post_json('create_agreement_code', data=document)
+
+        self.assertEqual(response.status_code, 200)
+        content = json.loads(response.data)
+        self.assertIsInstance(content, dict)
 
 
 if __name__ == '__main__':

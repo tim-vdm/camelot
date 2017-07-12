@@ -107,13 +107,13 @@ def install_dependencies():
         api.sudo('service nginx reload')
 
 
-def deploy_new_certificate():
+def deploy_new_certificate(domain='patronale'):
     with context_managers.settings(host_string=env.HOST_NAME,
                                    user=env.HOST_USER,
                                    key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
         try:
-            api.put('../conf/patronale_ssl.crt', '/opt/ssl/patronale_ssl.crt', use_sudo=True)
-            api.put('../conf/patronale_ssl.key', '/opt/ssl/patronale_ssl.key', use_sudo=True)
+            api.put('../conf/{}_ssl.crt'.format(domain), '/opt/ssl/{}_ssl.crt'.format(domain), use_sudo=True)
+            api.put('../conf/{}_ssl.key'.format(domain), '/opt/ssl/{}_ssl.key'.format(domain), use_sudo=True)
         except ValueError as ve:
             print('*** You must generate the key and crt files. Please see ../conf/README. ***')
             raise ve

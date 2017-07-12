@@ -14,8 +14,21 @@
     "package_id": 30, 
     "roles": [
         {
-            "described_by": "subscriber", 
             "party": {
+                "contact_mechanisms": [
+                    {
+                        "address_type": "domicile",
+                        "contact_mechanism": "+32496377674",
+                        "described_by": "phone"
+                    }, 
+                    {
+                        "address_type": "domicile",
+                        "contact_mechanism": "mario.vandyck@patronale.be",
+                        "described_by": "email"
+                    }
+                ], 
+                "birth_date": {"day": 23, "month": 2, "year": 1984},
+                "nationality_code": "BE", 
                 "addresses": [
                     {
                         "city": "Olen", 
@@ -30,41 +43,21 @@
                         "zip_code": "2250"
                     }
                 ], 
-                "birth_date": {
-                    "day": 23, 
-                    "month": 2, 
-                    "year": 1984
-                }, 
-                "contact_mechanisms": [
-                    {
-                        "address_type": "domicile",
-                        "contact_mechanism": "+32496377674",
-                        "described_by": "phone"
-                    }, 
-                    {
-                        "address_type": "domicile",
-                        "contact_mechanism": "mario.vandyck@patronale.be",
-                        "described_by": "email"
-                    }
-                ], 
                 "first_name": "Mario", 
                 "language": "nl_BE", 
                 "last_name": "Van Dyck", 
                 "marital_status": "married", 
-                "nationality_code": "BE", 
                 "occupation": "clerk", 
-                "social_security_number": "84022326547"
-                "row_type": "person", 
+                "social_security_number": "84022326547",
                 "sex": "M", 
-                "passport_number": "149858633", 
-                "passport_expiry_date": {
-                    "day": 29, 
-                    "month": 4, 
-                    "year": 2018
-                }, 
-            }, 
-            "rank": 1, 
-        }, 
+                "passport_expiry_date": {"day": 29, "month": 4, "year": 2018},
+                "row_type": "person",
+                "passport_number": "149858633"
+            },
+            "smoking_habit": "never",
+            "rank": 1,
+            "described_by": "subscriber"
+        },
         {
             "described_by": "insured_party", 
             "party": {
@@ -105,28 +98,47 @@
                 "marital_status": "married", 
                 "nationality_code": "BE", 
                 "occupation": "clerk", 
-                "social_security_number": "84022326547"
-                "row_type": "person", 
+                "social_security_number": "84022326547",
+                "row_type": "person",
                 "sex": "M", 
                 "passport_number": "149858633", 
                 "passport_expiry_date": {
                     "day": 29, 
                     "month": 4, 
                     "year": 2018
-                }, 
-            }, 
-            "rank": 1, 
+                }
+            },
+            "rank": 1
         }
-    ], 
+    ],
     "row_type": "financial_agreement", 
     "schedules": [
         {
+            "id": 1,
             "amount": "50000.00", 
-            "described_by": "fixed_payment", 
             "duration": 240, 
             "period_type": "single", 
             "product_id": 30, 
             "row_type": "premium_amount", 
+            "coverage_limit": "25000.00",
+            "coverage_for": "fixed_amount",
+            "insured_duration": 120,
+            "direct_debit": false
         }
-    ]
+    ],
+    "agreed_items": [
+        {
+            "described_by": "beneficiary",
+            "rank": 1,
+            "associated_clause_id": 272,
+            "custom_clause": "Begunstiging bij leven: De wettelijke echtgenoot voor 1/2, de kinderen voor 1/2"
+        },
+        {
+            "described_by": "beneficiary",
+            "rank": 2,
+            "associated_clause_id": 272,
+            "custom_clause": "Begunstiging bij overlijden: De wettelijke echtgenoten voor 100%"
+        }
+    ],
+    "exit_condition": "exit_at_first_decease"
 }
