@@ -1,5 +1,5 @@
 {
-    "agent_official_number_fsma": "fsma", 
+    "agent_official_number_fsma": "010024 A-cB", 
     "agreement_date": {
         "day": 5,
         "month": 7,
@@ -10,7 +10,7 @@
         "month": 2, 
         "year": 2016
     }, 
-    "origin": "TESTJSON:BRANCH21", 
+    "origin": "MYDATABASE:MY_PRIMARY_KEY", 
     "package_id": 30, 
     "roles": [
         {
@@ -130,13 +130,11 @@
         {
             "described_by": "beneficiary",
             "rank": 1,
-            "associated_clause_id": 272,
             "custom_clause": "Begunstiging bij leven: De wettelijke echtgenoot voor 1/2, de kinderen voor 1/2"
         },
         {
             "described_by": "beneficiary",
             "rank": 2,
-            "associated_clause_id": 272,
             "custom_clause": "Begunstiging bij overlijden: De wettelijke echtgenoten voor 100%"
         }
     ],

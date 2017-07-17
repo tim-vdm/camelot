@@ -199,7 +199,7 @@ ROLE_SCHEMA = {
 }
 
 for role_feature_type in role_feature_types:
-    ROLE_SCHEMA.update({Optional(role_feature_type.name): String(max=20)})
+    ROLE_SCHEMA.update({Optional(role_feature_type.name): String(max=40)})
 
 Roles = Schema([ROLE_SCHEMA])
 
