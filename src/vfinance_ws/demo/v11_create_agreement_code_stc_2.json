@@ -143,6 +143,7 @@
             "period_type": "single", 
             "premium_fee_1": "50.0000000000", 
             "premium_rate_1": "50.0000000000", 
+            "premium_fee_2": "50.00",
             "product_id": 67, 
             "row_type": "premium_amount"
         }, 

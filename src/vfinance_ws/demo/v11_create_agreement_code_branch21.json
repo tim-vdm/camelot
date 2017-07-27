@@ -108,7 +108,8 @@
                     "year": 2018
                 }
             },
-            "rank": 1
+            "rank": 1,
+            "smoking_habit": "never"
         }
     ],
     "row_type": "financial_agreement", 
@@ -123,7 +124,11 @@
             "coverage_limit": "25000.00",
             "coverage_for": "fixed_amount",
             "insured_duration": 120,
-            "direct_debit": false
+            "direct_debit": false,
+            "premium_rate_1": "1.5",
+            "premium_fee_1": "35.0",
+            "premium_rate_2": "0.5",
+            "premium_fee_2": "0.0"
         }
     ],
     "agreed_items": [
