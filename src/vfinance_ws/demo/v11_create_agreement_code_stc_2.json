@@ -33,9 +33,9 @@
                     }
                 ], 
                 "birth_date": {
-                    "day": 23, 
-                    "month": 2, 
-                    "year": 1984
+                    "day": 17, 
+                    "month": 8, 
+                    "year": 1967
                 }, 
                 "contact_mechanisms": [
                     {
@@ -59,10 +59,10 @@
                     "month": 12, 
                     "year": 2020
                 }, 
-                "passport_number": "00000000", 
+                "passport_number": "1123581321", 
                 "row_type": "person", 
                 "sex": "M", 
-                "social_security_number": "84022326547"
+                "social_security_number": "67081721262"
             }, 
             "rank": 1, 
             "smoking_habit": "regular"
@@ -85,9 +85,9 @@
                     }
                 ], 
                 "birth_date": {
-                    "day": 23, 
-                    "month": 2, 
-                    "year": 1984
+                    "day": 17, 
+                    "month": 8, 
+                    "year": 1967
                 }, 
                 "contact_mechanisms": [
                     {
@@ -111,10 +111,10 @@
                     "month": 12, 
                     "year": 2020
                 }, 
-                "passport_number": "00000000", 
+                "passport_number": "1123581321", 
                 "row_type": "person", 
                 "sex": "M", 
-                "social_security_number": "84022326547"
+                "social_security_number": "67081721262"
             }, 
             "rank": 1
         }, 

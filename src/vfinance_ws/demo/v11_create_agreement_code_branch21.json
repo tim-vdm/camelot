@@ -27,7 +27,7 @@
                         "described_by": "email"
                     }
                 ], 
-                "birth_date": {"day": 23, "month": 2, "year": 1984},
+                "birth_date": {"day": 17, "month": 8, "year": 1967},
                 "nationality_code": "BE", 
                 "addresses": [
                     {
@@ -48,11 +48,11 @@
                 "last_name": "Van Dyck", 
                 "marital_status": "married", 
                 "occupation": "clerk", 
-                "social_security_number": "84022326547",
+                "social_security_number": "67081721262",
                 "sex": "M", 
                 "passport_expiry_date": {"day": 29, "month": 4, "year": 2018},
                 "row_type": "person",
-                "passport_number": "149858633"
+                "passport_number": "1123581321"
             },
             "smoking_habit": "never",
             "rank": 1,
@@ -76,9 +76,9 @@
                     }
                 ], 
                 "birth_date": {
-                    "day": 23, 
-                    "month": 2, 
-                    "year": 1984
+                    "day": 17, 
+                    "month": 8, 
+                    "year": 1967
                 }, 
                 "contact_mechanisms": [
                     {
@@ -98,10 +98,10 @@
                 "marital_status": "married", 
                 "nationality_code": "BE", 
                 "occupation": "clerk", 
-                "social_security_number": "84022326547",
+                "social_security_number": "67081721262",
                 "row_type": "person",
                 "sex": "M", 
-                "passport_number": "149858633", 
+                "passport_number": "1123581321", 
                 "passport_expiry_date": {
                     "day": 29, 
                     "month": 4, 
@@ -135,13 +135,21 @@
         {
             "described_by": "beneficiary",
             "rank": 1,
+            "associated_clause_id": 272,
             "custom_clause": "Begunstiging bij leven: De wettelijke echtgenoot voor 1/2, de kinderen voor 1/2"
         },
         {
             "described_by": "beneficiary",
             "rank": 2,
+            "associated_clause_id": 272,
             "custom_clause": "Begunstiging bij overlijden: De wettelijke echtgenoten voor 100%"
+        },
+        {
+            "described_by": "conventional_return",
+            "rank": 1,
+            "associated_clause_id": 266
         }
     ],
-    "exit_condition": "exit_at_first_decease"
+    "exit_condition": "exit_at_first_decease",
+    "mail_condition": "mail_to_first_subscriber"
 }

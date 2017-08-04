@@ -267,6 +267,41 @@ def get_proposal(document):
 @auth.login_required
 @ws_jsonify
 @validation_json(validation_get_packages)
+def ci_get_packages(document):
+    """
+    :synopsis: Get a list of the available packages for the customer
+    .. literalinclude:: demo/post_get_packages.http
+        :language: http
+
+    .. literalinclude:: demo/get_packages.json
+        :language: json
+
+    .. literalinclude:: demo/200.http
+        :language: http
+
+    .. literalinclude:: demo/get_packages_response.json
+        :language: json
+
+    :status 200:
+    :status 400:
+    :reqheader Content-Type: Must be `application/json`
+    :resheader Content-Type: :mimetype:`application/json`
+    :reqheader Authorization: Token for Authentication
+
+    First input screen in polapp
+
+    .. image:: /_images/polapp_screen_1.png
+
+    .. versionchanged:: 1.1
+        Prefix the /get_package WS with /credit_insurance
+    """
+    return {'packages': v11.get_packages(document)}
+
+
+@bp.route('/get_packages', methods=['POST'])
+@auth.login_required
+@ws_jsonify
+@validation_json(validation_get_packages)
 def get_packages(document):
     """
     :synopsis: Get a list of the available packages for the customer

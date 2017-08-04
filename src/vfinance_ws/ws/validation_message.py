@@ -111,6 +111,12 @@ for asset_feature_type in asset_feature_types:
 
 Assets = Schema([AGREEMENT_ASSET_SCHEMA])
 
+FUND_DISTRIBUTION_SCHEMA = {
+    Required("code"): String(max=12),
+    Required("percentage"): String(max=6)
+    }
+
+Funds = Schema([FUND_DISTRIBUTION_SCHEMA])
 
 SCHEDULE_SCHEMA = {
     Required("row_type"): ScheduleType,
@@ -131,7 +137,8 @@ SCHEDULE_SCHEMA = {
     Optional("other_costs"): String(max=40),
     Optional("registration_fee"): String(max=40),
     Optional("initial_interest_rate"): String(max=20),
-    Optional("payment_duration"): int
+    Optional("payment_duration"): int,
+    Optional("fund_distribution"): Funds
 }
 
 for schedule_feature_type in insurance_feature_types:
@@ -216,6 +223,7 @@ AGREED_ITEM_SCHEMA = {
     Optional("custom_clause"): String()
 }
 
+
 DirectDebitMandates = Schema([DIRECT_DEBIT_MANDATE_SCHEMA])
 AgreedItems = Schema([AGREED_ITEM_SCHEMA])
 
@@ -279,6 +287,7 @@ CREATE_AGREEMENT_CODE_SCHEMA = {
     Optional('fiscal_regime'): String(max=40),
     Optional('start_condition'): String(max=40),
     Optional('exit_condition'): String(max=40),
+    Optional('mail_condition'): String(max=40),
     Optional('attribute_condition'): String(max=40),
     Optional('state_guarantee'): String(max=40),
     Optional('funding_loss'): String(max=40),

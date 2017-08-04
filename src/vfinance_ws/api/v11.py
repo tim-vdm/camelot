@@ -40,7 +40,9 @@ from vfinance.model.financial.agreement import (FinancialAgreement,
 from vfinance.model.financial.premium import FinancialAgreementPremiumSchedule
 from vfinance.model.financial.package import FinancialPackage, FinancialItemClause
 from vfinance.model.financial.product import FinancialProduct
+from vfinance.model.financial.security import FinancialSecurity
 from vfinance.model.financial.feature import FinancialAgreementPremiumScheduleFeature
+from vfinance.model.financial.fund import FinancialAgreementFundDistribution
 from vfinance.model.financial.constants import exclusiveness_by_functional_setting_group
 from vfinance.model.financial.notification.agreement_document import AgreementDocument
 from vfinance.facade.agreement.credit_insurance import CalculatePremium
@@ -417,6 +419,7 @@ def create_agreement_from_json(session, document):
             direct_debit = schedule.get('direct_debit')
             schedule_type = schedule.get('row_type')
             payment_duration = schedule.get('payment_duration')
+            fund_distribution = schedule.get('fund_distribution')
             if schedule_type == 'premium_amount':
                 coverage_level_json = schedule.get('coverage_for')
                 coverage_level = None
@@ -444,9 +447,16 @@ def create_agreement_from_json(session, document):
                     feature_value = schedule.get(feature_name)
                     if feature_value is not None:
                         agreed_feature = FinancialAgreementPremiumScheduleFeature()
+                        agreed_feature.apply_from_date = agreement.apply_from_date
                         agreed_feature.described_by = feature_name
                         agreed_feature.value = Decimal(feature_value)
                         agreed_feature.agreed_on = premium_schedule
+                if fund_distribution is not None:
+                    for fund in fund_distribution:
+                        fund_distribution = FinancialAgreementFundDistribution()
+                        fund_distribution.distribution_of = premium_schedule
+                        fund_distribution.target_percentage = fund.get('percentage')
+                        fund_distribution.fund = orm.object_session(agreement).query(FinancialSecurity).filter(FinancialSecurity.bfi==fund.get('code')).first()
             elif schedule_type == 'applied_amount':
                 applied_amount = AppliedLoanAmount()
                 applied_amount.financial_agreement = agreement
@@ -747,6 +757,19 @@ def get_packages(session, document):
             products.append({
                 'id': product.product.id,
                 'name': product.product.name,
+            })
+            available_funds = []
+            for fund_availability in product.available_funds:
+                fund = fund_availability.fund
+                funds.append({
+                    'code': fund.bfi,
+                    'name': fund.name
+                    })
+
+            products.append({
+                'id': product.product.id,
+                'name': product.product.name,
+                'available_funds': available_funds,
             })
 
         packages.append({
