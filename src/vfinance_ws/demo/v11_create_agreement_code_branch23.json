@@ -1,0 +1,160 @@
+{
+    "agent_official_number_fsma": "010024 A-cB", 
+    "agreement_date": {
+        "day": 5,
+        "month": 7,
+        "year": 2017
+    },
+    "from_date": {
+        "day": 27, 
+        "month": 2, 
+        "year": 2016
+    }, 
+    "origin": "MYDATABASE:MY_PRIMARY_KEY", 
+    "package_id": 26,
+    "roles": [
+        {
+            "party": {
+                "contact_mechanisms": [
+                    {
+                        "address_type": "domicile",
+                        "contact_mechanism": "+32496377674",
+                        "described_by": "phone"
+                    }, 
+                    {
+                        "address_type": "domicile",
+                        "contact_mechanism": "mario.vandyck@patronale.be",
+                        "described_by": "email"
+                    }
+                ], 
+                "birth_date": {"day": 17, "month": 8, "year": 1967},
+                "nationality_code": "BE", 
+                "addresses": [
+                    {
+                        "city": "Olen", 
+                        "country_code": "BE", 
+                        "described_by": "domicile", 
+                        "from_date": {
+                            "day": 1, 
+                            "month": 1, 
+                            "year": 1900
+                        }, 
+                        "street_1": "Hoefsmidstraat 27", 
+                        "zip_code": "2250"
+                    }
+                ], 
+                "first_name": "Mario", 
+                "language": "nl_BE", 
+                "last_name": "Van Dyck", 
+                "marital_status": "married", 
+                "occupation": "clerk", 
+                "social_security_number": "67081721262",
+                "sex": "M", 
+                "passport_expiry_date": {"day": 29, "month": 4, "year": 2018},
+                "row_type": "person",
+                "passport_number": "1123581321"
+            },
+            "smoking_habit": "never",
+            "rank": 1,
+            "described_by": "subscriber",
+            "risk_profile": "5.0"
+        },
+        {
+            "described_by": "insured_party", 
+            "party": {
+                "addresses": [
+                    {
+                        "city": "Olen", 
+                        "country_code": "BE", 
+                        "described_by": "domicile", 
+                        "from_date": {
+                            "day": 1, 
+                            "month": 1, 
+                            "year": 1900
+                        }, 
+                        "street_1": "Hoefsmidstraat 27", 
+                        "zip_code": "2250"
+                    }
+                ], 
+                "birth_date": {
+                    "day": 17, 
+                    "month": 8, 
+                    "year": 1967
+                }, 
+                "contact_mechanisms": [
+                    {
+                        "address_type": "domicile",
+                        "contact_mechanism": "+32496377674",
+                        "described_by": "phone"
+                    }, 
+                    {
+                        "address_type": "domicile",
+                        "contact_mechanism": "mario.vandyck@patronale.be",
+                        "described_by": "email"
+                    }
+                ], 
+                "first_name": "Mario", 
+                "language": "nl_BE", 
+                "last_name": "Van Dyck", 
+                "marital_status": "married", 
+                "nationality_code": "BE", 
+                "occupation": "clerk", 
+                "social_security_number": "67081721262",
+                "row_type": "person",
+                "sex": "M", 
+                "passport_number": "1123581321", 
+                "passport_expiry_date": {
+                    "day": 29, 
+                    "month": 4, 
+                    "year": 2018
+                }
+            },
+            "rank": 1,
+            "smoking_habit": "never"
+        }
+    ],
+    "row_type": "financial_agreement", 
+    "schedules": [
+        {
+            "id": 1,
+            "amount": "50000.00", 
+            "duration": 2400, 
+            "period_type": "single", 
+            "product_id": 26,
+            "row_type": "premium_amount", 
+            "coverage_limit": "100.00",
+            "coverage_for": "percentage_of_account",
+            "insured_duration": 2400,
+            "fund_distribution": [
+                {"fund_code": "33",
+                 "percentage": "50.00"
+                },
+                {"fund_code": "31",
+                 "percentage": "30.00"
+                },
+                {"fund_code": "35",
+                 "percentage": "20.00"
+                }
+            ],
+            "direct_debit": false,
+            "premium_rate_1": "1.5",
+            "premium_fee_1": "35.0",
+            "premium_rate_2": "0.5",
+            "premium_fee_2": "0.0"
+        }
+    ],
+    "agreed_items": [
+        {
+            "described_by": "beneficiary",
+            "rank": 1,
+            "custom_clause": "Begunstiging bij leven: Niet van toepassing"
+        },
+        {
+            "described_by": "beneficiary",
+            "rank": 2,
+            "custom_clause": "Begunstiging bij overlijden: De wettelijke echtgenoten voor 100%"
+        }
+    ],
+    "exit_condition": "exit_at_first_decease",
+    "mail_condition": "mail_to_first_subscriber"
+}
