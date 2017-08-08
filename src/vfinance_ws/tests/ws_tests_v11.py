@@ -491,5 +491,14 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertIsInstance(content, dict)
 
 
+    def test_create_agreement_code_branch23(self):
+        document = load_demo_json('v11_create_agreement_code_branch23')
+        response = self.post_json('create_agreement_code', data=document)
+
+        content = json.loads(response.data)
+        self.assertEqual(response.status_code, 200)
+        self.assertIsInstance(content, dict)
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

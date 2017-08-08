@@ -25,6 +25,7 @@ from vfinance.data.types import role_feature_types, asset_feature_types, product
 from vfinance.facade.agreement.credit_insurance import CreditInsuranceAgreementFacade
 
 from vfinance.admin.translations import TemplateLanguage
+from vfinance.model.bank.constants import begin_of_times
 from vfinance.model.bank.natuurlijke_persoon import NatuurlijkePersoon
 from vfinance.model.bank.rechtspersoon import Rechtspersoon
 from vfinance.model.bank.dual_person import CommercialRelation
@@ -401,27 +402,27 @@ def create_agreement_from_json(session, document):
 
         for schedule in [sch for sch in schedules if sch.get('row_type') == 'approved_amount']:
             insured_loan = InsuredLoanAgreement()
-            insured_loan.loan_amount = schedule.get('amount')
-            insured_loan.interest_rate = schedule.get('initial_interest_rate')
-            insured_loan.number_of_months = schedule.get('duration')
-            insured_loan.type_of_payments = aflossing_field_mapping.get(schedule.get('described_by'))
-            insured_loan.payment_interval = interval_field_mapping.get(schedule.get('period_type'))
+            insured_loan.loan_amount = schedule.pop('amount')
+            insured_loan.interest_rate = schedule.pop('initial_interest_rate')
+            insured_loan.number_of_months = schedule.pop('duration')
+            insured_loan.type_of_payments = aflossing_field_mapping.get(schedule.pop('described_by'), None)
+            insured_loan.payment_interval = interval_field_mapping.get(schedule.pop('period_type'), None)
             insured_loans[schedule.get('id')] = insured_loan
 
 
         for schedule in [sch for sch in schedules if sch.get('row_type') != 'approved_amount']:
             insured_loan = None
-            product = session.query(Product).get(long(schedule.get('product_id')))
-            insured_loan = insured_loans.get(schedule.get('for_id'))
-            period_type = schedule.get('period_type')
-            duration = schedule.get('duration')
-            amount = schedule.get('amount')
-            direct_debit = schedule.get('direct_debit')
-            schedule_type = schedule.get('row_type')
-            payment_duration = schedule.get('payment_duration')
-            fund_distribution = schedule.get('fund_distribution')
+            product = session.query(Product).get(long(schedule.pop('product_id')))
+            insured_loan = insured_loans.pop(schedule.pop('for_id', None), None)
+            period_type = schedule.pop('period_type')
+            duration = schedule.pop('duration')
+            amount = schedule.pop('amount')
+            direct_debit = schedule.pop('direct_debit')
+            schedule_type = schedule.pop('row_type')
+            payment_duration = schedule.pop('payment_duration', duration)
+            fund_distribution = schedule.pop('fund_distribution', [])
             if schedule_type == 'premium_amount':
-                coverage_level_json = schedule.get('coverage_for')
+                coverage_level_json = schedule.pop('coverage_for')
                 coverage_level = None
                 if coverage_level_json is not None:
                     for cl in product.get_available_coverage_levels_at(agreement.apply_from_date):
@@ -437,26 +438,25 @@ def create_agreement_from_json(session, document):
                 premium_schedule.payment_duration = payment_duration
                 premium_schedule.period_type = period_type
                 premium_schedule.direct_debit = direct_debit
-                premium_schedule.insured_from_date = get_date_from_json_date(schedule.get('insured_from_date'))
-                premium_schedule.insured_duration = schedule.get('insured_duration')
+                premium_schedule.insured_from_date = get_date_from_json_date(schedule.pop('insured_from_date', None))
+                premium_schedule.insured_duration = schedule.pop('insured_duration')
                 premium_schedule.coverage_for = coverage_level
                 premium_schedule.financial_agreement = agreement
                 premium_schedule.coverage_amortization = insured_loan
                 #for feature_name in [insurance_feature[1] for insurance_feature in constants.insurance_features]:
                 for feature_name in [insurance_feature[1] for insurance_feature in insurance_feature_types]:
-                    feature_value = schedule.get(feature_name)
+                    feature_value = schedule.pop(feature_name, None)
                     if feature_value is not None:
                         agreed_feature = FinancialAgreementPremiumScheduleFeature()
-                        agreed_feature.apply_from_date = agreement.apply_from_date
+                        agreed_feature.apply_from_date = begin_of_times
                         agreed_feature.described_by = feature_name
                         agreed_feature.value = Decimal(feature_value)
                         agreed_feature.agreed_on = premium_schedule
-                if fund_distribution is not None:
-                    for fund in fund_distribution:
-                        fund_distribution = FinancialAgreementFundDistribution()
-                        fund_distribution.distribution_of = premium_schedule
-                        fund_distribution.target_percentage = fund.get('percentage')
-                        fund_distribution.fund = orm.object_session(agreement).query(FinancialSecurity).filter(FinancialSecurity.bfi==fund.get('code')).first()
+                for fund in fund_distribution:
+                    fund_distribution = FinancialAgreementFundDistribution()
+                    fund_distribution.distribution_of = premium_schedule
+                    fund_distribution.target_percentage = fund.pop('percentage')
+                    fund_distribution.fund = orm.object_session(agreement).query(FinancialSecurity).filter(FinancialSecurity.bfi==fund.pop('fund_code')).first()
             elif schedule_type == 'applied_amount':
                 applied_amount = AppliedLoanAmount()
                 applied_amount.financial_agreement = agreement
@@ -476,6 +476,7 @@ def create_agreement_from_json(session, document):
                     asset = json_asset.get('asset')
                     for feature in ('architect_fee', 'vat', 'down_payment', 'registration_fee', 'signing_agent_purchase'):
                         if schedule.get(feature) is not None:
+                            asset_feature = None
                             feature_value = schedule.pop(feature)
                             if feature_value is not None:
                                 feature_name = feature
@@ -483,10 +484,18 @@ def create_agreement_from_json(session, document):
                                     feature_name = 'purchase_registration_fee'
                                 if feature_name == 'registration_fee':
                                     feature_name = 'lien_registration_fee'
-                                asset_feature = FinancialAgreementAssetFeature()
-                                asset_feature.described_by = feature_name
-                                asset_feature.of = asset.assets[0]
+                                for agreed_feature in asset.assets[0].agreed_features:
+                                    if agreed_feature.described_by == feature_name:
+                                        asset_feature = agreed_feature
+                                if asset_feature is None:
+                                    asset_feature = FinancialAgreementAssetFeature()
+                                    asset_feature.described_by = feature_name
+                                    asset_feature.of = asset.assets[0]
                                 asset_feature.value = Decimal(feature_value)
+                                asset_feature.specified_by = 'user'
+                                
+                for json_asset in assets:
+                    asset = json_asset.get('asset')
                     if schedule.get('signing_agent_mortgage') is not None:
                         value = Decimal(schedule.get('signing_agent_mortgage'))
                         for asset_feature in asset.assets[0].agreed_features:
@@ -498,6 +507,7 @@ def create_agreement_from_json(session, document):
                             asset_feature.described_by = 'lien_registration_fee'
                             asset_feature.of = asset.assets[0]
                             asset_feature.value = value
+                            asset_feature.specified_by = 'user'
 
 
                 schedule['other_purpose'] = schedule.get('other_costs')
@@ -552,18 +562,22 @@ def create_agreement_from_json(session, document):
     agreed_items = document.get('agreed_items')
     if agreed_items is not None:
         for agreed_item in agreed_items:
+            described_by = agreed_item.pop('described_by', None)
+            rank = agreed_item.pop('rank', None)
+            associated_clause_id = agreed_item.pop('associated_clause_id', None)
+            custom_clause = agreed_item.pop('custom_clause', None)
             agreement_item = FinancialAgreementItem()
-            agreement_item.described_by = agreed_item.get('described_by')
-            agreement_item.rank = agreed_item.get('rank')
-            agreement_item.associated_clause = orm.object_session(agreement).query(FinancialItemClause).get(agreed_item.get('associated_clause_id'))
-            custom_clause = agreed_item.get('custom_clause')
-            if custom_clause is not None:
+            agreement_item.described_by = described_by
+            agreement_item.rank = rank
+            if associated_clause_id is not None:
+                agreement_item.associated_clause = orm.object_session(agreement).query(FinancialItemClause).get(associated_clause_id)
+            elif custom_clause is not None:
                 agreement_item.use_custom_clause = True
                 agreement_item.custom_clause = custom_clause
+            else:
+                raise UserException('Either an associated_clause_id or custom_clause is required for the {} clause with rank {}'.format(described_by, rank))
 
             agreement.agreed_items.append(agreement_item)
-
-
 
     orm.object_session(agreement).flush()
 
@@ -753,22 +767,19 @@ def get_packages(session, document):
 
     for package in session.query(FinancialPackage).all():
         products = []
-        for product in package.available_products:
-            products.append({
-                'id': product.product.id,
-                'name': product.product.name,
-            })
+        for product_availability in package.available_products:
+            product = product_availability.product
             available_funds = []
             for fund_availability in product.available_funds:
                 fund = fund_availability.fund
                 funds.append({
-                    'code': fund.bfi,
+                    'bfi_code': fund.bfi,
                     'name': fund.name
                     })
 
             products.append({
-                'id': product.product.id,
-                'name': product.product.name,
+                'id': product.id,
+                'name': product.name,
                 'available_funds': available_funds,
             })
 

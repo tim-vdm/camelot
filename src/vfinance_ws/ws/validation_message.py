@@ -112,7 +112,7 @@ for asset_feature_type in asset_feature_types:
 Assets = Schema([AGREEMENT_ASSET_SCHEMA])
 
 FUND_DISTRIBUTION_SCHEMA = {
-    Required("code"): String(max=12),
+    Required("fund_code"): String(max=12),
     Required("percentage"): String(max=6)
     }
 
@@ -219,7 +219,7 @@ DIRECT_DEBIT_MANDATE_SCHEMA = {
 AGREED_ITEM_SCHEMA = {
     Required("described_by"): String(max=30),
     Required("rank"): int,
-    Required("associated_clause_id"): int,
+    Optional("associated_clause_id"): int,
     Optional("custom_clause"): String()
 }
 

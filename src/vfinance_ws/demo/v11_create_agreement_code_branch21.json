@@ -135,13 +135,11 @@
         {
             "described_by": "beneficiary",
             "rank": 1,
-            "associated_clause_id": 272,
             "custom_clause": "Begunstiging bij leven: De wettelijke echtgenoot voor 1/2, de kinderen voor 1/2"
         },
         {
             "described_by": "beneficiary",
             "rank": 2,
-            "associated_clause_id": 272,
             "custom_clause": "Begunstiging bij overlijden: De wettelijke echtgenoten voor 100%"
         },
         {

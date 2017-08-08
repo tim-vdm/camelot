@@ -996,6 +996,7 @@ CREATE TABLE bank_rechtspersoon (
 	status INTEGER,
 	no_commercial_mailings boolean NOT NULL,
 	website VARCHAR(253),
+	role_group INTEGER,
 	PRIMARY KEY (id), 
 	CONSTRAINT bank_rechtspersoon_vertegenwoordiger_fk FOREIGN KEY(vertegenwoordiger) REFERENCES bank_natuurlijke_persoon (id)
 );
@@ -2095,6 +2096,7 @@ CREATE TABLE financial_agreement_asset_feature
     reference character varying(128),
     of_id INTEGER NOT NULL,
     described_by INTEGER NOT NULL,
+    specified_by INTEGER,
     id INTEGER NOT NULL,
     PRIMARY KEY (id),
     CONSTRAINT financial_agreement_asset_feature_of_id_pkey FOREIGN KEY (of_id) REFERENCES financial_agreement_asset_usage (id) MATCH SIMPLE
@@ -2264,6 +2266,7 @@ CREATE TABLE financial_agreement_premium_feature (
 	described_by INTEGER NOT NULL, 
 	premium_period_type INTEGER, 
 	comment TEXT, 
+	specified_by INTEGER, 
 	PRIMARY KEY (id), 
 	CHECK (automated_clearing IN (0, 1)), 
 	CHECK (overrule_required IN (0, 1)), 
@@ -3132,6 +3135,7 @@ CREATE TABLE financial_agreement_role_feature
   described_by integer NOT NULL,
   id INTEGER PRIMARY KEY,
   of_id integer NOT NULL, reference CHARACTER VARYING(128),
+  specified_by INTEGER,
   CONSTRAINT financial_agreement_role_feature_of_id_fkey FOREIGN KEY (of_id)
       REFERENCES financial_agreement_role (id) MATCH SIMPLE
       ON UPDATE CASCADE ON DELETE CASCADE

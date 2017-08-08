@@ -159,5 +159,12 @@
             "product_id": 68, 
             "row_type": "premium_amount"
         }
+    ],
+    "agreed_items": [
+        {
+            "described_by": "conventional_return",
+            "rank": 1,
+            "associated_clause_id": 266
+        }
     ]
 }
