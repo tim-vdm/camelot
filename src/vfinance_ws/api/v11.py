@@ -405,8 +405,8 @@ def create_agreement_from_json(session, document):
             insured_loan.loan_amount = schedule.pop('amount')
             insured_loan.interest_rate = schedule.pop('initial_interest_rate')
             insured_loan.number_of_months = schedule.pop('duration')
-            insured_loan.type_of_payments = aflossing_field_mapping.get(schedule.pop('described_by'), None)
-            insured_loan.payment_interval = interval_field_mapping.get(schedule.pop('period_type'), None)
+            insured_loan.type_of_payments = aflossing_field_mapping.get(schedule.pop('described_by', None), None)
+            insured_loan.payment_interval = interval_field_mapping.get(schedule.pop('period_type', None), None)
             insured_loans[schedule.get('id')] = insured_loan
 
 
@@ -439,7 +439,7 @@ def create_agreement_from_json(session, document):
                 premium_schedule.period_type = period_type
                 premium_schedule.direct_debit = direct_debit
                 premium_schedule.insured_from_date = get_date_from_json_date(schedule.pop('insured_from_date', None))
-                premium_schedule.insured_duration = schedule.pop('insured_duration')
+                premium_schedule.insured_duration = schedule.pop('insured_duration', None)
                 premium_schedule.coverage_for = coverage_level
                 premium_schedule.financial_agreement = agreement
                 premium_schedule.coverage_amortization = insured_loan
@@ -765,14 +765,20 @@ def create_facade_from_create_agreement_schema(session, document):
 def get_packages(session, document):
     packages = []
 
-    for package in session.query(FinancialPackage).all():
+    query = session.query(FinancialPackage)
+    query = query.options(orm.subqueryload('available_products'))
+    query = query.options(orm.joinedload('available_products.product'))
+    query = query.options(orm.subqueryload('available_products.product.available_funds'))
+    query = query.options(orm.joinedload('available_products.product.available_funds.fund'))
+
+    for package in query.all():
         products = []
         for product_availability in package.available_products:
             product = product_availability.product
             available_funds = []
             for fund_availability in product.available_funds:
                 fund = fund_availability.fund
-                funds.append({
+                available_funds.append({
                     'bfi_code': fund.bfi,
                     'name': fund.name
                     })

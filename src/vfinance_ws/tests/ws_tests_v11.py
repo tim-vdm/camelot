@@ -498,6 +498,15 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         content = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertIsInstance(content, dict)
+        
+        
+    def test_get_packages(self):
+        document = load_demo_json('v11_get_packages')
+        response = self.post_json('get_packages', data=document)
+        
+        content = json.loads(response.data)
+        self.assertEqual(response.status_code, 200)
+        self.assertIsInstance(content, dict)
 
 
 if __name__ == '__main__':
