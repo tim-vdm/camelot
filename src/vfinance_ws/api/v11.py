@@ -590,6 +590,8 @@ def create_agreement_from_json(session, document):
 
             agreement.agreed_items.append(agreement_item)
 
+    orm.object_session(agreement).flush()
+
     return agreement
 
 @with_session
