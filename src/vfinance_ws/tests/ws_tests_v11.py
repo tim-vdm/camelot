@@ -6,6 +6,7 @@ from flask import json
 from flask import url_for
 
 from camelot.core.orm import Session
+from camelot.core.exception import UserException
 
 from vfinance.model.financial.agreement import FinancialAgreement
 from vfinance.model.financial.package import FinancialPackage
@@ -498,12 +499,22 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         content = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertIsInstance(content, dict)
-        
-        
+
+
+    def test_create_agreement_code_branch23_wrong_fund_dist(self):
+        document = load_demo_json('v11_create_agreement_code_branch23_wrong_fund_dist')
+        response = self.post_json('create_agreement_code', data=document)
+
+        content = json.loads(response.data)
+
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(content.get('message'), 'Select a total of 100% target funds, total is now 90.00%')
+
+
     def test_get_packages(self):
         document = load_demo_json('v11_get_packages')
         response = self.post_json('get_packages', data=document)
-        
+
         content = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertIsInstance(content, dict)

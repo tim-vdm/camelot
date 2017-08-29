@@ -17,6 +17,7 @@ from camelot.core.utils import ugettext
 from camelot.core.templates import environment
 
 from camelot.model.party import Country, City
+from camelot.model.authentication import end_of_times
 
 from vfinance.connector.json_ import ExtendedEncoder, FinancialAgreementJsonExport
 
@@ -449,14 +450,22 @@ def create_agreement_from_json(session, document):
                     if feature_value is not None:
                         agreed_feature = FinancialAgreementPremiumScheduleFeature()
                         agreed_feature.apply_from_date = begin_of_times
+                        agreed_feature.apply_thru_date = end_of_times()
                         agreed_feature.described_by = feature_name
                         agreed_feature.value = Decimal(feature_value)
                         agreed_feature.agreed_on = premium_schedule
                 for fund in fund_distribution:
-                    fund_distribution = FinancialAgreementFundDistribution()
-                    fund_distribution.distribution_of = premium_schedule
-                    fund_distribution.target_percentage = fund.pop('percentage')
-                    fund_distribution.fund = orm.object_session(agreement).query(FinancialSecurity).filter(FinancialSecurity.bfi==fund.pop('fund_code')).first()
+                    fund_code = fund.pop('fund_code')
+                    vf_fund = orm.object_session(agreement).query(FinancialSecurity).filter(FinancialSecurity.bfi==fund_code).first()
+                    if vf_fund is not None:
+                        fa_fund_distribution = FinancialAgreementFundDistribution()
+                        fa_fund_distribution.distribution_of = premium_schedule
+                        fa_fund_distribution.target_percentage = Decimal(fund.pop('percentage'))
+                        fa_fund_distribution.fund = vf_fund
+                    else:
+                        raise UserException('A fund with code {} is not available for this package'.format(fund_code))
+                if len(fund_distribution) > 0 and premium_schedule.funds_target_percentage_total < Decimal('100.0'):
+                    raise UserException('Select a total of 100% target funds, total is now {:.2f}%'.format(premium_schedule.funds_target_percentage_total))
             elif schedule_type == 'applied_amount':
                 applied_amount = AppliedLoanAmount()
                 applied_amount.financial_agreement = agreement
@@ -570,7 +579,11 @@ def create_agreement_from_json(session, document):
             agreement_item.described_by = described_by
             agreement_item.rank = rank
             if associated_clause_id is not None:
-                agreement_item.associated_clause = orm.object_session(agreement).query(FinancialItemClause).get(associated_clause_id)
+                associated_clause = orm.object_session(agreement).query(FinancialItemClause).get(associated_clause_id)
+                if associated_clause is not None:
+                    agreement_item.associated_clause = associated_clause
+                else:
+                    raise UserException('Associated clause with id {} does not exist'.format(associated_clause_id))
             elif custom_clause is not None:
                 agreement_item.use_custom_clause = True
                 agreement_item.custom_clause = custom_clause
@@ -578,8 +591,6 @@ def create_agreement_from_json(session, document):
                 raise UserException('Either an associated_clause_id or custom_clause is required for the {} clause with rank {}'.format(described_by, rank))
 
             agreement.agreed_items.append(agreement_item)
-
-    orm.object_session(agreement).flush()
 
     return agreement
 
