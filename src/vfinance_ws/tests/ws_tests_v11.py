@@ -6,7 +6,6 @@ from flask import json
 from flask import url_for
 
 from camelot.core.orm import Session
-from camelot.core.exception import UserException
 
 from vfinance.model.financial.agreement import FinancialAgreement
 from vfinance.model.financial.package import FinancialPackage
