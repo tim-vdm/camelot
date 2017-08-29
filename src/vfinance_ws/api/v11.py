@@ -17,7 +17,6 @@ from camelot.core.utils import ugettext
 from camelot.core.templates import environment
 
 from camelot.model.party import Country, City
-from camelot.model.authentication import end_of_times
 
 from vfinance.connector.json_ import ExtendedEncoder, FinancialAgreementJsonExport
 
@@ -450,7 +449,6 @@ def create_agreement_from_json(session, document):
                     if feature_value is not None:
                         agreed_feature = FinancialAgreementPremiumScheduleFeature()
                         agreed_feature.apply_from_date = begin_of_times
-                        agreed_feature.apply_thru_date = end_of_times()
                         agreed_feature.described_by = feature_name
                         agreed_feature.value = Decimal(feature_value)
                         agreed_feature.agreed_on = premium_schedule
