@@ -422,7 +422,7 @@ def create_agreement_from_json(session, document):
             payment_duration = schedule.pop('payment_duration', duration)
             fund_distribution = schedule.pop('fund_distribution', [])
             if schedule_type == 'premium_amount':
-                coverage_level_json = schedule.pop('coverage_for')
+                coverage_level_json = schedule.pop('coverage_for', None)
                 coverage_level = None
                 if coverage_level_json is not None:
                     for cl in product.get_available_coverage_levels_at(agreement.apply_from_date):

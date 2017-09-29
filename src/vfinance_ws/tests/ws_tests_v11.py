@@ -500,6 +500,15 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertIsInstance(content, dict)
 
 
+    def test_create_agreement_code_branch23_no_coverage(self):
+        document = load_demo_json('v11_create_agreement_code_branch23_no_coverage')
+        response = self.post_json('create_agreement_code', data=document)
+
+        content = json.loads(response.data)
+        self.assertEqual(response.status_code, 200)
+        self.assertIsInstance(content, dict)
+
+
     def test_create_agreement_code_branch23_wrong_fund_dist(self):
         document = load_demo_json('v11_create_agreement_code_branch23_wrong_fund_dist')
         response = self.post_json('create_agreement_code', data=document)

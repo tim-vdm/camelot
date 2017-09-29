@@ -9,6 +9,7 @@ integration
 itsdangerous
 jinja2
 markupsafe
+openpyxl
 phonenumbers
 png
 polib
