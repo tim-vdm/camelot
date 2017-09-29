@@ -16,12 +16,13 @@
 
 import os
 import logging
-import urllib2
 import json
 import datetime
 import dateutil.relativedelta
 import sqlite3
+import six
 from base64 import b64encode
+from six.moves import urllib
 
 
 import requests
@@ -61,9 +62,9 @@ def build():
 def build_upload():
     run_tests()
     api.local('python setup.py bdist_cloud upload_cloud {0.CONFIGURATION}'.format(env))
-    print 'NOTE ========================================================'
-    print 'Don\'t forget: fab -c ../conf/{0.CONFIGURATION}.conf restart_service'.format(env)
-    print '============================================================='
+    print('NOTE ========================================================')
+    print('Don\'t forget: fab -c ../conf/{0.CONFIGURATION}.conf restart_service'.format(env))
+    print('=============================================================')
 
 
 def run_local():
@@ -271,9 +272,9 @@ def check_hash():
                                    user=env.HOST_USER,
                                    key_filename='../conf/{0}.pem'.format(env.CONFIGURATION)):
         scheme = 'http' if env.CONFIGURATION == 'local' else 'https'
-        h2 = urllib2.urlopen("{}://{}/api/v{}/hash".format(scheme, env.HOST_NAME, API_VERSION)).read().strip()
+        h2 = urllib.urlopen("{}://{}/api/v{}/hash".format(scheme, env.HOST_NAME, API_VERSION)).read().strip()
 
-        print "Local Hash: %r\nRemote Hash: %r\nEqual: %s" % (h, h2, h == h2)
+        print("Local Hash: %r\nRemote Hash: %r\nEqual: %s" % (h, h2, h == h2))
 
 def check_amount_proposal():
     scheme = 'http' if env.CONFIGURATION == 'local' else 'https'
@@ -319,5 +320,5 @@ def check_amount_proposal():
     r = response.json()
 
     print('The premium is {} and it should be {}'.format(r.get('premium_schedule__1__amount'), values.get('premium_schedule__1__amount')))
-    print "Local Hash: %r\nRemote Hash: %r\nEqual: %s" % (r, values, r == values)
+    print("Local Hash: %r\nRemote Hash: %r\nEqual: %s" % (r, values, r == values))
 
