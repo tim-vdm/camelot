@@ -11,6 +11,10 @@ To upload new version to production run:
 When tests pass locally but production doesn't work you can run locally from the egg:
     1. fab build -c ../conf/production.conf
     2. fab run_local -c ../conf/production.conf
+    or
+    1. cd dist/cloud
+    2. export PYTHONPATH=../../../../v-finance/subrepos/cloudlaunch/
+    3. python -m cloudlaunch.main --cld-file=v-finance-web-service-production.cld --cld-name=V-Finance-WS --cld-branch=production 8080
 
 If we want to check the version, we have the check_hash command
     fab check_hash -c ../conf/production.conf

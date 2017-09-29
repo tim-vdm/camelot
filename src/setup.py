@@ -102,6 +102,7 @@ setup(
                 'polib',
                 'voluptuous',
                 'png',
+                'jdcal',
                 'flask_httpauth'],
     entry_points={'console_scripts': ['server = vfinance_ws.tornado_run:main'],
                   # "egg_info.writers": ["foo_bar.txt = setuptools.command.egg_info:write_arg"]

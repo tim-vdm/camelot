@@ -3,10 +3,12 @@ cloudlaunch2
 dateutil
 decorator
 dogpile
+et_xmlfile
 flask
 flask_httpauth
 integration
 itsdangerous
+jdcal
 jinja2
 markupsafe
 openpyxl
