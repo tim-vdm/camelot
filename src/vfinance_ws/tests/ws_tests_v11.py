@@ -472,6 +472,11 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertEqual(direct_debit_mandate_nl._iban, 'NL91 ABNA 0417 1643 00')
         self.assertEqual(direct_debit_mandate_nl.bank_identifier_code, 'ABNANL2AXXX')
 
+        imported_functional_settings = [fs.described_by for fs in imported_agreement.agreed_functional_settings]
+
+        for expected_functional_setting in ['retirement_savings', 'exit_at_first_decease', 'mail_to_first_subscriber', 'mail_to_broker']:
+            self.assertIn(expected_functional_setting, imported_functional_settings)
+
 
         items = [item for item in imported_agreement.agreed_items]
         self.assertEqual(len(items), 2)

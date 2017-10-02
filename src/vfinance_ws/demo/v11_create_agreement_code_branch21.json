@@ -149,5 +149,5 @@
         }
     ],
     "exit_condition": "exit_at_first_decease",
-    "mail_condition": "mail_to_first_subscriber"
+    "mail_condition": ["mail_to_first_subscriber"]
 }

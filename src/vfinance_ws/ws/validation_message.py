@@ -274,6 +274,9 @@ CI_CREATE_AGREEMENT_CODE_SCHEMA.update({
     Optional('pledgee_reference'): Any(None, Length(max=30)),
 })
 
+MailConditions = Schema([String(max=40)])
+
+
 CREATE_AGREEMENT_CODE_SCHEMA = {
     Required('origin'): Length(max=32),
     Required('agent_official_number_fsma'): String(max=128),
@@ -287,7 +290,7 @@ CREATE_AGREEMENT_CODE_SCHEMA = {
     Optional('fiscal_regime'): String(max=40),
     Optional('start_condition'): String(max=40),
     Optional('exit_condition'): String(max=40),
-    Optional('mail_condition'): String(max=40),
+    Optional('mail_condition'): MailConditions,
     Optional('attribute_condition'): String(max=40),
     Optional('state_guarantee'): String(max=40),
     Optional('funding_loss'): String(max=40),

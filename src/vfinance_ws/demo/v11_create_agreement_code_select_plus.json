@@ -159,6 +159,8 @@
             "rank": 2,
             "custom_clause": "De begunstigden"
         }
-    ]
+    ],
+    "exit_condition": "exit_at_first_decease",
+    "mail_condition": ["mail_to_first_subscriber", "mail_to_broker"]
 }
 

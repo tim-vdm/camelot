@@ -501,7 +501,7 @@ def create_agreement_from_json(session, document):
                                     asset_feature.of = asset.assets[0]
                                 asset_feature.value = Decimal(feature_value)
                                 asset_feature.specified_by = 'user'
-                                
+
                 for json_asset in assets:
                     asset = json_asset.get('asset')
                     if schedule.get('signing_agent_mortgage') is not None:
@@ -529,10 +529,21 @@ def create_agreement_from_json(session, document):
                         agreed_feature.agreed_on = applied_amount
 
 
+    # If functional setting is exclusive, there is only one value
     for functional_setting_group in [group for group in exclusiveness_by_functional_setting_group if exclusiveness_by_functional_setting_group.get(group) == True]:
-        
+
         value = document.get(functional_setting_group.name)
         if value is not None:
+            functional_setting = FinancialAgreementFunctionalSettingAgreement()
+            functional_setting.described_by = value
+            functional_setting.agreed_on = agreement
+
+
+    # Loop over the values if the functional setting is not exclusive
+    for functional_setting_group in [group for group in exclusiveness_by_functional_setting_group if exclusiveness_by_functional_setting_group.get(group) == False]:
+
+        values = document.get(functional_setting_group.name, [])
+        for value in values:
             functional_setting = FinancialAgreementFunctionalSettingAgreement()
             functional_setting.described_by = value
             functional_setting.agreed_on = agreement
