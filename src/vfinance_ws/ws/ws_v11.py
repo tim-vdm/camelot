@@ -345,9 +345,10 @@ def create_agreement_code(document):
             'fsma': document['agent_official_number_fsma'],
             'code': result['code'].replace('/', '_'),
             'type': document['row_type'],
+            'package_id': document['package_id'],
             'ident': uuid.uuid4().hex,
         }
-        fname = '{code}-{fsma}-{type}-{ident}.json'.format(**values)
+        fname = '{code}-{fsma}-{type}-{package_id}-{ident}.json'.format(**values)
         fname = fname.replace(' ', '_')
 
         today = datetime.date.today()

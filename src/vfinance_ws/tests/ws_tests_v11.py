@@ -277,6 +277,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
 
         json_path = content.get('json_path')
         self.assertIn('loan_application', json_path)
+        self.assertIn('-66-', json_path)
         exported_json = None
         with open(json_path) as json_file:
             exported_json = json.load(json_file)
@@ -377,6 +378,7 @@ class WebServiceVersion11TestCase(unittest.TestCase):
         self.assertIsInstance(content, dict)
         json_path = content.get('json_path')
         self.assertIn('financial_agreement', json_path)
+        self.assertIn('-65-', json_path)
         set_new_agreement_code(session, json_path)
         import_action = JsonImportAction()
         imported_agreement = list(import_action.import_file(session,
