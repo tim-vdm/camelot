@@ -43,3 +43,12 @@ make clean html
 The result will be available in src/vfinance_ws/ws/docs/ and the webserver will
 send the result to the browser when this one will check the last version of the
 documentation.
+
+
+To extract a separate schema and data file from the sqlite3 dump from VF:
+```
+sqlite3 <dump-filename> .sch > schema.sql
+sqlite3 <dump-filename> .dump > dump.sql
+grep -v -f schema.sql dump.sql > data.sql
+```
+

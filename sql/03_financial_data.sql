@@ -1,7 +1,6 @@
 BEGIN;
 
-INSERT INTO "financial_package" VALUES('Boutique 44',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,38);
+
 INSERT INTO "financial_package" VALUES('Private Life Account 44',NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120515 MVD: opmaak pla tak 44. de makelaars zullen gaandeweg geregistreerd worden. de standaardclausules zijn ingebracht. seciale clausules zullen op het moment dat ze vereist zijn ingebracht worden.</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">safe 21 MAG NIET ONDER DE PRODUCTEN KOMEN; DIT IS EEN PRODUCT WAAR PATRONALE STEEDS DE MASTERBROKER IS.</p>',4000000,4999999,8000000,8009999,NULL,31);
@@ -80,40 +79,24 @@ INSERT INTO "financial_package" VALUES('S-Team Invest',NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">S-Team Invest omvat de producten van S-team </p>',4000000,4999999,8000000,8009999,NULL,20);
 INSERT INTO "financial_package" VALUES('Platinum Life',NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Omvat enkel Octane Tranche VII</p>',4000000,4999999,8000000,8009999,NULL,21);
-INSERT INTO "financial_package" VALUES('Select+',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,65);
 INSERT INTO "financial_package" VALUES('Fork Huurwaarborg',NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,3);
 INSERT INTO "financial_package" VALUES('Fout',NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">StarFix Plus wordt in het leven geroepen om tegemoet te komen aan de lagere intrestvoeten. hier zal WD aan gekoppeld worden. Nog niet commercieel in voegen. Enkel intern besproken.</p>',4000000,4999999,8000000,8009999,NULL,12);
+INSERT INTO "financial_package" VALUES('Select+',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,65);
+INSERT INTO "financial_package" VALUES('Patronale Life BONUSPLAN',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,34);
 INSERT INTO "financial_package" VALUES('Private Life Account',NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Private life Account omvat de producten van Fructi Causa:</p>',4000000,4999999,8000000,8009999,NULL,16);
 INSERT INTO "financial_package" VALUES('Patronale Life Hypotheken Investeringskrediet',NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160311 mvd : toevoegen agreement-proposal</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160311 mvd : setting vervaldag toegevoegd</p>',0,0,8000000,8009999,'300/0300/00081',63);
-INSERT INTO "financial_package" VALUES('Cardif Golden Future',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,40);
 INSERT INTO "financial_package" VALUES('Patronale Life Hypotheken Wet 92',NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160311 mvd : toevoegen agreement-proposal</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160311 mvd : setting vervaldag toegevoegd</p>',0,0,8000000,8009999,'300/0100/00095',66);
 INSERT INTO "financial_package" VALUES('Patronale Life Hypotheken A.R.225',NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,0,8000000,8009999,'300/0200/00088',67);
-INSERT INTO "financial_package" VALUES('MAESTRO INVEST BEL 3',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,47);
-INSERT INTO "financial_package" VALUES('DB HIGH COUPON II',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,46);
-INSERT INTO "financial_package" VALUES('DB HIGH COUPON I',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,45);
-INSERT INTO "financial_package" VALUES('Reflex Horizon Dreze',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,57);
-INSERT INTO "financial_package" VALUES('Reflex Horizon CP-Banque SCRL',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,56);
-INSERT INTO "financial_package" VALUES('PROFIL INVEST',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,48);
-INSERT INTO "financial_package" VALUES('ROBECO LIFE BELGIUM (CAPI)',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,60);
-INSERT INTO "financial_package" VALUES('Reflex Horizon Gesbanque',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,59);
 INSERT INTO "financial_package" VALUES('Global Investors Account',NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Global Investors Account omvat de producten van Fides</p>',4000000,4999999,8000000,8009999,NULL,17);
 INSERT INTO "financial_package" VALUES('Elitis Strategy Account',NULL,'
@@ -122,50 +105,52 @@ INSERT INTO "financial_package" VALUES('Elitis Classic Account',NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Voorganger Elitis Strategy Account</p>',4000000,4999999,8000000,8009999,NULL,22);
 INSERT INTO "financial_package" VALUES('Patronale Life Pensioenplan',NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">T-Fund 21 Overzetten naar V-Finance</p>',4000000,4999999,8000000,8009999,NULL,28);
-INSERT INTO "financial_package" VALUES('CARDIF EQUITIES',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,62);
-INSERT INTO "financial_package" VALUES('ROBECO LIFE BELGIUM (REMBT)',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,61);
-INSERT INTO "financial_package" VALUES('Reflex Horizon Eural',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,58);
-INSERT INTO "financial_package" VALUES('Short Term Cover',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,64);
 INSERT INTO "financial_package" VALUES('Fork Rekening',NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,15);
 INSERT INTO "financial_package" VALUES('Boutique 23',NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,26);
-INSERT INTO "financial_package" VALUES('Reflex Confort CP-Banque SCRL',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,51);
-INSERT INTO "financial_package" VALUES('Reflex Confort Cortal',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,50);
-INSERT INTO "financial_package" VALUES('Reflex Confort Artesia',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,49);
-INSERT INTO "financial_package" VALUES('Cortal invest',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,44);
-INSERT INTO "financial_package" VALUES('Cardif Golden Future Eural',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,43);
 INSERT INTO "financial_package" VALUES('Renta Bonus',NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,14);
 INSERT INTO "financial_package" VALUES('Fork Rekening Corporate',NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,24);
 INSERT INTO "financial_package" VALUES('Deposit4Sure',NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130326 mvd : certificaat DEPOSIT 4 SURE -&gt; Adres agent hard gecodeerd op adres van Bart Van Cauwenbergh</p>',4000000,4999999,8000000,8009999,NULL,32);
+INSERT INTO "financial_package" VALUES('CARDIF EQUITIES',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,62);
+INSERT INTO "financial_package" VALUES('ROBECO LIFE BELGIUM (REMBT)',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,61);
+INSERT INTO "financial_package" VALUES('ROBECO LIFE BELGIUM (CAPI)',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,60);
+INSERT INTO "financial_package" VALUES('Reflex Horizon Gesbanque',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,59);
+INSERT INTO "financial_package" VALUES('Reflex Horizon Eural',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,58);
+INSERT INTO "financial_package" VALUES('Reflex Horizon Dreze',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,57);
+INSERT INTO "financial_package" VALUES('Reflex Horizon CP-Banque SCRL',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,56);
+INSERT INTO "financial_package" VALUES('Reflex Confort CP-Banque SCRL',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,51);
+INSERT INTO "financial_package" VALUES('Reflex Confort Cortal',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,50);
+INSERT INTO "financial_package" VALUES('Reflex Confort Artesia',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,49);
+INSERT INTO "financial_package" VALUES('PROFIL INVEST',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,48);
+INSERT INTO "financial_package" VALUES('MAESTRO INVEST BEL 3',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,47);
+INSERT INTO "financial_package" VALUES('DB HIGH COUPON II',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,46);
+INSERT INTO "financial_package" VALUES('DB HIGH COUPON I',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,45);
+INSERT INTO "financial_package" VALUES('Cortal invest',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,44);
+INSERT INTO "financial_package" VALUES('Cardif Golden Future Eural',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,43);
+INSERT INTO "financial_package" VALUES('Cardif Golden Future',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,40);
 INSERT INTO "financial_package" VALUES('Merit Selection',NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Merit Selection is het product dat door Merit Capital zal verkocht worden.</p>',4000000,4999999,8000000,8009999,NULL,33);
-INSERT INTO "financial_package" VALUES('Patronale Life BONUSPLAN',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,34);
-INSERT INTO "financial_package" VALUES('Reflex Horizon Cortal',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,55);
-INSERT INTO "financial_package" VALUES('Reflex Horizon Artesia',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,54);
-INSERT INTO "financial_package" VALUES('Reflex Confort Gesbanque',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,53);
-INSERT INTO "financial_package" VALUES('Reflex Confort Dreze',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,52);
-INSERT INTO "financial_package" VALUES('Cardif Golden Future - option 2 EUR',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,42);
-INSERT INTO "financial_package" VALUES('Cardif Golden Future - option 1 EUR',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,41);
 INSERT INTO "financial_package" VALUES('Fructisafe',NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing rentevoeten</span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120123 mvd : aanpassing intrest 3.25 vanaf 01/04/2012 </p>
@@ -251,16 +236,34 @@ INSERT INTO "financial_package" VALUES('Secure 21',NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,5);
 INSERT INTO "financial_package" VALUES('Patronale Life Hypotheken WER Boek VII',NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,0,8000000,8009999,'300/0100/00095',68);
-INSERT INTO "financial_package" VALUES('ABN AMRO Corporate Value',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,69);
-INSERT INTO "financial_package" VALUES('ABN AMRO Life Value Evolution',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,71);
 INSERT INTO "financial_package" VALUES('ABN AMRO Private Value',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,72);
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,72);
+INSERT INTO "financial_package" VALUES('ABN AMRO Life Value Evolution',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,71);
 INSERT INTO "financial_package" VALUES('ABN AMRO Life Value',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,70);
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,70);
+INSERT INTO "financial_package" VALUES('ABN AMRO Corporate Value',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,69);
+INSERT INTO "financial_package" VALUES('Reflex Horizon Cortal',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,55);
+INSERT INTO "financial_package" VALUES('Reflex Horizon Artesia',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,54);
+INSERT INTO "financial_package" VALUES('Reflex Confort Gesbanque',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,53);
+INSERT INTO "financial_package" VALUES('Reflex Confort Dreze',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,52);
+INSERT INTO "financial_package" VALUES('Cardif Golden Future - option 2 EUR',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,42);
+INSERT INTO "financial_package" VALUES('Cardif Golden Future - option 1 EUR',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,41);
+INSERT INTO "financial_package" VALUES('Patronale Life Flexible',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,74);
+INSERT INTO "financial_package" VALUES('Boutique 44',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,38);
 INSERT INTO "financial_package" VALUES('ABN AMRO Direct Invest Life',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4999999,8000000,8009999,NULL,73);
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,73);
+INSERT INTO "financial_package" VALUES('Short Term Cover',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4000000,4499999,8000000,8009999,NULL,64);
 
 INSERT INTO "financial_notification_applicability" VALUES('2016-01-01','2400-12-31',18,'notifications/Select_Plus/account-creation-company_nl_BE.html','nl_BE',NULL,475,65);
 INSERT INTO "financial_notification_applicability" VALUES('2016-01-01','2400-12-31',18,'notifications/Select_Plus/account-creation-accepting-beneficiary_nl_BE.html','nl_BE',NULL,479,65);
@@ -796,6 +799,7 @@ INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-
 INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',6,'time_deposit/account_state_21_fr_BE.xml','fr_BE',NULL,583,73);
 INSERT INTO "financial_notification_applicability" VALUES('2017-05-31','2400-12-31',8,'time_deposit/transaction_fr_BE.xml','fr_BE',NULL,593,70);
 INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',6,'time_deposit/account_state_21_nl_BE.xml','nl_BE',NULL,584,73);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',8,'time_deposit/transaction_fr_BE.xml','fr_BE',NULL,609,69);
 INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',6,'time_deposit/account_state_21_nl_BE.xml','nl_BE',NULL,588,71);
 INSERT INTO "financial_notification_applicability" VALUES('2017-05-31','2400-12-31',8,'time_deposit/transaction_nl_BE.xml','nl_BE',NULL,598,73);
 INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',6,'time_deposit/account_state_26_fr_BE.xml','fr_BE',NULL,585,72);
@@ -805,11 +809,34 @@ INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-
 INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',6,'time_deposit/account_state_21_fr_BE.xml','fr_BE',NULL,589,70);
 INSERT INTO "financial_notification_applicability" VALUES('2017-05-31','2400-12-31',8,'time_deposit/transaction_nl_BE.xml','nl_BE',NULL,594,70);
 INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',6,'time_deposit/account_state_21_nl_BE.xml','nl_BE',NULL,590,70);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',7,'time_deposit/account_movements_21_nl_BE.xml','nl_BE',NULL,608,70);
 INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',6,'time_deposit/account_state_26_nl_BE.xml','nl_BE',NULL,592,69);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',7,'time_deposit/account_movements_21_fr_BE.xml','fr_BE',NULL,607,70);
 INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',6,'time_deposit/account_state_21_fr_BE.xml','fr_BE',NULL,587,71);
+INSERT INTO "financial_notification_applicability" VALUES('2017-09-01','2400-12-31',21,'financial/agreement_verification_form.html','nl_BE',NULL,624,74);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',8,'time_deposit/transaction_nl_BE.xml','nl_BE',NULL,610,69);
+INSERT INTO "financial_notification_applicability" VALUES('2017-09-01','2400-12-31',21,'financial/agreement_verification_form.html','fr_BE',NULL,625,74);
+INSERT INTO "financial_notification_applicability" VALUES('2017-09-01','2400-12-31',3,'time_deposit/certificate_branch44_nl_BE.xml','nl_BE',NULL,617,74);
+INSERT INTO "financial_notification_applicability" VALUES('2017-09-01','2400-12-31',6,'time_deposit/account_state_44_fr_BE.xml','fr_BE',NULL,620,74);
+INSERT INTO "financial_notification_applicability" VALUES('2017-09-01','2400-12-31',8,'time_deposit/transaction_fr_BE.xml','fr_BE',NULL,622,74);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',7,'time_deposit/account_movements_21_fr_BE.xml','fr_BE',NULL,605,71);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',7,'time_deposit/account_movements_26_nl_BE.xml','nl_BE',NULL,602,72);
 INSERT INTO "financial_notification_applicability" VALUES('2017-05-31','2400-12-31',8,'time_deposit/transaction_fr_BE.xml','fr_BE',NULL,597,73);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',7,'time_deposit/account_movements_21_nl_BE.xml','nl_BE',NULL,606,71);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',8,'time_deposit/account_movements_21_fr_BE.xml','fr_BE',NULL,611,69);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',8,'time_deposit/account_movements_21_nl_BE.xml','nl_BE',NULL,612,69);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',7,'time_deposit/account_movements_21_fr_BE.xml','fr_BE',NULL,599,73);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',7,'time_deposit/account_movements_21_nl_BE.xml','nl_BE',NULL,600,73);
+INSERT INTO "financial_notification_applicability" VALUES('2017-09-01','2400-12-31',7,'time_deposit/account_movements_44_fr_BE.xml','fr_BE',NULL,618,74);
 INSERT INTO "financial_notification_applicability" VALUES('2017-05-31','2400-12-31',8,'time_deposit/transaction_fr_BE.xml','fr_BE',NULL,595,71);
 INSERT INTO "financial_notification_applicability" VALUES('2017-05-31','2400-12-31',8,'time_deposit/transaction_nl_BE.xml','nl_BE',NULL,596,71);
+INSERT INTO "financial_notification_applicability" VALUES('2017-09-01','2400-12-31',7,'time_deposit/account_movements_44_nl_BE.xml','nl_BE',NULL,619,74);
+INSERT INTO "financial_notification_applicability" VALUES('2017-09-01','2400-12-31',6,'time_deposit/account_state_44_nl_BE.xml','nl_BE',NULL,621,74);
+INSERT INTO "financial_notification_applicability" VALUES('2017-09-01','2400-12-31',8,'time_deposit/transaction_nl_BE.xml','nl_BE',NULL,623,74);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',8,'time_deposit/transaction_fr_BE.xml','fr_BE',NULL,603,72);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',8,'time_deposit/transaction_nl_BE.xml','nl_BE',NULL,604,72);
+INSERT INTO "financial_notification_applicability" VALUES('2017-09-01','2400-12-31',3,'time_deposit/certificate_branch44_fr_BE.xml','fr_BE',NULL,616,74);
+INSERT INTO "financial_notification_applicability" VALUES('2017-01-01','2400-12-31',7,'time_deposit/account_movements_26_fr_BE.xml','fr_BE',NULL,601,72);
 
 INSERT INTO "financial_functional_setting_applicability" VALUES('2010-06-29','2400-12-31',1,4,NULL,1,4);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2010-01-01','2400-12-31',5,4,NULL,43,18);
@@ -871,11 +898,7 @@ INSERT INTO "financial_functional_setting_applicability" VALUES('2010-07-01','24
 INSERT INTO "financial_functional_setting_applicability" VALUES('2010-07-01','2400-12-31',2,2,NULL,4,5);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2011-06-21','2400-12-31',1,4,NULL,85,26);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2010-01-01','2400-12-31',3,2,NULL,36,22);
-INSERT INTO "financial_functional_setting_applicability" VALUES('2011-06-21','2400-12-31',2,4,NULL,86,26);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2010-01-01','2400-12-31',2,2,NULL,30,19);
-INSERT INTO "financial_functional_setting_applicability" VALUES('2011-06-21','2400-12-31',3,4,NULL,87,26);
-INSERT INTO "financial_functional_setting_applicability" VALUES('2011-06-21','2400-12-31',4,1,NULL,88,26);
-INSERT INTO "financial_functional_setting_applicability" VALUES('2011-06-21','2400-12-31',5,1,NULL,89,26);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2010-01-01','2400-12-31',3,2,NULL,31,19);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2010-01-01','2400-12-31',2,2,NULL,40,18);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2011-12-29','2400-12-31',4,4,NULL,98,28);
@@ -932,7 +955,6 @@ INSERT INTO "financial_functional_setting_applicability" VALUES('2012-04-01','24
 INSERT INTO "financial_functional_setting_applicability" VALUES('2013-01-09','2400-12-31',4,2,NULL,147,35);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2013-01-09','2400-12-31',8,2,NULL,148,35);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2013-01-09','2400-12-31',10,2,NULL,149,35);
-INSERT INTO "financial_functional_setting_applicability" VALUES('2013-02-01','2400-12-31',1,1,NULL,151,5);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2013-01-09','2400-12-31',1,2,NULL,145,35);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2013-01-09','2400-12-31',3,2,NULL,146,35);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2012-11-01','2400-12-31',10,2,'
@@ -953,6 +975,11 @@ INSERT INTO "financial_functional_setting_applicability" VALUES('2010-01-01','24
 INSERT INTO "financial_functional_setting_applicability" VALUES('2012-01-01','2400-12-31',2,2,NULL,130,31);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2012-01-01','2400-12-31',3,2,NULL,131,31);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',2,1,NULL,233,72);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2011-06-21','2400-12-31',4,4,NULL,88,26);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2011-06-21','2400-12-31',5,4,NULL,89,26);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2011-06-21','2400-12-31',2,2,NULL,86,26);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2011-06-21','2400-12-31',3,2,NULL,87,26);
+INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',2,1,NULL,236,71);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',8,1,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',206,52);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2010-04-01','2400-12-31',3,4,NULL,172,15);
@@ -975,11 +1002,9 @@ INSERT INTO "financial_functional_setting_applicability" VALUES('2011-04-01','24
 INSERT INTO "financial_functional_setting_applicability" VALUES('2013-08-01','2400-12-31',1,4,NULL,164,38);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',8,1,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',198,60);
-INSERT INTO "financial_functional_setting_applicability" VALUES('2014-03-01','2400-12-31',1,1,NULL,176,39);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',8,1,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',199,59);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2013-08-01','2400-12-31',2,4,NULL,165,38);
-INSERT INTO "financial_functional_setting_applicability" VALUES('2014-03-01','2400-12-31',3,1,NULL,177,39);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',8,1,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',211,47);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2013-08-01','2400-12-31',3,4,NULL,166,38);
@@ -1046,17 +1071,16 @@ INSERT INTO "financial_functional_setting_applicability" VALUES('2016-01-01','24
 INSERT INTO "financial_functional_setting_applicability" VALUES('2016-01-01','2400-12-31',1012,4,NULL,226,65);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2016-01-01','2400-12-31',1012,4,NULL,222,66);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2016-01-01','2400-12-31',1011,4,NULL,223,66);
-INSERT INTO "financial_functional_setting_applicability" VALUES('2010-12-28','2400-12-31',4,3,NULL,22,10);
-INSERT INTO "financial_functional_setting_applicability" VALUES('2010-12-28','2400-12-31',5,3,NULL,23,10);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2017-01-01','2400-12-31',10012,1,NULL,227,68);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2017-01-01','2400-12-31',1011,4,NULL,228,68);
 INSERT INTO "financial_functional_setting_applicability" VALUES('2017-01-01','2400-12-31',1012,4,NULL,229,68);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',2,1,NULL,230,73);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',3,1,NULL,231,73);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',8,1,NULL,232,73);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2010-12-28','2400-12-31',4,4,NULL,22,10);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2010-12-28','2400-12-31',5,4,NULL,23,10);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',3,1,NULL,234,72);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',8,1,NULL,235,72);
-INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',2,1,NULL,236,71);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',3,1,NULL,237,71);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',8,1,NULL,238,71);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',2,1,NULL,239,70);
@@ -1065,6 +1089,15 @@ INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','24
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',2,1,NULL,242,69);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',3,1,NULL,243,69);
 INSERT INTO "financial_functional_setting_applicability" VALUES('1900-01-01','2400-12-31',8,1,NULL,244,69);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2017-09-01','2400-12-31',1,2,NULL,245,74);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2017-09-01','2400-12-31',2,4,NULL,246,74);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2017-09-01','2400-12-31',3,2,NULL,247,74);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2017-09-01','2400-12-31',4,4,NULL,248,74);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2017-09-01','2400-12-31',5,4,NULL,249,74);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2017-09-01','2400-12-31',6,4,NULL,250,74);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2014-03-01','2400-12-31',1,2,NULL,176,39);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2014-03-01','2400-12-31',3,2,NULL,177,39);
+INSERT INTO "financial_functional_setting_applicability" VALUES('2013-02-01','2400-12-31',1,4,NULL,151,5);
 
 INSERT INTO "financialproduct_status" VALUES(NULL,'2012-02-29','2400-12-31','2012-02-29','2400-12-31',1,1,13);
 INSERT INTO "financialproduct_status" VALUES(NULL,'2012-03-28','2400-12-31','2012-03-28','2400-12-31',1,4,3);
@@ -1131,6 +1164,7 @@ INSERT INTO "financialproduct_status" VALUES(NULL,'2017-05-29','2400-12-31','201
 INSERT INTO "financialproduct_status" VALUES(NULL,'2017-05-29','2400-12-31','2017-05-29','2400-12-31',1,127,124);
 INSERT INTO "financialproduct_status" VALUES(NULL,'2017-06-01','2400-12-31','2017-06-01','2400-12-31',1,128,125);
 INSERT INTO "financialproduct_status" VALUES(NULL,'2017-06-01','2400-12-31','2017-06-01','2400-12-31',1,129,126);
+INSERT INTO "financialproduct_status" VALUES(NULL,'2017-09-14','2400-12-31','2017-09-14','2400-12-31',1,130,127);
 
 INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421212,5,0,0,'Short Term Cover',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'COSTC',NULL,NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,67,37,0,'','RPSTC','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_STC',365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
@@ -1248,23 +1282,10 @@ INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Boutique 23'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',1,26,39,3,'22352','SSV','VAT23','Switc','BA','VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'MAESTRO INVEST BEL 3',NULL,'2015-06-24','2015-06-24',NULL,NULL,'ovdr',NULL,'CoCD','MIG_V',NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',1,46,39,3,NULL,NULL,'VAT23','Switc',NULL,'VPREM',NULL,NULL,NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('loan',NULL,NULL,2234,5,1,0,'Patronale Life Persoonlijke lening (hypotheek)',NULL,'2000-01-01','2000-01-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150828 mvd : Wet92 en AR225 (nalv release augustus 20150828)</p>',0,70,1001,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,1,0,'NewHy','Hypot','HypRa','Hypaf',NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'PROFIL INVEST',NULL,'2015-06-24','2015-06-24',NULL,NULL,'ovdr',NULL,'CoCD','MIG_V',NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',1,47,39,3,NULL,NULL,'VAT23','Switc',NULL,'VPREM',NULL,NULL,NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,0,0,0,0,'Tak 23 BASIS',NULL,'2013-06-27','1980-01-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,39,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Merit Selection',NULL,'2012-04-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Merit Selection : product ontwikkeld samen met Merit Capital. binnen Merit Selection zullen fondsen beheerd door Merit Capital aangeboden worden.</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150928 mvd : uitstapkost niet gedefinieerd 75 eeur eerste 8 jaar van het contract.</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160313 mvd : overlijdensparameter toegevoegd</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Fondsen</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140519 mvd : Carmignac A toegevoegd. Switch naar Carmignac a mogelijk gemaakt om de kleine fondsen (dyntech, ...) leeg te kunnen maken.</p>',1,31,39,3,'22352','SSV','VAT23','Switc','BA','VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('loan',NULL,NULL,2234,5,1,0,'Patronale Life Investeringskrediet',NULL,'2000-01-01','2000-01-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,71,1001,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,1,0,'NewHy','Hypot','HypRa','Hypaf',NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421209,5,0,0,'Winstdeelname Safe21',NULL,'2013-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
@@ -1283,6 +1304,8 @@ INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421209,5,0,0,'Winstde
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2015 = 2.30%</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2016 = 2.30%</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2016 = 1.90%</p>',0,35,40,0,'',NULL,'VAT21',NULL,NULL,NULL,NULL,NULL,'WD_TK',NULL,NULL,'ISfeW',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,1421210,5,0,0,'Patronale Life BonusPLan (ex ASCO Life)',NULL,'2002-12-31','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">ASCO LIFE BONUSPLAN; 2 contracten in beheer.</p>',0,32,37,0,NULL,NULL,'VAT21',NULL,NULL,'VPREM',NULL,'PREAT',NULL,'RESBE',NULL,'I_BPL',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421201,5,0,0,'Winstdeelname Starfix',NULL,'2013-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Winstdeelnameproduct</p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
@@ -1299,8 +1322,8 @@ INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421201,5,0,0,'Winstde
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2015 = 2.30%</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2016 = 2.30%</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2016 = 1.90%</p>',0,33,40,0,'',NULL,'VAT21',NULL,NULL,NULL,NULL,NULL,'WD_TK',NULL,NULL,'ISFW',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,1421210,5,0,0,'Patronale Life BonusPLan (ex ASCO Life)',NULL,'2002-12-31','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">ASCO LIFE BONUSPLAN; 2 contracten in beheer.</p>',0,32,37,0,NULL,NULL,'VAT21',NULL,NULL,'VPREM',NULL,'PREAT',NULL,'RESBE',NULL,'I_BPL',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('loan',NULL,NULL,2234,5,1,0,'Patronale Life Persoonlijke lening (hypotheek)',NULL,'2000-01-01','2000-01-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150828 mvd : Wet92 en AR225 (nalv release augustus 20150828)</p>',0,70,1001,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,1,0,'NewHy','Hypot','HypRa','Hypaf',NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,3,14212061,4,0,0,'Bikkelpolis',NULL,'2014-05-01','2014-05-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140514 MVD : RGA heeft voor de bikkelpolis een afzonderlijke sterftetafel opgesmaakt. Er is voor de Bikkelpolis een korting op de tafel t.o.v. Patronale ORV. Hierdoor moet het product ORV ontdubbeld worden. Nieuw tarief Bikkelpolis vindt ingang per 01.06.2014. </p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20141031 mvd : vastgesteld dat premiumrate4 niet correct verdeeld was : 50% PL en 50% IQ.</p>',0,42,37,0,NULL,'ORVNL','VASSV',NULL,NULL,'VPRNL',NULL,NULL,NULL,NULL,NULL,'I_ORV',365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
@@ -1314,11 +1337,6 @@ INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,0,0,0,0,'Tak 21 BAS
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,37,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,0,0,0,0,'Tak 26 BASIS',NULL,'2013-06-27','1980-01-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,38,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Global Investors Account',NULL,'2000-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Global Investors Account omvat de producten van Fides</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',1,17,39,3,'22352','SSV','VAT23','Switc',NULL,'VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,14212042,4,0,0,'Hypo-Secure Life',NULL,'2014-01-01','2014-03-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
@@ -1351,8 +1369,6 @@ INSERT INTO "financial_product" VALUES('insurance',NULL,1,14213501,4,0,0,'Fork R
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160209 mvd : 20120102 mvd : RV = 27%</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20161202 mvd : RV 30% vanaf 01/01/2017</p>',0,24,38,0,'',NULL,'VAT26',NULL,NULL,'Kabon',NULL,'PreAt',NULL,'RESBE',NULL,'I_FRC',365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Reflex Confort/horizon',NULL,'2015-06-24','2015-06-24',NULL,NULL,'ovdr',NULL,'CoCD','MIG_V',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',1,48,39,3,NULL,'RPCD','VAT23','Switc',NULL,'VPREM',NULL,NULL,NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Renta Bonus',NULL,'2000-11-08','1980-01-01','2010-12-30',NULL,'Ovdr','UL3',NULL,NULL,NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
@@ -1410,6 +1426,8 @@ INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'S-Team Inves
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',1,20,39,3,'22352','SSV','VAT23','Switc',NULL,'VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Reflex Confort/horizon',NULL,'2015-06-24','2015-06-24',NULL,NULL,'ovdr',NULL,'CoCD','MIG_V',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',1,48,39,3,NULL,'RPCD','VAT23','Switc',NULL,'VPREM',NULL,NULL,NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,1,14212040,4,0,0,'Hypo-Secure Family',NULL,'2010-06-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600;">geen korting op tarief + Tarief vast voor de hele duur</span></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
@@ -1430,46 +1448,63 @@ INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Global Strat
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',1,29,39,3,'22352','SSV','VAT23','Switc','BA','VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421201,5,0,0,'StarFix',NULL,'2000-07-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">standaard commissieverdeling</span><span style=" text-decoration: underline;"> </span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Finamore = 1%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Makelaar = gevraagd percentage - 1%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">vb EIT = 3% --&gt; Finamore = 1% en MKLR = 2%</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">PREMIUM FEE = PATRONALE LIFE = 35 EUR</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline;"><br/></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing tarieven</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120121 mvd : aanpassingen intrest naar 3.25 vanaf 01/04/2012</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120411 mvd : aanpassing intrest naar 2.75% vanaf 21/04/2012</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120801 mvd : aanpassing intrest naar 2.40% vanaf 19/08/2012</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121206 mvd : aanpassing intrest naar 2.65% vanaf 01/12/2012 -&gt; standaard 2.40% echter indien er aan de actie wordt deelgenomen bedraagt de intrest 2.65%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140312 hvc : aanpassing intrest naar 2.25% vanaf 01/03/2014</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140411 mvd : aanpassing intrest naar 2.00% vanaf 01/05/2014</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140922 hvc : aanpassing intrest naar 1.25% vanaf 01/10/2014</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160614 mvd : aanpassing intrest naar 1.00% vanaf 01/07/2016</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20161221 mvd : aanpassing intrest naar 1.00% vanaf 01/01/2017</p>
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421216,5,0,0,'Winstdeelname ABN AMRO DirectInvest Life Value',NULL,'1990-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Winstdeelnameproduct</p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing boekhouding</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120418 mvd : aanpassing rekening afkopen -&gt; niet langer onder toekenning premie maar wel onder onttrekkingen voor afkoop.</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120102 mvd : RV = 25%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130325 mvd : aanpassingen WD -&gt; free_pct_2 = 2.65%</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150311 mvd : verzekeringstaksactie 2015 --&gt; instapkost makelaar/promotor standaard op 0%/EUR (01.11.2015 - 31.12.2015)</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150311 mvd : verzekeringstaksactie 2015 --&gt; BA MPIJ standaard op 1% (01.11.2015 - 31.12.2015)</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160302 mvd : BA MPIJ standaard terug op 0%</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160209 mvd : 20120102 mvd : RV = 27%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160303 mvd : instapcommissie standaard op 0%</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160531 mvd : aanpassen parameters met oog op automatiseren boekingen : MKLR = _1, PL = _2 en promotor = _3</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20161202 mvd : RV 30% vanaf 01/01/2017</p>',0,4,37,0,NULL,'SSV','VAT21',NULL,'BA','VPREM',NULL,'PreAt',NULL,'RESBE',NULL,'I_SF',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
+<table border="0" cellpadding="0" cellspacing="2" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
+<tr>
+<td width="179">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Type</span></p></td>
+<td width="166">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Winstdeling</span></p></td>
+<td width="108"/></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Product</span></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">DirectInvest Life Value</span></p></td>
+<td/></tr>
+<tr>
+<td/>
+<td/>
+<td/></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Makelaar</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">CommercieelProduct</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Count of Sleutel</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">ABN AMRO - MyBank</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">LifeValue 3,25+ Fonds</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Affluent banking</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2,25% Vast</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Affluent banking</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cash+</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Affluent banking</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">LifeValue 3,25+ Fonds</p></td>
+<td>
+<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">6</p></td></tr></table>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,126,40,0,'',NULL,'VAT21',NULL,NULL,NULL,NULL,NULL,'WD_TK',NULL,NULL,'IS21W',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,1,14213500,4,0,0,'Fork Rekening',NULL,'2010-04-01','1980-01-01',NULL,NULL,'Ovdr','UL3','Co26',NULL,NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150121 mvd : boekhoudrekeningen aangepast. commissieboekingen gedefinieerd. de oplitsing van de kostenrekeningen naar Maatschappij, Makelaar en Promotor. + premium rate gestopt op 21.01.2015 (geen % instapvergoeding)</p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
@@ -1541,12 +1576,6 @@ INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421202,5,0,0,'Secure 
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,5,37,0,NULL,'SSV','VAT21',NULL,'BA','VPREM',NULL,'PreAt',NULL,'RESBE',NULL,'I_S21',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,142132,6,0,0,'Fork Huurwaarborg',NULL,'2010-04-01','1980-01-01',NULL,NULL,'Ovdr','UL3','Co26H',NULL,NULL,'
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150121 mvd : boekhoudrekeningen aangepast. commissieboekingen gedefinieerd. de oplitsing van de kostenrekeningen naar Maatschappij, Makelaar en Promotor. + premium rate gestopt op 21.01.2015 (geen % instapvergoeding)<br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150625 mvd : boekhoudrekeningen aangepast. 72411126 toegevoeg 01.01.2000-31.12.2014 ( gaf fout bij volledige afkopen)</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160209 mvd : 20120102 mvd : RV = 27%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20161202 mvd : RV 30% vanaf 01/01/2017</p>',0,3,38,0,NULL,NULL,'VAT26',NULL,NULL,'Kabon',NULL,'PreAt',NULL,'RESBE',NULL,'I_HWB',365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,1,14212041,4,0,0,'Hypo-Secure Affinity',NULL,'2010-06-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600;">15% korting op tarief + Tarief voor Drie jaar vast</span></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
@@ -1570,14 +1599,6 @@ INSERT INTO "financial_product" VALUES('insurance',NULL,1,14212041,4,0,0,'Hypo-S
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130227 mvd : afkooprekeningen geregistreerd</p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,10,37,0,NULL,'SSV','VASSV',NULL,NULL,'VPREM',NULL,'PreAt',NULL,'RESBE',NULL,'I_SSV',365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Elitis Strategy Account',NULL,'2010-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Elitis Strategy Account omvat deproducten Tak 23 van EVEST</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20131022 mvd : toevoegen BTQ fondsen</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',1,19,39,3,'22352','SSV','VAT23','Switc','BA','VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('loan',NULL,NULL,2234,5,1,0,'Patronale Life Hypotheken (basis)',NULL,'2000-01-01','1980-01-01',NULL,NULL,NULL,NULL,NULL,NULL,'KnipR','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20170329 mvd : schattingskost aangepast op basis van TARIEFKAART 8 Patronale : 215 excl BTW</p>',0,1001,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,2,0,'NewHy','Hypot','HypRa','Hypaf',NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,1421216,5,0,0,'ABN AMRO Directinvest Life Value',NULL,'1990-01-01','2017-06-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
@@ -1678,6 +1699,12 @@ INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421214,5,0,0,'Winstde
 <td>
 <p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">26</p></td></tr></table>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,125,40,0,'',NULL,'VAT21',NULL,NULL,NULL,NULL,NULL,'WD_TK',NULL,NULL,'IS21W',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,142132,6,0,0,'Fork Huurwaarborg',NULL,'2010-04-01','1980-01-01',NULL,NULL,'Ovdr','UL3','Co26H',NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150121 mvd : boekhoudrekeningen aangepast. commissieboekingen gedefinieerd. de oplitsing van de kostenrekeningen naar Maatschappij, Makelaar en Promotor. + premium rate gestopt op 21.01.2015 (geen % instapvergoeding)<br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150625 mvd : boekhoudrekeningen aangepast. 72411126 toegevoeg 01.01.2000-31.12.2014 ( gaf fout bij volledige afkopen)</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160209 mvd : 20120102 mvd : RV = 27%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20161202 mvd : RV 30% vanaf 01/01/2017</p>',0,3,38,0,NULL,NULL,'VAT26',NULL,NULL,'Kabon',NULL,'PreAt',NULL,'RESBE',NULL,'I_HWB',365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,14213503,4,0,0,'ABN AMRO Private Value',NULL,'1990-01-01','2017-06-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,123,38,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,1421214,5,0,0,'ABN AMRO Life Value',NULL,'1990-01-01','2017-06-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
@@ -1689,77 +1716,8 @@ INSERT INTO "financial_product" VALUES('insurance',NULL,NULL,1421215,5,0,0,'ABN 
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">parameters</span></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20170706 mvd : intrest 2017 = 0.50% van 01/06/2017 - 31/12/201</p>',0,122,37,0,'22353',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Private Life Account',NULL,'2000-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Private life Account omvat de producten van Fructi Causa</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130523 mvd : instapkost mpij 35 eur toegevoegd</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140428 mvd : uitstapkost 1% standaard toegevoegd (nieuwe voorwaarden : vanaf 01.01.2013 standaard 1% EIT en GIT, voordien 1% GIT en 2.5% dalend naar 0 voor EIT)</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">contracten met datum 30/12/2010 werden op 0% gezet --&gt; tft van UL3 naar V-Finance.</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20170329 : uitstapkosten goedgezet. 2.5 naar 0 over 5 jaar. + minimum uitstap 75 EUR</p>',1,16,39,3,'22352','SSV','VAT23','Switc','BA','VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421216,5,0,0,'Winstdeelname ABN AMRO DirectInvest Life Value',NULL,'1990-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Winstdeelnameproduct</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<table border="0" cellpadding="0" cellspacing="2" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
-<tr>
-<td width="179">
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Type</span></p></td>
-<td width="166">
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Winstdeling</span></p></td>
-<td width="108"/></tr>
-<tr>
-<td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Product</span></p></td>
-<td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">DirectInvest Life Value</span></p></td>
-<td/></tr>
-<tr>
-<td/>
-<td/>
-<td/></tr>
-<tr>
-<td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Makelaar</p></td>
-<td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">CommercieelProduct</p></td>
-<td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Count of Sleutel</p></td></tr>
-<tr>
-<td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">ABN AMRO - MyBank</p></td>
-<td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">LifeValue 3,25+ Fonds</p></td>
-<td>
-<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2</p></td></tr>
-<tr>
-<td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Affluent banking</p></td>
-<td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2,25% Vast</p></td>
-<td>
-<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1</p></td></tr>
-<tr>
-<td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Affluent banking</p></td>
-<td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Cash+</p></td>
-<td>
-<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3</p></td></tr>
-<tr>
-<td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Affluent banking</p></td>
-<td>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">LifeValue 3,25+ Fonds</p></td>
-<td>
-<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">6</p></td></tr></table>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,126,40,0,'',NULL,'VAT21',NULL,NULL,NULL,NULL,NULL,'WD_TK',NULL,NULL,'IS21W',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Cardif Golden Future',NULL,'2015-06-24','2015-06-24',NULL,NULL,'ovdr',NULL,'CoCD','MIG_V',NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',1,44,39,3,NULL,'RPCD','VAT23','Switc',NULL,'VPREM',NULL,NULL,NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421205,5,0,0,'Fructisafe',NULL,'2011-04-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing rentevoeten</span></p>
@@ -1790,53 +1748,20 @@ INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421205,5,0,0,'Fructis
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160531 mvd : aanpassen parameters met oog op automatiseren boekingen : MKLR = _1, PL = _2 en promotor = _3</p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20161202 mvd : RV 30% vanaf 01/01/2017</p>',0,25,37,0,'','SSV','VAT21',NULL,NULL,'VPREM',NULL,'PreAt',NULL,'RESBE',NULL,'I_FS',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421205,5,0,0,'Winstdeelname Fructisafe',NULL,'2013-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Winstdeelnameproduct</p>
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Private Life Account',NULL,'2000-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Private life Account omvat de producten van Fructi Causa</p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">intrest gegarandeerd voor één jaar. alle contracten krijgen hetzelfde percentage toegekend</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2014 = 1.65%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2015 = 0.80%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2016 = 0.40%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2017 = 0.05%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130523 mvd : instapkost mpij 35 eur toegevoegd</p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140428 mvd : uitstapkost 1% standaard toegevoegd (nieuwe voorwaarden : vanaf 01.01.2013 standaard 1% EIT en GIT, voordien 1% GIT en 2.5% dalend naar 0 voor EIT)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">contracten met datum 30/12/2010 werden op 0% gezet --&gt; tft van UL3 naar V-Finance.</p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2013 = 2.65%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2014 = 2.50%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2015 = 2.30%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2016 = 2.30%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2016 = 1.90%</p>',0,34,40,0,'',NULL,'VAT21',NULL,NULL,NULL,NULL,NULL,'WD_TK',NULL,NULL,'IFSW',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421213,5,0,0,'Select+',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'CoSSV',NULL,NULL,'
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">PARAMETERS AANPASSEN</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150331 mvd : accounting rules geparametriseerd + dagboeken en rekeningen in Venice geparametriseerd</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20170106 mvd : toevoegen dagboek FRAC (fractionering premies)</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20170106 mvd : toevoegen rekeningnummers fractioneren --&gt; toekenning : 62111116 en onttrekking : 62111125</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20170131 mvd : toevoegen rekening saldo fractionering 6211112501</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">FISCALE ATTESTE</span></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20170221 mvd FINAL RUN + verzending : referentie verzending = 15447</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,69,37,0,'','SSV','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_SSV',365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Cardif Golden Future',NULL,'2015-06-24','2015-06-24',NULL,NULL,'ovdr',NULL,'CoCD','MIG_V',NULL,'
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',1,44,39,3,NULL,'RPCD','VAT23','Switc',NULL,'VPREM',NULL,NULL,NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
-INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421202,5,0,0,'Winstdeelname Secure 21',NULL,'2013-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Winstdeelnameproduct</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">intrest gegarandeerd voor één jaar. alle contracten krijgen hetzelfde percentage toegekend</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2013 = 1.65%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2014 = 1.65%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2015 = 0.80%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2016 = 0.40%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2017 = 0.05%</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2012 = 3.45%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2013 = 3.15%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2014 = 2.90%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2015 = 2.55%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2016 = 2.55%</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2016 = 2.05%</p>',0,36,40,0,'',NULL,'VAT21',NULL,NULL,NULL,NULL,NULL,'WD_TK',NULL,NULL,'IS21W',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20170329 : uitstapkosten goedgezet. 2.5 naar 0 over 5 jaar. + minimum uitstap 75 EUR</p>',1,16,39,3,'22352','SSV','VAT23','Switc','BA','VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "financial_product" VALUES('insurance',NULL,1,142133,6,0,0,'Huurwaarborg - Garantie Locative',NULL,'2000-01-01','1980-01-01','2010-10-30',NULL,'Ovdr','UL3',NULL,NULL,NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">MVD 13/12/2010 :Portefeuille huurwaarborg Nationale Suisse werd per 31/10/2010 overgedragen aan Patronale Life NV. De reserves werden in excel beheerd door NS. Deze gegevens werden geïmporteerd in V-Finance.</p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
@@ -1879,6 +1804,117 @@ INSERT INTO "financial_product" VALUES('insurance',NULL,1,15990,4,0,0,'Patrimoni
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">6) De fonds rekeningen op het passief worden :</p>
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">15 990 FFF AAAA</p>',1,11,39,3,'2235299','SSV','VAT23','Switc',NULL,'VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Elitis Strategy Account',NULL,'2010-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Elitis Strategy Account omvat deproducten Tak 23 van EVEST</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20131022 mvd : toevoegen BTQ fondsen</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',1,19,39,3,'22352','SSV','VAT23','Switc','BA','VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421213,5,0,0,'Select+',NULL,'2015-01-01','2015-01-01',NULL,NULL,NULL,NULL,'CoSSV',NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">PARAMETERS AANPASSEN</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150331 mvd : accounting rules geparametriseerd + dagboeken en rekeningen in Venice geparametriseerd</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20170106 mvd : toevoegen dagboek FRAC (fractionering premies)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20170106 mvd : toevoegen rekeningnummers fractioneren --&gt; toekenning : 62111116 en onttrekking : 62111125</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20170131 mvd : toevoegen rekening saldo fractionering 6211112501</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">FISCALE ATTESTE</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20170221 mvd FINAL RUN + verzending : referentie verzending = 15447</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',0,69,37,0,'','SSV','VAT21',NULL,NULL,'VPrem',NULL,NULL,NULL,NULL,NULL,'I_SSV',365,365.25,1,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421205,5,0,0,'Winstdeelname Fructisafe',NULL,'2013-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Winstdeelnameproduct</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">intrest gegarandeerd voor één jaar. alle contracten krijgen hetzelfde percentage toegekend</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2014 = 1.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2015 = 0.80%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2016 = 0.40%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2017 = 0.05%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2013 = 2.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2014 = 2.50%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2015 = 2.30%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2016 = 2.30%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2016 = 1.90%</p>',0,34,40,0,'',NULL,'VAT21',NULL,NULL,NULL,NULL,NULL,'WD_TK',NULL,NULL,'IFSW',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421202,5,0,0,'Winstdeelname Secure 21',NULL,'2013-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Winstdeelnameproduct</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">intrest gegarandeerd voor één jaar. alle contracten krijgen hetzelfde percentage toegekend</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2013 = 1.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2014 = 1.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2015 = 0.80%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2016 = 0.40%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2017 = 0.05%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2012 = 3.45%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2013 = 3.15%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2014 = 2.90%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2015 = 2.55%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2016 = 2.55%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">free pct 2 2016 = 2.05%</p>',0,36,40,0,'',NULL,'VAT21',NULL,NULL,NULL,NULL,NULL,'WD_TK',NULL,NULL,'IS21W',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Global Investors Account',NULL,'2000-01-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Global Investors Account omvat de producten van Fides</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>',1,17,39,3,'22352','SSV','VAT23','Switc',NULL,'VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,1421201,5,0,0,'StarFix',NULL,'2000-07-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">standaard commissieverdeling</span><span style=" text-decoration: underline;"> </span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Finamore = 1%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Makelaar = gevraagd percentage - 1%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">vb EIT = 3% --&gt; Finamore = 1% en MKLR = 2%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">PREMIUM FEE = PATRONALE LIFE = 35 EUR</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing tarieven</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120121 mvd : aanpassingen intrest naar 3.25 vanaf 01/04/2012</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120411 mvd : aanpassing intrest naar 2.75% vanaf 21/04/2012</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120801 mvd : aanpassing intrest naar 2.40% vanaf 19/08/2012</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121206 mvd : aanpassing intrest naar 2.65% vanaf 01/12/2012 -&gt; standaard 2.40% echter indien er aan de actie wordt deelgenomen bedraagt de intrest 2.65%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140312 hvc : aanpassing intrest naar 2.25% vanaf 01/03/2014</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140411 mvd : aanpassing intrest naar 2.00% vanaf 01/05/2014</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140922 hvc : aanpassing intrest naar 1.25% vanaf 01/10/2014</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160614 mvd : aanpassing intrest naar 1.00% vanaf 01/07/2016</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20161221 mvd : aanpassing intrest naar 1.00% vanaf 01/01/2017</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Aanpassing boekhouding</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120418 mvd : aanpassing rekening afkopen -&gt; niet langer onder toekenning premie maar wel onder onttrekkingen voor afkoop.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20120102 mvd : RV = 25%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20130325 mvd : aanpassingen WD -&gt; free_pct_2 = 2.65%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150311 mvd : verzekeringstaksactie 2015 --&gt; instapkost makelaar/promotor standaard op 0%/EUR (01.11.2015 - 31.12.2015)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150311 mvd : verzekeringstaksactie 2015 --&gt; BA MPIJ standaard op 1% (01.11.2015 - 31.12.2015)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160302 mvd : BA MPIJ standaard terug op 0%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160209 mvd : 20120102 mvd : RV = 27%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160303 mvd : instapcommissie standaard op 0%</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160531 mvd : aanpassen parameters met oog op automatiseren boekingen : MKLR = _1, PL = _2 en promotor = _3</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20161202 mvd : RV 30% vanaf 01/01/2017</p>',0,4,37,0,NULL,'SSV','VAT21',NULL,'BA','VPREM',NULL,'PreAt',NULL,'RESBE',NULL,'I_SF',365,365.25,1,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,7,0,0,'Merit Selection',NULL,'2012-04-01','1980-01-01',NULL,NULL,'Ovdr','UL3',NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Merit Selection : product ontwikkeld samen met Merit Capital. binnen Merit Selection zullen fondsen beheerd door Merit Capital aangeboden worden.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">aanpassing parameters</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20121221 mvd : premietaks 2%</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150421 mvd : switchkost 621.211.128 ipv 724.13</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20150928 mvd : uitstapkost niet gedefinieerd 75 eeur eerste 8 jaar van het contract.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20160313 mvd : overlijdensparameter toegevoegd</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-weight:600; text-decoration: underline;">Fondsen</span></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20140519 mvd : Carmignac A toegevoegd. Switch naar Carmignac a mogelijk gemaakt om de kleine fondsen (dyntech, ...) leeg te kunnen maken.</p>',1,31,39,3,'22352','SSV','VAT23','Switc','BA','VPREM','GIT','PREAT',NULL,'VRES','QUOT',NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO "financial_product" VALUES('insurance',NULL,1,15,5,0,0,'Patronale Life Flexible',NULL,'2017-09-01','2017-09-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20170914 mvd : opstart OCTAVIA; exclusief product Tak 44 met één onderliggend ICF</p>',1,127,39,3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,365,365.25,2,0,NULL,NULL,NULL,NULL,NULL);
 
 INSERT INTO "financial_product_availability" VALUES(1,'2010-06-01','2400-12-31',10,10,10);
 INSERT INTO "financial_product_availability" VALUES(1,'2010-06-01','2400-12-31',23,23,23);
@@ -1961,6 +1997,11 @@ INSERT INTO "financial_product_availability" VALUES(3,'1990-01-01','2400-12-31',
 INSERT INTO "financial_product_availability" VALUES(3,'1990-01-01','2400-12-31',92,71,122);
 INSERT INTO "financial_product_availability" VALUES(3,'1990-01-01','2400-12-31',91,70,121);
 INSERT INTO "financial_product_availability" VALUES(1,'1990-01-01','2400-12-31',90,69,120);
+INSERT INTO "financial_product_availability" VALUES(3,'2017-09-01','2400-12-31',95,74,127);
+INSERT INTO "financial_product_availability" VALUES(3,'2017-09-01','2400-12-31',96,74,5);
+INSERT INTO "financial_product_availability" VALUES(3,'2017-09-01','2400-12-31',97,74,30);
+INSERT INTO "financial_product_availability" VALUES(3,'2017-09-01','2400-12-31',98,74,36);
+INSERT INTO "financial_product_availability" VALUES(3,'2017-09-01','2400-12-31',99,74,35);
 
 INSERT INTO "financial_product_feature_distribution" VALUES(4,0.5,'spreidingskost',37,547);
 INSERT INTO "financial_product_feature_distribution" VALUES(4,0,'Spreidingskost',25,542);
@@ -2093,6 +2134,7 @@ INSERT INTO "financial_product_feature_distribution" VALUES(4,35,NULL,144,1301);
 INSERT INTO "financial_product_feature_distribution" VALUES(4,4,NULL,145,1302);
 INSERT INTO "financial_product_feature_distribution" VALUES(4,4,NULL,146,1303);
 INSERT INTO "financial_product_feature_distribution" VALUES(4,4,NULL,147,1306);
+INSERT INTO "financial_product_feature_distribution" VALUES(1,50,'Patronale Life',148,1706);
 
 INSERT INTO "product_feature_applicability" VALUES('2011-01-10','2012-03-31','2010-10-01','2400-12-31',3.45,0,0,0,2400,0,96,0,2400,NULL,0,100,1,NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
@@ -2151,7 +2193,6 @@ INSERT INTO "product_feature_applicability" VALUES('2012-12-30','2014-02-28','20
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
 INSERT INTO "product_feature_applicability" VALUES('2010-08-17','2400-12-31','2010-08-17','2400-12-31',5,0,0,0,2400,0,2400,0,2400,NULL,0,60,21,NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
-INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2400-12-31','2000-01-01','2400-12-31',75,0,0,0,2400,0,96,0,2400,NULL,0,22,12,NULL,NULL,4);
 INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',0.3,0,NULL,0,2400,0,2400,0,2400,NULL,NULL,54,15,NULL,NULL,5);
 INSERT INTO "product_feature_applicability" VALUES('2016-07-29','2016-10-31','2011-05-16','2400-12-31',1.1,0,0,120,120,0,120,0,2400,NULL,0,1311,1,NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
@@ -2228,6 +2269,7 @@ INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','20
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
 INSERT INTO "product_feature_applicability" VALUES('2011-12-01','2400-12-31','2011-12-01','2400-12-31',0.5,0,0,0,4800,0,4800,0,4800,NULL,0,741,53,NULL,NULL,29);
 INSERT INTO "product_feature_applicability" VALUES('2017-05-31','2400-12-31','2017-06-01','2017-12-31',0.5,0,NULL,0,4800,0,4800,0,4800,NULL,0,1688,1,NULL,NULL,121);
+INSERT INTO "product_feature_applicability" VALUES('2017-05-31','2400-12-31','2017-05-31','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1693,20,NULL,NULL,122);
 INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',4,0,0,120,120,72,83,0,2400,NULL,NULL,145,4,NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',15);
 INSERT INTO "product_feature_applicability" VALUES('2010-04-01','2400-12-31','2010-04-01','2400-12-31',3,0,0,120,120,84,95,0,2400,NULL,NULL,146,4,NULL,'
@@ -3321,7 +3363,6 @@ INSERT INTO "product_feature_applicability" VALUES('2015-11-01','2015-12-31','20
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
 INSERT INTO "product_feature_applicability" VALUES('2011-10-01','2015-10-31','2011-10-01','2400-12-31',215,0,0,0,2400,0,2400,0,2400,NULL,0,330,2,NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
-INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,1074,10,NULL,NULL,69);
 INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2010-04-01','2400-12-31',0.01,0,0,12,12,0,12,0,4800,NULL,0,994,1,0,NULL,15);
 INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2010-04-01','2400-12-31',0.95,0,0,84,84,0,84,0,4800,NULL,0,995,1,0,NULL,15);
 INSERT INTO "product_feature_applicability" VALUES('2014-09-10','2014-10-06','2010-04-01','2400-12-31',0.1,0,0,36,36,0,36,0,4800,NULL,0,996,1,0,NULL,15);
@@ -3330,6 +3371,7 @@ INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','20
 INSERT INTO "product_feature_applicability" VALUES('2011-01-01','2400-12-31','2014-01-01','2017-03-28',1,0,NULL,0,4800,0,60,0,4800,NULL,0,902,4,NULL,NULL,16);
 INSERT INTO "product_feature_applicability" VALUES('2014-07-08','2014-08-26','2011-04-01','2400-12-31',0.1,0,0,24,24,0,24,0,2400,NULL,0,975,1,NULL,'
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',24);
+INSERT INTO "product_feature_applicability" VALUES('2017-05-31','2400-12-31','2017-05-31','2400-12-31',30,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1694,18,NULL,NULL,122);
 INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2011-05-16','2400-12-31',2,0,0,120,120,0,120,0,2400,NULL,0,963,1,NULL,'
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20110523 mvd : brief ontvangen CBFA met de mededeling dat 3.75% max toegelaten rente is. art. 24 KB Leven.</p>',24);
 INSERT INTO "product_feature_applicability" VALUES('2014-06-04','2014-07-07','2011-04-01','2400-12-31',1.5,0,0,84,84,0,84,0,2400,NULL,0,962,1,NULL,'
@@ -3871,8 +3913,6 @@ INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','20
 INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',75,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1671,12,NULL,NULL,10);
 INSERT INTO "product_feature_applicability" VALUES('2017-05-31','2400-12-31','2017-06-01','2400-12-31',0.5,0,NULL,0,4800,0,4800,0,4800,NULL,0,1685,1,NULL,NULL,125);
 INSERT INTO "product_feature_applicability" VALUES('2017-05-31','2400-12-31','2017-05-31','2400-12-31',30,0,NULL,0,4800,0,4800,0,4800,NULL,0,1692,18,NULL,NULL,121);
-INSERT INTO "product_feature_applicability" VALUES('2017-05-31','2400-12-31','2017-05-31','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1693,20,NULL,NULL,122);
-INSERT INTO "product_feature_applicability" VALUES('2017-05-31','2400-12-31','2017-05-31','2400-12-31',30,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1694,18,NULL,NULL,122);
 INSERT INTO "product_feature_applicability" VALUES('2017-05-31','2400-12-31','2017-05-31','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1695,20,NULL,NULL,124);
 INSERT INTO "product_feature_applicability" VALUES('2017-05-31','2400-12-31','2017-05-31','2400-12-31',30,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1696,18,NULL,NULL,124);
 INSERT INTO "product_feature_applicability" VALUES('2014-10-01','2015-12-31','2017-01-01','2017-12-31',0.25,0,NULL,0,4800,0,4800,0,4800,NULL,0,1582,17,NULL,NULL,5);
@@ -3954,10 +3994,132 @@ INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2017-01-01','20
 INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2017-01-01','2017-01-01','2017-12-31',0.05,0,0,0,4800,0,4800,0,4800,NULL,0,1588,1,NULL,NULL,35);
 INSERT INTO "product_feature_applicability" VALUES('2013-01-01','2017-01-01','2017-01-01','2017-12-31',0.05,0,0,0,4800,0,4800,0,4800,NULL,0,1589,1,NULL,NULL,34);
 INSERT INTO "product_feature_applicability" VALUES('2017-05-31','2400-12-31','2017-06-01','2400-12-31',0.5,0,NULL,0,4800,0,4800,0,4800,NULL,0,1684,1,NULL,NULL,126);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-10-01','2400-12-31',4.4,0,NULL,0,4800,0,4800,0,4800,NULL,0,1704,9,NULL,NULL,127);
 INSERT INTO "product_feature_applicability" VALUES('2017-05-31','2400-12-31','2017-05-31','2400-12-31',25,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1697,56,NULL,NULL,121);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-10-01','2400-12-31',2,0,NULL,0,4800,0,4800,0,4800,NULL,0,1705,8,NULL,NULL,127);
 INSERT INTO "product_feature_applicability" VALUES('1990-01-01','2400-12-31','1990-01-01','2400-12-31',25,0,NULL,0,4800,0,4800,0,4800,NULL,0,1698,56,NULL,NULL,122);
 INSERT INTO "product_feature_applicability" VALUES('1990-01-01','2400-12-31','1990-01-01','2400-12-31',30,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1699,56,NULL,NULL,124);
-
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2400-12-31','2000-01-01','2400-12-31',75,0,0,0,2400,0,96,0,2400,NULL,0,22,12,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',4);
+INSERT INTO "product_feature_applicability" VALUES('2000-01-01','2400-12-31','2000-01-01','2400-12-31',75,0,0,0,2400,61,96,0,2400,NULL,0,1700,56,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',5);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-29','2400-12-31','2000-01-01','2400-12-31',75,0,0,0,2400,61,96,0,2400,NULL,0,1701,56,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',4);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',50,0,NULL,0,4800,0,4800,0,4800,NULL,0,1706,59,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',127);
+INSERT INTO "product_feature_applicability" VALUES('2011-04-01','2400-12-31','2011-04-01','2400-12-31',75,0,0,0,2400,61,96,0,2400,NULL,0,1702,56,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"/>',25);
+INSERT INTO "product_feature_applicability" VALUES('2012-03-01','2400-12-31','2012-03-01','2400-12-31',75,0,0,0,4800,61,96,0,4800,NULL,0,1703,56,NULL,NULL,30);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',3.95,0,99999,0,4800,0,4800,0,4800,NULL,0,1707,22,NULL,'
+<table border="0" cellpadding="0" cellspacing="0" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
+<tr>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;" width="185">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">Bedrag premie</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;" width="170">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">Oprichtingskost totaal</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;" width="200">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">Oprichtingskost per maand gedurende 5 jaar</span> </p></td></tr>
+<tr>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">&gt; </span><span style=" font-family:''Arial Narrow,sans-serif'';"> </span><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">€ 25.000  en &lt;  € 100.000</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">3,95%</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">0,0658%</span> </p></td></tr>
+<tr>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">&gt; € 100.000 en &lt;  € 250.000</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">3,39%</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">0,0565%</span> </p></td></tr>
+<tr>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">&gt; € 250.000</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">2,82%</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">0,0470%</span> </p></td></tr></table>',127);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',3.39,100000,249999,0,4800,0,4800,0,4800,NULL,0,1708,22,NULL,'
+<table border="0" cellpadding="0" cellspacing="0" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
+<tr>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;" width="185">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">Bedrag premie</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;" width="170">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">Oprichtingskost totaal</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;" width="200">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">Oprichtingskost per maand gedurende 5 jaar</span> </p></td></tr>
+<tr>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">&gt; </span><span style=" font-family:''Arial Narrow,sans-serif'';"> </span><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">€ 25.000  en &lt;  € 100.000</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">3,95%</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">0,0658%</span> </p></td></tr>
+<tr>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">&gt; € 100.000 en &lt;  € 250.000</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">3,39%</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">0,0565%</span> </p></td></tr>
+<tr>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">&gt; € 250.000</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">2,82%</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">0,0470%</span> </p></td></tr></table>',127);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',2.82,250000,1500000,0,4800,0,4800,0,4800,NULL,0,1709,22,NULL,'
+<table border="0" cellpadding="0" cellspacing="0" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
+<tr>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;" width="185">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">Bedrag premie</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;" width="170">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">Oprichtingskost totaal</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;" width="200">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">Oprichtingskost per maand gedurende 5 jaar</span> </p></td></tr>
+<tr>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">&gt; </span><span style=" font-family:''Arial Narrow,sans-serif'';"> </span><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">€ 25.000  en &lt;  € 100.000</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">3,95%</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">0,0658%</span> </p></td></tr>
+<tr>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">&gt; € 100.000 en &lt;  € 250.000</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">3,39%</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">0,0565%</span> </p></td></tr>
+<tr>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">&gt; € 250.000</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">2,82%</span> </p></td>
+<td style=" vertical-align:top; padding-left:0; padding-right:0; padding-top:0; padding-bottom:0;">
+<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt;">0,0470%</span> </p></td></tr></table>',127);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1710,41,NULL,NULL,127);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',1.66667,0,NULL,0,4800,0,4800,0,4800,NULL,0,1712,40,NULL,NULL,127);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',60,0,NULL,0,4800,0,4800,0,4800,NULL,0,1725,108,NULL,NULL,127);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',75,0,NULL,0,4800,0,96,0,4800,NULL,0,1719,12,NULL,NULL,127);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',1,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1711,43,NULL,NULL,127);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',120,0,NULL,0,4800,0,4800,0,4800,NULL,0,1729,108,NULL,NULL,69);
+INSERT INTO "product_feature_applicability" VALUES('2015-01-01','2400-12-31','2015-01-01','2400-12-31',0,0,NULL,0,4800,0,4800,0,4800,NULL,1,1074,10,NULL,'
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>',69);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',0.5,10001,10000000,0,4800,0,4800,0,4800,NULL,1,1721,53,NULL,NULL,127);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',50,0.01,10000,0,4800,0,4800,0,4800,NULL,1,1720,52,NULL,NULL,127);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-01','2400-12-31','2014-01-01','2400-12-31',120,0,NULL,0,4800,0,4800,0,4800,NULL,0,1731,109,NULL,NULL,41);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',5,0,NULL,0,4800,0,12,0,4800,NULL,0,1713,4,NULL,NULL,127);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',4,0,NULL,0,4800,13,24,0,4800,NULL,0,1714,4,NULL,NULL,127);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',3,0,NULL,0,4800,25,36,0,4800,NULL,0,1715,4,NULL,NULL,127);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',2,0,NULL,0,4800,37,48,0,4800,NULL,0,1716,4,NULL,NULL,127);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',1,0,NULL,0,4800,49,60,0,4800,NULL,0,1717,4,NULL,NULL,127);
+INSERT INTO "product_feature_applicability" VALUES('2017-09-01','2400-12-31','2017-09-01','2400-12-31',0,0,NULL,0,4800,61,4800,0,4800,NULL,0,1718,4,NULL,NULL,127);
+INSERT INTO "product_feature_applicability" VALUES('2014-01-01','2400-12-31','2014-01-01','2400-12-31',420,0,NULL,0,4800,0,4800,0,4800,NULL,0,1732,110,NULL,NULL,41);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',120,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1733,109,NULL,NULL,10);
+INSERT INTO "product_feature_applicability" VALUES('2010-06-01','2400-12-31','2010-06-01','2400-12-31',420,0,NULL,0,4800,0,4800,0,4800,NULL,NULL,1734,110,NULL,NULL,10);
 
 INSERT INTO "financial_item_clause" VALUES('Standaard begunstigingsclausule','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bla bla bla</p>',NULL,1,1,5);
@@ -3975,8 +4137,6 @@ INSERT INTO "financial_item_clause" VALUES('Inpandgave','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Inpandgave van het verzekeringscontract.</p>',NULL,2,105,18);
 INSERT INTO "financial_item_clause" VALUES('Wederzijdse overdracht van rechten','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verzekeringsnemers verklaren dat bij overlijden van één van de verzekeringnemers alle rechten worden overgedragen aan de langstlevende verzekeringsnemer.</p>',NULL,2,125,3);
-INSERT INTO "financial_item_clause" VALUES('Begunstiging bij leven NL','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringsnemer(s)</p>',NULL,1,137,26);
 INSERT INTO "financial_item_clause" VALUES('Gedeeltelijke overdracht van rechten','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Rechten werden gedeeltelijk overgedragen door de verzekeringsnemer(s)</p>',NULL,2,173,29);
 INSERT INTO "financial_item_clause" VALUES('Begunstiging bij overlijden NL','
@@ -4005,6 +4165,8 @@ INSERT INTO "financial_item_clause" VALUES('Wederzijdse overdracht van rechten',
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verzekeringsnemers verklaren dat bij overlijden van één van de verzekeringnemers alle rechten worden overgedragen aan de langstlevende verzekeringsnemer.</p>','nl_BE',2,242,38);
 INSERT INTO "financial_item_clause" VALUES('Volmacht','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Volmacht verleend door de verzekeringsnemer(s) aan de gevolmachtigde(n)</p>',NULL,2,103,21);
+INSERT INTO "financial_item_clause" VALUES('Gedeeltelijke overdracht van rechten','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Rechten werden gedeeltelijk overgedragen door de verzekeringsnemer(s)</p>',NULL,2,108,18);
 INSERT INTO "financial_item_clause" VALUES('NL Verpanding','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt; color:#000000;">Nader wordt aangetekend dat alle uit deze verzekering voortvloeiende rechten door de verzekeringsnemer zijn verpand aan de pandnemer:</span></p>','nl_BE',2,258,30);
 INSERT INTO "financial_item_clause" VALUES('NL Verpanding','
@@ -4111,8 +4273,6 @@ INSERT INTO "financial_item_clause" VALUES('Wederzijdse overdracht van rechten',
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verzekeringsnemers verklaren dat bij overlijden van één van de verzekeringnemers alle rechten worden overgedragen aan de langstlevende verzekeringsnemer.</p>',NULL,2,86,17);
 INSERT INTO "financial_item_clause" VALUES('Wederzijdse overdracht van rechten','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verzekeringsnemers verklaren dat bij overlijden van één van de verzekeringnemers alle rechten worden overgedragen aan de langstlevende verzekeringsnemer.</p>',NULL,2,91,19);
-INSERT INTO "financial_item_clause" VALUES('NLBegunstiging bij leven','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringnemer(s)</p>','nl_BE',1,12,5);
 INSERT INTO "financial_item_clause" VALUES('NL Beding van conventionele terugkeer','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>','nl_BE',3,21,4);
 INSERT INTO "financial_item_clause" VALUES('FR Wederzijdse overdracht van rechten','
@@ -4136,8 +4296,6 @@ INSERT INTO "financial_item_clause" VALUES('Conventionele terugkeer','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>',NULL,3,102,18);
 INSERT INTO "financial_item_clause" VALUES('Overdracht alle rechten (anders dan wederzijds)','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Alle rechten werden overgedragen door de verzekeringsnemer(s).</p>',NULL,2,107,21);
-INSERT INTO "financial_item_clause" VALUES('Gedeeltelijke overdracht van rechten','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Rechten werden gedeeltelijk overgedragen door de verzekeringsnemer(s)</p>',NULL,2,108,18);
 INSERT INTO "financial_item_clause" VALUES('Wederzijdse overdracht van rechten','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verzekeringsnemers verklaren dat bij overlijden van één van de verzekeringnemers alle rechten worden overgedragen aan de langstlevende verzekeringsnemer.</p>',NULL,2,109,21);
 INSERT INTO "financial_item_clause" VALUES('Beding van conventionele terugkeer FR','
@@ -4178,14 +4336,14 @@ INSERT INTO "financial_item_clause" VALUES('Beding van conventionele terugkeer',
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>',NULL,3,123,18);
 INSERT INTO "financial_item_clause" VALUES('Overdracht alle rechten (anders dan wederzijds)','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Alle rechten werden overgedragen door de verzekeringsnemer(s).</p>',NULL,2,124,19);
-INSERT INTO "financial_item_clause" VALUES('Begunstiging bij leven FR','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance </p>','fr_BE',1,168,29);
 INSERT INTO "financial_item_clause" VALUES('NL Wederzijdse volmacht','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verkeringsnemers verlenen elkaar wederzijdse volmacht.</p>','nl_BE',2,197,26);
 INSERT INTO "financial_item_clause" VALUES('Begunstiging bij leven NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringsnemer </p>','nl_BE',1,243,38);
 INSERT INTO "financial_item_clause" VALUES('STANDAARD Begunstiging bij overlijden beleggingsverzekering Patronale Life NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : Bij overlijden in volgorde: de verzekeringsnemer(s), de wettelijke echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer(s), de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer(s) die optreden volgens de wettelijke devolutie. </p>',NULL,1,58,14);
+INSERT INTO "financial_item_clause" VALUES('Begunstiging bij leven FR','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance</p>','fr_BE',1,204,31);
 INSERT INTO "financial_item_clause" VALUES('STANDAARD Begunstiging bij overlijden beleggingsverzekering Patronale Life NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : Bij overlijden in volgorde: de verzekeringsnemer(s), de wettelijke echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer(s), de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer(s) die optreden volgens de wettelijke devolutie. </p>',NULL,1,46,17);
 INSERT INTO "financial_item_clause" VALUES('STANDAARD Begunstiging bij overlijden beleggingsverzekering Patronale Life NL','
@@ -4206,30 +4364,14 @@ INSERT INTO "financial_item_clause" VALUES('STANDAARD Begunstiging bij overlijde
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : Bij overlijden in volgorde: de verzekeringsnemer(s), de wettelijke echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer(s), de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer(s) die optreden volgens de wettelijke devolutie. </p>',NULL,1,30,21);
 INSERT INTO "financial_item_clause" VALUES('STANDAARD Begunstiging bij overlijden beleggingsverzekering Patronale Life NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : Bij overlijden in volgorde: de verzekeringsnemer(s), de wettelijke echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer(s), de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer(s) die optreden volgens de wettelijke devolutie. </p>',NULL,1,38,22);
-INSERT INTO "financial_item_clause" VALUES('FR Begunstiging bij leven','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance</p>','fr_BE',1,127,25);
-INSERT INTO "financial_item_clause" VALUES('NLBegunstiging bij leven','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringnemer(s)</p>','nl_BE',1,129,25);
 INSERT INTO "financial_item_clause" VALUES('Wederzijdse overdracht van rechten','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verzekeringsnemers verklaren dat bij overlijden van één van de verzekeringnemers alle rechten worden overgedragen aan de langstlevende verzekeringsnemer.</p>',NULL,2,134,26);
-INSERT INTO "financial_item_clause" VALUES('NL Beding van conventionele terugkeer','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>',NULL,3,135,26);
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verzekeringsnemers verklaren dat bij overlijden van één van de verzekeringnemers alle rechten worden overgedragen aan de langstlevende verzekeringsnemer.</p>','nl_BE',2,134,26);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstiging bij overlijden','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde : De kredietinstelling, voor het eventuele saldo: de echtgeno(o)t(e)/wettelijk samenwonende partner van de verzekeringnemer; bij ontstentenis de kinderen van de verzekeringnemer; bij ontstentenis de wettige erfgenamen van de verzekeringnemer.</p>','nl_BE',1,266,64);
 INSERT INTO "financial_item_clause" VALUES('STANDAARD Begunstiging bij overlijden beleggingsverzekering Patronale Life NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : Bij overlijden in volgorde: de verzekeringsnemer(s), de wettelijke echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer(s), de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer(s) die optreden volgens de wettelijke devolutie.</p>','nl_BE',1,76,23);
-INSERT INTO "financial_item_clause" VALUES('Inpandgave','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt; color:#000000;">Nader wordt aangetekend dat alle uit deze verzekering voortvloeiende rechten door de verzekeringsnemer zijn verpand aan de pandnemer:</span></p>',NULL,2,136,26);
-INSERT INTO "financial_item_clause" VALUES('Begunstiging bij leven FR','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le(s) preneur(s) d’assurance.</p>',NULL,1,138,26);
-INSERT INTO "financial_item_clause" VALUES('Begunstiging bij overlijden FR','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale. </p>',NULL,1,139,26);
-INSERT INTO "financial_item_clause" VALUES('Begunstiging bij overlijden NL','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : Bij overlijden in volgorde: de verzekeringsnemer(s), de wettelijke echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer(s), de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer(s) die optreden volgens de wettelijke devolutie. </p>',NULL,1,140,26);
-INSERT INTO "financial_item_clause" VALUES('Overdracht van alle rechten (anders dan wederzijds)','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Alle rechten werden overgedragen door de verzekeringsnemer(s).</p>',NULL,2,141,26);
-INSERT INTO "financial_item_clause" VALUES('Volmacht','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Volmacht verleend door de verzekeringsnemer(s) aan de gevolmachtigde(n).</p>',NULL,2,142,26);
-INSERT INTO "financial_item_clause" VALUES('Gedeeltelijke overdracht van rechten','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Rechten werden gedeeltelijk overgedragen door de verzekeringsnemer(s).</p>',NULL,2,143,26);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstiging bij leven','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringnemer(s)</p>','nl_BE',1,129,25);
 INSERT INTO "financial_item_clause" VALUES('Volmacht','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Volmacht verleend door de verzekeringsnemer(s) aan de gevolmachtigde(n)</p>','nl_BE',2,172,29);
 INSERT INTO "financial_item_clause" VALUES('FR Taksactie','
@@ -4255,6 +4397,16 @@ INSERT INTO "financial_item_clause" VALUES('NL Aanvaarding begunstiging Patronal
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Patronale Life NV, die de begunstiging aanvaard heeft ten belope van de hoofdsom en de interesten die de verzekeringsnemer haar verschuldigd is, krachtens het krediet ter waarborg waarvoor dit contract onderschreven werd.</p>','nl_BE',1,151,23);
 INSERT INTO "financial_item_clause" VALUES('NL Taksactie','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deze storting werd onderschreven met terugstorting van het bedrag van de premietaks in het kader van de ''Promotie Premietaks''. Deze actie is geldig onder bepaalde voorwaarden, dewelke inhouden dat de gestorte premie minimaal 12.500 EUR bedraagt in een product van Patronale Life NV in het segment van Tak 21. In geval van gehele of gedeeltelijke afkopen van de verzekeringspolis gedurende de eerste drie jaar van de looptijd van het contract, is de verzekeringnemer gehouden de premietaks integraal en op de volledige premiesom aan de Maatschappij te restitueren.</p>',NULL,4,144,4);
+INSERT INTO "financial_item_clause" VALUES('Inpandgave','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt; color:#000000;">Nader wordt aangetekend dat alle uit deze verzekering voortvloeiende rechten door de verzekeringsnemer zijn verpand aan de pandnemer:</span></p>','nl_BE',2,136,26);
+INSERT INTO "financial_item_clause" VALUES('Overdracht van alle rechten (anders dan wederzijds)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Alle rechten werden overgedragen door de verzekeringsnemer(s).</p>','nl_BE',2,141,26);
+INSERT INTO "financial_item_clause" VALUES('Volmacht','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Volmacht verleend door de verzekeringsnemer(s) aan de gevolmachtigde(n).</p>','nl_BE',2,142,26);
+INSERT INTO "financial_item_clause" VALUES('Gedeeltelijke overdracht van rechten','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Rechten werden gedeeltelijk overgedragen door de verzekeringsnemer(s).</p>','nl_BE',2,143,26);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstiging bij overlijden','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : Bij overlijden in volgorde: de verzekeringsnemer(s), de wettelijke echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer(s), de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer(s) die optreden volgens de wettelijke devolutie. </p>','nl_BE',1,140,26);
 INSERT INTO "financial_item_clause" VALUES('RABOBANK Begunstiging bij overlijden NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bij overlijden : <span style=" font-family:''Times New Roman,serif''; font-size:12pt;">De echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer, bij gebreke de kinderen van de verzekeringsnemer voor gelijke delen, bij gebreke de nalatenschap van de verzekeringsnemer.</span></p>',NULL,1,133,5);
 INSERT INTO "financial_item_clause" VALUES('RABOBANK Begunstiging bij overlijden FR','
@@ -4294,20 +4446,15 @@ INSERT INTO "financial_item_clause" VALUES('Inpandgave','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt; color:#000000;">Nader wordt aangetekend dat alle uit deze verzekering voortvloeiende rechten door de verzekeringsnemer zijn verpand aan de pandnemer:</span></p>','nl_BE',2,170,29);
 INSERT INTO "financial_item_clause" VALUES('Wederzijdse overdracht van rechten','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verzekeringsnemers verklaren dat bij overlijden van één van de verzekeringnemers alle rechten worden overgedragen aan de langstlevende verzekeringsnemer.</p>','nl_BE',2,166,29);
-INSERT INTO "financial_item_clause" VALUES('Begunstiging bij overlijden FR','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale. </p>','fr_BE',1,169,29);
 INSERT INTO "financial_item_clause" VALUES('Overdracht alle rechten (anders dan wederzijds)','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Alle rechten werden overgedragen door de verzekeringsnemer(s).</p>','nl_BE',2,171,29);
-INSERT INTO "financial_item_clause" VALUES('Begunstiging bij overlijden NL','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : Bij overlijden in volgorde: de verzekeringsnemer(s), de wettelijke echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer(s), de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer(s) die optreden volgens de wettelijke devolutie. </p>','nl_BE',1,174,29);
-INSERT INTO "financial_item_clause" VALUES('Begunstiging bij leven NL','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringsnemer </p>','nl_BE',1,175,29);
 INSERT INTO "financial_item_clause" VALUES('NL Begunstiging bij overlijden','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : Bij overlijden in volgorde: de verzekeringsnemer(s), de wettelijke echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer(s), de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer(s) die optreden volgens de wettelijke devolutie.</p>','nl_BE',1,179,30);
 INSERT INTO "financial_item_clause" VALUES('NL Begunstiging bij leven','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringnemer</p>','nl_BE',1,177,30);
-INSERT INTO "financial_item_clause" VALUES('FR Begunstiging bij leven','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance</p>','fr_BE',1,178,30);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>','fr_BE',1,13,5);
 INSERT INTO "financial_item_clause" VALUES('NL Wederzijdse volmacht','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verkeringsnemers verlenen elkaar wederzijdse volmacht.</p>','nl_BE',2,185,4);
 INSERT INTO "financial_item_clause" VALUES('NL Wederzijdse overdracht van rechten ','
@@ -4318,9 +4465,8 @@ INSERT INTO "financial_item_clause" VALUES('NL Wederzijdse volmacht','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verkeringsnemers verlenen elkaar wederzijdse volmacht.</p>','nl_BE',1,186,5);
 INSERT INTO "financial_item_clause" VALUES('NL Aanvaarding begunstiging Eigen Huis','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Eigen Huis, die de begunstiging aanvaard heeft ten belope van de hoofdsom en de interesten die de verzekeringsnemer haar verschuldigd is, krachtens het krediet ter waarborg waarvoor dit contract onderschreven werd.</p>','nl_BE',1,163,23);
-INSERT INTO "financial_item_clause" VALUES('FR Begunstiging bij overlijden','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale.</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>','fr_BE',1,180,30);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstiging bij overlijden','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : Bij overlijden in volgorde: de verzekeringsnemer(s), de wettelijke echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer(s), de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer(s) die optreden volgens de wettelijke devolutie. </p>','nl_BE',1,174,29);
 INSERT INTO "financial_item_clause" VALUES('FR Taksactie','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce versement a été fait dans le cadre d’une action promotionnelle « Taxe sur Prime d’assurance vie». La Compagnie prend en charge la taxe due sur les primes d’assurance vie, sous certaines réserves.</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">En cas de rachat total ou partiel du Contrat d’assurance, au cours des trois premières années, la totalité du montant de la taxe sur primes versées sera déduite de la valeur de rachat lors du paiement. Après trois ans, cet avantage est totalement acquis par le Preneur d’assurance.</p>','nl_BE',4,150,25);
@@ -4334,8 +4480,11 @@ INSERT INTO "financial_item_clause" VALUES('NL Wederzijdse volmacht','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verkeringsnemers verlenen elkaar wederzijdse volmacht.</p>','nl_BE',2,195,22);
 INSERT INTO "financial_item_clause" VALUES('Begunstiging bij leven NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringsnemer </p>','nl_BE',1,202,31);
-INSERT INTO "financial_item_clause" VALUES('NL Beding van conventionele terugkeer','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>','nl_BE',1,126,25);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstiging bij leven','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringsnemer </p>','nl_BE',1,175,29);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>','fr_BE',1,15,4);
 INSERT INTO "financial_item_clause" VALUES('Wederzijdse overdracht van rechten','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verzekeringsnemers verklaren dat bij overlijden van één van de verzekeringnemers alle rechten worden overgedragen aan de langstlevende verzekeringsnemer.</p>','nl_BE',2,200,31);
 INSERT INTO "financial_item_clause" VALUES('Begunstiging bij overlijden NL','
@@ -4344,13 +4493,8 @@ INSERT INTO "financial_item_clause" VALUES('NL Beding van conventionele terugkee
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>','nl_BE',1,201,31);
 INSERT INTO "financial_item_clause" VALUES('NL Beding van conventionele terugkeer','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>','nl_BE',1,183,30);
-INSERT INTO "financial_item_clause" VALUES('Begunstiging bij leven FR','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance</p>','fr_BE',1,204,31);
 INSERT INTO "financial_item_clause" VALUES('NL Wederzijdse volmacht','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verzekeringsnemers verlenen elkaar wederzijdse volmacht.</p>','nl_BE',2,196,25);
-INSERT INTO "financial_item_clause" VALUES('FR Begunstiging bij overlijden','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale.</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>','fr_BE',1,128,25);
 INSERT INTO "financial_item_clause" VALUES('Begunstiging bij overlijden NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : Bij overlijden in volgorde: de verzekeringsnemer(s), de wettelijke echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer(s), de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer(s) die optreden volgens de wettelijke devolutie. </p>','nl_BE',1,211,33);
 INSERT INTO "financial_item_clause" VALUES('Wederzijdse overdracht van rechten','
@@ -4367,22 +4511,15 @@ INSERT INTO "financial_item_clause" VALUES('NL Beding van conventionele terugkee
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>','nl_BE',1,70,16);
 INSERT INTO "financial_item_clause" VALUES('Begunstiging bij leven NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringsnemer </p>','nl_BE',1,210,33);
-INSERT INTO "financial_item_clause" VALUES('FR Beding van conventionele terugkeer','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,215,16);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>','fr_BE',1,128,25);
 INSERT INTO "financial_item_clause" VALUES('NL Beding van Conventionele terugkeer','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>','nl_BE',1,207,33);
-INSERT INTO "financial_item_clause" VALUES('FR Begunstiging bij leven','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance </p>','fr_BE',1,52,16);
-INSERT INTO "financial_item_clause" VALUES('FR Begunstiging bij overlijden','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale. </p>','fr_BE',1,53,16);
 INSERT INTO "financial_item_clause" VALUES('FR Beding van conventionele terugkeer','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,224,31);
 INSERT INTO "financial_item_clause" VALUES('FR Beding van conventionele terugkeer','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,216,17);
-INSERT INTO "financial_item_clause" VALUES('FR Beding van conventionele terugkeer','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,213,5);
-INSERT INTO "financial_item_clause" VALUES('FR Beding van conventionele terugkeer','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,212,4);
 INSERT INTO "financial_item_clause" VALUES('FR Beding van conventionele terugkeer','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,217,19);
 INSERT INTO "financial_item_clause" VALUES('FR Beding van conventionele terugkeer','
@@ -4391,35 +4528,38 @@ INSERT INTO "financial_item_clause" VALUES('FR Beding van conentionele terugkeer
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,225,33);
 INSERT INTO "financial_item_clause" VALUES('FR Beding van conventionele terugkeer','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,219,21);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij leven','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringsnemer </p>','nl_BE',1,322,74);
 INSERT INTO "financial_item_clause" VALUES('NL Beding van conventionele terugkeer','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>',NULL,3,117,22);
-INSERT INTO "financial_item_clause" VALUES('FR Beding van conventionele terukeer','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,220,25);
-INSERT INTO "financial_item_clause" VALUES('FR Beding van conventionele terugkeer','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,221,26);
+INSERT INTO "financial_item_clause" VALUES('FR Clause de retour conventionnel','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,213,5);
 INSERT INTO "financial_item_clause" VALUES('Standaardbegunstiging Overlijdensrisicoverzekering NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1. Verzekeringnemer</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2. Weduwe/weduwnaar/geregistreerd partner van de verzekeringnemer</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3. Kinderen van de verzekeringnemer</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4. Erfgenamen van de verzekeringnemer</p>','nl_BE',1,227,35);
-INSERT INTO "financial_item_clause" VALUES('FR Beding van conventionele terugkeer','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,222,29);
 INSERT INTO "financial_item_clause" VALUES('STANDAARD Begunstiging bij leven beleggingsverzekering Patronale Life FR','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance</p>','fr_BE',1,244,39);
+INSERT INTO "financial_item_clause" VALUES('FR Clause de retour conventionnel','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,212,4);
+INSERT INTO "financial_item_clause" VALUES('FR Clause de retour conventionnel','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,222,29);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de vie','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance </p>','fr_BE',1,52,16);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale. </p>','fr_BE',1,53,16);
+INSERT INTO "financial_item_clause" VALUES('FR Clause de retour conventionnel','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,221,26);
 INSERT INTO "financial_item_clause" VALUES('NL Beding van conventionele terugkeer','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>','nl_BE',1,167,29);
 INSERT INTO "financial_item_clause" VALUES('NL Verpanding','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt; color:#000000;">Nader wordt aangetekend dat alle uit deze verzekering voortvloeiende rechten door de verzekeringsnemer zijn verpand aan de pandnemer:</span></p>','nl_BE',2,256,33);
-INSERT INTO "financial_item_clause" VALUES('FR Beding van conventionele terugkeer','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,223,30);
 INSERT INTO "financial_item_clause" VALUES('Standaardbegunstiging Overlijdensrisicoverzekering NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1. Verzekeringnemer</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2. Weduwe/weduwnaar/geregistreerd partner van de verzekeringnemer</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3. Kinderen van de verzekeringnemer</p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4. Erfgenamen van de verzekeringnemer</p>','nl_BE',1,226,27);
-INSERT INTO "financial_item_clause" VALUES('FR Begunstiging bij overlijden','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale.</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>','fr_BE',1,15,4);
 INSERT INTO "financial_item_clause" VALUES('Begunstiging bij leven NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringsnemer </p>','nl_BE',1,228,37);
 INSERT INTO "financial_item_clause" VALUES('Wederzijdse overdracht van rechten','
@@ -4444,6 +4584,8 @@ INSERT INTO "financial_item_clause" VALUES('Begunstiging bij overlijden FR','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale. </p>','fr_BE',1,238,38);
 INSERT INTO "financial_item_clause" VALUES('NL Aanvaarding begunstiging SRCL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Gewestelijke Maatschappij voor Huisvestingskrediet, die de begunstiging aanvaard heeft ten belope van de hoofdsom en de interesten die de verzekeringsnemer haar verschuldigd is, krachtens het krediet ter waarborg waarvoor dit contract onderschreven werd.</p>','nl_BE',1,250,39);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (conjoint/cohabitant légal)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès: Le conjoint/cohabitant légal du preneur d’assurance, à défaut, les enfants du preneur d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</p>','fr_BE',1,336,39);
 INSERT INTO "financial_item_clause" VALUES('STANDAARD Begunstiging bij leven beleggingsverzekering Patronale Life NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">begunstiging bij leven : De Verzekeringnemer</p>','nl_BE',1,245,39);
 INSERT INTO "financial_item_clause" VALUES('FR Aanvaarding begunstiging SRCL','
@@ -4462,10 +4604,10 @@ INSERT INTO "financial_item_clause" VALUES('NL Verpanding','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt; color:#000000;">Nader wordt aangetekend dat alle uit deze verzekering voortvloeiende rechten door de verzekeringsnemer zijn verpand aan de pandnemer:</span></p>','nl_BE',2,254,38);
 INSERT INTO "financial_item_clause" VALUES('NL Verpanding','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt; color:#000000;">Nader wordt aangetekend dat alle uit deze verzekering voortvloeiende rechten door de verzekeringsnemer zijn verpand aan de pandnemer:</span></p>','nl_BE',2,255,37);
-INSERT INTO "financial_item_clause" VALUES('NL Verpanding','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt; color:#000000;">Nader wordt aangetekend dat alle uit deze verzekering voortvloeiende rechten door de verzekeringsnemer zijn verpand aan de pandnemer:</span></p>','nl_BE',2,261,11);
-INSERT INTO "financial_item_clause" VALUES('Begunstigde bij overlijden NL 3','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Begunstigde(n) bij overlijden : De huidige en toekomstige kinderen van de verzekeringnemer, en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer die optreden volgens de wettelijke devolutie.</span></p>','nl_BE',1,270,65);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de vie','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>','fr_BE',1,5,4);
 INSERT INTO "financial_item_clause" VALUES('NL Verpanding','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt; color:#000000;">Nader wordt aangetekend dat alle uit deze verzekering voortvloeiende rechten door de verzekeringsnemer zijn verpand aan de pandnemer:</span></p>','nl_BE',2,262,5);
 INSERT INTO "financial_item_clause" VALUES('NL Verpanding','
@@ -4474,33 +4616,17 @@ INSERT INTO "financial_item_clause" VALUES('NL Aanvaarding begunstiging Eigen He
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Eigen Heerd Is Goud Weerd NV, die de begunstiging aanvaard heeft ten belope van de hoofdsom en de interesten die de verzekeringsnemer haar verschuldigd is, krachtens het krediet ter waarborg waarvoor dit contract onderschreven werd.</p>','nl_BE',1,283,23);
 INSERT INTO "financial_item_clause" VALUES('NL Verpanding','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Nader wordt aangetekend dat alle uit deze verzekering voortvloeiende rechten door de verzekeringnemer zijn verpand aan pandnemer ....................., gevestigd te ......................., mede kantoorhoudende te ..............................., ..........................., die deze verpanding heeft aanvaard en zichzelf als eerte begunstigde heeft aangewezen overeenkomstig de in de akte vermelde voorwaarden.</p>','nl_BE',2,264,35);
-INSERT INTO "financial_item_clause" VALUES('Begunstiging FR','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire : La société de crédit, pour le solde éventuel: l''epouse, l''epoux ou le cohabitant légal du preneur d''assurance; à défaut les enfants du preneur d''assurance; à défaut les héritiers légaux du preneur d''assurance.</p>','fr_BE',1,267,64);
 INSERT INTO "financial_item_clause" VALUES('NL Verpanding','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Nader wordt aangetekend dat alle uit deze verzekering voortvloeiende rechten door de verzekeringnemer zijn verpand aan pandnemer ....................., gevestigd te ......................., mede kantoorhoudende te ..............................., ..........................., die deze verpanding heeft aanvaard en zichzelf als eerte begunstigde heeft aangewezen overeenkomstig de in de akte vermelde voorwaarden.</p>','nl_BE',2,265,27);
-INSERT INTO "financial_item_clause" VALUES('Begunstigde bij overlijden NL 4','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Begunstigde(n) bij overlijden : De ouders van de verzekeringnemer; bij gebrek één dezer, de overlevende; bij ontstentenis, de wettelijke erfgenamen van de verzekeringnemer die optreden volgens de wettelijke devolutie.</span></p>','nl_BE',1,271,65);
-INSERT INTO "financial_item_clause" VALUES('Begunstiging NL','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde : De kredietinstelling, voor het eventuele saldo: de echtgeno(o)t(e)/wettelijk samenwonende partner van de verzekeringnemer; bij ontstentenis de kinderen van de verzekeringnemer; bij ontstentenis de wettige erfgenamen van de verzekeringnemer.</p>','nl_BE',1,266,64);
-INSERT INTO "financial_item_clause" VALUES('Begunstigde bij overlijden NL 1','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Begunstigde(n) bij overlijden :De personen die de volle eigendom of het vruchtgebruik van de woning verwerven </span></p>','nl_BE',1,268,65);
+INSERT INTO "financial_item_clause" VALUES('NL Verpanding','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:9pt; color:#000000;">Nader wordt aangetekend dat alle uit deze verzekering voortvloeiende rechten door de verzekeringsnemer zijn verpand aan de pandnemer.</span></p>','nl_BE',2,261,11);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de vie','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance </p>','fr_BE',1,168,29);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale. </p>','fr_BE',1,169,29);
 INSERT INTO "financial_item_clause" VALUES('FR Wederzijdse overdracht van rechten','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Les preneurs d’assurance déclarent que lors du décès de l’un des preneurs d’assurance tous les droits </p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">sont transmis au preneur d’assurance survivant.</p>','fr_BE',2,296,16);
-INSERT INTO "financial_item_clause" VALUES('Begunstigde bij overlijden NL 2','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Begunstigde(n) bij overlijden : De echtgeno(o)t(e) of wettelijk samenwonende van de verzekeringnemer, bij ontstentenis, de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer die optreden volgens de wettelijke devolutie.</span></p>','nl_BE',1,269,65);
-INSERT INTO "financial_item_clause" VALUES('Begunstigde bij overlijden NL 5','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Begunstigde(n) bij overlijden : Andere(n) (naam, voornaam, geboortedatum, graad van verwantschap met de verzekeringnemer), bij ontstentenis de wettelijke erfgenamen van de verzekeringnemer die optreden volgens de wettelijke devolutie.</span></p>','nl_BE',1,272,65);
-INSERT INTO "financial_item_clause" VALUES('NL Aanvaarding begunstiging XXX','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">XXX, die de begunstiging aanvaard heeft ten belope van de hoofdsom en de interesten die de verzekeringsnemer haar verschuldigd is, krachtens het krediet ter waarborg waarvoor dit contract onderschreven werd.</p>','nl_BE',1,273,65);
-INSERT INTO "financial_item_clause" VALUES('Begunstigde bij overlijden FR 3','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Bénéficiaire(s) en cas de décès : </span><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt;">les enfants actuels et futurs du preneur d’assurance, et en cas de représentation leurs descendants, à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</span></p>','fr_BE',1,276,65);
-INSERT INTO "financial_item_clause" VALUES('Begunstigde bij overlijden FR 4','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Bénéficiaire(s) en cas de décès : </span><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt;">Les parents du preneur d’assurance; en l''absence de l''un des parents, le survivant; à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale. </span></p>','fr_BE',1,277,65);
-INSERT INTO "financial_item_clause" VALUES('Begunstigde bij overlijden FR 1','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Bénéficiaire(s) en cas de décès : </span><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt;">les personnes qui, suite à votre décès, acquièrent la pleine propriété ou l''usufruit de l’habitation</span></p>','fr_BE',1,274,65);
-INSERT INTO "financial_item_clause" VALUES('FR Aanvaarding begunstiging XXX','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">XXX, le bénéficiaire acceptant à concurrence de la somme principale et des intérêts qui lui seraient dus en vertu du contrat de prêt pour lequel le présent contrat à été conclus.</p>','fr_BE',1,279,65);
 INSERT INTO "financial_item_clause" VALUES('NL Aanvaarding begunstiging Eigen Heerd Is Goud Weerd NV','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Eigen Heerd Is Goud Weerd Nv, die de begunstiging aanvaard heeft ten belope van de hoofdsom en de interesten die de verzekeringsnemer haar verschuldigd is, krachtens het krediet ter waarborg waarvoor dit contract onderschreven werd.</p>','nl_BE',1,281,39);
 INSERT INTO "financial_item_clause" VALUES('FR Aanvaarding begunstiging Eigen Heerd Is Goud Weerd','
@@ -4509,13 +4635,29 @@ INSERT INTO "financial_item_clause" VALUES('FR Aanvaarding begunstiging Eigen He
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Eigen Heerd Is Goud Weerd SA, le bénéficiaire acceptant à concurrence de la somme principale et des intérêts qui lui seraient dus en vertu du contrat de prêt pour lequel le présent contrat à été conclus.</p>','fr_BE',1,282,23);
 INSERT INTO "financial_item_clause" VALUES('FR Aanvaarding begunstiging Eigen Heerd Is Goud Weerd NV','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Eigen Heerd Is Goud Weerd SA, le bénéficiaire acceptant à concurrence de la somme principale et des intérêts qui lui seraient dus en vertu du contrat de prêt pour lequel le présent contrat à été conclus.</p>','fr_BE',1,280,39);
-INSERT INTO "financial_item_clause" VALUES('Begunstigde bij overlijden FR 2','
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (eigenaar/vruchtgebruiker)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Begunstigde(n) bij overlijden :De personen die de volle eigendom of het vruchtgebruik van de woning verwerven </span></p>','nl_BE',1,268,65);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (andere)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Begunstigde(n) bij overlijden : Andere(n) (naam, voornaam, geboortedatum, graad van verwantschap met de verzekeringnemer), bij ontstentenis de wettelijke erfgenamen van de verzekeringnemer die optreden volgens de wettelijke devolutie.</span></p>','nl_BE',1,272,65);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire acceptant (société)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">La société de crédit, le bénéficiaire acceptant à concurrence de la somme principale et des intérêts qui lui seraient dus en vertu du contrat de prêt pour lequel le présent contrat à été conclus.</p>','fr_BE',1,347,10);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (enfants)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Bénéficiaire(s) en cas de décès : </span><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt;">les enfants actuels et futurs du preneur d’assurance, et en cas de représentation leurs descendants, à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</span></p>','fr_BE',1,276,65);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (parents)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Bénéficiaire(s) en cas de décès : </span><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt;">Les parents du preneur d’assurance; en l''absence de l''un des parents, le survivant; à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale. </span></p>','fr_BE',1,277,65);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (propriétaire/usufruitier)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Bénéficiaire(s) en cas de décès : </span><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt;">les personnes qui, suite à votre décès, acquièrent la pleine propriété ou l''usufruit de l’habitation</span></p>','fr_BE',1,274,65);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (conjoint/cohabitant légal)','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Bénéficiaire(s) en cas de décès : </span><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt;">Le conjoint/cohabitant légal du preneur d’assurance, à défaut, les enfants du preneur d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</span></p>','fr_BE',1,275,65);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire acceptant (société)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">La société de crédit, le bénéficiaire acceptant à concurrence de la somme principale et des intérêts qui lui seraient dus en vertu du contrat de prêt pour lequel le présent contrat à été conclus.</p>','fr_BE',1,279,65);
+INSERT INTO "financial_item_clause" VALUES('NL Aanvaarding begunstiging (maatschappij)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De kredietmaatschappij, die de begunstiging aanvaard heeft ten belope van de hoofdsom en de interesten die de verzekeringsnemer haar verschuldigd is, krachtens het krediet ter waarborg waarvoor dit contract onderschreven werd.</p>','nl_BE',1,273,65);
 INSERT INTO "financial_item_clause" VALUES('FR Wederzijdse overdracht van rechten','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Les preneurs d’assurance déclarent que lors du décès de l’un des preneurs d’assurance tous les droits </p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">sont transmis au preneur d’assurance survivant.</p>','fr_BE',2,286,20);
-INSERT INTO "financial_item_clause" VALUES('Begunstigde bij overlijden FR 5','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Bénéficiaire(s) en cas de décès : </span><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt;">Autre(s) (nom, prénom, date de naissance, degré de parenté avec le preneur); à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</span></p>','fr_BE',1,278,65);
+INSERT INTO "financial_item_clause" VALUES('FR Clause de retour conventionnel','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,215,16);
 INSERT INTO "financial_item_clause" VALUES('Wederzijdse overdracht van rechten FR','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Les preneurs d’assurance déclarent que lors du décès de l’un des preneurs d’assurance tous les droits </p>
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">sont transmis au preneur d’assurance survivant.</p>','fr_BE',2,293,29);
@@ -4566,21 +4708,14 @@ INSERT INTO "financial_item_clause" VALUES('NL Wederzijdse overdracht van rechte
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verzekeringsnemers verklaren dat bij overlijden van één van de verzekeringnemers alle rechten worden overgedragen aan de langstlevende verzekeringsnemer.</p>','nl_BE',2,63,11);
 INSERT INTO "financial_item_clause" VALUES('NL Begunstiging bij overlijden','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : Bij overlijden in volgorde: de verzekeringsnemer(s), de wettelijke echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer(s), de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer(s) die optreden volgens de wettelijke devolutie.</p>','nl_BE',1,67,11);
-INSERT INTO "financial_item_clause" VALUES('FR Begunstiging bij leven','
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de vie','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance</p>','fr_BE',1,11,5);
-INSERT INTO "financial_item_clause" VALUES('FR Begunstiging bij overlijden','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale.</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>','fr_BE',1,13,5);
 INSERT INTO "financial_item_clause" VALUES('NL Beding van conventionele terugkeer','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>','nl_BE',2,20,5);
 INSERT INTO "financial_item_clause" VALUES('AANGEPASTE Begunstiging bij overlijden beleggingsverzekering Patronale Life NL','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : </p>','nl_BE',1,7,4);
 INSERT INTO "financial_item_clause" VALUES('NL Wederzijdse overdracht van rechten ','
 <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verzekeringsnemers verklaren dat bij overlijden van één van de verzekeringnemers alle rechten worden overgedragen aan de langstlevende verzekeringsnemer.</p>','nl_BE',2,22,4);
-INSERT INTO "financial_item_clause" VALUES('FR Begunstiging bij leven','
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>','fr_BE',1,5,4);
 INSERT INTO "financial_item_clause" VALUES('Begunstigde bij overlijden','
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>','nl_BE',1,304,69);
 INSERT INTO "financial_item_clause" VALUES('Begunstigde bij overlijden','
@@ -4601,6 +4736,124 @@ INSERT INTO "financial_item_clause" VALUES('Bénéficiaire en cas de décès','
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>','fr_BE',1,313,70);
 INSERT INTO "financial_item_clause" VALUES('Bénéficiaire en cas de décès','
 <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>','fr_BE',1,305,69);
+INSERT INTO "financial_item_clause" VALUES('NL Beding van conventionele terugkeer','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''News Gothic Std,sans-serif''; font-size:12pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>','nl_BE',1,126,25);
+INSERT INTO "financial_item_clause" VALUES('Andere','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde(n) bij overlijden : Andere(n) (naam, voornaam, geboortedatum, graad van verwantschap met de verzekeringnemer), bij ontstentenis de wettelijke erfgenamen van de verzekeringnemer die optreden volgens de wettelijke devolutie.</p>','nl_BE',1,314,39);
+INSERT INTO "financial_item_clause" VALUES('Autre','
+<table border="0" cellpadding="0" cellspacing="2" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
+<tr>
+<td width="450">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Autre(s) (nom, prénom, date de naissance, degré de parenté avec le preneur); à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</p></td></tr></table>','fr_BE',1,315,39);
+INSERT INTO "financial_item_clause" VALUES('Autre','
+<table border="0" cellpadding="0" cellspacing="2" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
+<tr>
+<td width="472">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Autre(s) (nom, prénom, date de naissance, degré de parenté avec le preneur); à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</p></td></tr></table>','fr_BE',1,319,23);
+INSERT INTO "financial_item_clause" VALUES('Andere','
+<table border="0" cellpadding="0" cellspacing="2" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
+<tr>
+<td width="382">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde(n) bij overlijden : Andere(n) (naam, voornaam, geboortedatum, graad van verwantschap met de verzekeringnemer), bij ontstentenis de wettelijke erfgenamen van de verzekeringnemer die optreden volgens de wettelijke devolutie.</p></td></tr></table>','nl_BE',1,316,10);
+INSERT INTO "financial_item_clause" VALUES('Autre','
+<table border="0" cellpadding="0" cellspacing="2" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
+<tr>
+<td width="382">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Autre(s) (nom, prénom, date de naissance, degré de parenté avec le preneur); à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</p></td></tr></table>','fr_BE',1,317,10);
+INSERT INTO "financial_item_clause" VALUES('Andere','
+<table border="0" cellpadding="0" cellspacing="2" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
+<tr>
+<td width="472">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde(n) bij overlijden : Andere(n) (naam, voornaam, geboortedatum, graad van verwantschap met de verzekeringnemer), bij ontstentenis de wettelijke erfgenamen van de verzekeringnemer die optreden volgens de wettelijke devolutie.</p></td></tr></table>','nl_BE',1,318,23);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale. </p>','fr_BE',1,321,74);
+INSERT INTO "financial_item_clause" VALUES('FR Cession des droits (standard)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Les preneurs d’assurance déclarent que lors du décès de l’un des preneurs d’assurance tous les droits sont transmis au preneur d’assurance survivant.</p>','fr_BE',2,327,74);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de vie','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance</p>','fr_BE',1,323,74);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire acceptant (société)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">La société de crédit, le bénéficiaire acceptant à concurrence de la somme principale et des intérêts qui lui seraient dus en vertu du contrat de prêt pour lequel le présent contrat à été conclus.</p>','fr_BE',1,335,39);
+INSERT INTO "financial_item_clause" VALUES('NL Beding van conventionele terugkeer','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>','nl_BE',1,328,74);
+INSERT INTO "financial_item_clause" VALUES('NL Wederzijdse overdracht van rechten (standaard)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De verzekeringsnemers verklaren dat bij overlijden van één van de verzekeringnemers alle rechten worden overgedragen aan de langstlevende verzekeringsnemer.</p>','nl_BE',2,326,74);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (autre)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès: Autre(s) (nom, prénom, date de naissance, degré de parenté avec le preneur); à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</p>','fr_BE',1,337,39);
+INSERT INTO "financial_item_clause" VALUES('FR Clause de retour conventionnel','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,329,74);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (eigenaar/vruchtgebruiker)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde(n) bij overlijden: De personen die de volle eigendom of het vruchtgebruik van de woning verwerven.</p>','nl_BE',1,338,39);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale. </p>','fr_BE',1,139,26);
+INSERT INTO "financial_item_clause" VALUES('NL Aanvaarding begunstiging (maatschappij)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De kredietmaatschappij, die de begunstiging aanvaard heeft ten belope van de hoofdsom en de interesten die de verzekeringsnemer haar verschuldigd is, krachtens het krediet ter waarborg waarvoor dit contract onderschreven werd.</p>','nl_BE',1,340,39);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (andere)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde(n) bij overlijden: Andere(n) (naam, voornaam, geboortedatum, graad van verwantschap met de verzekeringnemer), bij ontstentenis de wettelijke erfgenamen van de verzekeringnemer die optreden volgens de wettelijke devolutie.</p>','nl_BE',1,339,39);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (kinderen)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde(n) bij overlijden: De huidige en toekomstige kinderen van de verzekeringnemer, en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer die optreden volgens de wettelijke devolutie.</p>','nl_BE',1,341,39);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij overlijden : Bij overlijden in volgorde: de verzekeringsnemer(s), de wettelijke echtgeno(o)t(e) of de wettelijk samenwonende partner van de verzekeringsnemer(s), de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer(s) die optreden volgens de wettelijke devolutie. </p>','nl_BE',1,320,74);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (kinderen)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Begunstigde(n) bij overlijden : De huidige en toekomstige kinderen van de verzekeringnemer, en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer die optreden volgens de wettelijke devolutie.</span></p>','nl_BE',1,270,65);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (echtgenoot/partner)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Begunstigde(n) bij overlijden : De echtgeno(o)t(e) of wettelijk samenwonende van de verzekeringnemer, bij ontstentenis, de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer die optreden volgens de wettelijke devolutie.</span></p>','nl_BE',1,269,65);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (autre)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Bénéficiaire(s) en cas de décès : </span><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt;">Autre(s) (nom, prénom, date de naissance, degré de parenté avec le preneur); à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</span></p>','fr_BE',1,278,65);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (ouders)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''NA Vectora 45,sans-serif''; font-size:8pt; color:#231f20;">Begunstigde(n) bij overlijden : De ouders van de verzekeringnemer; bij gebrek één dezer, de overlevende; bij ontstentenis, de wettelijke erfgenamen van de verzekeringnemer die optreden volgens de wettelijke devolutie.</span></p>','nl_BE',1,271,65);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (parents)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès: Les parents du preneur d’assurance; en l''absence de l''un des parents, le survivant; à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</p>','fr_BE',1,333,39);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de vie','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance</p>','fr_BE',1,178,30);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : Dans l’ordre: le(s) preneur(s) d’assurance, le(s) conjoint(s) légal (légaux) du (des) preneur(s) d’assurance, à défaut, les enfants du (des) preneur(s) d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du (des) preneur(s) d’assurance intervenant conformément à la dévolution légale.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br/></p>','fr_BE',1,180,30);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (enfants)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès : les enfants actuels et futurs du preneur d’assurance, et en cas de représentation leurs descendants, à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</p>','fr_BE',1,332,39);
+INSERT INTO "financial_item_clause" VALUES('FR Clause de retour conventionnel','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,223,30);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de vie','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le preneur d’assurance</p>','fr_BE',1,127,25);
+INSERT INTO "financial_item_clause" VALUES('FR Clause de retour conventionnel','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ce contrat d’assurance-vie a été conclu suite à la donation ayant eu comme but d’offrir une sûreté quant au payement des sommes revenant au donateur lors du prédécès du donataire sur base de la clause de retour conventionnel.</p>','fr_BE',1,220,25);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (propriétaire/usufruitier)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès: les personnes qui, suite à votre décès, acquièrent la pleine propriété ou l''usufruit de l’habitation</p>','fr_BE',1,334,39);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (ouders)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde(n) bij overlijden: De ouders van de verzekeringnemer; bij gebrek één dezer, de overlevende; bij ontstentenis, de wettelijke erfgenamen van de verzekeringnemer die optreden volgens de wettelijke devolutie.</p>','nl_BE',1,342,39);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (echtgenoot/partner)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde(n) bij overlijden: De echtgeno(o)t(e) of wettelijk samenwonende van de verzekeringnemer, bij ontstentenis, de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer die optreden volgens de wettelijke devolutie.</p>','nl_BE',1,343,39);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (enfants)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès: les enfants actuels et futurs du preneur d’assurance, et en cas de représentation leurs descendants, à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</p>','fr_BE',1,344,10);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (parents)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès: Les parents du preneur d’assurance; en l''absence de l''un des parents, le survivant; à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</p>','fr_BE',1,345,10);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (propriétaire/usufruitier)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès: les personnes qui, suite à votre décès, acquièrent la pleine propriété ou l''usufruit de l’habitation.</p>','fr_BE',1,346,10);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (conjoint/cohabitant légal)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès: Le conjoint/cohabitant légal du preneur d’assurance, à défaut, les enfants du preneur d’assurance et en cas de représentation leurs descendants, à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</p>','fr_BE',1,348,10);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès (autre)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de décès: Autre(s) (nom, prénom, date de naissance, degré de parenté avec le preneur); à défaut, les héritiers légaux du preneur d’assurance intervenant conformément à la dévolution légale.</p>','fr_BE',1,349,10);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (eigenaar/vruchtgebruiker)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde(n) bij overlijden: De personen die de volle eigendom of het vruchtgebruik van de woning verwerven.</p>','nl_BE',1,350,10);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (andere)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde(n) bij overlijden: Andere(n) (naam, voornaam, geboortedatum, graad van verwantschap met de verzekeringnemer), bij ontstentenis de wettelijke erfgenamen van de verzekeringnemer die optreden volgens de wettelijke devolutie.</p>','nl_BE',1,351,10);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (ouders)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde(n) bij overlijden: De ouders van de verzekeringnemer; bij gebrek één dezer, de overlevende; bij ontstentenis, de wettelijke erfgenamen van de verzekeringnemer die optreden volgens de wettelijke devolutie.</p>','nl_BE',1,354,10);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de décès','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire: La société de crédit, pour le solde éventuel: l''epouse, l''epoux ou le cohabitant légal du preneur d''assurance; à défaut les enfants du preneur d''assurance; à défaut les héritiers légaux du preneur d''assurance.</p>','fr_BE',1,267,64);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (kinderen)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde(n) bij overlijden: De huidige en toekomstige kinderen van de verzekeringnemer, en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer die optreden volgens de wettelijke devolutie.</p>','nl_BE',1,353,10);
+INSERT INTO "financial_item_clause" VALUES('NL Aanvaarding begunstiging (maatschappij)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">De kredietmaatschappij, die de begunstiging aanvaard heeft ten belope van de hoofdsom en de interesten die de verzekeringsnemer haar verschuldigd is, krachtens het krediet ter waarborg waarvoor dit contract onderschreven werd.</p>','nl_BE',1,352,10);
+INSERT INTO "financial_item_clause" VALUES('NL Beding van conventionele terugkeer','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:''Calibri,sans-serif''; font-size:11pt;">Dit levensverzekeringcontract werd afgesloten als gevolg van de schenking met het doel zekerheid te bieden aangaande de betaling van de sommen die de schenker toekomen bij het vooroverlijden van de begiftigde op grond van het beding van conventionele terugkeer.</span></p>','nl_BE',3,135,26);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstiging bij leven','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringsnemer(s)</p>','nl_BE',1,137,26);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstigde bij overlijden (echtgenoot/partner)','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstigde(n) bij overlijden: De echtgeno(o)t(e) of wettelijk samenwonende van de verzekeringnemer, bij ontstentenis, de kinderen en bij plaatsvervulling hun afstammelingen. Bij ontstentenis van deze de wettelijke erfgenamen van de verzekeringsnemer die optreden volgens de wettelijke devolutie.</p>','nl_BE',1,355,10);
+INSERT INTO "financial_item_clause" VALUES('FR Bénéficiaire en cas de vie','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Bénéficiaire(s) en cas de vie: Le(s) preneur(s) d’assurance.</p>','fr_BE',1,138,26);
+INSERT INTO "financial_item_clause" VALUES('NL Begunstiging bij leven','
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Begunstiging bij leven : De Verzekeringnemer(s)</p>','nl_BE',1,12,5);
 
 INSERT INTO "financial_security" VALUES('Elitis Target Fund',3,NULL,'BE5949','5',1,NULL,3,3,'62121115','2011-01-01','2400-12-31','financialfund',6);
 INSERT INTO "financial_security" VALUES('Elitis Bond Selection Fund',4,NULL,'BE5948','6',1,NULL,3,3,'62121115','2011-01-01','2400-12-31','financialfund',7);
@@ -4625,7 +4878,6 @@ INSERT INTO "financial_security" VALUES('FD KBC 126-461',23,'99004',NULL,'FD1264
 INSERT INTO "financial_security" VALUES('FD BinckB 579-004',4,'99001',NULL,'FD579004',1,NULL,10,10,NULL,'2011-03-07','2400-12-31','financialfund',25);
 INSERT INTO "financial_security" VALUES('FD BinckB 579-005',5,'99001',NULL,'FD579005',1,NULL,10,10,NULL,'2011-06-01','2400-12-31','financialfund',28);
 INSERT INTO "financial_security" VALUES('PL Quartz Bond',29,NULL,'BE0941468838','40',1,NULL,10,10,'62121115','2012-04-01','2400-12-31','financialfund',68);
-INSERT INTO "financial_security" VALUES('Quantitative Lustrum Double Fund',12,NULL,'BE5944','26',1,NULL,10,10,'62121115','2011-01-01','2400-12-31','financialfund',14);
 INSERT INTO "financial_security" VALUES('FD BinckB 579-006',6,'99001',NULL,'FD579006',1,NULL,10,10,'','2011-06-17','2400-12-31','financialfund',29);
 INSERT INTO "financial_security" VALUES('FD BinckB 581-752',9,'99001',NULL,'FD581752',1,NULL,10,10,NULL,'2011-12-07','2400-12-31','financialfund',43);
 INSERT INTO "financial_security" VALUES('Patronale Life Cash Fund',1,NULL,'BE5958','23',1,NULL,10,10,'62121115','2011-01-01','2400-12-31','financialfund',4);
@@ -4666,6 +4918,7 @@ INSERT INTO "financial_security" VALUES('FD BDL 908-926',58,'99003',NULL,'FD9089
 INSERT INTO "financial_security" VALUES('FD BDL 980-414',65,'99003',NULL,'FD980414',1,NULL,10,10,NULL,'2013-06-01','2400-12-31','financialfund',135);
 INSERT INTO "financial_security" VALUES('All In One Fund',16,NULL,'LU0569867319','29',1,NULL,10,10,NULL,'2011-01-01','2400-12-31','financialfund',19);
 INSERT INTO "financial_security" VALUES('FD KBC 126-844',76,'99004',NULL,'FD126844',1,NULL,10,10,NULL,'2013-07-01','2400-12-31','financialfund',146);
+INSERT INTO "financial_security" VALUES('Quantitative Trend Following',12,NULL,'BE5944','26',1,NULL,10,10,'62121115','2011-01-01','2400-12-31','financialfund',14);
 INSERT INTO "financial_security" VALUES('MAESTRO INVEST BEL',35,'','BE0163305544','CD33025',1,NULL,7,7,'62121115','2015-06-24','2400-12-31','financialfund',179);
 INSERT INTO "financial_security" VALUES('FD BDL 908-918',59,'99003',NULL,'FD908918',1,NULL,10,10,NULL,'2013-06-01','2400-12-31','financialfund',129);
 INSERT INTO "financial_security" VALUES('FD BDL 70',70,'99003',NULL,'',1,NULL,10,10,NULL,'2013-07-01','2400-12-31','financialfund',140);
@@ -4779,6 +5032,27 @@ INSERT INTO "financial_security" VALUES('PL LT Funds European General CP',62,NUL
 INSERT INTO "financial_security" VALUES('FD KBC 126-852',110,'99004',NULL,'FD126852',1,NULL,10,10,NULL,'2016-12-01','2400-12-31','financialfund',236);
 INSERT INTO "financial_security" VALUES('PL Varenne Valeur',66,NULL,'FR0007080155','66',1,NULL,10,10,NULL,'2016-05-01','2400-12-31','financialfund',232);
 INSERT INTO "financial_security" VALUES('Market Neutral Alpha',7,NULL,'BE5952','16',1,NULL,10,10,'62121115','2011-01-01','2400-12-31','financialfund',10);
+INSERT INTO "financial_security" VALUES('PL DNCA Invest EUROSE',68,NULL,'LU0284394235','68',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',248);
+INSERT INTO "financial_security" VALUES('PL DNCA Invest Evolutif',69,NULL,'LU0284394664','69',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',253);
+INSERT INTO "financial_security" VALUES('PL DPAM L Global Target Income B',72,NULL,'LU1091780129','72',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',249);
+INSERT INTO "financial_security" VALUES('PL T Rowe Price Fund Emerging Markets Bond',85,NULL,'LU1438968627','85',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',252);
+INSERT INTO "financial_security" VALUES('PL Invesco Euro Bond',73,NULL,'LU0066341099','73',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',242);
+INSERT INTO "financial_security" VALUES('PL Invesco Euro Short Term Bond',74,NULL,'LU0607519195','74',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',240);
+INSERT INTO "financial_security" VALUES('PL Invesco Pan European Equity Income',75,NULL,'LU0267986122','75',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',256);
+INSERT INTO "financial_security" VALUES('PL Invesco Pan European High Income ',76,NULL,'LU0243957312','76',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',247);
+INSERT INTO "financial_security" VALUES('PL Invesco Pan European Structured Equity',77,NULL,'LU0119750205','77',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',250);
+INSERT INTO "financial_security" VALUES('PL M&G Prudent Allocation',78,NULL,'GB00BV8BTV53','78',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',243);
+INSERT INTO "financial_security" VALUES('PL PTAM Global Allocation UI',81,NULL,'DE000A1JCWX9','81',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',246);
+INSERT INTO "financial_security" VALUES('PL Robeco BP Global Premium Equities',82,NULL,'LU0203975437','82',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',251);
+INSERT INTO "financial_security" VALUES('PL Robeco QI Global Conservative Equities',83,NULL,'LU0705782398','83',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',245);
+INSERT INTO "financial_security" VALUES('PL Robeco QI Global Dynamic Duration',84,NULL,'LU0084302339','84',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',241);
+INSERT INTO "financial_security" VALUES('PL Value Square Fund Equity World',87,NULL,'BE6294297641','87',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',254);
+INSERT INTO "financial_security" VALUES('PL Archea Spectrum',67,NULL,'LU1675944505','67',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',260);
+INSERT INTO "financial_security" VALUES('PL DPAM Invest B Equities Euroland B',70,NULL,'BE0058182792','70',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',255);
+INSERT INTO "financial_security" VALUES('PL DPAM L Bonds Corporate High Yield',71,NULL,'LU0966249301','71',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',244);
+INSERT INTO "financial_security" VALUES('PL Nordea Global Climate and Evironment Fund',79,NULL,'LU0348926287','79',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',258);
+INSERT INTO "financial_security" VALUES('PL Parvest Climate Impact Classic',80,NULL,'LU0406802339','80',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',259);
+INSERT INTO "financial_security" VALUES('PL T Rowe Price Funds  Global Focused Growth Equity',86,NULL,'LU1438969351','86',1,NULL,10,10,NULL,'2017-09-15','2400-12-31','financialfund',257);
 
 INSERT INTO "financial_product_fund_availability" VALUES('2011-02-27','2400-12-31',100,32,11,22);
 INSERT INTO "financial_product_fund_availability" VALUES('2010-01-01','2400-12-31',0,3,21,16);
@@ -4810,23 +5084,17 @@ INSERT INTO "financial_product_fund_availability" VALUES('2010-01-01','2400-12-3
 INSERT INTO "financial_product_fund_availability" VALUES('2010-01-01','2400-12-31',0,29,20,15);
 INSERT INTO "financial_product_fund_availability" VALUES('2010-11-08','2400-12-31',0,30,14,20);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-01-01','2400-12-31',0,31,16,19);
-INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2400-12-31',0,36,26,4);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-12-20','2400-12-31',100,60,11,49);
-INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2400-12-31',0,37,26,30);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-07-05','2400-12-31',100,59,11,51);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2400-12-31',0,38,26,32);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-07-05','2400-12-31',100,57,11,48);
-INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2400-12-31',0,39,26,33);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-07-05','2400-12-31',100,56,11,46);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2400-12-31',0,40,26,34);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-07-05','2400-12-31',100,55,11,45);
-INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2400-12-31',0,41,26,35);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-07-05','2400-12-31',100,54,11,44);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2400-12-31',0,42,26,36);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-07-05','2400-12-31',100,53,11,43);
-INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2400-12-31',0,43,26,37);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-07-05','2400-12-31',100,52,11,42);
-INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2400-12-31',0,44,26,38);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2400-12-31',0,45,26,39);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-01-01','2400-12-31',100,46,11,3);
 INSERT INTO "financial_product_fund_availability" VALUES('2011-01-01','2400-12-31',100,47,11,24);
@@ -4925,6 +5193,11 @@ INSERT INTO "financial_product_fund_availability" VALUES('2014-02-01','2400-12-3
 INSERT INTO "financial_product_fund_availability" VALUES('2014-09-11','2400-12-31',100,178,47,193);
 INSERT INTO "financial_product_fund_availability" VALUES('2014-02-01','2400-12-31',100,151,11,151);
 INSERT INTO "financial_product_fund_availability" VALUES('2014-09-11','2400-12-31',100,179,47,195);
+INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2017-09-30',0,37,26,30);
+INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2017-09-30',0,39,26,33);
+INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2017-09-30',0,41,26,35);
+INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2017-09-30',0,43,26,37);
+INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2017-09-30',0,44,26,38);
 INSERT INTO "financial_product_fund_availability" VALUES('2014-02-01','2400-12-31',100,152,11,152);
 INSERT INTO "financial_product_fund_availability" VALUES('2014-09-11','2400-12-31',100,180,47,199);
 INSERT INTO "financial_product_fund_availability" VALUES('2014-02-01','2400-12-31',100,153,11,153);
@@ -4989,5 +5262,27 @@ INSERT INTO "financial_product_fund_availability" VALUES('2016-05-01','2400-12-3
 INSERT INTO "financial_product_fund_availability" VALUES('2016-05-01','2400-12-31',0,219,16,227);
 INSERT INTO "financial_product_fund_availability" VALUES('2016-10-01','2400-12-31',100,220,11,235);
 INSERT INTO "financial_product_fund_availability" VALUES('2016-12-01','2400-12-31',100,221,11,236);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',100,222,127,260);
+INSERT INTO "financial_product_fund_availability" VALUES('2011-04-01','2017-09-30',0,36,26,4);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,223,26,240);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,224,26,241);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,225,26,242);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,226,26,243);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,227,26,244);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,228,26,245);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,229,26,246);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,230,26,247);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,231,26,248);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,232,26,249);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,233,26,250);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,234,26,251);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,235,26,252);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,236,26,253);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,237,26,254);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,238,26,255);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,239,26,256);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,240,26,257);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,241,26,258);
+INSERT INTO "financial_product_fund_availability" VALUES('2017-09-01','2400-12-31',0,242,26,259);
 
 COMMIT;

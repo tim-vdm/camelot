@@ -1,5 +1,6 @@
 BEGIN;
 
+
 INSERT INTO "insurance_mortality_rate_table" VALUES('MK',2);
 INSERT INTO "insurance_mortality_rate_table" VALUES('MK UL3',4);
 INSERT INTO "insurance_mortality_rate_table" VALUES('Overlijdensrisicoverzekering M R',6);
@@ -2480,6 +2481,7 @@ INSERT INTO "insurance_coverage_availability" VALUES('1990-01-01','2400-12-31',1
 INSERT INTO "insurance_coverage_availability" VALUES('1990-01-01','2400-12-31',1,3,100,69,121);
 INSERT INTO "insurance_coverage_availability" VALUES('1990-01-01','2400-12-31',1,3,100,71,122);
 INSERT INTO "insurance_coverage_availability" VALUES('1990-01-01','2400-12-31',1,3,100,72,124);
+INSERT INTO "insurance_coverage_availability" VALUES('2017-09-01','2400-12-31',1,3,100,73,127);
 
 INSERT INTO "insurance_coverage_availability_mortality_rate_table" VALUES(1,1,4,2);
 INSERT INTO "insurance_coverage_availability_mortality_rate_table" VALUES(2,2,4,3);
@@ -2587,6 +2589,8 @@ INSERT INTO "insurance_coverage_availability_mortality_rate_table" VALUES(1,120,
 INSERT INTO "insurance_coverage_availability_mortality_rate_table" VALUES(2,121,72,29);
 INSERT INTO "insurance_coverage_availability_mortality_rate_table" VALUES(1,117,71,29);
 INSERT INTO "insurance_coverage_availability_mortality_rate_table" VALUES(2,118,71,29);
+INSERT INTO "insurance_coverage_availability_mortality_rate_table" VALUES(1,122,73,12);
+INSERT INTO "insurance_coverage_availability_mortality_rate_table" VALUES(2,123,73,12);
 
 INSERT INTO "insurance_coverage_level" VALUES(1,0,0,2,1);
 INSERT INTO "insurance_coverage_level" VALUES(5,1,100,18,4);
@@ -2710,5 +2714,9 @@ INSERT INTO "insurance_coverage_level" VALUES(1,0,9999999,145,68);
 INSERT INTO "insurance_coverage_level" VALUES(6,0,9999999,146,69);
 INSERT INTO "insurance_coverage_level" VALUES(6,0,9999999,148,71);
 INSERT INTO "insurance_coverage_level" VALUES(6,0,9999999,149,72);
+INSERT INTO "insurance_coverage_level" VALUES(1,0,0,152,73);
+INSERT INTO "insurance_coverage_level" VALUES(6,0,0,153,73);
+INSERT INTO "insurance_coverage_level" VALUES(2,100,200,150,73);
+INSERT INTO "insurance_coverage_level" VALUES(3,100,200,151,73);
 
 COMMIT;
