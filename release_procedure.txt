@@ -1,5 +1,6 @@
-1. Push repo and run unittests in Jenkins
-2. If changes where made to the db-schema, ssh to the server (fab -c ../conf/production.conf connect) and make changes in production
-3. fab -c ../conf/production.conf build_upload
-4. fab -c ../conf/production.conf restart_service
-5. Make a call to calculate_premium to see if service is functioning properly
+1. fab generate_hash -c ../conf/production.conf
+2. fab generate_db_file -c ../conf/production.conf
+3. fab -c ../conf/production.conf put_db_file:/path/to/ws/src/dir/tmp/generated.db
+4. fab build_upload -c ../conf/production.conf
+5. fab restart_service -c ../conf/production.conf
+6. Make a call to calculate_premium to see if service is functioning properly

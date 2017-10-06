@@ -4,7 +4,7 @@ Documentation can be read at:
 To upload new version to production run:
     fab generate_hash -c ../conf/production.conf
     fab generate_db_file -c ../conf/production.conf
-    fab -c ../conf/production.conf put_db_file:/path/to/ws/s-c ../conf/production.conf put_db_file:/path/to/ws/src/dir/tmp/generated.db
+    fab -c ../conf/production.conf put_db_file:/path/to/ws/src/dir/tmp/generated.db
     fab build_upload -c ../conf/production.conf
     fab restart_service -c ../conf/production.conf
 
