@@ -1,6 +1,10 @@
-1. fab generate_hash -c ../conf/production.conf
-2. fab generate_db_file -c ../conf/production.conf
-3. fab -c ../conf/production.conf put_db_file:/path/to/ws/src/dir/tmp/generated.db
-4. fab build_upload -c ../conf/production.conf
-5. fab restart_service -c ../conf/production.conf
-6. Make a call to calculate_premium to see if service is functioning properly
+1.  fab generate_db_file -c ../conf/production.conf
+2.  fab stop_service -c ../conf/production.conf
+3.  fab generate_hash -c ../conf/production.conf
+4.  hg tag release_YYYY_mm_dd
+5.  hg commit -m 'Prepare release'
+6.  fab -c ../conf/production.conf put_db_file:/path/to/ws/src/dir/tmp/generated.db
+7.  fab build_upload -c ../conf/production.conf
+8.  fab restart_service -c ../conf/production.conf
+9.  Make a call to calculate_premium to see if service is functioning properly
+10. Push changes and make pull request
