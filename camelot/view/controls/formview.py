@@ -81,8 +81,9 @@ class FormEditors(QtCore.QObject):
         widget_mapper = self.parent().findChild(QtWidgets.QDataWidgetMapper)
         model = widget_mapper.model()
         delegate = widget_mapper.itemDelegate()
-        model_index = model.createIndex(widget_mapper.currentIndex(),
-                                        index, 0)
+        #model_index = model.createIndex(widget_mapper.currentIndex(),
+        #                                index, 0)
+        model_index = model.index(widget_mapper.currentIndex(), index)
         widget_editor = delegate.createEditor(
             parent,
             self.option,
@@ -162,7 +163,7 @@ class FormWidget(QtWidgets.QWidget):
             model.modelReset.connect(self._layout_changed)
             model.rowsInserted.connect(self._layout_changed)
             model.rowsRemoved.connect(self._layout_changed)
-            model.setParent(self)
+            #model.setParent(self)
             if widget_mapper is not None:
                 widget_mapper.setModel(model)
 

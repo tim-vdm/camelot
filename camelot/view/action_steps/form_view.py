@@ -46,7 +46,7 @@ from ...core.naming import initial_naming_context
 from ...core.qt import is_deleted
 from ...core.serializable import DataclassSerializable
 from .item_view import AbstractCrudView
-#from ..qml_view import qml_action_step
+from ..qml_view import qml_action_step
 
 
 @dataclass
@@ -119,9 +119,15 @@ class OpenFormView(AbstractCrudView):
 
     @classmethod
     def render(self, gui_context_name, step):
-        model = CollectionProxy(tuple(step['admin_route']))
-        list(model.add_columns((fn for fn, fa in step['fields'].items())))
+
+        from  camelot.view.qml_view import get_qml_root_backend
+        model = get_qml_root_backend().createModel(gui_context_name)
+
+        #model = CollectionProxy(tuple(step['admin_route']))
+        
         model.set_value(step['model_context_name'])
+        list(model.add_columns((fn for fn, fa in step['fields'].items())))
+        
         form = FormView(
             title=step['title'], admin_route=step['admin_route'],
             close_route=tuple(step['close_route']), model=model,
