@@ -38,7 +38,6 @@ from . import gui_naming_context
 from camelot.admin.action.base import MetaActionStep
 from camelot.core.singleton import QSingleton
 from camelot.view.model_thread import post
-from .requests import InitiateAction
 from .responses import AbstractResponse
 
 LOGGER = logging.getLogger('camelot.view.action_runner')
@@ -183,6 +182,7 @@ class ActionRunner(QtCore.QObject, metaclass=QSingleton):
         self.run_gui_run(gui_run)
 
     def run_gui_run(self, gui_run):
+        from .requests import InitiateAction
         gui_naming_context.validate_composite_name(gui_run.gui_context_name)
         post(InitiateAction(
             gui_run_name = gui_run_names.bind(str(id(gui_run)), gui_run),

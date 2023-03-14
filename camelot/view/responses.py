@@ -4,7 +4,6 @@ import logging
 import typing
 
 from . import gui_naming_context
-from .requests import SendActionResponse, ThrowActionException, CancelAction
 from ..core.exception import CancelRequest, GuiException
 from ..core.naming import CompositeName, NameNotFoundException
 from ..core.serializable import NamedDataclassSerializable
@@ -75,6 +74,7 @@ class ActionStepped(AbstractResponse):
     
     @classmethod
     def handle_response(cls, response_data, post_method):
+        from .requests import SendActionResponse, ThrowActionException, CancelAction
         gui_run_name = tuple(response_data['gui_run_name'])
         run_name = tuple(response_data['run_name'])
         step_type, step = response_data['step']
