@@ -33,7 +33,9 @@ Various ``ActionStep`` subclasses that manipulate the `item_view`
 
 from dataclasses import dataclass, InitVar, field
 from typing import Union, List, Tuple, Any
+from pathlib import PurePosixPath
 import logging
+import inspect
 
 from ...admin import AbstractAdmin
 from ...admin.admin_route import Route, RouteWithRenderHint
@@ -82,6 +84,8 @@ class AbstractCrudView(ActionStep, DataclassSerializable):
     crud_actions: CrudActions = field(init=False)
     close_route: Route = field(init=False)
     group: List[str] = field(init=False)
+    admin_source: str = field(init=False)
+    form_source: str = field(init=False)
 
     def __post_init__(self, value, admin, proxy):
         assert value is not None
@@ -93,6 +97,24 @@ class AbstractCrudView(ActionStep, DataclassSerializable):
         self._add_action_states(model_context, self.actions, self.action_states)
         admin._set_filters(self.action_states, proxy)
         self.group = get_settings_group(admin.get_admin_route())
+
+        # Add source location info
+        from vfinance.admin.json_form import JsonForm
+        from vfinance.admin.jinja2 import environment
+        from vfinance.model.endpoint import Endpoint
+
+        def _source_location(obj):
+            source_file = inspect.getsourcefile(obj)
+            source_line = inspect.getsourcelines(obj)[1]
+            return f'{source_file}:{source_line}'
+
+        self.admin_source = _source_location(type(admin))
+        if isinstance(admin.form_display, JsonForm):
+            endpoint = admin.entity.endpoint if hasattr(admin.entity, 'endpoint') else Endpoint.get(admin.entity)
+            template = environment.get_template(PurePosixPath('forms', endpoint.resource_name, admin.form_display.variant_name).as_posix())
+            self.form_source = template.filename
+        else:
+            self.form_source = ''
 
     @staticmethod
     def _add_action_states(model_context, actions, action_states):
