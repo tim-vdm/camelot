@@ -158,6 +158,8 @@ updated state for the widget.
     shortcut: typing.Optional[str] = None
     color: typing.Optional[str] = None
     directory: typing.Optional[str] = None
+    action_source: str = None
+
 
 # TODO: When all action step have been refactored to be serializable, ActionStep can be implemented as NamedDataclassSerializable,
 #       which NamedDataclassSerializableMeta metaclass replaces the need for MetaActionStep.
