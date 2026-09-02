@@ -156,8 +156,8 @@ class MessageBox( ActionStep, DataclassSerializable ):
                 icon=exception.icon,
                 buttons=[QtWidgets.QMessageBox.StandardButton.Ok,],
             )
-            step.informative_text=exception.resolution
-            step.detailed_text=exception.detail
+            step.informative_text = exception.resolution or ''
+            step.detailed_text = exception.detail or ''
         else:
             logger.error(text, exc_info=exception)
             sio = StringIO()
